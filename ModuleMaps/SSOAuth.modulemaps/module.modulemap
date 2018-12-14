@@ -1,0 +1,10 @@
+module "googlemac_iPhone_Shared_SSOAuth_SSOAuth" {
+  export *
+  header "../../Pods/GTMSessionFetcher/Source/GTMGatherInputStream.h"
+  header "../../Pods/GTMSessionFetcher/Source/GTMMIMEDocument.h"
+  header "../../Pods/GTMSessionFetcher/Source/GTMReadMonitorInputStream.h"
+  header "../../Pods/GTMSessionFetcher/Source/GTMSessionFetcher.h"
+  header "../../Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.h"
+  header "../../Pods/GTMSessionFetcher/Source/GTMSessionFetcherService.h"
+  header "../../Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.h"
+}

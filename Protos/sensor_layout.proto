@@ -1,0 +1,69 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.data";
+option java_outer_classname = "GoosciSensorLayout";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+message SensorLayout {
+  // id, to be looked up in either the Experiment.availableSensors or Trial.sensorAppearances
+  //    field depending on the context.
+  optional string sensorId = 1;
+
+  enum CardView {
+    METER = 1; // For scalar sensors: show an icon and current reading as a large number
+               // For all cards: show a description of what's going on with this sensor, with
+               //   affordance for "more info"
+    GRAPH = 2; // For scalar sensors: show an evolving line graph of the value
+               // For all cards: show a "live preview" of what the graph would record, with
+               //   appropriate density for someone who understands the sensor's purpose.
+  }
+  optional CardView cardView = 2 [default = METER];
+
+  optional bool audioEnabled = 3 [default = false];
+
+  optional bool showStatsOverlay = 4 [default = false];
+
+  // Color, as a packed int as described in android.graphics.Color
+  //
+  // Default is 0 (transparent).  We will interpret this as unset in code and replace with a
+  // more appropriate default.
+  optional int32 color = 5 [default = 0, deprecated=true];
+
+  // Extra options for this card, which can be used by individual selected sensors.
+  // Keys in this map should begin with some fully-qualified package name that the adding code
+  // belongs to.  For example, keys added by code written at google will begin with "com.google."
+  // This map will be made available as-is to SensorChoice implementations, which will interpret
+  // them as desired.
+  map<string, string> extras = 6;
+
+  // The minimum value shown on the Y axis.
+  optional double minimumYAxisValue = 7;
+
+  // The maximum value shown on the Y axis.
+  optional double maximumYAxisValue = 8;
+
+  // The IDs of active SensorTriggers for this layout.
+  repeated string activeSensorTriggerIds = 9;
+
+  // The index into the sensor card color array.
+  // See values/graph_colors.xml.
+  optional int32 colorIndex = 10 [default = 0];
+};

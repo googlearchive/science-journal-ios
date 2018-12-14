@@ -1,0 +1,1475 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "New features and improvements:\n• Support for iOS 12 and the newest iOS devices\n• Accessibility improvements\n• Many performance improvements and bug fixes";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Many performance improvements and bug fixes";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal by Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Explore Your World";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Science Journal is the free digital science notebook brought to you by Google.\n\nWhether you're a science educator or a hobbyist doing science at home, you can keep your notes, photos, and observations all in one convenient place. Use the sensors in your iPhone or iPad to measure and graph phenomena such as light, sound, and motion, or connect to external sensors via bluetooth to conduct experiments on the world around you.\n\nWith the Science Journal app, you can:\n• Measure light, sound, acceleration, air pressure, and more using your device’s built-in sensors.\n• Take notes and photos to document your science experiments. More note types coming soon!\n• Connect to external sensors using select Bluetooth-enabled Arduino devices.\n• Create automated triggers for recording data and taking notes.\n• Use sonification to hear the movement of your graphs.\n\nPermissions notice:\n• Bluetooth: needed to scan for bluetooth sensor devices.\n• Camera: needed to take pictures to document experiments and for the brightness sensor.\n• Photo Library: needed to store pictures taken to document experiments and for adding existing photos from your library to experiments.\n• Microphone: needed for sound intensity sensor.\n• Push notifications: needed to inform you of recording status when backgrounding the app.\n\nEducational activities by our partners:\nhttps://makingscience.withgoogle.com/science-journal/activities\nFor support: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,science,education,stem,experiments,sensors,graphing,journal,notebook,notes,documenting,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Accelerometer X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Accelerometer Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Accelerometer Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "About";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Add caption";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Archive";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Archive experiment";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Archive recording";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Cancel";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Got it";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Delete";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Delete experiment";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Delete recording";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Discard";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Dismiss";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Edit";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Feedback";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Include archived experiments";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Level";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Report";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Retry";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Ruler";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Save";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Settings";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Unarchive";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Unarchive experiment";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Unarchive recording";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Undo";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "View details";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Add note to timeline";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Add a new note";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Add a photo";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Add picture";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Add note";
+
+/* Header on age verifier screen which labels the date picker as asking for a birthday [CHAR_LIMIT=40] */
+"age_verifier_birthday" = "Birthday:";
+
+/* Button on age verifier screen which launches the app [CHAR_LIMIT=20] */
+"age_verifier_get_started" = "Get started";
+
+/* Header on age verifier screen tells the user what this screen is doing [CHAR_LIMIT=30] */
+"age_verifier_header" = "Verify your age";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Ambient light";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitude";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Ambient temperature";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Archived";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Archived experiments cannot be modified, but can be deleted";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Experiment archived.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Recording archived.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Available Devices";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Back";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Return to the previous view";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometer";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Create trigger";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Add new sensor card";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Discard Changes";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Save Changes";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Keep it";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Delete it";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "New experiment";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Start recording";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Jump to now";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Close card";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Stop recording";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Take picture";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Camera, Capture a photo to add to this experiment";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "You must enter a numeric value at which this trigger will fire.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Chart playback control";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Moves the playback position of the chart and reads the value for that position";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Live chart";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Pan left";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Pan right";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Panned";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Chart";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Zoom in";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Zoom level";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Zoom to fit";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Zoom out";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Choose a photo";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Claim all";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Claim all";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Add to Google Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Add 1 remaining experiment to Google Drive for %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Add %1$@ remaining experiments to Google Drive for %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Claim all remaining experiments";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Add all experiments to Google Drive?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Claim all experiments?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Add this experiment to Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Experiments cannot be edited and will remain on the device until they are either claimed or deleted";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Add experiments to Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Claim experiments";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Delete this experiment";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Delete all";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Delete 1 remaining experiment?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Delete %ld remaining experiments?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Delete all remaining experiments";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Delete all your experiments?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "All of your data, including archived experiments, will be deleted. You cannot undo this action.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Delete all";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "There are %ld unclaimed experiments on this device.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "There is 1 unclaimed experiment on this device.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Share this unclaimed experiment";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Could not claim experiment";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Could not claim experiments";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Claim experiment?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Claim experiment";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Add this experiment to Google Drive for %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Experiment added to %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Claim past experiments";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Claim experiments";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Close";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Return to the previous view";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Compass";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "degrees";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Conductor";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Continue without signing in";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "crop end:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Could not save crop:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Move crop end marker left";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Move crop end marker right";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Move crop start marker left";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Move crop start marker right";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "More options";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Recording cropped";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "The recording cannot be cropped outside of the initially recorded range";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "The recording cannot be cropped to less than one second";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Crop";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "crop start:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Current value";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Sound intensity";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Untitled Experiment";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Default";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Are you sure you want to delete this experiment? All its recordings and notes will be deleted.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Delete this experiment?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Delete";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Delete this recording?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Experiment deleted.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Recording deleted.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Details";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Pin";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frequency";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Save sensor settings.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Disable auto scale";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Double tap to edit";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Double tap to open";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Double tap to select";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Double tap to toggle";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Double tap to view details";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Tool drawer grabber";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Adjust the size of the tool drawer. Actions available.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "closed";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "editing";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "fullscreen";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "half screen";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Can't reach Google Drive. Check your connection.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Network disconnected";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal can't connect to Google Drive. Some experiments may not be backed up.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Science Journal can't connect to Google Drive right now. We'll try again later.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google Drive doesn't have enough space to store your experiment.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Experiment data for Science Journal is saved and made available across devices using Google Drive and requires signing in with a Google account.\n\nIf you have existing data on this device, once signed in, you can save your existing experiments to Google Drive. Your experiments are stored in a “Science Journal” folder in your Google account.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Can't reach Google Drive. Check your connection.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Edit end time";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Edit start time";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Edit experiment";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Change an experiment's title or photo";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Unsaved changes";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Are you sure you don't want to save the changes you've made to this experiment?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Change photo";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Edit experiment";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Edit time";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Edit note time";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Edit recording end time";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Edit recording start time";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Edit recording";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Change a recording's title";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Recording title";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "You have no observations yet";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "You have no experiments";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "No triggers set";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Enable auto scale";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "None of your experiments will be added to Google Drive";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Delete all your experiments";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "All your experiments will be added to Google Drive";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Save all your experiments";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Choose which experiments to save to Google Drive";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Select experiments to save";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Welcome back, you currently have %ld experiments stored on this device.\n\nTo continue select an option:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Welcome back, you currently have 1 experiment stored on this device.\n\nTo continue select an option:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Back up to Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Experiment";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Experiments";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Share anyway";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "This experiment has not finished downloading all data. If you share a copy now, it will also be missing this data";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Missing Data";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Recording…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Experiment title";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "This experiment was created with a newer version of Science Journal. You will not be able to edit it on this device until you upgrade.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Organize your thoughts and observations by taking notes, recording data, or taking pictures";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Create a new experiment";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Explore your world";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Share";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Export failed.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Send Experiment";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relative time";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Export…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Share photo to…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Welcome to Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Try taking notes and recording data using the toolbar below!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Welcome to Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Find activities to try at\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Forget this device";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Fullscreen";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Get started";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Enable audio";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Disable audio";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "What's Going On?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Error for attempting to import without age verification [CHAR_LIMIT=NONE] */
+"import_age_verification" = "To begin, please enter your age.";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Unfortunately, an unknown error has occurred.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Import failed. Something's wrong with this experiment.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Science Journal is currently in use. Please stop recording and try again.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "You must sign in before importing an experiment.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Not enough storage space";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "You can manage your storage in settings.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Show archived recordings";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Open Settings";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "The camera cannot be used because you’re recording with a brightness sensor, which measures data via the front-facing camera.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "The camera cannot be used because you’re either watching a Picture in Picture video or using Science Journal in Split View mode.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "View sensors";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "The camera cannot be used because Science Journal does not have permission to access it.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Your photo library cannot be used because Science Journal does not have permission to access it.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Learn more";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Learn more";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Linear accelerometer";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Performance improvements and bug fixes.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "New features:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Sound pitch sensor.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Export experiments to a file, and import them to other devices.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Export photos from an experiment.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "View more notes";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menu";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Displays a menu with more options";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Audio settings";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Edit triggers";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Set triggers";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "My Devices";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Name this experiment";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Activities";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Experiments";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Settings";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Add a description";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Description";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Picture note";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Text note";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Trigger note";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Snapshot note";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Notes";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Note added";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Notes, Add a text note to this experiment";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Observe, Use sensors to add value snapshots or recordings to this experiment";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Cannot open experiment";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Cannot open file";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Experiments must be a Science Journal file format (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Pause";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Percent";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "That's it! We’re done checking for permissions. If you need to modify these permissions in the future, you can do so at any time in the Science Journal section of the iOS Settings app.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Now we'll check for permission to access your cameras. We use the front-facing camera to power the brightness sensor, and you can use either camera to add photo notes to experiments and recordings.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Continue";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "We need to start by checking permissions so we can enable hardware sensors, the camera and your photo library. We’ll explain how we use each before prompting you.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Next, we'll check for permission to access your microphone. The microphone is used for audio sensors. The contents of the audio are never recorded, stored or transmitted, we only measure the intensity or pitch of the sound itself.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "First, we’re going to check for permission to send you push notifications. We only use these to tell you when your recordings are about to end if you background the app mid-recording.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Finally, we’re going to check for permission to access your photo library so you can add your existing photos to experiments and recordings, and so we can save photos you take back to your library.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Let’s go";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Done!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Check permission";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Welcome to Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Photo for";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Photo";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Internal sensors";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Photo Library, Add a photo from your library to this experiment";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Info";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Device";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Dimensions";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Notes";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Shutter speed";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Picture added";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Pitch";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ half steps flatter than %2$@ flat, octave %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ half steps flatter than %2$@, octave %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ half steps flatter than %2$@ sharp, octave %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ flat, octave %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "high pitch";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "low pitch";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, octave %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ sharp, octave %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ half steps sharper than %2$@ flat, octave %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ half steps sharper than %2$@, octave %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ half steps sharper than %2$@ sharp, octave %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pixels";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Play";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Refreshing";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Open Science Journal to view your recorded data.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Your recording ended.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Continue";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Cancel recording";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "One or more of your sensors did not record any data. Would you like to cancel this recording?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Data is not being recorded";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Recording stopped";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Open Science Journal to continue recording.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Your recording will end soon.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Continue recording";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Stop recording";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Remove cover image";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Removes the cover image for this experiment.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Are you sure you want to remove the cover image? This action cannot be undone.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Cover image removed.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Could not remove cover image.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Recording added";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Recording";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Rename this recording";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Are you sure you want to delete this recording? The recorded data and notes will be deleted.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Duration";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Review";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Save";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Save changes and return to the previous view";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Save experiment";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Would you like to add this experiment to your library?";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Scale";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Select note timestamp in chart";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Send a copy";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Settings";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Brightness";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "The brightness sensor cannot be used because Science Journal does not have permission to access your camera.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Failed to load sensor data";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Loading sensor data…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Audio sensors cannot be used because Science Journal does not have permission to access your microphone.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Custom";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Objects have a tendency to stay put, or to keep moving if they're moving—we call this tendency inertia. Newton's First Law expresses this idea formally: An object continues in its state of motion or rest unless acted on by an unbalanced force.\n\nWhen an unbalanced force does cause an object to budge, we say the object accelerates: its velocity, or speed, changes—either by speeding up, slowing down, or changing direction. Acceleration is measured as a change of velocity (meters per second) in time, or meters per second squared (m/s²).\n\nYour phone has a device to measure these changes in motion—an accelerometer. Inside an accelerometer, small suspended masses are free to move. Changes in motion cause these masses to shift, much as your own head tends to flop forward when you're in a car that stops suddenly. Measuring these subtle inertial shifts, an accelerometer in a phone can detect changes in motion and orientation, useful for switching the screen from landscape to portrait mode, for playing games on your phone, and more.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "You probably noticed a persistent acceleration in the Z axis, even with the phone sitting still on a table. This is the acceleration we experience here at the Earth's surface due to the pull of gravity, approximately 9.8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Though we rarely notice it, all of us live at the bottom of a deep ocean of air: Earth's atmosphere, which extends upwards of 40 kilometers (130,000 feet) high. The weight of all that air pushing down on us from above us creates what's called atmospheric pressure.\n\nAt sea level, atmospheric pressure applies 14 pounds of force on every square inch—that's the equivalent of about 1,300 pounds on an area the size of a standard sheet of paper.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "We don't notice this crushing pressure because we're used to it—that is, until it changes, even slightly, as it does when we visit high altitudes or ride in airplanes. Atmospheric pressure also varies with weather conditions, dropping in the presence of stormy, unstable air, and rising when air stabilizes and skies clear.\n\nThe digital barometer in your phone measures atmospheric pressure in hectopascals. (A hectopascal is 100 pascals, where a pascal is one newton of force applied over a square meter of area.) You've probably heard weather forecasters give atmospheric pressure in millibars—this friendlier-sounding unit is equivalent to hectopascals.\n\nYou might be wondering: Why would a phone measure pressure? Atmospheric pressure changes measurably with even slight changes in elevation, say, when you climb a flight of stairs. So a digital barometer in a phone can help detect location changes, for example, telling you what floor of a building you are on, or whether you are driving on the upper or lower deck of a bridge.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "The font-facing camera measures luminance in EV (Exposure Value), a measurement based on the camera's shutter speed, f-number and ISO value and determined by the brightness of pixels recorded given these settings.\n\nThe brighter the value captured, the higher the EV. Darkness will generate negative values.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Because EV is a measurement based on a camera's optics and sensors, the value range is limited by hardware and software. While an ambient light sensor can record lux directly, the front-facing camera must use its f-number, ISO value and shutter speed to establish a measurement baseline, then determine the EV based on reading pixels after capturing images. Given this process, EV values may differ between devices if f-number thresholds differ, as is the case between iPhone 8 (f1.8) and iPad (f2.4).\n\nSince EV is determined by measuring the brightness value of pixels captured, ambient light sources will produce a much lower value than they would if lux was determined by an infrared sensor—measurements are directly dependent on the position of the camera and what it captures.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "You probably already knew that the Earth has a magnetic field. What you may not have realized is that your phone contains a device designed to detect magnetic fields: a magnetometer. By combining data from your phone's magnetometer with the phone's orientation in space, we can create a digital compass.\n\nAn old-fashioned compass is a low-tech magnetometer, with a magnetized needle that turns to align itself with the surrounding magnetic field. There's no tiny compass inside your phone, but instead a tiny three-axis sensor that uses electric currents to detect the magnetic field strength in the three dimensions of space. But this alone is not enough to create a compass!\n\nWhy does a compass need to combine the data from the magnetometer with the phone's orientation? Knowing the phone's orientation allows us to compute the magnetic rotation even when the phone is not held flat in the same plane as the Earth's magnetic field. We know that gravity is perpendicular to Earth's magnetic field, so we can use the direction of gravity from the accelerometer sensors to determine how much of the magnetic field is in the same plane as the Earth's magnetic field.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "As you may have noticed, the compass responds not just to the Earth's magnetic field, but also to any and every magnetic field that happens to be around. Magnets, electric currents, and metal objects will easily steer your phone's magnetometer this way and that, causing the compass reading to change. Stand in an open area—preferably outdoors and far from power lines— if you want to be sure that your compass's red tip is aligning with the Earth's magnetic field. It helps to move your phone in a figure 8 pattern to calibrate the magnetometer in your phone.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Sounds are made by vibration. Your voice, for example, comes from vibrations in your throat's vocal cords. These vibrations create alternating zones of high and low air pressure that travel outward—much like the expanding circular ripple made by a pebble thrown into a pond.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "All sounds can be described in terms of their frequency and intensity.\n\nIntensity is what you measure here with the Science Journal sound intensity sensor, in units of decibels (dB). Intensity, or loudness, depends on the distance that a vibrating object moves each time it vibrates; we hear greater intensity as increased loudness.\n\nThe frequency (also, pitch or tone) of a sound wave is equivalent to its rate of vibration. The faster an object vibrates, the higher the pitch of the resulting sound. The Science Journal sound intensity sensor does not measure frequency—only loudness.\n\nOne important thing to know is that the microphone in your device is designed to be very sensitive to differences in sound waves over time, but not the absolute size of each wave.  We have tried to choose code that is likely to produce numbers similar to the reference numbers shown below, but each device may give consistently higher or lower numbers.  Scientists will usually calibrate a sensor like this to a known measurement.  For now, Science Journal can tell you whether your next train ride is louder than your next rock concert, but only if you bring the same phone to both events.\n\nAnother thing to know is that there are important differences between “sound intensity”, “sound intensity level”, and “sound pressure”.  We are treating them here as the same thing, but if you want to dig deeper, there’s many online resources about the differences.\n\nThe quietest sound that the average human ear can detect is defined as 0 dB. Ordinary conversation corresponds to about 60 dB, and sounds above about 140 dB are painful to the human ear. But sounds don't have to be painful to be harmful. Continued exposure to sounds of 90 dB—about the loudness of a vacuum cleaner—can eventually cause hearing loss.\n\nThe decibel scale is logarithmic, which makes for some trickiness: A sound source of 40 dB isn't twice as intense as one with 20 dB—it's 100 times more intense. Meanwhile, if one ringing alarm clock produces 70 dB, two ringing alarm clocks produce not 140 dB, but 73 dB. Like we said, it's a strange scale.\n\n10 dB rustling leaves\n20 dB whispering at 5 feet\n30 dB soft whisper\n50 dB rainfall\n60 dB normal conversation\n90 dB blender\n100 dB car without muffler\n110 dB shouting in ear\n120 dB thunder\n130 dB jackhammer\n140 dB airplane taking off";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Objects have a tendency to stay put, or to keep moving if they're moving—we call this tendency inertia. Newton's First Law expresses this idea formally: An object continues in its state of motion or rest unless acted on by an unbalanced force.\n\nWhen an unbalanced force does cause an object to budge, we say the object accelerates: its velocity, or speed, changes—either by speeding up, slowing down, or changing direction. Acceleration is measured as a change of velocity (meters per second) in time, or meters per second squared (m/s²).\n\nYour phone has a device to measure these changes in motion—an accelerometer. Inside an accelerometer, small suspended masses are free to move. Changes in motion cause these masses to shift, much as your own head tends to flop forward when you're in a car that stops suddenly. Measuring these subtle inertial shifts, an accelerometer in a phone can detect changes in motion and orientation, useful for switching the screen from landscape to portrait mode, for playing games on your phone, and more.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "The combined linear accelerometer sensor records the total acceleration in all three axis of the phone, excluding gravity.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Your phone contains a device designed to detect magnetic fields: a magnetometer. This tiny, three-axis sensor that uses electric currents to detect the magnetic field strength in the three dimensions of space. By combining data from all three axes we can create a total magnetic field strength sensor.\n\nSome magnetometers detect magnetic fields using the Hall effect—the tendency of magnetic fields to deflect moving charge as it flows. Newer magnetometers rely on magnetoresistors, metal alloys that change their resistance in response to magnetic fields.\n\nWhy does a phone need a magnetometer? Knowing your orientation in space is useful for built-in compass and navigation apps, especially those that seek to give turn-by-turn directions.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magnets, electric currents, and metal objects will easily steer your phone's magnetometer this way and that. But even in the middle of an empty field, the magnetometer in your phone always shows a low, non-zero reading: this is the Earth's magnetic field!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Sounds are made by vibration. Your voice, for example, comes from vibrations in your throat's vocal cords. These vibrations create alternating zones of high and low air pressure that travel outward—much like the expanding circular ripple made by a pebble thrown into a pond.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "All sounds can be described in terms of their frequency and intensity. The frequency (also, pitch or tone) of a sound wave is equivalent to its rate of vibration. The faster an object vibrates, the higher the pitch of the resulting sound. We measure these vibrations in Hertz (Hz) where 1 Hertz = 1 vibration/second.\n\nHumans can hear sounds in the range of 20 to 20,000 Hz. The lowest key on a piano produces a sound with a frequency of 27.5 Hz and the highest key produces a sound with a frequency of 4186.01 Hz.\n\nThe red dot indicates how close the detected pitch is to the nearest musical note. If the pitch is lower or “flatter”, the dot will appear to the left. If the pitch is higher or “sharper”, then the red dot will appear to the right.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "The data displayed here is coming from an external sensor communication with your phone via Bluetooth.\n\nThe value shows the percentage of the raw reading directly from your microcontroller. This is usually the percentage of a voltage drop across a sensor.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth is a wireless technology standard using radio waves to exchange data over short distances from fixed and mobile devices.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Rotations per minute (RPM) is a measure of the frequency of rotation around a fixed axis in one minute.\n\nAs your wind spinner turns, it rotates the encoder disc:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "This creates periods of light and dark on the sensor that register in the Science Journal as a rotation.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "The data displayed here is coming from an external sensor communication with your phone via Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth is a wireless technology standard using radio waves to exchange data over short distances from fixed and mobile devices.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "The acceleration of the phone to the left and right, in m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "The acceleration of the phone forward and back, in m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "The acceleration of the phone up and down, in m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "The atmospheric pressure measured in hectopascals (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "An external sensor is displaying its data here, based on custom settings.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "The amount of light, measured in EV, reaching the front-facing camera.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "The orientation of the phone with respect to Earth's magnetic field.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "The intensity of the sound, measured in decibels (dB), reaching the sound sensor or microphone.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "The total acceleration of the phone, excluding the force of gravity, in m/s²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "The strength of the ambient geomagnetic field in Microtesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "The pitch of the sound, measured in hertz (Hz), reaching the sound sensor or microphone.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "The percentage of the raw reading from an external sensor.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "The number of rotations per minute";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "A test sensor that outputs a sine wave.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Next sensor in recording";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Previous sensor in recording";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Raw";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Rotation";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Cannot modify sensors while recording";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Trigger deleted";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "The audio and brightness sensors use the microphone and front-facing camera, which cannot record when Science Journal is in the background. If you have these sensors in a recording and background the app, data will not be recorded for them until you return to the app.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "The audio and brightness sensors use the microphone and front-facing camera, which cannot record when Science Journal is in the background.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "A note about this sensor";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "The brightness sensor cannot be used while watching a Picture in Picture video or using Science Journal in Split View mode.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Voltage";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Select sensors to use in experiment";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Collapse the sensors list";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Expand the sensors list";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal is disabled";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Science Journal needs to be turned on in the Google Admin console by your domain administrator.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Switch accounts";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Data is anonymous and helps make improvements to this app.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Send app data usage to Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Open source licenses";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Privacy policy";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Terms of service";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Version";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Science Journal website";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Show options";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Side bar menu";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Opens a side bar menu containing application options";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Sign in";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sine wave";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Note deleted";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Undo";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Snapshot";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Adds a snapshot of the value of all current observed sensors to the experiment";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Cannot snapshot because one or more sensors is disconnected. Please try again.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Snapshot details";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Snapshot added";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maximum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Average";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Switch camera";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "On";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Off";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Recordings cannot be cropped to less than one second long";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Use a valid format, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "New time (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "The time must be within the recording";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Edit text note";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Text note";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Add an observation";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Note added";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Recording in progress";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Double tap to switch to the observe tab in the tool drawer";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Sensor settings";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "To experiment";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "To recording";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Alert me using";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Sound";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Trigger details";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Edit %@ trigger";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "New %@ trigger";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Trigger activated";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Vibration";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Triggers for";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "when the sensor is above";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "when at";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "when the sensor is below";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "when dropping below";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "when rising above";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Trigger note added";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "What should your note say?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Default note text";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Trigger only when recording";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Alert me";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Trigger type";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Make a note";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Start recording";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Stop recording";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Trigger value";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Visual notification";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "was above";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "At";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "was below";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "dropped below";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Drops below";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Is above";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Is below";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Trigger when";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Rises above";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "rose above";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Edit Triggers";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Too many triggers have occurred, they have been disabled";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Experiment moved out of archive.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Recording moved out of archive.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Unknown sensor";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Untitled";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Use Science Journal to conduct experiments on the world around you";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "We’ll collect some information about this build of Science Journal and your device (just hardware and iOS version—no personal or identifying information!), then attach it to an email you can send our way.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "We’d love to hear from you";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Send us feedback";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Video stream";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

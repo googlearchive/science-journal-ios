@@ -1,0 +1,40 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.metadata";
+option java_outer_classname = "GoosciSensorTriggerLabelValue";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+import "third_party/sciencejournal/ios/Protos/sensor_spec.proto";
+import "third_party/sciencejournal/ios/Protos/sensor_trigger_information.proto";
+
+/*
+ * A value that can be stored in the proto_data field of label.proto, to store a sensor trigger
+ * label's data.
+ * Added in V2.
+ */
+message SensorTriggerLabelValue {
+    // The sensor that recorded the trigger.
+    optional SensorSpec sensor = 1;
+
+    // This represents the sensor trigger which fired to produce this note.
+    // This can be used to populate note text or do other work.
+    optional TriggerInformation triggerInformation = 2;
+};

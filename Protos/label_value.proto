@@ -1,0 +1,51 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.metadata";
+option java_outer_classname = "GoosciLabelValue";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+/*
+ * The contents of a label, able to represent many different types of data.
+ * This is deprecated in V2.
+ */
+message LabelValue {
+    // Data can be used to store a diverse set of label values. Each label type should have its
+    // own set of keys into this map to store required information. For example, a text label might
+    // have a key for the text field, and the value would be the text itself. A captioned picture
+    // label might have a key/value pair for the caption, and another key/value pair for the URI
+    // of the picture.
+    // This storage flexibility enables future types of labels to store many different formats of
+    // information without the programmer knowing ahead of time which label types might exist.
+    // Other files, like images, can be referenced using this map and should be named by a unique
+    // GUID and placed in the assets directory within the experiment.
+    map<string, string> data = 1;
+
+    // TODO: document how data and proto_data are written and read for each type
+    enum ValueType {
+        TEXT = 1;  // A text label.
+        PICTURE = 2;  // A label that has a picture and may also have a text caption.
+        SENSOR_TRIGGER = 3;  // A label created from a sensor trigger.
+        APPLICATION = 4;  // A label created automatically by Science Journal.
+    };
+
+    // The type this LabelValue represents.
+    optional ValueType type = 2;
+};

@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_private_Icons_icons_ic_radio_button_unchecked_ic_radio_button_unchecked" {
+  export *
+  header "../../../../../../../Pods/MaterialComponents/components/private/Icons/icons/ic_radio_button_unchecked/src/MaterialIcons+ic_radio_button_unchecked.h"
+}

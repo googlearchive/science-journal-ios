@@ -1,0 +1,58 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.data";
+option java_outer_classname = "GoosciGadgetInfo";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+// Information about a device (which contains sensors) or sensor (which can give a data stream)
+// that has been seen on this platform.  Please see usage in context in sensor_spec.proto and
+// device_spec.proto
+// Added in V2
+message GadgetInfo {
+    enum Platform {
+        ANDROID = 0;
+        IOS = 1;
+    }
+
+    // Platform on which this gadget was instantiated.
+    optional Platform platform = 1;
+
+    // Identifies a SensorDiscoverer implementation.  The result should be a key in the map
+    // returned by WhistlePunkApplication#getExternalSensorDiscoverers.
+    optional string providerId = 2;
+
+    // Opaque to Science Journal, but meaningful to each SensorDiscoverer.
+    // It should have a one-to-one relationship with connectable gadgets.
+    // That is, if two GadgetInfo have the same address, that means they refer to the same gadget,
+    // possibly with two different configurations.
+    // We assume that it’s not possible to observe two gadgets with the same address
+    // at the same time.
+    optional string address = 3;
+
+    // A meaningless GUID that identifies the host device that hosted this gadget last.
+    // This allows us to distinguish between gadgets that were seen on the user’s current host
+    // devices, and sensors that were seen on some other device.
+    optional string hostId = 4;
+
+    // A human-readable string that can be displayed to explain which host device hosted this
+    // gadget.
+    optional string hostDescription = 5;
+};

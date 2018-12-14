@@ -1,0 +1,62 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.metadata";
+option java_outer_classname = "GoosciSensorTriggerInformation";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+// TriggerInformation contains metadata users can set and edit on a particular trigger.
+message TriggerInformation {
+  // The value at which this trigger fires.
+  optional double valueToTrigger = 3;
+
+  // What data pattern causes the trigger to fire?
+  enum TriggerWhen {
+    TRIGGER_WHEN_AT = 0;
+    TRIGGER_WHEN_RISES_ABOVE = 1;
+    TRIGGER_WHEN_DROPS_BELOW = 2;
+    TRIGGER_WHEN_ABOVE = 3;
+    TRIGGER_WHEN_BELOW = 4;
+  }
+  optional TriggerWhen triggerWhen = 4;
+
+  // What type of action should be taken when the trigger fires?
+  enum TriggerActionType {
+    TRIGGER_ACTION_START_RECORDING = 0;
+    TRIGGER_ACTION_STOP_RECORDING = 1;
+    TRIGGER_ACTION_NOTE = 2;
+    TRIGGER_ACTION_ALERT = 3;
+  }
+  optional TriggerActionType triggerActionType = 5;
+
+  // The type of alert to use when the trigger fires, if this is an TRIGGER_ACTION_ALERT type.
+  enum TriggerAlertType {
+    TRIGGER_ALERT_VISUAL = 1;
+    TRIGGER_ALERT_AUDIO = 2;
+    TRIGGER_ALERT_PHYSICAL = 3;
+  }
+  repeated TriggerAlertType triggerAlertTypes = 6;
+
+  // The text for a note, if this is a TRIGGER_ACTION_NOTE.
+  optional string noteText = 7;
+
+  // Whether the trigger should activate only when recording (or all the time)
+  optional bool triggerOnlyWhenRecording = 8 [default = false];
+}

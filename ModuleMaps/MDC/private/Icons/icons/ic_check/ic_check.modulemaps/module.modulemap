@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_private_Icons_icons_ic_check_ic_check" {
+  export *
+  header "../../../../../../../Pods/MaterialComponents/components/private/Icons/icons/ic_check/src/MaterialIcons+ic_check.h"
+}

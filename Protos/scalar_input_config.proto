@@ -1,0 +1,57 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+option java_package = "com.google.android.apps.forscience.whistlepunk.data";
+option java_outer_classname = "GoosciScalarInput";
+option optimize_for = LITE_RUNTIME;
+
+message ScalarInputConfig {
+    // The package name of the service providing the input sensor.
+    optional string service_id = 1;
+
+    // A service-specific address identifying this sensor.
+    optional string address = 2;
+
+    // The drawable id of an icon in the provider's APK, or -1 if a default should be used.
+    optional int32 icon_id = 3 [default = -1];
+
+    // Localized name of the units the number represents.
+    optional string units = 4 [default = ""];
+
+    // Localized short description of the sensor's meaning.
+    optional string short_description = 5 [default = ""];
+
+    // Machine-readable logging id.  See SensorBehavior#loggingId.
+    optional string logging_id = 6 [default = ""];
+
+    // Should options be shown immediately upon connect?
+    // See SensorBehavior#shouldShowOptionsOnConnect.
+    optional bool should_show_options_on_connect = 7 [default = true];
+
+    // 0-based index of what order this sensor has in a given experiment's list of scalar API
+    // sensors.
+    //
+    // Only affects appearance.
+    optional int32 order_in_experiment_api_sensors = 8 [default = 0];
+
+    // See SensorBehavior#expectedSamplesPerSecond
+    optional float expected_samples_per_second = 9 [default = 10.0];
+
+    // service-specific id identifying the device (there may be more than one sensor per device)
+    optional string device_id = 10 [default = ""];
+}

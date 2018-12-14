@@ -1,0 +1,44 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.metadata";
+option java_outer_classname = "GoosciSensorTrigger";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+import "third_party/sciencejournal/ios/Protos/sensor_trigger_information.proto";
+
+/*
+ * Represents a sensor trigger.
+ * Added in V2.
+ */
+message SensorTrigger {
+    // The sensor ID associated with this trigger. This is not mutable.
+    optional string sensorId = 1;
+
+    // The timestamp of when this trigger was last used. This is updated with any setters to the
+    // trigger, but it is the responsibility of the client to update the database.
+    optional int64 lastUsedMs = 2;
+
+    // The Trigger Information describing this trigger.
+    optional TriggerInformation triggerInformation = 3;
+
+    // The unique ID of this trigger.
+    optional string triggerId = 4;
+}

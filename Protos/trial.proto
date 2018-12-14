@@ -1,0 +1,145 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.metadata";
+option java_outer_classname = "GoosciTrial";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+import "third_party/sciencejournal/ios/Protos/basic_sensor_appearance.proto";
+import "third_party/sciencejournal/ios/Protos/caption.proto";
+import "third_party/sciencejournal/ios/Protos/label.proto";
+import "third_party/sciencejournal/ios/Protos/sensor_layout.proto";
+
+/*
+ * Trial protobuf definition
+ * Added in V2.
+ */
+message Trial {
+    // The ID is unique within an experiment, but cannot be assumed to be unique across
+    // experiments. This is also used to reference the file containing trial data, which is stored
+    // separately, as users may "copy" entire experiments from Drive.
+    // This ID should probably be a unique GUID.
+    optional string trialId = 1;
+
+    // The timestamp that this trial was created.
+    optional int64 creationTimeMs = 2;
+
+    // The user-entered title of this trial.
+    optional string title = 3;
+
+    // Whether the experiment is currently archived.
+    optional bool archived = 4 [default = false];
+
+    // The range of the original recording.
+    optional Range recordingRange = 5;
+
+    // The range of the cropped recording, if this trial is cropped.
+    optional Range cropRange = 6;
+
+    // Whether auto-zoom is enabled.
+    optional bool autoZoomEnabled = 7 [default = true];
+
+    // SensorLayouts associated with this trial.
+    repeated SensorLayout sensorLayouts = 8;
+
+    // Stats associated with this trial.
+    repeated SensorTrialStats trialStats = 9;
+
+    // Labels that are part of this trial.
+    repeated Label labels = 10;
+
+    // TODO: Add a repeated SensorAppearance field that allows each run to store
+    // data independently, enabling sharing for devices that don't have particular sensors.
+
+    // An optional user-added caption.
+    optional Caption caption = 11;
+
+    // Version 1.2: Added
+    message AppearanceEntry {
+        // The sensor ID associated with this within this experiment.
+        // This has no global uniqueness or parseable meaning outside this experiment
+        optional string sensorId = 1;
+
+        // The appearance of the sensor with this id.
+        // contains all of the data necessary to display a sensor as part of this trial
+        optional BasicSensorAppearance rememberedAppearance = 2;
+    }
+
+    // Which sensors are shown, and how to show them.
+    repeated AppearanceEntry sensorAppearances = 12;
+
+    // The order of this trial within the experiment, compared to all the trials ever made in
+    // this experiment. This is used to generate a name for the trial if no name is set by the user,
+    // i.e. "Recording 1", "Recording 2", etc. No two trials within an experiment should have the
+    // same index. Starts at 1 (different from an index, which starts at 0!)
+    optional int32 trialNumberInExperiment = 13;
+};
+
+/*
+ * A time range
+ */
+message Range {
+    // The start of a range.
+    optional int64 startMs = 1;
+
+    // The end of a range.
+    optional int64 endMs = 2;
+};
+
+/*
+ * Trial stats for a single sensor. Each sensor may have multiple individual stats.
+ */
+message SensorTrialStats {
+    // The sensor ID associated with this stat (to be looked up in sensorAppearances)
+    optional string sensorId = 1;
+
+    enum StatStatus {
+        VALID = 1;  // The stats are updated and valid.
+        NEEDS_UPDATE = 2;  // The stats need an update and are not currently valid.
+    }
+
+    optional StatStatus statStatus = 2;
+
+    repeated SensorStat sensorStats = 3;
+}
+
+/*
+ * Represents a single stat, i.e. average = 42 or num_data_points = 17.
+ */
+message SensorStat {
+    enum StatType {
+        MINIMUM = 1;  // The minimum value.
+        MAXIMUM = 2;  // The maximum value.
+        AVERAGE = 3;  // The average value.
+        NUM_DATA_POINTS = 4;  // The count of data points.
+        TOTAL_DURATION = 5;  // The total duration over which the stats are calculated.
+        ZOOM_PRESENTER_TIER_COUNT = 6;  // The number of zoom presenter tiers.
+        ZOOM_PRESENTER_ZOOM_LEVEL_BETWEEN_TIERS = 7;  // The zoom level between tiers.
+
+        // If a new value is added here before we upgrade from a database system to a file based
+        // system, it needs to also be added to the mapping in RunStats#initializeKeyMap().
+    }
+
+    // The stat type
+    optional StatType statType = 1;
+
+    // The value of the stat.
+    optional double statValue = 2;
+}

@@ -1,0 +1,6 @@
+module "third_party_objective_c_ssziparchive_ssziparchive" {
+  export *
+  header "../../Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+  header "../../Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+  header "../../Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+}

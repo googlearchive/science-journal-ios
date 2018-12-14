@@ -1,0 +1,48 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+option java_package = "com.google.android.apps.forscience.whistlepunk.metadata";
+option java_outer_classname = "GoosciSnapshotValue";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+import "third_party/sciencejournal/ios/Protos/sensor_spec.proto";
+
+/*
+ * A value that can be stored in the proto_data field of label.proto, to store a set of
+ * snapshotted values from one or more sensors.
+ * Added in V2.
+ */
+message SnapshotLabelValue {
+    message SensorSnapshot {
+        // The sensor that recorded the value
+        optional SensorSpec sensor = 1;
+
+        // The time in ms since the epoch at which this datapoint was recorded.
+        // This may not match the timestamp at which the snapshot button was pressed, because
+        //   the data point grabbed may be slightly before or after
+        optional int64 timestampMs = 2;
+
+        // The sensor value recorded
+        optional double value = 3;
+    };
+
+    // All of the snapshots
+    repeated SensorSnapshot snapshots = 1;
+};

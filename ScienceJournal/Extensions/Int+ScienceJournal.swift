@@ -1,0 +1,41 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+import Foundation
+
+extension Int {
+
+  /// Applies a bit reversal permutation.
+  func reverseBits() -> Int {
+    // Number of bits in a byte for all modern computers, not expected to change.
+    let numberOfBitsInAByte = 8
+    var originalValue = self
+    var reversedValue = originalValue
+    var extraEndShift = MemoryLayout.size(ofValue: originalValue) * numberOfBitsInAByte - 1
+
+    originalValue = originalValue >> 1
+    while (originalValue > 0) {
+      reversedValue = reversedValue << 1
+      reversedValue |= originalValue & 1
+      extraEndShift = extraEndShift - 1
+      originalValue = originalValue >> 1
+    }
+    // Shift when the original value's highest bits are zero.
+    reversedValue <<= extraEndShift
+    return reversedValue
+  }
+
+}

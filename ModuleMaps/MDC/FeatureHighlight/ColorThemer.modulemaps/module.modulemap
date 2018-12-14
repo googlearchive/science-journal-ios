@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_FeatureHighlight_ColorThemer" {
+  export *
+  header "../../../../Pods/MaterialComponents/components/FeatureHighlight/src/ColorThemer/MaterialFeatureHighlight+ColorThemer.h"
+}

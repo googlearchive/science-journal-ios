@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_CollectionLayoutAttributes_CollectionLayoutAttributes" {
+  export *
+  header "../../../../Pods/MaterialComponents/components/CollectionLayoutAttributes/src/MaterialCollectionLayoutAttributes.h"
+}

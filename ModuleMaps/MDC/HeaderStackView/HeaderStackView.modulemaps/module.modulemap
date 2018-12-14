@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_HeaderStackView_HeaderStackView" {
+  export *
+  header "../../../../Pods/MaterialComponents/components/HeaderStackView/src/MaterialHeaderStackView.h"
+}

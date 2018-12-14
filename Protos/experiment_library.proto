@@ -1,0 +1,55 @@
+/*
+ *  Copyright 2019 Google Inc. All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+syntax = "proto2";
+
+package goosci;
+
+option java_package = "com.google.android.apps.forscience.whistlepunk.data";
+option java_outer_classname = "GoosciExperimentLibrary";
+option objc_class_prefix = "GSJ";
+option optimize_for = LITE_RUNTIME;
+
+// The overall collection of Experiments known to the user.
+// Next Tag: 3
+// LINT: LEGACY_NAMES
+message ExperimentLibrary {
+  repeated SyncExperiment syncExperiment = 1;
+  // The folder ID of the "Science Journal" folder.
+  optional string folderId = 2;
+}
+
+// A single experiment to be synced to Drive.
+// Next Tag: 7
+message SyncExperiment {
+  // The Drive fileId.
+  optional string fileId = 1;
+
+  // The experimentId from the experiment.
+  optional string experimentId = 2;
+
+  // The timestamp of the last time the experiment was opened.
+  optional int64 lastOpened = 3;
+
+  // The timestamp of the last time the experiment was modified.
+  optional int64 lastModified = 4;
+
+  // Whether the experiment has been deleted.
+  optional bool deleted = 5;
+
+  // Whether the experiment has been archived.
+  optional bool archived = 6;
+}

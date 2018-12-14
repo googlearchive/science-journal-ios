@@ -1,0 +1,19 @@
+module "googlemac_iPhone_Shared_DriveKit_Generated_GTLRIDrive" {
+  export *
+  header "../../Pods/GoogleAPIClientForREST/Source/GeneratedServices/Drive/GTLRDrive.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/GTLRDefines.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRBatchQuery.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRBatchResult.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRDateTime.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRDuration.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRErrorObject.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRObject.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRQuery.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRRuntimeCommon.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRService.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Objects/GTLRUploadParameters.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Utilities/GTLRBase64.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Utilities/GTLRFramework.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Utilities/GTLRURITemplate.h"
+  header "../../Pods/GoogleAPIClientForREST/Source/Utilities/GTLRUtilities.h"
+}

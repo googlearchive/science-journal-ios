@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_private_Math_Math" {
+  export *
+  header "../../../../../Pods/MaterialComponents/components/private/Math/src/MaterialMath.h"
+}

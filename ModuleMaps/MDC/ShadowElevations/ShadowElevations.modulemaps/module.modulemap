@@ -1,0 +1,4 @@
+module "third_party_objective_c_material_components_ios_components_ShadowElevations_ShadowElevations" {
+  export *
+  header "../../../../Pods/MaterialComponents/components/ShadowElevations/src/MaterialShadowElevations.h"
+}

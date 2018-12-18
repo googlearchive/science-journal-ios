@@ -9,10 +9,10 @@
 measure your environment, like light and sound, so you can graph your data, record your experiments,
 and organize your questions and ideas. It's the lab notebook you always have with you.
 
-<img src="assets/experiments.png?raw=true" alt="Experiments list" width="100">
-<img src="assets/experiment1.png?raw=true" alt="Inside `My mood` experiment" width="100">
-<img src="assets/experiment2a.png?raw=true" alt="Inside `How Nature Affects me` experiment with graph and mountain photo" width="100">
-<img src="assets/experiment2b.png?raw=true" alt="Inside `How Nature Affects me` experiment with graph and sensor picker drawer" width="100">
+<img src="assets/image1.png?raw=true" alt="iOS screenshot showing experiments list." width="100">
+<img src="assets/image2.png?raw=true" alt="iOS screenshot showing `Iodine Clock` experiment." width="100">
+<img src="assets/image3.png?raw=true" alt="iOS screenshot showing `Iodine Clock` recording showing brightness sensor with various values." width="100">
+<img src="assets/image4.png?raw=true" alt="iOS screenshot showing `Iodine Clock` recording with notes alongside brightness sensor with various values." width="100">
 
 ## Features
 

@@ -540,7 +540,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       popUpMenu.addAction(PopUpMenuAction(
           title: String.actionDelete,
           icon: UIImage(named: "ic_delete"),
-          accessibilityLabel: String.actionDeleteRecordingContentDescription) { _ -> Void in
+          accessibilityLabel: displayItem.itemType.deleteActionAccessibilityLabel) { _ -> Void in
         switch displayItem.itemType {
         case .trial(let trial):
           // Prompt the user to confirm deletion.

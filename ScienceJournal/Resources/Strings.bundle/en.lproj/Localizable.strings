@@ -61,6 +61,18 @@
 /* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
 "action_delete_recording_content_description" = "Delete recording";
 
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Delete picture";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Delete snapshot";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Delete text note";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Delete note";
+
 /* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
 "action_discard" = "Discard";
 
@@ -314,7 +326,7 @@
 "claim_experiments_delete_all_migration_confirmation_title" = "Delete all your experiments?";
 
 /* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
-"claim_experiments_delete_all_migration_confirmation_message" = "All of your data, including archived experiments, will be deleted. You cannot undo this action.";
+"claim_experiments_delete_all_migration_confirmation_message" = "All experiments, including archived experiments, will be deleted. You cannot undo this action.";
 
 /* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
 "claim_experiments_delete_all_confirmation_action" = "Delete all";
@@ -494,7 +506,7 @@
 "drawer_grabber_position_half_content_description" =  "half screen";
 
 /* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
-"drive_error_no_connection" = "Can't reach Google Drive. Check your connection.";
+"drive_error_no_connection" = "Can't connect to Google Drive. Check your connection.";
 
 /* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
 "drive_error_no_connection_content_description" = "Network disconnected";
@@ -509,7 +521,7 @@
 "drive_error_space" = "Google Drive doesn't have enough space to store your experiment.";
 
 /* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
-"drive_sync_information" = "Experiment data for Science Journal is saved and made available across devices using Google Drive and requires signing in with a Google account.\n\nIf you have existing data on this device, once signed in, you can save your existing experiments to Google Drive. Your experiments are stored in a “Science Journal” folder in your Google account.";
+"drive_sync_information" = "Experiment data for Science Journal is saved and made available across devices using Google Drive and requires signing in with a Google account.\n\nIf you have existing data on this device, once signed in, you can save your existing experiments to Google Drive. Your experiments are stored in a “Science Journal” folder in Google Drive.";
 
 /* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
 "drive_sync_cannot_reach_google_drive" = "Can't reach Google Drive. Check your connection.";
@@ -605,13 +617,13 @@
 "experiments" = "Experiments";
 
 /* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
-"experiment_not_finished_downloading_confirm_button" = "Share anyway";
+"experiment_not_finished_downloading_confirm_button" = "Share experiment";
 
 /* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
-"experiment_not_finished_downloading_message" = "This experiment has not finished downloading all data. If you share a copy now, it will also be missing this data";
+"experiment_not_finished_downloading_message" = "This experiment has not finished downloading. If you share a copy, some data may be missing";
 
 /* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
-"experiment_not_finished_downloading_title" = "Missing Data";
+"experiment_not_finished_downloading_title" = "Download in progress";
 
 /* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
 "experiment_recording_title" = "Recording…";
@@ -620,7 +632,7 @@
 "experiment_title_hint" = "Experiment title";
 
 /* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
-"experiment_version_too_new_to_edit" = "This experiment was created with a newer version of Science Journal. You will not be able to edit it on this device until you upgrade.";
+"experiment_version_too_new_to_edit" = "This experiment was created with a newer version of Science Journal. You will not be able to edit it on this device until you download the latest update.";
 
 /* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
 "experiments_tutorial_message" = "Organize your thoughts and observations by taking notes, recording data, or taking pictures";
@@ -695,7 +707,7 @@
 "import_failed_recording" = "Science Journal is currently in use. Please stop recording and try again.";
 
 /* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
-"import_sign_in_error" = "You must sign in before importing an experiment.";
+"import_sign_in_error" = "Sign in to import an experiment.";
 
 /* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
 "import_storage_limit" = "Not enough storage space";

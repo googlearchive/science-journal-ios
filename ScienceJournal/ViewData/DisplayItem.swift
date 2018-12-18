@@ -55,4 +55,19 @@ enum DisplayItemType {
   case pictureNote(DisplayPictureNote)
   case snapshotNote(DisplaySnapshotNote)
   case triggerNote(DisplayTriggerNote)
+
+  var deleteActionAccessibilityLabel: String {
+    switch self {
+    case .trial:
+      return String.actionDeleteRecordingContentDescription
+    case .pictureNote:
+      return String.actionDeleteRecordingPictureNoteContentDescription
+    case .snapshotNote:
+      return String.actionDeleteRecordingSnapshotContentDescription
+    case .textNote:
+      return String.actionDeleteRecordingTextNoteContentDescription
+    case .triggerNote:
+      return String.actionDeleteRecordingTriggerNoteContentDescription
+    }
+  }
 }

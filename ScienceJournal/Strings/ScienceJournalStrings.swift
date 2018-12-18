@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019 Google Inc. All Rights Reserved.
+ *  Copyright 2018 Google Inc. All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -43,6 +43,10 @@ extension String {
   static public var actionDelete: String { return "action_delete".localized }
   static public var actionDeleteExperimentContentDescription: String { return "action_delete_experiment_content_description".localized }
   static public var actionDeleteRecordingContentDescription: String { return "action_delete_recording_content_description".localized }
+  static public var actionDeleteRecordingPictureNoteContentDescription: String { return "action_delete_recording_picture_note_content_description".localized }
+  static public var actionDeleteRecordingSnapshotContentDescription: String { return "action_delete_recording_snapshot_content_description".localized }
+  static public var actionDeleteRecordingTextNoteContentDescription: String { return "action_delete_recording_text_note_content_description".localized }
+  static public var actionDeleteRecordingTriggerNoteContentDescription: String { return "action_delete_recording_trigger_note_content_description".localized }
   static public var actionDiscard: String { return "action_discard".localized }
   static public var actionDismiss: String { return "action_dismiss".localized }
   static public var actionEdit: String { return "action_edit".localized }

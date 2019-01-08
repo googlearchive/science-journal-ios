@@ -47,6 +47,12 @@ open class AppDelegateOpen: AppDelegate {
     return _networkAvailability
   }
 
+  #if FEATURE_FIREBASE_RC
+  open override var remoteConfigManager: RemoteConfigManager {
+    return _remoteConfigManager
+  }
+  #endif
+
   private let _analyticsReporter = AnalyticsReporterOpen()
   private let _feedbackReporter = FeedbackReporterOpen()
   private let _accountsManager = AccountsManagerDisabled()
@@ -54,4 +60,7 @@ open class AppDelegateOpen: AppDelegate {
   private let _driveConstructor = DriveConstructorDisabled()
   private let _commonUIComponents = CommonUIComponentsOpen()
   private let _networkAvailability = NetworkAvailabilityDisabled()
+  #if FEATURE_FIREBASE_RC
+  private let _remoteConfigManager = RemoteConfigManagerDisabled()
+  #endif
 }

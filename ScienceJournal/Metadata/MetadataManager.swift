@@ -150,8 +150,9 @@ public class MetadataManager {
     return self.rootURL.appendingPathComponent("local_sync_status.proto")
   }()
 
-  /// Versions 2.X and earlier used this relative image path as the name of all cover images.
-  var legacyCoverImagePath: String {
+  /// Versions 2.X and earlier did not use experiment's imagePath field. Therefore all imported and
+  /// exported experiments rely on a specially named file to identify the experiment cover image.
+  var importExportCoverImagePath: String {
     return URL(fileURLWithPath: MetadataManager.assetsDirectoryName)
         .appendingPathComponent(experimentOverviewPictureFilename)
         .appendingPathExtension("jpg").path
@@ -273,7 +274,7 @@ public class MetadataManager {
     return (experiment, overview)
   }
 
-  /// Adds an experiment and its overview.
+  /// Adds an experiment and its overview. The experiment version will not be validated.
   ///
   /// - Parameters:
   ///   - experiment: An experiment.
@@ -281,7 +282,7 @@ public class MetadataManager {
   /// - Returns: True if adding the experiment and overview was successful.
   @discardableResult func addExperiment(_ experiment: Experiment,
                                         overview: ExperimentOverview) -> Bool {
-    let saveExperimentSuccess = saveExperiment(experiment)
+    let saveExperimentSuccess = saveExperiment(experiment, validateVersion: false)
     if saveExperimentSuccess {
       userMetadata.addExperimentOverview(overview)
       saveUserMetadata()
@@ -504,19 +505,17 @@ public class MetadataManager {
     overview.colorPalette = MDCPalette.nextExperimentListCardColorPalette(withUsedPalettes:
         experimentOverviews.map { $0.colorPalette })
 
-    // On versions 2.X and earlier, cover image paths were only stored in overviews. For importing
-    // and exporting the cover image was specified by an image with a special name
-    // (`experimentOverviewPictureFilename`) in the assets folder. If the experiment has an image
-    // path, use that, otherwise fall back to the named cover image if it exists.
-    if let imagePath = experiment.imagePath {
-      overview.imagePath = imagePath
+    // For importing, the experiment's imagePath is ignored in favor of the named cover image file.
+    // Versions 2.X and earlier do not support imagePath so this maintains consistency across all
+    // versions of the app.
+    let coverURL =
+        experimentDirectoryURL(for: experimentID).appendingPathComponent(importExportCoverImagePath)
+    if FileManager.default.fileExists(atPath: coverURL.path) {
+      overview.imagePath = importExportCoverImagePath
+      experiment.imagePath = importExportCoverImagePath
     } else {
-      let coverURL =
-          experimentDirectoryURL(for: experimentID).appendingPathComponent(legacyCoverImagePath)
-      if FileManager.default.fileExists(atPath: coverURL.path) {
-        overview.imagePath = legacyCoverImagePath
-        experiment.imagePath = legacyCoverImagePath
-      }
+      overview.imagePath = nil
+      experiment.imagePath = nil
     }
 
     userMetadata.addExperimentOverview(overview)
@@ -625,11 +624,16 @@ public class MetadataManager {
   /// - Parameters:
   ///   - experiment: An experiment.
   ///   - markDirty: Whether to mark the experiment as dirty. Defaults to true.
+  ///   - validateVersion: Whether to validate the experiment version. Defaults to true.
   /// - Returns: True if the save was successful, otherwise false.
   @discardableResult public func saveExperiment(_ experiment: Experiment,
-                                                markDirty: Bool = true) -> Bool {
+                                                markDirty: Bool = true,
+                                                validateVersion: Bool = true) -> Bool {
     do {
-      try saveExperiment(experiment, markDirty: markDirty, updateLastUsedDate: true)
+      try saveExperiment(experiment,
+                         markDirty: markDirty,
+                         updateLastUsedDate: true,
+                         validateVersion: validateVersion)
       return true
     } catch let error as MetadataManagerError {
       print("[MetadataManager] Error saving experiment: \(error.logString)")
@@ -680,14 +684,19 @@ public class MetadataManager {
   /// Save an experiment to disk, optionally updating its last used date.
   ///
   /// - Parameters:
-  ///   - experiment: The experiment in the overview.
+  ///   - experiment: The experiment.
+  ///   - markDirty: Whether to mark the experiment dirty.
   ///   - updateLastUsedDate: Should the last used date be updated to now? Defaults to true.
   ///   - url: The URL to save the experiment to. If nil it will save it to the current experiments
   ///          directory and update the corresponding overview.
+  ///   - validateVersion: Whether to validate the experiment version before saving. Defaults to
+  ///                      true.
+  /// - Throws: An error if the version is not valid.
   private func saveExperiment(_ experiment: Experiment,
                               markDirty: Bool,
                               updateLastUsedDate: Bool,
-                              url: URL? = nil) throws {
+                              url: URL? = nil,
+                              validateVersion: Bool = true) throws {
     updateOverview(for: experiment, updateLastUsedDate: updateLastUsedDate)
 
     // If a URL was specified use that, and do not validate version, otherwise save to the
@@ -696,13 +705,15 @@ public class MetadataManager {
     if let url = url {
       experimentURL = url
     } else {
-      let fileVersion = experiment.fileVersion
+      if validateVersion {
+        let fileVersion = experiment.fileVersion
 
-      // This build should not save files with newer versions than it is aware of.
-      guard fileVersion.version < Experiment.Version.major ||
-          (fileVersion.version == Experiment.Version.major &&
-              fileVersion.minorVersion <= Experiment.Version.minor) else {
-        throw MetadataManagerError.savingFileWithNewerVersion
+        // This build should not save files with newer versions than it is aware of.
+        guard fileVersion.version < Experiment.Version.major ||
+            (fileVersion.version == Experiment.Version.major &&
+                fileVersion.minorVersion <= Experiment.Version.minor) else {
+          throw MetadataManagerError.savingFileWithNewerVersion
+        }
       }
 
       experimentURL = experimentProtoURL(for: experiment.ID)
@@ -1478,7 +1489,7 @@ public class MetadataManager {
     if let imagePath = experiment.imagePath {
       coverImageURL = pictureFileURL(for: imagePath, experimentID: experiment.ID)
     }
-    let defaultCoverImageURL = pictureFileURL(for: legacyCoverImagePath,
+    let defaultCoverImageURL = pictureFileURL(for: importExportCoverImagePath,
                                               experimentID: experiment.ID)
 
     let documentExportOperation =

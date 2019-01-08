@@ -54,6 +54,13 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
     fatalError("Subclasses must override and provide a network availability instance!")
   }
 
+  #if FEATURE_FIREBASE_RC
+  /// The remote config manager to inject into classes.
+  open var remoteConfigManager: RemoteConfigManager {
+    fatalError("Subclasses must override and provide a remote config manager instance!")
+  }
+  #endif
+
   /// The sensor controller to inject into classes. Implicitly unwrapped to delay initialization
   /// until launch is done.
   open var sensorController: SensorController!
@@ -77,6 +84,17 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
 
     window = UIWindow.init(frame: UIScreen.main.bounds)
 
+    #if FEATURE_FIREBASE_RC
+    appFlowViewController = AppFlowViewController(accountsManager: accountsManager,
+                                                  analyticsReporter: analyticsReporter,
+                                                  commonUIComponents: commonUIComponents,
+                                                  drawerConfig: drawerConfig,
+                                                  driveConstructor: driveConstructor,
+                                                  feedbackReporter: feedbackReporter,
+                                                  networkAvailability: networkAvailability,
+                                                  remoteConfigManager: remoteConfigManager,
+                                                  sensorController: sensorController)
+    #else
     appFlowViewController = AppFlowViewController(accountsManager: accountsManager,
                                                   analyticsReporter: analyticsReporter,
                                                   commonUIComponents: commonUIComponents,
@@ -85,6 +103,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
                                                   feedbackReporter: feedbackReporter,
                                                   networkAvailability: networkAvailability,
                                                   sensorController: sensorController)
+    #endif
+
     window?.rootViewController = appFlowViewController
     window?.makeKeyAndVisible()
 
@@ -94,8 +114,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
   open func applicationDidBecomeActive(_ application: UIApplication) {
     // When the app becomes active, attempt to reauthenticate the current user account and remove
     // any lingering accounts.
-    appFlowViewController.accountsManager.reauthenticateCurrentAccount()
-    appFlowViewController.accountsManager.removeLingeringAccounts()
+    accountsManager.reauthenticateCurrentAccount()
+    accountsManager.removeLingeringAccounts()
   }
 
   open func application(_ app: UIApplication,

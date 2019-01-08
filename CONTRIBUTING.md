@@ -22,7 +22,7 @@ If the above doesn't help, please [submit an issue](https://github.com/google/sc
 
 ## I want to contribute to Science Journal iOS
 
-- To start working on Science Journal iOS, check out [YourFirstPR.md](https://github.com/google/science-journal-ios/blob/master/YourFirstPR.md)
+- To start working on Science Journal iOS, check out [Your First PR](https://github.com/google/science-journal-ios/blob/master/YOUR_FIRST_PR.md).
 
 ### Google Contributor License Agreement (CLA)
 

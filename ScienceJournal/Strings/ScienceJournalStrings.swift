@@ -1,5 +1,5 @@
 /*
- *  Copyright 2018 Google Inc. All Rights Reserved.
+ *  Copyright 2019 Google Inc. All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -340,6 +340,7 @@ extension String {
   static public var pitchSharperThanSharpNoteContentDescription: String { return "pitch_sharper_than_sharp_note_content_description".localized }
   static public var pixels: String { return "pixels".localized }
   static public var playContentDescription: String { return "play_content_description".localized }
+  static public var preferenceMigrationMessage: String { return "preference_migration_message".localized }
   static public var pullToRefreshContentDescription: String { return "pull_to_refresh_content_description".localized }
   static public var rawUnits: String { return "raw_units".localized }
   static public var recordingEndedDialogMessage: String { return "recording_ended_dialog_message".localized }

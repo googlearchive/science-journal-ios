@@ -298,6 +298,17 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
     }
   }
 
+  /// If the drawer can open halfway, open it halfway. Otherwise set it to the peeking position.
+  ///
+  /// - Parameter animated: Whether or not to animate.
+  func setPositionToHalfOrPeeking(animated: Bool) {
+    if drawerView.canOpenHalf {
+      setPositionToHalf(animated: animated)
+    } else {
+      setPositionToPeeking(animated: animated)
+    }
+  }
+
   /// If the drawer can open halfway, open it halfway. Otherwise, set it to peeking. If the drawer
   /// is displayed as a sidebar or is not open full, this method does nothing and calls completion
   /// immediately.

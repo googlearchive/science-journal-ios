@@ -22,26 +22,18 @@ import third_party_sciencejournal_ios_ScienceJournalProtos
 public class ExperimentLibrary: CustomDebugStringConvertible {
 
   /// The Drive file ID of the "Science Journal" folder that contains experiments.
-  public var folderID: String? {
-    get {
-      return backingProto.hasFolderId ? backingProto.folderId : nil
-    }
-    set {
-      backingProto.folderId = newValue
-    }
-  }
+  public var folderID: String?
 
   /// The overall collection of Experiments known to the user.
   public var syncExperiments: [SyncExperiment]
 
   /// A proto representation of an experiment library.
   public var proto: GSJExperimentLibrary {
-    backingProto.syncExperimentArray = NSMutableArray(array: syncExperiments.map { $0.proto })
-    return backingProto
+    let proto = GSJExperimentLibrary()
+    proto.folderId = folderID
+    proto.syncExperimentArray = NSMutableArray(array: syncExperiments.map { $0.proto })
+    return proto
   }
-
-  /// The private backing proto.
-  private let backingProto: GSJExperimentLibrary
 
   private let syncExperimentsQueue =
       DispatchQueue(label: "com.google.ScienceJournal.ExperimentLibrary")
@@ -53,9 +45,9 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   ///   - clock: A clock.
   public init(proto: GSJExperimentLibrary, clock: Clock = Clock()) {
     self.clock = clock
+    folderID = proto.hasFolderId ? proto.folderId : nil
     syncExperiments =
         proto.syncExperimentArray.map { SyncExperiment(proto: $0 as! GSJSyncExperiment) }
-    backingProto = proto
   }
 
   /// The clock used for modified and opened dates.

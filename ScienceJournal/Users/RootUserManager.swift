@@ -41,6 +41,11 @@ class RootUserManager: UserManager {
     return false
   }
 
+  /// Whether there is a root user directory on disk.
+  var hasDirectory: Bool {
+    return FileManager.default.fileExists(atPath: metadataRootURL.path)
+  }
+
   private let documentsDirectoryURL: URL
   private let metadataRootURL: URL
   private let metadataDeletedRootURL: URL

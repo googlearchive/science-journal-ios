@@ -133,15 +133,19 @@ class TrialCardSensorView: ExperimentCardView {
     titleLabel.font = MDCTypography.fontLoader().mediumFont(ofSize: Metrics.titleFontSize) ??
         UIFont.boldSystemFont(ofSize: Metrics.titleFontSize)
     titleWrapper.addSubview(titleLabel)
-
-    // Icon and title wrapper
-    titleWrapper.isAccessibilityElement = true
-    titleWrapper.accessibilityTraits = .staticText
-    titleWrapper.accessibilityLabel = titleLabel.text
     addSubview(titleWrapper)
+
+    // Accessibility
+    configureAccessibility(titleText: titleLabel.text)
 
     // Stats view
     addSubview(sensorStatsView)
+  }
+
+  private func configureAccessibility(titleText: String?) {
+    titleWrapper.isAccessibilityElement = true
+    titleWrapper.accessibilityTraits = .staticText
+    titleWrapper.accessibilityLabel = titleText
   }
 
   private func updateViewWithSensor() {
@@ -154,6 +158,9 @@ class TrialCardSensorView: ExperimentCardView {
 
     // Title
     titleLabel.text = displaySensor.title
+
+    // Accessibility text update
+    configureAccessibility(titleText: displaySensor.title)
 
     // Stats view
     sensorStatsView.textColor = displaySensor.colorPalette?.tint600

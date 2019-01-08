@@ -64,6 +64,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private var importBeganOperation: GSJBlockOperation?
   private let userAssetManager: UserAssetManager
   private let operationQueue = GSJOperationQueue()
+  private var shouldShowPreferenceMigrationMessage: Bool
 
   // The experiment update manager for the displayed experiment. This is populated when an
   // experiment is shown. Callbacks received from detail view controllers will route updates to
@@ -97,6 +98,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   ///   - feedbackReporter: The feedback reporter.
   ///   - networkAvailability: Network availability.
   ///   - sensorController: The sensor controller.
+  ///   - shouldShowPreferenceMigrationMessage: Whether to show the preference migration message.
+  ///   - userAssetManager: The user asset manager.
   ///   - userManager: The user manager.
   init(accountsManager: AccountsManager,
        analyticsReporter: AnalyticsReporter,
@@ -107,6 +110,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
        feedbackReporter: FeedbackReporter,
        networkAvailability: NetworkAvailability,
        sensorController: SensorController,
+       shouldShowPreferenceMigrationMessage: Bool,
        userAssetManager: UserAssetManager,
        userManager: UserManager) {
     self.accountsManager = accountsManager
@@ -118,6 +122,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     self.feedbackReporter = feedbackReporter
     self.networkAvailability = networkAvailability
     self.sensorController = sensorController
+    self.shouldShowPreferenceMigrationMessage = shouldShowPreferenceMigrationMessage
     self.userAssetManager = userAssetManager
     self.userManager = userManager
     self.metadataManager = userManager.metadataManager
@@ -158,7 +163,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       let permissionsVC =
           PermissionsGuideViewController(delegate: self,
                                          analyticsReporter: analyticsReporter,
-                                         devicePreferenceManager: devicePreferenceManager)
+                                         devicePreferenceManager: devicePreferenceManager,
+                                         showWelcomeView: !accountsManager.supportsAccounts)
       navController.setViewControllers([permissionsVC], animated: false)
     } else if userManager.shouldVerifyAge {
       // Don't need the permissions guide, but do need age verification.
@@ -467,6 +473,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
   func experimentsListDidAppear() {
     userManager.driveSyncManager?.syncExperimentLibrary(andReconcile: true, userInitiated: false)
+    showPreferenceMigrationMessageIfNeeded()
   }
 
   func experimentsListDidSetTitle(_ title: String?, forExperimentID experimentID: String) {
@@ -882,8 +889,13 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                                                      userInitiated: false)
 
             DispatchQueue.main.async {
-              spinnerVC?.dismissSpinner() {
-                self.experimentsListVC?.reloadExperiments()
+              if let spinnerVC = spinnerVC {
+                spinnerVC.dismissSpinner() {
+                  self.experimentsListVC?.reloadExperiments()
+                  finished()
+                }
+              } else {
+                finished()
               }
             }
           } else {
@@ -891,10 +903,15 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
             // to avoid attempting to create it again in the future.
             self.preferenceManager.defaultExperimentWasCreated = true
             DispatchQueue.main.async {
-              spinnerVC?.dismissSpinner()
+              if let spinnerVC = spinnerVC {
+               spinnerVC.dismissSpinner() {
+                 finished()
+                }
+              } else {
+                finished()
+              }
             }
           }
-          finished()
         }
       }
 
@@ -909,7 +926,25 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     })
 
     createDefaultOp.addCondition(MutuallyExclusive(primaryCategory: "CreateDefaultExperiment"))
+    createDefaultOp.addCondition(MutuallyExclusive.modalUI)
     operationQueue.addOperation(createDefaultOp)
+  }
+
+  private func showPreferenceMigrationMessageIfNeeded() {
+    guard shouldShowPreferenceMigrationMessage else { return }
+
+    let showPreferenceMigrationMessageOp = GSJBlockOperation(mainQueueBlock: { finished in
+      // If signing in and immediately showing experiments list, the sign in view controller needs a
+      // brief delay to finish dismissing before showing a snackbar.
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        showSnackbar(withMessage: String.preferenceMigrationMessage)
+        self.shouldShowPreferenceMigrationMessage = false
+        finished()
+      }
+    })
+
+    showPreferenceMigrationMessageOp.addCondition(MutuallyExclusive.modalUI)
+    operationQueue.addOperation(showPreferenceMigrationMessageOp)
   }
 
   // MARK: - UINavigationControllerDelegate

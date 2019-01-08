@@ -30,6 +30,8 @@ public struct MutuallyExclusive: OperationCondition {
   private let primaryCategory: String
   private let subCategory: String?
 
+  private static let modalUIKey = "ModalUI"
+
   /// Designated initializer.
   ///
   /// - Parameters:
@@ -47,6 +49,11 @@ public struct MutuallyExclusive: OperationCondition {
   public func evaluateForOperation(_ operation: GSJOperation,
                                    completion: (OperationConditionResult) -> Void) {
     completion(.passed)
+  }
+
+  /// A mutually exclusive operation condition for modal UI.
+  static var modalUI: MutuallyExclusive {
+    return MutuallyExclusive(primaryCategory: modalUIKey)
   }
 
 }

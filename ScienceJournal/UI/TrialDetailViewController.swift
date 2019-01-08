@@ -407,6 +407,11 @@ class TrialDetailViewController: MaterialHeaderViewController,
     NotificationCenter.default.removeObserver(self,
                                               name: UIResponder.keyboardWillHideNotification,
                                               object: nil)
+
+    stopPlayback()
+    if addNoteDialog != nil {
+      dismiss(animated: false)
+    }
   }
 
   override func viewWillTransition(to size: CGSize,

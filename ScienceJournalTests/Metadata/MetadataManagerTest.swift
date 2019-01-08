@@ -1141,7 +1141,7 @@ class MetadataManagerTest: XCTestCase {
 
     let overview = metadataManager.experimentOverviews[0]
     XCTAssertEqual("ABC Title", overview.title)
-    XCTAssertEqual("foo/path/789", overview.imagePath)
+    XCTAssertNil(overview.imagePath, "imagePath should be ignored for imported experiments.")
   }
 
   func testOverviewAfterAddingImportedExperimentNewerMinorVersion() {
@@ -1159,7 +1159,31 @@ class MetadataManagerTest: XCTestCase {
 
     let overview = metadataManager.experimentOverviews[0]
     XCTAssertEqual("ABC Title", overview.title)
-    XCTAssertEqual("foo/path/789", overview.imagePath)
+    XCTAssertNil(overview.imagePath, "imagePath should be ignored for imported experiments.")
+  }
+
+  func testSaveNewerVersionWithoutValidating() {
+    let experiment = Experiment(ID: "TEST_ID_444")
+    experiment.setTitle("ABC Title")
+    experiment.imagePath = "foo/path/789"
+    experiment.fileVersion = FileVersion(major: Experiment.Version.major,
+                                         minor: Experiment.Version.minor + 1,
+                                         platform: 0)
+
+    metadataManager.saveExperiment(experiment, validateVersion: false)
+    XCTAssertNotNil(metadataManager.experiment(withID: "TEST_ID_444"))
+  }
+
+  func testDoesNotSaveNewerVersionWithValidating() {
+    let experiment = Experiment(ID: "TEST_ID_555")
+    experiment.setTitle("ABC Title")
+    experiment.imagePath = "foo/path/789"
+    experiment.fileVersion = FileVersion(major: Experiment.Version.major,
+                                         minor: Experiment.Version.minor + 1,
+                                         platform: 0)
+
+    metadataManager.saveExperiment(experiment)
+    XCTAssertNil(metadataManager.experiment(withID: "TEST_ID_555"))
   }
 
   func testUpdateOverviewForExperiment() {
@@ -1214,6 +1238,36 @@ class MetadataManagerTest: XCTestCase {
     experiment.imagePath = "new/image/path"
     metadataManager.saveExperiment(experiment)
     XCTAssertEqual(overview.imagePath, experiment.imagePath)
+  }
+
+  func testCoverImageForImportedExperiment() {
+    let experiment = Experiment(ID: "TEST_ID_222")
+    experiment.setTitle("ABC Title")
+    experiment.imagePath = "foo/path/789"
+    experiment.fileVersion = FileVersion(major: Experiment.Version.major,
+                                         minor: Experiment.Version.minor,
+                                         platform: 0)
+
+    // Simulate a cover image that was copied to ExperimentCoverImage.jpg during export.
+    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+    metadataManager.saveImage(image, atPicturePath: "assets/123456.jpg",
+                              experimentID: experiment.ID)
+    metadataManager.saveImage(image, atPicturePath: metadataManager.importExportCoverImagePath,
+                              experimentID: experiment.ID)
+    experiment.imagePath = "assets/123456.jpg"
+
+    let saveURL = metadataManager.experimentsDirectoryURL.appendingPathComponent(experiment.ID)
+        .appendingPathComponent("experiment.proto")
+    metadataManager.saveExperiment(experiment, toURL: saveURL)
+    metadataManager.addImportedExperiment(withID: "TEST_ID_222")
+
+    let (latestExperiment, overview) =
+        metadataManager.experimentAndOverview(forExperimentID: "TEST_ID_222")!
+
+    XCTAssertEqual(metadataManager.importExportCoverImagePath,
+                   latestExperiment.imagePath,
+                   "After import the image path is now the standardized cover image path filename.")
+    XCTAssertEqual(metadataManager.importExportCoverImagePath, overview.imagePath)
   }
 
   // MARK: - Helpers

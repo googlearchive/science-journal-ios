@@ -68,6 +68,7 @@ class UserFlowViewControllerTest: XCTestCase {
                                feedbackReporter: FeedbackReporterOpen(),
                                networkAvailability: SettableNetworkAvailability(),
                                sensorController: MockSensorController(),
+                               shouldShowPreferenceMigrationMessage: false,
                                userAssetManager: mockUserAssetManager,
                                userManager: mockUserManager)
   }
@@ -148,6 +149,7 @@ class UserFlowViewControllerTest: XCTestCase {
                                feedbackReporter: FeedbackReporterOpen(),
                                networkAvailability: SettableNetworkAvailability(),
                                sensorController: MockSensorController(),
+                               shouldShowPreferenceMigrationMessage: false,
                                userAssetManager: mockUserAssetManager,
                                userManager: mockUserManager)
     preferenceManager.defaultExperimentWasCreated = false

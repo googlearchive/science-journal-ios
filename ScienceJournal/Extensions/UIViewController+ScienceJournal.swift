@@ -35,7 +35,10 @@ extension UIViewController {
   /// - Parameters:
   ///   - viewController: The view controller to transition to.
   ///   - animated: Should the transition be animated? Default is true.
-  func transitionToViewController(_ viewController: UIViewController, animated: Bool = true) {
+  ///   - completion: Optional block to fire once the transition is complete.
+  func transitionToViewController(_ viewController: UIViewController,
+                                  animated: Bool = true,
+                                  completion: (() -> Void)? = nil) {
     let currentVC = children.last
 
     viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -55,6 +58,7 @@ extension UIViewController {
         currentVC.removeFromParent()
         viewController.didMove(toParent: self)
         self.setNeedsStatusBarAppearanceUpdate()
+        completion?()
       })
     } else {
       view.addSubview(viewController.view)
@@ -65,6 +69,7 @@ extension UIViewController {
                      completion: { (_) in
         viewController.didMove(toParent: self)
         self.setNeedsStatusBarAppearanceUpdate()
+        completion?()
       })
     }
   }

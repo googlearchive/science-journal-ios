@@ -315,6 +315,9 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   func experimentViewControllerDidRequestDeleteExperiment(_ experiment: Experiment) {
     existingDataMigrationManager.removeExperimentFromRootUser(experiment)
     navController.popViewController(animated: true)
+
+    // User could have deleted the last experiment in the flow, there might be nothing left to do.
+    dismissClaimFlowIfComplete()
   }
 
   func experimentViewControllerShowTrial(withID trialID: String, jumpToCaption: Bool) {

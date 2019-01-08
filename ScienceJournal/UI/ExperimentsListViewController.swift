@@ -370,6 +370,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     // Make sure the highlight doesn't appear when off screen.
     createExperimentHighlightTimer?.invalidate()
     createExperimentHighlightTimer = nil
+    dismissFeatureHighlightIfNecessary()
     highlightController = nil
   }
 

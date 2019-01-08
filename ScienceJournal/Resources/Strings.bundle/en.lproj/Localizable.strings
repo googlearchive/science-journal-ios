@@ -2,7 +2,7 @@
 "app_name" = "Science Journal";
 
 /* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
-"app_store_ios_changelog" = "New features and improvements:\n• Support for iOS 12 and the newest iOS devices\n• Accessibility improvements\n• Many performance improvements and bug fixes";
+"app_store_ios_changelog" = "New features and improvements:\n• Sign in to your Google account to save and access your experiments across your devices using your Google Drive account. This feature will be available to all users in the coming weeks. Science Journal can still be used without signing in.";
 
 /* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
 "app_store_ios_generic_changelog" = "Many performance improvements and bug fixes";
@@ -326,7 +326,7 @@
 "claim_experiments_delete_all_migration_confirmation_title" = "Delete all your experiments?";
 
 /* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
-"claim_experiments_delete_all_migration_confirmation_message" = "All experiments, including archived experiments, will be deleted. You cannot undo this action.";
+"claim_experiments_delete_all_migration_confirmation_message" = "All experiments on this device, including archived experiments, will be deleted. You cannot undo this action.";
 
 /* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
 "claim_experiments_delete_all_confirmation_action" = "Delete all";
@@ -951,6 +951,9 @@
 
 /* Content description for a play button [CHAR_LIMIT=NONE] */
 "play_content_description" = "Play";
+
+/* Snackbar message when preferences are migrated from root to account users. */
+"preference_migration_message" = "Existing device settings have been applied to this account";
 
 /* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
 "pull_to_refresh_content_description" = "Refreshing";

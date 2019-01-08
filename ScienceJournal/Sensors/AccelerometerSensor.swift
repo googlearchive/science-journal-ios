@@ -273,9 +273,10 @@ class LinearAccelerometerSensor: AccelerometerSensor {
       var alpha = filterConstant
 
       if adaptive {
-        let d = (0.0...1.0).clamp(abs(norm(x: x, y: y, z: z) -
-            norm(x: acceleration.x, y: acceleration.y, z: acceleration.z)) /
-            accelerometerMinStep - 1)
+        let previousNormalized = norm(x: x, y: y, z: z)
+        let newNormalized = norm(x: acceleration.x, y: acceleration.y, z: acceleration.z)
+        let clampedByValue = abs(previousNormalized - newNormalized) / accelerometerMinStep - 1
+        let d = (0.0...1.0).clamp(clampedByValue)
         alpha = d * filterConstant / accelerometerNoiseAttenuation + (1 - d) * filterConstant
       }
 

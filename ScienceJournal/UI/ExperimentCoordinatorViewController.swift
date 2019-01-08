@@ -330,7 +330,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       drawerVC.setPositionToFull(animated: false)
     } else if experimentItemsViewController.isEmpty {
       // If there is no content, display drawer at half height to encourage input.
-      drawerVC?.setPositionToHalf(animated: false)
+      drawerVC?.setPositionToHalfOrPeeking(animated: false)
     } else {
       // Hide the drawer by default.
       drawerVC?.setPositionToPeeking(animated: false)

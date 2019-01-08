@@ -10,6 +10,8 @@
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
 		4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */; };
+		4850DC9921C9797C00A5C4A0 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850DC9821C9797C00A5C4A0 /* RemoteConfigManager.swift */; };
+		4850DC9C21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */; };
 		486482F320CF4EA700ADE0C9 /* SensorController+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */; };
 		4886F534209CE13E003892D7 /* TestSensorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F52E209CE13D003892D7 /* TestSensorInterface.swift */; };
 		4886F535209CE13E003892D7 /* MockSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F52F209CE13D003892D7 /* MockSensor.swift */; };
@@ -601,6 +603,8 @@
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButtonCell.swift; sourceTree = "<group>"; };
 		4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarAccountView.swift; sourceTree = "<group>"; };
+		4850DC9821C9797C00A5C4A0 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManagerDisabled.swift; sourceTree = "<group>"; };
 		486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SensorController+Testing.swift"; sourceTree = "<group>"; };
 		486F97684E4736F8AED250F0 /* Pods-ScienceJournalUITests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		4886F52E209CE13D003892D7 /* TestSensorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSensorInterface.swift; sourceTree = "<group>"; };
@@ -1226,6 +1230,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4850DC9A21C9798300A5C4A0 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4850DC9821C9797C00A5C4A0 /* RemoteConfigManager.swift */,
+				4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
 		4886F53B209CE14E003892D7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2169,6 +2182,7 @@
 				5C7EFC57202DFFA90007F99E /* Operations */,
 				5CAD5EE81E8D7DF8008F50C3 /* Protocols */,
 				5C5188A21F3D0F4E001B110A /* Recording */,
+				4850DC9A21C9798300A5C4A0 /* RemoteConfig */,
 				8BDD4C2B1EA6879000FCCA30 /* Resources */,
 				5CA3BFE620F53A9300755C7A /* ScienceJournalLogs.swift */,
 				681A82C71E4E884D0007A031 /* SensorData */,
@@ -3172,6 +3186,7 @@
 				8BFCF97E1FAA2EDC0030A6DC /* ArchiveFlagView.swift in Sources */,
 				684896E91F0207CD00DF1EE2 /* UIStackView+ScienceJournal.swift in Sources */,
 				8BD3A1071F27B76B00A5DDBD /* MDCPalette+ScienceJournal.swift in Sources */,
+				4850DC9C21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift in Sources */,
 				5CE047811F60721500E8EAA1 /* SensorSpec+BLESensorInterface.swift in Sources */,
 				5C7DE8C01EC116130015F407 /* PlaybackOverlayView.swift in Sources */,
 				68EACA721EAFC96300BB5892 /* SidebarViewController.swift in Sources */,
@@ -3450,6 +3465,7 @@
 				8B94040B209A0F470058AD65 /* ExperimentsListCellBase.swift in Sources */,
 				686E3D351F588C2E00250628 /* AnalyticsViewControllerExtensions.swift in Sources */,
 				687232231F703F8E0080E57F /* MaterialLeftBarButtonItems.swift in Sources */,
+				4850DC9921C9797C00A5C4A0 /* RemoteConfigManager.swift in Sources */,
 				8B9BEC352134863B00225EF5 /* CommonUIComponentsOpen.swift in Sources */,
 				8B9F06251EF478FF0030B011 /* DisplayTriggerNoteViewData.swift in Sources */,
 				68CD98931F3E479100E3BF3C /* StatCalculator.swift in Sources */,

@@ -26,9 +26,22 @@ class AppFlowViewControllerTest: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    mockAccountsManager = MockAccountsManager(mockAuthAccount: MockAuthAccount(ID: "testID"))
+    mockAccountsManager =
+        MockAccountsManager(mockAuthAccount: MockAuthAccount(ID: "AppFlowViewControllerTestID"))
     let analyticsReporter = AnalyticsReporterOpen()
     let sensorController = MockSensorController()
+    #if FEATURE_FIREBASE_RC
+    appFlowViewController =
+        AppFlowViewController(accountsManager: mockAccountsManager,
+                              analyticsReporter: analyticsReporter,
+                              commonUIComponents: CommonUIComponentsOpen(),
+                              drawerConfig: DrawerConfigOpen(),
+                              driveConstructor: DriveConstructorDisabled(),
+                              feedbackReporter: FeedbackReporterOpen(),
+                              networkAvailability: SettableNetworkAvailability(),
+                              remoteConfigManager: RemoteConfigManagerDisabled(),
+                              sensorController: sensorController)
+    #else
     appFlowViewController =
         AppFlowViewController(accountsManager: mockAccountsManager,
                               analyticsReporter: analyticsReporter,
@@ -38,14 +51,19 @@ class AppFlowViewControllerTest: XCTestCase {
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
                               sensorController: sensorController)
+    #endif
+  }
+
+  override func tearDown() {
+    // Calling `currentAccountUserManager` creates the account user manager, which creates the
+    // directory for the account. Calling `deleteAllUserData` will remove that directory and disrupt
+    // the nautrual flow of this class.
     try! appFlowViewController.currentAccountUserManager!.deleteAllUserData()
   }
 
   func testPrefStoredAfterUserMadeAMigrationChoice() {
     appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
         false
-    XCTAssertFalse(
-        appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption)
 
     // Create an unclaimed experiment.
     _ = appFlowViewController.rootUserManager.metadataManager.createExperiment()
@@ -80,23 +98,12 @@ class AppFlowViewControllerTest: XCTestCase {
     rootUserManager.preferenceManager.defaultExperimentWasCreated = true
     rootUserManager.preferenceManager.hasUserOptedOutOfUsageTracking = true
 
-    // Assert that the account user manager preferences are false.
-    let accountUserManager = appFlowViewController.currentAccountUserManager!
-    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
-    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
-    XCTAssertFalse(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertFalse(
-        accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
-    XCTAssertFalse(accountUserManager.preferenceManager.defaultExperimentWasCreated)
-    XCTAssertFalse(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
-
     // Sign in.
-    appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
-        false
     appFlowViewController.signInFlowDidCompleteWithAccount()
 
     // Assert that the account user manager preferences have been migrated from the root user
     // manager.
+    let accountUserManager = appFlowViewController.currentAccountUserManager!
     XCTAssertTrue(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
     XCTAssertTrue(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
     XCTAssertTrue(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
@@ -104,6 +111,33 @@ class AppFlowViewControllerTest: XCTestCase {
         accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
     XCTAssertTrue(accountUserManager.preferenceManager.defaultExperimentWasCreated)
     XCTAssertTrue(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
+  }
+
+  func testSigningInDoesNotMigratePrefsIfCurrentAccountManagerIsCalled() {
+    // Set up a root user manager with all preferences set to true.
+    let rootUserManager = appFlowViewController.rootUserManager
+    rootUserManager.preferenceManager.shouldShowArchivedExperiments = true
+    rootUserManager.preferenceManager.shouldShowArchivedRecordings = true
+    rootUserManager.preferenceManager.hasUserSeenExperimentHighlight = true
+    rootUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = true
+    rootUserManager.preferenceManager.defaultExperimentWasCreated = true
+    rootUserManager.preferenceManager.hasUserOptedOutOfUsageTracking = true
+
+    // Call `currentAccountUserManager` and sign in.
+    let accountUserManager = appFlowViewController.currentAccountUserManager!
+    appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
+    false
+    appFlowViewController.signInFlowDidCompleteWithAccount()
+
+    // Assert that the account user manager preferences have not been migrated from the root user
+    // manager.
+    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
+    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
+    XCTAssertFalse(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
+    XCTAssertFalse(
+      accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
+    XCTAssertFalse(accountUserManager.preferenceManager.defaultExperimentWasCreated)
+    XCTAssertFalse(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
   }
 
   func testSigningInDoesNotMigratePrefsForExistingAccount() {
@@ -117,7 +151,7 @@ class AppFlowViewControllerTest: XCTestCase {
     rootUserManager.preferenceManager.hasUserOptedOutOfUsageTracking = true
 
     // Reset all account user manager prefs, and assert they are false.
-    mockAccountsManager.mockAuthAccount = MockAuthAccount(ID: "newAccount")
+    mockAccountsManager.mockAuthAccount = MockAuthAccount(ID: "AppFlowViewControllerTestNewAccount")
     let accountUserManager = appFlowViewController.currentAccountUserManager!
     accountUserManager.preferenceManager.resetAll()
     XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
@@ -165,7 +199,7 @@ class AppFlowViewControllerTest: XCTestCase {
 
   func testAccountUserManagerUpdatesForNewAccounts() {
     // The account user manager should be for the accounts manager's current account.
-    let accountID = "testID"
+    let accountID = "AppFlowViewControllerTestID"
     mockAccountsManager.mockAuthAccount = MockAuthAccount(ID: accountID)
     let accountUserManager = appFlowViewController.currentAccountUserManager!
     XCTAssertEqual(accountUserManager.account.ID, mockAccountsManager.currentAccount!.ID)
@@ -175,7 +209,7 @@ class AppFlowViewControllerTest: XCTestCase {
     XCTAssertTrue(appFlowViewController.currentAccountUserManager! === accountUserManager)
 
     // When the current account changes, there should be a new account user manager.
-    let newAccountID = "newID"
+    let newAccountID = "AppFlowViewControllerTestNewID"
     mockAccountsManager.mockAuthAccount = MockAuthAccount(ID: newAccountID)
     let newAccountUserManager = appFlowViewController.currentAccountUserManager!
     XCTAssertEqual(newAccountUserManager.account.ID, mockAccountsManager.currentAccount!.ID)

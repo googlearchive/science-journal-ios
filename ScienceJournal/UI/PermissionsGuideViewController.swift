@@ -82,6 +82,8 @@ class PermissionsGuideViewController: OnboardingViewController {
   // Steps in order.
   private var steps = [stepNotifications, stepMicrophone, stepCamera, stepPhotoLibrary]
 
+  private let showWelcomeView: Bool
+
   // MARK: - Public
 
   /// Designated initializer.
@@ -90,11 +92,14 @@ class PermissionsGuideViewController: OnboardingViewController {
   ///   - delegate: The permissions guide delegate.
   ///   - analyticsReporter: The analytics reporter.
   ///   - devicePreferenceManager: The device preference manager.
+  ///   - showWelcomeView: Whether to show the welcome view first.
   init(delegate: PermissionsGuideDelegate,
        analyticsReporter: AnalyticsReporter,
-       devicePreferenceManager: DevicePreferenceManager) {
+       devicePreferenceManager: DevicePreferenceManager,
+       showWelcomeView: Bool) {
     self.delegate = delegate
     self.devicePreferenceManager = devicePreferenceManager
+    self.showWelcomeView = showWelcomeView
     super.init(analyticsReporter: analyticsReporter)
 
     NotificationCenter.default.addObserver(
@@ -102,8 +107,6 @@ class PermissionsGuideViewController: OnboardingViewController {
         selector: #selector(notificationRegistrationComplete),
         name: LocalNotificationManager.PushNotificationRegistrationComplete,
         object: nil)
-
-    configureView()
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -116,6 +119,17 @@ class PermissionsGuideViewController: OnboardingViewController {
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    configureView()
+    if showWelcomeView {
+      stepWelcome()
+    } else {
+      performNextStep()
+    }
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -344,6 +358,13 @@ class PermissionsGuideViewController: OnboardingViewController {
     nextStep(self)()
   }
 
+  // MARK: Welcome
+
+  private func stepWelcome() {
+    headerTitle.alpha = 1
+    initialMessage.alpha = 1
+  }
+
   // MARK: Push notifications
 
   // Ask for push notification permissions.
@@ -353,21 +374,37 @@ class PermissionsGuideViewController: OnboardingViewController {
     continueButton.addTarget(self,
                              action: #selector(checkForNotificationPermissions),
                              for: .touchUpInside)
-    animateToStep(animations: {
+    let showNotificationsState = {
       self.doneView.alpha = 0
       self.continueButton.isEnabled = UIAccessibility.isVoiceOverRunning
       self.headerTitle.alpha = 0
       self.initialMessage.alpha = 0
       self.startButton.isEnabled = false
       self.notificationsMessage.alpha = 1
-    }) {
-      UIAccessibility.post(notification: .layoutChanged, argument: self.notificationsMessage)
+    }
+
+    let promptNotificationPermission = {
       self.updateDoneViewConstraint(forLabel: self.notificationsMessage)
       if !UIAccessibility.isVoiceOverRunning {
         // If VoiceOver is running, a user will manually tap a "Check Permission" button to
         // continue. If VO is not running, ask for permission immediately.
         self.checkForNotificationPermissions()
       }
+    }
+
+    guard showWelcomeView else {
+      showNotificationsState()
+      // Delay the permission prompt to give the user time to read the text and match the feel of
+      // the other steps.
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        promptNotificationPermission()
+      }
+      return
+    }
+
+    animateToStep(animations: showNotificationsState) {
+      UIAccessibility.post(notification: .layoutChanged, argument: self.notificationsMessage)
+      promptNotificationPermission()
     }
   }
 

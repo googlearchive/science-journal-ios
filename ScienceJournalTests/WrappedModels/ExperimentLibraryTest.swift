@@ -77,9 +77,42 @@ class ExperimentLibraryTest: XCTestCase {
                   "Once an experiment's file ID has been set, it should not a file ID.")
   }
 
-  func testFolderID() {
-    experimentLibrary.folderID = "abcdefg"
-    XCTAssertEqual("abcdefg", experimentLibrary.folderID)
+  func testExperimentLibraryFromProto() {
+    let syncExperimentProto1 = GSJSyncExperiment()
+    syncExperimentProto1.experimentId = "apple"
+    let syncExperimentProto2 = GSJSyncExperiment()
+    syncExperimentProto2.experimentId = "banana"
+
+    let proto = GSJExperimentLibrary()
+    proto.folderId = "abc_id"
+    proto.syncExperimentArray = NSMutableArray(array: [syncExperimentProto1, syncExperimentProto2])
+
+    let experimentLibrary = ExperimentLibrary(proto: proto)
+    XCTAssertEqual("abc_id", experimentLibrary.folderID)
+    XCTAssertEqual(2, experimentLibrary.syncExperiments.count)
+    XCTAssertEqual("apple", experimentLibrary.syncExperiments[0].experimentID)
+    XCTAssertEqual("banana", experimentLibrary.syncExperiments[1].experimentID)
+  }
+
+  func testProtoFromExperimentLibrary() {
+    let clock = SettableClock(now: 1000)
+    let syncExperiment1 = SyncExperiment(experimentID: "cantaloupe", clock: clock)
+    let syncExperiment2 = SyncExperiment(experimentID: "date", clock: clock)
+    experimentLibrary.folderID = "def_id"
+    experimentLibrary.syncExperiments = [syncExperiment1, syncExperiment2]
+
+    let proto = experimentLibrary.proto
+    XCTAssertEqual("def_id", proto.folderId)
+    XCTAssertEqual(2, proto.syncExperimentArray_Count)
+    XCTAssertEqual(2, proto.syncExperimentArray.count)
+    let protoArray: [SyncExperiment] =
+        proto.syncExperimentArray.map { SyncExperiment(proto: $0 as! GSJSyncExperiment) }
+    XCTAssertEqual("cantaloupe", protoArray[0].experimentID)
+    XCTAssertEqual("date", protoArray[1].experimentID)
+
+    let proto2 = experimentLibrary.proto
+    XCTAssertEqual(proto, proto2)
+    XCTAssertFalse(proto === proto2)
   }
 
 }

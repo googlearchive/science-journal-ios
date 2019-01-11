@@ -235,13 +235,18 @@ class RecordingManager: RecorderDelegate {
     UIApplication.shared.isIdleTimerDisabled = true
   }
 
-  /// Ends recording, which will stop recording to the database and save the
-  /// pending data.
-  func endRecording(isCancelled: Bool = false) {
+  /// Ends a recording, which will stop writing data to the database.
+  ///
+  /// - Parameters:
+  ///   - isCancelled: True if the recording was cancelled, otherwise false. Default is false.
+  ///   - removeCancelledData: True if data from a cancelled recording should be removed, otherwise
+  ///                          false (data is left in the database). Only has impact if
+  ///                          `isCancelled` is true. Default is true.
+  func endRecording(isCancelled: Bool = false, removeCancelledData: Bool = true) {
     isRecording = false
     if !isCancelled {
       sensorDataManager.savePrivateContext()
-    } else if let trialID = trialID {
+    } else if removeCancelledData, let trialID = trialID {
       // If cancelled, remove data.
       sensorDataManager.removeData(forTrialID: trialID)
     }

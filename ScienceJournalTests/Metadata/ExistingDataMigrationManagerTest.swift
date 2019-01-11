@@ -589,55 +589,27 @@ class ExistingDataMigrationManagerTest: XCTestCase {
   }
 
   func testMigratePreferences() {
+    // This test will use the preference for data tracking to confirm that preference migration is
+    // occuring.
+
     accountUserManager.preferenceManager.resetAll()
 
-    // Set the root user preferences to true.
-    rootUserManager.preferenceManager.shouldShowArchivedExperiments = true
-    rootUserManager.preferenceManager.shouldShowArchivedRecordings = true
-    rootUserManager.preferenceManager.hasUserSeenExperimentHighlight = true
-    rootUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = true
-    rootUserManager.preferenceManager.defaultExperimentWasCreated = true
+    // Set the root user preference for data tracking to true.
     rootUserManager.preferenceManager.hasUserOptedOutOfUsageTracking = true
-
-    // Assert the account user's preferences are false.
-    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
-    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
-    XCTAssertFalse(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertFalse(
-        accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
-    XCTAssertFalse(accountUserManager.preferenceManager.defaultExperimentWasCreated)
-    XCTAssertFalse(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
 
     // Migrate preferences.
     existingDataMigrationManager.migratePreferences()
 
-    // Assert the account user's preferences are true.
-    XCTAssertTrue(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
-    XCTAssertTrue(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
-    XCTAssertTrue(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertTrue(
-        accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
-    XCTAssertTrue(accountUserManager.preferenceManager.defaultExperimentWasCreated)
+    // Assert the account user's preference for data tracking is true.
     XCTAssertTrue(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
 
-    // Set the root user preferences to false.
-    rootUserManager.preferenceManager.shouldShowArchivedExperiments = false
-    rootUserManager.preferenceManager.shouldShowArchivedRecordings = false
-    rootUserManager.preferenceManager.hasUserSeenExperimentHighlight = false
-    rootUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = false
-    rootUserManager.preferenceManager.defaultExperimentWasCreated = false
+    // Set the root user preference for data tracking to false.
     rootUserManager.preferenceManager.hasUserOptedOutOfUsageTracking = false
 
     // Migrate preferences.
     existingDataMigrationManager.migratePreferences()
 
-    // Assert the account user's preferences are false.
-    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
-    XCTAssertFalse(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
-    XCTAssertFalse(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertFalse(
-        accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
-    XCTAssertFalse(accountUserManager.preferenceManager.defaultExperimentWasCreated)
+    // Assert the account user's preference for data tracking is false.
     XCTAssertFalse(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
   }
 

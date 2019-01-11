@@ -39,9 +39,7 @@ class UserAssetManagerTest: XCTestCase {
                                             sensorDataManager: sensorDataManager)
 
     let sensorID = "test_sensor"
-    let sensorLayout = SensorLayout(sensorID: sensorID,
-                                    colorPalette: .blue,
-                                    visibleYAxis: ChartAxis(min: 0, max: 10))
+    let sensorLayout = SensorLayout(sensorID: sensorID, colorPalette: .blue)
     let trial = Trial()
     trial.proto.trialId = trialID
     trial.sensorLayouts = [sensorLayout]

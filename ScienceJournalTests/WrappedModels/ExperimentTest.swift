@@ -172,12 +172,8 @@ class ExperimentTest: XCTestCase {
   func testSensorLayoutForSensorID() {
     // Create sensor layouts.
     let sensorID = "test sensor"
-    let sensorLayout1 = SensorLayout(sensorID: sensorID,
-                                    colorPalette: .blue,
-                                    visibleYAxis: .zero)
-    let sensorLayout2 = SensorLayout(sensorID: "another sensor",
-                                     colorPalette: .blue,
-                                     visibleYAxis: .zero)
+    let sensorLayout1 = SensorLayout(sensorID: sensorID, colorPalette: .blue)
+    let sensorLayout2 = SensorLayout(sensorID: "another sensor", colorPalette: .blue)
 
     // Add the sensor layouts to an experiment.
     let experiment = Experiment(ID: "")
@@ -278,15 +274,9 @@ class ExperimentTest: XCTestCase {
     // Create an experiment and some sensor layouts.
     let experiment = Experiment(ID: "REMOVE_SENSOR_LAYOUTS_TEST")
 
-    let sensorLayout1 = SensorLayout(sensorID: "SENSOR_LAYOUT_1",
-                                     colorPalette: .blue,
-                                     visibleYAxis: ChartAxis(min: 0, max: 1))
-    let sensorLayout2 = SensorLayout(sensorID: "SENSOR_LAYOUT_2",
-                                     colorPalette: .green,
-                                     visibleYAxis: ChartAxis(min: 2, max: 3))
-    let sensorLayout3 = SensorLayout(sensorID: "SENSOR_LAYOUT_3",
-                                     colorPalette: .orange,
-                                     visibleYAxis: ChartAxis(min: 4, max: 5))
+    let sensorLayout1 = SensorLayout(sensorID: "SENSOR_LAYOUT_1", colorPalette: .blue)
+    let sensorLayout2 = SensorLayout(sensorID: "SENSOR_LAYOUT_2", colorPalette: .green)
+    let sensorLayout3 = SensorLayout(sensorID: "SENSOR_LAYOUT_3", colorPalette: .orange)
 
     // Give the sensor layouts containing to the experiment and assert they are there.
     experiment.sensorLayouts = [sensorLayout1, sensorLayout2, sensorLayout3]

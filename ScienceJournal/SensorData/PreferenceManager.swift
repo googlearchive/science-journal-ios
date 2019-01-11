@@ -287,17 +287,12 @@ open class PreferenceManager {
     keys.all.forEach { defaults.removeObject(forKey: $0) }
   }
 
-  /// Copies preferences from a given preference manager.
+  /// Migrates the preferences (that should be migrated) from a given preference manager.
   ///
   /// - Parameter: preferenceManager: A preference manager.
-  func copyPreferences(fromManager preferenceManager: PreferenceManager) {
-    keys.rootKeys.forEach {
-      let keyToCopy = preferenceManager.keys.keyAppendingAccountID($0)
-      let keyToWrite = keys.keyAppendingAccountID($0)
-
-      let prefToCopy = defaults.object(forKey: keyToCopy)
-      defaults.set(prefToCopy, forKey: keyToWrite)
-    }
+  func migratePreferences(fromManager preferenceManager: PreferenceManager) {
+    // The only preference that should be migrated is `hasUserOptedOutOfUsageTracking`.
+    hasUserOptedOutOfUsageTracking = preferenceManager.hasUserOptedOutOfUsageTracking
   }
 
   // MARK: - Private

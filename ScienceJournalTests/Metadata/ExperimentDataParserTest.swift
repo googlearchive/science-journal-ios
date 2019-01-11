@@ -269,14 +269,10 @@ class ExperimentDataParserTest: XCTestCase {
     trial.trialStats.append(sensorTrialStats2)
 
     // Layouts.
-    let sensorLayout1 = SensorLayout(sensorID: sensor1.sensorId,
-                                     colorPalette: .blue,
-                                     visibleYAxis: ChartAxis(min: 0, max: 1))
+    let sensorLayout1 = SensorLayout(sensorID: sensor1.sensorId, colorPalette: .blue)
     trial.sensorLayouts.append(sensorLayout1)
 
-    let sensorLayout2 = SensorLayout(sensorID: sensor2.sensorId,
-                                     colorPalette: .blue,
-                                     visibleYAxis: ChartAxis(min: 0, max: 1))
+    let sensorLayout2 = SensorLayout(sensorID: sensor2.sensorId, colorPalette: .blue)
     trial.sensorLayouts.append(sensorLayout2)
 
     // Appearance.

@@ -339,7 +339,6 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
     }
   }
 
-  func chartControllerDidEndZooming(_ chartController: ChartController) {}
 
   func chartController(_ chartController: ChartController, shouldPinToNow: Bool) {}
 

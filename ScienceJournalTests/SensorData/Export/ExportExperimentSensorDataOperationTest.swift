@@ -55,15 +55,9 @@ class ExportExperimentSensorDataOperationTest: XCTestCase {
     let trial2 = Trial()
     trial2.ID = "METADATA_SENSOR_EXPORT_TRIAL_2"
 
-    let sensor1 = SensorLayout(sensorID: "Sensor_1",
-                               colorPalette: MDCPalette.blue,
-                               visibleYAxis: ChartAxis<Double>(min: 0, max: 1))
-    let sensor2 = SensorLayout(sensorID: "Sensor_2",
-                               colorPalette: MDCPalette.blue,
-                               visibleYAxis: ChartAxis<Double>(min: 0, max: 1))
-    let sensor3 = SensorLayout(sensorID: "Sensor_3",
-                               colorPalette: MDCPalette.blue,
-                               visibleYAxis: ChartAxis<Double>(min: 0, max: 1))
+    let sensor1 = SensorLayout(sensorID: "Sensor_1", colorPalette: MDCPalette.blue)
+    let sensor2 = SensorLayout(sensorID: "Sensor_2", colorPalette: MDCPalette.blue)
+    let sensor3 = SensorLayout(sensorID: "Sensor_3", colorPalette: MDCPalette.blue)
 
     trial1.sensorLayouts = [sensor1]
     trial2.sensorLayouts = [sensor2, sensor3]

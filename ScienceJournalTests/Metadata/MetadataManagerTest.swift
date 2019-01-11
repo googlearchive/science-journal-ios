@@ -81,31 +81,37 @@ class MetadataManagerTest: XCTestCase {
   }
 
   func testSaveExperimentWithoutUpdatingLastUsedDate() {
-    // Set up a fake clock.
-    var fakeLastUsed: Int64 = 12345
-    metadataManager.clock = SettableClock(now: fakeLastUsed)
+    let settableClock = SettableClock(now: 12345)
+    metadataManager.clock = settableClock
 
     let (experiment, overview) = metadataManager.createExperiment(withTitle: "456 Test Title")
     XCTAssertEqual("456 Test Title", experiment.title)
     XCTAssertEqual(12345, overview.lastUsedDate.millisecondsSince1970)
 
+    let syncExperiment = SyncExperiment(experimentID: experiment.ID, clock: metadataManager.clock)
+    metadataManager.experimentLibrary.addExperiment(syncExperiment)
+
     // Save with standard save method which updates last used time and confirm.
 
     // Change the clock time.
-    fakeLastUsed = 6789
-    metadataManager.clock = SettableClock(now: fakeLastUsed)
+    settableClock.setNow(6789)
 
     metadataManager.saveExperiment(experiment)
     XCTAssertEqual(6789, overview.lastUsedDate.millisecondsSince1970)
+    XCTAssertEqual(6789,
+                   metadataManager.experimentLibrary.syncExperiment(
+                      forID: experiment.ID)?.lastModifiedDate.millisecondsSince1970)
 
     // Now save without updating last used date and confirm.
 
     // Change the clock time.
-    fakeLastUsed = 99999
-    metadataManager.clock = SettableClock(now: fakeLastUsed)
+    settableClock.setNow(99999)
 
     metadataManager.saveExperimentWithoutDateChange(experiment)
     XCTAssertEqual(6789, overview.lastUsedDate.millisecondsSince1970)
+    XCTAssertEqual(6789,
+                   metadataManager.experimentLibrary.syncExperiment(
+                      forID: experiment.ID)?.lastModifiedDate.millisecondsSince1970)
   }
 
   func testOverviewOnNewExperiment() {
@@ -1268,6 +1274,25 @@ class MetadataManagerTest: XCTestCase {
                    latestExperiment.imagePath,
                    "After import the image path is now the standardized cover image path filename.")
     XCTAssertEqual(metadataManager.importExportCoverImagePath, overview.imagePath)
+  }
+
+  func testCreateOverviewFromExperimentLibraryForExperiment() {
+    let experiment = Experiment(ID: "TEST_ID_234")
+    let syncExperiment = SyncExperiment(experimentID: "TEST_ID_234", clock: Clock())
+    syncExperiment.isArchived = true
+    syncExperiment.lastModifiedTimestamp = 1000000
+    experiment.setTitle("test title")
+    experiment.imagePath = "path/to/image"
+    metadataManager.experimentLibrary.addExperiment(syncExperiment)
+
+    metadataManager.createOverviewFromExperimentLibrary(forExperiment: experiment)
+
+    let overview = metadataManager.experimentOverviews[0]
+    XCTAssertEqual(overview.experimentID, "TEST_ID_234")
+    XCTAssertEqual(overview.isArchived, true)
+    XCTAssertEqual(overview.lastUsedDate.millisecondsSince1970, 1000000)
+    XCTAssertEqual(overview.title, "test title")
+    XCTAssertEqual(overview.imagePath, "path/to/image")
   }
 
   // MARK: - Helpers

@@ -220,11 +220,11 @@ class Recorder: Equatable, SensorTriggerFrequencyObserverDelegate {
         sensorID: sensor.sensorId,
         trialID: trialID,
         bufferSize: Recorder.zoomBufferSize,
-        addingDataPointBlock: { (dataPoint, sensorID, trialID, tier) in
-          self.sensorDataManager.addSensorDataPoint(dataPoint,
-                                                    sensorID: sensorID,
-                                                    trialID: trialID,
-                                                    resolutionTier: tier)
+        addingDataPointBlock: { [weak self] (dataPoint, sensorID, trialID, tier) in
+          self?.sensorDataManager.addSensorDataPoint(dataPoint,
+                                                     sensorID: sensorID,
+                                                     trialID: trialID,
+                                                     resolutionTier: tier)
     })
   }
 

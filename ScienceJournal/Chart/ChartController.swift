@@ -102,11 +102,6 @@ protocol ChartControllerDelegate: class {
   /// - Parameter chartController: The chart controller that finished loading data.
   func chartControllerDidFinishLoadingData(_ chartController: ChartController)
 
-  /// Tells the delegate when the user ends zooming the chart.
-  ///
-  /// - Parameter chartController: The chart controller being zoomed.
-  func chartControllerDidEndZooming(_ chartController: ChartController)
-
   /// Tells the delegate the chart controller is requesting a change to the pinned to now state.
   ///
   /// - Parameters:
@@ -969,7 +964,6 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
       startingZoomXAxis = .zero
       startingZoomYAxis = .zero
       isZooming = false
-      delegate?.chartControllerDidEndZooming(self)
       return
     }
 

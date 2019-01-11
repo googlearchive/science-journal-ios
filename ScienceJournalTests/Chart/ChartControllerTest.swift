@@ -234,7 +234,6 @@ class ChartControllerTest: XCTestCase, ChartControllerDelegate {
                        scrollStateChanged isUserScrolling: Bool) {}
   func chartController(_ chartController: ChartController,
                        didUpdateVisibleXAxis visibleAxis: ChartAxis<Int64>) {}
-  func chartControllerDidEndZooming(_ chartController: ChartController) {}
   func chartController(_ chartController: ChartController, shouldPinToNow: Bool) {}
 
 }

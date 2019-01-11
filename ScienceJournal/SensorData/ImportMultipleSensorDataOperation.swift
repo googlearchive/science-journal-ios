@@ -64,7 +64,7 @@ public class ImportMultipleSensorDataOperation: GroupOperation {
           sensorDataProto: proto,
           trialIDsOperationResult: importedTrialIDsOperationResult)
       addOperation(importSensorDataOp)
-      importSensorDataOp.addObserver(BlockObserver { (operation, errors) in
+      importSensorDataOp.addObserver(BlockObserver { [unowned self] (operation, errors) in
         if let trialIDs = importedTrialIDsOperationResult.value {
           self.downloadedSensorDataTrialIDs.formUnion(trialIDs)
         }

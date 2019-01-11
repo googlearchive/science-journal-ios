@@ -1004,6 +1004,11 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
     experimentsListVC?.reloadExperiments()
   }
 
+  func driveSyncDidDeleteTrial(withID trialID: String, experimentID: String) {
+    openExperimentUpdateManager?.experimentTrialDeletedExternally(trialID: trialID,
+                                                                  experimentID: experimentID)
+  }
+
   func driveSyncDidUpdateExperiment(_ experiment: Experiment) {
     // Reload experiments list in case cover image, title, or sort changed.
     experimentsListVC?.reloadExperiments()

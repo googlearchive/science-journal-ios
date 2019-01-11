@@ -408,7 +408,7 @@ class PreferenceManagerTest: XCTestCase {
                    "User has not opted out of usage tracking for account 2.")
   }
 
-  func testCopyPreferencesFromManager() {
+  func testMigratePreferencesFromManager() {
     let preferenceManagerToCopy = PreferenceManager()
     let preferenceManager = PreferenceManager(accountID: "test")
     preferenceManager.resetAll()
@@ -422,7 +422,13 @@ class PreferenceManagerTest: XCTestCase {
     preferenceManagerToCopy.defaultExperimentWasCreated = true
     preferenceManagerToCopy.hasUserOptedOutOfUsageTracking = true
 
-    // Assert the account preferences are false.
+    // Migrate preferences.
+    preferenceManager.migratePreferences(fromManager: preferenceManagerToCopy)
+
+    // Assert the preference that should be migrated is true.
+    XCTAssertTrue(preferenceManager.hasUserOptedOutOfUsageTracking)
+
+    // The rest should be the default value.
     XCTAssertFalse(preferenceManager.shouldShowArchivedExperiments)
     XCTAssertFalse(preferenceManager.shouldShowArchivedRecordings)
     XCTAssertFalse(preferenceManager.hasUserSeenExperimentHighlight)
@@ -430,42 +436,24 @@ class PreferenceManagerTest: XCTestCase {
     XCTAssertFalse(preferenceManager.hasUserVerifiedAge)
     XCTAssertFalse(preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
     XCTAssertFalse(preferenceManager.defaultExperimentWasCreated)
-    XCTAssertFalse(preferenceManager.hasUserOptedOutOfUsageTracking)
 
-    // Copy preferences.
-    preferenceManager.copyPreferences(fromManager: preferenceManagerToCopy)
-
-    // Assert the account preferences are true.
-    XCTAssertTrue(preferenceManager.shouldShowArchivedExperiments)
-    XCTAssertTrue(preferenceManager.shouldShowArchivedRecordings)
-    XCTAssertTrue(preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertTrue(preferenceManager.isUser13OrOlder)
-    XCTAssertTrue(preferenceManager.hasUserVerifiedAge)
-    XCTAssertTrue(preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
-    XCTAssertTrue(preferenceManager.defaultExperimentWasCreated)
-    XCTAssertTrue(preferenceManager.hasUserOptedOutOfUsageTracking)
-
-    // Set the preferences to false.
-    preferenceManagerToCopy.shouldShowArchivedExperiments = false
-    preferenceManagerToCopy.shouldShowArchivedRecordings = false
-    preferenceManagerToCopy.hasUserSeenExperimentHighlight = false
-    preferenceManagerToCopy.isUser13OrOlder = false
-    preferenceManagerToCopy.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = false
-    preferenceManagerToCopy.defaultExperimentWasCreated = false
+    // Set the preference that migrates to false.
     preferenceManagerToCopy.hasUserOptedOutOfUsageTracking = false
 
-    // Copy preferences.
-    preferenceManager.copyPreferences(fromManager: preferenceManagerToCopy)
+    // Migrate preferences.
+    preferenceManager.migratePreferences(fromManager: preferenceManagerToCopy)
 
-    // Assert the account user's preferences are false.
+    // Assert the preference that should be migrated is false.
+    XCTAssertFalse(preferenceManager.hasUserOptedOutOfUsageTracking)
+
+    // The rest should still be the default value.
     XCTAssertFalse(preferenceManager.shouldShowArchivedExperiments)
     XCTAssertFalse(preferenceManager.shouldShowArchivedRecordings)
     XCTAssertFalse(preferenceManager.hasUserSeenExperimentHighlight)
     XCTAssertFalse(preferenceManager.isUser13OrOlder)
-    XCTAssertTrue(preferenceManager.hasUserVerifiedAge)
+    XCTAssertFalse(preferenceManager.hasUserVerifiedAge)
     XCTAssertFalse(preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
     XCTAssertFalse(preferenceManager.defaultExperimentWasCreated)
-    XCTAssertFalse(preferenceManager.hasUserOptedOutOfUsageTracking)
   }
 
   func testMigrateUserBirthdateTo13OrOlderBool() {

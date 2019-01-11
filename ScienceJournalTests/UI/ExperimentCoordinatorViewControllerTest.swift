@@ -236,9 +236,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
 
     // Create a sensor layout for the same sensor ID as the triggers. Add two of the trigger IDs to
     // the layout's active sensor trigger IDs.
-    let sensorLayout = SensorLayout(sensorID: sensorID,
-                                    colorPalette: .blue,
-                                    visibleYAxis: ChartAxis(min: 0, max: 1))
+    let sensorLayout = SensorLayout(sensorID: sensorID, colorPalette: .blue)
     sensorLayout.activeSensorTriggerIDs = [trigger1.triggerID, trigger2.triggerID]
 
     // Create an experiment and add the sensor layout to it.

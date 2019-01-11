@@ -445,6 +445,24 @@ class ExperimentUpdateManager {
     }
   }
 
+  /// Handles experiment changes that weren't triggered through the ExperimentUpdateManager.
+  /// This can happen with a drive sync while an experiment is open.
+  /// - Parameter trialID: ID of trial that was deleted.
+  /// - Parameter experimentID: experimentID of experiment from which the trial was deleted.
+  func experimentTrialDeletedExternally(trialID: String, experimentID: String) {
+    guard experimentID == experiment.ID else {
+      return
+    }
+
+    guard let trial = experiment.trial(withID: trialID) else {
+      return
+    }
+
+    notifyListeners { (listener) in
+      listener.experimentUpdateTrialDeleted(trial, fromExperiment: experiment, undoBlock: { })
+    }
+  }
+
   // MARK: - Private
 
   /// Adds a trial to the experiment.

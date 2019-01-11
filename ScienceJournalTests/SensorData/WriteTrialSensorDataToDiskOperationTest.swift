@@ -49,15 +49,9 @@ class WriteTrialSensorDataToDiskOperationTest: XCTestCase {
   }
 
   func testSensorDataProtoFromExperiment() {
-    let sensor1 = SensorLayout(sensorID: "Sensor_1",
-                               colorPalette: MDCPalette.blue,
-                               visibleYAxis: ChartAxis<Double>(min: 0, max: 1))
-    let sensor2 = SensorLayout(sensorID: "Sensor_2",
-                               colorPalette: MDCPalette.blue,
-                               visibleYAxis: ChartAxis<Double>(min: 0, max: 1))
-    let sensor3 = SensorLayout(sensorID: "Sensor_3",
-                               colorPalette: MDCPalette.blue,
-                               visibleYAxis: ChartAxis<Double>(min: 0, max: 1))
+    let sensor1 = SensorLayout(sensorID: "Sensor_1", colorPalette: MDCPalette.blue)
+    let sensor2 = SensorLayout(sensorID: "Sensor_2", colorPalette: MDCPalette.blue)
+    let sensor3 = SensorLayout(sensorID: "Sensor_3", colorPalette: MDCPalette.blue)
 
     let trial = Trial()
     trial.ID = "TEST_TRIAL"

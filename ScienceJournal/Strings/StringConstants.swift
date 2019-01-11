@@ -21,7 +21,6 @@ public struct Constants {
 
   public struct Drive {
     public static let appDataFolderName = "appDataFolder"
-    public static let assetsFolderName = "assets"
     public static let defaultFileMetadataItemsFields =
         "items/fileSize,items/id,items/labels/trashed,items/title,items/version"
     public static let defaultFileMetadataFields = "fileSize,id,labels/trashed,title,version"

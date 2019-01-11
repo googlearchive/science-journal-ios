@@ -58,7 +58,8 @@ open class UserAssetManager {
         WriteTrialSensorDataToDiskOperation(saveFileURL: saveURL,
                                             sensorDataManager: sensorDataManager,
                                             trial: trial)
-    writeTrialSensorDataToDiskOperation.addObserver(BlockObserver { (operation, errors) in
+    writeTrialSensorDataToDiskOperation.addObserver(BlockObserver {
+        [unowned self] (operation, errors) in
       if errors.count == 0 {
         self.driveSyncManager?.syncTrialSensorData(atURL: saveURL, experimentID: experiment.ID)
       }

@@ -407,11 +407,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
     NotificationCenter.default.removeObserver(self,
                                               name: UIResponder.keyboardWillHideNotification,
                                               object: nil)
-
-    stopPlayback()
-    if addNoteDialog != nil {
-      dismiss(animated: false)
-    }
   }
 
   override func viewWillTransition(to size: CGSize,
@@ -795,6 +790,20 @@ class TrialDetailViewController: MaterialHeaderViewController,
   }
 
   // MARK: - ExperimentUpdateListener
+
+  func experimentUpdateTrialDeleted(_ trial: Trial,
+                                    fromExperiment experiment: Experiment,
+                                    undoBlock: @escaping () -> Void) {
+    guard trialDetailDataSource.trial.ID == trial.ID && experiment.ID == self.experiment.ID else {
+      return
+    }
+
+    // Shutdown this view controller by stopping all actions and dismissing.
+    stopPlayback()
+    if addNoteDialog != nil {
+      dismiss(animated: false)
+    }
+  }
 
   func experimentUpdateTrialNoteAdded(_ note: Note, toTrial trial: Trial) {
     guard trial.ID == trialDetailDataSource.trial.ID,

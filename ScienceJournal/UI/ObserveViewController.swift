@@ -544,8 +544,15 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     updateCellsToRecord(true)
   }
 
-  /// Stops recording sensor data and creates a completed trial with layouts and stats.
-  func endRecording(isCancelled: Bool = false) {
+  /// Ends a recording, which will stop writing data to the database and create a completed trial
+  /// with layouts and stats if appropriate.
+  ///
+  /// - Parameters:
+  ///   - isCancelled: True if the recording was cancelled, otherwise false. Default is false.
+  ///   - removeCancelledData: True if data from a cancelled recording should be removed, otherwise
+  ///                          false (data is left in the database). Only has impact if
+  ///                          `isCancelled` is true. Default is true.
+  func endRecording(isCancelled: Bool = false, removeCancelledData: Bool = true) {
     guard recordingTrial != nil else {
       print("[ObserveViewController] Recording ended with no valid recording trial.")
       return
@@ -559,7 +566,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     showTimeAxisView(false)
 
     // Stop the recorder.
-    recordingManager.endRecording(isCancelled: isCancelled)
+    recordingManager.endRecording(isCancelled: isCancelled,
+                                  removeCancelledData: removeCancelledData)
     recordingSaveTimer?.invalidate()
     recordingSaveTimer = nil
     delegate?.observeViewControllerDidEndRecording(self)
@@ -571,11 +579,12 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       collectionView?.insertSections(IndexSet(integer: footerIndexPath.section))
     }
 
-    // If the recording was cancelled, notify the delegate, otherwise configure the new trial.
-    if isCancelled {
-      cancelRecordingTrial()
-    } else {
+    // If the recording was not cancelled, configure the new trial. If it was cancelled and we
+    // need to remove data, do that now instead.
+    if !isCancelled {
       updateRecordingTrial(isFinishedRecording: true)
+    } else if removeCancelledData {
+      cancelAndRemoveRecordingTrial()
     }
 
     observeDataSource.enumerateChartControllers { (chartController) in
@@ -837,7 +846,6 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       }
       sensorCard.chartController.shouldShowStats = sensorLayout.shouldShowStatsOverlay
       sensorCard.sensorLayout = SensorLayout(proto: sensorLayout.proto)
-      sensorCard.chartController.setVisibleYAxis(sensorLayout.visibleYAxis)
     } else {
       addSensorLayoutForSensorCard(sensorCard)
     }
@@ -943,7 +951,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
                                     isFinishedRecording: isFinishedRecording)
   }
 
-  private func cancelRecordingTrial() {
+  private func cancelAndRemoveRecordingTrial() {
     guard let recordingTrial = recordingTrial else {
       return
     }
@@ -1100,8 +1108,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
   private func addSensorLayoutForSensorCard(_ sensorCard: SensorCard) {
     let sensorLayout = SensorLayout(sensorID: sensorCard.sensor.sensorId,
-                                    colorPalette: sensorCard.colorPalette,
-                                    visibleYAxis: sensorCard.chartController.visibleYAxis)
+                                    colorPalette: sensorCard.colorPalette)
     sensorLayout.isAudioEnabled = sensorCard.toneGenerator.isPlayingTone
     sensorCard.sensorLayout = sensorLayout
     delegate?.observeViewController(self, didUpdateSensorLayouts: sensorLayouts)
@@ -1113,7 +1120,6 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       sensorLayout.isAudioEnabled = sensorCard.toneGenerator.isPlayingTone
       sensorLayout.sensorID = sensorCard.sensor.sensorId
       sensorLayout.shouldShowStatsOverlay = sensorCard.chartController.shouldShowStats
-      sensorLayout.visibleYAxis = sensorCard.chartController.visibleYAxis
     }
     delegate?.observeViewController(self, didUpdateSensorLayouts: sensorLayouts)
   }
@@ -1461,12 +1467,6 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     timeAxisController.isUserScrolling = isUserScrolling
   }
 
-  func chartControllerDidEndZooming(_ chartController: ChartController) {
-    if let index = observeDataSource.items.index(where: { $0.chartController == chartController }) {
-      observeDataSource.items[index].sensorLayout?.visibleYAxis = chartController.visibleYAxis
-    }
-  }
-
   func chartControllerDidFinishLoadingData(_ chartController: ChartController) {}
 
   func chartController(_ chartController: ChartController, shouldPinToNow: Bool) {
@@ -1652,7 +1652,10 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
   @objc private func forceEndRecordingForSignOut() {
     if recordingManager.isRecording {
-      endRecording(isCancelled: true)
+      // When a user is forced to sign out, their DB is completely removed along with all of their
+      // data. We need to make sure the recording manager does not also attempt to remove data
+      // asynchronously.
+      endRecording(isCancelled: true, removeCancelledData: false)
     }
   }
 

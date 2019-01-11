@@ -601,15 +601,9 @@ class ExperimentMergerTest: XCTestCase {
     XCTAssertEqual(experimentRemote.sensorTriggers[0].sensorID, sensorTrigger3.sensorID)
 
     // Active trigger IDs, in sensor layouts.
-    let sensorLayout1 = SensorLayout(sensorID: "SENSOR_LAYOUT_1",
-                                     colorPalette: .blue,
-                                     visibleYAxis: ChartAxis(min: 0, max: 1))
-    let sensorLayout2 = SensorLayout(sensorID: "SENSOR_LAYOUT_2",
-                                     colorPalette: .green,
-                                     visibleYAxis: ChartAxis(min: 2, max: 3))
-    let sensorLayout3 = SensorLayout(sensorID: "SENSOR_LAYOUT_3",
-                                     colorPalette: .orange,
-                                     visibleYAxis: ChartAxis(min: 4, max: 5))
+    let sensorLayout1 = SensorLayout(sensorID: "SENSOR_LAYOUT_1", colorPalette: .blue)
+    let sensorLayout2 = SensorLayout(sensorID: "SENSOR_LAYOUT_2", colorPalette: .green)
+    let sensorLayout3 = SensorLayout(sensorID: "SENSOR_LAYOUT_3", colorPalette: .orange)
 
     experimentLocal.sensorLayouts = [sensorLayout1, sensorLayout2]
     experimentRemote.sensorLayouts = [sensorLayout3]

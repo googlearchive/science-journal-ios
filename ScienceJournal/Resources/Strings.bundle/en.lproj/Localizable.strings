@@ -787,6 +787,27 @@
 /* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
 "menu_item_set_triggers" = "Set triggers";
 
+/* The letter of the musical note A. [CHAR_LIMIT=1] */
+"musical_note_a" = "A";
+
+/* The letter of the musical note B. [CHAR_LIMIT=1] */
+"musical_note_b" = "B";
+
+/* The letter of the musical note C. [CHAR_LIMIT=1] */
+"musical_note_c" = "C";
+
+/* The letter of the musical note D. [CHAR_LIMIT=1] */
+"musical_note_d" = "D";
+
+/* The letter of the musical note E. [CHAR_LIMIT=1] */
+"musical_note_e" = "E";
+
+/* The letter of the musical note F. [CHAR_LIMIT=1] */
+"musical_note_f" = "F";
+
+/* The letter of the musical note G. [CHAR_LIMIT=1] */
+"musical_note_g" = "G";
+
 /* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
 "my_devices" = "My Devices";
 

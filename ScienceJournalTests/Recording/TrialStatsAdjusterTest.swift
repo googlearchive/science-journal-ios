@@ -95,7 +95,7 @@ class TrialStatsAdjusterTest: XCTestCase {
 
   func testPreservesZoomInformation() {
     let trial = Trial()
-    let sensorLayout = SensorLayout(sensorID: "SENSOR_ID", colorPalette: .blue, visibleYAxis: .zero)
+    let sensorLayout = SensorLayout(sensorID: "SENSOR_ID", colorPalette: .blue)
     trial.sensorLayouts = [sensorLayout]
     let stats = TrialStats(sensorID: "SENSOR_ID")
     stats.zoomLevelBetweenTiers = 50

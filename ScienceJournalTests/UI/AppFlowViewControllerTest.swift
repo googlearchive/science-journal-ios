@@ -102,14 +102,8 @@ class AppFlowViewControllerTest: XCTestCase {
     appFlowViewController.signInFlowDidCompleteWithAccount()
 
     // Assert that the account user manager preferences have been migrated from the root user
-    // manager.
+    // manager, by checking the preference for data tracking.
     let accountUserManager = appFlowViewController.currentAccountUserManager!
-    XCTAssertTrue(accountUserManager.preferenceManager.shouldShowArchivedExperiments)
-    XCTAssertTrue(accountUserManager.preferenceManager.shouldShowArchivedRecordings)
-    XCTAssertTrue(accountUserManager.preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertTrue(
-        accountUserManager.preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
-    XCTAssertTrue(accountUserManager.preferenceManager.defaultExperimentWasCreated)
     XCTAssertTrue(accountUserManager.preferenceManager.hasUserOptedOutOfUsageTracking)
   }
 

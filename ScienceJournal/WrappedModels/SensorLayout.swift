@@ -99,13 +99,11 @@ class SensorLayout: Equatable, Hashable {
   /// - Parameters:
   ///   - sensorID: The sensor ID.
   ///   - colorPalette: The color palette.
-  ///   - visibleYAxis: The visible Y axis.
-  convenience init(sensorID: String, colorPalette: MDCPalette, visibleYAxis: ChartAxis<Double>) {
+  convenience init(sensorID: String, colorPalette: MDCPalette) {
     let proto = GSJSensorLayout()
     self.init(proto: proto)
     self.sensorID = sensorID
     self.colorPalette = colorPalette
-    self.visibleYAxis = visibleYAxis
   }
 
   /// Tests a trigger id for active state.

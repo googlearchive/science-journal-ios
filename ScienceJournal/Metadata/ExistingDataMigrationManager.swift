@@ -264,7 +264,7 @@ class ExistingDataMigrationManager {
 
   /// Moves preferences from pre-account user defaults to user defaults for this user.
   func migratePreferences() {
-    accountUserManager.preferenceManager.copyPreferences(
+    accountUserManager.preferenceManager.migratePreferences(
         fromManager: rootUserManager.preferenceManager)
   }
 

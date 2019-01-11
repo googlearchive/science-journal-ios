@@ -29,6 +29,12 @@ public protocol DriveSyncManagerDelegate: class {
   ///
   /// - Parameter experimentID: An experiment ID.
   func driveSyncDidDeleteExperiment(withID experimentID: String)
+
+  /// Informs the delegate a trial was deleted from an experiment.
+  ///
+  /// - Parameter trialID: A trial ID.
+  /// - Parameter experimentID: An experimentID from which the trial was deleted.
+  func driveSyncDidDeleteTrial(withID trialID: String, experimentID: String)
 }
 
 extension Notification.Name {

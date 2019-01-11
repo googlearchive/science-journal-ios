@@ -285,6 +285,13 @@ extension String {
   static public var menuItemAudioSettings: String { return "menu_item_audio_settings".localized }
   static public var menuItemEditTriggers: String { return "menu_item_edit_triggers".localized }
   static public var menuItemSetTriggers: String { return "menu_item_set_triggers".localized }
+  static public var musicalNoteA: String { return "musical_note_a".localized }
+  static public var musicalNoteB: String { return "musical_note_b".localized }
+  static public var musicalNoteC: String { return "musical_note_c".localized }
+  static public var musicalNoteD: String { return "musical_note_d".localized }
+  static public var musicalNoteE: String { return "musical_note_e".localized }
+  static public var musicalNoteF: String { return "musical_note_f".localized }
+  static public var musicalNoteG: String { return "musical_note_g".localized }
   static public var myDevices: String { return "my_devices".localized }
   static public var nameExperimentDialogTitle: String { return "name_experiment_dialog_title".localized }
   static public var navigationItemActivities: String { return "navigation_item_activities".localized }

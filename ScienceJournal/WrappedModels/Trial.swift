@@ -177,11 +177,12 @@ public class Trial {
     backingProto = protoCopy
   }
 
-  /// Initializes a trial with an empty proto.
-  convenience init() {
+  /// Initializes a trial with a trialID and empty proto.
+  /// - Parameter trialID: A trial ID.
+  convenience init(trialID: String = UUID().uuidString) {
     let proto = GSJTrial()
     self.init(proto: proto)
-    ID = UUID().uuidString
+    ID = trialID
     creationDate = Date()
   }
 

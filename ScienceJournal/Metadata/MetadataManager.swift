@@ -579,7 +579,7 @@ public class MetadataManager {
         experimentOverviews.map { $0.colorPalette })
 
     overview.isArchived = syncExperiment.isArchived
-    overview.lastUsedDate = Date(milliseconds: syncExperiment.lastOpenedTimestamp)
+    overview.lastUsedDate = Date(milliseconds: syncExperiment.lastModifiedTimestamp)
     overview.title = experiment.title
     overview.imagePath = experiment.imagePath
 
@@ -632,7 +632,7 @@ public class MetadataManager {
     do {
       try saveExperiment(experiment,
                          markDirty: markDirty,
-                         updateLastUsedDate: true,
+                         updateLastModifiedDate: true,
                          validateVersion: validateVersion)
       return true
     } catch let error as MetadataManagerError {
@@ -651,7 +651,7 @@ public class MetadataManager {
   /// - Return: True if the save was successful, otherwise false.
   @discardableResult func saveExperimentWithoutDateChange(_ experiment: Experiment) -> Bool {
     do {
-      try saveExperiment(experiment, markDirty: true, updateLastUsedDate: false)
+      try saveExperiment(experiment, markDirty: true, updateLastModifiedDate: false)
       return true
     } catch let error as MetadataManagerError {
       print("[MetadataManager] Error saving experiment: \(error.logString)")
@@ -671,7 +671,7 @@ public class MetadataManager {
   /// - Return: True if the save was successful, otherwise false.
   @discardableResult func saveExperiment(_ experiment: Experiment, toURL url: URL) -> Bool {
     do {
-      try saveExperiment(experiment, markDirty: true, updateLastUsedDate: false, url: url)
+      try saveExperiment(experiment, markDirty: true, updateLastModifiedDate: false, url: url)
       return true
     } catch let error as MetadataManagerError {
       print("[MetadataManager] Error saving experiment: \(error.logString)")
@@ -686,7 +686,7 @@ public class MetadataManager {
   /// - Parameters:
   ///   - experiment: The experiment.
   ///   - markDirty: Whether to mark the experiment dirty.
-  ///   - updateLastUsedDate: Should the last used date be updated to now? Defaults to true.
+  ///   - updateLastModifiedDate: Should the last modified date be updated to now?
   ///   - url: The URL to save the experiment to. If nil it will save it to the current experiments
   ///          directory and update the corresponding overview.
   ///   - validateVersion: Whether to validate the experiment version before saving. Defaults to
@@ -694,10 +694,12 @@ public class MetadataManager {
   /// - Throws: An error if the version is not valid.
   private func saveExperiment(_ experiment: Experiment,
                               markDirty: Bool,
-                              updateLastUsedDate: Bool,
+                              updateLastModifiedDate: Bool,
                               url: URL? = nil,
                               validateVersion: Bool = true) throws {
-    updateOverview(for: experiment, updateLastUsedDate: updateLastUsedDate)
+    // The overview's last used date is considered the same as the sync experiment's last modified
+    // date.
+    updateOverview(for: experiment, updateLastUsedDate: updateLastModifiedDate)
 
     // If a URL was specified use that, and do not validate version, otherwise save to the
     // experiments directory.
@@ -719,8 +721,10 @@ public class MetadataManager {
       experimentURL = experimentProtoURL(for: experiment.ID)
     }
 
-    experimentLibrary.setExperimentModified(withExperimentID: experiment.ID)
-    saveExperimentLibrary()
+    if updateLastModifiedDate {
+      experimentLibrary.setExperimentModified(withExperimentID: experiment.ID)
+      saveExperimentLibrary()
+    }
 
     saveData(experiment.proto.data(), to: experimentURL)
 
@@ -1499,7 +1503,7 @@ public class MetadataManager {
                                 experimentURL: experimentDirectoryURL(for: experimentID),
                                 overview: overview,
                                 sensorDataManager: sensorDataManager)
-    let blockObserver = BlockObserver { (operation, errors) in
+    let blockObserver = BlockObserver { [unowned documentExportOperation] (operation, errors) in
       DispatchQueue.main.async {
         completion(documentExportOperation.documentURL, errors)
       }

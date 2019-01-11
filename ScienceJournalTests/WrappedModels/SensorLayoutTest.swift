@@ -47,9 +47,8 @@ class SensorLayoutTest: XCTestCase {
   }
 
   func testProtoOutput() {
-    let sensorLayout = SensorLayout(sensorID: "456DEF",
-                                    colorPalette: .orange,
-                                    visibleYAxis: ChartAxis(min: -50, max: 50))
+    let sensorLayout = SensorLayout(sensorID: "456DEF", colorPalette: .orange)
+    sensorLayout.visibleYAxis = ChartAxis(min: -50, max: 50)
     sensorLayout.isAudioEnabled = true
     sensorLayout.shouldShowStatsOverlay = true
     sensorLayout.extras = ["Test Key": "Test Value"]
@@ -67,9 +66,7 @@ class SensorLayoutTest: XCTestCase {
   }
 
   func testActiveSensorTriggers() {
-    let sensorLayout = SensorLayout(sensorID: "test sensor ID",
-                                    colorPalette: .blue,
-                                    visibleYAxis: ChartAxis(min: 0, max: 1))
+    let sensorLayout = SensorLayout(sensorID: "test sensor ID", colorPalette: .blue)
     sensorLayout.activeSensorTriggerIDs = ["A", "B", "C"]
 
     XCTAssertTrue(sensorLayout.isTriggerActive("A"))
@@ -79,17 +76,15 @@ class SensorLayoutTest: XCTestCase {
   }
 
   func testEquality() {
-    let sensorLayout1 = SensorLayout(sensorID: "SENSOR 1",
-                                     colorPalette: .blue,
-                                     visibleYAxis: ChartAxis(min: 10, max: 20))
+    let sensorLayout1 = SensorLayout(sensorID: "SENSOR 1", colorPalette: .blue)
+    sensorLayout1.visibleYAxis = ChartAxis(min: 10, max: 20)
     sensorLayout1.isAudioEnabled = true
     sensorLayout1.shouldShowStatsOverlay = true
     sensorLayout1.extras = ["foo": "bar"]
     sensorLayout1.activeSensorTriggerIDs = ["A", "B", "C"]
 
-    let sensorLayout2 = SensorLayout(sensorID: "SENSOR 1",
-                                     colorPalette: .blue,
-                                     visibleYAxis: ChartAxis(min: 10, max: 20))
+    let sensorLayout2 = SensorLayout(sensorID: "SENSOR 1", colorPalette: .blue)
+    sensorLayout2.visibleYAxis = ChartAxis(min: 10, max: 20)
     sensorLayout2.isAudioEnabled = true
     sensorLayout2.shouldShowStatsOverlay = true
     sensorLayout2.extras = ["foo": "bar"]
@@ -98,9 +93,8 @@ class SensorLayoutTest: XCTestCase {
     XCTAssertEqual(sensorLayout1, sensorLayout1)
     XCTAssertEqual(sensorLayout1, sensorLayout2)
 
-    let sensorLayout3 = SensorLayout(sensorID: "SENSOR 2",
-                                     colorPalette: .green,
-                                     visibleYAxis: ChartAxis(min: 20, max: 30))
+    let sensorLayout3 = SensorLayout(sensorID: "SENSOR 2", colorPalette: .green)
+    sensorLayout3.visibleYAxis = ChartAxis(min: 20, max: 30)
     XCTAssertEqual(sensorLayout3, sensorLayout3)
     XCTAssertNotEqual(sensorLayout1, sensorLayout3)
 
@@ -111,10 +105,8 @@ class SensorLayoutTest: XCTestCase {
   }
 
   func testCopySensorLayout() {
-    let sensorLayout1 =
-        SensorLayout(sensorID: "SENSOR 1",
-                     colorPalette: .blue,
-                     visibleYAxis: ChartAxis(min: 99, max: 199))
+    let sensorLayout1 = SensorLayout(sensorID: "SENSOR 1", colorPalette: .blue)
+    sensorLayout1.visibleYAxis = ChartAxis(min: 99, max: 199)
     let sensorLayout2 = SensorLayout(proto: sensorLayout1.proto)
     XCTAssertTrue(sensorLayout1 == sensorLayout2)
     XCTAssertFalse(sensorLayout1 === sensorLayout2)

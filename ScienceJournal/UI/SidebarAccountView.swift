@@ -100,6 +100,10 @@ class SidebarAccountView: UIView {
     secondLine = email
     self.profileImage = profileImage
     profileImageView.tintColor = nil
+
+    accessibilityLabel =
+        String(format: String.sidebarAccountViewSignedInContentDescription, name, email)
+    accessibilityHint = String.sidebarAccountViewSignedInContentDetails
   }
 
   /// Displays the signed out state with a generic icon.
@@ -108,11 +112,17 @@ class SidebarAccountView: UIView {
     secondLine = nil
     profileImage = UIImage(named: "ic_account_placeholder")
     profileImageView.tintColor = MDCPalette.grey.tint700
+
+    accessibilityLabel = String.sidebarAccountViewSignedOutContentDescription
+    accessibilityHint = nil
   }
 
   // MARK: - Private
 
   private func configureView() {
+    isAccessibilityElement = true
+    accessibilityTraits = .button
+
     backgroundColor = .white
 
     let separator = SeparatorView(direction: .horizontal, style: .dark)

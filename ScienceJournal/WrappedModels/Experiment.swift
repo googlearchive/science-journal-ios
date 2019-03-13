@@ -122,12 +122,17 @@ public class Experiment {
   var changes: [ExperimentChange]
 
   /// Returns all picture notes found in experiment and trial notes combined.
-  var pictureNotes: [PictureNote] {
+  public var pictureNotes: [PictureNote] {
     var pictureNotes = notes.compactMap { $0 as? PictureNote }
     pictureNotes += trials.reduce([], { (result, trial) -> [PictureNote] in
       result + trial.notes.compactMap { $0 as? PictureNote }
     })
     return pictureNotes
+  }
+
+  /// Whether the experiment contains any items that have corresponding assets.
+  public var hasAssetReferences: Bool {
+    return trials.count + pictureNotes.count + (imagePath != nil ? 1 : 0) > 0
   }
 
   /// A proto representation of a trial.

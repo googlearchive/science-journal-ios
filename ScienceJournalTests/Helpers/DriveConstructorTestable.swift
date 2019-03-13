@@ -22,13 +22,15 @@ import googlemac_iPhone_Shared_SSOAuth_SSOAuth
 
 /// A mock drive constructor used for testing.
 class MockDriveConstructor: DriveConstructor {
+  let mockDriveSyncManager = MockDriveSyncManager()
   /// Returns a mock drive sync manager when called.
   func driveSyncManager(withAuthorization authorization: GTMFetcherAuthorizationProtocol,
                         metadataManager: MetadataManager,
                         networkAvailability: NetworkAvailability,
                         preferenceManager: PreferenceManager,
-                        sensorDataManager: SensorDataManager) -> DriveSyncManager? {
-    return MockDriveSyncManager()
+                        sensorDataManager: SensorDataManager,
+                        analyticsReporter: AnalyticsReporter) -> DriveSyncManager? {
+    return mockDriveSyncManager
   }
 }
 
@@ -37,7 +39,8 @@ class MockDriveConstructor: DriveConstructor {
 class MockDriveSyncManager: DriveSyncManager {
   var delegate: DriveSyncManagerDelegate?
   func syncExperimentLibrary(andReconcile shouldReconcile: Bool, userInitiated: Bool) {}
-  func syncExperiment(withID experimentID: String, onlyIfDirty: Bool) {}
+  func syncExperiment(withID experimentID: String,
+                      condition: DriveExperimentSyncCondition) {}
   func syncTrialSensorData(atURL url: URL, experimentID: String) {}
   func deleteExperiment(withID experimentID: String) {}
   func deleteImageAssets(atURLs urls: [URL], experimentID: String) {}
@@ -45,9 +48,14 @@ class MockDriveSyncManager: DriveSyncManager {
   func debug_removeAllUserDriveData(completion: @escaping (Int, [Error]) -> Void) {}
 
   var mockExperimentLibraryExistsValue: Bool?
+  var tearDownCalled = false
 
   func experimentLibraryExists(completion: @escaping (Bool?) -> Void) {
     completion(mockExperimentLibraryExistsValue)
+  }
+
+  func tearDown() {
+    tearDownCalled = true
   }
 
 }

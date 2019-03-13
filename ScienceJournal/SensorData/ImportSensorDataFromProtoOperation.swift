@@ -20,36 +20,36 @@ import third_party_sciencejournal_ios_ScienceJournalProtos
 
 /// An operation that imports sensor data from a proto. The operation requires either an
 /// `ImportExperimentOperation` as a dependency or a proto passed in during initialization.
-class ImportSensorDataFromProtoOperation: GSJOperation {
+public class ImportSensorDataFromProtoOperation: GSJOperation {
 
   private let sensorDataManager: SensorDataManager
-  private let sensorDataProto: GSJScalarSensorData?
+  private let sensorDataResult: OperationResult<Data>?
   private let trialIDsOperationResult: OperationResult<[String]>?
 
   /// Designated initializer.
   ///
   /// - Parameters:
   ///   - sensorDataManager: A sensor data manager.
-  ///   - sensorDataResult: A sensor data proto result.
+  ///   - sensorDataResult: A sensor data result.
   ///   - trialIDsOperationResult: An operation result for the IDs of the trials the sensor data is
   ///                              imported for.
-  init(sensorDataManager: SensorDataManager,
-       sensorDataProto: GSJScalarSensorData? = nil,
-       trialIDsOperationResult: OperationResult<[String]>? = nil) {
+  public init(sensorDataManager: SensorDataManager,
+              sensorDataResult: OperationResult<Data>? = nil,
+              trialIDsOperationResult: OperationResult<[String]>? = nil) {
     self.sensorDataManager = sensorDataManager
-    self.sensorDataProto = sensorDataProto
+    self.sensorDataResult = sensorDataResult
     self.trialIDsOperationResult = trialIDsOperationResult
   }
 
-  override func execute() {
+  public override func execute() {
     var findSensorDataProto: GSJScalarSensorData?
     var trialIDMap: [String: String]?
     if let importExperimentOp: ImportExperimentOperation = successfulDependency(),
         let sensorData = importExperimentOp.sensorData {
       findSensorDataProto = sensorData
       trialIDMap = importExperimentOp.trialIDMap
-    } else if let sensorData = sensorDataProto {
-      findSensorDataProto = sensorData
+    } else if let sensorData = sensorDataResult?.value {
+      findSensorDataProto = try? GSJScalarSensorData.parse(from: sensorData)
       // Pass nil for the trial map because we are not re-IDing the trials.
     }
 

@@ -23,11 +23,13 @@ public struct Constants {
     public static let appDataFolderName = "appDataFolder"
     public static let defaultFileMetadataItemsFields =
         "items/fileSize,items/id,items/labels/trashed,items/title,items/version"
-    public static let defaultFileMetadataFields = "fileSize,id,labels/trashed,title,version"
+    public static let defaultFileMetadataFields =
+        "fileSize,id,labels/trashed,packageId,title,version"
     public static let driveSpaceName = "drive"
     public static let experimentLibraryProtoFilename = "experiment_library.proto"
     public static let experimentProtoFilename = "experiment.proto"
     public static let folderMimeType = "application/vnd.google-apps.folder"
+    public static let imageMimeType = "image/jpeg"
     public static let protoMimeType = "application/sj"
     public static let scienceJournalFolderName = "Science Journal"
     public static let versionProtoFilename = "version.proto"

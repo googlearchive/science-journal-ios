@@ -20,9 +20,18 @@ import XCTest
 
 class RootUserManagerTest: XCTestCase {
 
-  let rootUserManager = RootUserManager(sensorController: MockSensorController())
+  var rootUserManager: RootUserManager!
 
   override func setUp() {
+    // Remove the root user during setup so we can test initialization from a clean state.
+    let rootURL = URL.documentsDirectoryURL.appendingPathComponent("Science Journal")
+    do {
+      try FileManager.default.removeItem(at: rootURL)
+    } catch {
+      print("[RootUserManagerTest] Error deleting root user: \(error)")
+    }
+
+    rootUserManager = RootUserManager(sensorController: MockSensorController())
     rootUserManager.preferenceManager.resetAll()
   }
 
@@ -84,6 +93,11 @@ class RootUserManagerTest: XCTestCase {
   func testIsDriveSyncEnabled() {
     XCTAssertFalse(rootUserManager.isDriveSyncEnabled,
                    "Drive sync should never be enabled for the root user.")
+  }
+
+  func testHasExperimentsDirectoryAfterInitialization() {
+    XCTAssertFalse(rootUserManager.hasExperimentsDirectory,
+                   "After initialization there shouldn't yet be a root experiments directory.")
   }
 
 }

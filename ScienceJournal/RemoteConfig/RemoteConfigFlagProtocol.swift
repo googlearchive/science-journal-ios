@@ -16,11 +16,12 @@
 
 import UIKit
 
-/// No-op implementation of remote config manager.
-class RemoteConfigManagerDisabled: RemoteConfigManager {
+public protocol RemoteConfigFlag {
 
-  func configure() {}
-  func fetchRemoteConfigAndActivate(completion: (() -> Void)?) {}
-  func boolValueForFlag(_ remoteConfigFlag: RemoteConfigFlag) -> Bool { return false }
+  /// Returns a tuple of the key and default value for a flag.
+  var details: (key: String, defaultValue: NSObject) { get }
+
+  /// Returns only the key for a flag.
+  var key: String { get }
 
 }

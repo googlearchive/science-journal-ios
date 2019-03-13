@@ -23,4 +23,16 @@ public protocol RemoteConfigManager {
   /// configures default values for all flags and fetches remote flags.
   func configure()
 
+  /// Fetches an updated config from Firebase and activates it.
+  ///
+  /// - Parameter completion: An optional completion block, which is performed on a background
+  ///                         thread.
+  func fetchRemoteConfigAndActivate(completion: (() -> Void)?)
+
+  /// Returns the boolean value of a given flag.
+  ///
+  /// - Parameter remoteConfigFlag: The RemoteConfigFlag to check.
+  /// - Returns: True if the flag is enabled, otherwise false.
+  func boolValueForFlag(_ remoteConfigFlag: RemoteConfigFlag) -> Bool
+
 }

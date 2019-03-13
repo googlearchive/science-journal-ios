@@ -290,4 +290,34 @@ class ExperimentTest: XCTestCase {
     XCTAssertTrue(experiment.sensorLayouts.isEmpty)
   }
 
+  func testHasAssetReferences() {
+    let experiment1 = Experiment(ID: "testHasAssetReferences1")
+    XCTAssertFalse(experiment1.hasAssetReferences)
+
+    let experiment2 = Experiment(ID: "testHasAssetReferences2")
+    experiment2.trials = [Trial(), Trial(), Trial()]
+    XCTAssertTrue(experiment2.hasAssetReferences)
+
+    let experiment3 = Experiment(ID: "testHasAssetReferences3")
+    experiment3.addNote(PictureNote())
+    experiment3.addNote(PictureNote())
+    XCTAssertTrue(experiment3.hasAssetReferences)
+
+    let experiment4 = Experiment(ID: "testHasAssetReferences4")
+    experiment4.addNote(TextNote())
+    experiment4.addNote(TextNote())
+    XCTAssertFalse(experiment4.hasAssetReferences)
+
+    let experiment5 = Experiment(ID: "testHasAssetReferences5")
+    experiment5.imagePath = "path/to/image.jpg"
+    XCTAssertTrue(experiment5.hasAssetReferences)
+
+    let experiment6 = Experiment(ID: "testHasAssetReferences6")
+    experiment6.trials = [Trial(), Trial(), Trial()]
+    experiment6.addNote(PictureNote())
+    experiment6.addNote(PictureNote())
+    experiment6.imagePath = "path/to/image.jpg"
+    XCTAssertTrue(experiment6.hasAssetReferences)
+  }
+
 }

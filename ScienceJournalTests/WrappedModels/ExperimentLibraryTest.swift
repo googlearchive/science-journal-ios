@@ -115,4 +115,48 @@ class ExperimentLibraryTest: XCTestCase {
     XCTAssertFalse(proto === proto2)
   }
 
+  func testDirtyState() {
+    XCTAssertTrue(experimentLibrary.isDirty, "Dirty state should default to true.")
+
+    experimentLibrary.isDirty = false
+    XCTAssertFalse(experimentLibrary.isDirty, "Dirty state should now be false.")
+
+    // Add a sync experiment first so it's there for the rest of the calls to use.
+    experimentLibrary.addExperiment(SyncExperiment(experimentID: "test_experiment_ID",
+                                                   clock: Clock()))
+    XCTAssertTrue(experimentLibrary.isDirty,
+                  "Dirty state should be true after adding a sync experiment.")
+
+    experimentLibrary.isDirty = false
+    experimentLibrary.setFileID("test_file_ID", forExperimentID: "test_experiment_ID")
+    XCTAssertTrue(experimentLibrary.isDirty, "Dirty state should be true after setting a file ID.")
+
+    experimentLibrary.isDirty = false
+    experimentLibrary.addExperiment(withID: "test_experiment_ID_2")
+    XCTAssertTrue(experimentLibrary.isDirty,
+                  "Dirty state should be true after adding an experiment by ID.")
+
+    experimentLibrary.isDirty = false
+    experimentLibrary.setExperimentArchived(true, experimentID: "test_experiment_ID")
+    XCTAssertTrue(experimentLibrary.isDirty,
+                  "Dirty state should be true after setting an experiment to archived.")
+
+    experimentLibrary.isDirty = false
+    experimentLibrary.setExperimentOpened(withExperimentID: "test_experiment_ID")
+    XCTAssertTrue(experimentLibrary.isDirty,
+                  "Dirty state should be true after setting an experiment's last opened timestamp.")
+
+    experimentLibrary.isDirty = false
+    experimentLibrary.setExperimentModified(withExperimentID: "test_experiment_ID")
+    XCTAssertTrue(experimentLibrary.isDirty,
+                  "Dirty state should be true after setting an experiment's last modified " +
+                      "timestamp.")
+
+    // Test deleting last so the experiment is there for the rest of the calls to use.
+    experimentLibrary.isDirty = false
+    experimentLibrary.setExperimentDeleted(true, experimentID: "test_experiment_ID")
+    XCTAssertTrue(experimentLibrary.isDirty,
+                  "Dirty state should be true after setting an experiment to deleted.")
+  }
+
 }

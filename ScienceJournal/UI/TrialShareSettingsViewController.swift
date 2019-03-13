@@ -150,10 +150,7 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
   }
 
   @objc private func cancelButtonPressed() {
-    analyticsReporter.trackEventWithCategory(AnalyticsConstants.eventCategoryExportTrial,
-                                             action: AnalyticsConstants.eventExportCancelled,
-                                             label: nil,
-                                             value: nil)
+    analyticsReporter.track(.trialExportCancelled)
     dismiss(animated: true)
   }
 

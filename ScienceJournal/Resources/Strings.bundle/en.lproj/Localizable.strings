@@ -787,27 +787,6 @@
 /* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
 "menu_item_set_triggers" = "Set triggers";
 
-/* The letter of the musical note A. [CHAR_LIMIT=1] */
-"musical_note_a" = "A";
-
-/* The letter of the musical note B. [CHAR_LIMIT=1] */
-"musical_note_b" = "B";
-
-/* The letter of the musical note C. [CHAR_LIMIT=1] */
-"musical_note_c" = "C";
-
-/* The letter of the musical note D. [CHAR_LIMIT=1] */
-"musical_note_d" = "D";
-
-/* The letter of the musical note E. [CHAR_LIMIT=1] */
-"musical_note_e" = "E";
-
-/* The letter of the musical note F. [CHAR_LIMIT=1] */
-"musical_note_f" = "F";
-
-/* The letter of the musical note G. [CHAR_LIMIT=1] */
-"musical_note_g" = "G";
-
 /* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
 "my_devices" = "My Devices";
 
@@ -1275,6 +1254,15 @@
 
 /* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
 "show_options_content_description" = "Show options";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Signed in as %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Open to manage accounts";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Choose an account";
 
 /* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
 "sidebar_menu_content_description" = "Side bar menu";

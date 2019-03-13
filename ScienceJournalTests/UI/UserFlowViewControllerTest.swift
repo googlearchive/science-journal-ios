@@ -57,7 +57,8 @@ class UserFlowViewControllerTest: XCTestCase {
     let mockUserManager = MockUserManager(driveSyncManager: mockDriveSyncManager,
                                           metadataManager: partialMockMetadataManager,
                                           preferenceManager: preferenceManager,
-                                          sensorDataManager: SensorDataManager.testStore)
+                                          sensorDataManager: SensorDataManager.testStore,
+                                          assetManager: mockUserAssetManager)
     userFlowViewController =
         UserFlowViewController(accountsManager: mockAccountsManager,
                                analyticsReporter: AnalyticsReporterOpen(),
@@ -69,7 +70,6 @@ class UserFlowViewControllerTest: XCTestCase {
                                networkAvailability: SettableNetworkAvailability(),
                                sensorController: MockSensorController(),
                                shouldShowPreferenceMigrationMessage: false,
-                               userAssetManager: mockUserAssetManager,
                                userManager: mockUserManager)
   }
 
@@ -138,7 +138,8 @@ class UserFlowViewControllerTest: XCTestCase {
     let mockUserManager = MockUserManager(driveSyncManager: nil,
                                           metadataManager: partialMockMetadataManager,
                                           preferenceManager: preferenceManager,
-                                          sensorDataManager: SensorDataManager.testStore)
+                                          sensorDataManager: SensorDataManager.testStore,
+                                          assetManager: mockUserAssetManager)
     userFlowViewController =
         UserFlowViewController(accountsManager: mockAccountsManager,
                                analyticsReporter: AnalyticsReporterOpen(),
@@ -150,7 +151,6 @@ class UserFlowViewControllerTest: XCTestCase {
                                networkAvailability: SettableNetworkAvailability(),
                                sensorController: MockSensorController(),
                                shouldShowPreferenceMigrationMessage: false,
-                               userAssetManager: mockUserAssetManager,
                                userManager: mockUserManager)
     preferenceManager.defaultExperimentWasCreated = false
     userFlowViewController.viewDidAppear(false)

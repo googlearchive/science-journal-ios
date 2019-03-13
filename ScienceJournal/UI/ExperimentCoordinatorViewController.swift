@@ -787,9 +787,15 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   func experimentUpdateTrialDeleted(_ trial: Trial,
                                     fromExperiment experiment: Experiment,
-                                    undoBlock: @escaping () -> Void) {
+                                    undoBlock: (() -> Void)?) {
     removeTrial(trial)
     updateEmptyView(animated: true)
+
+    guard let undoBlock = undoBlock else {
+      // If the snackbar is not showing, delete the associated sensor data.
+      self.delegate?.experimentViewControllerDeleteTrialCompleted(trial, fromExperiment: experiment)
+      return
+    }
 
     var didUndo = false
     showUndoSnackbar(withMessage: String.deletedRecordingMessage,

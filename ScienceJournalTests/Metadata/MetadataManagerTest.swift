@@ -1295,6 +1295,69 @@ class MetadataManagerTest: XCTestCase {
     XCTAssertEqual(overview.imagePath, "path/to/image")
   }
 
+  func testRecreateOverviewsIfUserMetadataDeleted() {
+    _ = metadataManager.createExperiment(withTitle: "Missing Experiment 1")
+    _ = metadataManager.createExperiment(withTitle: "Missing Experiment 2")
+    _ = metadataManager.createExperiment(withTitle: "Missing Experiment 3")
+
+    XCTAssertEqual(3, metadataManager.experimentOverviews.count)
+
+    let userMetadataURL = testingRootURL.appendingPathComponent("user_metadata")
+    XCTAssertTrue(FileManager.default.fileExists(atPath: userMetadataURL.path))
+
+    XCTAssertNoThrow(try FileManager.default.removeItem(at: userMetadataURL))
+
+    XCTAssertFalse(FileManager.default.fileExists(atPath: userMetadataURL.path))
+
+    // Create new metadataManager instance at the same root URL to simulate what happens when a user
+    // session begins.
+    let anotherMetadataManager = MetadataManager(rootURL: testingRootURL,
+                                                 deletedRootURL: testingRootURL,
+                                                 preferenceManager: PreferenceManager(),
+                                                 sensorController: MockSensorController(),
+                                                 sensorDataManager: sensorDataManager)
+
+    // Verify userMetadata file exists
+    XCTAssertTrue(FileManager.default.fileExists(atPath: userMetadataURL.path))
+
+    // Verify overviews exist
+    XCTAssertEqual(3, anotherMetadataManager.experimentOverviews.count)
+  }
+
+  func testAddMissingOverviews() {
+    _ = metadataManager.createExperiment(withTitle: "Missing Experiment 1")
+    _ = metadataManager.createExperiment(withTitle: "Missing Experiment 2")
+
+    XCTAssertEqual(2, metadataManager.experimentOverviews.count)
+
+    let newExperiment = Experiment(ID: "Orphaned Experiment ID")
+    newExperiment.setTitle("Orphan")
+    if let protoData = newExperiment.proto.data() {
+      let newExperimentURL =
+          metadataManager.experimentsDirectoryURL.appendingPathComponent("Orphaned Experiment ID")
+
+      XCTAssertNoThrow(try FileManager.default.createDirectory(atPath: newExperimentURL.path,
+                                                withIntermediateDirectories: true,
+                                                attributes: nil))
+
+      let newExperimentProtoURL = newExperimentURL.appendingPathComponent("experiment.proto")
+      XCTAssertNoThrow(try protoData.write(to: newExperimentProtoURL))
+    }
+
+    // Create new metadataManager instance at the same root URL to simulate what happens when a user
+    // session begins.
+    let anotherMetadataManager = MetadataManager(rootURL: testingRootURL,
+                                                 deletedRootURL: testingRootURL,
+                                                 preferenceManager: PreferenceManager(),
+                                                 sensorController: MockSensorController(),
+                                                 sensorDataManager: sensorDataManager)
+
+    XCTAssertEqual(3, anotherMetadataManager.experimentOverviews.count)
+    XCTAssertEqual("Orphaned Experiment ID",
+                   anotherMetadataManager.experimentOverviews[2].experimentID)
+    XCTAssertEqual("Orphan", anotherMetadataManager.experimentOverviews[2].title)
+  }
+
   // MARK: - Helpers
 
   /// Creates an experiment that has one trial with sensor data, and asserts it and its data are on

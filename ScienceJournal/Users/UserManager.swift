@@ -34,6 +34,9 @@ protocol UserManager {
   /// The sensor data manager configured for the user.
   var sensorDataManager: SensorDataManager { get }
 
+  /// The asset manager for the user.
+  var assetManager: UserAssetManager { get }
+
   /// Whether to verify the user's age.
   var shouldVerifyAge: Bool { get }
 
@@ -42,6 +45,9 @@ protocol UserManager {
 
   /// Whether Drive sync is enabled for the user.
   var isDriveSyncEnabled: Bool { get }
+
+  /// Do any needed work in preparation of the user session ending.
+  func tearDown()
 
   /// Deletes all user data.
   ///

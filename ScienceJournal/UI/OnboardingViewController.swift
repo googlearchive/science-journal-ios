@@ -77,6 +77,15 @@ class OnboardingViewController: ScienceJournalViewController {
   /// will be the same size as `view`. All subviews should be added to this view.
   let wrappingView = UIView()
 
+  /// When laying out the wrapping view, it will be centered vertically when true. Otherwise, it is
+  /// full screen on iPhone and a standard height on iPad. The wrapping view height must be properly
+  /// sized for this to work. Defaults to false.
+  var shouldCenterWrappingViewVertically = false {
+    didSet {
+      configureVariableConstraints(forTraitCollection: traitCollection)
+    }
+  }
+
   private var wrappingViewConstraints = [NSLayoutConstraint]()
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -170,7 +179,14 @@ class OnboardingViewController: ScienceJournalViewController {
     view.removeConstraints(wrappingViewConstraints)
     wrappingViewConstraints.removeAll()
 
-    if newTraitCollection.verticalSizeClass == .regular &&
+    if shouldCenterWrappingViewVertically {
+      wrappingViewConstraints.append(
+          wrappingView.centerYAnchor.constraint(equalTo: view.centerYAnchor))
+      wrappingViewConstraints.append(
+          wrappingView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+      wrappingViewConstraints.append(
+          wrappingView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+    } else if newTraitCollection.verticalSizeClass == .regular &&
         newTraitCollection.horizontalSizeClass == .regular {
       wrappingViewConstraints.append(
           wrappingView.widthAnchor.constraint(equalToConstant: Metrics.padWidth))

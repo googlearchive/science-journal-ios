@@ -28,7 +28,8 @@ open class DriveConstructorDisabled: DriveConstructor {
                                metadataManager: MetadataManager,
                                networkAvailability: NetworkAvailability,
                                preferenceManager: PreferenceManager,
-                               sensorDataManager: SensorDataManager) -> DriveSyncManager? {
+                               sensorDataManager: SensorDataManager,
+                               analyticsReporter: AnalyticsReporter) -> DriveSyncManager? {
     return nil
   }
 

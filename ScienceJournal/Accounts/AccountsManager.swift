@@ -18,13 +18,43 @@ import UIKit
 
 import googlemac_iPhone_Shared_SSOAuth_SSOAuth
 
-/// A closure signature with two Bool parameters, the first indicating whether sign in was
-/// successful, the second indicating whether the user should be forced to sign in.
-public typealias SignInBlock = (_ signInSuccess: Bool, _ shouldForceSignIn: Bool) -> Void
+public enum SignInResult {
+  /// The account changed.
+  case accountChanged
+
+  /// Sign in failed, the user should be forced to sign in again.
+  case forceSignIn
+
+  /// No change occured while signing in, leave the existing signed in user signed in.
+  case noAccountChange
+}
+
+public enum SignInType {
+  /// A sign in is occuring.
+  case newSignIn
+
+  /// An account is already signed in, but is being restored on launch.
+  case restoreCachedAccount
+}
+
+public enum PermissionState {
+  /// Permission is granted.
+  case granted
+
+  /// Permission is denied.
+  case denied
+}
 
 public protocol AccountsManagerDelegate: class {
   /// Tells the delegate to delete all user data for the identity with the specified ID.
   func deleteAllUserDataForIdentity(withID identityID: String)
+
+  func accountsManagerWillBeginSignIn(signInType: SignInType)
+
+  func accountsManagerSignInComplete(signInResult: SignInResult, signInType: SignInType)
+
+  func accountsManagerPermissionCheckComplete(permissionState: PermissionState,
+                                              signInType: SignInType)
 }
 
 /// Protocol for managing Google user accounts.
@@ -40,9 +70,8 @@ public protocol AccountsManager: class {
   var currentAccount: AuthAccount? { get }
 
   /// This should check for a saved account and sign in as this account if the account is valid.
-  ///
-  /// - Parameter completion: A closure that should be called when the sign in is finished.
-  func signInAsCurrentAccount(completion: @escaping SignInBlock)
+  /// Should call the delegate when complete.
+  func signInAsCurrentAccount()
 
   /// Signs the current account out of Science Journal, but does not remove it from SSO. Needed
   /// when permission has been denied by the server for a specific account, which means the user
@@ -51,16 +80,11 @@ public protocol AccountsManager: class {
   func signOutCurrentAccount()
 
   /// Presents a view controller that allows the user to select an existing account or sign into
-  /// a new account.
+  /// a new account. Should call the delegate when sign in is complete.
   ///
-  /// - Parameters:
-  ///   - viewController: The view controller from which to present the sign in view controller.
-  ///   - completion: A closure called when sign in finishes with a Bool that indicates success
-  ///                 signing into an account, and a Bool determining whether a user should be
-  ///                 forced to sign in (in the case that they did not switch accounts but rather
-  ///                 deleted the current account).
-  func presentSignIn(fromViewController viewController: UIViewController,
-                     completion: @escaping SignInBlock)
+  /// - Parameter viewController: The view controller from which to present the sign in view
+  ///                             controller.
+  func presentSignIn(fromViewController viewController: UIViewController)
 
   /// Reauthenticates the current user account.
   ///
@@ -74,8 +98,6 @@ public protocol AccountsManager: class {
 }
 
 public extension Notification.Name {
-  /// The name of a notification posted when a user was denied access to Science Journal.
-  static let userDeniedServerPermission = Notification.Name("GSJNotificationDeniedServerPermission")
   /// The name of a notification posted when a user will be signed out immediately.
   static let userWillBeSignedOut = Notification.Name("GSJNotificationUserWillBeSignedOut")
 }

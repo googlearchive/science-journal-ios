@@ -60,7 +60,7 @@ open class UserAssetManager {
                                             trial: trial)
     writeTrialSensorDataToDiskOperation.addObserver(BlockObserver {
         [unowned self] (operation, errors) in
-      if errors.count == 0 {
+      if operation.didFinishSuccessfully {
         self.driveSyncManager?.syncTrialSensorData(atURL: saveURL, experimentID: experiment.ID)
       }
       completion?()
@@ -93,6 +93,11 @@ open class UserAssetManager {
                                               metadataManager: metadataManager,
                                               sensorDataManager: sensorDataManager)
     operationQueue.addOperation(writeMissingProtosOp)
+  }
+
+  /// Do any needed work in preparation of the user session ending.
+  func tearDown() {
+    operationQueue.terminate()
   }
 
 }

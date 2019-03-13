@@ -31,7 +31,8 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     accountUserManager = AccountUserManager(account: MockAuthAccount(),
                                             driveConstructor: DriveConstructorDisabled(),
                                             networkAvailability: SettableNetworkAvailability(),
-                                            sensorController: sensorController)
+                                            sensorController: sensorController,
+                                            analyticsReporter: AnalyticsReporterOpen())
     rootUserManager = RootUserManager(sensorController: sensorController)
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,
@@ -71,14 +72,14 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // Assert the sensor data is there.
     let expectation1 = expectation(description: "Fetch trial 1 sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial1.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation1.fulfill()
     })
 
     let expectation2 = expectation(description: "Fetch trial 2 sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation2.fulfill()
     })
@@ -120,7 +121,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let expectation4 =
         expectation(description: "Trial 1 sensor data should be deleted for the root user.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial1.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation4.fulfill()
     })
@@ -128,7 +129,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let expectation5 =
         expectation(description: "Trial 1 sensor data should be stored for the account user.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial1.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation5.fulfill()
     })
@@ -136,7 +137,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let expectation6 =
         expectation(description: "Trial 2 sensor data should still be stored for the root user.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation6.fulfill()
     })
@@ -144,7 +145,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let expectation7 =
         expectation(description: "Trial 2 sensor data should not be stored for the account user.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation7.fulfill()
     })
@@ -171,7 +172,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let expectation9 =
         expectation(description: "Trial 2 sensor data should be deleted for the root user.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation9.fulfill()
     })
@@ -179,7 +180,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let expectation10 =
         expectation(description: "Trial 2 sensor data should be stored for the account user.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation10.fulfill()
     })
@@ -270,17 +271,18 @@ class ExistingDataMigrationManagerTest: XCTestCase {
         accountUserManager.metadataManager.experimentAndOverview(forExperimentID: experiment.ID))
 
     // Assert the sensor data is in root and account.
-    var rootSensorData: [SensorData]!
+    var rootSensorData: [DataPoint]!
     let expectation1 = expectation(description: "Fetch root sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                         completion: { (sensorData) in
-      rootSensorData = sensorData
+                                                         completion: { (sensorData, _) in
+      // Copy sensor data as data points because the fetch context is reset after completion.
+      rootSensorData = sensorData?.dataPoints
       XCTAssertEqual(3, sensorData!.count)
       expectation1.fulfill()
     })
     let expectation2 = expectation(description: "Fetch account sensor data.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation2.fulfill()
     })
@@ -306,20 +308,20 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // matching the previous root sensor data.
     let expectation4 = expectation(description: "Fetch root sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation4.fulfill()
     })
     let expectation5 = expectation(description: "Fetch account sensor data.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
-      XCTAssertEqual(rootSensorData[0].timestamp, sensorData![0].timestamp)
-      XCTAssertEqual(rootSensorData[0].value, sensorData![0].value)
-      XCTAssertEqual(rootSensorData[1].timestamp, sensorData![1].timestamp)
-      XCTAssertEqual(rootSensorData[1].value, sensorData![1].value)
-      XCTAssertEqual(rootSensorData[2].timestamp, sensorData![2].timestamp)
-      XCTAssertEqual(rootSensorData[2].value, sensorData![2].value)
+      XCTAssertEqual(rootSensorData[0].x, sensorData![0].timestamp)
+      XCTAssertEqual(rootSensorData[0].y, sensorData![0].value)
+      XCTAssertEqual(rootSensorData[1].x, sensorData![1].timestamp)
+      XCTAssertEqual(rootSensorData[1].y, sensorData![1].value)
+      XCTAssertEqual(rootSensorData[2].x, sensorData![2].timestamp)
+      XCTAssertEqual(rootSensorData[2].y, sensorData![2].value)
       expectation5.fulfill()
     })
 
@@ -342,17 +344,18 @@ class ExistingDataMigrationManagerTest: XCTestCase {
         accountUserManager.metadataManager.experimentAndOverview(forExperimentID: experiment.ID))
 
     // Assert the sensor data is in root and account.
-    var rootSensorData: [SensorData]!
+    var rootSensorData: [DataPoint]!
     let expectation1 = expectation(description: "Fetch root sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                         completion: { (sensorData) in
-      rootSensorData = sensorData
+                                                         completion: { (sensorData, _) in
+      // Copy sensor data as data points because the fetch context is reset after completion.
+      rootSensorData = sensorData?.dataPoints
       XCTAssertEqual(3, sensorData!.count)
       expectation1.fulfill()
     })
     let expectation2 = expectation(description: "Fetch account sensor data.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(2, sensorData!.count)
       expectation2.fulfill()
     })
@@ -377,20 +380,20 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // Assert the sensor data is in account and not root, and the account only has 3 data points.
     let expectation4 = expectation(description: "Fetch root sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation4.fulfill()
     })
     let expectation5 = expectation(description: "Fetch account sensor data.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
-      XCTAssertEqual(rootSensorData[0].timestamp, sensorData![0].timestamp)
-      XCTAssertEqual(rootSensorData[0].value, sensorData![0].value)
-      XCTAssertEqual(rootSensorData[1].timestamp, sensorData![1].timestamp)
-      XCTAssertEqual(rootSensorData[1].value, sensorData![1].value)
-      XCTAssertEqual(rootSensorData[2].timestamp, sensorData![2].timestamp)
-      XCTAssertEqual(rootSensorData[2].value, sensorData![2].value)
+      XCTAssertEqual(rootSensorData[0].x, sensorData![0].timestamp)
+      XCTAssertEqual(rootSensorData[0].y, sensorData![0].value)
+      XCTAssertEqual(rootSensorData[1].x, sensorData![1].timestamp)
+      XCTAssertEqual(rootSensorData[1].y, sensorData![1].value)
+      XCTAssertEqual(rootSensorData[2].x, sensorData![2].timestamp)
+      XCTAssertEqual(rootSensorData[2].y, sensorData![2].value)
       expectation5.fulfill()
     })
 
@@ -412,17 +415,18 @@ class ExistingDataMigrationManagerTest: XCTestCase {
         accountUserManager.metadataManager.experimentAndOverview(forExperimentID: experiment.ID))
 
     // Assert the sensor data is in root and account.
-    var rootSensorData: [SensorData]!
+    var rootSensorData: [DataPoint]!
     let expectation1 = expectation(description: "Fetch root sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                         completion: { (sensorData) in
-      rootSensorData = sensorData
+                                                         completion: { (sensorData, _) in
+      // Copy sensor data as data points because the fetch context is reset after completion.
+      rootSensorData = sensorData?.dataPoints
       XCTAssertEqual(3, sensorData!.count)
       expectation1.fulfill()
     })
     let expectation2 = expectation(description: "Fetch account sensor data.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation2.fulfill()
     })
@@ -447,20 +451,20 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // Assert the sensor data is in account and not root, and the account only has 3 data points.
     let expectation4 = expectation(description: "Fetch root sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation4.fulfill()
     })
     let expectation5 = expectation(description: "Fetch account sensor data.")
     accountUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                            completion: { (sensorData) in
+                                                            completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
-      XCTAssertEqual(rootSensorData[0].timestamp, sensorData![0].timestamp)
-      XCTAssertEqual(rootSensorData[0].value, sensorData![0].value)
-      XCTAssertEqual(rootSensorData[1].timestamp, sensorData![1].timestamp)
-      XCTAssertEqual(rootSensorData[1].value, sensorData![1].value)
-      XCTAssertEqual(rootSensorData[2].timestamp, sensorData![2].timestamp)
-      XCTAssertEqual(rootSensorData[2].value, sensorData![2].value)
+      XCTAssertEqual(rootSensorData[0].x, sensorData![0].timestamp)
+      XCTAssertEqual(rootSensorData[0].y, sensorData![0].value)
+      XCTAssertEqual(rootSensorData[1].x, sensorData![1].timestamp)
+      XCTAssertEqual(rootSensorData[1].y, sensorData![1].value)
+      XCTAssertEqual(rootSensorData[2].x, sensorData![2].timestamp)
+      XCTAssertEqual(rootSensorData[2].y, sensorData![2].value)
       expectation5.fulfill()
     })
 
@@ -492,17 +496,19 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // Assert the sensor data is there.
     let expectation1 = expectation(description: "Fetch trial 1 sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial1.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation1.fulfill()
     })
 
     let expectation2 = expectation(description: "Fetch trial 2 sensor data.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation2.fulfill()
     })
+
+    waitForExpectations(timeout: 1)
 
     // Remove the first experiment.
     existingDataMigrationManager.removeExperimentFromRootUser(experiment1)
@@ -516,18 +522,22 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // Assert the sensor data for experiment 1 is deleted.
     let expectation3 = expectation(description: "Trial 1 sensor data should be deleted.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial1.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation3.fulfill()
     })
 
+    waitForExpectations(timeout: 1)
+
     // Assert the sensor data for experiment 2 is still there.
     let expectation4 = expectation(description: "Trial 2 sensor data should not be deleted.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertEqual(3, sensorData!.count)
       expectation4.fulfill()
     })
+
+    waitForExpectations(timeout: 1)
 
     // Remove the second experiment.
     existingDataMigrationManager.removeExperimentFromRootUser(experiment2)
@@ -539,7 +549,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     // Assert its sensor data is deleted.
     let expectation5 = expectation(description: "Trial 2 sensor data should be deleted.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData) in
+                                                         completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
       expectation5.fulfill()
     })
@@ -666,4 +676,5 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     }
     accountUserManager.sensorDataManager.savePrivateContext(andWait: true)
   }
+
 }

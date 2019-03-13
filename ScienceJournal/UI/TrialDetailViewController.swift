@@ -118,6 +118,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   private var menuBarButton = MaterialMenuBarButtonItem()
   private var saveBarButton = MaterialBarButtonItem()
   private var dialogTransitionController: MDCDialogTransitionController?
+  private var cameraViewController: StandaloneCameraViewController?
   private var renameDialog: RenameTrialViewController?
   private var addNoteDialog: AddTrialNoteViewController?
   private let timeFormat = ElapsedTimeFormatter()
@@ -793,13 +794,16 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   func experimentUpdateTrialDeleted(_ trial: Trial,
                                     fromExperiment experiment: Experiment,
-                                    undoBlock: @escaping () -> Void) {
+                                    undoBlock: (() -> Void)?) {
     guard trialDetailDataSource.trial.ID == trial.ID && experiment.ID == self.experiment.ID else {
       return
     }
 
     // Shutdown this view controller by stopping all actions and dismissing.
     stopPlayback()
+
+    cameraViewController?.dismiss(animated: true)
+
     if addNoteDialog != nil {
       dismiss(animated: false)
     }
@@ -1377,11 +1381,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
   @objc private func shareButtonPressed() {
     guard let trialShareViewController = trialShareViewController else { return }
 
-    analyticsReporter.trackEventWithCategory(AnalyticsConstants.eventCategoryExportTrial,
-                                             action: AnalyticsConstants.eventDidExport,
-                                             label: nil,
-                                             value: nil)
-
     let trial = trialDetailDataSource.trial
     let filename = exportFilename
     let isRelativeTime = trialShareViewController.relativeSwitch.isOn
@@ -1397,6 +1396,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
       dismiss(animated: true, completion: {
         showSnackbar(withMessage: String.exportError)
       })
+      analyticsReporter.track(.trialExportError)
       return
     }
 
@@ -1408,6 +1408,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
         self.dismiss(animated: true, completion: {
           showSnackbar(withMessage: String.exportError)
         })
+
+        self.analyticsReporter.track(.trialExportError)
         return
       }
 
@@ -1417,6 +1419,9 @@ class TrialDetailViewController: MaterialHeaderViewController,
         presentationController.sourceView = self.menuBarButton.button
         presentationController.sourceRect = self.menuBarButton.button.bounds
       }
+
+      self.analyticsReporter.track(.trialExported)
+
       self.dismiss(animated: true, completion: {
         self.present(activityController, animated: true)
       })
@@ -1525,10 +1530,12 @@ class TrialDetailViewController: MaterialHeaderViewController,
   }
 
   @objc private func addNotePhotoButtonPressed() {
-    let cameraViewController = StandaloneCameraViewController(analyticsReporter: analyticsReporter)
-    cameraViewController.delegate = self
+    let cameraController = StandaloneCameraViewController(analyticsReporter: analyticsReporter)
+    cameraController.delegate = self
+    cameraViewController = cameraController
+
     dismiss(animated: true, completion: {
-      self.present(cameraViewController, animated: true)
+      self.present(cameraController, animated: true)
     })
   }
 

@@ -18,6 +18,8 @@ import os
 
 /// Categories to differentiate console logs.
 public enum ScienceJournalLogCategory: String {
+  /// A category for Core Data logs.
+  case coreData
   /// A category for Drive sync logs.
   case drive
   /// A category for Drive API request/response logs.

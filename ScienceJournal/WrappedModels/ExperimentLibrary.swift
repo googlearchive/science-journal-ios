@@ -35,6 +35,10 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
     return proto
   }
 
+  /// Whether the experiment library has any local changes. Defaults to true to assume there could
+  /// be changes.
+  public var isDirty = true
+
   private let syncExperimentsQueue =
       DispatchQueue(label: "com.google.ScienceJournal.ExperimentLibrary")
 
@@ -90,6 +94,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }
+    isDirty = true
     experiment.fileID = fileID
   }
 
@@ -125,6 +130,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
       guard !hasExperiment(withID: experimentID) else {
         return
       }
+      isDirty = true
       let experiment = SyncExperiment(experimentID: experimentID, fileID: fileID, clock: clock)
       experiment.isArchived = isArchived
       syncExperiments.append(experiment)
@@ -135,6 +141,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   ///
   /// - Parameter syncExperiment: A sync experiment.
   func addExperiment(_ syncExperiment: SyncExperiment) {
+    isDirty = true
     let addedSyncExperiment = SyncExperiment(experimentID: syncExperiment.experimentID,
                                              fileID: syncExperiment.fileID,
                                              clock: clock)
@@ -154,6 +161,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }
+    isDirty = true
     experiment.isArchived = isArchived
   }
 
@@ -177,6 +185,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }
+    isDirty = true
     experiment.isDeleted = isDeleted
   }
 
@@ -207,6 +216,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }
+    isDirty = true
     experiment.lastOpenedTimestamp = lastOpenedTimestamp
   }
 
@@ -239,6 +249,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }
+    isDirty = true
     experiment.lastModifiedTimestamp = lastModifiedTimestamp
   }
 

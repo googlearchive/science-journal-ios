@@ -24,6 +24,7 @@ class AccountUserManager: UserManager {
   let metadataManager: MetadataManager
   let preferenceManager: PreferenceManager
   let sensorDataManager: SensorDataManager
+  let assetManager: UserAssetManager
   var driveSyncManager: DriveSyncManager?
 
   var shouldVerifyAge: Bool {
@@ -55,10 +56,12 @@ class AccountUserManager: UserManager {
   ///   - driveConstructor: The drive constructor.
   ///   - networkAvailability: Network availability.
   ///   - sensorController: The sensor controller.
+  ///   - analyticsReporter: An analytics reporter.
   init(account: AuthAccount,
        driveConstructor: DriveConstructor,
        networkAvailability: NetworkAvailability,
-       sensorController: SensorController) {
+       sensorController: SensorController,
+       analyticsReporter: AnalyticsReporter) {
     self.account = account
 
     // Create a root URL for this account.
@@ -96,8 +99,20 @@ class AccountUserManager: UserManager {
                                                            metadataManager: metadataManager,
                                                            networkAvailability: networkAvailability,
                                                            preferenceManager: preferenceManager,
-                                                           sensorDataManager: sensorDataManager)
+                                                           sensorDataManager: sensorDataManager,
+                                                           analyticsReporter: analyticsReporter)
     }
+
+    // Configure user asset manager.
+    assetManager = UserAssetManager(driveSyncManager: driveSyncManager,
+                                    metadataManager: metadataManager,
+                                    sensorDataManager: sensorDataManager)
+  }
+
+  func tearDown() {
+    metadataManager.tearDown()
+    assetManager.tearDown()
+    driveSyncManager?.tearDown()
   }
 
   /// Deletes the user's data and preferences.

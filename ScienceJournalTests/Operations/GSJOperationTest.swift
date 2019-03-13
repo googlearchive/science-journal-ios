@@ -185,6 +185,60 @@ class GSJOperationTest: XCTestCase {
     wait(for: [originalExpectation, spawnedExpectation], timeout: 1)
   }
 
+  func testFinishedSuccessfullyNoErrors() {
+    let operation = SimpleOperation()
+
+    XCTAssertFalse(operation.didFinishSuccessfully)
+
+    let expectation = self.expectation(description: "operation finished")
+    operation.addObserver(BlockObserver { op, _ in
+      XCTAssertTrue(op.didFinishSuccessfully)
+      expectation.fulfill()
+    })
+    let queue = GSJOperationQueue()
+    queue.addOperation(operation)
+
+    waitForExpectations(timeout: 0.5)
+  }
+
+  func testFinishedSuccessfullyCancelled() {
+    let operation = SimpleOperation()
+
+    XCTAssertFalse(operation.didFinishSuccessfully)
+
+    let expectation = self.expectation(description: "operation finished")
+    operation.addObserver(BlockObserver { op, _ in
+      XCTAssertFalse(op.didFinishSuccessfully)
+      expectation.fulfill()
+    })
+    let queue = GSJOperationQueue()
+    queue.isSuspended = true
+    queue.addOperation(operation)
+    operation.cancel()
+    queue.isSuspended = false
+
+    waitForExpectations(timeout: 0.5)
+  }
+
+  func testFinishedSuccessfullyWithErrors() {
+    let operation = SimpleOperation()
+
+    XCTAssertFalse(operation.didFinishSuccessfully)
+
+    let expectation = self.expectation(description: "operation finished")
+    operation.addObserver(BlockObserver { op, _ in
+      XCTAssertFalse(op.didFinishSuccessfully)
+      expectation.fulfill()
+    })
+    let queue = GSJOperationQueue()
+    queue.isSuspended = true
+    queue.addOperation(operation)
+    operation.addError(TestError.testConditionFailed)
+    queue.isSuspended = false
+
+    waitForExpectations(timeout: 0.5)
+  }
+
   // MARK: - Test Subclasses
 
   // An operation that spawns a new operation when it finishes.

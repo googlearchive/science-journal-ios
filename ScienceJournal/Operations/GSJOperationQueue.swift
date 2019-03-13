@@ -39,11 +39,18 @@ public protocol OperationQueueDelegate: class {
 /// This queue must be used when working with `GSJOperation` subclasses.
 open class GSJOperationQueue: OperationQueue {
 
+  /// If the queue is terminated it is permanently stopped and won't accept adding new operations.
+  private var isTerminated = false
+
   /// A delegate which will be notified when operations are added and finish. This is an alternate
   /// way of observing operations if an observer isn't a good fit.
   weak var delegate: OperationQueueDelegate?
 
   open override func addOperation(_ op: Operation) {
+    guard !isTerminated else {
+      return
+    }
+
     // If the operation is a `GSJOperation`, add support for conditions and spawned operations.
     if let gsjOp = op as? GSJOperation {
       // Add an observer to every operation to watch for spawned operations.
@@ -110,6 +117,14 @@ open class GSJOperationQueue: OperationQueue {
     if wait {
       ops.forEach { $0.waitUntilFinished() }
     }
+  }
+
+  /// Permanently stops the queue, cancelling all existing operations and preventing new operations
+  /// from being added.
+  public func terminate() {
+    isTerminated = true
+    isSuspended = true
+    cancelAllOperations()
   }
 
 }

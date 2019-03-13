@@ -23,7 +23,8 @@ class AccountUserManagerTest: XCTestCase {
   let accountUserManager = AccountUserManager(account: MockAuthAccount(),
                                               driveConstructor: DriveConstructorDisabled(),
                                               networkAvailability: SettableNetworkAvailability(),
-                                              sensorController: MockSensorController())
+                                              sensorController: MockSensorController(),
+                                              analyticsReporter: AnalyticsReporterOpen())
 
   override func setUp() {
     super.setUp()
@@ -79,7 +80,8 @@ class AccountUserManagerTest: XCTestCase {
         AccountUserManager(account: MockAuthAccount(),
                            driveConstructor: disabledDriveConstructor,
                            networkAvailability: SettableNetworkAvailability(),
-                           sensorController: MockSensorController())
+                           sensorController: MockSensorController(),
+                           analyticsReporter: AnalyticsReporterOpen())
     XCTAssertFalse(accountUserManagerDriveDisabled.isDriveSyncEnabled,
                    "Drive sync should be disabled when there is no drive sync manager.")
 
@@ -88,7 +90,8 @@ class AccountUserManagerTest: XCTestCase {
         AccountUserManager(account: MockAuthAccount(),
                            driveConstructor: enabledDriveConstructor,
                            networkAvailability: SettableNetworkAvailability(),
-                           sensorController: MockSensorController())
+                           sensorController: MockSensorController(),
+                           analyticsReporter: AnalyticsReporterOpen())
     XCTAssertTrue(accountUserManagerDriveEnabled.isDriveSyncEnabled,
                    "Drive sync should be enabled with a non-nil drive sync manager.")
   }

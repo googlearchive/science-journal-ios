@@ -30,7 +30,8 @@ class ClaimExperimentsFlowControllerTest: XCTestCase {
     let accountUserManager = AccountUserManager(account: MockAuthAccount(),
                                                 driveConstructor: DriveConstructorDisabled(),
                                                 networkAvailability: SettableNetworkAvailability(),
-                                                sensorController: mockSensorController)
+                                                sensorController: mockSensorController,
+                                                analyticsReporter: AnalyticsReporterOpen())
     let rootUserManager = RootUserManager(sensorController: mockSensorController)
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,

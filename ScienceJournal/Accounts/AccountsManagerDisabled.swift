@@ -23,10 +23,9 @@ open class AccountsManagerDisabled: AccountsManager {
   public init() {}
   public var supportsAccounts: Bool { return false }
   public var currentAccount: AuthAccount? { return nil }
-  public func signInAsCurrentAccount(completion: @escaping SignInBlock) {}
+  public func signInAsCurrentAccount() {}
   public func signOutCurrentAccount() {}
-  public func presentSignIn(fromViewController viewController: UIViewController,
-                            completion: @escaping SignInBlock) {}
+  public func presentSignIn(fromViewController viewController: UIViewController) {}
   @discardableResult public func reauthenticateCurrentAccount() -> Bool { return false }
   public func removeLingeringAccounts() {}
 }

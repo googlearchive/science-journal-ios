@@ -402,7 +402,6 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
       experimentsListItemsViewController.updateExperiments()
       updateEmptyView(animated: false)
     }
-    pullToRefreshFinished()
   }
 
   /// Updates the nav item's right bar button items. Exposed for testing.
@@ -412,6 +411,18 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
       rightBarButtonItems.append(noConnectionBarButton)
     }
     navigationItem.rightBarButtonItems = rightBarButtonItems
+  }
+
+  /// Starts the pull to refresh animation.
+  func startPullToRefreshAnimation() {
+    pullToRefreshController?.startRefreshing()
+    pullToRefreshControllerForEmptyView?.startRefreshing()
+  }
+
+  /// Ends the pull to refresh animation.
+  func endPullToRefreshAnimation() {
+    pullToRefreshController?.endRefreshing()
+    pullToRefreshControllerForEmptyView?.endRefreshing()
   }
 
   // MARK: - Private
@@ -463,11 +474,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
 
   private func performPullToRefresh() {
     delegate?.experimentsListManualSync()
-  }
-
-  private func pullToRefreshFinished() {
-    pullToRefreshController?.endRefreshing()
-    pullToRefreshControllerForEmptyView?.endRefreshing()
+    analyticsReporter.track(.syncManualRefresh)
   }
 
   // MARK: - Accessibility

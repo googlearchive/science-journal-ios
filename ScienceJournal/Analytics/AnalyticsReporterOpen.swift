@@ -21,9 +21,6 @@ open class AnalyticsReporterOpen: AnalyticsReporter {
 
   public func setOptOut(_ isOptedOut: Bool) {}
   public func trackScreenView(named screenName: String) {}
-  public func trackEventWithCategory(_ category: String,
-                                     action: String,
-                                     label: String?,
-                                     value: NSNumber?) {}
+  public func track(_ analyticsEvent: AnalyticsEvent) {}
 
 }

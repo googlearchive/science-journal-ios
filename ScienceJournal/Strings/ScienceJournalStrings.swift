@@ -285,13 +285,6 @@ extension String {
   static public var menuItemAudioSettings: String { return "menu_item_audio_settings".localized }
   static public var menuItemEditTriggers: String { return "menu_item_edit_triggers".localized }
   static public var menuItemSetTriggers: String { return "menu_item_set_triggers".localized }
-  static public var musicalNoteA: String { return "musical_note_a".localized }
-  static public var musicalNoteB: String { return "musical_note_b".localized }
-  static public var musicalNoteC: String { return "musical_note_c".localized }
-  static public var musicalNoteD: String { return "musical_note_d".localized }
-  static public var musicalNoteE: String { return "musical_note_e".localized }
-  static public var musicalNoteF: String { return "musical_note_f".localized }
-  static public var musicalNoteG: String { return "musical_note_g".localized }
   static public var myDevices: String { return "my_devices".localized }
   static public var nameExperimentDialogTitle: String { return "name_experiment_dialog_title".localized }
   static public var navigationItemActivities: String { return "navigation_item_activities".localized }
@@ -448,6 +441,9 @@ extension String {
   static public var settingsVersionTitle: String { return "settings_version_title".localized }
   static public var settingsWebsiteTitle: String { return "settings_website_title".localized }
   static public var showOptionsContentDescription: String { return "show_options_content_description".localized }
+  static public var sidebarAccountViewSignedInContentDescription: String { return "sidebar_account_view_signed_in_content_description".localized }
+  static public var sidebarAccountViewSignedInContentDetails: String { return "sidebar_account_view_signed_in_content_details".localized }
+  static public var sidebarAccountViewSignedOutContentDescription: String { return "sidebar_account_view_signed_out_content_description".localized }
   static public var sidebarMenuContentDescription: String { return "sidebar_menu_content_description".localized }
   static public var sidebarMenuContentDetails: String { return "sidebar_menu_content_details".localized }
   static public var signIn: String { return "sign_in".localized }

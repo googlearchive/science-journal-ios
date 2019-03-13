@@ -14,13 +14,20 @@
  *  limitations under the License.
  */
 
-import UIKit
+import Foundation
 
-/// No-op implementation of remote config manager.
-class RemoteConfigManagerDisabled: RemoteConfigManager {
+extension Array {
 
-  func configure() {}
-  func fetchRemoteConfigAndActivate(completion: (() -> Void)?) {}
-  func boolValueForFlag(_ remoteConfigFlag: RemoteConfigFlag) -> Bool { return false }
+  /// Returns an array of arrays containing the original array's items grouped into arrays of the
+  /// given size. The last array may have fewer items than the given size.
+  ///
+  /// - Parameter size: The max size of each returned array.
+  /// - Returns: An array of smaller arrays.
+  func chunks(ofSize size: Int) -> [[Element]] {
+    guard size > 0 else { return [] }
+    return stride(from: 0, to: count, by: size).map {
+      Array(self[$0 ..< Swift.min($0 + size, count)])
+    }
+  }
 
 }

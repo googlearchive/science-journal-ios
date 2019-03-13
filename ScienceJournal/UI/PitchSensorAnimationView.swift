@@ -117,40 +117,40 @@ class PitchSensorAnimationView: SensorAnimationView {
       var sign = ""
       switch (i + 8) % 12 {
       case 0:
-        letter = String.musicalNoteC
+        letter = "C"
         sign = natural
       case 1:
-        letter = String.musicalNoteC
+        letter = "C"
         sign = Metrics.musicSignSharp
       case 2:
-        letter = String.musicalNoteD
+        letter = "D"
         sign = natural
       case 3:
-        letter = String.musicalNoteE
+        letter = "E"
         sign = Metrics.musicSignFlat
       case 4:
-        letter = String.musicalNoteE
+        letter = "E"
         sign = natural
       case 5:
-        letter = String.musicalNoteF
+        letter = "F"
         sign = natural
       case 6:
-        letter = String.musicalNoteF
+        letter = "F"
         sign = Metrics.musicSignSharp
       case 7:
-        letter = String.musicalNoteG
+        letter = "G"
         sign = natural
       case 8:
-        letter = String.musicalNoteA
+        letter = "A"
         sign = Metrics.musicSignFlat
       case 9:
-        letter = String.musicalNoteA
+        letter = "A"
         sign = natural
       case 10:
-        letter = String.musicalNoteB
+        letter = "B"
         sign = Metrics.musicSignFlat
       case 11:
-        letter = String.musicalNoteB
+        letter = "B"
         sign = natural
       default:
         break

@@ -486,7 +486,7 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
 
   func experimentUpdateTrialDeleted(_ trial: Trial,
                                     fromExperiment experiment: Experiment,
-                                    undoBlock: @escaping () -> Void) {
+                                    undoBlock: (() -> Void)?) {
     experimentUpdateTrialDeletedCalled = true
     self.undoBlock = undoBlock
   }

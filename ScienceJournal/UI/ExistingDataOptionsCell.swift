@@ -43,14 +43,26 @@ class ExistingDataOptionsCell: UICollectionViewCell {
   /// The image view.
   let imageView = UIImageView()
 
-  /// The title label.
-  let titleLabel = UILabel()
+  /// The title text.
+  var titleText: String? {
+    didSet {
+      titleLabel.text = titleText
+      accessibilityLabel = titleText
+    }
+  }
 
-  /// The description label.
-  let descriptionLabel = UILabel()
+  /// The description text.
+  var descriptionText: String? {
+    didSet {
+      descriptionLabel.text = descriptionText
+      accessibilityHint = descriptionText
+    }
+  }
 
   private let topSeparator = SeparatorView(direction: .horizontal, style: .dark)
   private let bottomSeparator = SeparatorView(direction: .horizontal, style: .dark)
+  private let titleLabel = UILabel()
+  private let descriptionLabel = UILabel()
 
   // MARK: - Public
 
@@ -133,6 +145,9 @@ class ExistingDataOptionsCell: UICollectionViewCell {
   // MARK: - Private
 
   private func configureView() {
+    isAccessibilityElement = true
+    accessibilityTraits = .button
+
     addSubview(topSeparator)
 
     bottomSeparator.isHidden = true

@@ -17,10 +17,6 @@
 import UIKit
 
 protocol SignInFlowViewControllerDelegate: class {
-  /// Tells the delegate the sign in flow is complete. Will only be called if the user successfully
-  /// signed into an account.
-  func signInFlowDidCompleteWithAccount()
-
   /// Tells the delegate the sign in flow completed and the user will proceed without signing in.
   func signInFlowDidCompleteWithoutAccount()
 }
@@ -82,10 +78,6 @@ class SignInFlowViewController: UIViewController, SignInViewControllerDelegate,
   }
 
   // MARK: - SignInViewControllerDelegate
-
-  func signInViewControllerDidSignIn() {
-    delegate?.signInFlowDidCompleteWithAccount()
-  }
 
   func signInViewControllerContinueWithoutSigningIn() {
     delegate?.signInFlowDidCompleteWithoutAccount()

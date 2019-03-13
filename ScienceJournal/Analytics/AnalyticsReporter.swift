@@ -27,16 +27,10 @@ public protocol AnalyticsReporter {
   /// Tracks a view with screen named `screenName`.
   func trackScreenView(named screenName: String)
 
-  /// Tracks an event with the given details.
+  /// Tracks an AnalyticsEvent, which is a struct for an event with a category and an optional
+  /// label and value.
   ///
-  /// - Parameters:
-  ///   - category: The event category.
-  ///   - action: The action to track.
-  ///   - label: A label for the event. Optional.
-  ///   - value: The value of the event. Optional.
-  func trackEventWithCategory(_ category: String,
-                              action: String,
-                              label: String?,
-                              value: NSNumber?)
+  /// - Parameter analyticsEvent: The event to track.
+  func track(_ analyticsEvent: AnalyticsEvent)
 
 }

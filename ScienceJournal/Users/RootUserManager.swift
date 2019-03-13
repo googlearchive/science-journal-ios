@@ -26,6 +26,7 @@ class RootUserManager: UserManager {
   let metadataManager: MetadataManager
   let preferenceManager: PreferenceManager
   let sensorDataManager: SensorDataManager
+  let assetManager: UserAssetManager
 
   var shouldVerifyAge: Bool {
     // Age verification is required for a non-account user, if they have not done so yet.
@@ -41,9 +42,10 @@ class RootUserManager: UserManager {
     return false
   }
 
-  /// Whether there is a root user directory on disk.
-  var hasDirectory: Bool {
-    return FileManager.default.fileExists(atPath: metadataRootURL.path)
+  /// Whether there is a root user experiments directory on disk. This is a reliable indicator for
+  /// whether the root user has been used before or not.
+  var hasExperimentsDirectory: Bool {
+    return FileManager.default.fileExists(atPath: metadataManager.experimentsDirectoryURL.path)
   }
 
   private let documentsDirectoryURL: URL
@@ -72,6 +74,16 @@ class RootUserManager: UserManager {
 
     // Clean the deleted data directory.
     metadataManager.removeAllDeletedData()
+
+    assetManager = UserAssetManager(driveSyncManager: nil,
+                                    metadataManager: metadataManager,
+                                    sensorDataManager: sensorDataManager)
+  }
+
+  func tearDown() {
+    metadataManager.tearDown()
+    assetManager.tearDown()
+    driveSyncManager?.tearDown()
   }
 
   func deleteAllUserData() throws {

@@ -29,10 +29,8 @@ protocol WelcomeViewControllerDelegate: class {
 class WelcomeViewController: OnboardingViewController {
 
   enum Metrics {
-    static let headerTopPaddingNarrow: CGFloat = 200.0
-    static let headerTopPaddingNarrowSmallScreen: CGFloat = 80.0
-    static let headerTopPaddingWide: CGFloat = 40.0
-    static let headerTopPaddingWideSmallScreen: CGFloat = 20.0
+    static let googleLogoTopPadding: CGFloat = 30.0
+    static let headerTopPaddingWide: CGFloat = 20.0
     static let logoTopPadding: CGFloat = 50.0
   }
 
@@ -44,7 +42,8 @@ class WelcomeViewController: OnboardingViewController {
   let headerTitle = UILabel()
   let primaryMessage = UILabel()
 
-  // Used to store label constrains that will be modified on rotation.
+  // Constraints that will be modified on rotation.
+  private var googleLogoBottomConstraint: NSLayoutConstraint?
   private var headerTopConstraint: NSLayoutConstraint?
   private var primaryMessageLeadingConstraint: NSLayoutConstraint?
   private var primaryMessageTrailingConstraint: NSLayoutConstraint?
@@ -76,6 +75,7 @@ class WelcomeViewController: OnboardingViewController {
   override func configureView() {
     super.configureView()
 
+    shouldCenterWrappingViewVertically = true
     configureSplashImagesRelativeToLogo()
 
     headerTitle.text = String.exploreYourWorld
@@ -84,8 +84,7 @@ class WelcomeViewController: OnboardingViewController {
     // Header label.
     wrappingView.addSubview(headerTitle)
     headerTitle.translatesAutoresizingMaskIntoConstraints = false
-    headerTopConstraint = headerTitle.topAnchor.constraint(equalTo: wrappingView.topAnchor,
-                                                           constant: Metrics.headerTopPaddingNarrow)
+    headerTopConstraint = headerTitle.topAnchor.constraint(equalTo: wrappingView.topAnchor)
     headerTopConstraint?.isActive = true
     headerTitle.textColor = .white
     headerTitle.font = MDCTypography.headlineFont()
@@ -133,29 +132,34 @@ class WelcomeViewController: OnboardingViewController {
                                      constant: Metrics.logoTopPadding)
     ])
 
+    // Google logo.
+    let googleLogoImageView = UIImageView(image: UIImage(named: "logo_google_splash"))
+    googleLogoImageView.translatesAutoresizingMaskIntoConstraints = false
+    wrappingView.addSubview(googleLogoImageView)
+    googleLogoImageView.centerXAnchor.constraint(equalTo: logoImage.centerXAnchor).isActive = true
+    googleLogoImageView.topAnchor.constraint(equalTo: logoImage.bottomAnchor,
+                                             constant: Metrics.googleLogoTopPadding).isActive = true
+    googleLogoBottomConstraint =
+        googleLogoImageView.bottomAnchor.constraint(equalTo: wrappingView.bottomAnchor)
   }
 
   // Updates constraints for labels. Used in rotation to ensure the best fit for various screen
   // sizes.
   func updateConstraintsForSize(_ size: CGSize) {
-    guard UIDevice.current.userInterfaceIdiom != .pad else { return }
-
-    var headerTopPadding: CGFloat
-    if size.isWiderThanTall {
-      if size.width <= 568 {
-        headerTopPadding = Metrics.headerTopPaddingWideSmallScreen
-      } else {
-        headerTopPadding = Metrics.headerTopPaddingWide
-      }
-    } else {
-      if size.width <= 320 {
-        headerTopPadding = Metrics.headerTopPaddingNarrowSmallScreen
-      } else {
-        headerTopPadding = Metrics.headerTopPaddingNarrow
-      }
+    func setCenterWrappingViewVertically(_ shouldCenter: Bool) {
+      // When centered, add the Google logo bottom constraint and remove the header top padding.
+      shouldCenterWrappingViewVertically = shouldCenter
+      headerTopConstraint?.constant = shouldCenter ? 0 : Metrics.headerTopPaddingWide
+      googleLogoBottomConstraint?.isActive = shouldCenter
     }
 
-    headerTopConstraint?.constant = headerTopPadding
+    guard UIDevice.current.userInterfaceIdiom != .pad else {
+      setCenterWrappingViewVertically(true)
+      return
+    }
+
+    setCenterWrappingViewVertically(!size.isWiderThanTall)
+
     let outerLeadingPadding =
         size.isWiderThanTall ? Metrics.outerPaddingWide : Metrics.outerPaddingNarrow
     let outerTrailingPadding =

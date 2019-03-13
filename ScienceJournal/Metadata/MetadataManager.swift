@@ -138,10 +138,6 @@ public class MetadataManager {
     return self.rootURL.appendingPathComponent(self.bluetoothSensorsDirectoryName)
   }()
 
-  private lazy var userMetadataURL: URL = {
-    return self.rootURL.appendingPathComponent("user_metadata")
-  }()
-
   private lazy var experimentLibraryURL: URL = {
     return self.rootURL.appendingPathComponent(Constants.Drive.experimentLibraryProtoFilename)
   }()
@@ -172,6 +168,8 @@ public class MetadataManager {
   private let preferenceManager: PreferenceManager
   private let sensorController: SensorController
   private let sensorDataManager: SensorDataManager
+  private var userMetadata: UserMetadata!
+  private let userMetadataURL: URL
 
   // MARK: - Public
 
@@ -195,6 +193,8 @@ public class MetadataManager {
     self.preferenceManager = preferenceManager
     self.sensorController = sensorController
     self.sensorDataManager = sensorDataManager
+    userMetadataURL = rootURL.appendingPathComponent("user_metadata")
+    configureUserMetadata()
   }
 
   /// Convenience initializer that sets the documents URL as the root URL.
@@ -231,6 +231,11 @@ public class MetadataManager {
   func assetsURL(for experiment: Experiment) -> URL {
     return experimentDirectoryURL(for: experiment.ID)
         .appendingPathComponent(MetadataManager.assetsDirectoryName)
+  }
+
+  /// Do any needed work in preparation of the user session ending.
+  func tearDown() {
+    operationQueue.terminate()
   }
 
   // MARK: - Notifications
@@ -291,34 +296,25 @@ public class MetadataManager {
     return saveExperimentSuccess
   }
 
-  /// Updates an overview to reflect the given experiment's data.
+  /// Updates an overview to reflect the given experiment's data. If the overview does not exist,
+  /// this method does nothing.
   ///
   /// - Parameters:
   ///   - experiment: The experiment in the overview.
   ///   - updateLastUsedDate: Should the last used date be updated to now? Defaults to true.
   private func updateOverview(for experiment: Experiment, updateLastUsedDate: Bool = true) {
-    // Updates the overview with the properties it has in common with experiment.
-    func updateOverview(overview: ExperimentOverview) {
-      overview.title = experiment.title
-      if updateLastUsedDate {
-        overview.lastUsedDate = clock.now
-      }
-      overview.trialCount = experiment.trials.count
-      if let experimentImagePath = experiment.imagePath {
-        overview.imagePath = experimentImagePath
-      }
-    }
-
-    // If an overview doesn't exist, create one.
     guard let overview = userMetadata.experimentOverview(with: experiment.ID) else {
-      let overview = ExperimentOverview(experimentID: experiment.ID)
-      updateOverview(overview: overview)
       return
     }
 
-    // Otherwise update the existing overview.
-    updateOverview(overview: overview)
-
+    overview.title = experiment.title
+    if updateLastUsedDate {
+      overview.lastUsedDate = clock.now
+    }
+    overview.trialCount = experiment.trials.count
+    if let experimentImagePath = experiment.imagePath {
+      overview.imagePath = experimentImagePath
+    }
     saveUserMetadata()
   }
 
@@ -531,18 +527,6 @@ public class MetadataManager {
     saveExperiment(experiment)
   }
 
-  /// Creates an overview for the given experiment ID.
-  ///
-  /// - Parameter experimentID: An experiment ID.
-  public func createOverview(withID experimentID: String) {
-    let overview = ExperimentOverview(experimentID: experimentID)
-
-    overview.colorPalette = MDCPalette.nextExperimentListCardColorPalette(withUsedPalettes:
-        experimentOverviews.map { $0.colorPalette })
-    userMetadata.addExperimentOverview(overview)
-    saveUserMetadata()
-  }
-
   /// Registers a new local experiment with the experiment library and local sync status. This
   /// should be called only for new experiments whose origin is not from Drive.
   ///
@@ -649,7 +633,7 @@ public class MetadataManager {
   ///
   /// - Parameter experiment: An experiment.
   /// - Return: True if the save was successful, otherwise false.
-  @discardableResult func saveExperimentWithoutDateChange(_ experiment: Experiment) -> Bool {
+  @discardableResult public func saveExperimentWithoutDateChange(_ experiment: Experiment) -> Bool {
     do {
       try saveExperiment(experiment, markDirty: true, updateLastModifiedDate: false)
       return true
@@ -1240,7 +1224,7 @@ public class MetadataManager {
                                 sensorDataManager: sensorDataManager,
                                 metadataManager: self)
     let observer = BlockObserver { (operation, errors) in
-      if errors.count > 0 {
+      if !operation.didFinishSuccessfully {
         self.permanentlyRemoveExperiment(withID: newExperimentID)
 
         let userInfo = [MetadataManager.importFailedErrorsKey: errors]
@@ -1503,9 +1487,13 @@ public class MetadataManager {
                                 experimentURL: experimentDirectoryURL(for: experimentID),
                                 overview: overview,
                                 sensorDataManager: sensorDataManager)
-    let blockObserver = BlockObserver { [unowned documentExportOperation] (operation, errors) in
+    let blockObserver = BlockObserver { (operation, errors) in
       DispatchQueue.main.async {
-        completion(documentExportOperation.documentURL, errors)
+        guard let documentURL = (operation as? ExportDocumentOperation)?.documentURL else {
+          completion(nil, errors)
+          return
+        }
+        completion(documentURL, errors)
       }
     }
     documentExportOperation.addObserver(blockObserver)
@@ -1615,47 +1603,87 @@ public class MetadataManager {
 
   // MARK: - UserMetadata
 
-  // User metadata stores data relevant only to the current user, as well as cached information
-  // about experiments for quicker display of experiment lists.
-  private lazy var userMetadata: UserMetadata = {
-    func createNewMetadata() -> UserMetadata {
-      let metadata = UserMetadata()
+  // Configures the user metadata object that stores data relevant only to the current user, as well
+  // as cached information about experiments for quicker display of experiment lists. This method
+  // should only be called once as part of init.
+  private func configureUserMetadata() {
+    func createNewMetadata() {
+      userMetadata = UserMetadata()
       // Set to latest known version.
-      metadata.fileVersion = FileVersion(major: UserMetadata.Version.major,
-                                         minor: UserMetadata.Version.minor,
-                                         platform: UserMetadata.Version.platform)
-      userMetadataSaveQueue.sync {
-        _ = self.saveData(metadata.proto.data(), to: self.userMetadataURL)
-      }
-      return metadata
+      userMetadata.fileVersion = FileVersion(major: UserMetadata.Version.major,
+                                             minor: UserMetadata.Version.minor,
+                                             platform: UserMetadata.Version.platform)
+      addMissingOverviewsForExperimentsOnDisk()
     }
 
-    guard let data = try? Data(contentsOf: self.userMetadataURL) else {
+    guard let data = try? Data(contentsOf: userMetadataURL) else {
       // If user metadata doesn't exist on disk, create it.
-      return createNewMetadata()
+      createNewMetadata()
+      return
     }
 
     guard let proto = try? GSJUserMetadata(data: data) else {
       print("[MetadataManager] Error parsing user metadata proto")
       // If the proto can't be parsed, create a new one.
-      // TODO: In this case, overviews should be generated from existing experiments.
-      return createNewMetadata()
+      createNewMetadata()
+      return
     }
 
-    let userMetadata = UserMetadata(proto: proto)
+    userMetadata = UserMetadata(proto: proto)
 
     do {
-      try self.upgradeUserMetadataVersionIfNeeded(userMetadata)
-      return userMetadata
-    } catch let error as MetadataManagerError {
-      print("[MetadataManager] Error upgrading user metadata version: : \(error.logString)")
+      try upgradeUserMetadataVersionIfNeeded(userMetadata)
+      addMissingOverviewsForExperimentsOnDisk()
     } catch {
-      print("[MetadataManager] Error upgrading user metadata version: " +
-          error.localizedDescription)
+      let errorString = (error as? MetadataManagerError)?.logString ?? error.localizedDescription
+      print("[MetadataManager] Error upgrading user metadata version: " + errorString)
+      createNewMetadata()
+    }
+  }
+
+  /// Scans the experiments directory and adds an overview for any experiment that doesn't have an
+  /// overview. This is a guard against any potential bug that accidentally removed an overview
+  /// which would prevent the user from accessing their experiment.
+  private func addMissingOverviewsForExperimentsOnDisk() {
+    let urls = try?
+        FileManager.default.contentsOfDirectory(at: experimentsDirectoryURL,
+                                                includingPropertiesForKeys: [.nameKey])
+    guard let experimentURLs = urls else {
+      return
     }
 
-    return createNewMetadata()
-  }()
+    var didAddAnOverview = false
+    for experimentURL in experimentURLs {
+      let experimentID = experimentURL.lastPathComponent
+      if userMetadata.experimentOverviews.index(where: { $0.experimentID == experimentID }) == nil {
+        guard let experiment = experiment(withID: experimentID) else {
+          // No valid experiment at this URL, nothing to add.
+          continue
+        }
+
+        let overview = ExperimentOverview(experimentID: experimentID)
+        overview.colorPalette = MDCPalette.nextExperimentListCardColorPalette(withUsedPalettes:
+            userMetadata.experimentOverviews.map { $0.colorPalette })
+        overview.title = experiment.title
+        overview.imagePath = experiment.imagePath
+
+        if let syncExperiment = experimentLibrary.syncExperiment(forID: experimentID) {
+          overview.isArchived = syncExperiment.isArchived
+          overview.lastUsedDate = Date(milliseconds: syncExperiment.lastModifiedTimestamp)
+        } else {
+          overview.isArchived = false
+          overview.lastUsedDate = clock.now
+        }
+        userMetadata.addExperimentOverview(overview)
+        registerNewLocalExperiment(withID: overview.experimentID, isArchived: overview.isArchived)
+        didAddAnOverview = true
+      }
+    }
+
+    if didAddAnOverview {
+      saveUserMetadata()
+    }
+  }
 
   /// Saves the current user metadata.
   @discardableResult public func saveUserMetadata() -> Bool {
@@ -2140,7 +2168,7 @@ extension MetadataManager {
                                   sensorDataManager: sensorDataManager,
                                   metadataManager: self)
       let observer = BlockObserver { (operation, errors) in
-        if errors.count == 0 {
+        if operation.didFinishSuccessfully {
           self.addImportedExperiment(withID: newExperimentID)
 
           // Mark the last experiment as archived for test purposes.

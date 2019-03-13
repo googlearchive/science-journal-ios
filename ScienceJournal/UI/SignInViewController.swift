@@ -21,9 +21,6 @@ import third_party_objective_c_material_components_ios_components_Palettes_Palet
 import third_party_objective_c_material_components_ios_components_Typography_Typography
 
 protocol SignInViewControllerDelegate: class {
-  /// Informs the delegate the user successfully signed in to an account.
-  func signInViewControllerDidSignIn()
-
   /// Informs the delegate the user will continue without signing in.
   func signInViewControllerContinueWithoutSigningIn()
 }
@@ -256,19 +253,18 @@ class SignInViewController: OnboardingViewController {
   // MARK: - User actions
 
   @objc private func signInButtonPressed() {
-    accountsManager.presentSignIn(fromViewController: self) { (signInSuccess, shouldForceSignIn) in
-      if signInSuccess {
-        self.delegate?.signInViewControllerDidSignIn()
-      }
-    }
+    accountsManager.presentSignIn(fromViewController: self)
+    analyticsReporter.track(.signInFromWelcome)
   }
 
   @objc private func learnMoreButtonPressed() {
     UIApplication.shared.open(driveSyncInfoURL)
+    analyticsReporter.track(.signInLearnMore)
   }
 
   @objc private func continueWithoutSigningInButtonPressed() {
     delegate?.signInViewControllerContinueWithoutSigningIn()
+    analyticsReporter.track(.signInContinueWithoutAccount)
   }
 
 }

@@ -58,6 +58,8 @@ open class SensorDataManager {
   /// The URL location of the SQLite store.
   let storeURL: URL
 
+  let persistentStoreCoordinator: NSPersistentStoreCoordinator
+
   /// Designated initializer.
   ///
   /// - Parameter storeURL: The URL of the SQLite store file.
@@ -70,7 +72,7 @@ open class SensorDataManager {
     let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL!)
 
     // Persistent store coordinator.
-    let persistentStoreCoordinator =
+    persistentStoreCoordinator =
         NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel!)
 
     // Managed object contexts.
@@ -110,7 +112,7 @@ open class SensorDataManager {
         try self.mainContext.save()
       } catch {
         self.mainContext.rollback()
-        print("[SensorDataManager] Failed to save the main context: \(error)")
+        sjlog_error("Failed to save the main context: \(error)", category: .coreData)
       }
     }
 
@@ -126,12 +128,15 @@ open class SensorDataManager {
   /// - Parameter wait: Whether to wait for the save to finish or not.
   func savePrivateContext(andWait wait: Bool = false) {
     let block = {
-      guard self.privateContext.hasChanges else { return }
+      guard self.privateContext.hasChanges else {
+        return
+      }
+
       do {
         try self.privateContext.save()
       } catch {
         self.privateContext.rollback()
-        print("[SensorDataManager] Failed to save the private context: \(error)")
+        sjlog_error("Failed to save the private context: \(error)", category: .coreData)
       }
     }
 
@@ -154,8 +159,9 @@ open class SensorDataManager {
       do {
         try self.privateContext.execute(deleteRequest)
       } catch {
-        print("[SensorDataManager] Error batch deleting sensor data for trial ID " +
-              "\(trialID): \(error.localizedDescription)")
+        sjlog_error("Error batch deleting sensor data for trial ID \(trialID): " +
+                        error.localizedDescription,
+                    category: .coreData)
       }
     }
   }
@@ -231,8 +237,9 @@ open class SensorDataManager {
       do {
         try self.privateContext.execute(asyncRequest)
       } catch {
-        print("[SensorDataManager] Error fetching sensor data for sensor: \(sensorID), " +
-              "trialID: \(trialID). \(error)")
+        sjlog_error("Error fetching sensor data for sensor: \(sensorID), " +
+                        "trialID: \(trialID). \(error)",
+                    category: .coreData)
         completion(nil)
       }
     }
@@ -262,7 +269,8 @@ open class SensorDataManager {
         })
         try self.privateContext.execute(asyncRequest)
       } catch {
-        print("[SensorDataManager] Error fetching sensor data for trialID: \(trialID), \(error)")
+        sjlog_error("Error fetching sensor data for trialID: \(trialID), \(error)",
+                    category: .coreData)
         completion(nil)
       }
     }
@@ -273,21 +281,22 @@ open class SensorDataManager {
   /// - Parameters:
   ///   - trialID: A trial ID.
   ///   - completion: A completion block called when the fetch is complete with an optional array
-  ///                 of sensor data. The closure is called on the private context's queue.
+  ///                 of sensor data and the context on which the data was fetched. The closure is
+  ///                 called on a private context queue.
   func fetchAllSensorData(forTrialID trialID: String,
-                          completion: @escaping ([SensorData]?) -> Void) {
-    privateContext.perform {
+                          completion: @escaping ([SensorData]?, NSManagedObjectContext) -> Void) {
+    performOnBackgroundContext { (context) in
       let fetchRequest = SensorData.fetchAllRequest(withTrialID: trialID)
       do {
         let asyncRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest,
                                                       completionBlock: { (result) in
-          completion(result.finalResult)
+          completion(result.finalResult, context)
         })
-        try self.privateContext.execute(asyncRequest)
+        try context.execute(asyncRequest)
       } catch {
-        print(
-            "[SensorDataManager] Error fetching all sensor data for trialID: \(trialID), \(error)")
-        completion(nil)
+        sjlog_error("Error fetching all sensor data for trialID: \(trialID), \(error)",
+                    category: .coreData)
+        completion(nil, context)
       }
     }
   }
@@ -305,8 +314,8 @@ open class SensorDataManager {
         let count = try self.privateContext.count(for: fetchRequest)
         completion(count)
       } catch {
-        print("[SensorDataManager] Error getting the count of all sensor data for trialID: " +
-                  "\(trialID), \(error)")
+        sjlog_error("Error getting the count of all sensor data for trialID: \(trialID), \(error)",
+                    category: .coreData)
         completion(nil)
       }
     }
@@ -354,13 +363,20 @@ open class SensorDataManager {
   func importSensorData(_ sensorData: GSJScalarSensorData,
                         withTrialIDMap trialIDMap: [String: String]?,
                         completion: @escaping ([String]) -> Void) {
-    privateContext.perform {
+    performOnBackgroundContext { (context) in
       var trialIDs = Set<String>()
       for case let sensorDump as GSJScalarSensorDataDump in sensorData.sensorsArray {
         guard let trialID = trialIDMap?[sensorDump.trialId] ?? sensorDump.trialId else {
           // Invalid trial ID, skip to the next row.
           continue
         }
+
+        // Convert the untyped NSMutableArray into a typed Swift array.
+        guard let sensorRows = sensorDump.rowsArray as? [GSJScalarSensorDataRow] else {
+          sjlog_error("Imported sensor data has unknown type.", category: .general)
+          break
+        }
+
         trialIDs.insert(trialID)
         let zoomRecorder = ZoomRecorder(
             sensorID: sensorDump.tag,
@@ -371,36 +387,72 @@ open class SensorDataManager {
                                 forSensorID: sensorID,
                                 trialID: trialID,
                                 resolutionTier: tier,
-                                context: self.privateContext)
+                                context: context)
         })
-        for case let sensorRow as GSJScalarSensorDataRow in sensorDump.rowsArray {
-          let dataPoint = DataPoint(x: sensorRow.timestampMillis, y: sensorRow.value)
-          SensorData.insert(dataPoint: dataPoint,
-                            forSensorID: sensorDump.tag,
-                            trialID: trialID,
-                            resolutionTier: 0,
-                            context: self.privateContext)
-          zoomRecorder.addDataPoint(dataPoint: dataPoint)
+
+        // Use an autorelease pool and chunk the imported data to control memory usage.
+        autoreleasepool {
+          let sensorRowChunks = sensorRows.chunks(ofSize: 1000)
+
+          for sensorRowChunk in sensorRowChunks {
+            for sensorRow in sensorRowChunk {
+              let dataPoint = DataPoint(x: sensorRow.timestampMillis, y: sensorRow.value)
+              SensorData.insert(dataPoint: dataPoint,
+                                forSensorID: sensorDump.tag,
+                                trialID: trialID,
+                                resolutionTier: 0,
+                                context: context)
+              zoomRecorder.addDataPoint(dataPoint: dataPoint)
+            }
+
+            do {
+              try context.save()
+            } catch {
+              let errorMessage = error.localizedDescription
+              sjlog_error("Failed to save context when importing data points: \(errorMessage)",
+                          category: .coreData)
+            }
+
+            // Calling reset will clear the inserted objects from memory. This is necessary due to
+            // the potentially high volume of sensor data rows in a sensor recording.
+            context.reset()
+          }
         }
       }
-      self.savePrivateContext()
       completion(Array(trialIDs))
     }
   }
 
   /// Adds sensor data points to the database.
   ///
-  /// - Parameter sensorData: The sensor data.
-  func addSensorDataPoints(_ sensorData: [SensorData]) {
-    privateContext.perform {
-      sensorData.forEach {
-        let dataPoint = DataPoint(x: $0.timestamp, y: $0.value)
-        SensorData.insert(dataPoint: dataPoint,
-                          forSensorID: $0.sensor,
-                          trialID: $0.trialID,
-                          resolutionTier: $0.resolutionTier,
-                          context: self.privateContext)
+  /// - Parameters:
+  ///   - sensorData: The sensor data.
+  ///   - completion: Called when complete.
+  func addSensorDataPoints(_ sensorData: [SensorData], completion: @escaping () -> Void) {
+    performOnBackgroundContext { (context) in
+      autoreleasepool {
+        let sensorDataChunks = sensorData.chunks(ofSize: 1000)
+        for sensorDataChunk in sensorDataChunks {
+          for sensorDataPoint in sensorDataChunk {
+            let dataPoint = DataPoint(x: sensorDataPoint.timestamp, y: sensorDataPoint.value)
+            SensorData.insert(dataPoint: dataPoint,
+                              forSensorID: sensorDataPoint.sensor,
+                              trialID: sensorDataPoint.trialID,
+                              resolutionTier: sensorDataPoint.resolutionTier,
+                              context: context)
+          }
+
+          do {
+            try context.save()
+          } catch {
+            let errorMessage = error.localizedDescription
+            sjlog_error("Failed to save context when adding data points: \(errorMessage)",
+                        category: .coreData)
+          }
+          context.reset()
+        }
       }
+      completion()
     }
   }
 
@@ -513,7 +565,7 @@ open class SensorDataManager {
         try privateContext.persistentStoreCoordinator?.destroyPersistentStore(
             at: storeURL, ofType: NSSQLiteStoreType, options: nil)
       } catch {
-        print("[SensorDataManager] Failed to destroy the persistent store: \(error)")
+        sjlog_error("Failed to destroy the persistent store: \(error)", category: .coreData)
       }
     }
   }
@@ -551,6 +603,19 @@ open class SensorDataManager {
 
     dispatchGroup.notify(qos: .userInitiated, queue: .main) {
       completion(dataExists)
+    }
+  }
+
+  // MARK: - Private
+
+  /// Performs a given block on a new private context.
+  ///
+  /// - Parameter block: A block to perform with a reference to the managed object context.
+  private func performOnBackgroundContext(block: @escaping (NSManagedObjectContext) -> Void) {
+    let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+    importContext.persistentStoreCoordinator = persistentStoreCoordinator
+    importContext.perform {
+      block(importContext)
     }
   }
 

@@ -233,6 +233,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
     }
 
     showExperiment(experiment)
+    analyticsReporter.track(.claimingViewExperiment)
   }
 
   func claimExperimentsAddExperimentToDrive(withID experimentID: String) {
@@ -252,6 +253,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
         })
       })
     }
+    analyticsReporter.track(.claimingClaimSingle)
   }
 
   func claimExperimentsShareExperiment(withID experimentID: String, attachmentButton: UIButton) {
@@ -281,12 +283,14 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
             })
       })
     }
+    analyticsReporter.track(.claimingShare)
   }
 
   func claimExperimentsDeleteExperiment(withID experimentID: String) {
     existingDataMigrationManager.removeExperimentFromRootUser(withID: experimentID)
     claimExperimentsViewController.experimentRemoved(withID: experimentID)
     dismissClaimFlowIfComplete()
+    analyticsReporter.track(.claimingDeleteSingle)
   }
 
   func claimExperimentsClaimAllExperiments() {
@@ -303,11 +307,13 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
         })
       })
     }
+    analyticsReporter.track(.claimAll)
   }
 
   func claimExperimentsDeleteAllExperiments() {
     existingDataMigrationManager.removeAllExperimentsFromRootUser()
     claimExperimentsViewController.dismiss(animated: true)
+    analyticsReporter.track(.claimingDeleteAll)
   }
 
   // MARK: - ExperimentCoordinatorViewControllerDelegate
@@ -318,14 +324,17 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
 
     // User could have deleted the last experiment in the flow, there might be nothing left to do.
     dismissClaimFlowIfComplete()
+    analyticsReporter.track(.claimingDeleteSingle)
   }
 
   func experimentViewControllerShowTrial(withID trialID: String, jumpToCaption: Bool) {
     showTrial(withID: trialID)
+    analyticsReporter.track(.claimingViewTrial)
   }
 
   func experimentViewControllerShowNote(_ displayNote: DisplayNote, jumpToCaption: Bool) {
     showNote(displayNote)
+    analyticsReporter.track(.claimingViewNote(displayNote))
   }
 
   func experimentViewControllerToggleArchiveStateForExperiment(withID experimentID: String) {}
@@ -337,6 +346,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
                                                        forExperiment experiment: Experiment) {}
 
   func experimentViewControllerRemoveCoverImageForExperiment(_ experiment: Experiment) -> Bool {
+    analyticsReporter.track(.claimingRemoveCoverImage)
     return metadataManager.removeCoverImageForExperiment(experiment)
   }
 
@@ -362,6 +372,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
 
   func trialDetailViewControllerShowNote(_ displayNote: DisplayNote, jumpToCaption: Bool) {
     showNote(displayNote)
+    analyticsReporter.track(.claimingViewTrialNote(displayNote))
   }
 
   func trialDetailViewControllerDeletePictureNoteCompleted(_
@@ -398,14 +409,17 @@ extension ClaimExperimentsFlowController: ExperimentItemDelegate {
     if let trialID = deletedDisplayNote.trialID {
       // Trial note.
       openExperimentUpdateManager?.deleteTrialNote(withID: deletedDisplayNote.ID, trialID: trialID)
+      analyticsReporter.track(.claimingDeleteTrialNote(deletedDisplayNote))
     } else {
       // Experiment note.
       openExperimentUpdateManager?.deleteExperimentNote(withID: deletedDisplayNote.ID)
+      analyticsReporter.track(.claimingDeleteNote(deletedDisplayNote))
     }
   }
 
   func trialDetailViewControllerDidRequestDeleteTrial(withID trialID: String) {
     openExperimentUpdateManager?.deleteTrial(withID: trialID)
+    analyticsReporter.track(.claimingDeleteTrial)
   }
 
   func detailViewControllerDidAddNote(_ note: Note, forTrialID trialID: String?) {}

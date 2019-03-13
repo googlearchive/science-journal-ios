@@ -118,6 +118,7 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
   weak var delegate: SidebarDelegate?
 
   private let accountsManager: AccountsManager
+  private let analyticsReporter: AnalyticsReporter
   private var collectionView = UICollectionView(frame: .zero,
                                                 collectionViewLayout: UICollectionViewFlowLayout())
   private var sidebarVisibilityConstraint = NSLayoutConstraint()
@@ -133,8 +134,9 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
 
   // MARK: - Public
 
-  init(accountsManager: AccountsManager) {
+  init(accountsManager: AccountsManager, analyticsReporter: AnalyticsReporter) {
     self.accountsManager = accountsManager
+    self.analyticsReporter = analyticsReporter
     super.init(nibName: nil, bundle: nil)
     modalPresentationStyle = .overFullScreen
   }
@@ -306,6 +308,7 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
     hide() {
       self.delegate?.sidebarShouldShowSignIn()
     }
+    analyticsReporter.track(.signInFromSidebar)
   }
 
   // MARK: - UIGestureRecognizerDelegate, panning and background touch

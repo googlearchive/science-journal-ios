@@ -33,6 +33,11 @@ open class GSJOperation: Operation {
 
   // MARK: - Properties
 
+  public var userInfo: Any?
+
+  /// True if the operation finished without any errors and was not cancelled, otherwise false.
+  public private(set) var didFinishSuccessfully = false
+
   /// An array of conditions for the operation.
   private(set) var conditions = [OperationCondition]()
 
@@ -185,6 +190,8 @@ open class GSJOperation: Operation {
     } else {
       allErrors = errors
     }
+
+    didFinishSuccessfully = allErrors.count == 0 && !isCancelled
 
     // Notify observers
     observers.forEach { $0.operationDidFinish(self, withErrors: allErrors) }

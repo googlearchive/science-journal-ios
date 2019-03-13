@@ -90,7 +90,7 @@ protocol ExperimentUpdateListener {
   ///   - undoBlock: A block that will undo the delete if executed.
   func experimentUpdateTrialDeleted(_ trial: Trial,
                                     fromExperiment experiment: Experiment,
-                                    undoBlock: @escaping () -> Void)
+                                    undoBlock: (() -> Void)?)
 
   /// Informs the delegate a trial's archive state changed.
   ///
@@ -123,7 +123,7 @@ extension ExperimentUpdateListener {
                                   recording isRecording: Bool) {}
   func experimentUpdateTrialDeleted(_ trial: Trial,
                                     fromExperiment experiment: Experiment,
-                                    undoBlock: @escaping () -> Void) {}
+                                    undoBlock: (() -> Void)?) {}
   func experimentUpdateTrialArchiveStateChanged(_ trial: Trial,
                                                 experiment: Experiment,
                                                 undoBlock: @escaping () -> Void) {}

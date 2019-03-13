@@ -12,6 +12,7 @@
 		4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */; };
 		4850DC9921C9797C00A5C4A0 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850DC9821C9797C00A5C4A0 /* RemoteConfigManager.swift */; };
 		4850DC9C21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */; };
+		485ED07D21FA7D6700017071 /* RemoteConfigFlagProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485ED07C21FA7D6700017071 /* RemoteConfigFlagProtocol.swift */; };
 		486482F320CF4EA700ADE0C9 /* SensorController+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */; };
 		4886F534209CE13E003892D7 /* TestSensorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F52E209CE13D003892D7 /* TestSensorInterface.swift */; };
 		4886F535209CE13E003892D7 /* MockSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F52F209CE13D003892D7 /* MockSensor.swift */; };
@@ -30,9 +31,11 @@
 		48BFD8D020D065FF00FB5C1A /* gtm_oauth_2.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BFD8C920D065FF00FB5C1A /* gtm_oauth_2.html */; };
 		48BFD8D120D065FF00FB5C1A /* google_api_client_for_rest.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BFD8CA20D065FF00FB5C1A /* google_api_client_for_rest.html */; };
 		48BFD8D220D065FF00FB5C1A /* google_toolbox_for_mac.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BFD8CB20D065FF00FB5C1A /* google_toolbox_for_mac.html */; };
+		48C1DF2C222477010049629D /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C1DF2B222477010049629D /* AnalyticsEvent.swift */; };
 		48C767B120F7F1BB00A67C4A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C767B020F7F1BB00A67C4A /* OnboardingViewController.swift */; };
 		48C767B520F92BA800A67C4A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C767B420F92BA800A67C4A /* SignInViewController.swift */; };
 		48C767B820F92BC100A67C4A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C767B720F92BC100A67C4A /* WelcomeViewController.swift */; };
+		48D02B7A2220CA750063AC28 /* AnalyticsScreenViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D02B792220CA750063AC28 /* AnalyticsScreenViews.swift */; };
 		48D81BD72086AC9400773294 /* DrawerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD62086AC9400773294 /* DrawerConfig.swift */; };
 		48D81BDA2086AD0C00773294 /* DrawerConfigOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */; };
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
@@ -82,10 +85,11 @@
 		5C61A2B520BF4DC6007E7F3D /* ExperimentChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A2B420BF4DC6007E7F3D /* ExperimentChange.swift */; };
 		5C61A2BA20C572D2007E7F3D /* NoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A2B920C572D2007E7F3D /* NoteTest.swift */; };
 		5C61A2C020C6CFAF007E7F3D /* ExperimentMergerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A2BF20C6CFAF007E7F3D /* ExperimentMergerTest.swift */; };
+		5C62CBA12229A7F700E63538 /* Array+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62CBA02229A7F700E63538 /* Array+ScienceJournal.swift */; };
+		5C62CBA32229A81C00E63538 /* Array+ScienceJournalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62CBA22229A81C00E63538 /* Array+ScienceJournalTest.swift */; };
 		5C62DC1A1FFD41A800A4F348 /* ExperimentUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62DC191FFD41A800A4F348 /* ExperimentUpdateManager.swift */; };
 		5C62DC1E200681EF00A4F348 /* ExperimentUpdateManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62DC1D200681EF00A4F348 /* ExperimentUpdateManagerTest.swift */; };
 		5C63833E2100CA8D008281DF /* NoteDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63833D2100CA8D008281DF /* NoteDetailController.swift */; };
-		5C63842021028164008281DF /* ImportMultipleSensorDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63841F21028164008281DF /* ImportMultipleSensorDataOperation.swift */; };
 		5C63842221067BD4008281DF /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63842121067BD4008281DF /* ExclusivityController.swift */; };
 		5C63842421078D77008281DF /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63842321078D77008281DF /* MutuallyExclusive.swift */; };
 		5C6384262107A489008281DF /* GSJOperationQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6384252107A489008281DF /* GSJOperationQueueTest.swift */; };
@@ -187,6 +191,7 @@
 		5CC813CF20D16C8700CC05E9 /* ExperimentLibraryMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC813CE20D16C8700CC05E9 /* ExperimentLibraryMerger.swift */; };
 		5CC813D120D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC813D020D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift */; };
 		5CC81C1C1F292EBE00AC9E9E /* TimeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC81C1B1F292EBE00AC9E9E /* TimeSelectionView.swift */; };
+		5CC96A2F21F2257900F5A834 /* BlockObserverTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC96A2E21F2257900F5A834 /* BlockObserverTest.swift */; };
 		5CCB62B61F8679ED00F9BB7D /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB62B51F8679ED00F9BB7D /* CSVWriter.swift */; };
 		5CCB62B91F86903800F9BB7D /* CSVWriterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB62B81F86903800F9BB7D /* CSVWriterTest.swift */; };
 		5CCB62BC1F8BCFDD00F9BB7D /* TrialDataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB62BB1F8BCFDD00F9BB7D /* TrialDataWriter.swift */; };
@@ -267,8 +272,6 @@
 		68587BA71F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68587BA61F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift */; };
 		686156331EC57A2700E3AE7E /* PictureCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686156321EC57A2700E3AE7E /* PictureCardCell.swift */; };
 		686CCDE91EEF64D500586F6B /* TrialDetailSensorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CCDE81EEF64D500586F6B /* TrialDetailSensorsView.swift */; };
-		686E3D2F1F58881100250628 /* AnalyticsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686E3D2D1F58881100250628 /* AnalyticsConstants.swift */; };
-		686E3D351F588C2E00250628 /* AnalyticsViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686E3D341F588C2E00250628 /* AnalyticsViewControllerExtensions.swift */; };
 		686E3D391F58999D00250628 /* ScienceJournalViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686E3D381F58999D00250628 /* ScienceJournalViewControllers.swift */; };
 		686EA7991F15670C0011F0FF /* ExperimentItemDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686EA7981F15670C0011F0FF /* ExperimentItemDelegateProtocol.swift */; };
 		687232231F703F8E0080E57F /* MaterialLeftBarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687232221F703F8E0080E57F /* MaterialLeftBarButtonItems.swift */; };
@@ -451,6 +454,7 @@
 		8B5BE2DE1E942A6700C32B74 /* SensorTriggerEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BE2DD1E942A6700C32B74 /* SensorTriggerEvaluator.swift */; };
 		8B6054822049BC730036C1E4 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6054812049BC730036C1E4 /* SpinnerViewController.swift */; };
 		8B6054842049C4840036C1E4 /* AlphaFadeTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6054832049C4840036C1E4 /* AlphaFadeTransitionController.swift */; };
+		8B65A94F2225923700D1FDF9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B65A94E2225923700D1FDF9 /* LoadingViewController.swift */; };
 		8B6EF71E1E538E970026D1E5 /* SensorDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EF71D1E538E970026D1E5 /* SensorDataManager.swift */; };
 		8B7049312139B24200763630 /* SettableNetworkAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7049302139B24200763630 /* SettableNetworkAvailability.swift */; };
 		8B7049352139E06E00763630 /* ExperimentsListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7049342139E06E00763630 /* ExperimentsListViewControllerTest.swift */; };
@@ -605,6 +609,7 @@
 		4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarAccountView.swift; sourceTree = "<group>"; };
 		4850DC9821C9797C00A5C4A0 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManagerDisabled.swift; sourceTree = "<group>"; };
+		485ED07C21FA7D6700017071 /* RemoteConfigFlagProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigFlagProtocol.swift; sourceTree = "<group>"; };
 		486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SensorController+Testing.swift"; sourceTree = "<group>"; };
 		486F97684E4736F8AED250F0 /* Pods-ScienceJournalUITests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		4886F52E209CE13D003892D7 /* TestSensorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSensorInterface.swift; sourceTree = "<group>"; };
@@ -624,9 +629,11 @@
 		48BFD8C920D065FF00FB5C1A /* gtm_oauth_2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gtm_oauth_2.html; sourceTree = "<group>"; };
 		48BFD8CA20D065FF00FB5C1A /* google_api_client_for_rest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = google_api_client_for_rest.html; sourceTree = "<group>"; };
 		48BFD8CB20D065FF00FB5C1A /* google_toolbox_for_mac.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = google_toolbox_for_mac.html; sourceTree = "<group>"; };
+		48C1DF2B222477010049629D /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		48C767B020F7F1BB00A67C4A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		48C767B420F92BA800A67C4A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		48C767B720F92BC100A67C4A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		48D02B792220CA750063AC28 /* AnalyticsScreenViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsScreenViews.swift; sourceTree = "<group>"; };
 		48D81BD62086AC9400773294 /* DrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfig.swift; sourceTree = "<group>"; };
 		48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigOpen.swift; sourceTree = "<group>"; };
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
@@ -678,10 +685,11 @@
 		5C61A2B420BF4DC6007E7F3D /* ExperimentChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentChange.swift; sourceTree = "<group>"; };
 		5C61A2B920C572D2007E7F3D /* NoteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTest.swift; sourceTree = "<group>"; };
 		5C61A2BF20C6CFAF007E7F3D /* ExperimentMergerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentMergerTest.swift; sourceTree = "<group>"; };
+		5C62CBA02229A7F700E63538 /* Array+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ScienceJournal.swift"; sourceTree = "<group>"; };
+		5C62CBA22229A81C00E63538 /* Array+ScienceJournalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ScienceJournalTest.swift"; sourceTree = "<group>"; };
 		5C62DC191FFD41A800A4F348 /* ExperimentUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentUpdateManager.swift; sourceTree = "<group>"; };
 		5C62DC1D200681EF00A4F348 /* ExperimentUpdateManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentUpdateManagerTest.swift; sourceTree = "<group>"; };
 		5C63833D2100CA8D008281DF /* NoteDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailController.swift; sourceTree = "<group>"; };
-		5C63841F21028164008281DF /* ImportMultipleSensorDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMultipleSensorDataOperation.swift; sourceTree = "<group>"; };
 		5C63842121067BD4008281DF /* ExclusivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
 		5C63842321078D77008281DF /* MutuallyExclusive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
 		5C6384252107A489008281DF /* GSJOperationQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSJOperationQueueTest.swift; sourceTree = "<group>"; };
@@ -784,6 +792,7 @@
 		5CC813CE20D16C8700CC05E9 /* ExperimentLibraryMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentLibraryMerger.swift; sourceTree = "<group>"; };
 		5CC813D020D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentLibraryMergerTest.swift; sourceTree = "<group>"; };
 		5CC81C1B1F292EBE00AC9E9E /* TimeSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectionView.swift; sourceTree = "<group>"; };
+		5CC96A2E21F2257900F5A834 /* BlockObserverTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockObserverTest.swift; sourceTree = "<group>"; };
 		5CCB62B51F8679ED00F9BB7D /* CSVWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
 		5CCB62B81F86903800F9BB7D /* CSVWriterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVWriterTest.swift; sourceTree = "<group>"; };
 		5CCB62BB1F8BCFDD00F9BB7D /* TrialDataWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialDataWriter.swift; sourceTree = "<group>"; };
@@ -868,8 +877,6 @@
 		68587BA61F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+ScienceJournal.swift"; sourceTree = "<group>"; };
 		686156321EC57A2700E3AE7E /* PictureCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCardCell.swift; sourceTree = "<group>"; };
 		686CCDE81EEF64D500586F6B /* TrialDetailSensorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialDetailSensorsView.swift; sourceTree = "<group>"; };
-		686E3D2D1F58881100250628 /* AnalyticsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsConstants.swift; sourceTree = "<group>"; };
-		686E3D341F588C2E00250628 /* AnalyticsViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsViewControllerExtensions.swift; sourceTree = "<group>"; };
 		686E3D381F58999D00250628 /* ScienceJournalViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScienceJournalViewControllers.swift; sourceTree = "<group>"; };
 		686EA7981F15670C0011F0FF /* ExperimentItemDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentItemDelegateProtocol.swift; sourceTree = "<group>"; };
 		687232221F703F8E0080E57F /* MaterialLeftBarButtonItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialLeftBarButtonItems.swift; sourceTree = "<group>"; };
@@ -1080,6 +1087,7 @@
 		8B5BE2DD1E942A6700C32B74 /* SensorTriggerEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTriggerEvaluator.swift; sourceTree = "<group>"; };
 		8B6054812049BC730036C1E4 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		8B6054832049C4840036C1E4 /* AlphaFadeTransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaFadeTransitionController.swift; sourceTree = "<group>"; };
+		8B65A94E2225923700D1FDF9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		8B6EF71D1E538E970026D1E5 /* SensorDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataManager.swift; sourceTree = "<group>"; };
 		8B7049302139B24200763630 /* SettableNetworkAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettableNetworkAvailability.swift; sourceTree = "<group>"; };
 		8B7049342139E06E00763630 /* ExperimentsListViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentsListViewControllerTest.swift; sourceTree = "<group>"; };
@@ -1233,6 +1241,7 @@
 		4850DC9A21C9798300A5C4A0 /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
+				485ED07C21FA7D6700017071 /* RemoteConfigFlagProtocol.swift */,
 				4850DC9821C9797C00A5C4A0 /* RemoteConfigManager.swift */,
 				4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */,
 			);
@@ -1322,7 +1331,6 @@
 				5CD726D6204F4B070019DBBF /* CopyImportedFilesOperation.swift */,
 				5C2C2A3420378FD9007F2FA5 /* ImportDocumentOperation.swift */,
 				5C2C2A32203780ED007F2FA5 /* ImportExperimentOperation.swift */,
-				5C63841F21028164008281DF /* ImportMultipleSensorDataOperation.swift */,
 				5CD47697203F0A72000EDFE2 /* ImportSensorDataFromProtoOperation.swift */,
 				5C2C2A3020377F0D007F2FA5 /* RemoveFileOperation.swift */,
 				5C2C2A2E20373014007F2FA5 /* UnzipOperation.swift */,
@@ -1589,6 +1597,7 @@
 		5CA8DAF02031F92B00247FD8 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				5CC96A2E21F2257900F5A834 /* BlockObserverTest.swift */,
 				5C2C2A292035D65B007F2FA5 /* GroupOperationTest.swift */,
 				5C6384252107A489008281DF /* GSJOperationQueueTest.swift */,
 				5CA8DAF12031F94C00247FD8 /* GSJOperationTest.swift */,
@@ -1857,10 +1866,10 @@
 		686E3D2C1F58880300250628 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				686E3D2D1F58881100250628 /* AnalyticsConstants.swift */,
+				48C1DF2B222477010049629D /* AnalyticsEvent.swift */,
 				68E36190203F7F1500B1B979 /* AnalyticsReporter.swift */,
 				68E3618E203F7F1500B1B979 /* AnalyticsReporterOpen.swift */,
-				686E3D341F588C2E00250628 /* AnalyticsViewControllerExtensions.swift */,
+				48D02B792220CA750063AC28 /* AnalyticsScreenViews.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1969,6 +1978,7 @@
 				8B84E0291EAFF40F005E9AA0 /* Drawer */,
 				8B79B6AA2098BA1B009C7C04 /* ExistingDataOptions */,
 				688F79D31EBBA5230046A970 /* Experiments */,
+				8B65A94E2225923700D1FDF9 /* LoadingViewController.swift */,
 				68154D3B1F58EB98000CD3E6 /* Permissions */,
 				5C7DE8C11EC116190015F407 /* Playback */,
 				8BCCAD521EDF365500278F05 /* PopUpMenu */,
@@ -2297,6 +2307,7 @@
 		8B111F691E41225A000400F1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5C62CBA02229A7F700E63538 /* Array+ScienceJournal.swift */,
 				8B29D3A81F9E48A700D1DDA9 /* AVAudioSessionRouteChangeReason+ScienceJournal.swift */,
 				8BA5BF3A1F45CEDA00EB77E8 /* AVCaptureSessionInterruptionReason+ScienceJournal.swift */,
 				5CF371002012906D00AD85D2 /* Bool+ScienceJournal.swift */,
@@ -2644,6 +2655,7 @@
 				680CDF161F88313D00BDE61E /* TimeInterval+ScienceJournalTest.swift */,
 				68B32A2D1F9A8A7F0067DAF3 /* String+ScienceJournalTest.swift */,
 				8B5A66A42163B7FD0050E763 /* Date+ScienceJournalTest.swift */,
+				5C62CBA22229A81C00E63538 /* Array+ScienceJournalTest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -3096,6 +3108,7 @@
 				5C3245311EF2D81100E8664B /* DisplayPictureNoteViewData.swift in Sources */,
 				5C72195E1ED8D04700817F0B /* ExperimentOverview.swift in Sources */,
 				5C2E4E911EA16CE100F9AA6D /* SensorSettingsDataSource.swift in Sources */,
+				48C1DF2C222477010049629D /* AnalyticsEvent.swift in Sources */,
 				8B4B60141E44DADA009AFB1B /* AccelerometerSensor.swift in Sources */,
 				687FAA1A202C1162004C1D04 /* SensorConfig.pbobjc.m in Sources */,
 				8B9319641EF9A11900A078F4 /* DrawerPosition.swift in Sources */,
@@ -3120,6 +3133,7 @@
 				680865791EAEC970005F54E1 /* LicensesViewController.swift in Sources */,
 				681688341F32996E00CC2B5F /* UIViewController+ScienceJournal.swift in Sources */,
 				686CCDE91EEF64D500586F6B /* TrialDetailSensorsView.swift in Sources */,
+				5C62CBA12229A7F700E63538 /* Array+ScienceJournal.swift in Sources */,
 				5C477B341F192BE90065F7D1 /* GadgetInfo.swift in Sources */,
 				68BD95641E8DA45100FEB0B2 /* ScaleSoundType.swift in Sources */,
 				5C7B87C11FCDD6F300EDEF1D /* ErrorDialog.swift in Sources */,
@@ -3184,6 +3198,7 @@
 				8B17919A1F0AA849008C0B31 /* TriggerListCell.swift in Sources */,
 				5C0EDCF41FE94C270014E825 /* ExperimentItemsViewController.swift in Sources */,
 				8BFCF97E1FAA2EDC0030A6DC /* ArchiveFlagView.swift in Sources */,
+				48D02B7A2220CA750063AC28 /* AnalyticsScreenViews.swift in Sources */,
 				684896E91F0207CD00DF1EE2 /* UIStackView+ScienceJournal.swift in Sources */,
 				8BD3A1071F27B76B00A5DDBD /* MDCPalette+ScienceJournal.swift in Sources */,
 				4850DC9C21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift in Sources */,
@@ -3206,7 +3221,6 @@
 				48C767B520F92BA800A67C4A /* SignInViewController.swift in Sources */,
 				68808F371EB25989008EABD4 /* VerifyAgeViewController.swift in Sources */,
 				8BCCDF5F1EB9265800E85517 /* CameraActionBar.swift in Sources */,
-				5C63842021028164008281DF /* ImportMultipleSensorDataOperation.swift in Sources */,
 				68CD50D81E57DD51005E928F /* SensorCardCell.swift in Sources */,
 				68BD95621E8DA45100FEB0B2 /* NotesSoundType.swift in Sources */,
 				68BD95611E8DA45100FEB0B2 /* DefaultSoundType.swift in Sources */,
@@ -3260,6 +3274,7 @@
 				68587BA71F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift in Sources */,
 				8B2D60841F27D4F500F21EF9 /* UIViewController+DisplayType.swift in Sources */,
 				8BE81BEC1EB7A7D300EEC3BB /* PhotoCapturer.swift in Sources */,
+				485ED07D21FA7D6700017071 /* RemoteConfigFlagProtocol.swift in Sources */,
 				687FAA0A202C1162004C1D04 /* UserMetadata.pbobjc.m in Sources */,
 				5C5188A41F3D0F5F001B110A /* ZoomRecorder.swift in Sources */,
 				5CA8DAEF202E59E500247FD8 /* BlockObserver.swift in Sources */,
@@ -3297,6 +3312,7 @@
 				8BC53EA61F7A9BEA004417F8 /* SensorTriggerFrequencyObserver.swift in Sources */,
 				688DC94C1EEFB01000D5A7E4 /* TrialDetailHeaderCell.swift in Sources */,
 				5C7BC2DC20C9A00800CACFAB /* DriveConstructor.swift in Sources */,
+				8B65A94F2225923700D1FDF9 /* LoadingViewController.swift in Sources */,
 				687FAA17202C1162004C1D04 /* LabelValue.pbobjc.m in Sources */,
 				680659201EC2CE130090670C /* SensorStatsView.swift in Sources */,
 				5C5C0F301F9A7D5E00886C4C /* JumpToNowButton.swift in Sources */,
@@ -3338,7 +3354,6 @@
 				5C7ACBA31E9E88C200B22474 /* SensorSettingsViewController.swift in Sources */,
 				689C32171EF9DE84002C824C /* TriggerCardView.swift in Sources */,
 				4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */,
-				686E3D2F1F58881100250628 /* AnalyticsConstants.swift in Sources */,
 				680E3D731E5516B9009D4A73 /* ObserveViewController.swift in Sources */,
 				8B2053481E8EE5BE00206061 /* Recorder.swift in Sources */,
 				D59CA3C5219CEE690082A27B /* GoertzelAnalyzer.swift in Sources */,
@@ -3463,7 +3478,6 @@
 				8B1791AE1F0FFAB7008C0B31 /* MDCTabBar+ScienceJournal.swift in Sources */,
 				489182C21E4542CE00E91D73 /* ChartData.swift in Sources */,
 				8B94040B209A0F470058AD65 /* ExperimentsListCellBase.swift in Sources */,
-				686E3D351F588C2E00250628 /* AnalyticsViewControllerExtensions.swift in Sources */,
 				687232231F703F8E0080E57F /* MaterialLeftBarButtonItems.swift in Sources */,
 				4850DC9921C9797C00A5C4A0 /* RemoteConfigManager.swift in Sources */,
 				8B9BEC352134863B00225EF5 /* CommonUIComponentsOpen.swift in Sources */,
@@ -3546,6 +3560,7 @@
 				8B10E9571F87F08B0060A0AD /* ClosedRange+ScienceJournalTest.swift in Sources */,
 				5CE047831F6195A300E8EAA1 /* SensorSpec+BLESensorInterfaceTest.swift in Sources */,
 				8BB4523B215A6F460054DACD /* DisplayPictureNoteTest.swift in Sources */,
+				5C62CBA32229A81C00E63538 /* Array+ScienceJournalTest.swift in Sources */,
 				8B9ADF8F1ECF750000C7DB7D /* StatCalculatorTest.swift in Sources */,
 				5CC813D120D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift in Sources */,
 				5C44D9D31FBC99A50050E81C /* SensorDataTest.swift in Sources */,
@@ -3599,6 +3614,7 @@
 				5C8286DA21B97FFA008D7184 /* NoteDetailControllerTest.swift in Sources */,
 				5C7219671ED8D06C00817F0B /* SensorLayoutTest.swift in Sources */,
 				8BC1CBB720DD645800CBDB9D /* MockAccountsManager.swift in Sources */,
+				5CC96A2F21F2257900F5A834 /* BlockObserverTest.swift in Sources */,
 				5C95134E20CB2E060033D9FA /* MockAuthAccount.swift in Sources */,
 				8B9ADF961ECF761C00C7DB7D /* TrialStatsTest.swift in Sources */,
 				8B92732521B1AFB6009BDB0E /* ElapsedTimeEventManagerTest.swift in Sources */,

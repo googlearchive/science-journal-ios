@@ -37,12 +37,11 @@ class MockAccountsManager: AccountsManager {
     self.mockAuthAccount = mockAuthAccount
   }
 
-  func signInAsCurrentAccount(completion: @escaping SignInBlock) {}
+  func signInAsCurrentAccount() {}
 
   func signOutCurrentAccount() {}
 
-  func presentSignIn(fromViewController viewController: UIViewController,
-                     completion: @escaping (Bool, Bool) -> Void) {}
+  func presentSignIn(fromViewController viewController: UIViewController) {}
 
   @discardableResult func reauthenticateCurrentAccount() -> Bool { return false }
 

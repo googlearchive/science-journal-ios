@@ -459,7 +459,7 @@ class ExperimentUpdateManager {
     }
 
     notifyListeners { (listener) in
-      listener.experimentUpdateTrialDeleted(trial, fromExperiment: experiment, undoBlock: { })
+      listener.experimentUpdateTrialDeleted(trial, fromExperiment: experiment, undoBlock: nil)
     }
   }
 

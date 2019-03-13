@@ -17,6 +17,9 @@
 import Foundation
 
 public protocol DriveSyncManagerDelegate: class {
+  /// Informs the delegate the experiment library will be updated.
+  func driveSyncWillUpdateExperimentLibrary()
+
   /// Informs the delegate the experiment library was updated.
   func driveSyncDidUpdateExperimentLibrary()
 
@@ -68,8 +71,8 @@ public protocol DriveSyncManager: class {
   ///
   /// - Parameters:
   ///   - experimentID: An experiment ID.
-  ///   - onlyIfDirty: Whether to sync the experiment only if it is dirty.
-  func syncExperiment(withID experimentID: String, onlyIfDirty: Bool)
+  ///   - condition: The condition under which to sync.
+  func syncExperiment(withID experimentID: String, condition: DriveExperimentSyncCondition)
 
   /// Syncs trial sensor data to Drive.
   ///
@@ -104,6 +107,9 @@ public protocol DriveSyncManager: class {
   ///   - experimentID: The ID of the experiment the sensor data asset belongs to.
   func deleteSensorDataAsset(atURL url: URL, experimentID: String)
 
+  /// Prepare for Drive sync shutting down. All sync operations should be cancelled.
+  func tearDown()
+
   #if SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
 
   // MARK: - Debug additions for deleting all Drive user data.
@@ -116,4 +122,13 @@ public protocol DriveSyncManager: class {
 
   #endif  // SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
 
+}
+
+// MARK: - DriveExperimentSyncCondition
+
+public enum DriveExperimentSyncCondition {
+  /// Only sync the experiment if either the local or remote experiment is dirty.
+  case onlyIfDirty
+  /// Sync the experiment regardless of dirty state.
+  case always
 }

@@ -173,8 +173,8 @@ class ExistingDataOptionsViewController: ScienceJournalCollectionViewController 
 
       let option = options[indexPath.item]
       cell.imageView.image = option.icon
-      cell.titleLabel.text = option.title
-      cell.descriptionLabel.text = option.description
+      cell.titleText = option.title
+      cell.descriptionText = option.description
     }
     return cell
   }

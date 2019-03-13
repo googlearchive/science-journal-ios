@@ -24,6 +24,7 @@ class MockUserManager: UserManager {
   var metadataManager: MetadataManager
   var preferenceManager: PreferenceManager
   var sensorDataManager: SensorDataManager
+  var assetManager: UserAssetManager
 
   var shouldVerifyAge: Bool {
     return false
@@ -40,13 +41,16 @@ class MockUserManager: UserManager {
   init(driveSyncManager: DriveSyncManager?,
        metadataManager: MetadataManager,
        preferenceManager: PreferenceManager,
-       sensorDataManager: SensorDataManager) {
+       sensorDataManager: SensorDataManager,
+       assetManager: UserAssetManager) {
     self.driveSyncManager = driveSyncManager
     self.metadataManager = metadataManager
     self.preferenceManager = preferenceManager
     self.sensorDataManager = sensorDataManager
+    self.assetManager = assetManager
   }
 
+  func tearDown() {}
   func deleteAllUserData() throws {}
 
 }

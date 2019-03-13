@@ -22,6 +22,7 @@ class AppFlowViewControllerTest: XCTestCase {
 
   var appFlowViewController: AppFlowViewController!
   private var mockAccountsManager: MockAccountsManager!
+  let mockDriveConstructor = MockDriveConstructor()
 
   override func setUp() {
     super.setUp()
@@ -36,7 +37,7 @@ class AppFlowViewControllerTest: XCTestCase {
                               analyticsReporter: analyticsReporter,
                               commonUIComponents: CommonUIComponentsOpen(),
                               drawerConfig: DrawerConfigOpen(),
-                              driveConstructor: DriveConstructorDisabled(),
+                              driveConstructor: mockDriveConstructor,
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
                               remoteConfigManager: RemoteConfigManagerDisabled(),
@@ -47,7 +48,7 @@ class AppFlowViewControllerTest: XCTestCase {
                               analyticsReporter: analyticsReporter,
                               commonUIComponents: CommonUIComponentsOpen(),
                               drawerConfig: DrawerConfigOpen(),
-                              driveConstructor: DriveConstructorDisabled(),
+                              driveConstructor: mockDriveConstructor,
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
                               sensorController: sensorController)
@@ -69,7 +70,8 @@ class AppFlowViewControllerTest: XCTestCase {
     _ = appFlowViewController.rootUserManager.metadataManager.createExperiment()
 
     // Enter sign in flow.
-    appFlowViewController.signInFlowDidCompleteWithAccount()
+    appFlowViewController.accountsManagerPermissionCheckComplete(permissionState: .granted,
+                                                                 signInType: .newSignIn)
 
     appFlowViewController.existingDataOptionsViewControllerDidSelectSaveAllExperiments()
     XCTAssertTrue(
@@ -99,7 +101,8 @@ class AppFlowViewControllerTest: XCTestCase {
     rootUserManager.preferenceManager.hasUserOptedOutOfUsageTracking = true
 
     // Sign in.
-    appFlowViewController.signInFlowDidCompleteWithAccount()
+    appFlowViewController.accountsManagerPermissionCheckComplete(permissionState: .granted,
+                                                                 signInType: .newSignIn)
 
     // Assert that the account user manager preferences have been migrated from the root user
     // manager, by checking the preference for data tracking.
@@ -121,7 +124,8 @@ class AppFlowViewControllerTest: XCTestCase {
     let accountUserManager = appFlowViewController.currentAccountUserManager!
     appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
     false
-    appFlowViewController.signInFlowDidCompleteWithAccount()
+    appFlowViewController.accountsManagerPermissionCheckComplete(permissionState: .granted,
+                                                                 signInType: .newSignIn)
 
     // Assert that the account user manager preferences have not been migrated from the root user
     // manager.
@@ -159,7 +163,8 @@ class AppFlowViewControllerTest: XCTestCase {
     // Sign in.
     appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
         false
-    appFlowViewController.signInFlowDidCompleteWithAccount()
+    appFlowViewController.accountsManagerPermissionCheckComplete(permissionState: .granted,
+                                                                 signInType: .newSignIn)
 
     // Assert that account user manager preferences were not migrated from the root user
     // preferences.
@@ -179,7 +184,8 @@ class AppFlowViewControllerTest: XCTestCase {
     // Sign in.
     appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
         false
-    appFlowViewController.signInFlowDidCompleteWithAccount()
+    appFlowViewController.accountsManagerPermissionCheckComplete(permissionState: .granted,
+                                                                 signInType: .newSignIn)
 
     // Assert that account user manager preferences are the expected default values.
     let accountUserManager = appFlowViewController.currentAccountUserManager!
@@ -211,6 +217,13 @@ class AppFlowViewControllerTest: XCTestCase {
 
     // The account user manager property should continue to return the same instance.
     XCTAssertTrue(appFlowViewController.currentAccountUserManager! === newAccountUserManager)
+  }
+
+  func testDriveSyncManagerTearDownWhenUserSignedOut() {
+    _ = appFlowViewController.currentAccountUserManager
+    XCTAssertFalse(mockDriveConstructor.mockDriveSyncManager.tearDownCalled)
+    appFlowViewController.forceSignInViaNotification()
+    XCTAssertTrue(mockDriveConstructor.mockDriveSyncManager.tearDownCalled)
   }
 
 }

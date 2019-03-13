@@ -29,11 +29,13 @@ public protocol DriveConstructor {
   ///   - networkAvailability: Network availability.
   ///   - preferenceManager: A preference manager.
   ///   - sensorDataManager: A sensor data manager.
+  ///   - analyticsReporter: An analytics reporter.
   /// - Returns: A drive sync manager.
   func driveSyncManager(withAuthorization authorization: GTMFetcherAuthorizationProtocol,
                         metadataManager: MetadataManager,
                         networkAvailability: NetworkAvailability,
                         preferenceManager: PreferenceManager,
-                        sensorDataManager: SensorDataManager) -> DriveSyncManager?
+                        sensorDataManager: SensorDataManager,
+                        analyticsReporter: AnalyticsReporter) -> DriveSyncManager?
 
 }

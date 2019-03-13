@@ -66,6 +66,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let operationQueue = GSJOperationQueue()
   private var shouldShowPreferenceMigrationMessage: Bool
 
+  // Whether to show the experiment list pull to refresh animation. It should show once for a fresh
+  // launch per user.
+  private var shouldShowExperimentListPullToRefreshAnimation = true
+
   // The experiment update manager for the displayed experiment. This is populated when an
   // experiment is shown. Callbacks received from detail view controllers will route updates to
   // this manager.
@@ -99,7 +103,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   ///   - networkAvailability: Network availability.
   ///   - sensorController: The sensor controller.
   ///   - shouldShowPreferenceMigrationMessage: Whether to show the preference migration message.
-  ///   - userAssetManager: The user asset manager.
   ///   - userManager: The user manager.
   init(accountsManager: AccountsManager,
        analyticsReporter: AnalyticsReporter,
@@ -111,7 +114,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
        networkAvailability: NetworkAvailability,
        sensorController: SensorController,
        shouldShowPreferenceMigrationMessage: Bool,
-       userAssetManager: UserAssetManager,
        userManager: UserManager) {
     self.accountsManager = accountsManager
     self.analyticsReporter = analyticsReporter
@@ -123,12 +125,13 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     self.networkAvailability = networkAvailability
     self.sensorController = sensorController
     self.shouldShowPreferenceMigrationMessage = shouldShowPreferenceMigrationMessage
-    self.userAssetManager = userAssetManager
     self.userManager = userManager
     self.metadataManager = userManager.metadataManager
     self.preferenceManager = userManager.preferenceManager
     self.sensorDataManager = userManager.sensorDataManager
-    sidebar = SidebarViewController(accountsManager: accountsManager)
+    self.userAssetManager = userManager.assetManager
+    sidebar = SidebarViewController(accountsManager: accountsManager,
+                                    analyticsReporter: analyticsReporter)
     super.init(nibName: nil, bundle: nil)
 
     // Set user tracking opt-out.
@@ -420,17 +423,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   }
 
   func sidebarDidOpen() {
-    analyticsReporter.trackEventWithCategory(AnalyticsConstants.eventCategorySidebar,
-                                             action: AnalyticsConstants.eventSidebarOpened,
-                                             label: nil,
-                                             value: nil)
+    analyticsReporter.track(.sidebarOpened)
   }
 
   func sidebarDidClose() {
-    analyticsReporter.trackEventWithCategory(AnalyticsConstants.eventCategorySidebar,
-                                             action: AnalyticsConstants.eventSidebarClosed,
-                                             label: nil,
-                                             value: nil)
+    analyticsReporter.track(.sidebarClosed)
   }
 
   // MARK: - ExperimentsListViewControllerDelegate
@@ -477,15 +474,25 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   }
 
   func experimentsListDidSetTitle(_ title: String?, forExperimentID experimentID: String) {
-    metadataManager.setExperimentTitle(title, forID: experimentID)
+    if openExperimentUpdateManager?.experiment.ID == experimentID {
+      openExperimentUpdateManager?.setTitle(title)
+    } else {
+      metadataManager.setExperimentTitle(title, forID: experimentID)
+      userManager.driveSyncManager?.syncExperiment(withID: experimentID, condition: .onlyIfDirty)
+    }
   }
 
   func experimentsListDidSetCoverImageData(_ imageData: Data?,
                                            metadata: NSDictionary?,
                                            forExperimentID experimentID: String) {
-    metadataManager.setCoverImageData(imageData,
-                                      metadata: metadata,
-                                      forExperimentID: experimentID)
+    if openExperimentUpdateManager?.experiment.ID == experimentID {
+      openExperimentUpdateManager?.setCoverImageData(imageData, metadata: metadata)
+    } else {
+      metadataManager.setCoverImageData(imageData,
+                                        metadata: metadata,
+                                        forExperimentID: experimentID)
+      userManager.driveSyncManager?.syncExperiment(withID: experimentID, condition: .onlyIfDirty)
+    }
   }
 
   // MARK: - ExperimentCoordinatorViewControllerDelegate
@@ -761,7 +768,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     metadataManager.markExperimentOpened(withID: experiment.ID)
 
     // Tell drive manager to sync the experiment.
-    userManager.driveSyncManager?.syncExperiment(withID: experiment.ID, onlyIfDirty: false)
+    userManager.driveSyncManager?.syncExperiment(withID: experiment.ID, condition: .always)
 
     // This is a good time to generate any missing recording protos.
     userAssetManager.writeMissingSensorDataProtos(forExperiment: experiment)
@@ -911,11 +918,16 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                 finished()
               }
             }
+
+            if libraryExists == true {
+              self.analyticsReporter.track(.signInSyncExistingAccount)
+            }
           }
         }
       }
 
-      if let experimentsListVC = self.experimentsListVC {
+      if let experimentsListVC = self.experimentsListVC,
+          experimentsListVC.presentedViewController == nil {
         spinnerVC = SpinnerViewController()
         spinnerVC?.present(fromViewController: experimentsListVC) {
           createDefaultExperiment()
@@ -1000,8 +1012,16 @@ extension UserFlowViewController: TrialDetailViewControllerDelegate {
 
 extension UserFlowViewController: DriveSyncManagerDelegate {
 
+  func driveSyncWillUpdateExperimentLibrary() {
+    if shouldShowExperimentListPullToRefreshAnimation {
+      experimentsListVC?.startPullToRefreshAnimation()
+      shouldShowExperimentListPullToRefreshAnimation = false
+    }
+  }
+
   func driveSyncDidUpdateExperimentLibrary() {
     experimentsListVC?.reloadExperiments()
+    experimentsListVC?.endPullToRefreshAnimation()
   }
 
   func driveSyncDidDeleteTrial(withID trialID: String, experimentID: String) {
@@ -1076,7 +1096,7 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
 extension UserFlowViewController: ExperimentUpdateManagerDelegate {
 
   func experimentUpdateManagerDidSaveExperiment(withID experimentID: String) {
-    userManager.driveSyncManager?.syncExperiment(withID: experimentID, onlyIfDirty: true)
+    userManager.driveSyncManager?.syncExperiment(withID: experimentID, condition: .onlyIfDirty)
   }
 
 }

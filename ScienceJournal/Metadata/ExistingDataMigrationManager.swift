@@ -50,6 +50,8 @@ class ExistingDataMigrationManager {
     return numberOfExistingExperiments > 0
   }
 
+  private let migrationQueue = GSJOperationQueue()
+
   // MARK: - Public
 
   /// Designated initializer.
@@ -60,6 +62,9 @@ class ExistingDataMigrationManager {
   init(accountUserManager: AccountUserManager, rootUserManager: RootUserManager) {
     self.accountUserManager = accountUserManager
     self.rootUserManager = rootUserManager
+
+    // For memory performance, experiments migrate one at a time.
+    migrationQueue.maxConcurrentOperationCount = 1
   }
 
   // MARK: Experiments
@@ -78,48 +83,52 @@ class ExistingDataMigrationManager {
       return
     }
 
-    // Begin a background task.
-    var backgroundTaskID = UIApplication.shared.beginBackgroundTask()
-
-    let dispatchGroup = DispatchGroup()
+    var migrateOperations = [GSJOperation]()
 
     // Sensor data
     var errorTrialIDs = [String]()
     experimentAndOverview.experiment.trials.forEach { (trial) in
-      dispatchGroup.enter()
-
-      accountUserManager.sensorDataManager.countOfAllSensorData(forTrialID: trial.ID,
-                                                                completion: { (accountCount) in
-        self.rootUserManager.sensorDataManager.countOfAllSensorData(forTrialID: trial.ID,
-                                                                    completion: { (rootCount) in
-          var shouldMigrateSensorData = true
-          if let accountCount = accountCount {
-            if rootCount == accountCount {
-              shouldMigrateSensorData = false
-            } else if accountCount > 0 {
-              self.accountUserManager.sensorDataManager.removeData(forTrialID: trial.ID)
-            }
-          }
-          if shouldMigrateSensorData {
-            self.rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
-                                                                      completion: { (sensorData) in
-              if let sensorData = sensorData {
-                self.accountUserManager.sensorDataManager.addSensorDataPoints(sensorData)
-              } else {
-                errorTrialIDs.append(trial.ID)
+      let migrateTrial = GSJBlockOperation(block: { [unowned self] (finished) in
+        let accountSensorDataManager = self.accountUserManager.sensorDataManager
+        let rootSensorDataManager = self.rootUserManager.sensorDataManager
+        accountSensorDataManager.countOfAllSensorData(forTrialID: trial.ID,
+                                                      completion: { (accountCount) in
+          rootSensorDataManager.countOfAllSensorData(forTrialID: trial.ID,
+                                                     completion: { (rootCount) in
+            var shouldMigrateSensorData = true
+            if let accountCount = accountCount {
+              if rootCount == accountCount {
+                shouldMigrateSensorData = false
+              } else if accountCount > 0 {
+                accountSensorDataManager.removeData(forTrialID: trial.ID)
               }
-              dispatchGroup.leave()
-            })
-          } else {
-            dispatchGroup.leave()
-          }
+            }
+            if shouldMigrateSensorData {
+              rootSensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
+                                                       completion: { (sensorData, fetchContext) in
+                if let sensorData = sensorData {
+                  accountSensorDataManager.addSensorDataPoints(sensorData) {
+                    // Now that adding is complete, reset the fetch context to clear up memory.
+                    fetchContext.reset()
+                    finished()
+                  }
+                } else {
+                  errorTrialIDs.append(trial.ID)
+                  finished()
+                }
+              })
+            } else {
+              finished()
+            }
+          })
         })
       })
+      migrateOperations.append(migrateTrial)
     }
 
-    dispatchGroup.notify(qos: .userInitiated, queue: .global()) {
-      self.accountUserManager.sensorDataManager.savePrivateContext()
-
+    let migrate = GroupOperation(operations: migrateOperations)
+    migrate.maxConcurrentOperationCount = 1
+    migrate.addObserver(BlockObserver { [unowned self] _, _ in
       // Experiment
       let addExperimentSuccess = self.accountUserManager.metadataManager.addExperiment(
           experimentAndOverview.experiment, overview: experimentAndOverview.overview)
@@ -156,13 +165,10 @@ class ExistingDataMigrationManager {
       DispatchQueue.main.async {
         completion(errors)
       }
+    })
+    migrate.addObserver(BackgroundTaskObserver())
 
-      // End background task.
-      if backgroundTaskID != .invalid {
-        UIApplication.shared.endBackgroundTask(backgroundTaskID)
-      }
-      backgroundTaskID = .invalid
-    }
+    migrationQueue.addOperation(migrate)
   }
 
   /// Moves all experiments from pre-account storage to storage for this user.

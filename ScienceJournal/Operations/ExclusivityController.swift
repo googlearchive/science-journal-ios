@@ -25,7 +25,6 @@ public class ExclusivityController {
 
   private let serialQueue = DispatchQueue(label: "com.google.ScienceJournal.ExclusivityController")
   private var operations = [String: [GSJOperation]]()
-  private var maxCounts = [String: Int]()
 
   // Prevent creating multiple instances of this class.
   private init() {}
@@ -66,4 +65,16 @@ public class ExclusivityController {
     }
   }
 
+}
+
+// MARK: - Testing-only Methods
+
+extension ExclusivityController {
+  /// Unit tests can create scenarios that are otherwise impossible during the normal operation
+  /// of the app. This includes operations with exclusivity being added but not removed. For this
+  /// reason it is necessary to create a method to reset the exclusivity operations.
+  /// WARNING: Do not use outside of unit tests.
+  func resetForUnitTesting() {
+    operations.removeAll()
+  }
 }

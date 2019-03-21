@@ -71,6 +71,8 @@ class UserFlowViewControllerTest: XCTestCase {
                                sensorController: MockSensorController(),
                                shouldShowPreferenceMigrationMessage: false,
                                userManager: mockUserManager)
+
+    ExclusivityController.shared.resetForUnitTesting()
   }
 
   func testShowExperimentWithCurrentVersion() {

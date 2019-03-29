@@ -23,15 +23,24 @@ class ExperimentListViewControllerTest: XCTestCase {
   func testRightBarButtonItems() {
     let mockAccountsManager = MockAccountsManager()
     let settableNetworkAvailability = SettableNetworkAvailability()
+    let sensorDataManager = SensorDataManager.testStore
+    let metadataManager = MetadataManager.testingInstance
+    let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
+                                                      metadataManager: metadataManager,
+                                                      sensorDataManager: sensorDataManager)
+    let documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                          metadataManager: metadataManager,
+                                          sensorDataManager: sensorDataManager)
     let experimentsListVC =
         ExperimentsListViewController(accountsManager: mockAccountsManager,
                                       analyticsReporter: AnalyticsReporterOpen(),
                                       commonUIComponents: CommonUIComponentsOpen(),
                                       existingDataMigrationManager: nil,
-                                      metadataManager: MetadataManager.testingInstance,
+                                      metadataManager: metadataManager,
                                       networkAvailability: settableNetworkAvailability,
                                       preferenceManager: PreferenceManager(),
-                                      sensorDataManager: SensorDataManager.testStore,
+                                      sensorDataManager: sensorDataManager,
+                                      documentManager: documentManager,
                                       shouldAllowSharing: true,
                                       shouldAllowManualSync: true)
 

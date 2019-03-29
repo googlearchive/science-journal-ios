@@ -376,6 +376,11 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
     case .ready, .paused:
       sensorFailedView.isHidden = true
       sensorLoadingView.isHidden = true
+    case .interrupted:
+      sensorFailedView.messageLabel.text = String.sensorCardErrorText
+      sensorFailedView.hideActionButton()
+      sensorFailedView.isHidden = false
+      sensorLoadingView.isHidden = true
     }
   }
 

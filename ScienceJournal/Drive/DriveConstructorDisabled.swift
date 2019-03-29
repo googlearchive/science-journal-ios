@@ -25,6 +25,7 @@ open class DriveConstructorDisabled: DriveConstructor {
   public init() {}
 
   public func driveSyncManager(withAuthorization authorization: GTMFetcherAuthorizationProtocol,
+                               experimentDataDeleter: ExperimentDataDeleter,
                                metadataManager: MetadataManager,
                                networkAvailability: NetworkAvailability,
                                preferenceManager: PreferenceManager,

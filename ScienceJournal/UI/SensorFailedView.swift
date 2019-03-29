@@ -47,11 +47,13 @@ class SensorFailedView: UIView {
   }
 
   func showActionButton(withTitle title: String) {
+    actionButton.isHidden = false
     actionButton.setTitle(title, for: .normal)
     stackView.insertArrangedSubview(actionButton, at: 2)
   }
 
   func hideActionButton() {
+    actionButton.isHidden = true
     stackView.removeArrangedSubview(actionButton)
   }
 

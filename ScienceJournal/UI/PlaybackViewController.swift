@@ -49,7 +49,7 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
   private var maxPlayheadPosition: CGFloat?
   private var minPlayheadPosition: CGFloat?
   private var playbackTimer: Timer?
-  private(set) var playheadTimestamp: Int64 = 0
+  private(set) var playheadTimestamp: Int64?
 
   /// The current interaction state.
   var interactionState = InteractionState.playback
@@ -78,6 +78,9 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
 
   /// The playhead timestamp relative to the beginning of the trial.
   var playheadRelativeTimestamp: Int64 {
+    guard let playheadTimestamp = playheadTimestamp else {
+      return 0
+    }
     return playheadTimestamp - timeAxisController.timeAxisView.zeroTime
   }
 
@@ -228,6 +231,9 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
 
   /// Redraw the playhead at the current position. Used to update the playhead after a rotation.
   func updatePlayheadPosition() {
+    guard let playheadTimestamp = playheadTimestamp else {
+      return
+    }
     showPlaybackOverlay(atTimestamp: playheadTimestamp, isDragging: false)
   }
 
@@ -285,7 +291,8 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
 
   // Move the playhead backward or forward based on accessibility actions.
   private func adjustableViewIncrement(forward: Bool) {
-    guard let lastDataPointX = chartController.chartData.lastX,
+    guard let playheadTimestamp = playheadTimestamp,
+        let lastDataPointX = chartController.chartData.lastX,
         let firstDataPointX = chartController.chartData.firstX else { return }
     let totalDuration = Double(lastDataPointX - firstDataPointX)
     let distanceToMove = Int64(totalDuration * percentToMoveWithAccessibility) * (forward ? 1 : -1)
@@ -334,7 +341,7 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
     timeAxisController.visibleAxisChanged(chartController.visibleXAxis)
 
     // If playhead hasn't been set, move it to the beginning.
-    if playheadTimestamp == 0 {
+    if playheadTimestamp == nil {
       playheadTimestamp = timeAxisController.timeAxisView.zeroTime
     }
   }
@@ -363,6 +370,10 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
   // MARK: - Private
 
   private func startPlayback() {
+    guard let playheadTimestamp = playheadTimestamp else {
+      return
+    }
+
     isPlaying = true
 
     playButton.setImage(UIImage(named: pauseIconName), for: .normal)
@@ -386,6 +397,10 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
   }
 
   @objc private func playbackTimerFired() {
+    guard let playheadTimestamp = playheadTimestamp else {
+      return
+    }
+
     guard let lastX = chartController.chartData.lastX else { return }
 
     let dataPoint = showPlaybackOverlay(atTimestamp: playheadTimestamp, isDragging: false)
@@ -458,11 +473,12 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
     }
 
     // Save the current playhead time, clamped to the available data range.
-    playheadTimestamp = (firstDataPointX...lastDataPointX).clamp(timestamp)
+    let newPlayheadTimestamp = (firstDataPointX...lastDataPointX).clamp(timestamp)
+    playheadTimestamp = newPlayheadTimestamp
     delegate?.playbackViewControllerDidChangePlayheadTimestamp(forSensorID: sensorID)
 
     // Make sure we can get a valid data point and chart view point.
-    guard let playheadDataPoint = chartController.closestDataPointToTimestamp(playheadTimestamp),
+    guard let playheadDataPoint = chartController.closestDataPointToTimestamp(newPlayheadTimestamp),
         let chartViewPoint = chartController.viewPoint(fromDataPoint: playheadDataPoint) else {
       return nil
     }

@@ -37,6 +37,12 @@ protocol UserManager {
   /// The asset manager for the user.
   var assetManager: UserAssetManager { get }
 
+  /// The document manager for the user.
+  var documentManager: DocumentManager { get }
+
+  /// The experiment data deleter for the user.
+  var experimentDataDeleter: ExperimentDataDeleter { get }
+
   /// Whether to verify the user's age.
   var shouldVerifyAge: Bool { get }
 

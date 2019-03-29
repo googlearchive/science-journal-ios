@@ -151,6 +151,12 @@ public class Experiment {
   /// ExperimentOverview owns the ID.
   public let ID: String
 
+  /// Returns true if the user has never set a title or image and the experiment has no items,
+  /// otherwise returns false.
+  public var isEmpty: Bool {
+    return title == nil && imagePath == nil && itemCount == 0
+  }
+
   /// Designated initializer.
   ///
   /// - Parameters:

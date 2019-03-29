@@ -44,15 +44,13 @@ class MagnetometerSensor: MotionSensor {
     pointsAfterDecimal = 0
   }
 
-  override func start(completion: ((Error?) -> ())?) {
+  override func start() {
     guard state != .ready else {
-      completion?(nil)
       return
     }
 
     MagnetometerSensor.motionManager.startDeviceMotionUpdates(using: magneticFieldReferenceFrame)
     state = .ready
-    completion?(nil)
   }
 
   override func pause() {

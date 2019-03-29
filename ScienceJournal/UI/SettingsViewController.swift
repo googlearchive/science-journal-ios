@@ -120,7 +120,7 @@ class SettingsViewController: MaterialHeaderCollectionViewController {
     dataUsageSetting.settingAction = #selector(dataUsageSwitchChanged(sender:))
     rows.append(dataUsageSetting)
 
-    #if SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
+    #if SCIENCEJOURNAL_DEV_BUILD
     // Generate root user data for testing the claim existing experiments flow.
     let generateRootDataSetting = SettingsItem()
     generateRootDataSetting.title = "Generate root user data"
@@ -138,21 +138,7 @@ class SettingsViewController: MaterialHeaderCollectionViewController {
     forceAuthSetting.settingType = .settingButton
     forceAuthSetting.settingAction = #selector(forceAuthSettingPressed(sender:))
     rows.append(forceAuthSetting)
-
-    let removeAllDriveUserDataSetting = SettingsItem()
-    removeAllDriveUserDataSetting.title = "Remove data from Google Drive"
-    removeAllDriveUserDataSetting.description = "Removes experiment_library.proto and all " +
-        "experiments from Drive for testing."
-    removeAllDriveUserDataSetting.actionTitle = "Go"
-    removeAllDriveUserDataSetting.settingType = .settingButton
-    removeAllDriveUserDataSetting.settingAction =
-        #selector(removeAllDriveUserDataSettingPressed(sender:))
-    // Temporarily removed from the build as it might end up confusing testers. It's possible we'll
-    // want to bring this back with more functionality (delete ScienceJournal folder, reset app,
-    // etc) so leaving the debug code in for now. http://b/112312805
-    //
-    // rows.append(removeAllDriveUserDataSetting)
-    #endif  // SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
+    #endif  // SCIENCEJOURNAL_DEV_BUILD
   }
 
   // MARK: - User Actions
@@ -173,7 +159,7 @@ class SettingsViewController: MaterialHeaderCollectionViewController {
     analyticsReporter.setOptOut(isOptedOut)
   }
 
-  #if SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
+  #if SCIENCEJOURNAL_DEV_BUILD
   @objc private func generateRootDataSettingPressed(sender: UIButton) {
     NotificationCenter.default.post(name: .DEBUG_createRootUserData, object: nil, userInfo: nil)
   }
@@ -183,38 +169,7 @@ class SettingsViewController: MaterialHeaderCollectionViewController {
                                     object: nil,
                                     userInfo: nil)
   }
-
-  @objc private func removeAllDriveUserDataSettingPressed(sender: UIButton) {
-    guard let driveSyncManager = driveSyncManager else { return }
-
-    let message = "Are you sure you want to remove all data from Google Drive for this user? " +
-        "This cannot be undone. This is ONLY for testing purposes."
-    let alertController = MDCAlertController(title: "Confirm", message: message)
-    let removeDataAction = MDCAlertAction(title: "Yes, remove all data") { (action) in
-      let spinnerVC = SpinnerViewController()
-      spinnerVC.present(fromViewController: self) {
-        driveSyncManager.debug_removeAllUserDriveData() { (deletedFileCount, errors) in
-          spinnerVC.dismissSpinner() {
-            guard errors.count == 0 else {
-              print("[SettingsViewController] Error removing all Drive user data: \(errors)")
-              return
-            }
-
-            let snackbarMessage = MDCSnackbarMessage()
-            snackbarMessage.text = "Deleted \(deletedFileCount) files from Drive"
-            MDCSnackbarManager.show(snackbarMessage)
-          }
-        }
-      }
-    }
-
-    let cancelAction = MDCAlertAction(title: String.actionCancel)
-    alertController.addAction(cancelAction)
-    alertController.addAction(removeDataAction)
-    alertController.accessibilityViewIsModal = true
-    self.present(alertController, animated: true)
-  }
-  #endif  // SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
+  #endif  // SCIENCEJOURNAL_DEV_BUILD
 
   // MARK: - UICollectionViewDataSource
 

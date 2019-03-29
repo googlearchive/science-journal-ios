@@ -32,7 +32,11 @@ class ExperimentStateManagerTest: XCTestCase, ExperimentStateListener {
 
   override func setUp() {
     super.setUp()
-    experimentStateManager = ExperimentStateManager(metadataManager: metadataManager,
+    let experimentDataDeleter = ExperimentDataDeleter(accountID: "ExperimentStateManagerTest",
+                                                      metadataManager: metadataManager,
+                                                      sensorDataManager: sensorDataManager)
+    experimentStateManager = ExperimentStateManager(experimentDataDeleter: experimentDataDeleter,
+                                                    metadataManager: metadataManager,
                                                     sensorDataManager: sensorDataManager)
     experimentStateManager.addListener(self)
   }
@@ -100,14 +104,12 @@ class ExperimentStateManagerTest: XCTestCase, ExperimentStateListener {
     self.undoBlock = undoBlock
   }
 
-  func experimentStateDeleted(_ experiment: Experiment,
-                              undoBlock: (() -> Void)?) {
+  func experimentStateDeleted(_ deletedExperiment: DeletedExperiment, undoBlock: (() -> Void)?) {
     experimentStateDeletedCalled = true
     self.undoBlock = undoBlock
   }
 
-  func experimentStateRestored(_ experiment: Experiment,
-                               overview: ExperimentOverview) {
+  func experimentStateRestored(_ experiment: Experiment, overview: ExperimentOverview) {
     experimentStateRestoredCalled = true
   }
 

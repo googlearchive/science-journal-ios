@@ -104,12 +104,9 @@ class Sensor: NSObject {
   /// - Parameters:
   ///   - listener: Object registering as a listener.
   ///   - block: Closure that is called when sensor data is sent.
-  /// - Throws: An error if the sensor is not supported.
-  func addListener(_ listener: AnyObject,
-                   using block: @escaping (DataPoint) -> Void,
-                   completion: @escaping (Error?) -> ()) {
+  func addListener(_ listener: AnyObject, using block: @escaping (DataPoint) -> Void) {
     guard isSupported else {
-      completion(SensorError.notSupported)
+      state = .failed(.notSupported)
       return
     }
 
@@ -117,9 +114,7 @@ class Sensor: NSObject {
     listenerBlocks[ObjectIdentifier(listener)] = block
     if previousCount == 0 && listenerBlocks.count == 1 {
       sensorTimer.add(sensor: self)
-      start(completion: { (error) in
-        completion(error)
-      })
+      start()
     }
   }
 
@@ -155,11 +150,8 @@ class Sensor: NSObject {
 
   /// Starts the sensor.
   ///
-  /// - Parameter completion: A closure called after the sensor starts. Subclasses may retain the
-  ///                         closure and call it if the sensor automatically re-starts itself.
-  ///
   /// Important: `start` must be overridden by the subclass.
-  func start(completion: ((Error?) -> ())?) {
+  func start() {
     fatalError("`start` must be overridden by the subclass.")
   }
 
@@ -226,12 +218,14 @@ class Sensor: NSObject {
   /// - failed: The sensor failed to start due to an error.
   /// - noPermission: The sensor failed to start because the proper permissions are not granted.
   /// - ready: The sensor has successfully started and it vending data.
+  /// - interrupted: The sensor hardware is interrupted by another client.
   enum LoadingState: Equatable {
     case paused
     case loading
     case failed(SensorError)
     case noPermission(SensorError)
     case ready
+    case interrupted
 
     /// This equality test does not compare associated values.
     public static func ==(lhs: LoadingState, rhs: LoadingState) -> Bool {
@@ -245,6 +239,8 @@ class Sensor: NSObject {
       case (.failed(_), .failed(_)):
         return true
       case (.noPermission(_), .noPermission(_)):
+        return true
+      case (.interrupted, .interrupted):
         return true
       default:
         return false

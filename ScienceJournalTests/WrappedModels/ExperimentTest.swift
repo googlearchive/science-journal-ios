@@ -320,4 +320,35 @@ class ExperimentTest: XCTestCase {
     XCTAssertTrue(experiment6.hasAssetReferences)
   }
 
+  func testIsEmpty() {
+    let experiment = Experiment(ID: "testIsEmpty")
+    XCTAssertTrue(experiment.isEmpty)
+
+    experiment.setTitle("foo")
+    XCTAssertFalse(experiment.isEmpty)
+
+    experiment.setTitle(nil)
+    XCTAssertTrue(experiment.isEmpty)
+
+    experiment.imagePath = "a/path/to/here"
+    XCTAssertFalse(experiment.isEmpty)
+
+    experiment.imagePath = nil
+    XCTAssertTrue(experiment.isEmpty)
+
+    let note = TextNote(text: "a text note")
+    experiment.addNote(note)
+    XCTAssertFalse(experiment.isEmpty)
+
+    let trial = Trial()
+    experiment.addTrial(trial, isUndo: false)
+    XCTAssertFalse(experiment.isEmpty)
+
+    experiment.notes = []
+    XCTAssertFalse(experiment.isEmpty)
+
+    experiment.trials = []
+    XCTAssertTrue(experiment.isEmpty)
+  }
+
 }

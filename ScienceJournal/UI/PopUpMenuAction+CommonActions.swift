@@ -58,8 +58,7 @@ extension PopUpMenuAction {
   static func exportExperiment(_ experiment: Experiment,
                                presentingViewController: UIViewController,
                                sourceView: UIView,
-                               metadataManager: MetadataManager,
-                               sensorDataManager: SensorDataManager) -> PopUpMenuAction {
+                               documentManager: DocumentManager) -> PopUpMenuAction {
     return PopUpMenuAction(title: String.sendCopyAction,
                            icon: UIImage(named: "ic_share"),
                            handler: { _ in
@@ -67,7 +66,7 @@ extension PopUpMenuAction {
       spinnerViewController.present(fromViewController: presentingViewController)
 
       func exportExperiment() {
-        metadataManager.createExportDocument(forExperimentWithID: experiment.ID,
+        documentManager.createExportDocument(forExperimentWithID: experiment.ID,
                                              completion: { (url, errors) in
           spinnerViewController.dismissSpinner(completion: {
             guard let url = url else {
@@ -79,7 +78,7 @@ extension PopUpMenuAction {
             let activityVC = UIActivityViewController(activityItems: [url],
                                                       applicationActivities: nil)
             activityVC.completionWithItemsHandler = { (_, _, _, _) in
-              metadataManager.finishedWithExportDocument(atURL: url)
+              documentManager.finishedWithExportDocument(atURL: url)
             }
             if let presentationController = activityVC.popoverPresentationController {
               // Configure as a popover on iPad if necessary.
@@ -91,14 +90,8 @@ extension PopUpMenuAction {
         })
       }
 
-      sensorDataManager.sensorDataExists(forExperiment: experiment, completion: { (exists) in
-        var experimentIsFullyDownloaded = exists
-        if experimentIsFullyDownloaded &&
-            !metadataManager.imageFilesExist(forExperiment: experiment) {
-          experimentIsFullyDownloaded = false
-        }
-
-        if (experimentIsFullyDownloaded) {
+      documentManager.experimentIsReadyForExport(experiment, completion: { (isReady) in
+        if isReady {
           exportExperiment()
         } else {
           let alertController =

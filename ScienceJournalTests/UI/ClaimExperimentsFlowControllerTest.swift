@@ -32,6 +32,14 @@ class ClaimExperimentsFlowControllerTest: XCTestCase {
                                                 networkAvailability: SettableNetworkAvailability(),
                                                 sensorController: mockSensorController,
                                                 analyticsReporter: AnalyticsReporterOpen())
+    let sensorDataManager = SensorDataManager.testStore
+    let metadataManager = MetadataManager.testingInstance
+    let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
+                                                      metadataManager: metadataManager,
+                                                      sensorDataManager: sensorDataManager)
+    let documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                          metadataManager: metadataManager,
+                                          sensorDataManager: sensorDataManager)
     let rootUserManager = RootUserManager(sensorController: mockSensorController)
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,
@@ -39,6 +47,7 @@ class ClaimExperimentsFlowControllerTest: XCTestCase {
     claimExperimentsFlowController =
         ClaimExperimentsFlowController(authAccount: MockAuthAccount(),
                                        analyticsReporter: AnalyticsReporterOpen(),
+                                       documentManager: documentManager,
                                        existingDataMigrationManager: existingDataMigrationManager,
                                        sensorController: mockSensorController)
   }

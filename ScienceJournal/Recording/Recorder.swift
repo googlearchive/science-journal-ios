@@ -134,14 +134,11 @@ class Recorder: Equatable, SensorTriggerFrequencyObserverDelegate {
   ///   - triggers: The sensor triggers for this recorder to monitor.
   ///   - listener: The object to udpdate with sensor data.
   ///   - sensorDataManager: The sensor data manager.
-  ///   - sensorStartCompletion: Called when adding the sensor listener completes with
-  ///                            optional error.
   init(sensor: Sensor,
        delegate: RecorderDelegate,
        triggers: [SensorTrigger],
        listener: @escaping RecorderListener,
-       sensorDataManager: SensorDataManager,
-       sensorStartCompletion: @escaping (Error?) -> ()) {
+       sensorDataManager: SensorDataManager) {
     self.sensor = sensor
     self.delegate = delegate
     sensorTriggerEvaluators = SensorTriggerEvaluator.sensorTriggerEvaluators(for: triggers)
@@ -177,8 +174,6 @@ class Recorder: Equatable, SensorTriggerFrequencyObserverDelegate {
                                              trialID: trialID)
         weakSelf.zoomRecorder?.addDataPoint(dataPoint: dataPoint)
       }
-    }, completion: { (error) in
-      sensorStartCompletion(error)
     })
   }
 

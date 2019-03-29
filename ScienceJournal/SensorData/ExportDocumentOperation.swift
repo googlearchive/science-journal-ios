@@ -26,16 +26,12 @@ class ExportDocumentOperation: GroupOperation {
   ///
   /// - Parameters:
   ///   - coverImageURL: The URL of the experiment's cover image.
-  ///   - defaultCoverImageURL: The default cover image URL required for export.
   ///   - experiment: An experiment.
   ///   - experimentURL: The URL location of the experiment directory.
-  ///   - overview: The overview associated with the experiment.
   ///   - sensorDataManager: A sensor data manager.
   init(coverImageURL: URL?,
-       defaultCoverImageURL: URL,
        experiment: Experiment,
        experimentURL: URL,
-       overview: ExperimentOverview,
        sensorDataManager: SensorDataManager) {
     let tempFolder = ProcessInfo.processInfo.globallyUniqueString + "_export"
     let tempFolderURL =
@@ -77,8 +73,11 @@ class ExportDocumentOperation: GroupOperation {
     // Compatability with versions of Science Journal where experiment did not contain an image path
     // requires the cover image be saved with a special name.
     if let coverImageURL = coverImageURL {
+      let destinationURL = copiedExperimentURL
+          .appendingPathComponent(MetadataManager.assetsDirectoryName)
+          .appendingPathComponent(MetadataManager.importExportCoverImageFilename)
       let copyCoverImageOperation = CopyFileOperation(fromURL: coverImageURL,
-                                                      toURL: defaultCoverImageURL)
+                                                      toURL: destinationURL)
       operations.append(copyCoverImageOperation)
 
       // Copy the cover image after the experiment is copied, before zipping.

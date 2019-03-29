@@ -25,6 +25,7 @@ class MockDriveConstructor: DriveConstructor {
   let mockDriveSyncManager = MockDriveSyncManager()
   /// Returns a mock drive sync manager when called.
   func driveSyncManager(withAuthorization authorization: GTMFetcherAuthorizationProtocol,
+                        experimentDataDeleter: ExperimentDataDeleter,
                         metadataManager: MetadataManager,
                         networkAvailability: NetworkAvailability,
                         preferenceManager: PreferenceManager,

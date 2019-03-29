@@ -29,10 +29,6 @@ enum MetadataManagerError: Error {
   case openingFileWithNewerVersion(Int32?)
   /// The file being saved has a version too new for this build.
   case savingFileWithNewerVersion
-  /// Cannot import a document while the app is recording.
-  case importingDocumentWhileRecording
-  // Cannot import a document until permission and age setup is complete.
-  case importingDocumentBeforeSetupComplete
 
   var logString: String {
     switch self {
@@ -41,25 +37,11 @@ enum MetadataManagerError: Error {
           "(\(String(describing: newerVersion))) newer than the latest supported by this build."
     case .savingFileWithNewerVersion:
       return "Attempting to save a file with a version newer than the current build."
-    case .importingDocumentWhileRecording:
-      return "Cannot import a document while the app is recording."
-    case .importingDocumentBeforeSetupComplete:
-      return "Cannot import a document until permission and age setup is complete"
     }
   }
 }
 
 extension Notification.Name {
-  /// Posted when the app begins to import a file.
-  static let metadataManagerDidBeginImportExperiment =
-      NSNotification.Name("MetadataManagerDidBeginImportExperiment")
-  /// Posted when the app finishes importing a file successfully.
-  static let metadataManagerDidImportExperiment =
-      NSNotification.Name("MetadataManagerDidImportExperiment")
-  /// Posted when the app finishes importing a file but it failed. Access an array of errors with
-  /// user info key MetadataManager.importFailedErrorsKey.
-  static let metadataManagerImportExperimentFailed =
-      NSNotification.Name("MetadataManagerImportExperimentFailed")
   /// Posted when an asset is deleted when the cover image is set and the previous cover image is no
   /// longer in use by the experiment.
   static let metadataManagerDeletedCoverImageAsset =
@@ -77,12 +59,6 @@ public class MetadataManager {
   static let sensorDataProtoFilename = "sensorData.proto"
   /// The name of the assets directory in experiment directories and Science Journal document files.
   static let assetsDirectoryName = "assets"
-  /// When the notification `metadataManagerImportExperimentFailed` is posted, this is the key
-  /// for an array of errors in `userInfo`.
-  static let importFailedErrorsKey = "MetadataManagerImportFailedErrorsKey"
-  /// When the notification `metadataManagerDidImportExperiment` is posted, this is the key for the
-  /// imported experiment ID in `userInfo`.
-  static let importedExperimentIDKey = "MetadataManagerImportedExperimentIDKey"
   /// When the notification `metadataManagerDeletedCoverImageAsset` is posted, this is the key for
   /// the experiment ID in `userInfo`.
   static let deletedCoverImageAssetExperimentIDKey =
@@ -91,11 +67,13 @@ public class MetadataManager {
   /// the file path of the image asset deleted in `userInfo`.
   static let deletedCoverImageAssetFilePathKey = "MetadataManagerDeletedCoverImageAssetFilePathKey"
 
+  /// The filename of the experiment cover image asset used for import and export.
+  static let importExportCoverImageFilename = "ExperimentCoverImage.jpg"
+
   /// The pre-auth legacy root directory.
   private static let scienceJournalDirectoryName = "Science Journal"
 
   let bluetoothSensorsDirectoryName = "bluetoothSensors"
-  let experimentOverviewPictureFilename = "ExperimentCoverImage"
   let experimentsDirectoryName = "experiments"
   let deletedAssetsDirectoryName = "DeletedAssets"
   let deletedDataDirectoryName = "DeletedData"
@@ -150,8 +128,7 @@ public class MetadataManager {
   /// exported experiments rely on a specially named file to identify the experiment cover image.
   var importExportCoverImagePath: String {
     return URL(fileURLWithPath: MetadataManager.assetsDirectoryName)
-        .appendingPathComponent(experimentOverviewPictureFilename)
-        .appendingPathExtension("jpg").path
+        .appendingPathComponent(MetadataManager.importExportCoverImageFilename).path
   }
 
   // An operation queue.
@@ -392,6 +369,25 @@ public class MetadataManager {
     experiment.imagePath = nil
     saveUserMetadata()
     return true
+  }
+
+  /// Removes the overview for an experiment with a matching ID.
+  ///
+  /// - Parameter experimentID: An experiment ID.
+  /// - Returns: The removed overview.
+  @discardableResult func removeOverview(
+      forExperimentID experimentID: String) -> ExperimentOverview? {
+    let removedOverview = userMetadata.removeExperimentOverview(with: experimentID)
+    saveUserMetadata()
+    return removedOverview
+  }
+
+  /// Adds an overview.
+  ///
+  /// - Parameter experimentOverview: An experiment overview.
+  func addOverview(_ experimentOverview: ExperimentOverview) {
+    userMetadata.addExperimentOverview(experimentOverview)
+    saveUserMetadata()
   }
 
   // MARK: - Experiments
@@ -840,13 +836,6 @@ public class MetadataManager {
     return overview.isArchived
   }
 
-  /// Returns true if the user has never set a title or image and the experiment has no items,
-  /// otherwise returns false.
-  public func isExperimentEmpty(_ experiment: Experiment) -> Bool {
-    return experiment.title == nil && imagePathForExperiment(experiment) == nil &&
-        experiment.itemCount == 0
-  }
-
   /// Deletes an experiment corresponding to an ID, and removes its associated data and experiment
   /// overview.
   ///
@@ -1179,74 +1168,6 @@ public class MetadataManager {
     return true
   }
 
-  // MARK: - Opening files
-
-  /// Handles an import URL if it points to a valid import document.
-  ///
-  /// - Parameter url: The URL of an imported file to evaluate.
-  /// - Returns: Returns true if the url can be handled as an imported document, otherwise false.
-  func handleImportURL(_ url: URL) -> Bool {
-    guard url.pathExtension == documentFileExtension else {
-      return false
-    }
-
-    // Importing when the app is recording is not supported.
-    guard !RecordingState.isRecording else {
-      let errors = [MetadataManagerError.importingDocumentWhileRecording]
-      let userInfo = [MetadataManager.importFailedErrorsKey: errors]
-      NotificationCenter.default.post(name: .metadataManagerImportExperimentFailed,
-                                      object: self,
-                                      userInfo: userInfo)
-      return false
-    }
-
-    let baseFilename = ProcessInfo.processInfo.globallyUniqueString + "_import"
-    let filename = baseFilename + "." + documentFileExtension
-    let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory())
-    let copiedFileURL = tempDirectoryURL.appendingPathComponent(filename)
-
-    let zipFilename = baseFilename + "_extracted"
-    let zipDestinationURL = tempDirectoryURL.appendingPathComponent(zipFilename)
-
-    let newExperimentID = UUID().uuidString
-    let newExperimentURL = experimentDirectoryURL(for: newExperimentID)
-
-    // Notify so the UI can show a loading state if necessary. File importing is a modal process.
-    NotificationCenter.default.post(name: .metadataManagerDidBeginImportExperiment, object: self)
-
-    // The import document operation will validate and copy the extracted file to the
-    // experiments directory.
-    let importDocumentOperation =
-        ImportDocumentOperation(sourceURL: url,
-                                zipURL: copiedFileURL,
-                                extractionURL: zipDestinationURL,
-                                experimentURL: newExperimentURL,
-                                sensorDataManager: sensorDataManager,
-                                metadataManager: self)
-    let observer = BlockObserver { (operation, errors) in
-      if !operation.didFinishSuccessfully {
-        self.permanentlyRemoveExperiment(withID: newExperimentID)
-
-        let userInfo = [MetadataManager.importFailedErrorsKey: errors]
-        NotificationCenter.default.post(name: .metadataManagerImportExperimentFailed,
-                                        object: self,
-                                        userInfo: userInfo)
-      } else {
-        self.addImportedExperiment(withID: newExperimentID)
-
-        let userInfo = [MetadataManager.importedExperimentIDKey: newExperimentID]
-        NotificationCenter.default.post(name: .metadataManagerDidImportExperiment,
-                                        object: self,
-                                        userInfo: userInfo)
-      }
-    }
-    importDocumentOperation.addObserver(observer)
-    importDocumentOperation.addObserver(BackgroundTaskObserver())
-    operationQueue.addOperation(importDocumentOperation)
-
-    return true
-  }
-
   // MARK: - Data removal
 
   /// When experiments or assets are deleted, they are actually moved to a temporary location to
@@ -1446,69 +1367,6 @@ public class MetadataManager {
       print("[MetadataManager] Error removing experiment from deleted data, with ID: " +
                 "\(experimentID). Error: \(error.localizedDescription)")
     }
-  }
-
-  // MARK: - Document Export
-
-  /// Creates a document file for exporting an experiment.
-  ///
-  /// - Parameters:
-  ///   - experimentID: An experiment ID.
-  ///   - completion: A block called on completion with an optional url and an array of errors.
-  ///                 Guaranteed to be called on the main thread.
-  func createExportDocument(forExperimentWithID experimentID: String,
-                            completion: @escaping (URL?, [Error]) -> Void) {
-    guard let (experiment, overview) = experimentAndOverview(forExperimentID: experimentID) else {
-      print("[MetadataManager] Failed to find experiment with ID '\(experimentID)' when exporting" +
-          "experiment.")
-      completion(nil, [])
-      return
-    }
-
-    // Migrate image path from overview if necessary.
-    if experiment.imagePath == nil {
-      experiment.imagePath = overview.imagePath
-    }
-
-    // Make sure there are no unsaved changes.
-    saveExperimentWithoutDateChange(experiment)
-
-    var coverImageURL: URL?
-    if let imagePath = experiment.imagePath {
-      coverImageURL = pictureFileURL(for: imagePath, experimentID: experiment.ID)
-    }
-    let defaultCoverImageURL = pictureFileURL(for: importExportCoverImagePath,
-                                              experimentID: experiment.ID)
-
-    let documentExportOperation =
-        ExportDocumentOperation(coverImageURL: coverImageURL,
-                                defaultCoverImageURL: defaultCoverImageURL,
-                                experiment: experiment,
-                                experimentURL: experimentDirectoryURL(for: experimentID),
-                                overview: overview,
-                                sensorDataManager: sensorDataManager)
-    let blockObserver = BlockObserver { (operation, errors) in
-      DispatchQueue.main.async {
-        guard let documentURL = (operation as? ExportDocumentOperation)?.documentURL else {
-          completion(nil, errors)
-          return
-        }
-        completion(documentURL, errors)
-      }
-    }
-    documentExportOperation.addObserver(blockObserver)
-    documentExportOperation.addObserver(BackgroundTaskObserver())
-
-    // Add it to the queue.
-    operationQueue.addOperation(documentExportOperation)
-  }
-
-  /// This should be called after a document has finished sharing. The item at the url will be
-  /// deleted.
-  ///
-  /// - Parameter url: The url of an export document.
-  func finishedWithExportDocument(atURL url: URL) {
-    operationQueue.addOperation(RemoveFileOperation(url: url))
   }
 
   // MARK: - Private
@@ -2130,67 +1988,3 @@ public class MetadataManager {
   }
 
 }
-
-#if SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
-/// Extends Metadata Manager to generate debug data in dev builds.
-extension MetadataManager {
-
-  /// Generates debug test data for the root user.
-  func debug_createRootUserData(completion: (() -> Void)? = nil) {
-    // Set chronological timestamps so they display in the correct order.
-
-    guard let urls = Bundle.currentBundle.urls(forResourcesWithExtension: "sj",
-                                               subdirectory: nil) else { return }
-
-    var importOperations: [ImportDocumentOperation] = []
-
-    func randomBool() -> Bool { return arc4random_uniform(2) == 0 }
-
-    for (i, url) in urls.enumerated() {
-      let baseFilename = ProcessInfo.processInfo.globallyUniqueString + "_import"
-      let filename = baseFilename + "." + documentFileExtension
-      let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory())
-      let copiedFileURL = tempDirectoryURL.appendingPathComponent(filename)
-
-      let zipFilename = baseFilename + "_extracted"
-      let zipDestinationURL = tempDirectoryURL.appendingPathComponent(zipFilename)
-
-      let newExperimentID = UUID().uuidString
-      let newExperimentURL = experimentDirectoryURL(for: newExperimentID)
-
-      // The import document operation will validate and copy the extracted file to the
-      // experiments directory.
-      let importDocumentOperation =
-          ImportDocumentOperation(sourceURL: url,
-                                  zipURL: copiedFileURL,
-                                  extractionURL: zipDestinationURL,
-                                  experimentURL: newExperimentURL,
-                                  sensorDataManager: sensorDataManager,
-                                  metadataManager: self)
-      let observer = BlockObserver { (operation, errors) in
-        if operation.didFinishSuccessfully {
-          self.addImportedExperiment(withID: newExperimentID)
-
-          // Mark the last experiment as archived for test purposes.
-          if i == urls.count - 1 {
-            self.toggleArchiveStateForExperiment(withID: newExperimentID)
-          }
-        } else {
-          self.permanentlyRemoveExperiment(withID: newExperimentID)
-        }
-      }
-      importDocumentOperation.addObserver(observer)
-      importDocumentOperation.addObserver(BackgroundTaskObserver())
-      importOperations.append(importDocumentOperation)
-    }
-
-    let groupOperation = GroupOperation(operations: importOperations)
-    let groupObserver = BlockObserver { (operation, errors) in
-      completion?()
-    }
-    groupOperation.addObserver(groupObserver)
-    operationQueue.addOperation(groupOperation)
-  }
-
-}
-#endif  // SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD

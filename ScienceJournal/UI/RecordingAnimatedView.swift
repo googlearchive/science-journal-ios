@@ -45,11 +45,17 @@ class RecordingAnimatedView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
     configureView()
+    registerForNotifications()
   }
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     configureView()
+    registerForNotifications()
+  }
+
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
 
   /// Starts the recording animation.
@@ -96,18 +102,63 @@ class RecordingAnimatedView: UIView {
                                     .flexibleBottomMargin,
                                     .flexibleLeftMargin]
 
-    for i in 0..<numberOfBars {
+    for _ in 0..<numberOfBars {
       let bar = UIView()
       barsWrapper.addSubview(bar)
       bar.isUserInteractionEnabled = false
       bar.backgroundColor = UIColor(red: 0.773, green: 0.404, blue: 0.439, alpha: 1)
       bar.layer.cornerRadius = ceil(barWidth / 2)
-      bar.frame = CGRect(x: CGFloat(i) * (barWidth + barSpacing),
-                         y: barsWrapper.bounds.midY - (barMinHeight / 2),
-                         width: barWidth,
-                         height: barMinHeight)
       barViews.append(bar)
     }
+    setBarFrames()
+  }
+
+  private func registerForNotifications() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(applicationWillEnterForeground),
+                                           name: UIApplication.willEnterForegroundNotification,
+                                           object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(applicationWillResignActive),
+                                           name: UIApplication.willResignActiveNotification,
+                                           object: nil)
+  }
+
+  private func setBarFrames() {
+    for (i, barView) in barViews.enumerated() {
+      barView.frame = CGRect(x: CGFloat(i) * (barWidth + barSpacing),
+                             y: barsWrapper.bounds.midY - (barMinHeight / 2),
+                             width: barWidth,
+                             height: barMinHeight)
+    }
+  }
+
+  // MARK: - Notifications
+
+  @objc private func applicationWillEnterForeground() {
+    guard Thread.isMainThread else {
+      DispatchQueue.main.async {
+        self.applicationWillEnterForeground()
+      }
+      return
+    }
+
+    startAnimating()
+  }
+
+  @objc private func applicationWillResignActive() {
+    guard Thread.isMainThread else {
+      DispatchQueue.main.async {
+        self.applicationWillResignActive()
+      }
+      return
+    }
+
+    layer.removeAllAnimations()
+
+    // Reset bars back to their initial frames or the animation will not restart when the
+    // application enters the foreground.
+    setBarFrames()
   }
 
 }

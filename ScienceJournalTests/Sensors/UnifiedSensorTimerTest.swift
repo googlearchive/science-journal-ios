@@ -44,9 +44,7 @@ class UnifiedSensorTimerTest: XCTestCase {
       isSupported = true
     }
 
-    override func start(completion: ((Error?) -> ())?) {
-      completion?(nil)
-    }
+    override func start() {}
 
     override func callListenerBlocksWithData(atMilliseconds milliseconds: Int64) {
       timestampBlock?(milliseconds)
@@ -64,7 +62,7 @@ class UnifiedSensorTimerTest: XCTestCase {
   func testAddedSensorIsCalled() {
     // A sensor should be called to update data by its unified sensor timer.
     let sensor = MockSensor(unifiedSensorTimer: unifiedSensorTimer)
-    sensor.addListener(self, using: { _ in }) { _ in }
+    sensor.addListener(self, using: { _ in })
     wait(for: [sensor.callListenerBlocksWithDataCalledExpectation], timeout: 1)
   }
 
@@ -76,7 +74,7 @@ class UnifiedSensorTimerTest: XCTestCase {
       let sensor = MockSensor(unifiedSensorTimer: unifiedSensorTimer) {
         timestamps[key] = $0
       }
-      sensor.addListener(self, using: { _ in }) { _ in }
+      sensor.addListener(self, using: { _ in })
       sensors.append(sensor)
       wait(for: [sensor.callListenerBlocksWithDataCalledExpectation], timeout: 1)
     }

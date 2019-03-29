@@ -961,6 +961,12 @@
 /* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
 "raw_units" = "%";
 
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Cannot start recording";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "One or more of your sensors is disconnected. Please try again.";
+
 /* The recording ended local notification alert body. [CHAR_LIMIT=74] */
 "recording_ended_dialog_message" = "Open Science Journal to view your recorded data.";
 

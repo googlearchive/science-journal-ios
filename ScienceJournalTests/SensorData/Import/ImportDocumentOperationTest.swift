@@ -24,6 +24,13 @@ class ImportDocumentOperationTest: XCTestCase {
 
   func testImportExperimentWithoutTrialsDoesNotFail() {
     let metadataManager = MetadataManager.testingInstance
+    let sensorDataManager = SensorDataManager.testStore
+    let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
+                                                      metadataManager: metadataManager,
+                                                      sensorDataManager: sensorDataManager)
+    let documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                          metadataManager: metadataManager,
+                                          sensorDataManager: sensorDataManager)
 
     // Create an experiment with no trials.
     let (experiment, _) = metadataManager.createExperiment()
@@ -33,7 +40,7 @@ class ImportDocumentOperationTest: XCTestCase {
     // Create an sj file for it.
     let exportExpectation = expectation(description: "Export document finished.")
     var exportURL: URL!
-    metadataManager.createExportDocument(forExperimentWithID: experiment.ID) { (url, errors) in
+    documentManager.createExportDocument(forExperimentWithID: experiment.ID) { (url, errors) in
       exportURL = url
       exportExpectation.fulfill()
     }

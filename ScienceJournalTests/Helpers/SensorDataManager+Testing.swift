@@ -23,7 +23,7 @@ extension SensorDataManager  {
   /// Returns an instance of `SensorDataManager` with a store in a test location.
   public static var testStore: SensorDataManager {
     let documentsURL = URL.documentsDirectoryURL
-    let directoryURL = documentsURL.appendingPathComponent("TEST")
+    let directoryURL = documentsURL.appendingPathComponent("TEST-" + UUID().uuidString)
     let storeURL = directoryURL.appendingPathComponent("store.sqlite")
 
     if !FileManager.default.fileExists(atPath: directoryURL.path) {
@@ -36,6 +36,14 @@ extension SensorDataManager  {
       }
     }
     return SensorDataManager(storeURL: storeURL)
+  }
+
+  func deleteStore() {
+    do {
+      try FileManager.default.removeItem(at: storeURL)
+    } catch {
+      sjlog_error("Error deleting store: \(error)", category: .general)
+    }
   }
 
 }

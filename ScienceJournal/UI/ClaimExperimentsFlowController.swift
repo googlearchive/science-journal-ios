@@ -42,11 +42,13 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   private let authAccount: AuthAccount
   private let analyticsReporter: AnalyticsReporter
   private let existingDataMigrationManager: ExistingDataMigrationManager
+  private let experimentDataDeleter: ExperimentDataDeleter
   private let sensorController: SensorController
   private let navController = UINavigationController()
   private let preferenceManager: PreferenceManager
   private let metadataManager: MetadataManager
   private let sensorDataManager: SensorDataManager
+  private let documentManager: DocumentManager
 
   private var shouldAllowSharing: Bool {
     return existingDataMigrationManager.rootUserManager.isSharingAllowed
@@ -54,7 +56,8 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
 
   // Handles state updates to any experiment.
   private lazy var experimentStateManager: ExperimentStateManager = {
-    return ExperimentStateManager(metadataManager: metadataManager,
+    return ExperimentStateManager(experimentDataDeleter: experimentDataDeleter,
+                                  metadataManager: metadataManager,
                                   sensorDataManager: sensorDataManager)
   }()
 
@@ -65,19 +68,23 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   /// - Parameters:
   ///   - authAccount: The auth account.
   ///   - analyticsReporter: The analytics reporter.
+  ///   - documentManager: The document manager.
   ///   - existingDataMigrationManager: The existing data migration manager.
   ///   - sensorController: The sensor controller.
   init(authAccount: AuthAccount,
        analyticsReporter: AnalyticsReporter,
+       documentManager: DocumentManager,
        existingDataMigrationManager: ExistingDataMigrationManager,
        sensorController: SensorController) {
     self.authAccount = authAccount
     self.analyticsReporter = analyticsReporter
+    self.documentManager = documentManager
     self.existingDataMigrationManager = existingDataMigrationManager
     self.sensorController = sensorController
     self.preferenceManager = existingDataMigrationManager.rootUserManager.preferenceManager
     self.metadataManager = existingDataMigrationManager.rootUserManager.metadataManager
     self.sensorDataManager = existingDataMigrationManager.rootUserManager.sensorDataManager
+    self.experimentDataDeleter = existingDataMigrationManager.rootUserManager.experimentDataDeleter
 
     claimExperimentsViewController = ClaimExperimentsViewController(
         authAccount: authAccount,
@@ -130,9 +137,11 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
         metadataManager: metadataManager,
         preferenceManager: preferenceManager,
         sensorController: sensorController,
-        sensorDataManager: sensorDataManager)
+        sensorDataManager: sensorDataManager,
+        documentManager: documentManager)
     experimentCoordinatorVC.delegate = self
     experimentCoordinatorVC.itemDelegate = self
+    experimentCoordinatorVC.requireExperimentTitle = false
 
     // Add as listeners for all experiment changes.
     openExperimentUpdateManager?.addListener(experimentCoordinatorVC)
@@ -261,7 +270,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
 
     let spinnerViewController = SpinnerViewController()
     spinnerViewController.present(fromViewController: claimExperimentsViewController) {
-      self.metadataManager.createExportDocument(forExperimentWithID: experimentID,
+      self.documentManager.createExportDocument(forExperimentWithID: experimentID,
                                                 completion: { (url, errors) in
             spinnerViewController.dismissSpinner(completion: {
               guard let url = url else {
@@ -272,7 +281,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
               let activityVC = UIActivityViewController(activityItems: [url],
                                                         applicationActivities: nil)
               activityVC.completionWithItemsHandler = { (_, _, _, _) in
-                self.metadataManager.finishedWithExportDocument(atURL: url)
+                self.documentManager.finishedWithExportDocument(atURL: url)
               }
               if let presentationController = activityVC.popoverPresentationController {
                 // Configure as a popover on iPad if necessary.
@@ -319,7 +328,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   // MARK: - ExperimentCoordinatorViewControllerDelegate
 
   func experimentViewControllerDidRequestDeleteExperiment(_ experiment: Experiment) {
-    existingDataMigrationManager.removeExperimentFromRootUser(experiment)
+    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment.ID)
     navController.popViewController(animated: true)
 
     // User could have deleted the last experiment in the flow, there might be nothing left to do.

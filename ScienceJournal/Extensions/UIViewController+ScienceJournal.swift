@@ -30,6 +30,11 @@ extension UIViewController {
     return false
   }
 
+  /// Whether this view controller presented another view controller modally.
+  var hasPresentedViewController: Bool {
+    return presentedViewController != nil
+  }
+
   /// Transitions from one view controller to another.
   ///
   /// - Parameters:
@@ -71,6 +76,21 @@ extension UIViewController {
         self.setNeedsStatusBarAppearanceUpdate()
         completion?()
       })
+    }
+  }
+
+  /// Dismisses the view controller that was presented modally by the view controller, if there is
+  /// one, otherwise calls completion immediately.
+  ///
+  /// - Parameters:
+  ///   - animated: True if the transition should animate, otherwise false.
+  ///   - completion: The block to execute after the view controller is dismissed, or immediately if
+  ///                 dismissal is not required.
+  func dismissPresentedVCIfNeeded(animated: Bool, completion: @escaping () -> Void) {
+    if hasPresentedViewController {
+      dismiss(animated: animated, completion: completion)
+    } else {
+      completion()
     }
   }
 

@@ -445,6 +445,15 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
   @objc func recordButtonPressed(sender: UIButton) {
     if !recordingManager.isRecording {
+      guard recordingManager.isReady else {
+        let alertController =
+            MDCAlertController(title: String.recordingStartFailed,
+                               message: String.recordingStartFailedSensorDisconnected)
+        alertController.addAction(MDCAlertAction(title: String.actionOk))
+        present(alertController, animated: true)
+        return
+      }
+
       startRecording()
       timeAxisController.isPinnedToNow = true
       drawerViewController?.setPositionToFull()
@@ -687,8 +696,6 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
           }
         }
       }
-    }, completion: { (error) in
-      // TODO: Remove completion block for add listener call. http://b/68816850
     })
 
     if sensor is BrightnessSensor {

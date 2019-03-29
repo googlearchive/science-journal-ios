@@ -25,6 +25,8 @@ class MockUserManager: UserManager {
   var preferenceManager: PreferenceManager
   var sensorDataManager: SensorDataManager
   var assetManager: UserAssetManager
+  let experimentDataDeleter: ExperimentDataDeleter
+  let documentManager: DocumentManager
 
   var shouldVerifyAge: Bool {
     return false
@@ -48,6 +50,12 @@ class MockUserManager: UserManager {
     self.preferenceManager = preferenceManager
     self.sensorDataManager = sensorDataManager
     self.assetManager = assetManager
+    experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
+                                                  metadataManager: metadataManager,
+                                                  sensorDataManager: sensorDataManager)
+    documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                      metadataManager: metadataManager,
+                                      sensorDataManager: sensorDataManager)
   }
 
   func tearDown() {}

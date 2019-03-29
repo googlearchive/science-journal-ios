@@ -55,8 +55,8 @@ final class PitchSensor: AudioSensor {
                sensorTimer: sensorTimer)
   }
 
-  override func start(completion: ((Error?) -> ())?) {
-    super.start(completion: completion)
+  override func start() {
+    super.start()
 
     // Use the current sample rate.
     let audioAnalyzer = AudioAnalyzer(sampleRateInHz: AudioSession.shared.sampleRate)

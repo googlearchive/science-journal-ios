@@ -49,15 +49,13 @@ class CompassSensor: Sensor, CLLocationManagerDelegate {
     locationManager.delegate = self
   }
 
-  override func start(completion: ((Error?) -> ())?) {
+  override func start() {
     guard state != .ready else {
-      completion?(nil)
       return
     }
 
     locationManager.startUpdatingHeading()
     state = .ready
-    completion?(nil)
   }
 
   override func pause() {

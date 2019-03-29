@@ -152,6 +152,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   private let experimentDataParser: ExperimentDataParser
   private let experimentItemsViewController: ExperimentItemsViewController
 
+  private let documentManager: DocumentManager
   private let metadataManager: MetadataManager
   private var renameDialog: RenameExperimentViewController?
   private var emptyViewTrailingConstraint: NSLayoutConstraint?
@@ -184,6 +185,10 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     return experimentItemsViewController.collectionView
   }
 
+  /// Should the experiment require a name? Default is true. If false, user will not be asked to
+  /// rename the experiment when leaving the VC if the title is not set.
+  var requireExperimentTitle: Bool = true
+
   // MARK: - Public
 
   /// Designated initializer that takes an experiment.
@@ -198,6 +203,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   ///   - preferenceManager: The preference manager.
   ///   - sensorController: The sensor controller.
   ///   - sensorDataManager: The sensor data manager.
+  ///   - documentManager: The document manager.
   init(experiment: Experiment,
        experimentInteractionOptions: ExperimentInteractionOptions,
        shouldAllowSharing: Bool,
@@ -206,7 +212,8 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
        metadataManager: MetadataManager,
        preferenceManager: PreferenceManager,
        sensorController: SensorController,
-       sensorDataManager: SensorDataManager) {
+       sensorDataManager: SensorDataManager,
+       documentManager: DocumentManager) {
     self.experiment = experiment
     self.experimentInteractionOptions = experimentInteractionOptions
     self.shouldAllowSharing = shouldAllowSharing
@@ -215,6 +222,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     self.preferenceManager = preferenceManager
     self.sensorController = sensorController
     self.sensorDataManager = sensorDataManager
+    self.documentManager = documentManager
 
     experimentDataParser = ExperimentDataParser(experimentID: experiment.ID,
                                                 metadataManager: metadataManager,
@@ -861,7 +869,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     updateEmptyViewArchivedFlag()
   }
 
-  func experimentStateDeleted(_ experiment: Experiment, undoBlock: (() -> Void)?) {}
+  func experimentStateDeleted(_ deletedExperiment: DeletedExperiment, undoBlock: (() -> Void)?) {}
   func experimentStateRestored(_ experiment: Experiment, overview: ExperimentOverview) {}
 
   // MARK: - NotesViewControllerDelegate
@@ -950,7 +958,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       return true
     }
 
-    promptForNameIfNecessary()
+    promptForTitleIfNecessary()
     return false
   }
 
@@ -1044,7 +1052,13 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                          argument: "\(announcementMessage) \(destination)")
   }
 
-  private func promptForNameIfNecessary() {
+  private func promptForTitleIfNecessary() {
+    // If we aren't requiring an experiment to have a title, we're done.
+    guard requireExperimentTitle == true else {
+      dismissViewController()
+      return
+    }
+
     // If a user has set a title before, we're done.
     guard experiment.title == nil else {
       dismissViewController()
@@ -1053,7 +1067,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     // If the experiment is empty, delete it without prompting instead of forcing the user to rename
     // it and keeping it around.
-    if isExperimentEmpty(experiment) {
+    if experiment.isEmpty {
       prepareToCloseObserve()
       delegate?.experimentViewControllerDidRequestDeleteExperiment(experiment)
       return
@@ -1287,13 +1301,6 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     return chartController.chartView
   }
 
-  /// If the user has never set a title or image and the experiment has no items, it is considered
-  /// empty.
-  private func isExperimentEmpty(_ experiment: Experiment) -> Bool {
-    return experiment.title == nil && metadataManager.imagePathForExperiment(experiment) == nil &&
-        experiment.itemCount == 0
-  }
-
   /// Updates the title in the nav bar based on the current experiment.
   private func updateExperimentTitle() {
     title = experiment.title ?? String.localizedUntitledExperiment
@@ -1380,7 +1387,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   // MARK: - User Actions
 
   @objc private func backButtonPressed() {
-    promptForNameIfNecessary()
+    promptForTitleIfNecessary()
   }
 
   @objc private func menuButtonPressed() {
@@ -1449,12 +1456,11 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     }
 
     // Send a copy.
-    if shouldAllowSharing && !RecordingState.isRecording && !isExperimentEmpty(experiment) {
+    if shouldAllowSharing && !RecordingState.isRecording && !experiment.isEmpty {
       popUpMenu.addAction(PopUpMenuAction.exportExperiment(experiment,
                                                            presentingViewController: self,
                                                            sourceView: self.menuBarButton.button,
-                                                           metadataManager: metadataManager,
-                                                           sensorDataManager: sensorDataManager))
+                                                           documentManager: documentManager))
     }
 
     // Delete.

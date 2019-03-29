@@ -25,6 +25,7 @@ public protocol DriveConstructor {
   ///
   /// - Parameters:
   ///   - authorization: An authorization object.
+  ///   - experimentDataDeleter: An experiment data deleter.
   ///   - metadataManager: A metadata manager.
   ///   - networkAvailability: Network availability.
   ///   - preferenceManager: A preference manager.
@@ -32,6 +33,7 @@ public protocol DriveConstructor {
   ///   - analyticsReporter: An analytics reporter.
   /// - Returns: A drive sync manager.
   func driveSyncManager(withAuthorization authorization: GTMFetcherAuthorizationProtocol,
+                        experimentDataDeleter: ExperimentDataDeleter,
                         metadataManager: MetadataManager,
                         networkAvailability: NetworkAvailability,
                         preferenceManager: PreferenceManager,

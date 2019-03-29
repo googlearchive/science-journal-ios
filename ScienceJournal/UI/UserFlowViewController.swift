@@ -45,8 +45,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let accountsManager: AccountsManager
   private let analyticsReporter: AnalyticsReporter
   private let commonUIComponents: CommonUIComponents
+  private let documentManager: DocumentManager
   private let drawerConfig: DrawerConfig
   private var existingDataMigrationManager: ExistingDataMigrationManager?
+  private let experimentDataDeleter: ExperimentDataDeleter
   private let feedbackReporter: FeedbackReporter
   private let metadataManager: MetadataManager
   private let navController = UINavigationController()
@@ -77,7 +79,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
   // Handles state updates to any experiment.
   private lazy var experimentStateManager: ExperimentStateManager = {
-    let stateManager = ExperimentStateManager(metadataManager: metadataManager,
+    let stateManager = ExperimentStateManager(experimentDataDeleter: experimentDataDeleter,
+                                              metadataManager: metadataManager,
                                               sensorDataManager: sensorDataManager)
     stateManager.addListener(self)
     return stateManager
@@ -126,10 +129,12 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     self.sensorController = sensorController
     self.shouldShowPreferenceMigrationMessage = shouldShowPreferenceMigrationMessage
     self.userManager = userManager
+    self.documentManager = userManager.documentManager
     self.metadataManager = userManager.metadataManager
     self.preferenceManager = userManager.preferenceManager
     self.sensorDataManager = userManager.sensorDataManager
     self.userAssetManager = userManager.assetManager
+    self.experimentDataDeleter = userManager.experimentDataDeleter
     sidebar = SidebarViewController(accountsManager: accountsManager,
                                     analyticsReporter: analyticsReporter)
     super.init(nibName: nil, bundle: nil)
@@ -196,15 +201,15 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     // Listen to notifications of newly imported experiments.
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(experimentImportBegan),
-                                           name: .metadataManagerDidBeginImportExperiment,
+                                           name: .documentManagerDidBeginImportExperiment,
                                            object: nil)
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(experimentImported),
-                                           name: .metadataManagerDidImportExperiment,
+                                           name: .documentManagerDidImportExperiment,
                                            object: nil)
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(experimentImportFailed),
-                                           name: .metadataManagerImportExperimentFailed,
+                                           name: .documentManagerImportExperimentFailed,
                                            object: nil)
 
     // Listen to notifications of deleted cover image assets.
@@ -238,7 +243,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       showSnackbar(withMessage: String.importAgeVerification)
       return false
     }
-    return metadataManager.handleImportURL(url)
+    return documentManager.handleImportURL(url)
   }
 
   // MARK: - Notifications
@@ -292,7 +297,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let finishedOperation = GSJBlockOperation(mainQueueBlock: { (continuation) in
       self.dismissExperimentImportSpinner {
         if let experimentID =
-            notification.userInfo?[MetadataManager.importedExperimentIDKey] as? String {
+            notification.userInfo?[DocumentManager.importedExperimentIDKey] as? String {
           self.experimentsListShowExperiment(withID: experimentID)
         }
         continuation()
@@ -312,10 +317,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       // Check for an importing while recording error, otherwise the default generic error will
       // be used.
       var errorMessage = String.importFailedFile
-      if let errors = notification.userInfo?[MetadataManager.importFailedErrorsKey] as? [Error] {
+      if let errors = notification.userInfo?[DocumentManager.importFailedErrorsKey] as? [Error] {
         forLoop: for error in errors {
           switch error {
-          case MetadataManagerError.importingDocumentWhileRecording:
+          case DocumentManagerError.importingDocumentWhileRecording:
             errorMessage = String.importFailedRecording
             break forLoop
           default: break
@@ -463,9 +468,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     experimentStateManager.deleteExperiment(withID: experimentID)
   }
 
-  func experimentsListDeleteExperimentCompleted(_ experiment: Experiment) {
-    experimentStateManager.deleteTrialDataForExperiment(experiment)
-    userManager.driveSyncManager?.deleteExperiment(withID: experiment.ID)
+  func experimentsListDeleteExperimentCompleted(_ deletedExperiment: DeletedExperiment) {
+    experimentStateManager.confirmDeletion(for: deletedExperiment)
+    userManager.driveSyncManager?.deleteExperiment(withID: deletedExperiment.experimentID)
   }
 
   func experimentsListDidAppear() {
@@ -574,6 +579,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let claimExperimentsVC =
         ClaimExperimentsFlowController(authAccount: authAccount,
                                        analyticsReporter: analyticsReporter,
+                                       documentManager: documentManager,
                                        existingDataMigrationManager: existingDataMigrationManager,
                                        sensorController: sensorController)
     present(claimExperimentsVC, animated: true)
@@ -715,6 +721,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                       networkAvailability: networkAvailability,
                                       preferenceManager: preferenceManager,
                                       sensorDataManager: sensorDataManager,
+                                      documentManager: documentManager,
                                       shouldAllowSharing: userManager.isSharingAllowed,
                                       shouldAllowManualSync: userManager.isDriveSyncEnabled)
     experimentsListVC.delegate = self
@@ -745,7 +752,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         metadataManager: metadataManager,
         preferenceManager: preferenceManager,
         sensorController: sensorController,
-        sensorDataManager: sensorDataManager)
+        sensorDataManager: sensorDataManager,
+        documentManager: documentManager)
     experimentCoordinatorVC.delegate = self
     experimentCoordinatorVC.itemDelegate = self
     self.experimentCoordinatorVC = experimentCoordinatorVC
@@ -966,23 +974,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                             animated: Bool) {
     setNeedsStatusBarAppearanceUpdate()
 
-    if viewController is ExperimentsListViewController,
-        let experimentCoordinatorVC = experimentCoordinatorVC {
-      // If going back to experiments list from experiment, reset open experiment update manager.
+    if viewController is ExperimentsListViewController {
+      // Reset open experiment update manager and observe state in the drawer when the list appears.
       openExperimentUpdateManager = nil
-      experimentStateManager.removeListener(experimentCoordinatorVC)
-      self.experimentCoordinatorVC = nil
-
-      // Reset observe state in the drawer when the list appears.
       drawerVC.observeViewController.prepareForReuse()
-    } else if viewController is ExperimentCoordinatorViewController,
-        let trialDetailVC = trialDetailVC {
-      // If going back to experiment from a trial, remove trial as listener for experiment updates.
-      openExperimentUpdateManager?.removeListener(trialDetailVC)
-      self.trialDetailVC = nil
-    } else if viewController is ExperimentCoordinatorViewController ||
-        viewController is TrialDetailViewController {
-      noteDetailController = nil
     }
   }
 
@@ -1046,7 +1041,9 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
         if let trial = experiment.trial(withID: trialID) {
           trialDetailVC.reloadTrial(trial)
         } else {
-          navController.popToViewController(experimentCoordinatorVC, animated: true)
+          trialDetailVC.dismissPresentedVCIfNeeded(animated: true) {
+            self.navController.popToViewController(experimentCoordinatorVC, animated: true)
+          }
           // If we pop back to the experiment view there is no need to continue.
           return
         }
@@ -1077,15 +1074,14 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
   }
 
   func driveSyncDidDeleteExperiment(withID experimentID: String) {
-    experimentCoordinatorVC?.cancelRecordingIfNeeded()
     experimentsListVC?.reloadExperiments()
-
-    // If an experiment was deleted and is currently being displayed, pop back to the experiments
-    // list.
+    // If an experiment was deleted and is currently being displayed, cancel its recording if needed
+    // and pop back to the experiments list.
     guard let experimentsListVC = experimentsListVC,
         experimentCoordinatorVC?.experiment.ID == experimentID else {
       return
     }
+    experimentCoordinatorVC?.cancelRecordingIfNeeded()
     navController.popToViewController(experimentsListVC, animated: true)
   }
 
@@ -1110,8 +1106,7 @@ extension UserFlowViewController: ExperimentStateListener {
     userManager.driveSyncManager?.syncExperimentLibrary(andReconcile: true, userInitiated: false)
   }
 
-  func experimentStateDeleted(_ experiment: Experiment,
-                              undoBlock: (() -> Void)?) {
+  func experimentStateDeleted(_ deletedExperiment: DeletedExperiment, undoBlock: (() -> Void)?) {
     userManager.driveSyncManager?.syncExperimentLibrary(andReconcile: true, userInitiated: false)
   }
 

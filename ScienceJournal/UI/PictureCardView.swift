@@ -39,8 +39,25 @@ class PictureCardView: ExperimentCardView {
 
   // MARK: - Properties
 
-  /// The image view.
-  let imageView = UIImageView()
+  /// The image to display. If the style is large and this image is set to nil, a placeholder image
+  /// will be shown.
+  var image: UIImage? {
+    didSet {
+      guard let image = image else {
+        switch style {
+        case .large:
+          imageView.contentMode = .center
+          imageView.image = UIImage(named: "photo_placeholder")
+        case .small:
+          imageView.image = nil
+        }
+        return
+      }
+
+      imageView.contentMode = .scaleAspectFill
+      imageView.image = image
+    }
+  }
 
   /// The optional image path for the picture note's image.
   private(set) var pictureNoteImagePath: String?
@@ -61,6 +78,8 @@ class PictureCardView: ExperimentCardView {
 
   /// The picture style.
   let style: PictureStyle
+
+  private let imageView = UIImageView()
 
   // MARK: - Public
 
@@ -96,9 +115,8 @@ class PictureCardView: ExperimentCardView {
   private func configureView() {
     // Image view, which fills the full width and height of this view, and clips to bounds.
     addSubview(imageView)
-    imageView.backgroundColor = MDCPalette.grey.tint200
+    imageView.backgroundColor = UIColor(red:  0.910, green: 0.914, blue: 0.929, alpha: 1)
     imageView.clipsToBounds = true
-    imageView.contentMode = .scaleAspectFill
     imageView.translatesAutoresizingMaskIntoConstraints = false
     if #available(iOS 11.0, *) {
       imageView.accessibilityIgnoresInvertColors = true

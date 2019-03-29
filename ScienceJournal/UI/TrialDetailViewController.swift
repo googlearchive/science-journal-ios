@@ -20,6 +20,7 @@ import third_party_objective_c_material_components_ios_components_BottomSheet_Bo
 import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
 import third_party_objective_c_material_components_ios_components_Palettes_Palettes
 import third_party_objective_c_material_components_ios_components_private_KeyboardWatcher_KeyboardWatcher
+import third_party_objective_c_material_components_ios_components_Snackbar_Snackbar
 
 protocol TrialDetailViewControllerDelegate: class {
   /// Informs the delegate a note should be shown.
@@ -64,7 +65,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     var text: String?
     var imageData: Data?
     var imageMetaData: NSDictionary?
-    var timestamp: Int64
+    var timestamp: Int64?
     var relativeTimestamp: Int64
   }
 
@@ -90,7 +91,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   let triggerCardCellIdentifier = "TrialDetailTriggerCardCell"
   let noteDetailEditCaptionCellIdentifier = "NoteDetailEditCaptionCell"
 
-  private let trialArchivedStateUndoSnackbarCategory = "trialArchivedStateUndoSnackbarCategory"
+  private let trialNoteDeleteUndoSnackbarCategory = "TrialNoteDeleteUndoSnackbarCategory"
 
   // MARK: - Properties
 
@@ -408,6 +409,9 @@ class TrialDetailViewController: MaterialHeaderViewController,
     NotificationCenter.default.removeObserver(self,
                                               name: UIResponder.keyboardWillHideNotification,
                                               object: nil)
+
+    MDCSnackbarManager.dismissAndCallCompletionBlocks(
+        withCategory: trialNoteDeleteUndoSnackbarCategory)
   }
 
   override func viewWillTransition(to size: CGSize,
@@ -801,12 +805,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     // Shutdown this view controller by stopping all actions and dismissing.
     stopPlayback()
-
-    cameraViewController?.dismiss(animated: true)
-
-    if addNoteDialog != nil {
-      dismiss(animated: false)
-    }
   }
 
   func experimentUpdateTrialNoteAdded(_ note: Note, toTrial trial: Trial) {
@@ -832,6 +830,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     var didUndo = false
     showUndoSnackbar(
         withMessage: String.snackbarNoteDeleted,
+        category: trialNoteDeleteUndoSnackbarCategory,
         undoBlock: {
           didUndo = true
           undoBlock()
@@ -1498,7 +1497,15 @@ class TrialDetailViewController: MaterialHeaderViewController,
       // Notes need either text or an image.
       return
     }
-    newNote.timestamp = pendingNote.timestamp
+
+    newNote.timestamp = {
+      if let pendingNoteTimestamp = pendingNote.timestamp {
+        return pendingNoteTimestamp
+      } else {
+        // If the pending note timestamp is nil, default to the recording start.
+        return trialDetailDataSource.trial.recordingRange.min
+      }
+    }()
 
     itemDelegate?.detailViewControllerDidAddNote(newNote,
                                                  forTrialID: trialDetailDataSource.trial.ID)

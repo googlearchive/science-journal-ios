@@ -20,23 +20,53 @@ import XCTest
 
 class ExistingDataMigrationManagerTest: XCTestCase {
 
-  var accountUserManager: AccountUserManager!
-  var rootUserManager: RootUserManager!
+  var accountMetadataManager: MetadataManager!
+  var accountSensorDataManager: SensorDataManager!
+  var accountUserManager: UserManager!
+  var rootMetadataManager: MetadataManager!
+  var rootSensorDataManager: SensorDataManager!
+  var rootUserManager: UserManager!
   var existingDataMigrationManager: ExistingDataMigrationManager!
   var sensorController = MockSensorController()
 
   override func setUp() {
     super.setUp()
 
-    accountUserManager = AccountUserManager(account: MockAuthAccount(),
-                                            driveConstructor: DriveConstructorDisabled(),
-                                            networkAvailability: SettableNetworkAvailability(),
-                                            sensorController: sensorController,
-                                            analyticsReporter: AnalyticsReporterOpen())
-    rootUserManager = RootUserManager(sensorController: sensorController)
+    accountMetadataManager = MetadataManager.testingInstance
+    accountSensorDataManager = SensorDataManager.testStore
+    let accountPreferenceManager = PreferenceManager(accountID: "ExistingDataMigrationManagerTest")
+    let accountAssetManager = UserAssetManager(driveSyncManager: nil,
+                                               metadataManager: accountMetadataManager,
+                                               sensorDataManager: accountSensorDataManager)
+    accountUserManager = MockUserManager(driveSyncManager: nil,
+                                         metadataManager: accountMetadataManager,
+                                         preferenceManager: accountPreferenceManager,
+                                         sensorDataManager: accountSensorDataManager,
+                                         assetManager: accountAssetManager)
+
+    rootMetadataManager = MetadataManager.testingInstance(sensorController: sensorController)
+    rootSensorDataManager = SensorDataManager.testStore
+    let rootPreferenceManager = PreferenceManager(accountID: "ExistingDataMigrationManagerTest")
+    let rootAssetManager = UserAssetManager(driveSyncManager: nil,
+                                            metadataManager: accountMetadataManager,
+                                            sensorDataManager: accountSensorDataManager)
+    rootUserManager = MockUserManager(driveSyncManager: nil,
+                                      metadataManager: rootMetadataManager,
+                                      preferenceManager: rootPreferenceManager,
+                                      sensorDataManager: rootSensorDataManager,
+                                      assetManager: rootAssetManager)
+
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,
                                      rootUserManager: rootUserManager)
+  }
+
+  override func tearDown() {
+    super.tearDown()
+    accountMetadataManager.deleteRootDirectory()
+    accountSensorDataManager.deleteStore()
+    rootMetadataManager.deleteRootDirectory()
+    rootSensorDataManager.deleteStore()
   }
 
   func testMigrateExperiment() {
@@ -511,7 +541,7 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     waitForExpectations(timeout: 1)
 
     // Remove the first experiment.
-    existingDataMigrationManager.removeExperimentFromRootUser(experiment1)
+    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment1.ID)
 
     // Assert the first experiment is deleted, second is still there.
     XCTAssertNil(
@@ -540,18 +570,22 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     waitForExpectations(timeout: 1)
 
     // Remove the second experiment.
-    existingDataMigrationManager.removeExperimentFromRootUser(experiment2)
+    let expectation5 = expectation(description: "Remove experiment from root complete.")
+    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment2.ID) {
+      expectation5.fulfill()
+    }
+    waitForExpectations(timeout: 1)
 
     // Assert it is deleted.
     XCTAssertNil(
         rootUserManager.metadataManager.experimentAndOverview(forExperimentID: experimentID2))
 
     // Assert its sensor data is deleted.
-    let expectation5 = expectation(description: "Trial 2 sensor data should be deleted.")
+    let expectation6 = expectation(description: "Trial 2 sensor data should be deleted.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
                                                          completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
-      expectation5.fulfill()
+      expectation6.fulfill()
     })
 
     waitForExpectations(timeout: 1)

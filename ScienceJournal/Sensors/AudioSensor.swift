@@ -24,7 +24,7 @@ class AudioSensor: Sensor {
 
   private let audioCapture: AudioCapture
   static private var sampleBufferUpdateBlocks = [String: AudioCapture.SampleBufferUpdateBlock]()
-  private var startCompletion: ((Error?) -> ())?
+  private var interruptionTimer: Timer?
 
   // MARK: - Public
 
@@ -60,31 +60,45 @@ class AudioSensor: Sensor {
                sensorTimer: sensorTimer)
     isSupported = self.audioCapture.isSupported
     displaysLoadingState = true
+
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(captureSessionWasInterrupted(_:)),
+                                           name: .AVCaptureSessionWasInterrupted,
+                                           object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(captureSessionInterruptionEnded(_:)),
+                                           name: .AVCaptureSessionInterruptionEnded,
+                                           object: nil)
   }
 
-  override func start(completion: ((Error?) -> ())?) {
-    state = .loading
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+
+  override func start() {
+    if state != .interrupted {
+      state = .loading
+    }
+
     audioCapture.beginUsing(self) { (hasMicrophonePermission) in
       guard hasMicrophonePermission else {
         self.state = .noPermission(.userPermissionError(.microphone))
-        DispatchQueue.main.async {
-          completion?(SensorError.userPermissionError(.microphone))
-        }
         return
       }
 
-      self.state = .ready
-      DispatchQueue.main.async {
-        completion?(nil)
+      if self.audioCapture.isInterrupted {
+        self.state = .interrupted
+      } else {
+        self.interruptionTimer?.invalidate()
+        self.state = .ready
       }
     }
-    startCompletion = completion
   }
 
   override func pause() {
     guard state != .paused else { return }
-    state = .paused
     audioCapture.endUsing(self)
+    state = .paused
   }
 
   override func prepareForBackground() {
@@ -92,9 +106,7 @@ class AudioSensor: Sensor {
   }
 
   override func prepareForForeground()  {
-    if listenerBlocks.count > 0 {
-      start(completion: startCompletion)
-    }
+    resumeCaptureSessionIfNeeded()
   }
 
   override func callListenerBlocksWithData(atMilliseconds milliseconds: Int64) {
@@ -145,6 +157,37 @@ class AudioSensor: Sensor {
     // If there are no more sample buffer update blocks, remove the update block from the audio
     // capture to stop receiving updates.
     audioCapture.setSampleBufferUpdateBlock(nil)
+  }
+
+  // MARK: Private
+
+  private func resumeCaptureSessionIfNeeded() {
+    if listenerBlocks.count > 0 {
+      start()
+    }
+  }
+
+  // MARK: - Notifications
+
+  @objc private func captureSessionWasInterrupted(_ notification: Notification) {
+    guard AVCaptureSession.InterruptionReason(notificationUserInfo: notification.userInfo) ==
+        .audioDeviceInUseByAnotherClient else { return }
+    pause()
+    state = .interrupted
+
+    // When an interruption begins, start checking to see if the interruption has ended on an
+    // interval, because it's possible to not receive an interruption ended (such as a phone call
+    // ending while SJ is in the foreground).
+    interruptionTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
+                                             repeats: true,
+                                             block: { (_) in
+      self.resumeCaptureSessionIfNeeded()
+    })
+  }
+
+  @objc private func captureSessionInterruptionEnded(_ notification: Notification) {
+    interruptionTimer?.invalidate()
+    resumeCaptureSessionIfNeeded()
   }
 
 }

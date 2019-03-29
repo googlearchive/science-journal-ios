@@ -95,15 +95,13 @@ class AccelerometerSensor: MotionSensor {
     isSupported = MotionSensor.motionManager.isAccelerometerAvailable
   }
 
-  override func start(completion: ((Error?) -> ())?) {
+  override func start() {
     guard state != .ready else {
-      completion?(nil)
       return
     }
 
     AccelerometerSensor.instancesRunningCount += 1
     state = .ready
-    completion?(nil)
   }
 
   override func pause() {

@@ -26,6 +26,8 @@ class AccountUserManager: UserManager {
   let sensorDataManager: SensorDataManager
   let assetManager: UserAssetManager
   var driveSyncManager: DriveSyncManager?
+  let experimentDataDeleter: ExperimentDataDeleter
+  let documentManager: DocumentManager
 
   var shouldVerifyAge: Bool {
     // Age verification is not required for accounts.
@@ -93,14 +95,25 @@ class AccountUserManager: UserManager {
     // Clean the deleted data directory.
     metadataManager.removeAllDeletedData()
 
+    // Configure experiment data deleter.
+    experimentDataDeleter = ExperimentDataDeleter(accountID: account.ID,
+                                                  metadataManager: metadataManager,
+                                                  sensorDataManager: sensorDataManager)
+
+    documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                      metadataManager: metadataManager,
+                                      sensorDataManager: sensorDataManager)
+
     // Configure drive sync.
     if let authorization = account.authorization {
-      driveSyncManager = driveConstructor.driveSyncManager(withAuthorization: authorization,
-                                                           metadataManager: metadataManager,
-                                                           networkAvailability: networkAvailability,
-                                                           preferenceManager: preferenceManager,
-                                                           sensorDataManager: sensorDataManager,
-                                                           analyticsReporter: analyticsReporter)
+      driveSyncManager =
+          driveConstructor.driveSyncManager(withAuthorization: authorization,
+                                            experimentDataDeleter: experimentDataDeleter,
+                                            metadataManager: metadataManager,
+                                            networkAvailability: networkAvailability,
+                                            preferenceManager: preferenceManager,
+                                            sensorDataManager: sensorDataManager,
+                                            analyticsReporter: analyticsReporter)
     }
 
     // Configure user asset manager.

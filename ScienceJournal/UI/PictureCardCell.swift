@@ -126,13 +126,13 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
     }
 
     DispatchQueue.main.async {
-      self.pictureView?.imageView.image = self.metadataManager?.image(forFullImagePath: imagePath)
+      self.pictureView?.image = self.metadataManager?.image(forFullImagePath: imagePath)
     }
   }
 
   /// Removes the image in a picture card cell. Called when a cell leaves the screen.
   func removeImage() {
-    pictureView?.imageView.image = nil
+    pictureView?.image = nil
   }
 
   /// Sets the picture note for the cell, along with the style, and whether or not to show the

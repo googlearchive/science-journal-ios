@@ -32,6 +32,8 @@ class SensorTest: XCTestCase {
     let noPermissionState1 = Sensor.LoadingState.noPermission(.userPermissionError(.microphone))
     let noPermissionState2 = Sensor.LoadingState.noPermission(.userPermissionError(.camera))
     XCTAssertTrue(noPermissionState1 == noPermissionState2)
+
+    XCTAssertTrue(Sensor.LoadingState.interrupted == Sensor.LoadingState.interrupted)
   }
 
 }

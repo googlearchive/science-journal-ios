@@ -58,7 +58,7 @@ class AltimeterSensor: Sensor {
     isSupported = CMAltimeter.isRelativeAltitudeAvailable()
   }
 
-  override func start(completion: ((Error?) -> ())?) {
+  override func start() {
     guard state != .ready else { return }
 
     state = .ready
@@ -68,7 +68,6 @@ class AltimeterSensor: Sensor {
         self?.currentAltitudeData = altitudeData
       }
     }
-    completion?(nil)
   }
 
   override func pause() {

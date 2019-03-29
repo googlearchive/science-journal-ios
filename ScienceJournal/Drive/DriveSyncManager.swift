@@ -110,18 +110,6 @@ public protocol DriveSyncManager: class {
   /// Prepare for Drive sync shutting down. All sync operations should be cancelled.
   func tearDown()
 
-  #if SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
-
-  // MARK: - Debug additions for deleting all Drive user data.
-
-  /// Deletes the experiment library proto from Drive.
-  ///
-  /// Parameter completion: Called on completion with the number of files deleted and errors if
-  ///                       applicable.
-  func debug_removeAllUserDriveData(completion: @escaping (Int, [Error]) -> Void)
-
-  #endif  // SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
-
 }
 
 // MARK: - DriveExperimentSyncCondition

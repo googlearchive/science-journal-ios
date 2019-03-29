@@ -22,6 +22,8 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
 
   let sensorDataManager = SensorDataManager.testStore
   var drawerVC: DrawerViewController!
+  let metadataManager = MetadataManager.testingInstance
+  var documentManager: DocumentManager!
 
   class MockDelegate: TriggerListDelegate {
     func triggerListViewController(_ triggerListViewController: TriggerListViewController,
@@ -33,6 +35,14 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
   override func setUp() {
     super.setUp()
     let analyticsReporter = AnalyticsReporterOpen()
+    let sensorDataManager = SensorDataManager.testStore
+    let metadataManager = MetadataManager.testingInstance
+    let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
+                                                      metadataManager: metadataManager,
+                                                      sensorDataManager: sensorDataManager)
+    documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                      metadataManager: metadataManager,
+                                      sensorDataManager: sensorDataManager)
     drawerVC = DrawerViewController(analyticsReporter: analyticsReporter,
                                     drawerConfig: DrawerConfigOpen(),
                                     preferenceManager: PreferenceManager(),
@@ -77,10 +87,11 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
                                             shouldAllowSharing: true,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
-                                            metadataManager: MetadataManager.testingInstance,
+                                            metadataManager: metadataManager,
                                             preferenceManager: PreferenceManager(),
                                             sensorController: MockSensorController(),
-                                            sensorDataManager: sensorDataManager)
+                                            sensorDataManager: sensorDataManager,
+                                            documentManager: documentManager)
     let sensor = Sensor.mock(sensorId: "test sensor ID")
     let triggerListViewController =
         TriggerListViewController(sensorTriggers: [],
@@ -127,10 +138,11 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
                                             shouldAllowSharing: true,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
-                                            metadataManager: MetadataManager.testingInstance,
+                                            metadataManager: metadataManager,
                                             preferenceManager: PreferenceManager(),
                                             sensorController: MockSensorController(),
-                                            sensorDataManager: sensorDataManager)
+                                            sensorDataManager: sensorDataManager,
+                                            documentManager: documentManager)
     let sensor = Sensor.mock(sensorId: "test sensor ID")
     let triggerListViewController =
         TriggerListViewController(sensorTriggers: [],
@@ -185,10 +197,11 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
                                             shouldAllowSharing: true,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
-                                            metadataManager: MetadataManager.testingInstance,
+                                            metadataManager: metadataManager,
                                             preferenceManager: PreferenceManager(),
                                             sensorController: MockSensorController(),
-                                            sensorDataManager: sensorDataManager)
+                                            sensorDataManager: sensorDataManager,
+                                            documentManager: documentManager)
     let sensor = Sensor.mock(sensorId: "test sensor ID")
     let triggerListViewController =
         TriggerListViewController(sensorTriggers: [],
@@ -250,10 +263,11 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
                                             shouldAllowSharing: true,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
-                                            metadataManager: MetadataManager.testingInstance,
+                                            metadataManager: metadataManager,
                                             preferenceManager: PreferenceManager(),
                                             sensorController: MockSensorController(),
-                                            sensorDataManager: sensorDataManager)
+                                            sensorDataManager: sensorDataManager,
+                                            documentManager: documentManager)
     XCTAssertTrue(experimentViewController.observeViewController(
         ObserveViewController(analyticsReporter: AnalyticsReporterOpen(),
                               preferenceManager: PreferenceManager(),
@@ -288,10 +302,11 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
                                             shouldAllowSharing: true,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
-                                            metadataManager: MetadataManager.testingInstance,
+                                            metadataManager: metadataManager,
                                             preferenceManager: PreferenceManager(),
                                             sensorController: MockSensorController(),
-                                            sensorDataManager: sensorDataManager)
+                                            sensorDataManager: sensorDataManager,
+                                            documentManager: documentManager)
 
     experimentViewController.updateRightBarButtonItems(for: .compact)
     XCTAssertTrue(experimentViewController.navigationItem.rightBarButtonItems!.contains(
@@ -369,10 +384,11 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
                                             shouldAllowSharing: true,
                                             drawerViewController: nil,
                                             analyticsReporter: AnalyticsReporterOpen(),
-                                            metadataManager: MetadataManager.testingInstance,
+                                            metadataManager: metadataManager,
                                             preferenceManager: PreferenceManager(),
                                             sensorController: MockSensorController(),
-                                            sensorDataManager: sensorDataManager)
+                                            sensorDataManager: sensorDataManager,
+                                            documentManager: documentManager)
 
     experimentViewController.updateRightBarButtonItems(for: .compact)
     XCTAssertTrue(experimentViewController.navigationItem.rightBarButtonItems!.contains(

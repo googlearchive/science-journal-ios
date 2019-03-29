@@ -19,14 +19,19 @@ import Foundation
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
 extension MetadataManager {
+
   /// Returns an instance of MetadataManager with a test directory root URL.
   public static var testingInstance: MetadataManager {
+    return testingInstance(sensorController: MockSensorController())
+  }
+
+  public static func testingInstance(sensorController: SensorController) -> MetadataManager {
     let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
     let rootURL = tempDirectory.appendingPathComponent("TESTING-" + UUID().uuidString)
     return MetadataManager(rootURL: rootURL,
                            deletedRootURL: rootURL,
                            preferenceManager: PreferenceManager(),
-                           sensorController: MockSensorController(),
+                           sensorController: sensorController,
                            sensorDataManager: SensorDataManager.testStore)
   }
 
@@ -37,4 +42,5 @@ extension MetadataManager {
       print("[MetadataManager] Error deleting root directory: \(error)")
     }
   }
+
 }

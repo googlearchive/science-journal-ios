@@ -149,9 +149,25 @@ open class SensorDataManager {
 
   /// Removes all sensor data associated with a trial ID.
   ///
+  /// - Parameters:
+  ///   - trialID: A trial ID.
+  ///   - completion: An optional closure called when the removal is finished.
+  open func removeData(forTrialID trialID: String, completion: (() -> Void)? = nil) {
+    removeData(forTrialID: trialID, isBlocking: false, completion: completion)
+  }
+
+  /// Removes all sensor data associated with a trial ID. Blocks the calling thread until it is
+  /// complete.
+  ///
   /// - Parameter trialID: A trial ID.
-  open func removeData(forTrialID trialID: String) {
-    privateContext.perform {
+  open func removeDataAndWait(forTrialID trialID: String) {
+    removeData(forTrialID: trialID, isBlocking: true)
+  }
+
+  private func removeData(forTrialID trialID: String,
+                          isBlocking: Bool,
+                          completion: (() -> Void)? = nil) {
+    let remove = {
       let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: SensorData.entityName)
       fetchRequest.predicate = NSPredicate(format: "trialID = %@", trialID)
       let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -163,6 +179,13 @@ open class SensorDataManager {
                         error.localizedDescription,
                     category: .coreData)
       }
+      completion?()
+    }
+
+    if isBlocking {
+      privateContext.performAndWait(remove)
+    } else {
+      privateContext.perform(remove)
     }
   }
 
@@ -429,14 +452,14 @@ open class SensorDataManager {
   ///   - sensorData: The sensor data.
   ///   - completion: Called when complete.
   func addSensorDataPoints(_ sensorData: [SensorData], completion: @escaping () -> Void) {
+    let sensorDataPoints = sensorData.map { SensorDataPoint(sensorData: $0) }
     performOnBackgroundContext { (context) in
       autoreleasepool {
-        let sensorDataChunks = sensorData.chunks(ofSize: 1000)
+        let sensorDataChunks = sensorDataPoints.chunks(ofSize: 1000)
         for sensorDataChunk in sensorDataChunks {
           for sensorDataPoint in sensorDataChunk {
-            let dataPoint = DataPoint(x: sensorDataPoint.timestamp, y: sensorDataPoint.value)
-            SensorData.insert(dataPoint: dataPoint,
-                              forSensorID: sensorDataPoint.sensor,
+            SensorData.insert(dataPoint: sensorDataPoint.dataPoint,
+                              forSensorID: sensorDataPoint.sensorID,
                               trialID: sensorDataPoint.trialID,
                               resolutionTier: sensorDataPoint.resolutionTier,
                               context: context)
@@ -616,6 +639,23 @@ open class SensorDataManager {
     importContext.persistentStoreCoordinator = persistentStoreCoordinator
     importContext.perform {
       block(importContext)
+    }
+  }
+
+  // MARK: - SensorDataPoint
+
+  /// A data object used to allow sensor data to be portable between managed object contexts.
+  private struct SensorDataPoint {
+    let dataPoint: DataPoint
+    let sensorID: String
+    let trialID: String
+    let resolutionTier: Int16
+
+    init(sensorData: SensorData) {
+      dataPoint = DataPoint(x: sensorData.timestamp, y: sensorData.value)
+      sensorID = sensorData.sensor
+      trialID = sensorData.trialID
+      resolutionTier = sensorData.resolutionTier
     }
   }
 

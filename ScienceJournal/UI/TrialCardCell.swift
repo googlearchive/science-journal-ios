@@ -114,7 +114,7 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
 
   /// Removes the images in a trial card cell. Called when a cell leaves the screen.
   func removeImages() {
-    pictureCardViews.forEach { $0.imageView.image = nil }
+    pictureCardViews.forEach { $0.image = nil }
   }
 
   /// Sets the trial card note view pool.
@@ -155,7 +155,7 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
 
     DispatchQueue.main.async {
       let image = self.metadataManager?.image(forFullImagePath: imagePath)
-      pictureCardView.imageView.image = image
+      pictureCardView.image = image
     }
   }
 

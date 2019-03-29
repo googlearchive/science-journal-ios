@@ -50,8 +50,8 @@ protocol ExperimentsListViewControllerDelegate: class {
 
   /// Informs the delegate the deletion was completed and not undone.
   ///
-  /// - Parameter experiment: An experiment.
-  func experimentsListDeleteExperimentCompleted(_ experiment: Experiment)
+  /// - Parameter deletedExperiment: A deleted experiment.
+  func experimentsListDeleteExperimentCompleted(_ deletedExperiment: DeletedExperiment)
 
   /// Informs the delegate the claim experiments view controller should be shown.
   func experimentsListShowClaimExperiments()
@@ -100,6 +100,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   private let commonUIComponents: CommonUIComponents
   private let createExperimentFAB = MDCFloatingButton()
   private var createExperimentHighlightTimer: Timer?
+  private let documentManager: DocumentManager
   private let emptyView = EmptyView(title: String.emptyProject, imageName: "empty_experiment_list")
   private var highlightController: MDCFeatureHighlightViewController?
   private let metadataManager: MetadataManager
@@ -169,6 +170,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   ///   - networkAvailability: Network availability.
   ///   - preferenceManager: The preference manager.
   ///   - sensorDataManager: The sensor data manager.
+  ///   - documentManager: The document manager.
   ///   - shouldAllowSharing: Whether to allow sharing.
   ///   - shouldAllowManualSync: Whether to allow manual syncing.
   init(accountsManager: AccountsManager,
@@ -179,6 +181,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
        networkAvailability: NetworkAvailability,
        preferenceManager: PreferenceManager,
        sensorDataManager: SensorDataManager,
+       documentManager: DocumentManager,
        shouldAllowSharing: Bool,
        shouldAllowManualSync: Bool) {
     self.accountsManager = accountsManager
@@ -188,6 +191,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     self.networkAvailability = networkAvailability
     self.preferenceManager = preferenceManager
     self.sensorDataManager = sensorDataManager
+    self.documentManager = documentManager
     self.shouldAllowSharing = shouldAllowSharing
     self.shouldAllowManualSync = shouldAllowManualSync
 
@@ -310,7 +314,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     // Listen to notifications of newly imported experiments.
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(experimentImported),
-                                           name: .metadataManagerDidImportExperiment,
+                                           name: .documentManagerDidImportExperiment,
                                            object: nil)
 
     // Listen to notifications of newly downloaded assets.
@@ -595,10 +599,10 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     }
   }
 
-  func experimentStateDeleted(_ experiment: Experiment, undoBlock: (() -> Void)?) {
-    let didCollectionViewChange =
-        experimentsListItemsViewController.experimentWasRemoved(withID: experiment.ID,
-                                                                updateCollectionView: isViewVisible)
+  func experimentStateDeleted(_ deletedExperiment: DeletedExperiment, undoBlock: (() -> Void)?) {
+    let didCollectionViewChange = experimentsListItemsViewController.experimentWasRemoved(
+        withID: deletedExperiment.experimentID,
+        updateCollectionView: isViewVisible)
 
     // Only update the empty view if the view is visible.
     if isViewVisible && didCollectionViewChange {
@@ -607,7 +611,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
 
     // Not all delete actions can be undone.
     guard let undoBlock = undoBlock else {
-      delegate?.experimentsListDeleteExperimentCompleted(experiment)
+      delegate?.experimentsListDeleteExperimentCompleted(deletedExperiment)
       return
     }
 
@@ -619,7 +623,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
                       undoBlock()
     }) { (_) in
       if !didUndo {
-        self.delegate?.experimentsListDeleteExperimentCompleted(experiment)
+        self.delegate?.experimentsListDeleteExperimentCompleted(deletedExperiment)
       }
     }
   }
@@ -673,12 +677,12 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
 
     // Send a copy.
     if shouldAllowSharing && !RecordingState.isRecording,
-        let experiment = metadataManager.experiment(withID: overview.experimentID) {
+        let experiment = metadataManager.experiment(withID: overview.experimentID),
+        !experiment.isEmpty {
       popUpMenu.addAction(PopUpMenuAction.exportExperiment(experiment,
                                                            presentingViewController: self,
                                                            sourceView: attachmentButton,
-                                                           metadataManager: metadataManager,
-                                                           sensorDataManager: sensorDataManager))
+                                                           documentManager: documentManager))
     }
 
     // Delete.

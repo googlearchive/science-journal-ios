@@ -343,6 +343,8 @@ extension String {
   static public var preferenceMigrationMessage: String { return "preference_migration_message".localized }
   static public var pullToRefreshContentDescription: String { return "pull_to_refresh_content_description".localized }
   static public var rawUnits: String { return "raw_units".localized }
+  static public var recordingStartFailed: String { return "recording_start_failed".localized }
+  static public var recordingStartFailedSensorDisconnected: String { return "recording_start_failed_sensor_disconnected".localized }
   static public var recordingEndedDialogMessage: String { return "recording_ended_dialog_message".localized }
   static public var recordingEndedDialogTitle: String { return "recording_ended_dialog_title".localized }
   static public var recordingStopFailedContinue: String { return "recording_stop_failed_continue".localized }

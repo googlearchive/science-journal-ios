@@ -169,6 +169,9 @@
 		5CAD5EE71E8C4294008F50C3 /* PacketAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD5EE31E8B016F008F50C3 /* PacketAssemblerTest.swift */; };
 		5CAD5EEA1E8D7E06008F50C3 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD5EE91E8D7E06008F50C3 /* Clock.swift */; };
 		5CAD5EF51E952F8C008F50C3 /* PacketAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD5EF31E952F8C008F50C3 /* PacketAssembler.swift */; };
+		5CB2CF392232E43B00F73F6B /* ExportDocumentOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2CF382232E43B00F73F6B /* ExportDocumentOperationTest.swift */; };
+		5CB2CF3B223C2B4300F73F6B /* ExperimentDataDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2CF3A223C2B4300F73F6B /* ExperimentDataDeleter.swift */; };
+		5CB2CF3D223C2C3600F73F6B /* ExperimentDataDeleterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2CF3C223C2C3600F73F6B /* ExperimentDataDeleterTest.swift */; };
 		5CB340441F9945F700370734 /* SensorLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB340431F9945F700370734 /* SensorLoadingView.swift */; };
 		5CB5E1182073E8F000249167 /* ZoomPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5E1172073E8F000249167 /* ZoomPresenterTest.swift */; };
 		5CB5E11A2075621600249167 /* GSJBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5E1192075621600249167 /* GSJBlockOperation.swift */; };
@@ -191,6 +194,8 @@
 		5CC813CF20D16C8700CC05E9 /* ExperimentLibraryMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC813CE20D16C8700CC05E9 /* ExperimentLibraryMerger.swift */; };
 		5CC813D120D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC813D020D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift */; };
 		5CC81C1C1F292EBE00AC9E9E /* TimeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC81C1B1F292EBE00AC9E9E /* TimeSelectionView.swift */; };
+		5CC9046F224438B300F13EF0 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9046E224438B300F13EF0 /* DocumentManager.swift */; };
+		5CC90472224521EC00F13EF0 /* DocumentManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC90471224521EC00F13EF0 /* DocumentManagerTest.swift */; };
 		5CC96A2F21F2257900F5A834 /* BlockObserverTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC96A2E21F2257900F5A834 /* BlockObserverTest.swift */; };
 		5CCB62B61F8679ED00F9BB7D /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB62B51F8679ED00F9BB7D /* CSVWriter.swift */; };
 		5CCB62B91F86903800F9BB7D /* CSVWriterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB62B81F86903800F9BB7D /* CSVWriterTest.swift */; };
@@ -769,6 +774,9 @@
 		5CAD5EE31E8B016F008F50C3 /* PacketAssemblerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketAssemblerTest.swift; sourceTree = "<group>"; };
 		5CAD5EE91E8D7E06008F50C3 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		5CAD5EF31E952F8C008F50C3 /* PacketAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketAssembler.swift; sourceTree = "<group>"; };
+		5CB2CF382232E43B00F73F6B /* ExportDocumentOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDocumentOperationTest.swift; sourceTree = "<group>"; };
+		5CB2CF3A223C2B4300F73F6B /* ExperimentDataDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentDataDeleter.swift; sourceTree = "<group>"; };
+		5CB2CF3C223C2C3600F73F6B /* ExperimentDataDeleterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentDataDeleterTest.swift; sourceTree = "<group>"; };
 		5CB340411F97E29000370734 /* JumpToNowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpToNowButton.swift; sourceTree = "<group>"; };
 		5CB340431F9945F700370734 /* SensorLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorLoadingView.swift; sourceTree = "<group>"; };
 		5CB5E1172073E8F000249167 /* ZoomPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomPresenterTest.swift; sourceTree = "<group>"; };
@@ -792,6 +800,8 @@
 		5CC813CE20D16C8700CC05E9 /* ExperimentLibraryMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentLibraryMerger.swift; sourceTree = "<group>"; };
 		5CC813D020D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentLibraryMergerTest.swift; sourceTree = "<group>"; };
 		5CC81C1B1F292EBE00AC9E9E /* TimeSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectionView.swift; sourceTree = "<group>"; };
+		5CC9046E224438B300F13EF0 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
+		5CC90471224521EC00F13EF0 /* DocumentManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManagerTest.swift; sourceTree = "<group>"; };
 		5CC96A2E21F2257900F5A834 /* BlockObserverTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockObserverTest.swift; sourceTree = "<group>"; };
 		5CCB62B51F8679ED00F9BB7D /* CSVWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
 		5CCB62B81F86903800F9BB7D /* CSVWriterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVWriterTest.swift; sourceTree = "<group>"; };
@@ -1656,6 +1666,22 @@
 			path = SensorFilters;
 			sourceTree = "<group>";
 		};
+		5CC9046B2244388B00F13EF0 /* SharableDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				5CC9046E224438B300F13EF0 /* DocumentManager.swift */,
+			);
+			path = SharableDocuments;
+			sourceTree = "<group>";
+		};
+		5CC90470224521C600F13EF0 /* SharableDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				5CC90471224521EC00F13EF0 /* DocumentManagerTest.swift */,
+			);
+			path = SharableDocuments;
+			sourceTree = "<group>";
+		};
 		5CCB62B71F8679F400F9BB7D /* Export */ = {
 			isa = PBXGroup;
 			children = (
@@ -1676,6 +1702,7 @@
 				5CCB62B81F86903800F9BB7D /* CSVWriterTest.swift */,
 				5CFC8E6320488C4B00A674C2 /* ExportExperimentSensorDataOperationTest.swift */,
 				5CCB62BD1F8D429400F9BB7D /* TrialDataWriterTest.swift */,
+				5CB2CF382232E43B00F73F6B /* ExportDocumentOperationTest.swift */,
 			);
 			path = Export;
 			sourceTree = "<group>";
@@ -2198,6 +2225,7 @@
 				681A82C71E4E884D0007A031 /* SensorData */,
 				5CBD9AB61F74172E00D22D21 /* SensorFilters */,
 				8B111F621E412073000400F1 /* Sensors */,
+				5CC9046B2244388B00F13EF0 /* SharableDocuments */,
 				8BBFBC1921388809008FFBF4 /* Shared */,
 				6853104D1EDE84E300C42696 /* Strings */,
 				8B30B8FE1E6F3A2C008CA2BF /* ToneGenerator */,
@@ -2214,6 +2242,7 @@
 		68EBA6F11E20421E0089FF7F /* ScienceJournalTests */ = {
 			isa = PBXGroup;
 			children = (
+				5CC90470224521C600F13EF0 /* SharableDocuments */,
 				5CAD5EE21E8B0157008F50C3 /* BLE */,
 				5C7DE8C71EC24F450015F407 /* Chart */,
 				5C61A2BE20C6CDCF007E7F3D /* Drive */,
@@ -2390,6 +2419,7 @@
 			children = (
 				68525A431F2BD8F700A41675 /* ExifData.swift */,
 				8B5114F020B5AAA2005953BD /* ExistingDataMigrationManager.swift */,
+				5CB2CF3A223C2B4300F73F6B /* ExperimentDataDeleter.swift */,
 				8BD972191ECCB1AD0048DC50 /* ExperimentDataParser.swift */,
 				5C4EB9FB2024C371002C285C /* ExperimentStateManager.swift */,
 				5CD560B720168F700050EDB0 /* ExperimentUpdateListener.swift */,
@@ -2523,6 +2553,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5114F220B5AAB9005953BD /* ExistingDataMigrationManagerTest.swift */,
+				5CB2CF3C223C2C3600F73F6B /* ExperimentDataDeleterTest.swift */,
 				8BD9721B1ECCB20F0048DC50 /* ExperimentDataParserTest.swift */,
 				5CAAD4422023C48B0072FB0F /* ExperimentStateManagerTest.swift */,
 				5C62DC1D200681EF00A4F348 /* ExperimentUpdateManagerTest.swift */,
@@ -3190,6 +3221,7 @@
 				689880391ED78BC1000C6FB8 /* TrialCardHeaderView.swift in Sources */,
 				687FAA08202C1162004C1D04 /* Sensor.pbobjc.m in Sources */,
 				5C7ACB9F1E9D4C9000B22474 /* BLEPeripheralInterface.swift in Sources */,
+				5CB2CF3B223C2B4300F73F6B /* ExperimentDataDeleter.swift in Sources */,
 				8B347446203F4A8A00E73378 /* PitchSensorAnimationView.swift in Sources */,
 				8B4B60181E44DFAC009AFB1B /* BarometerSensor.swift in Sources */,
 				68D606671F0C109E0077ABCD /* EditExperimentViewController.swift in Sources */,
@@ -3279,6 +3311,7 @@
 				5C5188A41F3D0F5F001B110A /* ZoomRecorder.swift in Sources */,
 				5CA8DAEF202E59E500247FD8 /* BlockObserver.swift in Sources */,
 				5C32452F1EF1DA5700E8664B /* DisplayTrialViewData.swift in Sources */,
+				5CC9046F224438B300F13EF0 /* DocumentManager.swift in Sources */,
 				8B1791CB1F140F22008C0B31 /* TriggerNoteTextEntryView.swift in Sources */,
 				D59CA3D1219CEE690082A27B /* Harmonic.swift in Sources */,
 				8B1B2AF71EE84DE100990FE8 /* PopUpMenuAnchor.swift in Sources */,
@@ -3545,6 +3578,7 @@
 				5C804CBD1FDEFEF600F8D1C6 /* TimestampFormatterTest.swift in Sources */,
 				68B32A2E1F9A8A7F0067DAF3 /* String+ScienceJournalTest.swift in Sources */,
 				68E3C8D61FD784D200255ADF /* RatingPromptManagerTest.swift in Sources */,
+				5CB2CF392232E43B00F73F6B /* ExportDocumentOperationTest.swift in Sources */,
 				5CFC8E6420488C4B00A674C2 /* ExportExperimentSensorDataOperationTest.swift in Sources */,
 				8BCD2F8A1F968F0F00CCF8DB /* Sensor+TestHelpers.swift in Sources */,
 				486482F320CF4EA700ADE0C9 /* SensorController+Testing.swift in Sources */,
@@ -3603,6 +3637,7 @@
 				D59CA3D9219F46020082A27B /* Double+ScienceJournal.swift in Sources */,
 				5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */,
 				5CCB62B91F86903800F9BB7D /* CSVWriterTest.swift in Sources */,
+				5CB2CF3D223C2C3600F73F6B /* ExperimentDataDeleterTest.swift in Sources */,
 				8B35F5081EA935D30032FE15 /* MetadataManagerTest.swift in Sources */,
 				5C880BA421936BBF00594166 /* DriveConstructorTestable.swift in Sources */,
 				5C1B09F41F43315800EFA64A /* ZoomRecorderTest.swift in Sources */,
@@ -3611,6 +3646,7 @@
 				8BD3A10A1F27B79500A5DDBD /* MDCPalette+ScienceJournalTest.swift in Sources */,
 				8BA65D6820570A4F0071C148 /* PitchSensorAnimationViewTest.swift in Sources */,
 				5C2C2A2A2035D65B007F2FA5 /* GroupOperationTest.swift in Sources */,
+				5CC90472224521EC00F13EF0 /* DocumentManagerTest.swift in Sources */,
 				5C8286DA21B97FFA008D7184 /* NoteDetailControllerTest.swift in Sources */,
 				5C7219671ED8D06C00817F0B /* SensorLayoutTest.swift in Sources */,
 				8BC1CBB720DD645800CBDB9D /* MockAccountsManager.swift in Sources */,

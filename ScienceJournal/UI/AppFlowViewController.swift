@@ -533,7 +533,7 @@ extension AppFlowViewController {
     guard let settingsVC = userFlowViewController?.settingsVC else { return }
     let spinnerVC = SpinnerViewController()
     spinnerVC.present(fromViewController: settingsVC) {
-      self.rootUserManager.metadataManager.debug_createRootUserData() {
+      self.rootUserManager.documentManager.debug_createRootUserData() {
         DispatchQueue.main.async {
           self.userFlowViewController?.experimentsListVC?.refreshUnclaimedExperiments()
           spinnerVC.dismissSpinner()

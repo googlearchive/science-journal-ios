@@ -27,6 +27,8 @@ class RootUserManager: UserManager {
   let preferenceManager: PreferenceManager
   let sensorDataManager: SensorDataManager
   let assetManager: UserAssetManager
+  let experimentDataDeleter: ExperimentDataDeleter
+  let documentManager: DocumentManager
 
   var shouldVerifyAge: Bool {
     // Age verification is required for a non-account user, if they have not done so yet.
@@ -50,7 +52,6 @@ class RootUserManager: UserManager {
 
   private let documentsDirectoryURL: URL
   private let metadataRootURL: URL
-  private let metadataDeletedRootURL: URL
 
   /// Designated initializer.
   ///
@@ -65,7 +66,6 @@ class RootUserManager: UserManager {
     sensorDataManager = SensorDataManager(storeURL: storeURL)
 
     metadataRootURL = documentsDirectoryURL.appendingPathComponent("Science Journal")
-    metadataDeletedRootURL = documentsDirectoryURL
     metadataManager = MetadataManager(rootURL: metadataRootURL,
                                       deletedRootURL: documentsDirectoryURL,
                                       preferenceManager: preferenceManager,
@@ -78,6 +78,14 @@ class RootUserManager: UserManager {
     assetManager = UserAssetManager(driveSyncManager: nil,
                                     metadataManager: metadataManager,
                                     sensorDataManager: sensorDataManager)
+
+    experimentDataDeleter = ExperimentDataDeleter(accountID: nil,
+                                                  metadataManager: metadataManager,
+                                                  sensorDataManager: sensorDataManager)
+
+    documentManager = DocumentManager(experimentDataDeleter: experimentDataDeleter,
+                                      metadataManager: metadataManager,
+                                      sensorDataManager: sensorDataManager)
   }
 
   func tearDown() {

@@ -35,10 +35,10 @@ class ExistingDataMigrationManager {
   // MARK: - Properties
 
   /// The user manager for the user migrating data.
-  let accountUserManager: AccountUserManager
+  let accountUserManager: UserManager
 
   /// The user manager for the pre-accounts root user.
-  let rootUserManager: RootUserManager
+  let rootUserManager: UserManager
 
   /// The number of existing experiments.
   var numberOfExistingExperiments: Int {
@@ -59,7 +59,7 @@ class ExistingDataMigrationManager {
   /// - Parameters:
   ///   - accountUserManager: The user manager for the user migrating data.
   ///   - rootUserManager: The user manager for the pre-accounts root user.
-  init(accountUserManager: AccountUserManager, rootUserManager: RootUserManager) {
+  init(accountUserManager: UserManager, rootUserManager: UserManager) {
     self.accountUserManager = accountUserManager
     self.rootUserManager = rootUserManager
 
@@ -85,8 +85,9 @@ class ExistingDataMigrationManager {
 
     var migrateOperations = [GSJOperation]()
 
-    // Sensor data
+    // Migrate sensor data
     var errorTrialIDs = [String]()
+    var previousMigrateTrial: GSJOperation?
     experimentAndOverview.experiment.trials.forEach { (trial) in
       let migrateTrial = GSJBlockOperation(block: { [unowned self] (finished) in
         let accountSensorDataManager = self.accountUserManager.sensorDataManager
@@ -100,7 +101,7 @@ class ExistingDataMigrationManager {
               if rootCount == accountCount {
                 shouldMigrateSensorData = false
               } else if accountCount > 0 {
-                accountSensorDataManager.removeData(forTrialID: trial.ID)
+                accountSensorDataManager.removeDataAndWait(forTrialID: trial.ID)
               }
             }
             if shouldMigrateSensorData {
@@ -123,16 +124,23 @@ class ExistingDataMigrationManager {
           })
         })
       })
+
+      // For memory performance, make trial migrations sequential.
+      if let previousMigrateTrial = previousMigrateTrial {
+        migrateTrial.addDependency(previousMigrateTrial)
+      }
+      previousMigrateTrial = migrateTrial
       migrateOperations.append(migrateTrial)
     }
 
-    let migrate = GroupOperation(operations: migrateOperations)
-    migrate.maxConcurrentOperationCount = 1
-    migrate.addObserver(BlockObserver { [unowned self] _, _ in
-      // Experiment
-      let addExperimentSuccess = self.accountUserManager.metadataManager.addExperiment(
+    // Migrate experiment
+    var addExperimentSuccess = false
+    var saveAssetsSuccess = false
+
+    let addExperimentAndCleanup = GSJBlockOperation { [unowned self] (finished) in
+      addExperimentSuccess = self.accountUserManager.metadataManager.addExperiment(
           experimentAndOverview.experiment, overview: experimentAndOverview.overview)
-      var saveAssetsSuccess = true
+      saveAssetsSuccess = true
       if addExperimentSuccess {
         let rootAssetsURL =
             self.rootUserManager.metadataManager.assetsURL(for: experimentAndOverview.experiment)
@@ -147,9 +155,18 @@ class ExistingDataMigrationManager {
                       "'\(rootAssetsURL)' to '\(accountAssetsURL)': \(error.localizedDescription)")
           }
         }
-        self.removeExperimentFromRootUser(experimentAndOverview.experiment)
+        self.removeExperimentFromRootUser(withID: experimentID) {
+          finished()
+        }
+      } else {
+        finished()
       }
+    }
+    migrateOperations.forEach { addExperimentAndCleanup.addDependency($0) }
+    migrateOperations.append(addExperimentAndCleanup)
 
+    let migrate = GroupOperation(operations: migrateOperations)
+    migrate.addObserver(BlockObserver { _, _ in
       // Errors
       var errors = [ExistingDataMigrationManagerError]()
       if !addExperimentSuccess {
@@ -233,29 +250,14 @@ class ExistingDataMigrationManager {
     }
   }
 
-  /// Removes an experiment from pre-account storage, as well as its trial sensor data.
-  ///
-  /// - Parameters:
-  ///   - experiment: The experiment to remove.
-  func removeExperimentFromRootUser(_ experiment: Experiment) {
-    // Sensor data
-    experiment.trials.forEach {
-      self.rootUserManager.sensorDataManager.removeData(forTrialID: $0.ID)
-    }
-
-    // Experiment
-    self.rootUserManager.metadataManager.removeExperiment(withID: experiment.ID)
-  }
-
   /// Removes an experiment from pre-account storage.
   ///
-  /// - Parameter experimentID: The ID of the experiment to remove.
-  func removeExperimentFromRootUser(withID experimentID: String) {
-    guard let experiment = rootUserManager.metadataManager.experiment(withID: experimentID) else {
-      return
-    }
-    removeExperimentFromRootUser(experiment)
-    return
+  /// - Parameters:
+  ///   - experimentID: The ID of the experiment to remove.
+  ///   - completion: An optional closure called when the removal is finished.
+  func removeExperimentFromRootUser(withID experimentID: String, completion: (() -> Void)? = nil) {
+    self.rootUserManager.experimentDataDeleter.permanentlyDeleteExperiment(withID: experimentID,
+                                                                           completion: completion)
   }
 
   /// Removes all experiments from pre-account storage.

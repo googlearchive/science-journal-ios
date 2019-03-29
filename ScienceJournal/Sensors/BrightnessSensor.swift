@@ -44,7 +44,6 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
   private var frontFacingCamera: AVCaptureDevice?
 
   private let captureSession = AVCaptureSession()
-  private var startCompletion: ((Error?) -> ())?
   private var currentBrightness: Double?
 
   /// Designated initializer.
@@ -76,6 +75,17 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
 
       strongSelf.state = .loading
 
+      NotificationCenter.default.addObserver(
+          strongSelf,
+          selector: #selector(strongSelf.captureSessionWasInterrupted(_:)),
+          name: .AVCaptureSessionWasInterrupted,
+          object: nil)
+      NotificationCenter.default.addObserver(
+          strongSelf,
+          selector: #selector(strongSelf.captureSessionInterruptionEnded(_:)),
+          name: .AVCaptureSessionInterruptionEnded,
+          object: nil)
+
       // Configure the capture session in begin using to avoid camera permissions showing at app
       // launch.
       if strongSelf.captureSession.outputs.count == 0 {
@@ -98,27 +108,11 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
       strongSelf.configureFrontCamera()
 
       if CaptureSessionInterruptionObserver.shared.isCaptureSessionInterrupted {
-        DispatchQueue.main.async {
-          strongSelf.callCompletionWithCaptureSessionInterruptionError()
-        }
+        strongSelf.state = .interrupted
       } else {
-        strongSelf.captureSession.startRunning()
         strongSelf.state = .ready
-        DispatchQueue.main.async {
-          strongSelf.startCompletion?(nil)
-        }
+        strongSelf.captureSession.startRunning()
       }
-
-      NotificationCenter.default.addObserver(
-          strongSelf,
-          selector: #selector(strongSelf.captureSessionWasInterrupted(_:)),
-          name: .AVCaptureSessionWasInterrupted,
-          object: nil)
-      NotificationCenter.default.addObserver(
-          strongSelf,
-          selector: #selector(strongSelf.captureSessionInterruptionEnded(_:)),
-          name: .AVCaptureSessionInterruptionEnded,
-          object: nil)
     }
     let captureSessionEndUsingBlock = { [weak self] in
       guard let strongSelf = self else { return }
@@ -139,13 +133,12 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
     CameraCaptureSessionManager.shared.removeUser(self)
   }
 
-  override func start(completion: ((Error?) -> ())?) {
+  override func start() {
     if captureSession.isRunning {
-      completion?(nil)
+      state = .ready
       return
     }
 
-    startCompletion = completion
     CameraCaptureSessionManager.shared.beginUsing(withObject: self)
   }
 
@@ -192,14 +185,10 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
   }
 
-  private func callCompletionWithCaptureSessionInterruptionError() {
-    startCompletion?(SensorError.unavailableHardware)
-  }
-
   private func resumeCaptureSessionIfNeeded() {
     // Only start the brightness sensor if it has listener blocks.
     if listenerBlocks.count > 0 {
-      start(completion: startCompletion)
+      start()
     }
   }
 
@@ -215,7 +204,7 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     guard AVCaptureSession.InterruptionReason(notificationUserInfo: notification.userInfo) ==
         .videoDeviceNotAvailableWithMultipleForegroundApps else { return }
-    callCompletionWithCaptureSessionInterruptionError()
+    state = .interrupted
   }
 
   @objc private func captureSessionInterruptionEnded(_ notification: Notification) {

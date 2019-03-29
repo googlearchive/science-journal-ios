@@ -51,24 +51,22 @@ class BluetoothSensor: Sensor, BLEServiceScannerDelegate {
     isSupported = true
   }
 
-  override func start(completion: ((Error?) -> ())?) {
+  override func start() {
     state = .loading
     sensorInterafce.connect { (success) in
       guard success else {
         self.state = .failed(.unavailableHardware)
-        completion?(nil)
         return
       }
       self.state = .ready
       self.sensorInterafce.startObserving({ [weak self] (dataPoint) in
         self?.currentValue = dataPoint.y
       })
-      completion?(nil)
     }
   }
 
   override func retry() {
-    start(completion: nil)
+    start()
   }
 
   override func pause() {

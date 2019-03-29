@@ -111,6 +111,16 @@ class RecordingManager: RecorderDelegate {
   /// The recording start date.
   var recordingStartDate: DataPoint.Millis?
 
+  /// The recording manager is ready when all sensors set to record are ready.
+  var isReady: Bool {
+    for recorder in recorders {
+      if recorder.sensor.state != .ready {
+        return false
+      }
+    }
+    return true
+  }
+
   /// The recorders monitoring sensor data.
   private var recorders = [Recorder]()
 
@@ -194,12 +204,11 @@ class RecordingManager: RecorderDelegate {
   ///
   /// - Parameters:
   ///   - sensor: The sensor to listen to data for.
+  ///   - triggers: The triggers to fire for the sensor.
   ///   - block: The block to call to update the listener.
-  /// - Throws: An error if the sensor is not supported.
   func addListener(forSensor sensor: Sensor,
                    triggers: [SensorTrigger],
-                   using block: @escaping RecorderListener,
-                   completion: @escaping (Error?) -> ()) {
+                   using block: @escaping RecorderListener) {
     if let sensorRecorder = recorder(forSensorID: sensor.sensorId) {
       remove(recorder: sensorRecorder)
     }
@@ -207,8 +216,7 @@ class RecordingManager: RecorderDelegate {
                              delegate: self,
                              triggers: triggers,
                              listener: block,
-                             sensorDataManager: sensorDataManager,
-                             sensorStartCompletion:completion)
+                             sensorDataManager: sensorDataManager)
     recorders.append(aRecorder)
   }
 

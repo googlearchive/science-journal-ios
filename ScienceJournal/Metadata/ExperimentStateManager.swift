@@ -31,10 +31,9 @@ protocol ExperimentStateListener: class {
   /// Informs the delegate the experiment was deleted.
   ///
   /// - Parameters:
-  ///   - experiment: The deleted experiment.
+  ///   - deletedExperiment: The deleted experiment.
   ///   - undoBlock: A block that will undo the deletion if executed.
-  func experimentStateDeleted(_ experiment: Experiment,
-                              undoBlock: (() -> Void)?)
+  func experimentStateDeleted(_ deletedExperiment: DeletedExperiment, undoBlock: (() -> Void)?)
 
   /// Informs the delegate the experiment was restored after being deleted.
   ///
@@ -50,6 +49,7 @@ class ExperimentStateManager {
 
   // MARK: - Properties
 
+  private let experimentDataDeleter: ExperimentDataDeleter
   private let sensorDataManager: SensorDataManager
   private let metadataManager: MetadataManager
   private var stateListeners = NSHashTable<AnyObject>.weakObjects()
@@ -59,9 +59,13 @@ class ExperimentStateManager {
   /// Designated initializer.
   ///
   /// - Parameters:
+  ///   - experimentDataDeleter: The experiment data deleter.
   ///   - metadataManager: The metadata manager.
   ///   - sensorDataManager: The sensor data manager.
-  init(metadataManager: MetadataManager, sensorDataManager: SensorDataManager) {
+  init(experimentDataDeleter: ExperimentDataDeleter,
+       metadataManager: MetadataManager,
+       sensorDataManager: SensorDataManager) {
+    self.experimentDataDeleter = experimentDataDeleter
     self.metadataManager = metadataManager
     self.sensorDataManager = sensorDataManager
   }
@@ -105,19 +109,19 @@ class ExperimentStateManager {
   ///
   /// - Parameter experimentID: An experiment ID.
   func deleteExperiment(withID experimentID: String) {
-    guard let (removedExperiment, removedOverview) =
-        metadataManager.removeExperiment(withID: experimentID) else {
+    guard let deletedExperiment =
+        experimentDataDeleter.performUndoableDeleteForExperiment(withID: experimentID) else {
       return
     }
 
     // Only allow undo if the experiment is not empty.
     var undoBlock: (() -> Void)?
-    if !metadataManager.isExperimentEmpty(removedExperiment) {
-      undoBlock = { self.restoreExperiment(removedExperiment, withOverview: removedOverview) }
+    if !deletedExperiment.isEmpty {
+      undoBlock = { self.restoreExperiment(deletedExperiment) }
     }
 
     notifyListeners { (listener) in
-      listener.experimentStateDeleted(removedExperiment,
+      listener.experimentStateDeleted(deletedExperiment,
                                       undoBlock: undoBlock)
     }
   }
@@ -126,23 +130,20 @@ class ExperimentStateManager {
 
   /// Restores a deleted experiment.
   ///
-  /// - Parameters:
-  ///   - experiment: The experiment to restore.
-  ///   - overview: The overview corresponding to the experiment.
-  private func restoreExperiment(_ experiment: Experiment,
-                                 withOverview overview: ExperimentOverview) {
-    metadataManager.restoreExperiment(forOverview: overview)
+  /// - Parameter deletedExperiment: The deleted experiment to restore.
+  private func restoreExperiment(_ deletedExperiment: DeletedExperiment) {
+    let (experiment, overview) = experimentDataDeleter.restoreExperiment(deletedExperiment)
 
     notifyListeners { (listener) in
       listener.experimentStateRestored(experiment, overview: overview)
     }
   }
 
-  /// Deletes all trial sensor data for an experiment.
+  /// Confirms an experiment should be permanently deleted.
   ///
-  /// - Parameter experiment: An experiment.
-  func deleteTrialDataForExperiment(_ experiment: Experiment) {
-    experiment.trials.forEach({ sensorDataManager.removeData(forTrialID: $0.ID) })
+  /// - Parameter deletedExperiment: A deleted experiment.
+  func confirmDeletion(for deletedExperiment: DeletedExperiment) {
+    experimentDataDeleter.confirmDeletion(for: deletedExperiment)
   }
 
   /// Notifies all listeners by calling the given block on each valid listener.

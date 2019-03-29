@@ -40,6 +40,10 @@ class AudioCapture: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
     }
   }
 
+  var isInterrupted: Bool {
+    return captureSession.isInterrupted
+  }
+
   private let captureSession = AVCaptureSession()
   private let microphone = AVCaptureDevice.default(for: .audio)
   private var sampleBufferUpdateBlock: SampleBufferUpdateBlock?

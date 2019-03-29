@@ -249,21 +249,10 @@ class SnapshotDetailViewController: MaterialHeaderCollectionViewController,
     super.viewDidAppear(animated)
 
     if shouldJumpToCaptionOnLoad {
-      let indexPath = IndexPath(item: 0, section: SnapshotDataSource.Section.caption.rawValue)
-      // First, ensure we've scrolled to the bottom of the view because snapshots can easily be
-      // higher than the available view, which means the caption cell is not visible and cannot
-      // be made first responder yet.
-      collectionView?.scrollToItem(at: indexPath, at: .top, animated: false)
-
-      // Force a loop iteration so the view has been scrolled first.
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-        guard let captionCell = self.collectionView?.cellForItem(at: indexPath)
-            as? NoteDetailEditCaptionCell else { return }
-        // Make the caption cell take first responder, then scroll to the item because the keyboard
-        // animation will hide it.
-        captionCell.textField.becomeFirstResponder()
-        self.collectionView?.scrollToItem(at: indexPath, at: .top, animated: false)
-      }
+      guard let captionCell = collectionView?.cellForItem(at:
+          IndexPath(item: 0, section: SnapshotDataSource.Section.caption.rawValue))
+          as? NoteDetailEditCaptionCell else { return }
+      captionCell.textField.becomeFirstResponder()
       shouldJumpToCaptionOnLoad = false
     }
   }

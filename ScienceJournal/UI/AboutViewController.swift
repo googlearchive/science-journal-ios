@@ -126,59 +126,62 @@ class AboutViewController: MaterialHeaderCollectionViewController {
   @objc private func closeButtonPressed() {
     dismiss(animated: true)
   }
+}
 
-  // MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
-  override func collectionView(_ collectionView: UICollectionView,
-                               numberOfItemsInSection section: Int) -> Int {
-    return rows.count
-  }
-
-  override func collectionView(_ collectionView: UICollectionView,
-                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
-                                                  for: indexPath)
-    if let textCell = cell as? MDCCollectionViewTextCell {
-      let rowData = rows[indexPath.row]
-      textCell.textLabel?.text = rowData.title
-      textCell.detailTextLabel?.text = rowData.description
-      textCell.accessibilityLabel = rowData.accessibilityLabel
-      textCell.accessibilityHint = rowData.accessibilityHint
-      textCell.isAccessibilityElement = true
-      textCell.accessibilityTraits = rowData.accessibilityTrait
+extension AboutViewController {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        return rows.count
     }
-    return cell
-  }
-
-  override func collectionView(_ collectionView: UICollectionView,
-                               cellHeightAt indexPath: IndexPath) -> CGFloat {
-    let rowData = rows[indexPath.row]
-    if rowData.description != nil {
-      return MDCCellDefaultTwoLineHeight
-    } else {
-      return MDCCellDefaultOneLineHeight
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
+                                                      for: indexPath)
+        if let textCell = cell as? MDCCollectionViewTextCell {
+            let rowData = rows[indexPath.row]
+            textCell.textLabel?.text = rowData.title
+            textCell.detailTextLabel?.text = rowData.description
+            textCell.accessibilityLabel = rowData.accessibilityLabel
+            textCell.accessibilityHint = rowData.accessibilityHint
+            textCell.isAccessibilityElement = true
+            textCell.accessibilityTraits = rowData.accessibilityTrait
+        }
+        return cell
     }
-  }
-
-  // MARK: - UICollectionViewDelegate
-
-  override func collectionView(_ collectionView: UICollectionView,
-                               didSelectItemAt indexPath: IndexPath) {
-    let rowData = rows[indexPath.row]
-    switch rowData {
-    case .website, .privacy, .terms:
-      if let stringURL = rowData.description, let url = URL(string: stringURL) {
-        UIApplication.shared.open(url)
-      }
-      break
-    case .licenses:
-      navigationController?.pushViewController(
-          LicensesViewController(analyticsReporter: analyticsReporter),
-          animated: true)
-      break
-    default:
-      return
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellHeightAt indexPath: IndexPath) -> CGFloat {
+        let rowData = rows[indexPath.row]
+        if rowData.description != nil {
+            return MDCCellDefaultTwoLineHeight
+        } else {
+            return MDCCellDefaultOneLineHeight
+        }
     }
-  }
+}
 
+// MARK: - UICollectionViewDelegate
+
+extension AboutViewController {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didSelectItemAt indexPath: IndexPath) {
+        let rowData = rows[indexPath.row]
+        switch rowData {
+        case .website, .privacy, .terms:
+            if let stringURL = rowData.description, let url = URL(string: stringURL) {
+                UIApplication.shared.open(url)
+            }
+            break
+        case .licenses:
+            navigationController?.pushViewController(
+                LicensesViewController(analyticsReporter: analyticsReporter),
+                animated: true)
+            break
+        default:
+            return
+        }
+    }
 }

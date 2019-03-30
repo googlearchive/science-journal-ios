@@ -331,10 +331,6 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
                                            object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Loads data and resets the view to show the entire dataset.
   ///
   /// - Parameters:

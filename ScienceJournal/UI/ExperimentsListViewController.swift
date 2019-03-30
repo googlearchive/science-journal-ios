@@ -218,10 +218,6 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
 

@@ -79,10 +79,6 @@ class AddTrialNoteViewController: ScienceJournalViewController, UITextFieldDeleg
 
   // MARK: - Public
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
 

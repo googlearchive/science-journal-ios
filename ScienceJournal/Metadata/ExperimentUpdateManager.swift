@@ -63,10 +63,6 @@ class ExperimentUpdateManager {
         object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Adds the given object as a listener to experiment changes. Listener must conform to
   /// ExperimentUpdateListener to actually recieve updates. Maintains a weak reference to listeners.
   ///

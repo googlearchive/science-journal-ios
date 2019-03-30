@@ -197,10 +197,6 @@ public class MetadataManager {
         object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Returns the assets directory URL for a specific experiment.
   ///
   /// - Parameter experiment: An experiment.

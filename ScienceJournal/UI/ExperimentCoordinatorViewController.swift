@@ -264,7 +264,6 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   deinit {
     drawerVC?.removeDrawerPositionListener(self)
-    NotificationCenter.default.removeObserver(self)
   }
 
   override func viewDidLoad() {

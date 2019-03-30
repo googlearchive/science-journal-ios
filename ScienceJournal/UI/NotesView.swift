@@ -133,10 +133,6 @@ class NotesView: UIView {
     setSendButtonStyle(.toolbar)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func safeAreaInsetsDidChange() {
     updateActionBarHeight()
     updateTextViewTextContainerInset()

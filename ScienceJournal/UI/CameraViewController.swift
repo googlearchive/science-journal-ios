@@ -115,10 +115,6 @@ open class CameraViewController: ScienceJournalViewController, DrawerItemViewCon
 
   // MARK: - Public
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override open func viewDidLoad() {
     super.viewDidLoad()
 

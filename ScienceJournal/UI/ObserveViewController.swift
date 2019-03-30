@@ -228,10 +228,6 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Adds the note to all recording charts.
   ///
   /// - Parameter note: A display note.

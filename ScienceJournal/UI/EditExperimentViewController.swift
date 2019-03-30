@@ -105,10 +105,6 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(red: 0.937, green: 0.933, blue: 0.933, alpha: 1.0)

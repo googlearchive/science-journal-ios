@@ -52,10 +52,6 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
 
   // MARK: - Public
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override open func loadView() {
     view = NotesView()
     notesView.textView.delegate = self

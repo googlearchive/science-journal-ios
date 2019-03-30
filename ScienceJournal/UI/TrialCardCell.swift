@@ -49,10 +49,6 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
     addNotificationObservers()
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func prepareForReuse() {
     recordedTrialCardView.trialCardNotesView.removeAllNotes()
   }

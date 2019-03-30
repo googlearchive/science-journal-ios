@@ -71,10 +71,6 @@ class AudioSensor: Sensor {
                                            object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func start() {
     if state != .interrupted {
       state = .loading

@@ -77,10 +77,6 @@ class AudioCapture: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
                                            object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Prepares the audio capture to run, checks for microphone permission, and starts running the
   /// audio capture if it has microphone permission. After calling start, it must be balanced with a
   /// call to endUsing when finished using the audio capture.

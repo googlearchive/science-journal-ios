@@ -153,10 +153,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override open func viewDidLoad() {
     super.viewDidLoad()
 

@@ -136,8 +136,6 @@
 		5C52C0AC1FB10072007B4150 /* CropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C52C0AB1FB10072007B4150 /* CropOverlayView.swift */; };
 		5C55E4E01ECF825800181E2D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C55E4DF1ECF825800181E2D /* libsqlite3.tbd */; };
 		5C5C0F301F9A7D5E00886C4C /* JumpToNowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB340411F97E29000370734 /* JumpToNowButton.swift */; };
-		5C612F0F20AC6A330097CCAB /* ExperimentLibrary.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C612F0D20AC6A320097CCAB /* ExperimentLibrary.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5C612F1220AC6A430097CCAB /* LocalSyncStatus.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C612F1120AC6A420097CCAB /* LocalSyncStatus.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5C612F1420AC7E8E0097CCAB /* ExperimentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C612F1320AC7E8E0097CCAB /* ExperimentLibrary.swift */; };
 		5C61A2B520BF4DC6007E7F3D /* ExperimentChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A2B420BF4DC6007E7F3D /* ExperimentChange.swift */; };
 		5C61A2BA20C572D2007E7F3D /* NoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A2B920C572D2007E7F3D /* NoteTest.swift */; };
@@ -160,7 +158,6 @@
 		5C6C62651EE0819A00798989 /* SnapshotNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C62641EE0819A00798989 /* SnapshotNote.swift */; };
 		5C6C62671EE09D7200798989 /* SensorSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C62661EE09D7200798989 /* SensorSnapshot.swift */; };
 		5C6CCE3F1FCCCD3A008987F9 /* EditTimestampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CCE3E1FCCCD3A008987F9 /* EditTimestampViewController.swift */; };
-		5C6E574C20348D8300EE8457 /* ScalarSensorData.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E574A20348D8200EE8457 /* ScalarSensorData.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5C6E574E20349CB700EE8457 /* GetTrialSensorDumpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E574D20349CB700EE8457 /* GetTrialSensorDumpOperation.swift */; };
 		5C6E575020349FB700EE8457 /* GetSensorDataAsProtoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E574F20349FB700EE8457 /* GetSensorDataAsProtoOperation.swift */; };
 		5C6E57522034B93100EE8457 /* ExportExperimentSensorDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E57512034B93100EE8457 /* ExportExperimentSensorDataOperation.swift */; };
@@ -338,29 +335,6 @@
 		687232231F703F8E0080E57F /* MaterialLeftBarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687232221F703F8E0080E57F /* MaterialLeftBarButtonItems.swift */; };
 		687DFEB11F35325B002E668A /* DisabledInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DFEB01F35325B002E668A /* DisabledInputView.swift */; };
 		687FA89A202BEB41004C1D04 /* Strings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 687FA899202BEB41004C1D04 /* Strings.bundle */; };
-		687FAA04202C1162004C1D04 /* Experiment.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9D4202C1153004C1D04 /* Experiment.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA05202C1162004C1D04 /* Caption.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9D5202C1154004C1D04 /* Caption.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA06202C1162004C1D04 /* Version.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9D6202C1154004C1D04 /* Version.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA07202C1162004C1D04 /* ScalarInputConfig.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9D7202C1154004C1D04 /* ScalarInputConfig.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA08202C1162004C1D04 /* Sensor.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9DA202C1154004C1D04 /* Sensor.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA09202C1162004C1D04 /* TextLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9DB202C1155004C1D04 /* TextLabelValue.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA0A202C1162004C1D04 /* UserMetadata.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9DE202C1155004C1D04 /* UserMetadata.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA0B202C1162004C1D04 /* SensorLayout.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9E1202C1156004C1D04 /* SensorLayout.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA0C202C1162004C1D04 /* SensorTrigger.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9E2202C1157004C1D04 /* SensorTrigger.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA0D202C1162004C1D04 /* SensorTriggerLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9E4202C1157004C1D04 /* SensorTriggerLabelValue.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA0E202C1162004C1D04 /* SnapshotLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9E6202C1158004C1D04 /* SnapshotLabelValue.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA0F202C1162004C1D04 /* BasicSensorAppearance.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9E7202C1158004C1D04 /* BasicSensorAppearance.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA11202C1162004C1D04 /* Trial.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9E9202C1159004C1D04 /* Trial.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA12202C1162004C1D04 /* DeviceSpec.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9EB202C1159004C1D04 /* DeviceSpec.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA13202C1162004C1D04 /* SensorTriggerInformation.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9EF202C115B004C1D04 /* SensorTriggerInformation.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA14202C1162004C1D04 /* IconPath.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9F0202C115B004C1D04 /* IconPath.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA15202C1162004C1D04 /* Label.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9F1202C115C004C1D04 /* Label.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA16202C1162004C1D04 /* GadgetInfo.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9F2202C115C004C1D04 /* GadgetInfo.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA17202C1162004C1D04 /* LabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9F5202C115D004C1D04 /* LabelValue.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA18202C1162004C1D04 /* PictureLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9F8202C115E004C1D04 /* PictureLabelValue.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA19202C1162004C1D04 /* SensorSpec.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9FA202C115F004C1D04 /* SensorSpec.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA1A202C1162004C1D04 /* SensorConfig.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9FF202C1161004C1D04 /* SensorConfig.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		687FAA1B202C1162004C1D04 /* InputDevice.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FAA02202C1162004C1D04 /* InputDevice.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68808F371EB25989008EABD4 /* VerifyAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68808F361EB25989008EABD4 /* VerifyAgeViewController.swift */; };
 		6880F0171F27D20E00EFF7BC /* RenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6880F0161F27D20E00EFF7BC /* RenameViewController.swift */; };
 		6880F01D1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6880F01C1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift */; };
@@ -814,10 +788,6 @@
 		5C5188A31F3D0F5F001B110A /* ZoomRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomRecorder.swift; sourceTree = "<group>"; };
 		5C52C0AB1FB10072007B4150 /* CropOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropOverlayView.swift; sourceTree = "<group>"; };
 		5C55E4DF1ECF825800181E2D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		5C612F0D20AC6A320097CCAB /* ExperimentLibrary.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperimentLibrary.pbobjc.m; path = third_party/sciencejournal/ios/Protos/ExperimentLibrary.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		5C612F0E20AC6A320097CCAB /* ExperimentLibrary.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperimentLibrary.pbobjc.h; path = third_party/sciencejournal/ios/Protos/ExperimentLibrary.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		5C612F1020AC6A420097CCAB /* LocalSyncStatus.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalSyncStatus.pbobjc.h; path = third_party/sciencejournal/ios/Protos/LocalSyncStatus.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		5C612F1120AC6A420097CCAB /* LocalSyncStatus.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalSyncStatus.pbobjc.m; path = third_party/sciencejournal/ios/Protos/LocalSyncStatus.pbobjc.m; sourceTree = SOURCE_ROOT; };
 		5C612F1320AC7E8E0097CCAB /* ExperimentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentLibrary.swift; sourceTree = "<group>"; };
 		5C61A2B420BF4DC6007E7F3D /* ExperimentChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentChange.swift; sourceTree = "<group>"; };
 		5C61A2B920C572D2007E7F3D /* NoteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTest.swift; sourceTree = "<group>"; };
@@ -840,8 +810,6 @@
 		5C6C62641EE0819A00798989 /* SnapshotNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotNote.swift; sourceTree = "<group>"; };
 		5C6C62661EE09D7200798989 /* SensorSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorSnapshot.swift; sourceTree = "<group>"; };
 		5C6CCE3E1FCCCD3A008987F9 /* EditTimestampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimestampViewController.swift; sourceTree = "<group>"; };
-		5C6E574A20348D8200EE8457 /* ScalarSensorData.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScalarSensorData.pbobjc.m; path = third_party/sciencejournal/ios/Protos/ScalarSensorData.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		5C6E574B20348D8200EE8457 /* ScalarSensorData.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScalarSensorData.pbobjc.h; path = third_party/sciencejournal/ios/Protos/ScalarSensorData.pbobjc.h; sourceTree = SOURCE_ROOT; };
 		5C6E574D20349CB700EE8457 /* GetTrialSensorDumpOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrialSensorDumpOperation.swift; sourceTree = "<group>"; };
 		5C6E574F20349FB700EE8457 /* GetSensorDataAsProtoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSensorDataAsProtoOperation.swift; sourceTree = "<group>"; };
 		5C6E57512034B93100EE8457 /* ExportExperimentSensorDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportExperimentSensorDataOperation.swift; sourceTree = "<group>"; };
@@ -1026,52 +994,6 @@
 		687232221F703F8E0080E57F /* MaterialLeftBarButtonItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialLeftBarButtonItems.swift; sourceTree = "<group>"; };
 		687DFEB01F35325B002E668A /* DisabledInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisabledInputView.swift; sourceTree = "<group>"; };
 		687FA899202BEB41004C1D04 /* Strings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Strings.bundle; sourceTree = "<group>"; };
-		687FA9D4202C1153004C1D04 /* Experiment.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Experiment.pbobjc.m; path = third_party/sciencejournal/ios/Protos/Experiment.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9D5202C1154004C1D04 /* Caption.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Caption.pbobjc.m; path = third_party/sciencejournal/ios/Protos/Caption.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9D6202C1154004C1D04 /* Version.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Version.pbobjc.m; path = third_party/sciencejournal/ios/Protos/Version.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9D7202C1154004C1D04 /* ScalarInputConfig.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScalarInputConfig.pbobjc.m; path = third_party/sciencejournal/ios/Protos/ScalarInputConfig.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9D8202C1154004C1D04 /* Caption.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Caption.pbobjc.h; path = third_party/sciencejournal/ios/Protos/Caption.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9D9202C1154004C1D04 /* Experiment.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Experiment.pbobjc.h; path = third_party/sciencejournal/ios/Protos/Experiment.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9DA202C1154004C1D04 /* Sensor.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sensor.pbobjc.m; path = third_party/sciencejournal/ios/Protos/Sensor.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9DB202C1155004C1D04 /* TextLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextLabelValue.pbobjc.m; path = third_party/sciencejournal/ios/Protos/TextLabelValue.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9DC202C1155004C1D04 /* UserMetadata.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserMetadata.pbobjc.h; path = third_party/sciencejournal/ios/Protos/UserMetadata.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9DE202C1155004C1D04 /* UserMetadata.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserMetadata.pbobjc.m; path = third_party/sciencejournal/ios/Protos/UserMetadata.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9DF202C1156004C1D04 /* PictureLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PictureLabelValue.pbobjc.h; path = third_party/sciencejournal/ios/Protos/PictureLabelValue.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9E0202C1156004C1D04 /* GadgetInfo.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GadgetInfo.pbobjc.h; path = third_party/sciencejournal/ios/Protos/GadgetInfo.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9E1202C1156004C1D04 /* SensorLayout.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorLayout.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SensorLayout.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9E2202C1157004C1D04 /* SensorTrigger.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorTrigger.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SensorTrigger.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9E3202C1157004C1D04 /* SensorTriggerLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorTriggerLabelValue.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SensorTriggerLabelValue.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9E4202C1157004C1D04 /* SensorTriggerLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorTriggerLabelValue.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SensorTriggerLabelValue.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9E5202C1157004C1D04 /* SnapshotLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SnapshotLabelValue.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SnapshotLabelValue.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9E6202C1158004C1D04 /* SnapshotLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SnapshotLabelValue.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SnapshotLabelValue.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9E7202C1158004C1D04 /* BasicSensorAppearance.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicSensorAppearance.pbobjc.m; path = third_party/sciencejournal/ios/Protos/BasicSensorAppearance.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9E9202C1159004C1D04 /* Trial.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trial.pbobjc.m; path = third_party/sciencejournal/ios/Protos/Trial.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9EA202C1159004C1D04 /* Label.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Label.pbobjc.h; path = third_party/sciencejournal/ios/Protos/Label.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9EB202C1159004C1D04 /* DeviceSpec.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceSpec.pbobjc.m; path = third_party/sciencejournal/ios/Protos/DeviceSpec.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9EC202C115A004C1D04 /* IconPath.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconPath.pbobjc.h; path = third_party/sciencejournal/ios/Protos/IconPath.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9ED202C115A004C1D04 /* SensorSpec.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorSpec.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SensorSpec.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9EE202C115B004C1D04 /* SensorTrigger.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorTrigger.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SensorTrigger.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9EF202C115B004C1D04 /* SensorTriggerInformation.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorTriggerInformation.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SensorTriggerInformation.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9F0202C115B004C1D04 /* IconPath.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconPath.pbobjc.m; path = third_party/sciencejournal/ios/Protos/IconPath.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9F1202C115C004C1D04 /* Label.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Label.pbobjc.m; path = third_party/sciencejournal/ios/Protos/Label.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9F2202C115C004C1D04 /* GadgetInfo.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GadgetInfo.pbobjc.m; path = third_party/sciencejournal/ios/Protos/GadgetInfo.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9F3202C115C004C1D04 /* Sensor.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sensor.pbobjc.h; path = third_party/sciencejournal/ios/Protos/Sensor.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9F4202C115D004C1D04 /* SensorLayout.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorLayout.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SensorLayout.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9F5202C115D004C1D04 /* LabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelValue.pbobjc.m; path = third_party/sciencejournal/ios/Protos/LabelValue.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9F6202C115E004C1D04 /* Trial.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Trial.pbobjc.h; path = third_party/sciencejournal/ios/Protos/Trial.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9F7202C115E004C1D04 /* InputDevice.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputDevice.pbobjc.h; path = third_party/sciencejournal/ios/Protos/InputDevice.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9F8202C115E004C1D04 /* PictureLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureLabelValue.pbobjc.m; path = third_party/sciencejournal/ios/Protos/PictureLabelValue.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9F9202C115E004C1D04 /* SensorConfig.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorConfig.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SensorConfig.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9FA202C115F004C1D04 /* SensorSpec.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorSpec.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SensorSpec.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FA9FB202C115F004C1D04 /* TextLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextLabelValue.pbobjc.h; path = third_party/sciencejournal/ios/Protos/TextLabelValue.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9FC202C1160004C1D04 /* SensorTriggerInformation.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorTriggerInformation.pbobjc.h; path = third_party/sciencejournal/ios/Protos/SensorTriggerInformation.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9FD202C1160004C1D04 /* BasicSensorAppearance.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicSensorAppearance.pbobjc.h; path = third_party/sciencejournal/ios/Protos/BasicSensorAppearance.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9FE202C1160004C1D04 /* DeviceSpec.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceSpec.pbobjc.h; path = third_party/sciencejournal/ios/Protos/DeviceSpec.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FA9FF202C1161004C1D04 /* SensorConfig.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorConfig.pbobjc.m; path = third_party/sciencejournal/ios/Protos/SensorConfig.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FAA00202C1161004C1D04 /* Version.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Version.pbobjc.h; path = third_party/sciencejournal/ios/Protos/Version.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FAA01202C1161004C1D04 /* ScalarInputConfig.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScalarInputConfig.pbobjc.h; path = third_party/sciencejournal/ios/Protos/ScalarInputConfig.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		687FAA02202C1162004C1D04 /* InputDevice.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputDevice.pbobjc.m; path = third_party/sciencejournal/ios/Protos/InputDevice.pbobjc.m; sourceTree = SOURCE_ROOT; };
-		687FAA03202C1162004C1D04 /* LabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelValue.pbobjc.h; path = third_party/sciencejournal/ios/Protos/LabelValue.pbobjc.h; sourceTree = SOURCE_ROOT; };
 		68808F361EB25989008EABD4 /* VerifyAgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAgeViewController.swift; sourceTree = "<group>"; };
 		6880F0161F27D20E00EFF7BC /* RenameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenameViewController.swift; sourceTree = "<group>"; };
 		6880F01C1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCardCellDelegate.swift; sourceTree = "<group>"; };
@@ -2114,65 +2036,6 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
-		687FA9D3202C113C004C1D04 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				687FA9FD202C1160004C1D04 /* BasicSensorAppearance.pbobjc.h */,
-				687FA9E7202C1158004C1D04 /* BasicSensorAppearance.pbobjc.m */,
-				687FA9D8202C1154004C1D04 /* Caption.pbobjc.h */,
-				687FA9D5202C1154004C1D04 /* Caption.pbobjc.m */,
-				687FA9FE202C1160004C1D04 /* DeviceSpec.pbobjc.h */,
-				687FA9EB202C1159004C1D04 /* DeviceSpec.pbobjc.m */,
-				687FA9D9202C1154004C1D04 /* Experiment.pbobjc.h */,
-				687FA9D4202C1153004C1D04 /* Experiment.pbobjc.m */,
-				5C612F0E20AC6A320097CCAB /* ExperimentLibrary.pbobjc.h */,
-				5C612F0D20AC6A320097CCAB /* ExperimentLibrary.pbobjc.m */,
-				687FA9E0202C1156004C1D04 /* GadgetInfo.pbobjc.h */,
-				687FA9F2202C115C004C1D04 /* GadgetInfo.pbobjc.m */,
-				687FA9EC202C115A004C1D04 /* IconPath.pbobjc.h */,
-				687FA9F0202C115B004C1D04 /* IconPath.pbobjc.m */,
-				687FA9F7202C115E004C1D04 /* InputDevice.pbobjc.h */,
-				687FAA02202C1162004C1D04 /* InputDevice.pbobjc.m */,
-				687FA9EA202C1159004C1D04 /* Label.pbobjc.h */,
-				687FA9F1202C115C004C1D04 /* Label.pbobjc.m */,
-				687FAA03202C1162004C1D04 /* LabelValue.pbobjc.h */,
-				687FA9F5202C115D004C1D04 /* LabelValue.pbobjc.m */,
-				5C612F1020AC6A420097CCAB /* LocalSyncStatus.pbobjc.h */,
-				5C612F1120AC6A420097CCAB /* LocalSyncStatus.pbobjc.m */,
-				687FA9DF202C1156004C1D04 /* PictureLabelValue.pbobjc.h */,
-				687FA9F8202C115E004C1D04 /* PictureLabelValue.pbobjc.m */,
-				687FAA01202C1161004C1D04 /* ScalarInputConfig.pbobjc.h */,
-				687FA9D7202C1154004C1D04 /* ScalarInputConfig.pbobjc.m */,
-				5C6E574B20348D8200EE8457 /* ScalarSensorData.pbobjc.h */,
-				5C6E574A20348D8200EE8457 /* ScalarSensorData.pbobjc.m */,
-				687FA9F3202C115C004C1D04 /* Sensor.pbobjc.h */,
-				687FA9DA202C1154004C1D04 /* Sensor.pbobjc.m */,
-				687FA9F9202C115E004C1D04 /* SensorConfig.pbobjc.h */,
-				687FA9FF202C1161004C1D04 /* SensorConfig.pbobjc.m */,
-				687FA9F4202C115D004C1D04 /* SensorLayout.pbobjc.h */,
-				687FA9E1202C1156004C1D04 /* SensorLayout.pbobjc.m */,
-				687FA9ED202C115A004C1D04 /* SensorSpec.pbobjc.h */,
-				687FA9FA202C115F004C1D04 /* SensorSpec.pbobjc.m */,
-				687FA9EE202C115B004C1D04 /* SensorTrigger.pbobjc.h */,
-				687FA9E2202C1157004C1D04 /* SensorTrigger.pbobjc.m */,
-				687FA9FC202C1160004C1D04 /* SensorTriggerInformation.pbobjc.h */,
-				687FA9EF202C115B004C1D04 /* SensorTriggerInformation.pbobjc.m */,
-				687FA9E3202C1157004C1D04 /* SensorTriggerLabelValue.pbobjc.h */,
-				687FA9E4202C1157004C1D04 /* SensorTriggerLabelValue.pbobjc.m */,
-				687FA9E5202C1157004C1D04 /* SnapshotLabelValue.pbobjc.h */,
-				687FA9E6202C1158004C1D04 /* SnapshotLabelValue.pbobjc.m */,
-				687FA9FB202C115F004C1D04 /* TextLabelValue.pbobjc.h */,
-				687FA9DB202C1155004C1D04 /* TextLabelValue.pbobjc.m */,
-				687FA9F6202C115E004C1D04 /* Trial.pbobjc.h */,
-				687FA9E9202C1159004C1D04 /* Trial.pbobjc.m */,
-				687FA9DC202C1155004C1D04 /* UserMetadata.pbobjc.h */,
-				687FA9DE202C1155004C1D04 /* UserMetadata.pbobjc.m */,
-				687FAA00202C1161004C1D04 /* Version.pbobjc.h */,
-				687FA9D6202C1154004C1D04 /* Version.pbobjc.m */,
-			);
-			name = Generated;
-			sourceTree = "<group>";
-		};
 		688509551F07128E00D3A1A3 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -2425,7 +2288,6 @@
 				8B111F691E41225A000400F1 /* Extensions */,
 				68AC989D1F57A5930034ED1E /* Feedback */,
 				5C804CB81FDEEFD900F8D1C6 /* Formatters */,
-				687FA9D3202C113C004C1D04 /* Generated */,
 				68EBA6E91E20421E0089FF7F /* Info.plist */,
 				68EBA6E61E20421E0089FF7F /* LaunchScreen.storyboard */,
 				68E3618A203F7F0900B1B979 /* main.swift */,
@@ -3472,7 +3334,6 @@
 				8BFCF97C1FAA2B5E0030A6DC /* ArchivedFlagCell.swift in Sources */,
 				68B32A321F9E89BA0067DAF3 /* SettingsCell.swift in Sources */,
 				68CD50D71E57DD4E005E928F /* ObserveDataSource.swift in Sources */,
-				687FAA05202C1162004C1D04 /* Caption.pbobjc.m in Sources */,
 				5C11AE6E1EB7D8800077F752 /* BLESensorInterface.swift in Sources */,
 				5CE521AD20A4A7B300767C8E /* UserFlowViewController.swift in Sources */,
 				8B4B60161E44DADF009AFB1B /* MotionSensor.swift in Sources */,
@@ -3481,7 +3342,6 @@
 				5C2E4E911EA16CE100F9AA6D /* SensorSettingsDataSource.swift in Sources */,
 				48C1DF2C222477010049629D /* AnalyticsEvent.swift in Sources */,
 				8B4B60141E44DADA009AFB1B /* AccelerometerSensor.swift in Sources */,
-				687FAA1A202C1162004C1D04 /* SensorConfig.pbobjc.m in Sources */,
 				8B9319641EF9A11900A078F4 /* DrawerPosition.swift in Sources */,
 				8B35F50A1EAA6C220032FE15 /* RotatingExpandButton.swift in Sources */,
 				8B111F641E41212B000400F1 /* Sensor.swift in Sources */,
@@ -3499,7 +3359,6 @@
 				8BDC0281201FA7DA00BB0059 /* PitchSensor.swift in Sources */,
 				8B9F06131EF42CE10030B011 /* TriggerNote.swift in Sources */,
 				68C45E7A1EEF51510046E430 /* TrialDetailViewController.swift in Sources */,
-				687FAA0E202C1162004C1D04 /* SnapshotLabelValue.pbobjc.m in Sources */,
 				68ACCC491F9565F800FDCD38 /* NumberFormatter+ScienceJournal.swift in Sources */,
 				680865791EAEC970005F54E1 /* LicensesViewController.swift in Sources */,
 				681688341F32996E00CC2B5F /* UIViewController+ScienceJournal.swift in Sources */,
@@ -3511,13 +3370,11 @@
 				5CE6388E20ADC1A4004A712F /* SignInFlowViewController.swift in Sources */,
 				8BA65D70206160A90071C148 /* RecordedTrialCardView.swift in Sources */,
 				6813334E1EC6423200ED7A32 /* SensorPickerView.swift in Sources */,
-				687FAA19202C1162004C1D04 /* SensorSpec.pbobjc.m in Sources */,
 				8B031EEE2098C39C008F6F28 /* ExistingDataOptionsCell.swift in Sources */,
 				8B6054842049C4840036C1E4 /* AlphaFadeTransitionController.swift in Sources */,
 				8BA5BF341F44904F00EB77E8 /* UIPanGestureRecognizer+ScienceJournal.swift in Sources */,
 				5C4730662110DE6D0066A550 /* WriteMissingSensorDataProtosOperation.swift in Sources */,
 				5C2E4E951EA6B1A700F9AA6D /* GSJBleSensorConfig+ScienceJournal.swift in Sources */,
-				687FAA1B202C1162004C1D04 /* InputDevice.pbobjc.m in Sources */,
 				683E06671F0AF6E600D02790 /* PictureDetailViewController.swift in Sources */,
 				8B1791981F0A9871008C0B31 /* TriggerEditViewController.swift in Sources */,
 				8BF4D0042127366A00752645 /* MarkExperimentDeletedOperation.swift in Sources */,
@@ -3543,11 +3400,8 @@
 				D59CA3DC219F51350082A27B /* Int+ScienceJournal.swift in Sources */,
 				5C612F1420AC7E8E0097CCAB /* ExperimentLibrary.swift in Sources */,
 				689155E61F0C5DDB006EEDD1 /* MaterialBarButtonItem.swift in Sources */,
-				5C6E574C20348D8300EE8457 /* ScalarSensorData.pbobjc.m in Sources */,
 				5C0EDCF61FEABD8C0014E825 /* ExperimentCoordinatorViewController.swift in Sources */,
-				687FAA12202C1162004C1D04 /* DeviceSpec.pbobjc.m in Sources */,
 				8B5BE2DE1E942A6700C32B74 /* SensorTriggerEvaluator.swift in Sources */,
-				5C612F0F20AC6A330097CCAB /* ExperimentLibrary.pbobjc.m in Sources */,
 				68279C221ED63FD1003F778B /* MenuButton.swift in Sources */,
 				5C3245241EF090DD00E8664B /* UICollectionView+PerformChanges.swift in Sources */,
 				6813334D1EC6423200ED7A32 /* SensorCardHeaderView.swift in Sources */,
@@ -3559,7 +3413,6 @@
 				8B2319372097B0C60053181B /* ExistingDataOptionsViewController.swift in Sources */,
 				6806592C1EC3BD330090670C /* SnapshotCardCell.swift in Sources */,
 				689880391ED78BC1000C6FB8 /* TrialCardHeaderView.swift in Sources */,
-				687FAA08202C1162004C1D04 /* Sensor.pbobjc.m in Sources */,
 				5C7ACB9F1E9D4C9000B22474 /* BLEPeripheralInterface.swift in Sources */,
 				5CB2CF3B223C2B4300F73F6B /* ExperimentDataDeleter.swift in Sources */,
 				8B347446203F4A8A00E73378 /* PitchSensorAnimationView.swift in Sources */,
@@ -3578,7 +3431,6 @@
 				5C7DE8C01EC116130015F407 /* PlaybackOverlayView.swift in Sources */,
 				68EACA721EAFC96300BB5892 /* SidebarViewController.swift in Sources */,
 				8BE81BE91EB76B6D00EEC3BB /* CameraViewController.swift in Sources */,
-				687FAA13202C1162004C1D04 /* SensorTriggerInformation.pbobjc.m in Sources */,
 				68EACA711EAFC96300BB5892 /* SidebarHeaderCell.swift in Sources */,
 				681688321F30FF6E00CC2B5F /* ImageSelectorDelegate.swift in Sources */,
 				8B49DCA41EB1223D000A622E /* NotesView.swift in Sources */,
@@ -3596,12 +3448,10 @@
 				68CD50D81E57DD51005E928F /* SensorCardCell.swift in Sources */,
 				68BD95621E8DA45100FEB0B2 /* NotesSoundType.swift in Sources */,
 				68BD95611E8DA45100FEB0B2 /* DefaultSoundType.swift in Sources */,
-				687FAA11202C1162004C1D04 /* Trial.pbobjc.m in Sources */,
 				5C804CBA1FDEF02B00F8D1C6 /* TimestampFormatter.swift in Sources */,
 				5CF32A401FA7AFA60035A236 /* CALayer+ScienceJournal.swift in Sources */,
 				489182C31E4542CE00E91D73 /* ChartView.swift in Sources */,
 				8B994A801F91407000E9A709 /* CameraCaptureSessionManager.swift in Sources */,
-				687FAA15202C1162004C1D04 /* Label.pbobjc.m in Sources */,
 				5CCB62C01F8E84F800F9BB7D /* TrialShareSettingsViewController.swift in Sources */,
 				5CFC8E66204A076800A674C2 /* PopUpMenuAction+CommonActions.swift in Sources */,
 				5C7B87C31FCDEFD200EDEF1D /* CropRangeViewController.swift in Sources */,
@@ -3647,7 +3497,6 @@
 				8B2D60841F27D4F500F21EF9 /* UIViewController+DisplayType.swift in Sources */,
 				8BE81BEC1EB7A7D300EEC3BB /* PhotoCapturer.swift in Sources */,
 				485ED07D21FA7D6700017071 /* RemoteConfigFlagProtocol.swift in Sources */,
-				687FAA0A202C1162004C1D04 /* UserMetadata.pbobjc.m in Sources */,
 				5C5188A41F3D0F5F001B110A /* ZoomRecorder.swift in Sources */,
 				5CA8DAEF202E59E500247FD8 /* BlockObserver.swift in Sources */,
 				5C32452F1EF1DA5700E8664B /* DisplayTrialViewData.swift in Sources */,
@@ -3662,12 +3511,10 @@
 				8B6054822049BC730036C1E4 /* SpinnerViewController.swift in Sources */,
 				5CE521A6209D052A00767C8E /* AccountUserManager.swift in Sources */,
 				689C321A1EF9DE99002C824C /* TriggerCardCell.swift in Sources */,
-				687FAA16202C1162004C1D04 /* GadgetInfo.pbobjc.m in Sources */,
 				5CBD9ABC1F7425A700D22D21 /* ComposeFilter.swift in Sources */,
 				489182C11E4542CE00E91D73 /* ChartController.swift in Sources */,
 				688509571F0712AD00D3A1A3 /* TextNoteDetailViewController.swift in Sources */,
 				68CA86371EC4F06900E13AE0 /* TextNoteCardCell.swift in Sources */,
-				5C612F1220AC6A430097CCAB /* LocalSyncStatus.pbobjc.m in Sources */,
 				8B111F6D1E4122B9000400F1 /* AudioSensor.swift in Sources */,
 				8B5938A31ECB59B600531928 /* ExperimentCardCaptionView.swift in Sources */,
 				8BA5BF361F44906E00EB77E8 /* DrawerPanner.swift in Sources */,
@@ -3675,7 +3522,6 @@
 				5CBD9AAD1F6C836600D22D21 /* OptionSelectorView.swift in Sources */,
 				8B1791D11F140F22008C0B31 /* TriggerValueEntryView.swift in Sources */,
 				5C2C2A2F20373014007F2FA5 /* UnzipOperation.swift in Sources */,
-				687FAA0C202C1162004C1D04 /* SensorTrigger.pbobjc.m in Sources */,
 				8B244F441E661AC100FC03B5 /* DataModel.xcdatamodeld in Sources */,
 				68EB69FB1E5E3BC10040C06A /* ObserveFooterCell.swift in Sources */,
 				5C85CA5D1F2FD6D9005FADA0 /* AddTrialNoteViewController.swift in Sources */,
@@ -3686,7 +3532,6 @@
 				688DC94C1EEFB01000D5A7E4 /* TrialDetailHeaderCell.swift in Sources */,
 				5C7BC2DC20C9A00800CACFAB /* DriveConstructor.swift in Sources */,
 				8B65A94F2225923700D1FDF9 /* LoadingViewController.swift in Sources */,
-				687FAA17202C1162004C1D04 /* LabelValue.pbobjc.m in Sources */,
 				680659201EC2CE130090670C /* SensorStatsView.swift in Sources */,
 				5C5C0F301F9A7D5E00886C4C /* JumpToNowButton.swift in Sources */,
 				8B244F4A1E66231200FC03B5 /* Managed.swift in Sources */,
@@ -3695,7 +3540,6 @@
 				68E3C8CE1FD72A7400255ADF /* RatingsPromptManager.swift in Sources */,
 				683171581F0DE09100E641B4 /* PictureInfoViewController.swift in Sources */,
 				68BD95661E8DA45100FEB0B2 /* SoundTypeManager.swift in Sources */,
-				687FAA0B202C1162004C1D04 /* SensorLayout.pbobjc.m in Sources */,
 				5CC813CF20D16C8700CC05E9 /* ExperimentLibraryMerger.swift in Sources */,
 				68FB61111F3A70DA008281DB /* MaterialFloatingSpinner.swift in Sources */,
 				8BC4D5BA1EBB7B160086906D /* RecordButtonView.swift in Sources */,
@@ -3751,7 +3595,6 @@
 				68BD95631E8DA45100FEB0B2 /* PitchedSoundType.swift in Sources */,
 				8BCCAD541EDF367C00278F05 /* PopUpMenuViewController.swift in Sources */,
 				8BC9382B206A867F00373B34 /* TrialCardNotesView.swift in Sources */,
-				687FAA14202C1162004C1D04 /* IconPath.pbobjc.m in Sources */,
 				48D81BDA2086AD0C00773294 /* DrawerConfigOpen.swift in Sources */,
 				8B9C59481F478A820063FFA9 /* UIScrollView+ScienceJournal.swift in Sources */,
 				680659261EC39AFE0090670C /* TrialCardSensorView.swift in Sources */,
@@ -3769,7 +3612,6 @@
 				8B29D3A91F9E48A700D1DDA9 /* AVAudioSessionRouteChangeReason+ScienceJournal.swift in Sources */,
 				5CC81C1C1F292EBE00AC9E9E /* TimeSelectionView.swift in Sources */,
 				6856DF791F228F5000EDFB99 /* EditExperimentPhotoLibraryViewController.swift in Sources */,
-				687FAA06202C1162004C1D04 /* Version.pbobjc.m in Sources */,
 				5C7D8AA01F0FF2B9005CD61C /* ChartStatsOverlayView.swift in Sources */,
 				D59CA3C2219CEE690082A27B /* FFTAnalyzer.swift in Sources */,
 				5C2CE58E1FC5EF440004FF9D /* CropOverlayViewController.swift in Sources */,
@@ -3802,8 +3644,6 @@
 				8B1791D41F155B91008C0B31 /* TriggerEditDelegate.swift in Sources */,
 				8B1F2F912065741100BADCD4 /* TrialCardSensorsView.swift in Sources */,
 				68EACA7E1EB0234000BB5892 /* SettingsViewController.swift in Sources */,
-				687FAA07202C1162004C1D04 /* ScalarInputConfig.pbobjc.m in Sources */,
-				687FAA18202C1162004C1D04 /* PictureLabelValue.pbobjc.m in Sources */,
 				8BDC027F201F746000BB0059 /* AudioCapture.swift in Sources */,
 				6836532D1F5F9F4300132922 /* EmptyView.swift in Sources */,
 				8B1791931F06B1F4008C0B31 /* TriggerListDataSource.swift in Sources */,
@@ -3836,14 +3676,12 @@
 				682FC3B81EDB78C300F40B11 /* RecordingAnimatedView.swift in Sources */,
 				8B1791CD1F140F22008C0B31 /* TriggerOptionEntryView.swift in Sources */,
 				68EBA6C41F0428E400B24AA8 /* TriggerDetailCell.swift in Sources */,
-				687FAA09202C1162004C1D04 /* TextLabelValue.pbobjc.m in Sources */,
 				8B79EAD321235BB6000D1E21 /* DriveSyncUserInfoConstants.swift in Sources */,
 				5C52C0AC1FB10072007B4150 /* CropOverlayView.swift in Sources */,
 				5C650B0520892A5700CB4656 /* AccountsManager.swift in Sources */,
 				68E3C8D21FD783FE00255ADF /* Bundle+ScienceJournal.swift in Sources */,
 				68BD95651E8DA45100FEB0B2 /* SoundType.swift in Sources */,
 				8BCCAD561EDF593C00278F05 /* PopUpMenuAction.swift in Sources */,
-				687FAA0D202C1162004C1D04 /* SensorTriggerLabelValue.pbobjc.m in Sources */,
 				8B0682D220A33E39003DA2A3 /* ExperimentInteractionOptions.swift in Sources */,
 				8B5114EB20B49F53005953BD /* ClaimExperimentListCell.swift in Sources */,
 				680659161EC24EBD0090670C /* String+ScienceJournal.swift in Sources */,
@@ -3858,7 +3696,6 @@
 				68CD98931F3E479100E3BF3C /* StatCalculator.swift in Sources */,
 				68A854F01ED392390010B28E /* ExperimentsListCell.swift in Sources */,
 				8B49DCA51EB1223D000A622E /* NotesViewController.swift in Sources */,
-				687FAA0F202C1162004C1D04 /* BasicSensorAppearance.pbobjc.m in Sources */,
 				6880F01D1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift in Sources */,
 				8BBFBC1D21388A29008FFBF4 /* NetworkAvailabilityDisabled.swift in Sources */,
 				5C11AE6C1EB7D8280077F752 /* BLEServiceInterface.swift in Sources */,
@@ -3867,7 +3704,6 @@
 				684DDF4A1EF30A8500F50678 /* UIView+ScienceJournal.swift in Sources */,
 				6808657E1EAECC52005F54E1 /* LicenseViewController.swift in Sources */,
 				5C6E574E20349CB700EE8457 /* GetTrialSensorDumpOperation.swift in Sources */,
-				687FAA04202C1162004C1D04 /* Experiment.pbobjc.m in Sources */,
 				8BD9721A1ECCB1AD0048DC50 /* ExperimentDataParser.swift in Sources */,
 				68E3618C203F7F0900B1B979 /* main.swift in Sources */,
 				5CAD5EEA1E8D7E06008F50C3 /* Clock.swift in Sources */,

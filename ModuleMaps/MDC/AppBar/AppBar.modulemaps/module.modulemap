@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_AppBar_AppBar" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/AppBar/src/MaterialAppBar.h"
-}

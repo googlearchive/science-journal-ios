@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_BottomSheet_BottomSheet" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/BottomSheet/src/MaterialBottomSheet.h"
-}

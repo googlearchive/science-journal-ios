@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_private_Overlay_Overlay" {
-  export *
-  header "../../../../../Pods/MaterialComponents/components/private/Overlay/src/MaterialOverlay.h"
-}

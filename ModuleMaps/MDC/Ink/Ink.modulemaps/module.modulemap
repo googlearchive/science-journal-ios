@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_Ink_Ink" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/Ink/src/MaterialInk.h"
-}

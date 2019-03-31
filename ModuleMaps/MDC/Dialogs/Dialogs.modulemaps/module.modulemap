@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_Dialogs_Dialogs" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/Dialogs/src/MaterialDialogs.h"
-}

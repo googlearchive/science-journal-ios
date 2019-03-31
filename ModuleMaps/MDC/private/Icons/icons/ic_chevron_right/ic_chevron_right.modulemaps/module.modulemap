@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_private_Icons_icons_ic_chevron_right_ic_chevron_right" {
-  export *
-  header "../../../../../../../Pods/MaterialComponents/components/private/Icons/icons/ic_chevron_right/src/MaterialIcons+ic_chevron_right.h"
-}

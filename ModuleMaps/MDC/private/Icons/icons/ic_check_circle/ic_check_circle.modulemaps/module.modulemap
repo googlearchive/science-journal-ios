@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_private_Icons_icons_ic_check_circle_ic_check_circle" {
-  export *
-  header "../../../../../../../Pods/MaterialComponents/components/private/Icons/icons/ic_check_circle/src/MaterialIcons+ic_check_circle.h"
-}

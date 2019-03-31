@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_Buttons_Buttons" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/Buttons/src/MaterialButtons.h"
-}

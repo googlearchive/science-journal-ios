@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_ActivityIndicator_ActivityIndicator" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/ActivityIndicator/src/MaterialActivityIndicator.h"
-}

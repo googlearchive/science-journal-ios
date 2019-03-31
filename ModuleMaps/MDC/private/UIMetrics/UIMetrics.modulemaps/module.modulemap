@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_private_UIMetrics_UIMetrics" {
-  export *
-  header "../../../../../Pods/MaterialComponents/components/private/UIMetrics/src/MaterialUIMetrics.h"
-}

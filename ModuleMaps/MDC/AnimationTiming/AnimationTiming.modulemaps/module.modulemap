@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_AnimationTiming_AnimationTiming" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/AnimationTiming/src/MaterialAnimationTiming.h"
-}

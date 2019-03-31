@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_PageControl_PageControl" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/PageControl/src/MaterialPageControl.h"
-}

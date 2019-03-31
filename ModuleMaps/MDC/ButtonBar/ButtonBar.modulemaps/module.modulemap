@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_ButtonBar_ButtonBar" {
-  export *
-  header "../../../../Pods/MaterialComponents/components/ButtonBar/src/MaterialButtonBar.h"
-}

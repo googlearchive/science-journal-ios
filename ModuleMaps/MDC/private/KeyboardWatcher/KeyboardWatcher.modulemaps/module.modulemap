@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_private_KeyboardWatcher_KeyboardWatcher" {
-  export *
-  header "../../../../../Pods/MaterialComponents/components/private/KeyboardWatcher/src/MaterialKeyboardWatcher.h"
-}

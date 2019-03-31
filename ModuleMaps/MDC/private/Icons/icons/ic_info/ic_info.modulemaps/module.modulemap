@@ -1,4 +1,0 @@
-module "third_party_objective_c_material_components_ios_components_private_Icons_icons_ic_info_ic_info" {
-  export *
-  header "../../../../../../../Pods/MaterialComponents/components/private/Icons/icons/ic_info/src/MaterialIcons+ic_info.h"
-}

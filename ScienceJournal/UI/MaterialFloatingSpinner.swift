@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_ActivityIndicator_ActivityIndicator
-import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
+import MaterialComponents
 
 /// A circular spinner contained in a shadowed, circular view. Best placed on top of cells or views
 /// to indicate loading after user interaction.

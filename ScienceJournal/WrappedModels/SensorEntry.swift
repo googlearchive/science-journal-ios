@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJExperiment_SensorEntry. Describes a sensor with its ID and spec.
 class SensorEntry {

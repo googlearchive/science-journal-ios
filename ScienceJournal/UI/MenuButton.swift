@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
+import MaterialComponents
 
 /// An MDCFlatButton with horizontal dots used as a menu button throughout Science Journal.
 class MenuButton: MDCFlatButton {

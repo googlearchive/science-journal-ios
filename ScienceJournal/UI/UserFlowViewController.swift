@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
-import third_party_objective_c_material_components_ios_components_Dialogs_ColorThemer
+import MaterialComponents
 
 protocol UserFlowViewControllerDelegate: class {
   /// Tells the delegate to present the account selector so a user can change or remove accounts.

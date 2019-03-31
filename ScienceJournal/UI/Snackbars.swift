@@ -15,9 +15,7 @@
  */
 
 import Foundation
-
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Snackbar_Snackbar
+import MaterialComponents
 
 /// Displays a snackbar with a button to undo an action. This is displayed for destructive actions
 /// to give the user a moment to undo that action. The undo block should encapsulate the

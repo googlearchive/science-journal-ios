@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Collections_Collections
+import MaterialComponents
 
 /// The detail view controller of a snaphot which shows all the information, sensors and values from
 /// a snapshot note, and allows for caption editing.

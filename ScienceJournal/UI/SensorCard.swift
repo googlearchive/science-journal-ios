@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// Represents a sensor card cell in the observe view.
 class SensorCard: NSObject {

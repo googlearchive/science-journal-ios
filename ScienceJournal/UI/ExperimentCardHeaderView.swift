@@ -15,10 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// The timestamp, caption and menu options view for all cells in an experiment or Trial Detail
 /// view.

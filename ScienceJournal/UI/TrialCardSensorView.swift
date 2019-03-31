@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A view composed of a sensor recording from a trial, which includes the title of the sensor,
 /// min/average/max values across the recording, the icon for the sensor used, and a chart view

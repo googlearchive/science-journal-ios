@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJGadgetInfo. Represents information about one "gadget" (can be a sensor or a
 /// host device like a phone).

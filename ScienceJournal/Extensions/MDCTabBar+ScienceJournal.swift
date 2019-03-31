@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Tabs_Tabs
+import MaterialComponents
 
 extension MDCTabBar {
 

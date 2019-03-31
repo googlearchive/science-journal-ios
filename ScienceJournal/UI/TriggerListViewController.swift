@@ -15,11 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
-import third_party_objective_c_material_components_ios_components_Collections_Collections
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 protocol TriggerListDelegate: class {
   /// Called when the trigger list view controller updates triggers.

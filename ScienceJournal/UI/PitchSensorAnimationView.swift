@@ -17,7 +17,7 @@
 import QuartzCore
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 fileprivate extension MDCTypography {
 

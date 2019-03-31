@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 protocol SensorConfigTypeOptionDelegate: class {
   /// Informs the delegate the type selection changed.

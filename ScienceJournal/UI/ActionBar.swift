@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
+import MaterialComponents
 
 /// A toolbar that has an action button.
 open class ActionBar: UIView {

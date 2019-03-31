@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// An operation that gets all trial data for one experiment and creates a GSJScalarSensorData
 /// proto. This is used when exporting experiments as a document file.

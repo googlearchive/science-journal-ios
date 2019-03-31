@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
-import third_party_objective_c_material_components_ios_components_Tabs_Tabs
+import MaterialComponents
 
 /// A protocol for the drawer view to update its delegate about selected items.
 public protocol DrawerViewDelegate: class {

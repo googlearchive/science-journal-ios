@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// PictureCardView supports two different heights, depending on usage. In a Trial card, as a Trial
 /// Note, it uses `.small`. In a standalone picture cell, it uses `.large`.

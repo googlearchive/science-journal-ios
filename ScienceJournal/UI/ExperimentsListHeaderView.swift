@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A header view for the Experiments list. The view contains a single label, whose text will
 /// contain the month name for a group of experiments (example: "May").

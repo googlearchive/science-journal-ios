@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_CollectionCells_CollectionCells
+import MaterialComponents
 
 /// A header cell for the sidebar menu that displays a static image.
 class SidebarHeaderCell: MDCCollectionViewCell {

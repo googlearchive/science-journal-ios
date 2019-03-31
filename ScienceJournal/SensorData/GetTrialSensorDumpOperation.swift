@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// An operation that fetches data for a single trial sensor and converts it into a sensor data
 /// dump proto.

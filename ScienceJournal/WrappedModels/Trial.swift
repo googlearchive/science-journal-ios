@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJTrial. Represents a collection of data during a discrete recording event.
 /// Includes sensor data and notes.

@@ -15,7 +15,7 @@
  */
 
 import UIKit
-import third_party_objective_c_material_components_ios_components_Snackbar_Snackbar
+import MaterialComponents
 
 open class AppDelegate: UIResponder, UIApplicationDelegate {
 

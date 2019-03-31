@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 protocol TriggerEditViewControllerDelegate: class {
   /// Called when a trigger was edited.

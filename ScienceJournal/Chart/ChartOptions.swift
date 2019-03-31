@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// ChartPlacementType represents the purpose of the chart which dictates style and behavior.
 ///

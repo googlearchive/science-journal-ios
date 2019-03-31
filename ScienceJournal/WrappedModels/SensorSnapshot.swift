@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for a GSJSnapshotLabelValue_SensorSnapshot that represents a snapshot of a sensor's
 /// data at one point in time.

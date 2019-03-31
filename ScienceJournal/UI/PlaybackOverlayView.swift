@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// An overlay view for ChartView that displays a flag and arrow that points to a point on a chart.
 class PlaybackOverlayView: UIView {

@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJIconPath. Contains the information needed to fetch a sensor icon.
 class IconPath {

@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
-import third_party_objective_c_material_components_ios_components_Snackbar_Snackbar
+import MaterialComponents
 
 #if SCIENCEJOURNAL_DEV_BUILD || SCIENCEJOURNAL_DOGFOOD_BUILD
 public extension Notification.Name {

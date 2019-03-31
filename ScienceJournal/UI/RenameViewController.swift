@@ -15,10 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
-import third_party_objective_c_material_components_ios_components_TextFields_TextFields
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// Rename view controller that has the title for naming an experiment.
 class RenameExperimentViewController: RenameViewController {

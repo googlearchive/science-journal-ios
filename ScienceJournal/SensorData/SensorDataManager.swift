@@ -17,7 +17,7 @@
 import CoreData
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// The data manager for Core Data.
 open class SensorDataManager {

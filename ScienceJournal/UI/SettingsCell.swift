@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// The base class which configures the title and description for a settings cell. This should be
 /// subclassed to create unique settings cell types.

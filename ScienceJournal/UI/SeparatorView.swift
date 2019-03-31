@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// A one point separator view that can be horizontal or vertical. The style determines its
 /// background color.

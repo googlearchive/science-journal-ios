@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
+import MaterialComponents
 
 /// Displays and triggers actions in a collection view. Selecting a cell will call the handler and
 /// dismiss the view controller.

@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_objective_c_material_components_ios_components_TextFields_TextFields
+import MaterialComponents
 
 protocol EditTimestampViewControllerDelegate: class {
   /// Tells the delegate the user pressed the cancel button.

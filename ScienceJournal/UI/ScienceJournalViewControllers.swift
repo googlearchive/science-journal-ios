@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Collections_Collections
+import MaterialComponents
 
 /// A wrapping class for MDCCollectionViewController, which will be extended to add analytics
 /// tracking.

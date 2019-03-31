@@ -15,10 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 protocol OptionSelectorDelegate: class {
   /// Called when a pop up menu should be displayed with options.

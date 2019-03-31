@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 protocol TriggerWhenSelectorDelegate: class {
   /// Calls the delegate when the trigger when changes.

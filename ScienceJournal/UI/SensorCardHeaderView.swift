@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// The header view for the sensor card cell. It contains a button to show/hide the sensor picker, a
 /// title, button to show the sensor description, and a button to show options.

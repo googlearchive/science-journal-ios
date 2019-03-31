@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 enum SensorDataExportError: Error {
   /// Error fetching sensor data from the database. Associated data are the trial ID and sensor ID.

@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A view that displays a timestamp and a value in a rounded rect with a bottom arrow.
 class DataPointFlagView: UIView {

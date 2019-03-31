@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJFileVersion. Defines the version of a proto instance. Can be compared with
 /// `<`, `>`, or `==`, but note that platform and platform version are not considered in these

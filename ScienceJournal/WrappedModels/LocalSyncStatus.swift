@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJLocalSyncStatus. The sync status of every locally known experiment.
 public class LocalSyncStatus {

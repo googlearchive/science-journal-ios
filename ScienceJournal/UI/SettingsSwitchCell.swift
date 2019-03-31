@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A settings cell with a title, description and switch.
 class SettingsSwitchCell: SettingsCell {

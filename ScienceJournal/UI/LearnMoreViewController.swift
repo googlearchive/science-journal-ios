@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A view controller that displays the "Learn More" content about a particular sensor.
 class LearnMoreViewController: MaterialHeaderViewController {

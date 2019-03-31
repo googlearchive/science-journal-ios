@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// The base class for cells shown in experiments list, either an experiment that needs to be
 /// claimed, or an experiment that is being synced. It displays the experiment's photo and title.

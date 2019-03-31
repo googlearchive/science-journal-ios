@@ -17,7 +17,7 @@
 import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
-@testable import third_party_sciencejournal_ios_ScienceJournalProtos
+@testable import ScienceJournalProtos
 
 class TriggerNoteTest: XCTestCase {
 

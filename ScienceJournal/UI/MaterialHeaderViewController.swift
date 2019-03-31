@@ -15,10 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_AppBar_AppBar
-import third_party_objective_c_material_components_ios_components_Dialogs_ColorThemer
-import third_party_objective_c_material_components_ios_components_private_Overlay_Overlay
+import MaterialComponents
 
 /// Boilerplate view controller for setting up a Material header view.
 class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDelegate,

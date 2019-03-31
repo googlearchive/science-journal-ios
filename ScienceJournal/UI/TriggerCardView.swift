@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A view composed of a trigger's data, which includes a value, value description and an icon for
 /// the type of sensor used. This view can be used inside a trial card or inside a trigger card,

@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
+import MaterialComponents
 
 /// A view that contains an MDC shadow layer.
 class ShadowedView: UIView {

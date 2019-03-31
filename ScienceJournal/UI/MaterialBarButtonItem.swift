@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
+import MaterialComponents
 
 /// A bar button item that can be used throughout Science Journal navigation bars. Can have popup
 /// menus attached to the `button` subview.

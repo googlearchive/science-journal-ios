@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// An operation that imports sensor data from a proto. The operation requires either an
 /// `ImportExperimentOperation` as a dependency or a proto passed in during initialization.

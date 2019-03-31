@@ -16,8 +16,8 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import MaterialComponents
+import ScienceJournalProtos
 
 /// A wrapper for GSJSensorLayout. Represents the visual appearance of a sensor chart.
 class SensorLayout: Equatable, Hashable {

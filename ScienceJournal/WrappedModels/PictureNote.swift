@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for a GSJLabel that contains a picture.
 public class PictureNote: Note {

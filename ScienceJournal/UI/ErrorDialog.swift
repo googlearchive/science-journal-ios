@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A view with a dark background and white text for showing an error message next to a text field.
 class ErrorDialog: UIView {

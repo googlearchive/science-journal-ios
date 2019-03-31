@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// Filter that applies a linear function to the incoming value.
 class ScaleFilter: ValueFilter {

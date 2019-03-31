@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
+import MaterialComponents
 
 /// The primary view controller for Science Journal which owns the navigation controller and manages
 /// all other flows and view controllers.

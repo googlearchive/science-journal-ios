@@ -17,7 +17,7 @@
 import CoreBluetooth
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 extension Array where Element:Sensor {
 

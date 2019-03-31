@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// Assembles the packets received from a Science Journal BLE device into sensor data. The sensor
 /// sends data in a protobuf format but the data can be spread across multiple packets.

@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
+import MaterialComponents
 
 protocol CropRangeViewControllerDelegate: class {
   /// Informs delegate that a new timestamp was selected for one of the crop positions.

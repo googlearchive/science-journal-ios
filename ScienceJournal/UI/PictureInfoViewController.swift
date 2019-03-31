@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Collections_Collections
+import MaterialComponents
 
 /// A list of all the metadata for a picture note.
 class PictureInfoViewController: MaterialHeaderCollectionViewController {

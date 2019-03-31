@@ -15,8 +15,7 @@
  */
 
 import Foundation
-
-import third_party_objective_c_ssziparchive_ssziparchive
+import SSZipArchive
 
 /// An operation that unzips a zip archive.
 class UnzipOperation: GSJOperation {

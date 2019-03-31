@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 // TODO: Update comments once label proto refactor is complete. There might be other
 // note types.

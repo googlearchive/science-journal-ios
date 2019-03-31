@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for a GSJBasicSensorAppearance that represents a sensor's display attributes.
 class BasicSensorAppearance {

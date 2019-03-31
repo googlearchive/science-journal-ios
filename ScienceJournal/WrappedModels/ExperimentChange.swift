@@ -16,7 +16,7 @@
 
 import Foundation
 
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJChange. Represents a change to an experiment.
 class ExperimentChange: Equatable, Hashable {

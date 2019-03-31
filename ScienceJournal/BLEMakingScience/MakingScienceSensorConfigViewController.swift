@@ -15,10 +15,8 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
-import third_party_objective_c_material_components_ios_components_Typography_Typography
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import MaterialComponents
+import ScienceJournalProtos
 
 /// A view controller that presents options to configure a Making Science BLE device.
 class MakingScienceSensorConfigViewController: ScienceJournalViewController, OptionSelectorDelegate,

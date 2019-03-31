@@ -16,9 +16,9 @@
 
 import XCTest
 
-@testable import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+@testable import MaterialComponents
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
-@testable import third_party_sciencejournal_ios_ScienceJournalProtos
+@testable import ScienceJournalProtos
 
 class SensorLayoutTest: XCTestCase {
 

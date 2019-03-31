@@ -15,8 +15,7 @@
  */
 
 import UIKit
-
-import googlemac_iPhone_Shared_SSOAuth_SSOAuth
+import GoogleAPIClientForREST
 
 public enum SignInResult {
   /// The account changed.

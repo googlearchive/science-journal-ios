@@ -15,8 +15,7 @@
  */
 
 import Foundation
-
-import third_party_objective_c_ssziparchive_ssziparchive
+import SSZipArchive
 
 enum ZipError: Error {
   /// The URL to zip is not valid.

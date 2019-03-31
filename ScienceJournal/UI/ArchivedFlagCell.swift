@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A cell that shows an archived flag, which can appear at the top of an archived experiment or
 /// trial, above that experiment or trial's data.

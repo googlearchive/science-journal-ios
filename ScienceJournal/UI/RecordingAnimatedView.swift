@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// A view containing an animated set of bars to denote a recording in progress, which is used in
 /// a TrialCardCell.

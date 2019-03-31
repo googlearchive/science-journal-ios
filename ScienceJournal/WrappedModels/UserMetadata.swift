@@ -15,8 +15,7 @@
  */
 
 import Foundation
-
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import ScienceJournalProtos
 
 /// A wrapper for GSJUserMetadata. Collects data specific to the current user. Will not be shared
 /// with other users when syncing with Drive.

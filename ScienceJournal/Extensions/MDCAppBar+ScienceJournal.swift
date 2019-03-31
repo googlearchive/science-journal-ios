@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_AppBar_AppBar
+import MaterialComponents
 
 /// MDCAppBar extension for Science Journal, used by Material-style header view controllers.
 extension MDCAppBar {

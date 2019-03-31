@@ -15,13 +15,8 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Collections_Collections
-import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
-import third_party_objective_c_material_components_ios_components_Dialogs_ColorThemer
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Snackbar_Snackbar
-import third_party_sciencejournal_ios_ScienceJournalProtos
+import MaterialComponents
+import ScienceJournalProtos
 
 protocol ObserveViewControllerDelegate: class {
   /// Tells the delegate recording started.

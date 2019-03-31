@@ -15,9 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
-import third_party_objective_c_material_components_ios_components_Tabs_Tabs
+import MaterialComponents
 
 protocol SensorCardCellDelegate: class {
   /// Called when the sensor card expand button is pressed.

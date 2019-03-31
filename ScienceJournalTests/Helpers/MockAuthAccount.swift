@@ -15,9 +15,9 @@
  */
 
 import XCTest
+import GoogleAPIClientForREST
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
-import googlemac_iPhone_Shared_SSOAuth_SSOAuth
 
 /// An auth account that uses a mock ID, email, display name and profile image.
 class MockAuthAccount: AuthAccount {

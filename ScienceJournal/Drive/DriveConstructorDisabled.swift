@@ -15,8 +15,7 @@
  */
 
 import Foundation
-
-import googlemac_iPhone_Shared_SSOAuth_SSOAuth
+import GoogleAPIClientForREST
 
 /// A disabled version of drive constructor. Currently used by the open-source build since it does
 /// not support Drive sync.

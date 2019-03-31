@@ -15,8 +15,7 @@
  */
 
 import Foundation
-
-import googlemac_iPhone_Shared_SSOAuth_SSOAuth
+import GoogleAPIClientForREST
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 

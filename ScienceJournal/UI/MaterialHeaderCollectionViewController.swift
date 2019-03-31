@@ -15,11 +15,7 @@
  */
 
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_AppBar_AppBar
-import third_party_objective_c_material_components_ios_components_Collections_Collections
-import third_party_objective_c_material_components_ios_components_Dialogs_ColorThemer
-import third_party_objective_c_material_components_ios_components_private_Overlay_Overlay
+import MaterialComponents
 
 /// Boilerplate collection view controller for setting up a Material header view.
 class MaterialHeaderCollectionViewController: VisibilityTrackingCollectionViewController,

@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import MaterialComponents
 
 /// A view that displays dotted lines representing the minimum, maximum and average points
 /// relative to a chart view.

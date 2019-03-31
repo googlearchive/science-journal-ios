@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Typography_Typography
+import MaterialComponents
 
 /// A view shown above the claim experiments view, explaining that a user can add unclaimed
 /// experiments to Drive.

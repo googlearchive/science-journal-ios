@@ -16,7 +16,7 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
+import MaterialComponents
 
 /// The action bar for the camera tab of the drawer. Contains a capture photo button.
 class CameraActionBar: UIView {

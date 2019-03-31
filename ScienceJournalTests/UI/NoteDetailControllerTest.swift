@@ -18,7 +18,7 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-import third_party_objective_c_material_components_ios_components_TextFields_TextFields
+import MaterialComponents
 
 class NoteDetailControllerTest: XCTestCase {
 

@@ -7,6 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F016694A8C44F2697660A3C /* libPods-ScienceJournal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 604695B2C876E470DA767900 /* libPods-ScienceJournal.a */; };
+		1459E56B2250D8EB003FB0B7 /* ScienceJournalProtos.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5692250D8EB003FB0B7 /* ScienceJournalProtos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5A62250D903003FB0B7 /* UserMetadata.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5722250D903003FB0B7 /* UserMetadata.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5A72250D903003FB0B7 /* LabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5732250D903003FB0B7 /* LabelValue.pbobjc.m */; };
+		1459E5A82250D903003FB0B7 /* SnapshotLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5742250D903003FB0B7 /* SnapshotLabelValue.pbobjc.m */; };
+		1459E5A92250D903003FB0B7 /* ExperimentLibrary.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5752250D903003FB0B7 /* ExperimentLibrary.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5AA2250D903003FB0B7 /* SensorSpec.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5762250D903003FB0B7 /* SensorSpec.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5AB2250D903003FB0B7 /* ScalarSensorData.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5772250D903003FB0B7 /* ScalarSensorData.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5AC2250D903003FB0B7 /* Caption.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5782250D903003FB0B7 /* Caption.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5AD2250D904003FB0B7 /* BasicSensorAppearance.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5792250D903003FB0B7 /* BasicSensorAppearance.pbobjc.m */; };
+		1459E5AE2250D904003FB0B7 /* SensorTriggerLabelValue.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E57A2250D903003FB0B7 /* SensorTriggerLabelValue.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5AF2250D904003FB0B7 /* Trial.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E57B2250D903003FB0B7 /* Trial.pbobjc.m */; };
+		1459E5B02250D904003FB0B7 /* SensorTriggerInformation.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E57C2250D903003FB0B7 /* SensorTriggerInformation.pbobjc.m */; };
+		1459E5B12250D904003FB0B7 /* ScalarInputConfig.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E57D2250D903003FB0B7 /* ScalarInputConfig.pbobjc.m */; };
+		1459E5B22250D904003FB0B7 /* SensorConfig.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E57E2250D903003FB0B7 /* SensorConfig.pbobjc.m */; };
+		1459E5B32250D904003FB0B7 /* LocalSyncStatus.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E57F2250D903003FB0B7 /* LocalSyncStatus.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5B42250D904003FB0B7 /* DeviceSpec.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5802250D903003FB0B7 /* DeviceSpec.pbobjc.m */; };
+		1459E5B52250D904003FB0B7 /* IconPath.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5812250D903003FB0B7 /* IconPath.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5B62250D904003FB0B7 /* Sensor.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5822250D903003FB0B7 /* Sensor.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5B72250D904003FB0B7 /* SensorLayout.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5832250D903003FB0B7 /* SensorLayout.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5B82250D904003FB0B7 /* SensorTrigger.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5842250D903003FB0B7 /* SensorTrigger.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5B92250D904003FB0B7 /* Version.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5852250D903003FB0B7 /* Version.pbobjc.m */; };
+		1459E5BA2250D904003FB0B7 /* Experiment.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5862250D903003FB0B7 /* Experiment.pbobjc.m */; };
+		1459E5BB2250D904003FB0B7 /* InputDevice.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5872250D903003FB0B7 /* InputDevice.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5BC2250D904003FB0B7 /* GadgetInfo.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5882250D903003FB0B7 /* GadgetInfo.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5BD2250D904003FB0B7 /* TextLabelValue.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5892250D903003FB0B7 /* TextLabelValue.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5BE2250D904003FB0B7 /* Label.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E58A2250D903003FB0B7 /* Label.pbobjc.m */; };
+		1459E5BF2250D904003FB0B7 /* PictureLabelValue.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E58B2250D903003FB0B7 /* PictureLabelValue.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C02250D904003FB0B7 /* SensorSpec.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E58C2250D903003FB0B7 /* SensorSpec.pbobjc.m */; };
+		1459E5C12250D904003FB0B7 /* ExperimentLibrary.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E58D2250D903003FB0B7 /* ExperimentLibrary.pbobjc.m */; };
+		1459E5C22250D904003FB0B7 /* SnapshotLabelValue.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E58E2250D903003FB0B7 /* SnapshotLabelValue.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C32250D904003FB0B7 /* LabelValue.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E58F2250D903003FB0B7 /* LabelValue.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C42250D904003FB0B7 /* UserMetadata.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5902250D903003FB0B7 /* UserMetadata.pbobjc.m */; };
+		1459E5C52250D904003FB0B7 /* SensorConfig.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5912250D903003FB0B7 /* SensorConfig.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C62250D904003FB0B7 /* ScalarInputConfig.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5922250D903003FB0B7 /* ScalarInputConfig.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C72250D904003FB0B7 /* SensorTriggerInformation.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5932250D903003FB0B7 /* SensorTriggerInformation.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C82250D904003FB0B7 /* Trial.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5942250D903003FB0B7 /* Trial.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5C92250D904003FB0B7 /* SensorTriggerLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5952250D903003FB0B7 /* SensorTriggerLabelValue.pbobjc.m */; };
+		1459E5CA2250D904003FB0B7 /* BasicSensorAppearance.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5962250D903003FB0B7 /* BasicSensorAppearance.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5CB2250D904003FB0B7 /* Caption.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5972250D903003FB0B7 /* Caption.pbobjc.m */; };
+		1459E5CC2250D904003FB0B7 /* ScalarSensorData.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5982250D903003FB0B7 /* ScalarSensorData.pbobjc.m */; };
+		1459E5CD2250D904003FB0B7 /* SensorLayout.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5992250D903003FB0B7 /* SensorLayout.pbobjc.m */; };
+		1459E5CE2250D904003FB0B7 /* SensorTrigger.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E59A2250D903003FB0B7 /* SensorTrigger.pbobjc.m */; };
+		1459E5CF2250D904003FB0B7 /* Sensor.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E59B2250D903003FB0B7 /* Sensor.pbobjc.m */; };
+		1459E5D02250D904003FB0B7 /* IconPath.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E59C2250D903003FB0B7 /* IconPath.pbobjc.m */; };
+		1459E5D12250D904003FB0B7 /* DeviceSpec.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E59D2250D903003FB0B7 /* DeviceSpec.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5D22250D904003FB0B7 /* LocalSyncStatus.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E59E2250D903003FB0B7 /* LocalSyncStatus.pbobjc.m */; };
+		1459E5D32250D904003FB0B7 /* PictureLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E59F2250D903003FB0B7 /* PictureLabelValue.pbobjc.m */; };
+		1459E5D42250D904003FB0B7 /* TextLabelValue.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5A02250D903003FB0B7 /* TextLabelValue.pbobjc.m */; };
+		1459E5D52250D904003FB0B7 /* Label.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5A12250D903003FB0B7 /* Label.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5D62250D904003FB0B7 /* GadgetInfo.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5A22250D903003FB0B7 /* GadgetInfo.pbobjc.m */; };
+		1459E5D72250D904003FB0B7 /* InputDevice.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459E5A32250D903003FB0B7 /* InputDevice.pbobjc.m */; };
+		1459E5D82250D904003FB0B7 /* Experiment.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5A42250D903003FB0B7 /* Experiment.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1459E5D92250D904003FB0B7 /* Version.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1459E5A52250D903003FB0B7 /* Version.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1462979B2250E34300A3063E /* ScienceJournalProtos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1459E5672250D8EB003FB0B7 /* ScienceJournalProtos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		246D4B824D434E838A7C9524 /* libPods-ScienceJournalTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A3D9BD36F306A0C804D7E /* libPods-ScienceJournalTests.a */; };
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
 		4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */; };
@@ -39,6 +95,7 @@
 		48D81BD72086AC9400773294 /* DrawerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD62086AC9400773294 /* DrawerConfig.swift */; };
 		48D81BDA2086AD0C00773294 /* DrawerConfigOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */; };
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
+		4F69A55AFB210A03411613E8 /* libPods-ScienceJournalUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F55BFC0DF51401A71F4CDB4E /* libPods-ScienceJournalUITests.a */; };
 		5C0EDCEF1FE30F280014E825 /* CropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCEE1FE30F280014E825 /* CropValidator.swift */; };
 		5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */; };
 		5C0EDCF41FE94C270014E825 /* ExperimentItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */; };
@@ -233,7 +290,6 @@
 		5CFC8E6220488A3500A674C2 /* ZipOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC8E6120488A3500A674C2 /* ZipOperation.swift */; };
 		5CFC8E6420488C4B00A674C2 /* ExportExperimentSensorDataOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC8E6320488C4B00A674C2 /* ExportExperimentSensorDataOperationTest.swift */; };
 		5CFC8E66204A076800A674C2 /* PopUpMenuAction+CommonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC8E65204A076800A674C2 /* PopUpMenuAction+CommonActions.swift */; };
-		61B8BD06CFD2682C120CB31E /* Pods_ScienceJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */; };
 		680659161EC24EBD0090670C /* String+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680659151EC24EBD0090670C /* String+ScienceJournal.swift */; };
 		680659191EC24EC50090670C /* SnapshotCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680659171EC24EC50090670C /* SnapshotCardView.swift */; };
 		6806591A1EC24EC50090670C /* ExperimentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680659181EC24EC50090670C /* ExperimentCardView.swift */; };
@@ -323,7 +379,6 @@
 		68ACCC491F9565F800FDCD38 /* NumberFormatter+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ACCC481F9565F800FDCD38 /* NumberFormatter+ScienceJournal.swift */; };
 		68B32A2E1F9A8A7F0067DAF3 /* String+ScienceJournalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B32A2D1F9A8A7F0067DAF3 /* String+ScienceJournalTest.swift */; };
 		68B32A321F9E89BA0067DAF3 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B32A311F9E89B90067DAF3 /* SettingsCell.swift */; };
-		68B6857F202D65D500E7FC98 /* MaterialComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B68580202D65D500E7FC98 /* MaterialComponents.framework */; };
 		68BD95601E8DA45100FEB0B2 /* ConductorSoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD95581E8DA45100FEB0B2 /* ConductorSoundType.swift */; };
 		68BD95611E8DA45100FEB0B2 /* DefaultSoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD95591E8DA45100FEB0B2 /* DefaultSoundType.swift */; };
 		68BD95621E8DA45100FEB0B2 /* NotesSoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD955A1E8DA45100FEB0B2 /* NotesSoundType.swift */; };
@@ -368,7 +423,7 @@
 		68EBA6E51E20421E0089FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EBA6E41E20421E0089FF7F /* Assets.xcassets */; };
 		68F14AC21F21801F0054E799 /* TimeInterval+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F14AC11F21801F0054E799 /* TimeInterval+ScienceJournal.swift */; };
 		68FB61111F3A70DA008281DB /* MaterialFloatingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB61101F3A70DA008281DB /* MaterialFloatingSpinner.swift */; };
-		88CA80A3A990268E02F1556B /* Pods_ScienceJournalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B078C95ACD3B10E24E5C947F /* Pods_ScienceJournalUITests.framework */; };
+		7B3EC5FF95532CC666B41FCA /* libPods-ScienceJournalProtos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C620039D0981FCF22B1C59 /* libPods-ScienceJournalProtos.a */; };
 		8B00318021346C1500B9BBFB /* PullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00317E21346C1500B9BBFB /* PullToRefreshController.swift */; };
 		8B031EEC2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B031EEB2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift */; };
 		8B031EEE2098C39C008F6F28 /* ExistingDataOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B031EED2098C39C008F6F28 /* ExistingDataOptionsCell.swift */; };
@@ -555,7 +610,6 @@
 		8BFA85CB1F71B5DB00297471 /* SensorSpecTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA85CA1F71B5DB00297471 /* SensorSpecTest.swift */; };
 		8BFCF97C1FAA2B5E0030A6DC /* ArchivedFlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCF97B1FAA2B5D0030A6DC /* ArchivedFlagCell.swift */; };
 		8BFCF97E1FAA2EDC0030A6DC /* ArchiveFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCF97D1FAA2EDC0030A6DC /* ArchiveFlagView.swift */; };
-		924D434B56557C3367183755 /* Pods_ScienceJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D48D49D8CBE15C94637009 /* Pods_ScienceJournalTests.framework */; };
 		D54E27EF21A3423A0055743E /* AudioAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E27EE21A3423A0055743E /* AudioAnalyzerTest.swift */; };
 		D54E27F121A346980055743E /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = D54E27F021A346980055743E /* TestResources */; };
 		D59CA3C2219CEE690082A27B /* FFTAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */; };
@@ -588,6 +642,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1462979C2250E34300A3063E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68EBA6D21E20421E0089FF7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1459E5662250D8EB003FB0B7;
+			remoteInfo = ScienceJournalProtos;
+		};
 		68EBA6EF1E20421E0089FF7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 68EBA6D21E20421E0089FF7F /* Project object */;
@@ -604,11 +665,83 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1462979E2250E34300A3063E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1462979B2250E34300A3063E /* ScienceJournalProtos.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1F4A9ECB04F0828D44D2C26D /* Pods-ScienceJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.release.xcconfig"; sourceTree = "<group>"; };
-		28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
-		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
-		448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
+		1459E4F52250C892003FB0B7 /* ScienceJournalProtos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ScienceJournalProtos.framework; sourceTree = "<group>"; };
+		1459E5672250D8EB003FB0B7 /* ScienceJournalProtos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScienceJournalProtos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1459E5692250D8EB003FB0B7 /* ScienceJournalProtos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScienceJournalProtos.h; sourceTree = "<group>"; };
+		1459E56A2250D8EB003FB0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1459E5722250D903003FB0B7 /* UserMetadata.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMetadata.pbobjc.h; sourceTree = "<group>"; };
+		1459E5732250D903003FB0B7 /* LabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelValue.pbobjc.m; sourceTree = "<group>"; };
+		1459E5742250D903003FB0B7 /* SnapshotLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapshotLabelValue.pbobjc.m; sourceTree = "<group>"; };
+		1459E5752250D903003FB0B7 /* ExperimentLibrary.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentLibrary.pbobjc.h; sourceTree = "<group>"; };
+		1459E5762250D903003FB0B7 /* SensorSpec.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorSpec.pbobjc.h; sourceTree = "<group>"; };
+		1459E5772250D903003FB0B7 /* ScalarSensorData.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalarSensorData.pbobjc.h; sourceTree = "<group>"; };
+		1459E5782250D903003FB0B7 /* Caption.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.pbobjc.h; sourceTree = "<group>"; };
+		1459E5792250D903003FB0B7 /* BasicSensorAppearance.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSensorAppearance.pbobjc.m; sourceTree = "<group>"; };
+		1459E57A2250D903003FB0B7 /* SensorTriggerLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTriggerLabelValue.pbobjc.h; sourceTree = "<group>"; };
+		1459E57B2250D903003FB0B7 /* Trial.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trial.pbobjc.m; sourceTree = "<group>"; };
+		1459E57C2250D903003FB0B7 /* SensorTriggerInformation.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTriggerInformation.pbobjc.m; sourceTree = "<group>"; };
+		1459E57D2250D903003FB0B7 /* ScalarInputConfig.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalarInputConfig.pbobjc.m; sourceTree = "<group>"; };
+		1459E57E2250D903003FB0B7 /* SensorConfig.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorConfig.pbobjc.m; sourceTree = "<group>"; };
+		1459E57F2250D903003FB0B7 /* LocalSyncStatus.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalSyncStatus.pbobjc.h; sourceTree = "<group>"; };
+		1459E5802250D903003FB0B7 /* DeviceSpec.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSpec.pbobjc.m; sourceTree = "<group>"; };
+		1459E5812250D903003FB0B7 /* IconPath.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPath.pbobjc.h; sourceTree = "<group>"; };
+		1459E5822250D903003FB0B7 /* Sensor.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.pbobjc.h; sourceTree = "<group>"; };
+		1459E5832250D903003FB0B7 /* SensorLayout.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorLayout.pbobjc.h; sourceTree = "<group>"; };
+		1459E5842250D903003FB0B7 /* SensorTrigger.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTrigger.pbobjc.h; sourceTree = "<group>"; };
+		1459E5852250D903003FB0B7 /* Version.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Version.pbobjc.m; sourceTree = "<group>"; };
+		1459E5862250D903003FB0B7 /* Experiment.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Experiment.pbobjc.m; sourceTree = "<group>"; };
+		1459E5872250D903003FB0B7 /* InputDevice.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputDevice.pbobjc.h; sourceTree = "<group>"; };
+		1459E5882250D903003FB0B7 /* GadgetInfo.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GadgetInfo.pbobjc.h; sourceTree = "<group>"; };
+		1459E5892250D903003FB0B7 /* TextLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextLabelValue.pbobjc.h; sourceTree = "<group>"; };
+		1459E58A2250D903003FB0B7 /* Label.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.pbobjc.m; sourceTree = "<group>"; };
+		1459E58B2250D903003FB0B7 /* PictureLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureLabelValue.pbobjc.h; sourceTree = "<group>"; };
+		1459E58C2250D903003FB0B7 /* SensorSpec.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorSpec.pbobjc.m; sourceTree = "<group>"; };
+		1459E58D2250D903003FB0B7 /* ExperimentLibrary.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentLibrary.pbobjc.m; sourceTree = "<group>"; };
+		1459E58E2250D903003FB0B7 /* SnapshotLabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapshotLabelValue.pbobjc.h; sourceTree = "<group>"; };
+		1459E58F2250D903003FB0B7 /* LabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelValue.pbobjc.h; sourceTree = "<group>"; };
+		1459E5902250D903003FB0B7 /* UserMetadata.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMetadata.pbobjc.m; sourceTree = "<group>"; };
+		1459E5912250D903003FB0B7 /* SensorConfig.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorConfig.pbobjc.h; sourceTree = "<group>"; };
+		1459E5922250D903003FB0B7 /* ScalarInputConfig.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalarInputConfig.pbobjc.h; sourceTree = "<group>"; };
+		1459E5932250D903003FB0B7 /* SensorTriggerInformation.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTriggerInformation.pbobjc.h; sourceTree = "<group>"; };
+		1459E5942250D903003FB0B7 /* Trial.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trial.pbobjc.h; sourceTree = "<group>"; };
+		1459E5952250D903003FB0B7 /* SensorTriggerLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTriggerLabelValue.pbobjc.m; sourceTree = "<group>"; };
+		1459E5962250D903003FB0B7 /* BasicSensorAppearance.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSensorAppearance.pbobjc.h; sourceTree = "<group>"; };
+		1459E5972250D903003FB0B7 /* Caption.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.pbobjc.m; sourceTree = "<group>"; };
+		1459E5982250D903003FB0B7 /* ScalarSensorData.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalarSensorData.pbobjc.m; sourceTree = "<group>"; };
+		1459E5992250D903003FB0B7 /* SensorLayout.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorLayout.pbobjc.m; sourceTree = "<group>"; };
+		1459E59A2250D903003FB0B7 /* SensorTrigger.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTrigger.pbobjc.m; sourceTree = "<group>"; };
+		1459E59B2250D903003FB0B7 /* Sensor.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sensor.pbobjc.m; sourceTree = "<group>"; };
+		1459E59C2250D903003FB0B7 /* IconPath.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPath.pbobjc.m; sourceTree = "<group>"; };
+		1459E59D2250D903003FB0B7 /* DeviceSpec.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSpec.pbobjc.h; sourceTree = "<group>"; };
+		1459E59E2250D903003FB0B7 /* LocalSyncStatus.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalSyncStatus.pbobjc.m; sourceTree = "<group>"; };
+		1459E59F2250D903003FB0B7 /* PictureLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureLabelValue.pbobjc.m; sourceTree = "<group>"; };
+		1459E5A02250D903003FB0B7 /* TextLabelValue.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextLabelValue.pbobjc.m; sourceTree = "<group>"; };
+		1459E5A12250D903003FB0B7 /* Label.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.pbobjc.h; sourceTree = "<group>"; };
+		1459E5A22250D903003FB0B7 /* GadgetInfo.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GadgetInfo.pbobjc.m; sourceTree = "<group>"; };
+		1459E5A32250D903003FB0B7 /* InputDevice.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputDevice.pbobjc.m; sourceTree = "<group>"; };
+		1459E5A42250D903003FB0B7 /* Experiment.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Experiment.pbobjc.h; sourceTree = "<group>"; };
+		1459E5A52250D903003FB0B7 /* Version.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.pbobjc.h; sourceTree = "<group>"; };
+		155190FC4E929CACA818D22E /* Pods-ScienceJournal.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.dogfood.xcconfig"; path = "Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.dogfood.xcconfig"; sourceTree = "<group>"; };
+		1917C9DBC741892B15CC64B8 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A6F0ECA8AFA3AB78765BD6E /* Pods-ScienceJournalUITests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.dogfood.xcconfig"; path = "Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.dogfood.xcconfig"; sourceTree = "<group>"; };
+		336DE411C71A4668E3FC94CF /* Pods-ScienceJournalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.release.xcconfig"; path = "Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		33ABBF35D87807C9A71A77A6 /* Pods-ScienceJournalUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.adhoc.xcconfig"; path = "Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		4563041027234F29D93386A0 /* Pods-ScienceJournalProtos.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalProtos.dogfood.xcconfig"; path = "Target Support Files/Pods-ScienceJournalProtos/Pods-ScienceJournalProtos.dogfood.xcconfig"; sourceTree = "<group>"; };
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButtonCell.swift; sourceTree = "<group>"; };
 		4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarAccountView.swift; sourceTree = "<group>"; };
@@ -616,7 +749,6 @@
 		4850DC9B21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManagerDisabled.swift; sourceTree = "<group>"; };
 		485ED07C21FA7D6700017071 /* RemoteConfigFlagProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigFlagProtocol.swift; sourceTree = "<group>"; };
 		486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SensorController+Testing.swift"; sourceTree = "<group>"; };
-		486F97684E4736F8AED250F0 /* Pods-ScienceJournalUITests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		4886F52E209CE13D003892D7 /* TestSensorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSensorInterface.swift; sourceTree = "<group>"; };
 		4886F52F209CE13D003892D7 /* MockSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSensor.swift; sourceTree = "<group>"; };
 		4886F530209CE13E003892D7 /* MetadataManager+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MetadataManager+Testing.swift"; sourceTree = "<group>"; };
@@ -642,7 +774,7 @@
 		48D81BD62086AC9400773294 /* DrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfig.swift; sourceTree = "<group>"; };
 		48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigOpen.swift; sourceTree = "<group>"; };
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
-		4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F1A3D9BD36F306A0C804D7E /* libPods-ScienceJournalTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0EDCEE1FE30F280014E825 /* CropValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidator.swift; sourceTree = "<group>"; };
 		5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidatorTest.swift; sourceTree = "<group>"; };
 		5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentItemsViewController.swift; sourceTree = "<group>"; };
@@ -840,6 +972,8 @@
 		5CFC8E6120488A3500A674C2 /* ZipOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipOperation.swift; sourceTree = "<group>"; };
 		5CFC8E6320488C4B00A674C2 /* ExportExperimentSensorDataOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportExperimentSensorDataOperationTest.swift; sourceTree = "<group>"; };
 		5CFC8E65204A076800A674C2 /* PopUpMenuAction+CommonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopUpMenuAction+CommonActions.swift"; sourceTree = "<group>"; };
+		604695B2C876E470DA767900 /* libPods-ScienceJournal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6472D0AA08AED1CC5FA5FB6E /* Pods-ScienceJournal.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.adhoc.xcconfig"; path = "Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.adhoc.xcconfig"; sourceTree = "<group>"; };
 		680659151EC24EBD0090670C /* String+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ScienceJournal.swift"; sourceTree = "<group>"; };
 		680659171EC24EC50090670C /* SnapshotCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotCardView.swift; sourceTree = "<group>"; };
 		680659181EC24EC50090670C /* ExperimentCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCardView.swift; sourceTree = "<group>"; };
@@ -1005,8 +1139,10 @@
 		68EBA6FF1E20421E0089FF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68F14AC11F21801F0054E799 /* TimeInterval+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+ScienceJournal.swift"; sourceTree = "<group>"; };
 		68FB61101F3A70DA008281DB /* MaterialFloatingSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialFloatingSpinner.swift; sourceTree = "<group>"; };
-		716FC707D21F24E45C613BEC /* Pods-ScienceJournalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81B6ADB3C8B55839B4C266D2 /* Pods-ScienceJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.debug.xcconfig"; sourceTree = "<group>"; };
+		710337DC02574E17C47543A5 /* Pods-ScienceJournalProtos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalProtos.debug.xcconfig"; path = "Target Support Files/Pods-ScienceJournalProtos/Pods-ScienceJournalProtos.debug.xcconfig"; sourceTree = "<group>"; };
+		7116A8201DC898DD2C06ACBD /* Pods-ScienceJournalProtos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalProtos.release.xcconfig"; path = "Target Support Files/Pods-ScienceJournalProtos/Pods-ScienceJournalProtos.release.xcconfig"; sourceTree = "<group>"; };
+		73C620039D0981FCF22B1C59 /* libPods-ScienceJournalProtos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalProtos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C3A245E6E175A01460E330 /* Pods-ScienceJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.debug.xcconfig"; path = "Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.debug.xcconfig"; sourceTree = "<group>"; };
 		8B00317E21346C1500B9BBFB /* PullToRefreshController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshController.swift; sourceTree = "<group>"; };
 		8B031EEB2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingDataOptionsHeaderView.swift; sourceTree = "<group>"; };
 		8B031EED2098C39C008F6F28 /* ExistingDataOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingDataOptionsCell.swift; sourceTree = "<group>"; };
@@ -1193,11 +1329,9 @@
 		8BFA85CA1F71B5DB00297471 /* SensorSpecTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorSpecTest.swift; sourceTree = "<group>"; };
 		8BFCF97B1FAA2B5D0030A6DC /* ArchivedFlagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivedFlagCell.swift; sourceTree = "<group>"; };
 		8BFCF97D1FAA2EDC0030A6DC /* ArchiveFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveFlagView.swift; sourceTree = "<group>"; };
-		93AFC6D21C987695548ADC66 /* Pods-ScienceJournal.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.dogfood.xcconfig"; sourceTree = "<group>"; };
-		958B33107B78081C00CE9569 /* Pods-ScienceJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B078C95ACD3B10E24E5C947F /* Pods_ScienceJournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C910BBBCF124BDC00C1BCC07 /* Pods-ScienceJournalUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
-		CD482804BCE6CEED23042379 /* Pods-ScienceJournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A586F2EBD817C8BF32D0B05A /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
+		A99279667C02371F8AD457CD /* Pods-ScienceJournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.debug.xcconfig"; path = "Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0F84A90BBB688ED87818D85 /* Pods-ScienceJournalProtos.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalProtos.adhoc.xcconfig"; path = "Target Support Files/Pods-ScienceJournalProtos/Pods-ScienceJournalProtos.adhoc.xcconfig"; sourceTree = "<group>"; };
 		D54E27EE21A3423A0055743E /* AudioAnalyzerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalyzerTest.swift; sourceTree = "<group>"; };
 		D54E27F021A346980055743E /* TestResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestResources; sourceTree = "<group>"; };
 		D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTAnalyzer.swift; sourceTree = "<group>"; };
@@ -1209,11 +1343,21 @@
 		D59CA3C1219CEE690082A27B /* Peak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peak.swift; sourceTree = "<group>"; };
 		D59CA3D7219F46020082A27B /* Double+ScienceJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ScienceJournal.swift"; sourceTree = "<group>"; };
 		D59CA3DB219F51350082A27B /* Int+ScienceJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ScienceJournal.swift"; sourceTree = "<group>"; };
-		D65BB81A86250B67E7CA196C /* Pods-ScienceJournal.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.adhoc.xcconfig"; sourceTree = "<group>"; };
-		D7D48D49D8CBE15C94637009 /* Pods_ScienceJournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34D3AFFB61A5EC9E50A06D5 /* Pods-ScienceJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.release.xcconfig"; path = "Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.release.xcconfig"; sourceTree = "<group>"; };
+		F55BFC0DF51401A71F4CDB4E /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56B0FA205D4B8EBAA94FACF /* Pods-ScienceJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.debug.xcconfig"; path = "Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F596BEE85E4E1FEC2693371D /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1459E5642250D8EB003FB0B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B3EC5FF95532CC666B41FCA /* libPods-ScienceJournalProtos.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68EBA6D71E20421E0089FF7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1223,8 +1367,8 @@
 				8BC4D5B41EBA44AF0086906D /* Photos.framework in Frameworks */,
 				8BE2E6F41E2E909B00D86370 /* CoreLocation.framework in Frameworks */,
 				8BE2E6F21E29433400D86370 /* CoreMotion.framework in Frameworks */,
-				61B8BD06CFD2682C120CB31E /* Pods_ScienceJournal.framework in Frameworks */,
 				8BAB8C251E2431CF00CBFF0A /* AVFoundation.framework in Frameworks */,
+				0F016694A8C44F2697660A3C /* libPods-ScienceJournal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,8 +1376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68B6857F202D65D500E7FC98 /* MaterialComponents.framework in Frameworks */,
-				924D434B56557C3367183755 /* Pods_ScienceJournalTests.framework in Frameworks */,
+				246D4B824D434E838A7C9524 /* libPods-ScienceJournalTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,13 +1384,83 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CA80A3A990268E02F1556B /* Pods_ScienceJournalUITests.framework in Frameworks */,
+				4F69A55AFB210A03411613E8 /* libPods-ScienceJournalUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1459E5682250D8EB003FB0B7 /* ScienceJournalProtos */ = {
+			isa = PBXGroup;
+			children = (
+				1459E5712250D903003FB0B7 /* Protos */,
+				1459E5692250D8EB003FB0B7 /* ScienceJournalProtos.h */,
+				1459E56A2250D8EB003FB0B7 /* Info.plist */,
+			);
+			path = ScienceJournalProtos;
+			sourceTree = "<group>";
+		};
+		1459E5712250D903003FB0B7 /* Protos */ = {
+			isa = PBXGroup;
+			children = (
+				1459E5722250D903003FB0B7 /* UserMetadata.pbobjc.h */,
+				1459E5732250D903003FB0B7 /* LabelValue.pbobjc.m */,
+				1459E5742250D903003FB0B7 /* SnapshotLabelValue.pbobjc.m */,
+				1459E5752250D903003FB0B7 /* ExperimentLibrary.pbobjc.h */,
+				1459E5762250D903003FB0B7 /* SensorSpec.pbobjc.h */,
+				1459E5772250D903003FB0B7 /* ScalarSensorData.pbobjc.h */,
+				1459E5782250D903003FB0B7 /* Caption.pbobjc.h */,
+				1459E5792250D903003FB0B7 /* BasicSensorAppearance.pbobjc.m */,
+				1459E57A2250D903003FB0B7 /* SensorTriggerLabelValue.pbobjc.h */,
+				1459E57B2250D903003FB0B7 /* Trial.pbobjc.m */,
+				1459E57C2250D903003FB0B7 /* SensorTriggerInformation.pbobjc.m */,
+				1459E57D2250D903003FB0B7 /* ScalarInputConfig.pbobjc.m */,
+				1459E57E2250D903003FB0B7 /* SensorConfig.pbobjc.m */,
+				1459E57F2250D903003FB0B7 /* LocalSyncStatus.pbobjc.h */,
+				1459E5802250D903003FB0B7 /* DeviceSpec.pbobjc.m */,
+				1459E5812250D903003FB0B7 /* IconPath.pbobjc.h */,
+				1459E5822250D903003FB0B7 /* Sensor.pbobjc.h */,
+				1459E5832250D903003FB0B7 /* SensorLayout.pbobjc.h */,
+				1459E5842250D903003FB0B7 /* SensorTrigger.pbobjc.h */,
+				1459E5852250D903003FB0B7 /* Version.pbobjc.m */,
+				1459E5862250D903003FB0B7 /* Experiment.pbobjc.m */,
+				1459E5872250D903003FB0B7 /* InputDevice.pbobjc.h */,
+				1459E5882250D903003FB0B7 /* GadgetInfo.pbobjc.h */,
+				1459E5892250D903003FB0B7 /* TextLabelValue.pbobjc.h */,
+				1459E58A2250D903003FB0B7 /* Label.pbobjc.m */,
+				1459E58B2250D903003FB0B7 /* PictureLabelValue.pbobjc.h */,
+				1459E58C2250D903003FB0B7 /* SensorSpec.pbobjc.m */,
+				1459E58D2250D903003FB0B7 /* ExperimentLibrary.pbobjc.m */,
+				1459E58E2250D903003FB0B7 /* SnapshotLabelValue.pbobjc.h */,
+				1459E58F2250D903003FB0B7 /* LabelValue.pbobjc.h */,
+				1459E5902250D903003FB0B7 /* UserMetadata.pbobjc.m */,
+				1459E5912250D903003FB0B7 /* SensorConfig.pbobjc.h */,
+				1459E5922250D903003FB0B7 /* ScalarInputConfig.pbobjc.h */,
+				1459E5932250D903003FB0B7 /* SensorTriggerInformation.pbobjc.h */,
+				1459E5942250D903003FB0B7 /* Trial.pbobjc.h */,
+				1459E5952250D903003FB0B7 /* SensorTriggerLabelValue.pbobjc.m */,
+				1459E5962250D903003FB0B7 /* BasicSensorAppearance.pbobjc.h */,
+				1459E5972250D903003FB0B7 /* Caption.pbobjc.m */,
+				1459E5982250D903003FB0B7 /* ScalarSensorData.pbobjc.m */,
+				1459E5992250D903003FB0B7 /* SensorLayout.pbobjc.m */,
+				1459E59A2250D903003FB0B7 /* SensorTrigger.pbobjc.m */,
+				1459E59B2250D903003FB0B7 /* Sensor.pbobjc.m */,
+				1459E59C2250D903003FB0B7 /* IconPath.pbobjc.m */,
+				1459E59D2250D903003FB0B7 /* DeviceSpec.pbobjc.h */,
+				1459E59E2250D903003FB0B7 /* LocalSyncStatus.pbobjc.m */,
+				1459E59F2250D903003FB0B7 /* PictureLabelValue.pbobjc.m */,
+				1459E5A02250D903003FB0B7 /* TextLabelValue.pbobjc.m */,
+				1459E5A12250D903003FB0B7 /* Label.pbobjc.h */,
+				1459E5A22250D903003FB0B7 /* GadgetInfo.pbobjc.m */,
+				1459E5A32250D903003FB0B7 /* InputDevice.pbobjc.m */,
+				1459E5A42250D903003FB0B7 /* Experiment.pbobjc.h */,
+				1459E5A52250D903003FB0B7 /* Version.pbobjc.h */,
+			);
+			name = Protos;
+			path = third_party/sciencejournal/ios/Protos;
+			sourceTree = SOURCE_ROOT;
+		};
 		4850DC9A21C9798300A5C4A0 /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -2174,12 +2387,13 @@
 		68EBA6D11E20421E0089FF7F = {
 			isa = PBXGroup;
 			children = (
+				1459E5682250D8EB003FB0B7 /* ScienceJournalProtos */,
 				756449A1BBD2BCE08FA6A6A7 /* Frameworks */,
-				D80999890678E0AFC0831674 /* Pods */,
 				68EBA6DB1E20421E0089FF7F /* Products */,
 				68EBA6DC1E20421E0089FF7F /* ScienceJournal */,
 				68EBA6F11E20421E0089FF7F /* ScienceJournalTests */,
 				68EBA6FC1E20421E0089FF7F /* ScienceJournalUITests */,
+				CF130900DBF748D46D7F83E7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2189,6 +2403,7 @@
 				68EBA6DA1E20421E0089FF7F /* ScienceJournal.app */,
 				68EBA6EE1E20421E0089FF7F /* ScienceJournalTests.xctest */,
 				68EBA6F91E20421E0089FF7F /* ScienceJournalUITests.xctest */,
+				1459E5672250D8EB003FB0B7 /* ScienceJournalProtos.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2281,6 +2496,7 @@
 		756449A1BBD2BCE08FA6A6A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1459E4F52250C892003FB0B7 /* ScienceJournalProtos.framework */,
 				68B68580202D65D500E7FC98 /* MaterialComponents.framework */,
 				683C215D2004652A00429CCE /* JRE.framework */,
 				68E3C8CF1FD72ABA00255ADF /* StoreKit.framework */,
@@ -2288,10 +2504,11 @@
 				8BC4D5B31EBA44AF0086906D /* Photos.framework */,
 				8BE2E6F31E2E909B00D86370 /* CoreLocation.framework */,
 				8BE2E6F11E29433400D86370 /* CoreMotion.framework */,
-				4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */,
-				D7D48D49D8CBE15C94637009 /* Pods_ScienceJournalTests.framework */,
-				B078C95ACD3B10E24E5C947F /* Pods_ScienceJournalUITests.framework */,
 				8BAB8C241E2431CF00CBFF0A /* AVFoundation.framework */,
+				604695B2C876E470DA767900 /* libPods-ScienceJournal.a */,
+				4F1A3D9BD36F306A0C804D7E /* libPods-ScienceJournalTests.a */,
+				F55BFC0DF51401A71F4CDB4E /* libPods-ScienceJournalUITests.a */,
+				73C620039D0981FCF22B1C59 /* libPods-ScienceJournalProtos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2737,43 +2954,105 @@
 			path = ViewData;
 			sourceTree = "<group>";
 		};
-		D80999890678E0AFC0831674 /* Pods */ = {
+		CF130900DBF748D46D7F83E7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				81B6ADB3C8B55839B4C266D2 /* Pods-ScienceJournal.debug.xcconfig */,
-				1F4A9ECB04F0828D44D2C26D /* Pods-ScienceJournal.release.xcconfig */,
-				958B33107B78081C00CE9569 /* Pods-ScienceJournalTests.debug.xcconfig */,
-				395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */,
-				CD482804BCE6CEED23042379 /* Pods-ScienceJournalUITests.debug.xcconfig */,
-				716FC707D21F24E45C613BEC /* Pods-ScienceJournalUITests.release.xcconfig */,
-				D65BB81A86250B67E7CA196C /* Pods-ScienceJournal.adhoc.xcconfig */,
-				28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */,
-				C910BBBCF124BDC00C1BCC07 /* Pods-ScienceJournalUITests.adhoc.xcconfig */,
-				93AFC6D21C987695548ADC66 /* Pods-ScienceJournal.dogfood.xcconfig */,
-				448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */,
-				486F97684E4736F8AED250F0 /* Pods-ScienceJournalUITests.dogfood.xcconfig */,
+				81C3A245E6E175A01460E330 /* Pods-ScienceJournal.debug.xcconfig */,
+				F34D3AFFB61A5EC9E50A06D5 /* Pods-ScienceJournal.release.xcconfig */,
+				155190FC4E929CACA818D22E /* Pods-ScienceJournal.dogfood.xcconfig */,
+				6472D0AA08AED1CC5FA5FB6E /* Pods-ScienceJournal.adhoc.xcconfig */,
+				F56B0FA205D4B8EBAA94FACF /* Pods-ScienceJournalTests.debug.xcconfig */,
+				1917C9DBC741892B15CC64B8 /* Pods-ScienceJournalTests.release.xcconfig */,
+				A586F2EBD817C8BF32D0B05A /* Pods-ScienceJournalTests.dogfood.xcconfig */,
+				F596BEE85E4E1FEC2693371D /* Pods-ScienceJournalTests.adhoc.xcconfig */,
+				A99279667C02371F8AD457CD /* Pods-ScienceJournalUITests.debug.xcconfig */,
+				336DE411C71A4668E3FC94CF /* Pods-ScienceJournalUITests.release.xcconfig */,
+				2A6F0ECA8AFA3AB78765BD6E /* Pods-ScienceJournalUITests.dogfood.xcconfig */,
+				33ABBF35D87807C9A71A77A6 /* Pods-ScienceJournalUITests.adhoc.xcconfig */,
+				710337DC02574E17C47543A5 /* Pods-ScienceJournalProtos.debug.xcconfig */,
+				7116A8201DC898DD2C06ACBD /* Pods-ScienceJournalProtos.release.xcconfig */,
+				4563041027234F29D93386A0 /* Pods-ScienceJournalProtos.dogfood.xcconfig */,
+				C0F84A90BBB688ED87818D85 /* Pods-ScienceJournalProtos.adhoc.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1459E5622250D8EB003FB0B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1459E5D82250D904003FB0B7 /* Experiment.pbobjc.h in Headers */,
+				1459E5B32250D904003FB0B7 /* LocalSyncStatus.pbobjc.h in Headers */,
+				1459E5C72250D904003FB0B7 /* SensorTriggerInformation.pbobjc.h in Headers */,
+				1459E5C22250D904003FB0B7 /* SnapshotLabelValue.pbobjc.h in Headers */,
+				1459E5BC2250D904003FB0B7 /* GadgetInfo.pbobjc.h in Headers */,
+				1459E5AA2250D903003FB0B7 /* SensorSpec.pbobjc.h in Headers */,
+				1459E5AB2250D903003FB0B7 /* ScalarSensorData.pbobjc.h in Headers */,
+				1459E5D92250D904003FB0B7 /* Version.pbobjc.h in Headers */,
+				1459E5C52250D904003FB0B7 /* SensorConfig.pbobjc.h in Headers */,
+				1459E5B72250D904003FB0B7 /* SensorLayout.pbobjc.h in Headers */,
+				1459E5BB2250D904003FB0B7 /* InputDevice.pbobjc.h in Headers */,
+				1459E5B52250D904003FB0B7 /* IconPath.pbobjc.h in Headers */,
+				1459E5D12250D904003FB0B7 /* DeviceSpec.pbobjc.h in Headers */,
+				1459E5BF2250D904003FB0B7 /* PictureLabelValue.pbobjc.h in Headers */,
+				1459E5C62250D904003FB0B7 /* ScalarInputConfig.pbobjc.h in Headers */,
+				1459E5A92250D903003FB0B7 /* ExperimentLibrary.pbobjc.h in Headers */,
+				1459E5B62250D904003FB0B7 /* Sensor.pbobjc.h in Headers */,
+				1459E5D52250D904003FB0B7 /* Label.pbobjc.h in Headers */,
+				1459E56B2250D8EB003FB0B7 /* ScienceJournalProtos.h in Headers */,
+				1459E5B82250D904003FB0B7 /* SensorTrigger.pbobjc.h in Headers */,
+				1459E5AC2250D903003FB0B7 /* Caption.pbobjc.h in Headers */,
+				1459E5C32250D904003FB0B7 /* LabelValue.pbobjc.h in Headers */,
+				1459E5C82250D904003FB0B7 /* Trial.pbobjc.h in Headers */,
+				1459E5A62250D903003FB0B7 /* UserMetadata.pbobjc.h in Headers */,
+				1459E5CA2250D904003FB0B7 /* BasicSensorAppearance.pbobjc.h in Headers */,
+				1459E5AE2250D904003FB0B7 /* SensorTriggerLabelValue.pbobjc.h in Headers */,
+				1459E5BD2250D904003FB0B7 /* TextLabelValue.pbobjc.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		1459E5662250D8EB003FB0B7 /* ScienceJournalProtos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1459E56C2250D8EB003FB0B7 /* Build configuration list for PBXNativeTarget "ScienceJournalProtos" */;
+			buildPhases = (
+				8090FE6F8C76E9FFBC623D73 /* [CP] Check Pods Manifest.lock */,
+				1459E5622250D8EB003FB0B7 /* Headers */,
+				1459E5632250D8EB003FB0B7 /* Sources */,
+				1459E5642250D8EB003FB0B7 /* Frameworks */,
+				1459E5652250D8EB003FB0B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScienceJournalProtos;
+			productName = ScienceJournalProtos;
+			productReference = 1459E5672250D8EB003FB0B7 /* ScienceJournalProtos.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		68EBA6D91E20421E0089FF7F /* ScienceJournal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68EBA7021E20421E0089FF7F /* Build configuration list for PBXNativeTarget "ScienceJournal" */;
 			buildPhases = (
-				C790AD8CF306522DBC5993A0 /* [CP] Check Pods Manifest.lock */,
+				D5725C7C97E4A865BCEFCB18 /* [CP] Check Pods Manifest.lock */,
 				68836E631EDF3D5D004CE69B /* Generate Strings */,
 				686E3D311F5888DA00250628 /* FIXMEs to Warnings */,
 				68EBA6D61E20421E0089FF7F /* Sources */,
 				68EBA6D71E20421E0089FF7F /* Frameworks */,
 				68EBA6D81E20421E0089FF7F /* Resources */,
-				7E3499D6286B3586851B38AA /* [CP] Embed Pods Frameworks */,
+				048F8239BE3A83E967997975 /* [CP] Copy Pods Resources */,
+				1462979E2250E34300A3063E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1462979D2250E34300A3063E /* PBXTargetDependency */,
 			);
 			name = ScienceJournal;
 			productName = ScienceJournal;
@@ -2784,11 +3063,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68EBA7051E20421E0089FF7F /* Build configuration list for PBXNativeTarget "ScienceJournalTests" */;
 			buildPhases = (
-				A44D80B3A180473F1D42CD0A /* [CP] Check Pods Manifest.lock */,
+				16868A906396EA537DB1C81E /* [CP] Check Pods Manifest.lock */,
 				68EBA6EA1E20421E0089FF7F /* Sources */,
 				68EBA6EB1E20421E0089FF7F /* Frameworks */,
 				68EBA6EC1E20421E0089FF7F /* Resources */,
-				13572C5C1FD4E2EC68DBEAC5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2804,11 +3082,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68EBA7081E20421E0089FF7F /* Build configuration list for PBXNativeTarget "ScienceJournalUITests" */;
 			buildPhases = (
-				6A9F59DCD9F0297C0A3690CD /* [CP] Check Pods Manifest.lock */,
+				C7EB6D37E434C77D162F2F1C /* [CP] Check Pods Manifest.lock */,
 				68EBA6F51E20421E0089FF7F /* Sources */,
 				68EBA6F61E20421E0089FF7F /* Frameworks */,
 				68EBA6F71E20421E0089FF7F /* Resources */,
-				603A769657CAAF9E93CB585C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2830,6 +3107,11 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Google Inc.";
 				TargetAttributes = {
+					1459E5662250D8EB003FB0B7 = {
+						CreatedOnToolsVersion = 10.2;
+						DevelopmentTeam = EQHXZ8M8AV;
+						ProvisioningStyle = Automatic;
+					};
 					68EBA6D91E20421E0089FF7F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EQHXZ8M8AV;
@@ -2860,6 +3142,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				de_AT,
 				de_CH,
@@ -2907,11 +3190,19 @@
 				68EBA6D91E20421E0089FF7F /* ScienceJournal */,
 				68EBA6ED1E20421E0089FF7F /* ScienceJournalTests */,
 				68EBA6F81E20421E0089FF7F /* ScienceJournalUITests */,
+				1459E5662250D8EB003FB0B7 /* ScienceJournalProtos */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1459E5652250D8EB003FB0B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68EBA6D81E20421E0089FF7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2953,40 +3244,78 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13572C5C1FD4E2EC68DBEAC5 /* [CP] Embed Pods Frameworks */ = {
+		048F8239BE3A83E967997975 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-resources.sh",
+				"${PODS_ROOT}/MaterialComponents/components/ActivityIndicator/src/MaterialActivityIndicator.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/AppBar/src/MaterialAppBar.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/CollectionCells/src/MaterialCollectionCells.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/Collections/src/MaterialCollections.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/Dialogs/src/MaterialDialogs.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/FeatureHighlight/src/MaterialFeatureHighlight.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/PageControl/src/MaterialPageControl.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/Snackbar/src/MaterialSnackbar.bundle",
+				"${PODS_ROOT}/MaterialComponents/components/Tabs/src/MaterialTabs.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_arrow_back.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_check.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_check_circle.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_chevron_right.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_info.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_radio_button_unchecked.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents/MaterialIcons_ic_reorder.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialActivityIndicator.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialAppBar.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCollectionCells.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCollections.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialDialogs.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialFeatureHighlight.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialPageControl.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialSnackbar.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialTabs.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_arrow_back.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_check.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_check_circle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_chevron_right.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_info.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_radio_button_unchecked.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons_ic_reorder.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		603A769657CAAF9E93CB585C /* [CP] Embed Pods Frameworks */ = {
+		16868A906396EA537DB1C81E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"$(DERIVED_FILE_DIR)/Pods-ScienceJournalTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		686E3D311F5888DA00250628 /* FIXMEs to Warnings */ = {
@@ -3017,16 +3346,42 @@
 			shellPath = /bin/sh;
 			shellScript = "python $SRCROOT/Scripts/generate_strings.py -i $SRCROOT/ScienceJournal/Resources/Strings.bundle/en.lproj/Localizable.strings -o $SRCROOT/ScienceJournal/Strings/ScienceJournalStrings.swift";
 		};
-		6A9F59DCD9F0297C0A3690CD /* [CP] Check Pods Manifest.lock */ = {
+		8090FE6F8C76E9FFBC623D73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScienceJournalProtos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7EB6D37E434C77D162F2F1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ScienceJournalUITests-checkManifestLockResult.txt",
 			);
@@ -3035,68 +3390,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E3499D6286B3586851B38AA /* [CP] Embed Pods Frameworks */ = {
+		D5725C7C97E4A865BCEFCB18 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A44D80B3A180473F1D42CD0A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScienceJournalTests-checkManifestLockResult.txt",
+			outputFileListPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C790AD8CF306522DBC5993A0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ScienceJournal-checkManifestLockResult.txt",
 			);
@@ -3108,6 +3415,39 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1459E5632250D8EB003FB0B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1459E5D02250D904003FB0B7 /* IconPath.pbobjc.m in Sources */,
+				1459E5CD2250D904003FB0B7 /* SensorLayout.pbobjc.m in Sources */,
+				1459E5D42250D904003FB0B7 /* TextLabelValue.pbobjc.m in Sources */,
+				1459E5B22250D904003FB0B7 /* SensorConfig.pbobjc.m in Sources */,
+				1459E5A72250D903003FB0B7 /* LabelValue.pbobjc.m in Sources */,
+				1459E5BE2250D904003FB0B7 /* Label.pbobjc.m in Sources */,
+				1459E5D22250D904003FB0B7 /* LocalSyncStatus.pbobjc.m in Sources */,
+				1459E5B92250D904003FB0B7 /* Version.pbobjc.m in Sources */,
+				1459E5CE2250D904003FB0B7 /* SensorTrigger.pbobjc.m in Sources */,
+				1459E5B02250D904003FB0B7 /* SensorTriggerInformation.pbobjc.m in Sources */,
+				1459E5C12250D904003FB0B7 /* ExperimentLibrary.pbobjc.m in Sources */,
+				1459E5C02250D904003FB0B7 /* SensorSpec.pbobjc.m in Sources */,
+				1459E5CB2250D904003FB0B7 /* Caption.pbobjc.m in Sources */,
+				1459E5CF2250D904003FB0B7 /* Sensor.pbobjc.m in Sources */,
+				1459E5D32250D904003FB0B7 /* PictureLabelValue.pbobjc.m in Sources */,
+				1459E5D72250D904003FB0B7 /* InputDevice.pbobjc.m in Sources */,
+				1459E5AD2250D904003FB0B7 /* BasicSensorAppearance.pbobjc.m in Sources */,
+				1459E5C92250D904003FB0B7 /* SensorTriggerLabelValue.pbobjc.m in Sources */,
+				1459E5B12250D904003FB0B7 /* ScalarInputConfig.pbobjc.m in Sources */,
+				1459E5A82250D903003FB0B7 /* SnapshotLabelValue.pbobjc.m in Sources */,
+				1459E5BA2250D904003FB0B7 /* Experiment.pbobjc.m in Sources */,
+				1459E5AF2250D904003FB0B7 /* Trial.pbobjc.m in Sources */,
+				1459E5D62250D904003FB0B7 /* GadgetInfo.pbobjc.m in Sources */,
+				1459E5CC2250D904003FB0B7 /* ScalarSensorData.pbobjc.m in Sources */,
+				1459E5C42250D904003FB0B7 /* UserMetadata.pbobjc.m in Sources */,
+				1459E5B42250D904003FB0B7 /* DeviceSpec.pbobjc.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68EBA6D61E20421E0089FF7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3683,6 +4023,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1462979D2250E34300A3063E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1459E5662250D8EB003FB0B7 /* ScienceJournalProtos */;
+			targetProxy = 1462979C2250E34300A3063E /* PBXContainerItemProxy */;
+		};
 		68EBA6F01E20421E0089FF7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 68EBA6D91E20421E0089FF7F /* ScienceJournal */;
@@ -3707,6 +4052,134 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1459E56D2250D8EB003FB0B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710337DC02574E17C47543A5 /* Pods-ScienceJournalProtos.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ScienceJournalProtos/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalProtos;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1459E56E2250D8EB003FB0B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7116A8201DC898DD2C06ACBD /* Pods-ScienceJournalProtos.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ScienceJournalProtos/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalProtos;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1459E56F2250D8EB003FB0B7 /* Dogfood */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4563041027234F29D93386A0 /* Pods-ScienceJournalProtos.dogfood.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ScienceJournalProtos/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalProtos;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Dogfood;
+		};
+		1459E5702250D8EB003FB0B7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F84A90BBB688ED87818D85 /* Pods-ScienceJournalProtos.adhoc.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ScienceJournalProtos/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalProtos;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AdHoc;
+		};
 		6854E3761EE5C9A700044CF7 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3761,74 +4234,37 @@
 		};
 		6854E3771EE5C9A700044CF7 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D65BB81A86250B67E7CA196C /* Pods-ScienceJournal.adhoc.xcconfig */;
+			baseConfigurationReference = 6472D0AA08AED1CC5FA5FB6E /* Pods-ScienceJournal.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = logo_science_journal_dogfood_color;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 0;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"sqlite3\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreData\"",
-					"-framework",
-					"\"MDFInternationalization\"",
-					"-framework",
-					"\"MDFTextAccessibility\"",
-					"-framework",
-					"\"MaterialComponents\"",
-					"-framework",
-					"\"MotionAnimator\"",
-					"-framework",
-					"\"MotionInterchange\"",
-					"-framework",
-					"\"Protobuf\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-l\"iconv\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 0;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = AdHoc;
 		};
 		6854E3781EE5C9A700044CF7 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */;
+			baseConfigurationReference = F596BEE85E4E1FEC2693371D /* Pods-ScienceJournalTests.adhoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -3836,28 +4272,19 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = AdHoc;
 		};
 		6854E3791EE5C9A700044CF7 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C910BBBCF124BDC00C1BCC07 /* Pods-ScienceJournalUITests.adhoc.xcconfig */;
+			baseConfigurationReference = 33ABBF35D87807C9A71A77A6 /* Pods-ScienceJournalUITests.adhoc.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -3865,10 +4292,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = ScienceJournal;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = AdHoc;
 		};
@@ -3926,94 +4351,39 @@
 		};
 		685CC4411FD0956900A3E627 /* Dogfood */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93AFC6D21C987695548ADC66 /* Pods-ScienceJournal.dogfood.xcconfig */;
+			baseConfigurationReference = 155190FC4E929CACA818D22E /* Pods-ScienceJournal.dogfood.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = logo_science_journal_dogfood_color;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization/MDFInternationalization.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility/MDFTextAccessibility.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents/MaterialComponents.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator/MotionAnimator.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange/MotionInterchange.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf/Protobuf.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SSZipArchive/SSZipArchive.framework/Headers\"",
-					"-DSCIENCEJOURNAL_DOGFOOD_BUILD",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"sqlite3\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreData\"",
-					"-framework",
-					"\"MDFInternationalization\"",
-					"-framework",
-					"\"MDFTextAccessibility\"",
-					"-framework",
-					"\"MaterialComponents\"",
-					"-framework",
-					"\"MotionAnimator\"",
-					"-framework",
-					"\"MotionInterchange\"",
-					"-framework",
-					"\"Protobuf\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-l\"iconv\"",
-				);
-				OTHER_SWIFT_FLAGS = "-DSCIENCEJOURNAL_DOGFOOD_BUILD";
+				OTHER_SWIFT_FLAGS = "-DSCIENCEJOURNAL_DOGFOOD_BUILD $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Science Journal Dev";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 0;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Dogfood;
 		};
 		685CC4421FD0956900A3E627 /* Dogfood */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */;
+			baseConfigurationReference = A586F2EBD817C8BF32D0B05A /* Pods-ScienceJournalTests.dogfood.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4021,28 +4391,19 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = Dogfood;
 		};
 		685CC4431FD0956900A3E627 /* Dogfood */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 486F97684E4736F8AED250F0 /* Pods-ScienceJournalUITests.dogfood.xcconfig */;
+			baseConfigurationReference = 2A6F0ECA8AFA3AB78765BD6E /* Pods-ScienceJournalUITests.dogfood.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4050,10 +4411,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = ScienceJournal;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = Dogfood;
 		};
@@ -4170,152 +4529,66 @@
 		};
 		68EBA7031E20421E0089FF7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81B6ADB3C8B55839B4C266D2 /* Pods-ScienceJournal.debug.xcconfig */;
+			baseConfigurationReference = 81C3A245E6E175A01460E330 /* Pods-ScienceJournal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = logo_science_journal_dogfood_color;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization/MDFInternationalization.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility/MDFTextAccessibility.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents/MaterialComponents.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator/MotionAnimator.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange/MotionInterchange.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf/Protobuf.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SSZipArchive/SSZipArchive.framework/Headers\"",
-					"-DSCIENCEJOURNAL_ENABLE_DEBUG",
-					"-DSCIENCEJOURNAL_DEV_BUILD",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"sqlite3\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreData\"",
-					"-framework",
-					"\"MDFInternationalization\"",
-					"-framework",
-					"\"MDFTextAccessibility\"",
-					"-framework",
-					"\"MaterialComponents\"",
-					"-framework",
-					"\"MotionAnimator\"",
-					"-framework",
-					"\"MotionInterchange\"",
-					"-framework",
-					"\"Protobuf\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-l\"iconv\"",
-				);
-				OTHER_SWIFT_FLAGS = "-DSCIENCEJOURNAL_ENABLE_DEBUG -DSCIENCEJOURNAL_DEV_BUILD";
+				OTHER_SWIFT_FLAGS = "-DSCIENCEJOURNAL_ENABLE_DEBUG -DSCIENCEJOURNAL_DEV_BUILD $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "Science Journal Dev";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 3;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		68EBA7041E20421E0089FF7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F4A9ECB04F0828D44D2C26D /* Pods-ScienceJournal.release.xcconfig */;
+			baseConfigurationReference = F34D3AFFB61A5EC9E50A06D5 /* Pods-ScienceJournal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = logo_science_journal_color;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"sqlite3\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreData\"",
-					"-framework",
-					"\"MDFInternationalization\"",
-					"-framework",
-					"\"MDFTextAccessibility\"",
-					"-framework",
-					"\"MaterialComponents\"",
-					"-framework",
-					"\"MotionAnimator\"",
-					"-framework",
-					"\"MotionInterchange\"",
-					"-framework",
-					"\"Protobuf\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-l\"iconv\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Science Journal Dev";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 0;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		68EBA7061E20421E0089FF7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 958B33107B78081C00CE9569 /* Pods-ScienceJournalTests.debug.xcconfig */;
+			baseConfigurationReference = F56B0FA205D4B8EBAA94FACF /* Pods-ScienceJournalTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4323,30 +4596,21 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = Debug;
 		};
 		68EBA7071E20421E0089FF7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */;
+			baseConfigurationReference = 1917C9DBC741892B15CC64B8 /* Pods-ScienceJournalTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4354,28 +4618,19 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = Release;
 		};
 		68EBA7091E20421E0089FF7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD482804BCE6CEED23042379 /* Pods-ScienceJournalUITests.debug.xcconfig */;
+			baseConfigurationReference = A99279667C02371F8AD457CD /* Pods-ScienceJournalUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4383,29 +4638,20 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = ScienceJournal;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = Debug;
 		};
 		68EBA70A1E20421E0089FF7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 716FC707D21F24E45C613BEC /* Pods-ScienceJournalUITests.release.xcconfig */;
+			baseConfigurationReference = 336DE411C71A4668E3FC94CF /* Pods-ScienceJournalUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFInternationalization\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionAnimator\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionTransitioning\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScienceJournalUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4413,16 +4659,25 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = ScienceJournal;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1459E56C2250D8EB003FB0B7 /* Build configuration list for PBXNativeTarget "ScienceJournalProtos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1459E56D2250D8EB003FB0B7 /* Debug */,
+				1459E56E2250D8EB003FB0B7 /* Release */,
+				1459E56F2250D8EB003FB0B7 /* Dogfood */,
+				1459E5702250D8EB003FB0B7 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		68EBA6D51E20421E0089FF7F /* Build configuration list for PBXProject "ScienceJournal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

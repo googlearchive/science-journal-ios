@@ -1,12 +1,15 @@
-platform :ios, '10.0'
+IOS_VERSION = '10.0'
 
-def shared_test_pods
+platform :ios, IOS_VERSION
+
+use_modular_headers!
+
+def pod_protobuf
   pod 'Protobuf', '~> 3.5.0', :inhibit_warnings => true
 end
 
 target 'ScienceJournal' do
-  use_frameworks!
-
+  pod_protobuf
   # Pods for ScienceJournal
   ## Drive
   pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1', :inhibit_warnings => true
@@ -41,32 +44,29 @@ target 'ScienceJournal' do
   pod 'MaterialComponents/TextFields', :inhibit_warnings => true
   pod 'MaterialComponents/Themes'
   pod 'MaterialComponents/Typography'
-  ## Protobuf
-  pod 'Protobuf', '~> 3.5.0', :inhibit_warnings => true
   ## ZipArchive
   pod 'SSZipArchive', '2.1.1'
 
   target 'ScienceJournalTests' do
     inherit! :search_paths
-    shared_test_pods
   end
 
   target 'ScienceJournalUITests' do
     inherit! :search_paths
-    shared_test_pods
   end
 end
 
+target 'ScienceJournalProtos' do
+  pod_protobuf
+end
+
 post_install do |installer|
-  deployment_target = '10.0'
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       if installer.config.verbose?
         puts "Setting deployment target #{deployment_target} for #{config.name} on #{target.name}"
       end
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = deployment_target
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = IOS_VERSION
     end
   end
-  puts "Generating Science Journal protos"
-  system("cd Protos && ./generate.sh")
 end

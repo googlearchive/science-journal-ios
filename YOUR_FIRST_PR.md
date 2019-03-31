@@ -17,7 +17,7 @@ If you want to work on something else, e.g. new functionality or fixing a bug, i
   - `git clone git@github.com:<YOUR_GITHUB_USER>/science-journal-ios.git`
   - Learn more about how to manage your fork: [https://help.github.com/articles/working-with-forks/](https://help.github.com/articles/working-with-forks/)
 - Install dependencies:
-  - Run `pod install` in the project root
+  - Run `setup.sh` in the project root
 - Create a new branch to work on:
   - `git checkout -b <YOUR_BRANCH_NAME>`
   - A good name for a branch describes the thing you’ll be working on, e.g. `issue-132`, `fix-pitch-sensor-graph`, etc.

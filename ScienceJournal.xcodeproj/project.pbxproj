@@ -2857,9 +2857,10 @@
 			};
 			buildConfigurationList = 68EBA6D51E20421E0089FF7F /* Build configuration list for PBXProject "ScienceJournal" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				de_AT,
 				de_CH,

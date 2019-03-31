@@ -33,16 +33,12 @@ Second, you'll need the latest version of [Xcode](https://developer.apple.com/xc
 
 Third, we use a few open source frameworks to build this app, so you'll need to install CocoaPods as your package manager in order to get what you need to build.
 
-Fourth, we use [protobuf](https://developers.google.com/protocol-buffers/). You'll need to install that too. We use [Homebrew](https://brew.sh/) to install it:
-` brew install protobuf@3.1; brew link protobuf@3.1 -f`.
-
-We recommend installing [CocoaPods](https://cocoapods.org/) by running:
-`sudo gem install cocoapods` from your terminal.
+Fourth, we use [protobuf](https://developers.google.com/protocol-buffers/).
 
 ## Building and running
 Before you jump into coding, you'll need to run
 
-`pod install` from the root of this project (the folder that contains has the `Podfile` file)
+`setup.sh` from the root of this project (the folder that contains has the `Podfile` file)
 
 Then you can open `ScienceJournal.xcworkspace`
 

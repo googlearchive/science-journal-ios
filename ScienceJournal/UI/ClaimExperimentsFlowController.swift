@@ -156,7 +156,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   /// - Parameter trialID: A trial ID.
   func showTrial(withID trialID: String) {
     guard let experiment = openExperimentUpdateManager?.experiment,
-        let trialIndex = experiment.trials.index(where: { $0.ID == trialID }) else {
+        let trialIndex = experiment.trials.firstIndex(where: { $0.ID == trialID }) else {
       return
     }
     let trial = experiment.trials[trialIndex]

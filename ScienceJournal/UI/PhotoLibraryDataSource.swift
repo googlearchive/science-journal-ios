@@ -102,6 +102,7 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
         }
       })
       return false
+    default: fatalError("Impossible case")
     }
   }
 

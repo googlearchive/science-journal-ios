@@ -97,7 +97,7 @@ class BLEPeripheralInterface: NSObject, CBPeripheralDelegate {
 
     for characterstic in characteristics {
       // If there is an existing notify block for the characteristic, start notifying.
-      if characteristicNotifyBlocks.keys.index(of: characterstic.uuid) != nil {
+      if characteristicNotifyBlocks.keys.firstIndex(of: characterstic.uuid) != nil {
         peripheral.setNotifyValue(true, for: characterstic)
       }
     }

@@ -2833,7 +2833,7 @@
 					68EBA6D91E20421E0089FF7F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EQHXZ8M8AV;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2843,13 +2843,13 @@
 					};
 					68EBA6ED1E20421E0089FF7F = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 68EBA6D91E20421E0089FF7F;
 					};
 					68EBA6F81E20421E0089FF7F = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 68EBA6D91E20421E0089FF7F;
 					};
@@ -2857,7 +2857,7 @@
 			};
 			buildConfigurationList = 68EBA6D51E20421E0089FF7F /* Build configuration list for PBXProject "ScienceJournal" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -3807,7 +3807,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 0;
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -3837,7 +3837,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -3866,7 +3866,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ScienceJournal;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -3992,7 +3992,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "Science Journal Dev";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 0;
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -4022,7 +4022,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -4051,7 +4051,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ScienceJournal;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -4239,7 +4239,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "Science Journal Dev";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 3;
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -4291,10 +4291,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Science Journal Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENTRYPOINT = 0;
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/MaterialComponents/components/** $(SRCROOT)/Pods/GoogleAPIClientForREST/** $(SRCROOT)/Pods/GTMSessionFetcher $(SRCROOT)/Pods/GTMOAuth2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -4325,7 +4325,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -4355,7 +4355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal.ScienceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScienceJournal.app/ScienceJournal";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -4385,7 +4385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ScienceJournal;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};
@@ -4414,7 +4414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/ModuleMaps\"/**";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ScienceJournal;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pods/MaterialComponents/components\"/**";
 			};

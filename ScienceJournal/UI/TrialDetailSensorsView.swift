@@ -187,7 +187,7 @@ class TrialDetailSensorsView: UICollectionReusableView {
   ///   - chartPresentationView: A chart presentation view.
   ///   - sensorID: A sensor ID.
   func updateChartView(_ chartPresentationView: UIView, forSensorWithID sensorID: String) {
-    guard let index = sensors.index(where: { sensorID == $0.ID }) else {
+    guard let index = sensors.firstIndex(where: { sensorID == $0.ID }) else {
       return
     }
     var sensor = sensors[index]

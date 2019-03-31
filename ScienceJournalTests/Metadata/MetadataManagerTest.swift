@@ -121,7 +121,7 @@ class MetadataManagerTest: XCTestCase {
     XCTAssertEqual("123 Title", overview.title)
     XCTAssertEqual(experiment.ID, overview.experimentID)
 
-    let index = metadataManager.experimentOverviews.index(
+    let index = metadataManager.experimentOverviews.firstIndex(
         where: { $0.experimentID == overview.experimentID })
     XCTAssertNotNil(index, "Overviews contains the new overview")
   }

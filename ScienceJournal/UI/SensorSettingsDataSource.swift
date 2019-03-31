@@ -386,7 +386,7 @@ class SensorSettingsDataSource: BLEServiceScannerDelegate {
   /// - Parameter indexPath: An index path.
   func removeSection(atIndexPath indexPath: IndexPath) {
     guard let section = deviceSection(atIndexPath: indexPath),
-        let sectionIndex = deviceSections.index(where: { $0.name == section.name }) else {
+        let sectionIndex = deviceSections.firstIndex(where: { $0.name == section.name }) else {
       return
     }
 
@@ -411,7 +411,7 @@ class SensorSettingsDataSource: BLEServiceScannerDelegate {
     }
 
     if isSensorEnabled(sensor) {
-      guard let index = enabledSensorIDs.index(where: { $0 == sensor.sensorId }) else { return }
+      guard let index = enabledSensorIDs.firstIndex(where: { $0 == sensor.sensorId }) else { return }
       enabledSensorIDs.remove(at: index)
     } else {
       enabledSensorIDs.append(sensor.sensorId)

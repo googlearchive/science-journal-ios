@@ -548,7 +548,7 @@ public class MetadataManager {
   public func createOverviewFromExperimentLibrary(forExperiment experiment: Experiment) {
     // Only create an overview if it doesn't exist.
     let overviewExists =
-        userMetadata.experimentOverviews.index(where: { $0.experimentID == experiment.ID }) != nil
+        userMetadata.experimentOverviews.firstIndex(where: { $0.experimentID == experiment.ID }) != nil
     guard let syncExperiment = experimentLibrary.syncExperiment(forID: experiment.ID),
          !overviewExists else {
       return
@@ -1513,7 +1513,7 @@ public class MetadataManager {
     var didAddAnOverview = false
     for experimentURL in experimentURLs {
       let experimentID = experimentURL.lastPathComponent
-      if userMetadata.experimentOverviews.index(where: { $0.experimentID == experimentID }) == nil {
+      if userMetadata.experimentOverviews.firstIndex(where: { $0.experimentID == experimentID }) == nil {
         guard let experiment = experiment(withID: experimentID) else {
           // No valid experiment at this URL, nothing to add.
           continue

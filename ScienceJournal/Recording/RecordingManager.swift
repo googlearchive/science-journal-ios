@@ -180,7 +180,7 @@ class RecordingManager: RecorderDelegate {
   /// - Parameter sensorID: A sensor ID.
   /// - Returns: A recorder.
   func recorder(forSensorID sensorID: String) -> Recorder? {
-    guard let index = recorders.index(where: { $0.sensor.sensorId == sensorID }) else {
+    guard let index = recorders.firstIndex(where: { $0.sensor.sensorId == sensorID }) else {
       return nil
     }
     return recorders[index]
@@ -191,7 +191,7 @@ class RecordingManager: RecorderDelegate {
   /// - Parameter recorder: The recorder to remove.
   private func remove(recorder: Recorder) {
     recorder.removeSensorListener()
-    if let index = recorders.index(where: { $0 == recorder }) {
+    if let index = recorders.firstIndex(where: { $0 == recorder }) {
       recorders.remove(at: index)
     }
   }

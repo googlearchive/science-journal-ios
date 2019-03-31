@@ -127,6 +127,8 @@ public class Note {
       return SnapshotNote(proto: labelProto)
     case .sensorTrigger:
       return TriggerNote(proto: labelProto)
+    default:
+        fatalError("Impossible case")
     }
   }
 

@@ -59,6 +59,7 @@ class TriggerWhenSelectorView: TriggerOptionSelectorView {
       selectionLabel.text = String.triggerWhenDropsBelow
     case .triggerWhenRisesAbove:
       selectionLabel.text = String.triggerWhenRisesAbove
+    default: fatalError("Impossible case")
     }
   }
 

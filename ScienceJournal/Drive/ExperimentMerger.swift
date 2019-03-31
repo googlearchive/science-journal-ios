@@ -123,6 +123,7 @@ public class ExperimentMerger {
     case .note, .caption:
       handleNoteConflict(externalExperiment: externalExperiment, externalChange: externalChange)
     case .unknown: break
+    default: fatalError("Impossible case")
     }
   }
 
@@ -136,6 +137,7 @@ public class ExperimentMerger {
     case .note, .caption:
       copyNoteChange(externalExperiment: externalExperiment, externalChange: externalChange)
     case .unknown: break
+    default: fatalError("Impossible case")
     }
   }
 

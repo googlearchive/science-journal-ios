@@ -213,7 +213,7 @@ public class Trial {
   /// - Parameter sensorId: The sensor ID.
   /// - Returns: The sensor trial stats.
   func sensorTrialStats(for sensorID: String) -> TrialStats? {
-    guard let index = trialStats.index(where: { $0.sensorID == sensorID }) else {
+    guard let index = trialStats.firstIndex(where: { $0.sensorID == sensorID }) else {
       return nil
     }
     return trialStats[index]
@@ -221,7 +221,7 @@ public class Trial {
 
   func sensorLayout(forSensorID sensorID: String) -> SensorLayout? {
     let sensorLayouts = proto.sensorLayoutsArray.compactMap { $0 as? GSJSensorLayout }
-    guard let index = sensorLayouts.index(where: { $0.sensorId == sensorID }) else {
+    guard let index = sensorLayouts.firstIndex(where: { $0.sensorId == sensorID }) else {
       return nil
     }
     return SensorLayout(proto: sensorLayouts[index])
@@ -233,7 +233,7 @@ public class Trial {
   /// - Returns: The appearance for the sensor.
   func sensorAppearance(for sensorID: String) -> BasicSensorAppearance? {
     let appearances = proto.sensorAppearancesArray.compactMap { $0 as? GSJTrial_AppearanceEntry }
-    guard let index = appearances.index(where: { $0.sensorId == sensorID }) else { return nil }
+    guard let index = appearances.firstIndex(where: { $0.sensorId == sensorID }) else { return nil }
     return BasicSensorAppearance(proto: appearances[index].rememberedAppearance)
   }
 
@@ -259,7 +259,7 @@ public class Trial {
   /// - Parameter ID: A string ID.
   /// - Returns: The note with a matching ID, otherwise nil.
   func note(withID noteID: String) -> Note? {
-    guard let index = notes.index(where: { $0.ID == noteID }) else { return nil }
+    guard let index = notes.firstIndex(where: { $0.ID == noteID }) else { return nil }
     return notes[index]
   }
 
@@ -312,7 +312,7 @@ public class Trial {
   @discardableResult func removeNote(withID noteID: String,
                                      experiment: Experiment,
                                      withChange: Bool = true) -> (Note, Int)? {
-    guard let index = notes.index(where: { $0.ID == noteID }) else {
+    guard let index = notes.firstIndex(where: { $0.ID == noteID }) else {
       return nil
     }
     let removedNote = notes.remove(at: index)
@@ -329,7 +329,7 @@ public class Trial {
   ///   - experiment: The experiment that owns the trial.
   ///   - withChange: Whether a change should be recorded for this action.
   func updateNote(_ note: Note, experiment: Experiment, withChange: Bool = true) {
-    guard let index = notes.index(where: { $0.ID == note.ID }) else {
+    guard let index = notes.firstIndex(where: { $0.ID == note.ID }) else {
       return
     }
     notes[index] = note.copy()

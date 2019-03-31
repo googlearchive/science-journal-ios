@@ -62,7 +62,7 @@ public class LocalSyncStatus {
   /// - Parameter experimentID: The experiment ID.
   public func addExperiment(withID experimentID: String) {
     experimentStatusesQueue.sync {
-      guard experimentStatuses.index(where: { $0.experimentID == experimentID }) == nil else {
+      guard experimentStatuses.firstIndex(where: { $0.experimentID == experimentID }) == nil else {
         return
       }
       let status = ExperimentStatus(experimentID: experimentID)
@@ -75,7 +75,7 @@ public class LocalSyncStatus {
   /// - Parameter experimentID: An experiment ID.
   public func removeExperiment(withID experimentID: String) {
     experimentStatusesQueue.sync {
-      guard let index = experimentStatuses.index(where: { $0.experimentID == experimentID }) else {
+      guard let index = experimentStatuses.firstIndex(where: { $0.experimentID == experimentID }) else {
         return
       }
       experimentStatuses.remove(at: index)
@@ -180,7 +180,7 @@ public class LocalSyncStatus {
   private func experimentStatus(forID experimentID: String) -> ExperimentStatus? {
     var experimentStatus: ExperimentStatus?
     experimentStatusesQueue.sync {
-      guard let index = experimentStatuses.index(where: { $0.experimentID == experimentID }) else {
+      guard let index = experimentStatuses.firstIndex(where: { $0.experimentID == experimentID }) else {
         return
       }
       experimentStatus = experimentStatuses[index]

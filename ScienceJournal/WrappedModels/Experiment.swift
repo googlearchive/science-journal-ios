@@ -213,7 +213,7 @@ public class Experiment {
   /// - Parameter ID: A string ID.
   /// - Returns: The trial with a matching ID, otherwise nil.
   func trial(withID ID: String) -> Trial? {
-    guard let index = trials.index(where: { $0.ID == ID }) else { return nil }
+    guard let index = trials.firstIndex(where: { $0.ID == ID }) else { return nil }
     return trials[index]
   }
 
@@ -222,7 +222,7 @@ public class Experiment {
   /// - Parameter ID: A string ID.
   /// - Returns: The note with a matching ID, otherwise nil.
   func note(withID noteID: String) -> Note? {
-    guard let index = notes.index(where: { $0.ID == noteID }) else { return nil }
+    guard let index = notes.firstIndex(where: { $0.ID == noteID }) else { return nil }
     return notes[index]
   }
 
@@ -231,11 +231,11 @@ public class Experiment {
   /// - Parameter noteID: A note ID.
   /// - Returns: The note with a matching ID, otherwise nil.
   func findNote(withID noteID: String) -> (Note?, Trial?) {
-    if let index = notes.index(where: { $0.ID == noteID }) {
+    if let index = notes.firstIndex(where: { $0.ID == noteID }) {
       return (notes[index], nil)
     } else {
       for trial in trials {
-        if let index = trial.notes.index(where: { $0.ID == noteID }) {
+        if let index = trial.notes.firstIndex(where: { $0.ID == noteID }) {
           return (trial.notes[index], trial)
         }
       }
@@ -268,7 +268,7 @@ public class Experiment {
   ///   - withChange: Whether a change should be recorded for this action.
   /// - Returns: The trial that was removed.
   @discardableResult func removeTrial(withID trialID: String, withChange: Bool = true) -> Trial? {
-    guard let index = trials.index(where: { $0.ID == trialID }) else { return nil }
+    guard let index = trials.firstIndex(where: { $0.ID == trialID }) else { return nil }
     if withChange {
       trackChange(ExperimentChange.deleteChange(forElement: .trial, withID: trialID))
     }
@@ -281,7 +281,7 @@ public class Experiment {
   ///   - trial: A trial.
   ///   - withChange: Whether a change should be recorded for this action.
   func updateTrial(_ trial: Trial, withChange: Bool) {
-    guard let index = trials.index(where: { $0.ID == trial.ID }) else {
+    guard let index = trials.firstIndex(where: { $0.ID == trial.ID }) else {
       return
     }
 
@@ -327,7 +327,7 @@ public class Experiment {
   /// - Returns: The removed note, if a note was removed.
   @discardableResult func removeNote(withID noteID: String,
                                      withChange: Bool = true) -> (Note, Int)? {
-    guard let index = notes.index(where: { $0.ID == noteID }) else { return nil }
+    guard let index = notes.firstIndex(where: { $0.ID == noteID }) else { return nil }
     let removedNote = notes.remove(at: index)
     if withChange {
       trackChange(ExperimentChange.deleteChange(forElement: .note, withID: noteID))
@@ -357,7 +357,7 @@ public class Experiment {
   ///   - note: A note.
   ///   - withChange: Whether a change should be recorded for this action.
   func updateNote(_ note: Note, withChange: Bool = true) {
-    guard let index = notes.index(where: { $0.ID == note.ID }) else {
+    guard let index = notes.firstIndex(where: { $0.ID == note.ID }) else {
       return
     }
     notes[index] = note.copy()
@@ -386,7 +386,7 @@ public class Experiment {
   /// - Parameter sensorID: The sensor ID.
   /// - Returns: The sensor layout.
   func sensorLayoutForSensorID(_ sensorID: String) -> SensorLayout? {
-    guard let index = sensorLayouts.index(where: { $0.sensorID == sensorID }) else { return nil }
+    guard let index = sensorLayouts.firstIndex(where: { $0.sensorID == sensorID }) else { return nil }
     return sensorLayouts[index]
   }
 

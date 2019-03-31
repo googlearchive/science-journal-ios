@@ -96,7 +96,7 @@ public class ExperimentOverview {
     }
     set {
       proto.colorIndex =
-          Int32(MDCPalette.experimentListCardColorPaletteOptions.index(of: newValue) ?? 0)
+          Int32(MDCPalette.experimentListCardColorPaletteOptions.firstIndex(of: newValue) ?? 0)
     }
   }
 

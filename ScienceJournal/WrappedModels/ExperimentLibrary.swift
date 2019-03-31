@@ -82,7 +82,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   /// - Parameter experimentID: An experiment ID.
   /// - Returns: True if the experiment exists, otherwise false.
   public func hasExperiment(withID experimentID: String) -> Bool {
-    return syncExperiments.index(where: { $0.experimentID == experimentID }) != nil
+    return syncExperiments.firstIndex(where: { $0.experimentID == experimentID }) != nil
   }
 
   /// Sets the Drive file ID for an experiment.
@@ -267,7 +267,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   func syncExperiment(forID experimentID: String) -> SyncExperiment? {
     var syncExperiment: SyncExperiment?
     syncExperimentsQueue.sync {
-      guard let index = syncExperiments.index(where: { $0.experimentID == experimentID }) else {
+      guard let index = syncExperiments.firstIndex(where: { $0.experimentID == experimentID }) else {
         return
       }
       syncExperiment = syncExperiments[index]

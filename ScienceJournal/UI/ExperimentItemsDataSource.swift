@@ -183,7 +183,7 @@ class ExperimentItemsDataSource {
   ///
   /// - Parameter displayTrial: A display trial.
   func addOrUpdateTrial(_ displayTrial: DisplayTrial) {
-    if experimentItems.index(where: { $0 is DisplayTrial && $0.ID == displayTrial.ID }) != nil {
+    if experimentItems.firstIndex(where: { $0 is DisplayTrial && $0.ID == displayTrial.ID }) != nil {
       // Trial exists so update it.
       updateTrial(displayTrial)
     } else {
@@ -269,7 +269,7 @@ class ExperimentItemsDataSource {
   /// - Returns: The index of the removed trial if the removal succeeded.
   @discardableResult func removeTrial(withID trialID: String) -> Int? {
     guard let index =
-        experimentItems.index(where: { $0 is DisplayTrial && $0.ID == trialID }) else {
+        experimentItems.firstIndex(where: { $0 is DisplayTrial && $0.ID == trialID }) else {
       return nil
     }
     experimentItems.remove(at: index)
@@ -283,7 +283,7 @@ class ExperimentItemsDataSource {
   /// - Parameter displayTrial: A display trial.
   func updateTrial(_ displayTrial: DisplayTrial) {
     guard let index =
-        experimentItems.index(where: { $0 is DisplayTrial && $0.ID == displayTrial.ID }) else {
+        experimentItems.firstIndex(where: { $0 is DisplayTrial && $0.ID == displayTrial.ID }) else {
       return
     }
     updateItem(displayTrial, atIndex: index)
@@ -294,7 +294,7 @@ class ExperimentItemsDataSource {
   /// - Parameter displayNote: A display note.
   func updateNote(_ displayNote: DisplayNote) {
     guard let index =
-        experimentItems.index(where: { $0 is DisplayNote && $0.ID == displayNote.ID }) else {
+        experimentItems.firstIndex(where: { $0 is DisplayNote && $0.ID == displayNote.ID }) else {
       return
     }
     updateItem(displayNote, atIndex: index)
@@ -304,7 +304,7 @@ class ExperimentItemsDataSource {
   ///
   /// - Parameter noteID: A note ID.
   func removeNote(withNoteID noteID: String) {
-    guard let index = experimentItems.index(where: { $0 is DisplayNote && $0.ID == noteID }) else {
+    guard let index = experimentItems.firstIndex(where: { $0 is DisplayNote && $0.ID == noteID }) else {
       return
     }
     experimentItems.remove(at: index)

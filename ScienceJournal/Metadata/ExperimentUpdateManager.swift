@@ -415,7 +415,7 @@ class ExperimentUpdateManager {
   ///
   /// - Parameter trialID: A trial ID.
   func toggleArchivedState(forTrialID trialID: String) {
-    guard let index = experiment.trials.index(where: { $0.ID == trialID }) else {
+    guard let index = experiment.trials.firstIndex(where: { $0.ID == trialID }) else {
       return
     }
 
@@ -439,7 +439,7 @@ class ExperimentUpdateManager {
   /// Notifies the experiment update manager the experiment was changed externally and should
   /// be saved.
   func recordingTrialChangedExternally(_ recordingTrial: Trial) {
-    if let existingIndex = experiment.trials.index(where: { $0.ID == recordingTrial.ID }) {
+    if let existingIndex = experiment.trials.firstIndex(where: { $0.ID == recordingTrial.ID }) {
       experiment.trials[existingIndex] = recordingTrial
       saveExperiment()
     }

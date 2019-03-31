@@ -58,7 +58,7 @@ class SensorLayout: Equatable, Hashable {
       return MDCPalette.sensorCardColorPaletteOptions[Int(proto.colorIndex)]
     }
     set {
-      proto.colorIndex = Int32(MDCPalette.sensorCardColorPaletteOptions.index(of: newValue) ?? 0)
+      proto.colorIndex = Int32(MDCPalette.sensorCardColorPaletteOptions.firstIndex(of: newValue) ?? 0)
     }
   }
 

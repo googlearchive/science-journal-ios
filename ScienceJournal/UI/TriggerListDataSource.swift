@@ -50,7 +50,7 @@ class TriggerListDataSource {
 
   /// Returns the index path of an item.
   func indexPathOfItem(_ item: SensorTrigger) -> IndexPath? {
-    guard let index = triggers.index(where: { $0.triggerID == item.triggerID }) else { return nil }
+    guard let index = triggers.firstIndex(where: { $0.triggerID == item.triggerID }) else { return nil }
     return IndexPath(item: index, section: 0)
   }
 

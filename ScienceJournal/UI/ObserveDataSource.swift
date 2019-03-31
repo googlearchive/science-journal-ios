@@ -97,7 +97,7 @@ class ObserveDataSource: SensorDelegate {
   /// - Parameter sensor: The sensor.
   /// - Returns: The sensor card.
   func sensorCard(for sensor: Sensor) -> SensorCard? {
-    guard let index = items.index(where: { $0.sensor == sensor }) else { return nil }
+    guard let index = items.firstIndex(where: { $0.sensor == sensor }) else { return nil }
     return items[index]
   }
 
@@ -125,7 +125,7 @@ class ObserveDataSource: SensorDelegate {
   ///
   /// - Parameter sensorCard: A `SensorCard` object to remove.
   func removeItem(_ sensorCard: SensorCard) {
-    if let index = items.index(of: sensorCard) {
+    if let index = items.firstIndex(of: sensorCard) {
       items.remove(at: index)
     }
   }
@@ -149,7 +149,7 @@ class ObserveDataSource: SensorDelegate {
   /// - Parameter sensorID: A sensor ID.
   /// - Returns: A sensor card.
   func item(withSensorID sensorID: String) -> SensorCard? {
-    guard let index = items.index(where: { $0.sensor.sensorId == sensorID }) else {
+    guard let index = items.firstIndex(where: { $0.sensor.sensorId == sensorID }) else {
       return nil
     }
     return items[index]
@@ -165,7 +165,7 @@ class ObserveDataSource: SensorDelegate {
   /// - Parameter sensorCard: A sensor card in `items`.
   /// - Returns: The `IndexPath` for the given sensor card.
   func indexPathForItem(_ sensorCard: SensorCard) -> IndexPath? {
-    guard let index = items.index(of: sensorCard) else { return nil }
+    guard let index = items.firstIndex(of: sensorCard) else { return nil }
     return IndexPath(item: index, section: 0)
   }
 
@@ -194,7 +194,7 @@ class ObserveDataSource: SensorDelegate {
   ///
   /// - Parameter sensor: A `Sensor` object.
   func endUsingSensor(_ sensor: Sensor) {
-    if let index = sensorsInUse.index(of: sensor) {
+    if let index = sensorsInUse.firstIndex(of: sensor) {
       sensorsInUse.remove(at: index)
       sensor.delegate = nil
     }

@@ -175,6 +175,7 @@ class BLEServiceScanner: NSObject, CBCentralManagerDelegate {
       print("Bluetooth is powered on.")
       isBluetoothAvailable = true
       resumeScanning()
+    default: fatalError("Impossible case")
     }
 
     if (previouslyAvailable != isBluetoothAvailable) {
@@ -191,7 +192,7 @@ class BLEServiceScanner: NSObject, CBCentralManagerDelegate {
     let discovered =
         DiscoveredPeripheral(peripheral: peripheral,
                              serviceIds: serviceIds)
-    if discoveredPeripherals.index(of: discovered) == nil {
+    if discoveredPeripherals.firstIndex(of: discovered) == nil {
       discoveredPeripherals.append(discovered)
     }
     delegate?.serviceScannerDiscoveredNewPeripherals(self)

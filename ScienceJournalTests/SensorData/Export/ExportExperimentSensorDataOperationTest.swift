@@ -114,7 +114,7 @@ class ExportExperimentSensorDataOperationTest: XCTestCase {
       // Sensor dumps can be in any order so fetch them by ID.
       for number in 1...3 {
         let sensorID = "Sensor_\(number)"
-        let index1 = sensors.index(where: { $0.tag == sensorID })!
+        let index1 = sensors.firstIndex(where: { $0.tag == sensorID })!
         let sensorProto1 = sensors[index1]
         XCTAssertEqual(10, sensorProto1.rowsArray.count)
         if number == 1 {

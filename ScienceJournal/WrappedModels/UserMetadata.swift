@@ -86,7 +86,7 @@ class UserMetadata {
     var experimentOverview: ExperimentOverview?
     overviewQueue.sync {
       guard let index =
-          _experimentOverviews.index(where: { $0.experimentID == experimentID }) else {
+          _experimentOverviews.firstIndex(where: { $0.experimentID == experimentID }) else {
         return
       }
       experimentOverview = _experimentOverviews[index]
@@ -111,7 +111,7 @@ class UserMetadata {
     var experimentOverview: ExperimentOverview?
     overviewQueue.sync {
       guard let index =
-          _experimentOverviews.index(where: { $0.experimentID == experimentID }) else {
+          _experimentOverviews.firstIndex(where: { $0.experimentID == experimentID }) else {
         return
       }
       experimentOverview = _experimentOverviews.remove(at: index)

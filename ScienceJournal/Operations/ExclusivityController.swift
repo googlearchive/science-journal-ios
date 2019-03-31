@@ -57,7 +57,7 @@ public class ExclusivityController {
     serialQueue.sync {
       for category in categories {
         if var categoryOperations = operations[category],
-            let index = categoryOperations.index(of: operation) {
+            let index = categoryOperations.firstIndex(of: operation) {
           categoryOperations.remove(at: index)
           operations[category] = categoryOperations
         }

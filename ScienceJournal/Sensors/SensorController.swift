@@ -128,7 +128,7 @@ open class SensorController {
   /// - Parameter serviceId: A service CBUUID.
   /// - Returns: A BLE service interface.
   func service(forId serviceId: CBUUID) -> BLEServiceInterface? {
-    guard let index = bleServices.index(where: { $0.serviceId == serviceId }) else {
+    guard let index = bleServices.firstIndex(where: { $0.serviceId == serviceId }) else {
       return nil
     }
     return bleServices[index]
@@ -143,7 +143,7 @@ open class SensorController {
     var serviceSensors = bluetoothSensors[serviceID] ?? [BluetoothSensor]()
 
     // If a sensor with this ID already exists, replace it.
-    if let index = serviceSensors.index(where: { $0.sensorId == bluetoothSensor.sensorId }) {
+    if let index = serviceSensors.firstIndex(where: { $0.sensorId == bluetoothSensor.sensorId }) {
       serviceSensors[index] = bluetoothSensor
     } else {
       serviceSensors.append(bluetoothSensor)
@@ -155,7 +155,7 @@ open class SensorController {
   private func removeBluetoothSensorFromLookup(_ bluetoothSensor: BluetoothSensor,
                                                serviceID: CBUUID) {
     guard var serviceSensors = bluetoothSensors[serviceID],
-        let index = serviceSensors.index(of: bluetoothSensor) else {
+        let index = serviceSensors.firstIndex(of: bluetoothSensor) else {
       return
     }
     serviceSensors.remove(at: index)

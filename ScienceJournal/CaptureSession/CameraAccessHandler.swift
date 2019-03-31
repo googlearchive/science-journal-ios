@@ -35,7 +35,9 @@ class CameraAccessHandler {
         requestCompletion?(granted)
       }
       return false
+    default: fatalError("Impossible case")
     }
+    
   }
 
 }

@@ -498,6 +498,7 @@ class PermissionsGuideViewController: OnboardingViewController {
             self.markStepDoneAndPerformNext()
           }
         }
+      default: fatalError("Impossible case")
       }
     }
   }

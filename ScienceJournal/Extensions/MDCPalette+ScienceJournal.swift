@@ -68,7 +68,7 @@ extension MDCPalette {
     var paletteIndexUsedCountDict = [Int : Int]()
     if (!usedPalettes.isEmpty) {
       for palette in usedPalettes {
-        guard let index = colorPalettes.index(of: palette) else { continue }
+        guard let index = colorPalettes.firstIndex(of: palette) else { continue }
         if paletteIndexUsedCountDict[index] == nil {
           paletteIndexUsedCountDict[index] = 1
         } else {
@@ -83,7 +83,7 @@ extension MDCPalette {
     var leastUsed = 0
     while (foundColor == nil) {
       for palette in colorPalettes {
-        guard let index = colorPalettes.index(of: palette),
+        guard let index = colorPalettes.firstIndex(of: palette),
             let paletteCount = paletteIndexUsedCountDict[index],
             paletteCount > leastUsed else {
           foundColor = palette

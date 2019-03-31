@@ -442,7 +442,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///
   /// - Parameter item: The item to select.
   func select(item: DrawerItem) {
-    guard let index = drawerItems.allItems.index(where: { $0 === item }) else { return }
+    guard let index = drawerItems.allItems.firstIndex(where: { $0 === item }) else { return }
     show(viewController: item.viewController)
     drawerView.tabBar.selectedItem = drawerView.tabBar.items[index]
   }
@@ -498,7 +498,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
     if shouldDeselectItem {
       drawerView.tabBar.selectedItem = nil
     } else if let currentViewController = currentViewController {
-      if let index = drawerItems.allItems.index(where: { (drawerItem) -> Bool in
+      if let index = drawerItems.allItems.firstIndex(where: { (drawerItem) -> Bool in
         return drawerItem.viewController === currentViewController
       }) {
         drawerView.tabBar.selectedItem = drawerView.tabBar.items[index]

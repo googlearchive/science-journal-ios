@@ -158,6 +158,7 @@ extension GSJChangedElement_ElementType: CustomDebugStringConvertible {
     case .note: return ".note"
     case .caption: return ".caption"
     case .unknown: return ".unknown"
+    default: fatalError("Impossible case")
     }
   }
 }
@@ -170,6 +171,7 @@ extension GSJChange_ChangeType: CustomDebugStringConvertible {
     case .modify: return ".modify"
     case .merge: return ".merge"
     case .unknown: return ".unknown"
+    default: fatalError("Impossible case")
     }
   }
 }

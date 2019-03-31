@@ -70,6 +70,7 @@ class TriggerTypeSelectorView: TriggerOptionSelectorView {
       selectionLabel.text = String.triggerTypeStartRecording
     case .triggerActionStopRecording:
       selectionLabel.text = String.triggerTypeStopRecording
+    default: fatalError("Impossible case")
     }
   }
 

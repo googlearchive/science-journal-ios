@@ -16,7 +16,6 @@
 
 import QuartzCore
 import UIKit
-
 import MaterialComponents
 
 fileprivate extension MDCTypography {

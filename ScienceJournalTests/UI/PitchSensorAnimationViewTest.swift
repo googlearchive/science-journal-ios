@@ -26,6 +26,10 @@ class PitchSensorAnimationViewTest: XCTestCase {
       pitchSensorAnimationView.setValue(value, minValue: 0, maxValue: 1)
       XCTAssertEqual(pitchSensorAnimationView.accessibilityLabel, a11yLabel)
     }
+    
+    func to_s(_ value: Double) -> String {
+        return String.localizedStringWithFormat("%.2f", abs(value))
+    }
 
     // Low pitch
     setValue(0, andAssertA11yLabel: "low pitch")
@@ -34,19 +38,19 @@ class PitchSensorAnimationViewTest: XCTestCase {
     setValue(4435, andAssertA11yLabel: "high pitch")
 
     // Flat notes
-    setValue(58, andAssertA11yLabel: "0.08 half steps flatter than B flat, octave 1")
+    setValue(58, andAssertA11yLabel: "\(to_s(0.08)) half steps flatter than B flat, octave 1")
     setValue(58.27046875, andAssertA11yLabel: "B flat, octave 1")
-    setValue(59, andAssertA11yLabel: "0.21 half steps sharper than B flat, octave 1")
+    setValue(59, andAssertA11yLabel: "\(to_s(0.21)) half steps sharper than B flat, octave 1")
 
     // Sharp notes
-    setValue(69, andAssertA11yLabel: "0.08 half steps flatter than C sharp, octave 2")
+    setValue(69, andAssertA11yLabel: "\(to_s(0.08)) half steps flatter than C sharp, octave 2")
     setValue(69.295625, andAssertA11yLabel: "C sharp, octave 2")
-    setValue(70, andAssertA11yLabel: "0.17 half steps sharper than C sharp, octave 2")
+    setValue(70, andAssertA11yLabel: "\(to_s(0.17)) half steps sharper than C sharp, octave 2")
 
     // Natural notes
-    setValue(145, andAssertA11yLabel: "0.22 half steps flatter than D, octave 3")
+    setValue(145, andAssertA11yLabel: "\(to_s(0.22)) half steps flatter than D, octave 3")
     setValue(146.8325, andAssertA11yLabel: "D, octave 3")
-    setValue(148, andAssertA11yLabel: "0.13 half steps sharper than D, octave 3")
+    setValue(148, andAssertA11yLabel: "\(to_s(0.13)) half steps sharper than D, octave 3")
   }
 
 }

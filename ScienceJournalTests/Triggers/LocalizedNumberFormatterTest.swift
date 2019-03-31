@@ -28,24 +28,24 @@ class LocalizedNumberFormatterTest: XCTestCase {
   }
 
   func testDoubleFromString() {
-    let englishNumberFormatter = LocalizedNumberFormatter()
+    let englishNumberFormatter = LocalizedNumberFormatter(locale: LocaleUtils.enLocale)
     XCTAssertEqual(3486912881, englishNumberFormatter.double(fromString: "٣٤٨٦٩١٢٨٨١"))
   }
 
   func testNonNumberStringFromDouble() {
-    let englishNumberFormatter = LocalizedNumberFormatter()
+    let englishNumberFormatter = LocalizedNumberFormatter(locale: LocaleUtils.enLocale)
     XCTAssertNil(englishNumberFormatter.double(fromString: "cat"))
     XCTAssertNil(englishNumberFormatter.double(fromString: "one"))
   }
 
   func testDecimalPointStringFromDouble() {
-    let englishNumberFormatter = LocalizedNumberFormatter()
+    let englishNumberFormatter = LocalizedNumberFormatter(locale: LocaleUtils.enLocale)
     XCTAssertEqual("12.34",
                    englishNumberFormatter.string(fromDouble: 12.34))
   }
 
   func testStringFromEnglishDouble() {
-    let englishNumberFormatter = LocalizedNumberFormatter()
+    let englishNumberFormatter = LocalizedNumberFormatter(locale: LocaleUtils.enLocale)
     XCTAssertEqual("567",
                    englishNumberFormatter.string(fromDouble: 567))
   }

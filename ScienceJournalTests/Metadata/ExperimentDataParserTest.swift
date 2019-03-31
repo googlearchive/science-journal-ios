@@ -141,6 +141,7 @@ class ExperimentDataParserTest: XCTestCase {
 
   func testParsedTextNote() {
     Timestamp.dateFormatter.timeZone = TimeZone(abbreviation: "EDT")
+    Timestamp.dateFormatter.locale = LocaleUtils.enLocale
     let textNote = TextNote(text: "A text note")
     textNote.timestamp = 1496369345626
 
@@ -157,6 +158,7 @@ class ExperimentDataParserTest: XCTestCase {
 
   func testParsedPictureNote() {
     Timestamp.dateFormatter.timeZone = TimeZone(abbreviation: "EDT")
+    Timestamp.dateFormatter.locale = LocaleUtils.enLocale
     let pictureNote = PictureNote()
     pictureNote.timestamp = 1496369345626
     pictureNote.filePath = "some_image_path"

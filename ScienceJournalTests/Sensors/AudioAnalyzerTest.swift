@@ -24,7 +24,8 @@ class AudioAnalayzerTest: XCTestCase {
   var audioAnalyzer: AudioAnalyzer!
 
   override func setUp() {
-    audioAnalyzer = AudioAnalyzer(sampleRateInHz: AudioSession.shared.sampleRate)
+    // use constant instead of AudioSession.shared.sampleRate because this value may vary across devices
+    audioAnalyzer = AudioAnalyzer(sampleRateInHz: 44100)
   }
 
   func testCokeBottleSamples() {

@@ -351,4 +351,15 @@ class ExperimentTest: XCTestCase {
     XCTAssertTrue(experiment.isEmpty)
   }
 
+  func testSetTitleToDefaultIfNil() {
+    let experiment = Experiment(ID: "testSetTitleToDefaultIfNil")
+    XCTAssertNil(experiment.title)
+    experiment.setTitleToDefaultIfNil()
+    XCTAssertEqual("Untitled Experiment", experiment.title)
+
+    experiment.setTitle("new title")
+    experiment.setTitleToDefaultIfNil()
+    XCTAssertEqual("new title", experiment.title)
+  }
+
 }

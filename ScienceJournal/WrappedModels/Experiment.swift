@@ -186,7 +186,7 @@ public class Experiment {
     self.init(proto: proto, ID: ID)
   }
 
-  /// Sets the title experiment.
+  /// Sets the title of the experiment.
   ///
   /// - Parameters:
   ///   - newTitle: A new title or nil.
@@ -196,6 +196,12 @@ public class Experiment {
     if withChange {
       trackChange(ExperimentChange.modifyChange(forElement: .experiment, withID: ID))
     }
+  }
+
+  /// Sets the title of the experiment to the default experiment name if the title is nil.
+  func setTitleToDefaultIfNil() {
+    guard title == nil else { return }
+    setTitle(String.defaultExperimentName)
   }
 
   /// Returns the enabled state of a sensor.

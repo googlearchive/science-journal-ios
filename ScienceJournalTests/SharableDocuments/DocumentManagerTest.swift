@@ -23,6 +23,7 @@ class DocumentManagerTest: XCTestCase {
   let metadataManager = MetadataManager.testingInstance
   let sensorDataManager = SensorDataManager.testStore
   var documentManager: DocumentManager!
+  let operationQueue = GSJOperationQueue()
 
   override func setUp() {
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "DocumentManagerTest",
@@ -79,6 +80,52 @@ class DocumentManagerTest: XCTestCase {
                      message: "Experiment with trial and at least 1 data point is ready to export.")
   }
 
+  func testExportedExperimentTitle() {
+    // Create an experiment with no title.
+    let (noTitleExperiment, _) = metadataManager.createExperiment()
+
+    // Export it.
+    var noTitleExportURL: URL!
+    let noTitleExportExpectation = expectation(description: "No title export finished")
+    documentManager.createExportDocument(
+        forExperimentWithID: noTitleExperiment.ID) { (url, errors) in
+      noTitleExportURL = url
+      noTitleExportExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1)
+
+    // Now import it and assert it has the default title.
+    let noTitleImportExpectation = self.expectation(description: "No title import finished")
+    importExperiment(atURL: noTitleExportURL,
+                     usingID: "testExportedExperimentTitle_noTitleID") { (experiment) in
+      XCTAssertEqual("Untitled Experiment", experiment.title)
+      noTitleImportExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1)
+
+    // Create an experiment with a title.
+    let (titledExperiment, _) = metadataManager.createExperiment(withTitle: "has a title")
+
+    // Export it.
+    var titledExportURL: URL!
+    let titledExportExpectation = expectation(description: "Titled export finished")
+    documentManager.createExportDocument(
+        forExperimentWithID: titledExperiment.ID) { (url, errors) in
+      titledExportURL = url
+      titledExportExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1)
+
+    // Now import it and assert it has the same title.
+    let titledImportExpectation = self.expectation(description: "Titled import finished")
+    importExperiment(atURL: titledExportURL,
+                     usingID: "testExportedExperimentTitle_hasTitleID") { (experiment) in
+      XCTAssertEqual("has a title", experiment.title)
+      titledImportExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1)
+  }
+
   func assertExperiment(_ experiment: Experiment, isReady: Bool, message: String) {
     let expectation = self.expectation(description: "Ready check complete.")
     documentManager.experimentIsReadyForExport(experiment) { (ready) in
@@ -86,6 +133,31 @@ class DocumentManagerTest: XCTestCase {
       expectation.fulfill()
     }
     waitForExpectations(timeout: 1)
+  }
+
+  // MARK: - Helpers
+
+  func importExperiment(atURL url: URL,
+                        usingID newExperimentID: String,
+                        completion: @escaping (Experiment) -> Void) {
+    let baseFilename = "testExportedExperimentTitle_import"
+    let filename = baseFilename + ".sj"
+    let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory())
+    let copiedFileURL = tempDirectoryURL.appendingPathComponent(filename)
+    let zipFilename = baseFilename + "_extracted"
+    let zipDestinationURL = tempDirectoryURL.appendingPathComponent(zipFilename)
+    let newExperimentURL = metadataManager.experimentDirectoryURL(for: newExperimentID)
+    let importDocumentOperation =
+      ImportDocumentOperation(sourceURL: url,
+                              zipURL: copiedFileURL,
+                              extractionURL: zipDestinationURL,
+                              experimentURL: newExperimentURL,
+                              sensorDataManager: sensorDataManager,
+                              metadataManager: metadataManager)
+    importDocumentOperation.addObserver(BlockObserver { (operation, errors) in
+      completion(self.metadataManager.experiment(withID: newExperimentID)!)
+    })
+    operationQueue.addOperation(importDocumentOperation)
   }
 
 }

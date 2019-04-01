@@ -190,6 +190,8 @@ class DocumentManager {
       experiment.imagePath = overview.imagePath
     }
 
+    experiment.setTitleToDefaultIfNil()
+
     // Make sure there are no unsaved changes.
     metadataManager.saveExperimentWithoutDateChange(experiment)
 

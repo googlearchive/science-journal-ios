@@ -510,6 +510,10 @@ public class MetadataManager {
       experiment.imagePath = nil
     }
 
+    // The overview title will be set to the experiment title when `saveExperiment()` is called
+    // below.
+    experiment.setTitleToDefaultIfNil()
+
     userMetadata.addExperimentOverview(overview)
     saveUserMetadata()
 

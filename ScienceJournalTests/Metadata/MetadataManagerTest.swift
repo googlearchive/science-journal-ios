@@ -1358,6 +1358,39 @@ class MetadataManagerTest: XCTestCase {
     XCTAssertEqual("Orphan", anotherMetadataManager.experimentOverviews[2].title)
   }
 
+  func testImportedExperimentTitle() {
+    let noTitleExperiment = Experiment(ID: "testImportedExperimentTitle_noTitle")
+    let noTitleExperimentSaveURL =
+        metadataManager.experimentsDirectoryURL.appendingPathComponent(noTitleExperiment.ID)
+            .appendingPathComponent("experiment.proto")
+    metadataManager.saveExperiment(noTitleExperiment, toURL: noTitleExperimentSaveURL)
+    metadataManager.addImportedExperiment(withID: noTitleExperiment.ID)
+    let noTitleExperimentAndOverview =
+        metadataManager.experimentAndOverview(forExperimentID: noTitleExperiment.ID)
+    XCTAssertEqual("Untitled Experiment",
+                   noTitleExperimentAndOverview?.experiment.title,
+                   "Experiment title should be set to the default title")
+    XCTAssertEqual("Untitled Experiment",
+                   noTitleExperimentAndOverview?.overview.title,
+                   "Overview title should be set to the default title")
+
+    let titledExperiment = Experiment(ID: "testImportedExperimentTitle_hasTitle")
+    titledExperiment.setTitle("has a title")
+    let titledExperimentSaveURL =
+        metadataManager.experimentsDirectoryURL.appendingPathComponent(titledExperiment.ID)
+            .appendingPathComponent("experiment.proto")
+    metadataManager.saveExperiment(titledExperiment, toURL: titledExperimentSaveURL)
+    metadataManager.addImportedExperiment(withID: titledExperiment.ID)
+    let titledExperimentAndOverview =
+        metadataManager.experimentAndOverview(forExperimentID: titledExperiment.ID)
+    XCTAssertEqual("has a title",
+                   titledExperimentAndOverview?.experiment.title,
+                   "Experiment title should not have changed")
+    XCTAssertEqual("has a title",
+                   titledExperimentAndOverview?.overview.title,
+                   "Overview title should not have changed")
+  }
+
   // MARK: - Helpers
 
   /// Creates an experiment that has one trial with sensor data, and asserts it and its data are on

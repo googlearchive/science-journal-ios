@@ -63,7 +63,8 @@ public protocol AccountsManager: class {
   /// The delegate for an AccountsManager object.
   var delegate: AccountsManagerDelegate? { get set }
 
-  /// Whether accounts are supported. Login will be bypassed entirely if this is false.
+  /// If accounts are supported, Google Sign-in and Drive Sync will be available to the user. If
+  /// not, these features are completely hidden from the UI and no data is synced.
   var supportsAccounts: Bool { get }
 
   /// The current account selected for use by the app.

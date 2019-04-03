@@ -249,11 +249,10 @@ class SnapshotDetailViewController: MaterialHeaderCollectionViewController,
     super.viewDidAppear(animated)
 
     if shouldJumpToCaptionOnLoad {
-      guard let captionCell = collectionView?.cellForItem(at:
-          IndexPath(item: 0, section: SnapshotDataSource.Section.caption.rawValue))
-          as? NoteDetailEditCaptionCell else { return }
-      captionCell.textField.becomeFirstResponder()
-      shouldJumpToCaptionOnLoad = false
+      // Scroll to the bottom of the view to force the caption cell to load if it is off screen.
+      // The textfield becoming first responder will happen in cellForItemAt:.
+      let indexPath = IndexPath(item: 0, section: SnapshotDataSource.Section.caption.rawValue)
+      collectionView?.scrollToItem(at: indexPath, at: .top, animated: false)
     }
   }
 
@@ -331,6 +330,10 @@ class SnapshotDetailViewController: MaterialHeaderCollectionViewController,
         cell.textField.text = currentCaption
         cell.delegate = self
         cell.shouldAllowEditing = experimentInteractionOptions.shouldAllowEdits
+        if shouldJumpToCaptionOnLoad {
+          cell.textField.becomeFirstResponder()
+          shouldJumpToCaptionOnLoad = false
+        }
       }
       return cell
     case .metadata:

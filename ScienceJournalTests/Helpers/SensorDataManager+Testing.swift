@@ -39,6 +39,10 @@ extension SensorDataManager  {
   }
 
   func deleteStore() {
+    guard FileManager.default.fileExists(atPath: storeURL.path) else {
+      return
+    }
+
     do {
       try FileManager.default.removeItem(at: storeURL)
     } catch {

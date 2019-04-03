@@ -36,6 +36,10 @@ extension MetadataManager {
   }
 
   func deleteRootDirectory() {
+    guard FileManager.default.fileExists(atPath: rootURL.path) else {
+      return
+    }
+
     do {
       try FileManager.default.removeItem(at: rootURL)
     } catch {

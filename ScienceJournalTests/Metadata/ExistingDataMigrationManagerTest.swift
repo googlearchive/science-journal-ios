@@ -541,7 +541,10 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     waitForExpectations(timeout: 1)
 
     // Remove the first experiment.
-    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment1.ID)
+    let expectation3 = expectation(description: "Remove experiment from root complete.")
+    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment1.ID) {
+      expectation3.fulfill()
+    }
 
     // Assert the first experiment is deleted, second is still there.
     XCTAssertNil(
@@ -550,29 +553,29 @@ class ExistingDataMigrationManagerTest: XCTestCase {
         rootUserManager.metadataManager.experimentAndOverview(forExperimentID: experimentID2))
 
     // Assert the sensor data for experiment 1 is deleted.
-    let expectation3 = expectation(description: "Trial 1 sensor data should be deleted.")
+    let expectation4 = expectation(description: "Trial 1 sensor data should be deleted.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial1.ID,
                                                          completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
-      expectation3.fulfill()
-    })
-
-    waitForExpectations(timeout: 1)
-
-    // Assert the sensor data for experiment 2 is still there.
-    let expectation4 = expectation(description: "Trial 2 sensor data should not be deleted.")
-    rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
-                                                         completion: { (sensorData, _) in
-      XCTAssertEqual(3, sensorData!.count)
       expectation4.fulfill()
     })
 
     waitForExpectations(timeout: 1)
 
-    // Remove the second experiment.
-    let expectation5 = expectation(description: "Remove experiment from root complete.")
-    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment2.ID) {
+    // Assert the sensor data for experiment 2 is still there.
+    let expectation5 = expectation(description: "Trial 2 sensor data should not be deleted.")
+    rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
+                                                         completion: { (sensorData, _) in
+      XCTAssertEqual(3, sensorData!.count)
       expectation5.fulfill()
+    })
+
+    waitForExpectations(timeout: 1)
+
+    // Remove the second experiment.
+    let expectation6 = expectation(description: "Remove experiment from root complete.")
+    existingDataMigrationManager.removeExperimentFromRootUser(withID: experiment2.ID) {
+      expectation6.fulfill()
     }
     waitForExpectations(timeout: 1)
 
@@ -581,11 +584,11 @@ class ExistingDataMigrationManagerTest: XCTestCase {
         rootUserManager.metadataManager.experimentAndOverview(forExperimentID: experimentID2))
 
     // Assert its sensor data is deleted.
-    let expectation6 = expectation(description: "Trial 2 sensor data should be deleted.")
+    let expectation7 = expectation(description: "Trial 2 sensor data should be deleted.")
     rootUserManager.sensorDataManager.fetchAllSensorData(forTrialID: trial2.ID,
                                                          completion: { (sensorData, _) in
       XCTAssertTrue(sensorData!.isEmpty)
-      expectation6.fulfill()
+      expectation7.fulfill()
     })
 
     waitForExpectations(timeout: 1)

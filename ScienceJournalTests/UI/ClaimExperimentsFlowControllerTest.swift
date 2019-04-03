@@ -99,7 +99,8 @@ class ClaimExperimentsFlowControllerTest: XCTestCase {
     XCTAssertFalse(claimExperimentsFlowController.dismissClaimFlowIfComplete(),
                    "There are existing experiments to migrate.")
     // Delete the experiment.
-    existingDataMigrationManager.rootUserManager.metadataManager.removeExperiment(experiment)
+    let deleter = existingDataMigrationManager.rootUserManager.experimentDataDeleter
+    _ = deleter.performUndoableDeleteForExperiment(withID: experiment.ID)
     // Confirm there are no experiments.
     XCTAssertEqual(existingDataMigrationManager.numberOfExistingExperiments,
                    0,

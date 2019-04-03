@@ -840,20 +840,6 @@ public class MetadataManager {
     return overview.isArchived
   }
 
-  /// Deletes an experiment corresponding to an ID, and removes its associated data and experiment
-  /// overview.
-  ///
-  /// - Parameter experiment ID: An experiment ID.
-  /// - Returns: The removed experiment.
-  @discardableResult
-      func removeExperiment(withID experimentID: String) -> (Experiment, ExperimentOverview)? {
-    guard let experiment = experiment(withID: experimentID),
-        let overview = removeExperiment(experiment) else {
-      return nil
-    }
-    return (experiment, overview)
-  }
-
   /// Gets the image for an experiment, or returns nil if one is not set.
   ///
   /// - Parameter experiment: The experiment.
@@ -1281,95 +1267,6 @@ public class MetadataManager {
       try FileManager.default.moveItem(at: deletedURL, to: restoreURL)
     } catch {
       print("[MetadataManager] Error moving item at '\(deletedURL)': \(error.localizedDescription)")
-    }
-  }
-
-  // MARK: Experiment removal
-
-  /// Moves an experiment to the deleted experiments directory. This directory is removed on next
-  /// launch. This allows for easier undoing of delete actions. The experiment's overview will also
-  /// be removed.
-  ///
-  /// - Parameter experiment: An experiment.
-  /// - Returns: The experiment overview associated with the experiment.
-  @discardableResult func removeExperiment(_ experiment: Experiment) -> ExperimentOverview? {
-    guard let experimentURL =
-        URL(string: experimentsDirectoryName)?.appendingPathComponent(experiment.ID) else {
-      return nil
-    }
-    moveItemToDeletedData(fromRelativePath: experimentURL.path)
-
-    // Update overview.
-    let experimentOverview = userMetadata.removeExperimentOverview(with: experiment.ID)
-    saveUserMetadata()
-    return experimentOverview
-  }
-
-  /// Moves an experiment from the deleted experiments directory back to the Science Journal
-  /// directory. Also adds the experiment overview back into user metadata.
-  ///
-  /// - Parameter: experimentOverview: The experiment overview.
-  func restoreExperiment(forOverview experimentOverview: ExperimentOverview)  {
-    guard let experimentURL =
-        URL(string: experimentsDirectoryName)?.appendingPathComponent(
-            experimentOverview.experimentID) else { return }
-    let deletedURL = deletedDataDirectoryURL.appendingPathComponent(experimentURL.path)
-    let restoreURL = rootURL.appendingPathComponent(experimentURL.path)
-    do {
-      try FileManager.default.moveItem(at: deletedURL, to: restoreURL)
-      // Add overview.
-      userMetadata.addExperimentOverview(experimentOverview)
-      saveUserMetadata()
-    } catch {
-      print("[MetadataManager] Error moving item at '\(deletedURL)': \(error.localizedDescription)")
-    }
-  }
-
-  /// Permanently removes an experiment without any undo mechanism.
-  ///
-  /// - Parameter experimentID: An experiment ID.
-  /// - Returns: True if an experiment was removed, otherwise false.
-  @discardableResult public func permanentlyRemoveExperiment(withID experimentID: String) -> Bool {
-    _ = userMetadata.removeExperimentOverview(with: experimentID)
-    saveUserMetadata()
-
-    // Update local sync status.
-    // This method is called when an experiment is marked as deleted in the experiment library, to
-    // confirm it is deleted locally, so it should be removed from local sync status.
-    localSyncStatus.removeExperiment(withID: experimentID)
-    saveLocalSyncStatus()
-
-    // Don't remove it if it doesn't exist.
-    let experimentURL = experimentDirectoryURL(for: experimentID)
-    let fileManager = FileManager.default
-    guard fileManager.fileExists(atPath: experimentURL.path) else {
-      return false
-    }
-
-    do {
-      try fileManager.removeItem(at: experimentURL)
-      return true
-    } catch {
-      print("[MetadataManager] Error removing item at '\(experimentURL)': " +
-          "\(error.localizedDescription)")
-      return false
-    }
-  }
-
-  /// Removes an experiment from deleted data.
-  ///
-  /// - Parameter experimentID: An experiment ID.
-  public func removeExperimentFromDeletedData(withID experimentID: String) {
-    guard let experimentURL =
-        URL(string: experimentsDirectoryName)?.appendingPathComponent(experimentID) else { return }
-    let deletedExperimentURL = deletedDataDirectoryURL.appendingPathComponent(experimentURL.path)
-    let fileManager = FileManager.default
-    guard fileManager.fileExists(atPath: deletedExperimentURL.path) else { return }
-    do {
-      try fileManager.removeItem(at: deletedExperimentURL)
-    } catch {
-      print("[MetadataManager] Error removing experiment from deleted data, with ID: " +
-                "\(experimentID). Error: \(error.localizedDescription)")
     }
   }
 

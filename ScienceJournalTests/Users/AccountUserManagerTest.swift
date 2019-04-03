@@ -35,6 +35,7 @@ class AccountUserManagerTest: XCTestCase {
     let prefManager = accountUserManager.preferenceManager
     let metadataManager = accountUserManager.metadataManager
     let dataManager = accountUserManager.sensorDataManager
+    let dataDeleter = accountUserManager.experimentDataDeleter
 
     XCTAssertFalse(prefManager.defaultExperimentWasCreated)
     prefManager.defaultExperimentWasCreated = true
@@ -48,7 +49,7 @@ class AccountUserManagerTest: XCTestCase {
     XCTAssertNotNil(metadataManager.experiment(withID: experiment3.ID))
 
     // Move one experiment to the deleted data directory.
-    metadataManager.removeExperiment(experiment3)
+    _ = dataDeleter.performUndoableDeleteForExperiment(withID: experiment3.ID)
     XCTAssertNil(metadataManager.experiment(withID: experiment3.ID))
     let deletedDataPath = metadataManager.deletedDataDirectoryURL.path
     XCTAssertTrue(FileManager.default.fileExists(atPath: deletedDataPath))

@@ -183,22 +183,6 @@ class MetadataManagerTest: XCTestCase {
                  "Restored image should be nil")
   }
 
-  func testRemoveExperiment() {
-    let experiment = createExperimentAndAssert()
-    let experimentID = experiment.ID
-    let trialID = experiment.trials[0].ID
-    metadataManager.removeExperiment(experiment)
-    assertExperimentIsDeleted(withID: experimentID, andSensorDataForTrialID: trialID)
-  }
-
-  func testRemoveExperimentWithID() {
-    let experiment = createExperimentAndAssert()
-    let experimentID = experiment.ID
-    let trialID = experiment.trials[0].ID
-    metadataManager.removeExperiment(withID: experimentID)
-    assertExperimentIsDeleted(withID: experimentID, andSensorDataForTrialID: trialID)
-  }
-
   func testUpgradeWhenExperimentVersionNotSet() {
     let experiment = Experiment(ID: "TEST_ID")
 
@@ -1039,26 +1023,6 @@ class MetadataManagerTest: XCTestCase {
                    metadataManager.experimentLibrary.experimentLastModified(withID: experiment.ID))
     XCTAssertEqual(100,
                    metadataManager.experimentLibrary.experimentLastOpened(withID: experiment.ID))
-  }
-
-  func testRemoveExperimentFromDeletedData() {
-    // Create an experiment and assert it is on disk.
-    let experiment = createExperimentAndAssert()
-
-    // Remove it and assert it is in deleted data, not its original folder.
-    metadataManager.removeExperiment(experiment)
-    let experimentPath =
-        URL(string: metadataManager.experimentsDirectoryName)!.appendingPathComponent(
-            experiment.ID).path
-    let experimentURL = metadataManager.rootURL.appendingPathComponent(experimentPath)
-    let deletedURL = metadataManager.deletedDataDirectoryURL.appendingPathComponent(experimentPath)
-    XCTAssertFalse(FileManager.default.fileExists(atPath: experimentURL.path))
-    XCTAssertTrue(FileManager.default.fileExists(atPath: deletedURL.path))
-
-    // Now remove the experiment from deleted data, and assert it is gone from disk completely.
-    metadataManager.removeExperimentFromDeletedData(withID: experiment.ID)
-    XCTAssertFalse(FileManager.default.fileExists(atPath: experimentURL.path))
-    XCTAssertFalse(FileManager.default.fileExists(atPath: deletedURL.path))
   }
 
   func testImageFilesExistForExperiment() {

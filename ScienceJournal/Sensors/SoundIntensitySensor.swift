@@ -45,14 +45,17 @@ class SoundIntensitySensor: AudioSensor {
   override func callListenerBlocksWithAudioSampleBuffer(_
       audioSampleBuffer: UnsafeBufferPointer<Int16>,
       atMilliseconds milliseconds: Int64) {
-    guard audioSampleBuffer.count > 0 else { return }
-
-    // Calculate decibel level.
+    // Calculate decibel level. Also, capture the sample count separately to avoid a potential
+    // divide by zero crash if something were to happen to the unsafe buffer.
     var totalSquared: Int64 = 0
+    var count: Int64 = 0
     for sample in audioSampleBuffer {
       totalSquared += Int64(sample) * Int64(sample)
+      count += 1
     }
-    let quadraticMeanPressure = sqrt(Double(totalSquared / Int64(audioSampleBuffer.count)))
+
+    guard count > 0 else { return }
+    let quadraticMeanPressure = sqrt(Double(totalSquared / count))
 
     // Ensure that the quadratic mean pressure is not zero, which would result in an infinite
     // decibel level value.

@@ -1,4 +1,6 @@
-platform :ios, '10.0'
+MINIMUM_IOS_VERSION = '10.0'
+
+platform :ios, MINIMUM_IOS_VERSION
 
 def shared_test_pods
   pod 'Protobuf', '~> 3.5.0', :inhibit_warnings => true
@@ -50,15 +52,15 @@ target 'ScienceJournal' do
     inherit! :search_paths
     shared_test_pods
   end
+end
 
-  target 'ScienceJournalUITests' do
-    inherit! :search_paths
-    shared_test_pods
-  end
+target 'ScienceJournalUITests' do
+  inherit! :search_paths
+  shared_test_pods
 end
 
 post_install do |installer|
-  deployment_target = '10.0'
+  deployment_target = MINIMUM_IOS_VERSION
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       if installer.config.verbose?

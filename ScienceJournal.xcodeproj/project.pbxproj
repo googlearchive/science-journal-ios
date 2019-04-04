@@ -368,7 +368,6 @@
 		68EBA6E51E20421E0089FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EBA6E41E20421E0089FF7F /* Assets.xcassets */; };
 		68F14AC21F21801F0054E799 /* TimeInterval+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F14AC11F21801F0054E799 /* TimeInterval+ScienceJournal.swift */; };
 		68FB61111F3A70DA008281DB /* MaterialFloatingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB61101F3A70DA008281DB /* MaterialFloatingSpinner.swift */; };
-		88CA80A3A990268E02F1556B /* Pods_ScienceJournalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B078C95ACD3B10E24E5C947F /* Pods_ScienceJournalUITests.framework */; };
 		8B00318021346C1500B9BBFB /* PullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00317E21346C1500B9BBFB /* PullToRefreshController.swift */; };
 		8B031EEC2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B031EEB2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift */; };
 		8B031EEE2098C39C008F6F28 /* ExistingDataOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B031EED2098C39C008F6F28 /* ExistingDataOptionsCell.swift */; };
@@ -558,6 +557,7 @@
 		924D434B56557C3367183755 /* Pods_ScienceJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D48D49D8CBE15C94637009 /* Pods_ScienceJournalTests.framework */; };
 		D54E27EF21A3423A0055743E /* AudioAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E27EE21A3423A0055743E /* AudioAnalyzerTest.swift */; };
 		D54E27F121A346980055743E /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = D54E27F021A346980055743E /* TestResources */; };
+		D5929B1486B341B6A50367D9 /* libPods-ScienceJournalUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */; };
 		D59CA3C2219CEE690082A27B /* FFTAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */; };
 		D59CA3C3219CEE690082A27B /* FFTAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */; };
 		D59CA3C4219CEE690082A27B /* FFTAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */; };
@@ -643,6 +643,7 @@
 		48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigOpen.swift; sourceTree = "<group>"; };
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
 		4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0EDCEE1FE30F280014E825 /* CropValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidator.swift; sourceTree = "<group>"; };
 		5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidatorTest.swift; sourceTree = "<group>"; };
 		5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentItemsViewController.swift; sourceTree = "<group>"; };
@@ -1195,7 +1196,6 @@
 		8BFCF97D1FAA2EDC0030A6DC /* ArchiveFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveFlagView.swift; sourceTree = "<group>"; };
 		93AFC6D21C987695548ADC66 /* Pods-ScienceJournal.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.dogfood.xcconfig"; sourceTree = "<group>"; };
 		958B33107B78081C00CE9569 /* Pods-ScienceJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B078C95ACD3B10E24E5C947F /* Pods_ScienceJournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C910BBBCF124BDC00C1BCC07 /* Pods-ScienceJournalUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		CD482804BCE6CEED23042379 /* Pods-ScienceJournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D54E27EE21A3423A0055743E /* AudioAnalyzerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalyzerTest.swift; sourceTree = "<group>"; };
@@ -1241,7 +1241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CA80A3A990268E02F1556B /* Pods_ScienceJournalUITests.framework in Frameworks */,
+				D5929B1486B341B6A50367D9 /* libPods-ScienceJournalUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2290,8 +2290,8 @@
 				8BE2E6F11E29433400D86370 /* CoreMotion.framework */,
 				4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */,
 				D7D48D49D8CBE15C94637009 /* Pods_ScienceJournalTests.framework */,
-				B078C95ACD3B10E24E5C947F /* Pods_ScienceJournalUITests.framework */,
 				8BAB8C241E2431CF00CBFF0A /* AVFoundation.framework */,
+				551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2808,7 +2808,6 @@
 				68EBA6F51E20421E0089FF7F /* Sources */,
 				68EBA6F61E20421E0089FF7F /* Frameworks */,
 				68EBA6F71E20421E0089FF7F /* Resources */,
-				603A769657CAAF9E93CB585C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2959,8 +2958,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Protobuf-framework/Protobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -2968,25 +2967,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		603A769657CAAF9E93CB585C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		686E3D311F5888DA00250628 /* FIXMEs to Warnings */ = {
@@ -3041,7 +3022,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
@@ -3049,7 +3030,7 @@
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf-framework/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -3066,7 +3047,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A44D80B3A180473F1D42CD0A /* [CP] Check Pods Manifest.lock */ = {

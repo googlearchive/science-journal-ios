@@ -19,6 +19,11 @@ import Foundation
 
 import third_party_sciencejournal_ios_ScienceJournalProtos
 
+enum SensorDataManagerError: Error {
+  /// Adding sensor data failed.
+  case addingSensorDataFailed
+}
+
 /// The data manager for Core Data.
 open class SensorDataManager {
 
@@ -451,7 +456,8 @@ open class SensorDataManager {
   /// - Parameters:
   ///   - sensorData: The sensor data.
   ///   - completion: Called when complete.
-  func addSensorDataPoints(_ sensorData: [SensorData], completion: @escaping () -> Void) {
+  func addSensorDataPoints(_ sensorData: [SensorData],
+                           completion: @escaping (Result<Int, SensorDataManagerError>) -> Void) {
     let sensorDataPoints = sensorData.map { SensorDataPoint(sensorData: $0) }
     performOnBackgroundContext { (context) in
       autoreleasepool {
@@ -471,11 +477,13 @@ open class SensorDataManager {
             let errorMessage = error.localizedDescription
             sjlog_error("Failed to save context when adding data points: \(errorMessage)",
                         category: .coreData)
+            completion(.failure(.addingSensorDataFailed))
+            return
           }
           context.reset()
         }
       }
-      completion()
+      completion(.success(sensorData.count))
     }
   }
 

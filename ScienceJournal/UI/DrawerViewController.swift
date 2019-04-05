@@ -201,8 +201,6 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
     for case let listener as DrawerPositionListener in drawerItems.viewControllers {
       removeDrawerPositionListener(listener)
     }
-
-    NotificationCenter.default.removeObserver(self)
   }
 
   required public init?(coder aDecoder: NSCoder) {

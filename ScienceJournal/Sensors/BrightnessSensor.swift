@@ -129,7 +129,6 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
   }
 
   deinit {
-    NotificationCenter.default.removeObserver(self)
     CameraCaptureSessionManager.shared.removeUser(self)
   }
 

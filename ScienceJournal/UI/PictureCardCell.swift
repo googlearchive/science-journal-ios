@@ -45,10 +45,6 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
     addNotificationObservers()
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func layoutSubviews() {
     super.layoutSubviews()
 

@@ -39,10 +39,6 @@ class CaptureSessionInterruptionObserver {
 
   // MARK: - Public
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   // MARK: - Private
 
   /// Use `shared`.

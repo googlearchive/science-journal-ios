@@ -82,10 +82,6 @@ class KeyboardObserver {
         object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Returns animation curve stored in the user info of a UI keyboard or keyboard observer
   /// notification.
   ///

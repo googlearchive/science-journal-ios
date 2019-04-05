@@ -303,10 +303,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
 

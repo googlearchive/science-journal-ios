@@ -54,10 +54,6 @@ class RecordingAnimatedView: UIView {
     registerForNotifications()
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Starts the recording animation.
   func startAnimating() {
     // Dispatching to main works around a problem where the animations will not start if they are

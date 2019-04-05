@@ -24,6 +24,14 @@ protocol ExperimentUpdateManagerDelegate: class {
   ///
   /// - Parameter experimentID: An experiment ID.
   func experimentUpdateManagerDidSaveExperiment(withID experimentID: String)
+
+  /// Informs the delegate a cover image asset was deleted.
+  ///
+  /// - Parameters:
+  ///   - assetPath: The deleted asset path.
+  ///   - experimentID: The ID of the experiment that owns the asset.
+  func experimentUpdateManagerDidDeleteCoverImageAsset(withPath assetPath: String,
+                                                       experimentID: String)
 }
 
 /// Manages changes to an experiment and notifies interested objects via a listener pattern.
@@ -37,6 +45,7 @@ class ExperimentUpdateManager {
   /// The delegate.
   weak var delegate: ExperimentUpdateManagerDelegate?
 
+  private let experimentDataDeleter: ExperimentDataDeleter
   private let sensorDataManager: SensorDataManager
   private let metadataManager: MetadataManager
   private var updateListeners = NSHashTable<AnyObject>.weakObjects()
@@ -47,12 +56,15 @@ class ExperimentUpdateManager {
   ///
   /// - Parameters:
   ///   - experiment: The experiment to manage.
+  ///   - experimentDataDeleter: The experiment data deleter.
   ///   - metadataManager: The metadata manager.
   ///   - sensorDataManager: The sensor data manager.
   init(experiment: Experiment,
+       experimentDataDeleter: ExperimentDataDeleter,
        metadataManager: MetadataManager,
        sensorDataManager: SensorDataManager) {
     self.experiment = experiment
+    self.experimentDataDeleter = experimentDataDeleter
     self.metadataManager = metadataManager
     self.sensorDataManager = sensorDataManager
 
@@ -61,6 +73,26 @@ class ExperimentUpdateManager {
         selector: #selector(handleTrialStatsDidCompleteNotification(notification:)),
         name: SensorDataManager.TrialStatsCalculationDidComplete,
         object: nil)
+  }
+
+  /// Convenience initializer that loads an experiment based on its ID, if possible.
+  ///
+  /// - Parameters:
+  ///   - experimentID: An experiment ID.
+  ///   - experimentDataDeleter: The experiment data deleter.
+  ///   - metadataManager: The metadata manager.
+  ///   - sensorDataManager: The sensor data manager.
+  convenience init?(experimentID: String,
+                    experimentDataDeleter: ExperimentDataDeleter,
+                    metadataManager: MetadataManager,
+                    sensorDataManager: SensorDataManager) {
+    guard let experiment = metadataManager.experiment(withID: experimentID) else {
+      return nil
+    }
+    self.init(experiment: experiment,
+              experimentDataDeleter: experimentDataDeleter,
+              metadataManager: metadataManager,
+              sensorDataManager: sensorDataManager)
   }
 
   deinit {
@@ -97,9 +129,18 @@ class ExperimentUpdateManager {
   ///   - imageData: The image data.
   ///   - metadata: The image metadata associated with the image.
   func setCoverImageData(_ imageData: Data?, metadata: NSDictionary?) {
+    let previousCoverImagePath = experiment.imagePath
     metadataManager.saveCoverImageData(imageData,
                                        metadata: metadata,
                                        forExperiment: experiment)
+    if let previousCoverImagePath = previousCoverImagePath,
+        !experiment.isImagePathInUseByNotes(previousCoverImagePath) {
+      experimentDataDeleter.permanentlyDeleteAsset(atPath: previousCoverImagePath,
+                                                   experimentID: experiment.ID)
+
+      delegate?.experimentUpdateManagerDidDeleteCoverImageAsset(withPath: previousCoverImagePath,
+                                                                experimentID: experiment.ID)
+    }
     saveExperiment()
   }
 
@@ -403,12 +444,36 @@ class ExperimentUpdateManager {
     }
   }
 
-  /// Deletes a trial's sensor data. Sensor data should be deleted only if the user has declined to
-  /// undo deleting a trial.
+  /// Confirms a trial should be deleted and will not be undone. This should be called after a trial
+  /// has been deleted and the user declined to perform an undo.
   ///
-  /// - Parameter trialID: A trial ID.
-  func deleteTrialData(forTrialID trialID: String) {
-    sensorDataManager.removeData(forTrialID: trialID)
+  /// - Parameter trial: The deleted trial.
+  func confirmTrialDeletion(for trial: Trial) {
+    sensorDataManager.removeData(forTrialID: trial.ID)
+    experimentDataDeleter.confirmDeleteAssets(atPaths: trial.allImagePaths,
+                                              experimentID: experiment.ID)
+  }
+
+  /// Permanently deletes a trial and its associated data. Cannot be undone.
+  ///
+  /// - Parameter trialID: The ID of the trail to delete.
+  func permanentlyDeleteTrial(withID trialID: String) {
+    guard let trial = experiment.removeTrial(withID: trialID) else {
+      return
+    }
+
+    experimentDataDeleter.permanentlyDeleteAssets(atPaths: trial.allImagePaths,
+                                                  experimentID: experiment.ID)
+    _ = metadataManager.updateCoverImageForRemovedImagesIfNeeded(imagePaths: trial.allImagePaths,
+                                                                 experiment: experiment)
+
+    sensorDataManager.removeData(forTrialID: trial.ID)
+
+    saveExperiment()
+
+    notifyListeners { (listener) in
+      listener.experimentUpdateTrialDeleted(trial, fromExperiment: experiment, undoBlock: nil)
+    }
   }
 
   /// Toggles the archive state of an experiment.

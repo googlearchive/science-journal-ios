@@ -123,6 +123,91 @@ public class ExperimentDataDeleter {
     return true
   }
 
+  // MARK: - Asset deletion
+
+  /// Deletes multiple assets in a way that can be undone.
+  ///
+  /// - Parameters:
+  ///   - assetPaths: An array of asset paths.
+  ///   - experimentID: The ID of the experiment from which the paths are deleted.
+  public func performUndoableDeleteForAssets(atPaths assetPaths: [String], experimentID: String) {
+    assetPaths.forEach { performUndoableDeleteForAsset(atPath: $0, experimentID: experimentID) }
+  }
+
+  /// Deletes an asset in a way that can be undone.
+  ///
+  /// - Parameters:
+  ///   - assetPath: The path of the asset to be deleted.
+  ///   - experimentID: The ID of the experiment from which the path is deleted.
+  public func performUndoableDeleteForAsset(atPath assetPath: String, experimentID: String) {
+    let rootPath = rootPathForAsset(atRelativePath: assetPath, experimentID: experimentID)
+    moveItemToDeletedData(fromRelativePath: rootPath)
+  }
+
+  /// Confirms the deletion of multiple assets, after performing an undoable delete on them. After
+  /// calling this the data is permanently deleted and cannot be undone.
+  ///
+  /// - Parameters:
+  ///   - assetPaths: An array of asset paths.
+  ///   - experimentID: The ID of the experiment the assets belong to.
+  public func confirmDeleteAssets(atPaths assetPaths: [String], experimentID: String) {
+    assetPaths.forEach { confirmDeleteAsset(atPath: $0, experimentID: experimentID) }
+  }
+
+  /// Confirms the deletion of an asset.
+  ///
+  /// - Parameters:
+  ///   - assetPath: An asset path.
+  ///   - experimentID: The ID of the experiment the asset belongs to.
+  public func confirmDeleteAsset(atPath assetPath: String, experimentID: String) {
+    let assetInDeletedURL =
+        deletedExperimentURL(forID: experimentID).appendingPathComponent(assetPath)
+    deleteItemIfNecessary(atURL: assetInDeletedURL)
+  }
+
+  /// Permanently deletes multiple assets.
+  ///
+  /// - Parameters:
+  ///   - assetPaths: An array of asset paths.
+  ///   - experimentID: The ID of the experiment the assets belong to.
+  public func permanentlyDeleteAssets(atPaths assetPaths: [String], experimentID: String) {
+    assetPaths.forEach { permanentlyDeleteAsset(atPath: $0, experimentID: experimentID) }
+  }
+
+  /// Permanently deletes an asset.
+  ///
+  /// - Parameters:
+  ///   - assetPath: An asset path.
+  ///   - experimentID: The ID of the experiment the asset belongs to.
+  public func permanentlyDeleteAsset(atPath assetPath: String, experimentID: String) {
+    let assetInExperimentsURL =
+        metadataManager.experimentDirectoryURL(for: experimentID).appendingPathComponent(assetPath)
+    let assetInDeletedURL =
+        deletedExperimentURL(forID: experimentID).appendingPathComponent(assetPath)
+    [assetInExperimentsURL, assetInDeletedURL].forEach { deleteItemIfNecessary(atURL: $0) }
+  }
+
+  /// Restores multiple assets after an undoable delete.
+  ///
+  /// - Parameters:
+  ///   - assetPaths: An array of asset paths.
+  ///   - experimentID: The ID of the experiment the assets belong to.
+  public func restoreAssets(atPaths assetPaths: [String], experimentID: String) {
+    for path in assetPaths {
+      restoreAsset(atPath: path, experimentID: experimentID)
+    }
+  }
+
+  /// Restores an asset after an undoable delete.
+  ///
+  /// - Parameters:
+  ///   - assetPath: An asset path.
+  ///   - experimentID: The ID of the experiment the asset belongs to.
+  public func restoreAsset(atPath assetPath: String, experimentID: String) {
+    let relativeToRootPath = rootPathForAsset(atRelativePath: assetPath, experimentID: experimentID)
+    moveItemFromDeletedDataToExperiments(atRelativePath: relativeToRootPath)
+  }
+
   // MARK: - Private
 
   private func performAllPendingSensorDataDeletes() {

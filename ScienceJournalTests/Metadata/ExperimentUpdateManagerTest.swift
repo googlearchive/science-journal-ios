@@ -21,6 +21,7 @@ import XCTest
 class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
 
   var experiment: Experiment!
+  var overview: ExperimentOverview!
   var experimentUpdateManager: ExperimentUpdateManager!
   let metadataManager = MetadataManager.testingInstance
 
@@ -38,11 +39,18 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
 
   override func setUp() {
     super.setUp()
-    experiment = Experiment(ID: "TEST_ID")
+    let (experiment, overview) = metadataManager.createExperiment()
+    self.experiment = experiment
+    self.overview = overview
+    let sensorDataManager = SensorDataManager.testStore
+    let experimentDataDeleter = ExperimentDataDeleter(accountID: "TestAccountID",
+                                                      metadataManager: metadataManager,
+                                                      sensorDataManager: sensorDataManager)
     experimentUpdateManager =
         ExperimentUpdateManager(experiment: experiment,
+                                experimentDataDeleter: experimentDataDeleter,
                                 metadataManager: metadataManager,
-                                sensorDataManager: SensorDataManager.testStore)
+                                sensorDataManager: sensorDataManager)
     experimentUpdateManager.addListener(self)
   }
 
@@ -443,6 +451,69 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
 
     XCTAssertEqual(3, experiment.changes.count)
     experiment.changes[2].assert(isElement: .trial, changeType: .modify, ID: trial.ID)
+  }
+
+  func testRemovingUsedCoverImage() {
+    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+
+    XCTAssertNil(experiment.imagePath)
+    XCTAssertNil(overview.imagePath)
+
+    let imagePath = "assets/note_image.jpg"
+    metadataManager.saveImage(image,
+                              atPicturePath: imagePath,
+                              experimentID: experiment.ID)
+    let pictureNote = PictureNote()
+    pictureNote.filePath = imagePath
+    experiment.addNote(pictureNote)
+
+    let noteImageURL = metadataManager.pictureFileURL(for: imagePath,
+                                                      experimentID: experiment.ID)
+    XCTAssertTrue(FileManager.default.fileExists(atPath: noteImageURL.path), "Note image exists")
+
+    metadataManager.updateCoverImageForAddedImageIfNeeded(imagePath: imagePath,
+                                                          experiment: experiment)
+
+    XCTAssertEqual(imagePath, experiment.imagePath)
+    XCTAssertEqual(imagePath, overview.imagePath)
+
+    let image2 = UIImage(named: "select_item_button",
+                         in: Bundle.currentBundle,
+                         compatibleWith: nil)!
+    let imageData = image2.jpegData(compressionQuality: 0.8)
+    experimentUpdateManager.setCoverImageData(imageData, metadata: nil)
+
+    XCTAssertTrue(FileManager.default.fileExists(atPath: noteImageURL.path),
+                  "Note image still exists")
+  }
+
+  func testRemovingUnusedCoverImage() {
+    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+    let imageData = image.jpegData(compressionQuality: 0.8)
+
+    XCTAssertNil(experiment.imagePath)
+    XCTAssertNil(overview.imagePath)
+
+    metadataManager.saveCoverImageData(imageData, metadata: nil, forExperiment: experiment)
+
+    XCTAssertNotNil(experiment.imagePath)
+    XCTAssertNotNil(overview.imagePath)
+
+    let coverImageURL1 = metadataManager.pictureFileURL(for: experiment.imagePath!,
+                                                        experimentID: experiment.ID)
+    XCTAssertTrue(FileManager.default.fileExists(atPath: coverImageURL1.path))
+
+    experimentUpdateManager.setCoverImageData(imageData, metadata: nil)
+
+    XCTAssertNotNil(experiment.imagePath)
+    XCTAssertNotNil(overview.imagePath)
+
+    let coverImageURL2 = metadataManager.pictureFileURL(for: experiment.imagePath!,
+                                                        experimentID: experiment.ID)
+    XCTAssertTrue(FileManager.default.fileExists(atPath: coverImageURL2.path),
+                  "New cover image exists.")
+    XCTAssertFalse(FileManager.default.fileExists(atPath: coverImageURL1.path),
+                   "Original cover image doesn't exist.")
   }
 
   // MARK: - ExperimentUpdateListener

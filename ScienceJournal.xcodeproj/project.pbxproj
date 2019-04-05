@@ -162,6 +162,7 @@
 		5CA28EC61F75966500B9E2B5 /* SensorControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA28EC51F75966500B9E2B5 /* SensorControllerTest.swift */; };
 		5CA3BFE720F53A9300755C7A /* ScienceJournalLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3BFE620F53A9300755C7A /* ScienceJournalLogs.swift */; };
 		5CA4328C1FACF9DB0048E752 /* SensorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA4328B1FACF9DB0048E752 /* SensorTest.swift */; };
+		5CA7921C2257B894008D62FB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7921B2257B893008D62FB /* Result.swift */; };
 		5CA8DAEF202E59E500247FD8 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8DAEE202E59E500247FD8 /* BlockObserver.swift */; };
 		5CA8DAF22031F94C00247FD8 /* GSJOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8DAF12031F94C00247FD8 /* GSJOperationTest.swift */; };
 		5CA9AE021F9A3CFE007C09EB /* SensorFailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9AE011F9A3CFE007C09EB /* SensorFailedView.swift */; };
@@ -768,6 +769,7 @@
 		5CA28EC51F75966500B9E2B5 /* SensorControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorControllerTest.swift; sourceTree = "<group>"; };
 		5CA3BFE620F53A9300755C7A /* ScienceJournalLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceJournalLogs.swift; sourceTree = "<group>"; };
 		5CA4328B1FACF9DB0048E752 /* SensorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorTest.swift; sourceTree = "<group>"; };
+		5CA7921B2257B893008D62FB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5CA8DAEE202E59E500247FD8 /* BlockObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
 		5CA8DAF12031F94C00247FD8 /* GSJOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSJOperationTest.swift; sourceTree = "<group>"; };
 		5CA9AE011F9A3CFE007C09EB /* SensorFailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorFailedView.swift; sourceTree = "<group>"; };
@@ -2642,6 +2644,7 @@
 			children = (
 				8BBFBC1A213889F9008FFBF4 /* NetworkAvailability.swift */,
 				8BBFBC1C21388A29008FFBF4 /* NetworkAvailabilityDisabled.swift */,
+				5CA7921B2257B893008D62FB /* Result.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -3204,6 +3207,7 @@
 				5C7ACB9F1E9D4C9000B22474 /* BLEPeripheralInterface.swift in Sources */,
 				5CB2CF3B223C2B4300F73F6B /* ExperimentDataDeleter.swift in Sources */,
 				8B347446203F4A8A00E73378 /* PitchSensorAnimationView.swift in Sources */,
+				5CA7921C2257B894008D62FB /* Result.swift in Sources */,
 				8B4B60181E44DFAC009AFB1B /* BarometerSensor.swift in Sources */,
 				68D606671F0C109E0077ABCD /* EditExperimentViewController.swift in Sources */,
 				685841301F16D21C000E4F7C /* PreferenceManager.swift in Sources */,

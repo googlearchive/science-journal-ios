@@ -67,10 +67,6 @@ class RenameViewController: ScienceJournalViewController, UITextFieldDelegate {
 
   // MARK: - Public
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white

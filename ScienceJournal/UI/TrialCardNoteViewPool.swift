@@ -34,10 +34,6 @@ class TrialCardNoteViewPool {
                                            object: nil)
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   /// Creates or returns a cached text note card view to be used for a trial card notes view.
   ///
   /// - Parameters:

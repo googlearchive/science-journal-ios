@@ -113,10 +113,6 @@ class PermissionsGuideViewController: OnboardingViewController {
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }

@@ -168,10 +168,6 @@ class TriggerEditViewController: MaterialHeaderViewController, TriggerEditDelega
     fatalError("init(coder:) is not supported")
   }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
     accessibilityViewIsModal = true

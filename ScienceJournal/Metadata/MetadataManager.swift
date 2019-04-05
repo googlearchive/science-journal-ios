@@ -45,13 +45,6 @@ enum MetadataManagerError: Error {
   }
 }
 
-extension Notification.Name {
-  /// Posted when an asset is deleted when the cover image is set and the previous cover image is no
-  /// longer in use by the experiment.
-  static let metadataManagerDeletedCoverImageAsset =
-      NSNotification.Name("MetadataManagerDeletedCoverImageAsset")
-}
-
 /// Stores experiment and trial metadata for Science Journal.
 public class MetadataManager {
 
@@ -63,13 +56,6 @@ public class MetadataManager {
   static let sensorDataProtoFilename = "sensorData.proto"
   /// The name of the assets directory in experiment directories and Science Journal document files.
   static let assetsDirectoryName = "assets"
-  /// When the notification `metadataManagerDeletedCoverImageAsset` is posted, this is the key for
-  /// the experiment ID in `userInfo`.
-  static let deletedCoverImageAssetExperimentIDKey =
-      "MetadataManagerDeletedCoverImageAssetExperimentIDKey"
-  /// When the notification `metadataManagerDeletedCoverImageAsset` is posted, this is the key for
-  /// the file path of the image asset deleted in `userInfo`.
-  static let deletedCoverImageAssetFilePathKey = "MetadataManagerDeletedCoverImageAssetFilePathKey"
 
   /// The filename of the experiment cover image asset used for import and export.
   static let importExportCoverImageFilename = "ExperimentCoverImage.jpg"
@@ -316,12 +302,12 @@ public class MetadataManager {
     saveCoverImagePath(imagePath, forOverview: overview, experiment: experiment)
   }
 
-  /// Updates an experiment overview image given that the image path has been removed from the
+  /// Updates an experiment cover image given that the image path has been removed from the
   /// experiment. Sets the overview image to another picture note if available, otherwise nil.
   ///
   /// - Parameters:
-  ///   - imagePath: An image path.
-  ///   - experiment: An experiment.
+  ///   - imagePath: The removed image path.
+  ///   - experiment: The experiment from which the image paths were removed.
   /// - Returns: A block that will undo the overview image change if executed.
   func updateCoverImageForRemovedImageIfNeeded(imagePath: String,
                                                experiment: Experiment) -> () -> Void {
@@ -381,12 +367,6 @@ public class MetadataManager {
   func removeCoverImageForExperiment(_ experiment: Experiment) -> Bool {
     guard let overview = userMetadata.experimentOverview(with: experiment.ID) else {
       return false
-    }
-
-    // Some versions of the app only stored cover image paths in the overview. If a cover image
-    // is set, delete it.
-    if let coverImagePath = experiment.imagePath ?? overview.imagePath {
-      deleteAssetAtPath(coverImagePath, experimentID: experiment.ID)
     }
 
     overview.imagePath = nil
@@ -777,8 +757,6 @@ public class MetadataManager {
       return
     }
 
-    let previousCoverImagePath = experiment.imagePath ?? overview.imagePath
-
     if let imageData = imageData {
       // Generate a unique filename in the assets directory.
       let imagePath = MetadataManager.assetsDirectoryName + "/" + UUID().uuidString + ".jpg"
@@ -789,17 +767,6 @@ public class MetadataManager {
       saveCoverImagePath(imagePath, forOverview: overview, experiment: experiment)
     } else {
       saveCoverImagePath(nil, forOverview: overview, experiment: experiment)
-    }
-
-    if let previousCoverImagePath = previousCoverImagePath,
-        !isImagePathInUseByNotes(previousCoverImagePath, inExperiment: experiment) {
-      deleteAssetAtPath(previousCoverImagePath, experimentID: experiment.ID)
-
-      let userInfo = [MetadataManager.deletedCoverImageAssetExperimentIDKey: experiment.ID,
-                      MetadataManager.deletedCoverImageAssetFilePathKey: previousCoverImagePath]
-      NotificationCenter.default.post(name: .metadataManagerDeletedCoverImageAsset,
-                                      object: self,
-                                      userInfo: userInfo)
     }
   }
 

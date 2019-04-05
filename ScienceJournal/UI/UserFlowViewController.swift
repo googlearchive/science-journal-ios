@@ -211,12 +211,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                            selector: #selector(experimentImportFailed),
                                            name: .documentManagerImportExperimentFailed,
                                            object: nil)
-
-    // Listen to notifications of deleted cover image assets.
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(deletedCoverImageAsset),
-                                           name: .metadataManagerDeletedCoverImageAsset,
-                                           object: nil)
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -352,18 +346,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     queue.addOperation(errorOperation)
   }
 
-  @objc private func deletedCoverImageAsset(_ notification: Notification) {
-    guard let userInfo = notification.userInfo,
-        let experimentID =
-            userInfo[MetadataManager.deletedCoverImageAssetExperimentIDKey] as? String,
-        let filePath = userInfo[MetadataManager.deletedCoverImageAssetFilePathKey] as? String else {
-      return
-    }
-
-    userManager.driveSyncManager?.deleteImageAssets(atURLs: [URL(fileURLWithPath: filePath)],
-                                                    experimentID: experimentID)
-  }
-
   // MARK: - PermissionsGuideDelegate
 
   func permissionsGuideDidComplete(_ viewController: PermissionsGuideViewController) {
@@ -493,10 +475,12 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     if openExperimentUpdateManager?.experiment.ID == experimentID {
       openExperimentUpdateManager?.setCoverImageData(imageData, metadata: metadata)
     } else {
-      metadataManager.setCoverImageData(imageData,
-                                        metadata: metadata,
-                                        forExperimentID: experimentID)
-      userManager.driveSyncManager?.syncExperiment(withID: experimentID, condition: .onlyIfDirty)
+      let experimentUpdateManager =
+          ExperimentUpdateManager(experimentID: experimentID,
+                                  experimentDataDeleter: experimentDataDeleter,
+                                  metadataManager: metadataManager,
+                                  sensorDataManager: sensorDataManager)
+      experimentUpdateManager?.setCoverImageData(imageData, metadata: metadata)
     }
   }
 
@@ -571,6 +555,14 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     // Delete trial image assets from Drive.
     let imageURLs = trial.allImagePaths.map { return URL(fileURLWithPath: $0) }
     userManager.driveSyncManager?.deleteImageAssets(atURLs: imageURLs, experimentID: experiment.ID)
+  }
+
+  func experimentViewControllerShouldPermanentlyDeleteTrial(_ trial: Trial,
+                                                            fromExperiment experiment: Experiment) {
+    guard experiment.ID == openExperimentUpdateManager?.experiment.ID else {
+      return
+    }
+    openExperimentUpdateManager?.permanentlyDeleteTrial(withID: trial.ID)
   }
 
   func experimentsListShowClaimExperiments() {

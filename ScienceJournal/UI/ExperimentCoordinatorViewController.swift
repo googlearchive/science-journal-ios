@@ -67,6 +67,14 @@ protocol ExperimentCoordinatorViewControllerDelegate: class {
   func experimentViewControllerDeleteTrialCompleted(_ trial: Trial,
                                                     fromExperiment experiment: Experiment)
 
+  /// Informs the delegate a trial should be permanently deleted.
+  ///
+  /// - Parameters:
+  ///   - trial: The trial to be deleted.
+  ///   - experiment: The experiment the trial belongs to.
+  func experimentViewControllerShouldPermanentlyDeleteTrial(_ trial: Trial,
+                                                            fromExperiment experiment: Experiment)
+
   /// Informs the delegate that a trial finished recording.
   ///
   /// - Parameters:
@@ -647,16 +655,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   func observeViewController(_ observeViewController: ObserveViewController,
                              didCancelTrial trial: Trial) {
-    // Delete the trial and sensor data.
-    experiment.removeTrial(withID: trial.ID)
-    sensorDataManager.removeData(forTrialID: trial.ID)
+    delegate?.experimentViewControllerShouldPermanentlyDeleteTrial(trial,
+                                                                   fromExperiment: experiment)
     removeRecordingTrial()
-    // Save the experiement.
-    metadataManager.saveExperiment(experiment)
-    // Now delete associated images.
-    metadataManager.removeImagesAtPaths(trial.allImagePaths, experiment: experiment)
-    // Update the UI.
-    updateEmptyView(animated: true)
   }
 
   func observeViewController(_ observeViewController: ObserveViewController,

@@ -352,11 +352,18 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   func experimentViewControllerAddTrial(_ trial: Trial, recording isRecording: Bool) {}
   func experimentViewControllerDeleteTrialCompleted(_ trial: Trial,
                                                     fromExperiment experiment: Experiment) {}
+  func experimentViewControllerShouldPermanentlyDeleteTrial(_ trial: Trial,
+      fromExperiment experiment: Experiment) {}
   func experimentViewControllerDidFinishRecordingTrial(_ trial: Trial,
                                                        forExperiment experiment: Experiment) {}
 
   func experimentViewControllerRemoveCoverImageForExperiment(_ experiment: Experiment) -> Bool {
+    guard let coverImagePath = experiment.imagePath else {
+      return false
+    }
     analyticsReporter.track(.claimingRemoveCoverImage)
+    experimentDataDeleter.permanentlyDeleteAsset(atPath: coverImagePath,
+                                                 experimentID: experiment.ID)
     return metadataManager.removeCoverImageForExperiment(experiment)
   }
 

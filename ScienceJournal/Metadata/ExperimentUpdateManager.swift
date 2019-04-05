@@ -243,7 +243,8 @@ class ExperimentUpdateManager {
     let imagePath = (removedNote as? PictureNote)?.filePath
     var coverImageUndo: (() -> Void)?
     if let imagePath = imagePath {
-      metadataManager.deleteAssetAtPath(imagePath, experimentID: experiment.ID)
+      experimentDataDeleter.performUndoableDeleteForAsset(atPath: imagePath,
+                                                          experimentID: experiment.ID)
       coverImageUndo =
           metadataManager.updateCoverImageForRemovedImageIfNeeded(imagePath: imagePath,
                                                                   experiment: experiment)
@@ -254,7 +255,7 @@ class ExperimentUpdateManager {
     let undoBlock = {
       self.insertExperimentNote(removedNote, atIndex: removedIndex, isUndo: true)
       if let imagePath = imagePath {
-        self.metadataManager.restoreDeletedAssetAtPath(imagePath, experimentID: self.experiment.ID)
+        self.experimentDataDeleter.restoreAsset(atPath: imagePath, experimentID: self.experiment.ID)
       }
       coverImageUndo?()
     }
@@ -281,7 +282,8 @@ class ExperimentUpdateManager {
     let imagePath = (removedNote as? PictureNote)?.filePath
     var coverImageUndo: (() -> Void)?
     if let imagePath = imagePath {
-      metadataManager.deleteAssetAtPath(imagePath, experimentID: experiment.ID)
+      experimentDataDeleter.performUndoableDeleteForAsset(atPath: imagePath,
+                                                          experimentID: experiment.ID)
       coverImageUndo =
           metadataManager.updateCoverImageForRemovedImageIfNeeded(imagePath: imagePath,
                                                                   experiment: experiment)
@@ -292,7 +294,7 @@ class ExperimentUpdateManager {
     let undoBlock = {
       self.insertTrialNote(removedNote, trial: trial, atIndex: removedIndex, isUndo: true)
       if let imagePath = imagePath {
-        self.metadataManager.restoreDeletedAssetAtPath(imagePath, experimentID: self.experiment.ID)
+        self.experimentDataDeleter.restoreAsset(atPath: imagePath, experimentID: self.experiment.ID)
       }
       coverImageUndo?()
     }
@@ -424,19 +426,19 @@ class ExperimentUpdateManager {
     guard let trial = experiment.removeTrial(withID: trialID) else {
       return
     }
-    metadataManager.removeImagesAtPaths(trial.allImagePaths, experiment: experiment)
+    experimentDataDeleter.performUndoableDeleteForAssets(atPaths: trial.allImagePaths,
+                                                         experimentID: experiment.ID)
+    let coverImageUndo =
+        metadataManager.updateCoverImageForRemovedImagesIfNeeded(imagePaths: trial.allImagePaths,
+                                                                 experiment: experiment)
 
     saveExperiment()
 
     let undoBlock = {
       self.addTrial(trial, recording: false, isUndo: true)
-      trial.allImagePaths.forEach {
-        self.metadataManager.restoreDeletedAssetAtPath($0, experimentID: self.experiment.ID)
-      }
-      if let firstPath = trial.allImagePaths.first {
-        self.metadataManager.updateCoverImageForAddedImageIfNeeded(imagePath: firstPath,
-                                                                   experiment: self.experiment)
-      }
+      self.experimentDataDeleter.restoreAssets(atPaths: trial.allImagePaths,
+                                               experimentID: self.experiment.ID)
+      coverImageUndo?()
     }
 
     notifyListeners { (listener) in

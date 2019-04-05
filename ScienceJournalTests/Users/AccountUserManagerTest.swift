@@ -51,7 +51,7 @@ class AccountUserManagerTest: XCTestCase {
     // Move one experiment to the deleted data directory.
     _ = dataDeleter.performUndoableDeleteForExperiment(withID: experiment3.ID)
     XCTAssertNil(metadataManager.experiment(withID: experiment3.ID))
-    let deletedDataPath = metadataManager.deletedDataDirectoryURL.path
+    let deletedDataPath = dataDeleter.deletedDataDirectoryURL.path
     XCTAssertTrue(FileManager.default.fileExists(atPath: deletedDataPath))
 
     XCTAssertTrue(FileManager.default.fileExists(atPath: dataManager.storeURL.path))

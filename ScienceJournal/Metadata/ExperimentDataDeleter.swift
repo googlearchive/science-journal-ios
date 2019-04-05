@@ -24,6 +24,26 @@ public class ExperimentDataDeleter {
   private let sensorDataManager: SensorDataManager
 
   private let deletingTrialsKey: String
+  private let deletedAssetsDirectoryName = "DeletedAssets"
+  private let deletedDataDirectoryName = "DeletedData"
+
+  // This is a legacy directory, replaced by `deletedDataDirectory`. When removing all deleted data,
+  // this directory must also be deleted.
+  lazy var deletedAssetsDirectoryURL: URL = {
+    return metadataManager.deletedRootURL.appendingPathComponent(deletedAssetsDirectoryName)
+  }()
+
+  /// The deleted data directory. Experiment folders and image assets are moved here with a relative
+  /// path corresponding to their original path when they are deleted. This way we can move them
+  /// back to the original location if the delete is undone.
+  lazy var deletedDataDirectoryURL: URL = {
+    return metadataManager.deletedRootURL.appendingPathComponent(deletedDataDirectoryName)
+  }()
+
+  /// The deleted experiments directory.
+  lazy var deletedExperimentsDirectoryURL: URL = {
+    return deletedDataDirectoryURL.appendingPathComponent(metadataManager.experimentsDirectoryName)
+  }()
 
   init(accountID: String?, metadataManager: MetadataManager, sensorDataManager: SensorDataManager) {
     self.metadataManager = metadataManager
@@ -40,6 +60,7 @@ public class ExperimentDataDeleter {
     }()
 
     performAllPendingSensorDataDeletes()
+    removeAllDeletedData()
   }
 
   private var deletingTrialIDs: [String] {
@@ -49,6 +70,23 @@ public class ExperimentDataDeleter {
     set {
       UserDefaults.standard.set(newValue, forKey: deletingTrialsKey)
       UserDefaults.standard.synchronize()
+    }
+  }
+
+  /// When experiments or assets are deleted, they are actually moved to a temporary location to
+  /// facilitate easier undo functionality. This method deletes all data from that temporary
+  /// location. After this is called, restoring that data is no longer possible.
+  func removeAllDeletedData() {
+    // Before there was a deleted data directory, there was a deleted assets directory. Delete both.
+    [deletedDataDirectoryURL, deletedAssetsDirectoryURL].forEach {
+      guard FileManager.default.fileExists(atPath: $0.path) else { return }
+
+      do {
+        try FileManager.default.removeItem(at: $0)
+      } catch {
+        print("[MetadataManager] Error removing deleted data directory: " +
+            "\(error.localizedDescription)")
+      }
     }
   }
 
@@ -240,7 +278,7 @@ public class ExperimentDataDeleter {
   // directory. `path` must be the location within the Science Journal directory.
   private func moveItemToDeletedData(fromRelativePath path: String) {
     let fromURL = metadataManager.rootURL.appendingPathComponent(path)
-    let moveURL = metadataManager.deletedDataDirectoryURL.appendingPathComponent(path)
+    let moveURL = deletedDataDirectoryURL.appendingPathComponent(path)
     var moveDirectoryURL = moveURL.deletingLastPathComponent()
 
     if FileManager.default.fileExists(atPath: moveDirectoryURL.path, isDirectory:nil) {
@@ -300,7 +338,7 @@ public class ExperimentDataDeleter {
   }
 
   private func moveItemFromDeletedDataToExperiments(atRelativePath path: String) {
-    let deletedURL = metadataManager.deletedDataDirectoryURL.appendingPathComponent(path)
+    let deletedURL = deletedDataDirectoryURL.appendingPathComponent(path)
     let restoreURL = metadataManager.rootURL.appendingPathComponent(path)
 
     do {
@@ -322,7 +360,7 @@ public class ExperimentDataDeleter {
   }
 
   private func deletedExperimentURL(forID experimentID: String) -> URL {
-    return metadataManager.deletedExperimentsDirectoryURL.appendingPathComponent(experimentID)
+    return deletedExperimentsDirectoryURL.appendingPathComponent(experimentID)
   }
 
 }

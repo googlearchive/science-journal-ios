@@ -132,57 +132,6 @@ class MetadataManagerTest: XCTestCase {
     XCTAssertNil(overview.title)
   }
 
-  func testImageDeleteAndRestore() {
-    // Get an image.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    XCTAssertNotNil(image, "The test requires an image that exists.")
-
-    // Get a path.
-    let path = metadataManager.relativePicturePath(for: "ExperimentTestID")
-
-    // Save the image.
-    metadataManager.saveImage(image, atPicturePath: path, experimentID: "ExperimentTestID")
-    XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
-                    "Image at path should not be nil.")
-
-    // Delete the image.
-    metadataManager.deleteAssetAtPath(path, experimentID: "ExperimentTestID")
-    XCTAssertNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
-                 "Deleted image path should be nil.")
-
-    // Restore the image.
-    metadataManager.restoreDeletedAssetAtPath(path, experimentID: "ExperimentTestID")
-    XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
-                    "Restored image should not be nil")
-  }
-
-  func testRemoveAllDeletedAssets() {
-    // Get an image.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    XCTAssertNotNil(image, "The test requires an image that exists.")
-
-    // Get a path.
-    let path = metadataManager.relativePicturePath(for: "ExperimentTestID")
-
-    // Save the image.
-    metadataManager.saveImage(image, atPicturePath: path, experimentID: "ExperimentTestID")
-    XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
-                    "Image at path should not be nil.")
-
-    // Delete the image.
-    metadataManager.deleteAssetAtPath(path, experimentID: "ExperimentTestID")
-    XCTAssertNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
-                 "Deleted image path should be nil.")
-
-    // Remove all deleted assets.
-    metadataManager.removeAllDeletedData()
-
-    // Restore the image.
-    metadataManager.restoreDeletedAssetAtPath(path, experimentID: "ExperimentTestID")
-    XCTAssertNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
-                 "Restored image should be nil")
-  }
-
   func testUpgradeWhenExperimentVersionNotSet() {
     let experiment = Experiment(ID: "TEST_ID")
 

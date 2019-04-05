@@ -419,6 +419,15 @@ public class Experiment {
     sensorLayouts.removeAll()
   }
 
+  /// Checks whether an image path is in use by any notes contained in the experiment.
+  ///
+  /// - Parameter imagePath: An image path.
+  /// - Returns: True if the image path is in use, otherwise false.
+  public func isImagePathInUseByNotes(_ imagePath: String) -> Bool {
+    let pictureNotePaths = pictureNotes.compactMap { $0.filePath }
+    return pictureNotePaths.contains(imagePath)
+  }
+
   // MARK: - Private
 
   /// The private backing proto.

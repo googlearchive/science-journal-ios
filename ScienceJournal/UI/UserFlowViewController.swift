@@ -559,7 +559,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   func experimentViewControllerDeleteTrialCompleted(_ trial: Trial,
                                                     fromExperiment experiment: Experiment) {
     // Delete trial data locally.
-    openExperimentUpdateManager?.deleteTrialData(forTrialID: trial.ID)
+    openExperimentUpdateManager?.confirmTrialDeletion(for: trial)
     userAssetManager.deleteSensorData(forTrialID: trial.ID, experimentID: experiment.ID)
 
     // Delete trial data from Drive.
@@ -739,6 +739,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   func showExperiment(_ experiment: Experiment) {
     openExperimentUpdateManager =
         ExperimentUpdateManager(experiment: experiment,
+                                experimentDataDeleter: experimentDataDeleter,
                                 metadataManager: metadataManager,
                                 sensorDataManager: sensorDataManager)
     openExperimentUpdateManager?.delegate = self
@@ -1093,6 +1094,12 @@ extension UserFlowViewController: ExperimentUpdateManagerDelegate {
 
   func experimentUpdateManagerDidSaveExperiment(withID experimentID: String) {
     userManager.driveSyncManager?.syncExperiment(withID: experimentID, condition: .onlyIfDirty)
+  }
+
+  func experimentUpdateManagerDidDeleteCoverImageAsset(withPath assetPath: String,
+                                                       experimentID: String) {
+    userManager.driveSyncManager?.deleteImageAssets(atURLs: [URL(fileURLWithPath: assetPath)],
+                                                    experimentID: experimentID)
   }
 
 }

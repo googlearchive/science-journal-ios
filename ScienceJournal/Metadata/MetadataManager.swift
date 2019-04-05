@@ -340,6 +340,26 @@ public class MetadataManager {
     }
   }
 
+  /// Updates an experiment cover image given the image paths have been removed from the experiment.
+  ///
+  /// - Parameters:
+  ///   - imagePaths: An array of the removed image paths.
+  ///   - experiment: The experiment from which the image paths were removed.
+  /// - Returns: A block that will undo the overview image change if executed.
+  func updateCoverImageForRemovedImagesIfNeeded(imagePaths: [String],
+                                                experiment: Experiment) -> (() -> Void)? {
+    var returnBlock: (() -> Void)?
+    for (index, imagePath) in imagePaths.enumerated() {
+      let undoBlock = updateCoverImageForRemovedImageIfNeeded(imagePath: imagePath,
+                                                              experiment: experiment)
+      // When undoing, only the first image will have any effect.
+      if index == 0 {
+        returnBlock = undoBlock
+      }
+    }
+    return returnBlock
+  }
+
   /// Updates an experiment overview image given that the image path has been removed from the
   /// experiment. Sets the overview image to another picture note if available, otherwise nil.
   ///

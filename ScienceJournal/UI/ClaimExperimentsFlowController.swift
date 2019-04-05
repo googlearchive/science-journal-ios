@@ -126,6 +126,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   func showExperiment(_ experiment: Experiment) {
     openExperimentUpdateManager = ExperimentUpdateManager(
         experiment: experiment,
+        experimentDataDeleter: experimentDataDeleter,
         metadataManager: metadataManager,
         sensorDataManager: sensorDataManager)
     let experimentCoordinatorVC = ExperimentCoordinatorViewController(

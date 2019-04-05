@@ -71,6 +71,31 @@ class ExperimentDataDeleterTest: XCTestCase {
     assertSensorDataDoesNotExist(forTrialID: experiment.trials[0].ID)
   }
 
+  func testImageDeleteAndRestore() {
+    // Get an image.
+    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+    XCTAssertNotNil(image, "The test requires an image that exists.")
+
+    // Get a path.
+    let path = metadataManager.relativePicturePath(for: "ExperimentTestID")
+
+    // Save the image.
+    metadataManager.saveImage(image, atPicturePath: path, experimentID: "ExperimentTestID")
+    XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
+                    "Image at path should not be nil.")
+
+    // Delete the image.
+    experimentDataDeleter.performUndoableDeleteForAsset(atPath: path,
+                                                        experimentID: "ExperimentTestID")
+    XCTAssertNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
+                 "Deleted image path should be nil.")
+
+    // Restore the image.
+    experimentDataDeleter.restoreAsset(atPath: path, experimentID: "ExperimentTestID")
+    XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
+                    "Restored image should not be nil")
+  }
+
   // MARK: - Helpers
 
   /// Creates an experiment that has one trial with sensor data, and asserts it and its data are on

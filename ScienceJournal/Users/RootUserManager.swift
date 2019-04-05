@@ -72,9 +72,6 @@ class RootUserManager: UserManager {
                                       sensorController: sensorController,
                                       sensorDataManager: sensorDataManager)
 
-    // Clean the deleted data directory.
-    metadataManager.removeAllDeletedData()
-
     assetManager = UserAssetManager(driveSyncManager: nil,
                                     metadataManager: metadataManager,
                                     sensorDataManager: sensorDataManager)
@@ -97,8 +94,8 @@ class RootUserManager: UserManager {
   func deleteAllUserData() throws {
     // Delete metadata.
     let directories = [metadataRootURL,
-                       metadataManager.deletedAssetsDirectoryURL,
-                       metadataManager.deletedDataDirectoryURL]
+                       experimentDataDeleter.deletedAssetsDirectoryURL,
+                       experimentDataDeleter.deletedDataDirectoryURL]
     for url in directories {
       guard FileManager.default.fileExists(atPath: url.path) else {
         continue

@@ -92,9 +92,6 @@ class AccountUserManager: UserManager {
                                       sensorController: sensorController,
                                       sensorDataManager: sensorDataManager)
 
-    // Clean the deleted data directory.
-    metadataManager.removeAllDeletedData()
-
     // Configure experiment data deleter.
     experimentDataDeleter = ExperimentDataDeleter(accountID: account.ID,
                                                   metadataManager: metadataManager,

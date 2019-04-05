@@ -65,8 +65,6 @@ public class MetadataManager {
 
   let bluetoothSensorsDirectoryName = "bluetoothSensors"
   let experimentsDirectoryName = "experiments"
-  let deletedAssetsDirectoryName = "DeletedAssets"
-  let deletedDataDirectoryName = "DeletedData"
   private let documentFileExtension = "sj"
 
   // MARK: - Properties
@@ -79,22 +77,6 @@ public class MetadataManager {
 
   /// The root directory to which all deleted paths are relative.
   let deletedRootURL: URL
-
-  // This is a legacy directory, replaced by `deletedDataDirectory`. When removing all deleted data,
-  // this directory must also be deleted.
-  lazy var deletedAssetsDirectoryURL: URL = {
-    return self.deletedRootURL.appendingPathComponent(self.deletedAssetsDirectoryName)
-  }()
-
-  /// The deleted data directory.
-  lazy var deletedDataDirectoryURL: URL = {
-    return self.deletedRootURL.appendingPathComponent(self.deletedDataDirectoryName)
-  }()
-
-  /// The deleted experiments directory.
-  lazy var deletedExperimentsDirectoryURL: URL = {
-    return self.deletedDataDirectoryURL.appendingPathComponent(self.experimentsDirectoryName)
-  }()
 
   /// The experiments directory.
   private(set) lazy var experimentsDirectoryURL: URL = {
@@ -1150,118 +1132,6 @@ public class MetadataManager {
     }
 
     return true
-  }
-
-  // MARK: - Data removal
-
-  /// When experiments or assets are deleted, they are actually moved to a temporary location to
-  /// facilitate easier undo functionality. This method deletes all data from that temporary
-  /// location. After this is called, restoring that data is no longer possible.
-  func removeAllDeletedData() {
-    // Before there was a deleted data directory, there was a deleted assets directory. Delete both.
-    [deletedDataDirectoryURL, deletedAssetsDirectoryURL].forEach {
-      guard FileManager.default.fileExists(atPath: $0.path) else { return }
-
-      do {
-        try FileManager.default.removeItem(at: $0)
-      } catch {
-        print("[MetadataManager] Error removing deleted data directory: " +
-            "\(error.localizedDescription)")
-      }
-    }
-  }
-
-  // Moves the file or directory at `path` to the same relative location in the deleted data
-  // directory. `path` must be the location within the Science Journal directory.
-  private func moveItemToDeletedData(fromRelativePath path: String) {
-    let fromURL = rootURL.appendingPathComponent(path)
-    let moveURL = deletedDataDirectoryURL.appendingPathComponent(path)
-    var moveDirectoryURL = moveURL.deletingLastPathComponent()
-
-    if FileManager.default.fileExists(atPath: moveDirectoryURL.path, isDirectory:nil) {
-      // If the directory already exists, replace the item.
-      do {
-        _ = try FileManager.default.replaceItemAt(moveURL, withItemAt: fromURL)
-      } catch {
-        print("[MetadataManager] Error replacing item at '\(moveURL) with item at \(fromURL)': " +
-                  "\(error.localizedDescription)")
-      }
-    } else {
-      // Create the directory.
-      do {
-        try FileManager.default.createDirectory(atPath: moveDirectoryURL.path,
-                                                withIntermediateDirectories: true,
-                                                attributes: nil)
-      } catch {
-        print("[MetadataManager] Error creating directory: \(error.localizedDescription)")
-        return
-      }
-
-      // Deleted data should not be backed up to iCloud.
-      var resourceValues = URLResourceValues()
-      resourceValues.isExcludedFromBackup = true
-      do {
-        try moveDirectoryURL.setResourceValues(resourceValues)
-      } catch {
-        print("[MetadataManager] Error setting resource values on directory " +
-          "'\(moveDirectoryURL)': \(error.localizedDescription)")
-      }
-
-      // Move the item to deleted data.
-      do {
-        try FileManager.default.moveItem(at: fromURL, to: moveURL)
-      } catch {
-        print("[MetadataManager] Error moving item at '\(fromURL)': \(error.localizedDescription)")
-      }
-    }
-  }
-
-  // MARK: Asset removal
-
-  /// Deletes images with the given paths.
-  ///
-  /// - Parameters:
-  ///   - paths: An array of image paths.
-  ///   - experiment: An experiment.
-  func removeImagesAtPaths(_ imagePaths: [String], experiment: Experiment) {
-    for imagePath in imagePaths {
-      deleteAssetAtPath(imagePath, experimentID: experiment.ID)
-      updateCoverImageForRemovedImageIfNeededWithoutUndo(imagePath: imagePath,
-                                                         experiment: experiment)
-    }
-  }
-
-  /// Moves the asset at the path to the deleted assets directory. This directory is removed on next
-  /// launch. This allows for easier undoing of delete actions.
-  ///
-  /// - Parameters:
-  ///   - path: The path relative to the Science Journal directory.
-  ///   - experimentID: An experiment ID.
-  open func deleteAssetAtPath(_ path: String, experimentID: String) {
-    guard let rootPath = URL(string: experimentsDirectoryName)?
-        .appendingPathComponent(experimentID)
-        .appendingPathComponent(path) else {
-      return
-    }
-    moveItemToDeletedData(fromRelativePath: rootPath.path)
-  }
-
-  /// Moves an asset from the deleted assets directory back to the Science Journal directory.
-  ///
-  /// - Parameters
-  ///   - path: The path relative to the Science Journal directory.
-  ///   - experimentID: An experimentID.
-  func restoreDeletedAssetAtPath(_ path: String, experimentID: String) {
-    let restoreURL = pictureFileURL(for: path, experimentID: experimentID)
-    let deletedURL = deletedDataDirectoryURL
-        .appendingPathComponent(experimentsDirectoryName)
-        .appendingPathComponent(experimentID)
-        .appendingPathComponent(path)
-    do {
-      try FileManager.default.moveItem(at: deletedURL, to: restoreURL)
-    } catch {
-      print("[MetadataManager] Error moving item at '\(deletedURL)': \(error.localizedDescription)")
-    }
   }
 
   // MARK: - Private

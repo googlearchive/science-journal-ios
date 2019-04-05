@@ -108,7 +108,12 @@ class ExistingDataMigrationManager {
               rootSensorDataManager.fetchAllSensorData(forTrialID: trial.ID,
                                                        completion: { (sensorData, fetchContext) in
                 if let sensorData = sensorData {
-                  accountSensorDataManager.addSensorDataPoints(sensorData) {
+                  accountSensorDataManager.addSensorDataPoints(sensorData) { result in
+                    switch result {
+                    case .success(_): break
+                    case .failure(let error):
+                      errorTrialIDs.append(trial.ID)
+                    }
                     // Now that adding is complete, reset the fetch context to clear up memory.
                     fetchContext.reset()
                     finished()
@@ -138,6 +143,11 @@ class ExistingDataMigrationManager {
     var saveAssetsSuccess = false
 
     let addExperimentAndCleanup = GSJBlockOperation { [unowned self] (finished) in
+      guard errorTrialIDs.isEmpty else {
+        finished()
+        return
+      }
+
       addExperimentSuccess = self.accountUserManager.metadataManager.addExperiment(
           experimentAndOverview.experiment, overview: experimentAndOverview.overview)
       saveAssetsSuccess = true
@@ -153,6 +163,10 @@ class ExistingDataMigrationManager {
             saveAssetsSuccess = false
             print("[ExistingDataMigrationManager] Error moving assets directory at " +
                       "'\(rootAssetsURL)' to '\(accountAssetsURL)': \(error.localizedDescription)")
+
+            // If the asset folder move failed, don't continue.
+            finished()
+            return
           }
         }
         self.removeExperimentFromRootUser(withID: experimentID) {

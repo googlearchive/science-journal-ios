@@ -29,6 +29,8 @@ enum MetadataManagerError: Error {
   case openingFileWithNewerVersion(Int32?)
   /// The file being saved has a version too new for this build.
   case savingFileWithNewerVersion
+  /// The experiment cannot be saved.
+  case cannotSaveExperiment
 
   var logString: String {
     switch self {
@@ -37,6 +39,8 @@ enum MetadataManagerError: Error {
           "(\(String(describing: newerVersion))) newer than the latest supported by this build."
     case .savingFileWithNewerVersion:
       return "Attempting to save a file with a version newer than the current build."
+    case .cannotSaveExperiment:
+      return "Can't save an experiment because of an error."
     }
   }
 }
@@ -710,7 +714,10 @@ public class MetadataManager {
       saveExperimentLibrary()
     }
 
-    saveData(experiment.proto.data(), to: experimentURL)
+    let didSave = saveData(experiment.proto.data(), to: experimentURL)
+    if didSave == false {
+      throw MetadataManagerError.cannotSaveExperiment
+    }
 
     if markDirty {
       // Mark local sync status as dirty.

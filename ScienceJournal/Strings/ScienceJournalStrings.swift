@@ -136,6 +136,8 @@ extension String {
   static public var claimExperimentsDescriptionWithCount: String { return "claim_experiments_description_with_count".localized }
   static public var claimExperimentsDescriptionWithCountOne: String { return "claim_experiments_description_with_count_one".localized }
   static public var claimExperimentsShareContentDescription: String { return "claim_experiments_share_content_description".localized }
+  static public var claimExperimentDiskSpaceErrorMessage: String { return "claim_experiment_disk_space_error_message".localized }
+  static public var claimExperimentsDiskSpaceErrorMessage: String { return "claim_experiments_disk_space_error_message".localized }
   static public var claimExperimentErrorMessage: String { return "claim_experiment_error_message".localized }
   static public var claimExperimentsErrorMessage: String { return "claim_experiments_error_message".localized }
   static public var claimExperimentConfirmationTitle: String { return "claim_experiment_confirmation_title".localized }

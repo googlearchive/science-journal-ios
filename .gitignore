@@ -28,3 +28,6 @@ xcuserdata/
 
 ## CocoaPods
 Pods/
+
+## Generated Plist
+Info-Combined.plist

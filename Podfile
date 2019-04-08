@@ -64,11 +64,13 @@ post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       if installer.config.verbose?
-        puts "Setting deployment target #{deployment_target} for #{config.name} on #{target.name}"
+        puts "Setting deployment target #{deployment_target} for #{config.name} on #{target.name}..."
       end
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = deployment_target
     end
   end
-  puts "Generating Science Journal protos"
+  puts "Generating Science Journal protos..."
   system("cd Protos && ./generate.sh")
+  puts "Updating version numbers and generating plist..."
+  system("cd Scripts && ./update_version_numbers.sh")
 end

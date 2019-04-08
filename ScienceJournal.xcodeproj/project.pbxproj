@@ -642,6 +642,7 @@
 		48D02B792220CA750063AC28 /* AnalyticsScreenViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsScreenViews.swift; sourceTree = "<group>"; };
 		48D81BD62086AC9400773294 /* DrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfig.swift; sourceTree = "<group>"; };
 		48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigOpen.swift; sourceTree = "<group>"; };
+		48E745952256A7120030EB8F /* Info-Combined.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Combined.plist"; sourceTree = "<group>"; };
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
 		4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2213,6 +2214,7 @@
 				68AC989D1F57A5930034ED1E /* Feedback */,
 				5C804CB81FDEEFD900F8D1C6 /* Formatters */,
 				687FA9D3202C113C004C1D04 /* Generated */,
+				48E745952256A7120030EB8F /* Info-Combined.plist */,
 				68EBA6E91E20421E0089FF7F /* Info.plist */,
 				68EBA6E61E20421E0089FF7F /* LaunchScreen.storyboard */,
 				68E3618A203F7F0900B1B979 /* main.swift */,
@@ -2985,7 +2987,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TAGS=\"FIXME:\"\necho \"Searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+			shellScript = "TAGS=\"FIXME:\"\necho \"Searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
 		};
 		68836E631EDF3D5D004CE69B /* Generate Strings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2999,7 +3001,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python $SRCROOT/Scripts/generate_strings.py -i $SRCROOT/ScienceJournal/Resources/Strings.bundle/en.lproj/Localizable.strings -o $SRCROOT/ScienceJournal/Strings/ScienceJournalStrings.swift";
+			shellScript = "python $SRCROOT/Scripts/generate_strings.py -i $SRCROOT/ScienceJournal/Resources/Strings.bundle/en.lproj/Localizable.strings -o $SRCROOT/ScienceJournal/Strings/ScienceJournalStrings.swift\n";
 		};
 		6A9F59DCD9F0297C0A3690CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3760,7 +3762,7 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
 				);
-				INFOPLIST_FILE = ScienceJournal/Info.plist;
+				INFOPLIST_FILE = "ScienceJournal/Info-Combined.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -3925,7 +3927,7 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
 				);
-				INFOPLIST_FILE = ScienceJournal/Info.plist;
+				INFOPLIST_FILE = "ScienceJournal/Info-Combined.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -4170,7 +4172,7 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
 				);
-				INFOPLIST_FILE = ScienceJournal/Info.plist;
+				INFOPLIST_FILE = "ScienceJournal/Info-Combined.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -4246,7 +4248,7 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/MotionInterchange\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Protobuf\"",
 				);
-				INFOPLIST_FILE = ScienceJournal/Info.plist;
+				INFOPLIST_FILE = "ScienceJournal/Info-Combined.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";

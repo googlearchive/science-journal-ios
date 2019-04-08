@@ -958,7 +958,7 @@
 /* Content description for a play button [CHAR_LIMIT=NONE] */
 "play_content_description" = "Play";
 
-/* Snackbar message when preferences are migrated from root to account users. */
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
 "preference_migration_message" = "Existing device settings have been applied to this account";
 
 /* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
@@ -1053,6 +1053,24 @@
 
 /* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
 "save_experiment_text" = "Would you like to add this experiment to your library?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Save to Files";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Displays a document browser, allowing you to save a copy of this file to a folder on your device.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "File saved";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Files saved";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Could not save file. Please try again.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Could not save files. Please try again.";
 
 /* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
 "scale" = "Scale";

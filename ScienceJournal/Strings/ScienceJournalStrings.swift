@@ -374,6 +374,12 @@ extension String {
   static public var saveBtnContentDetails: String { return "save_btn_content_details".localized }
   static public var saveExperiment: String { return "save_experiment".localized }
   static public var saveExperimentText: String { return "save_experiment_text".localized }
+  static public var saveToFilesTitle: String { return "save_to_files_title".localized }
+  static public var saveToFilesContentDescription: String { return "save_to_files_content_description".localized }
+  static public var saveToFilesSingleSuccessMessage: String { return "save_to_files_single_success_message".localized }
+  static public var saveToFilesMultipleSuccessMessage: String { return "save_to_files_multiple_success_message".localized }
+  static public var saveToFilesSingleErrorMessage: String { return "save_to_files_single_error_message".localized }
+  static public var saveToFilesMultipleErrorMessage: String { return "save_to_files_multiple_error_message".localized }
   static public var scale: String { return "scale".localized }
   static public var selectTimestampContentDescription: String { return "select_timestamp_content_description".localized }
   static public var sendCopyAction: String { return "send_copy_action".localized }

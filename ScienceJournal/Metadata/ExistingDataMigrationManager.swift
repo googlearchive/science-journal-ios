@@ -26,6 +26,8 @@ enum ExistingDataMigrationManagerError: Error {
   case sensorDataFetchError(trialIDs: [String])
   /// Error storing assets for the experiment. Called with the IDs of the experiments.
   case assetsSaveError(experimentIDs: [String])
+  /// Error migrating the experiment because there wasn't enough disk space.
+  case notEnoughFreeDiskSpaceToMigrate(experimentIDs: [String])
 }
 
 /// Manages migrating data from the pre-accounts root user to per-user storage, including
@@ -69,17 +71,52 @@ class ExistingDataMigrationManager {
 
   // MARK: Experiments
 
+  private func canMigrateExperiment(withID experimentID: String) -> Bool {
+    guard let sizeOfExperiment = sizeOfRootExperiment(withID: experimentID),
+        let freeSize = FileManager.default.availableSystemDiskSpace else {
+      return false
+    }
+
+    // Pad the size of the experiment as a safety measure.
+    let safeSize = UInt64(Double(sizeOfExperiment) * 1.1)
+
+    return freeSize > safeSize
+  }
+
+  private func sizeOfRootExperiment(withID experimentID: String) -> UInt64? {
+    guard let experiment = rootUserManager.metadataManager.experiment(withID: experimentID) else {
+      return nil
+    }
+
+    // The size of the experiments directory.
+    let experimentURL = rootUserManager.metadataManager.experimentDirectoryURL(for: experimentID)
+    guard let experimentDirectorySize =
+        FileManager.default.sizeOfDirectory(at: experimentURL) else {
+      return nil
+    }
+
+    // The size of the recordings in the database.
+    let estimatedRecordingDatabaseSize =
+        experiment.trials.map { $0.estimatedRecordingDatabaseSize }.reduce(0, +)
+
+    return experimentDirectorySize + UInt64(estimatedRecordingDatabaseSize)
+  }
+
   /// Moves an experiment from pre-account storage to storage for this user.
   ///
   /// - Parameters:
   ///   - experimentID: The ID of the experiment to migrate.
   ///   - completion: Called when migration is complete, with errors if any.
-  func migrateExperiment(withID experimentID: String, completion: @escaping ([Error]) -> Void) {
+  func migrateExperiment(withID experimentID: String,
+                         completion: @escaping ([ExistingDataMigrationManagerError]) -> Void) {
     guard let experimentAndOverview = self.rootUserManager.metadataManager.experimentAndOverview(
         forExperimentID: experimentID) else {
-      let error =
-          ExistingDataMigrationManagerError.experimentLoadError(experimentIDs: [experimentID])
-      completion([error])
+      completion([.experimentLoadError(experimentIDs: [experimentID])])
+      return
+    }
+
+    guard canMigrateExperiment(withID: experimentID) else {
+      completion([.notEnoughFreeDiskSpaceToMigrate(experimentIDs: [experimentID])])
       return
     }
 
@@ -111,7 +148,7 @@ class ExistingDataMigrationManager {
                   accountSensorDataManager.addSensorDataPoints(sensorData) { result in
                     switch result {
                     case .success(_): break
-                    case .failure(let error):
+                    case .failure(_):
                       errorTrialIDs.append(trial.ID)
                     }
                     // Now that adding is complete, reset the fetch context to clear up memory.
@@ -205,31 +242,29 @@ class ExistingDataMigrationManager {
   /// Moves all experiments from pre-account storage to storage for this user.
   ///
   /// - Parameter completion: Called when migration is complete, with errors if any.
-  func migrateAllExperiments(completion: @escaping ([Error]) -> Void) {
+  func migrateAllExperiments(completion: @escaping ([ExistingDataMigrationManagerError]) -> Void) {
     let dispatchGroup = DispatchGroup()
     var experimentLoadErrorIDs = [String]()
     var experimentSaveErrorIDs = [String]()
     var sensorDataFetchErrorIDs = [String]()
     var assetsSaveErrorIDs = [String]()
-    var otherErrors = [Error]()
+    var diskSpaceErrorIDs = [String]()
     let experimentIDs = rootUserManager.metadataManager.experimentOverviews.map { $0.experimentID }
     experimentIDs.forEach {
       dispatchGroup.enter()
-      migrateExperiment(withID: $0) {
-        $0.forEach {
-          if let error = $0 as? ExistingDataMigrationManagerError {
-            switch error {
-            case .experimentLoadError(let experimentIDs):
-              experimentLoadErrorIDs.append(contentsOf: experimentIDs)
-            case .experimentSaveError(let experimentIDs):
-              experimentSaveErrorIDs.append(contentsOf: experimentIDs)
-            case .sensorDataFetchError(let trialIDs):
-              sensorDataFetchErrorIDs.append(contentsOf: trialIDs)
-            case .assetsSaveError(let experimentIDs):
-              assetsSaveErrorIDs.append(contentsOf: experimentIDs)
-            }
-          } else {
-            otherErrors.append($0)
+      migrateExperiment(withID: $0) { errors in
+        for error in errors {
+          switch error {
+          case .experimentLoadError(let experimentIDs):
+            experimentLoadErrorIDs.append(contentsOf: experimentIDs)
+          case .experimentSaveError(let experimentIDs):
+            experimentSaveErrorIDs.append(contentsOf: experimentIDs)
+          case .sensorDataFetchError(let trialIDs):
+            sensorDataFetchErrorIDs.append(contentsOf: trialIDs)
+          case .assetsSaveError(let experimentIDs):
+            assetsSaveErrorIDs.append(contentsOf: experimentIDs)
+          case .notEnoughFreeDiskSpaceToMigrate(let experimentIDs):
+            diskSpaceErrorIDs.append(contentsOf: experimentIDs)
           }
         }
         dispatchGroup.leave()
@@ -237,25 +272,21 @@ class ExistingDataMigrationManager {
     }
 
     dispatchGroup.notify(qos: .userInitiated, queue: .global()) {
-      var errors = [Error]()
+      var errors = [ExistingDataMigrationManagerError]()
       if !experimentLoadErrorIDs.isEmpty {
-        errors.append(ExistingDataMigrationManagerError.experimentLoadError(
-            experimentIDs: experimentLoadErrorIDs))
+        errors.append(.experimentLoadError(experimentIDs: experimentLoadErrorIDs))
       }
       if !experimentSaveErrorIDs.isEmpty {
-        errors.append(ExistingDataMigrationManagerError.experimentSaveError(
-            experimentIDs: experimentSaveErrorIDs))
+        errors.append(.experimentSaveError(experimentIDs: experimentSaveErrorIDs))
       }
       if !sensorDataFetchErrorIDs.isEmpty {
-        errors.append(ExistingDataMigrationManagerError.sensorDataFetchError(
-            trialIDs: sensorDataFetchErrorIDs))
+        errors.append(.sensorDataFetchError(trialIDs: sensorDataFetchErrorIDs))
       }
       if !assetsSaveErrorIDs.isEmpty {
-        errors.append(ExistingDataMigrationManagerError.assetsSaveError(
-            experimentIDs: assetsSaveErrorIDs))
+        errors.append(.assetsSaveError(experimentIDs: assetsSaveErrorIDs))
       }
-      if !otherErrors.isEmpty {
-        errors.append(contentsOf: otherErrors)
+      if !diskSpaceErrorIDs.isEmpty {
+        errors.append(.notEnoughFreeDiskSpaceToMigrate(experimentIDs: diskSpaceErrorIDs))
       }
 
       DispatchQueue.main.async {

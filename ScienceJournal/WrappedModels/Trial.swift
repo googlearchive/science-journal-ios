@@ -339,6 +339,12 @@ public class Trial {
     }
   }
 
+  // Estimates the database size based on an experimentally derived estimate of how many bytes one
+  // second of one sensor uses when written to Core Data.
+  var estimatedRecordingDatabaseSize: Double {
+    return 1430 * durationInterval * Double(sensorLayouts.count)
+  }
+
   // MARK: - Private
 
   /// The private backing proto.

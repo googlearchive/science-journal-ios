@@ -535,6 +535,7 @@
 		8BCD2F8A1F968F0F00CCF8DB /* Sensor+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD2F891F968F0F00CCF8DB /* Sensor+TestHelpers.swift */; };
 		8BD3A1071F27B76B00A5DDBD /* MDCPalette+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3A1061F27B76B00A5DDBD /* MDCPalette+ScienceJournal.swift */; };
 		8BD3A10A1F27B79500A5DDBD /* MDCPalette+ScienceJournalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3A1091F27B79500A5DDBD /* MDCPalette+ScienceJournalTest.swift */; };
+		8BD57F4E225BB55900C1C5ED /* FileManager+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD57F4D225BB55900C1C5ED /* FileManager+ScienceJournal.swift */; };
 		8BD7F8051F7D9951004C80B4 /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7F8041F7D9951004C80B4 /* ActionBar.swift */; };
 		8BD9721A1ECCB1AD0048DC50 /* ExperimentDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD972191ECCB1AD0048DC50 /* ExperimentDataParser.swift */; };
 		8BD9721C1ECCB20F0048DC50 /* ExperimentDataParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9721B1ECCB20F0048DC50 /* ExperimentDataParserTest.swift */; };
@@ -1177,6 +1178,7 @@
 		8BCD2F891F968F0F00CCF8DB /* Sensor+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sensor+TestHelpers.swift"; sourceTree = "<group>"; };
 		8BD3A1061F27B76B00A5DDBD /* MDCPalette+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MDCPalette+ScienceJournal.swift"; sourceTree = "<group>"; };
 		8BD3A1091F27B79500A5DDBD /* MDCPalette+ScienceJournalTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MDCPalette+ScienceJournalTest.swift"; sourceTree = "<group>"; };
+		8BD57F4D225BB55900C1C5ED /* FileManager+ScienceJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+ScienceJournal.swift"; sourceTree = "<group>"; };
 		8BD7F8041F7D9951004C80B4 /* ActionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
 		8BD972191ECCB1AD0048DC50 /* ExperimentDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentDataParser.swift; sourceTree = "<group>"; };
 		8BD9721B1ECCB20F0048DC50 /* ExperimentDataParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentDataParserTest.swift; sourceTree = "<group>"; };
@@ -2351,6 +2353,7 @@
 				8B111F6A1E412287000400F1 /* Date+ScienceJournal.swift */,
 				68587BA61F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift */,
 				D59CA3D7219F46020082A27B /* Double+ScienceJournal.swift */,
+				8BD57F4D225BB55900C1C5ED /* FileManager+ScienceJournal.swift */,
 				5C2E4E941EA6B1A700F9AA6D /* GSJBleSensorConfig+ScienceJournal.swift */,
 				8B9ADF901ECF75FB00C7DB7D /* GSJSensorStat+ScienceJournal.swift */,
 				8B9F061A1EF446130030B011 /* GSJTriggerInformation_TriggerWhen+ScienceJournal.swift */,
@@ -3227,6 +3230,7 @@
 				8BE81BE91EB76B6D00EEC3BB /* CameraViewController.swift in Sources */,
 				687FAA13202C1162004C1D04 /* SensorTriggerInformation.pbobjc.m in Sources */,
 				68EACA711EAFC96300BB5892 /* SidebarHeaderCell.swift in Sources */,
+				8BD57F4E225BB55900C1C5ED /* FileManager+ScienceJournal.swift in Sources */,
 				681688321F30FF6E00CC2B5F /* ImageSelectorDelegate.swift in Sources */,
 				8B49DCA41EB1223D000A622E /* NotesView.swift in Sources */,
 				5CC279EF1E43D6EB005EE8DB /* SineWaveSensor.swift in Sources */,

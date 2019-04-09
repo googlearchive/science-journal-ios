@@ -40,4 +40,21 @@ extension URL {
     }
   }
 
+  static var allocatedSizeResourceKeys: [URLResourceKey] = [.isRegularFileKey,
+                                                            .fileAllocatedSizeKey,
+                                                            .totalFileAllocatedSizeKey]
+
+  /// Returns the allocated file size of the file at the URL
+  var fileAllocatedSize: UInt64? {
+    let values = try? resourceValues(forKeys: Set(URL.allocatedSizeResourceKeys))
+    guard let resourceValues = values, resourceValues.isRegularFile == true else {
+      return 0
+    }
+    guard let size =
+        resourceValues.totalFileAllocatedSize ?? resourceValues.fileAllocatedSize else {
+      return nil
+    }
+    return UInt64(size)
+  }
+
 }

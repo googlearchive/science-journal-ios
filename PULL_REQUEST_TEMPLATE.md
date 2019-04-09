@@ -3,6 +3,7 @@
 ### Checklist
 - [ ] All new and existing tests pass
 - [ ] I've read the [Contribution Guidelines](https://github.com/google/science-journal-ios/blob/master/CONTRIBUTING.md)
+- [ ] I've read [Change Limitations](https://github.com/google/science-journal-ios/blob/master/CHANGE_LIMITATIONS.md)
 
 ### Motivation and Context
 <!-- Why is this change required? What problem does it solve? -->

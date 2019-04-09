@@ -12,7 +12,7 @@ We use custom module maps that link directly to various dependencies like [SSOAu
 
 ### Updating Swift
 
-We want to be running the latest Swift 🏃‍♀️ as much as anybody. At this time we can’t accept Swift version update PRs. Our internal source of truth must be updated first. Because the internal source of truth has more code than the open source project, we’ll have to do the migration, and test it internally to make sure all of our tooling works- inside and outside of Google.
+We want to be running the latest Swift 🏃‍♀️ as much as anybody. At this time we can’t accept Swift version update PRs. Our internal source of truth must be updated first. Because the internal source of truth has more code than the open source project, we’ll have to do the migration, and test it internally to make sure all of our tooling works—inside and outside of Google.
 
 ### Podfile updates
 

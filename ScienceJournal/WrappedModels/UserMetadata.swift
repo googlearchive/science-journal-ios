@@ -99,6 +99,12 @@ class UserMetadata {
   /// - Parameter experimentOverview: An experiment overview.
   func addExperimentOverview(_ experimentOverview: ExperimentOverview) {
     overviewQueue.sync {
+      guard !_experimentOverviews.contains(where: {
+          $0.experimentID == experimentOverview.experimentID }) else {
+        // There shouldn't be any overviews for the same ID we're adding now.
+        return
+      }
+
       _experimentOverviews.append(experimentOverview)
     }
   }
@@ -117,6 +123,15 @@ class UserMetadata {
       experimentOverview = _experimentOverviews.remove(at: index)
     }
     return experimentOverview
+  }
+
+  /// Deletes all experiment overviews with an experiment ID.
+  ///
+  /// - Parameter experimentID: An experiment ID.
+  func removeAllExperimentOverviews(withExperimentID experimentID: String) {
+    overviewQueue.sync {
+      _experimentOverviews.removeAll(where: { $0.experimentID == experimentID })
+    }
   }
 
   // MARK: - Private

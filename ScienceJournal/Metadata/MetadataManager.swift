@@ -1232,7 +1232,9 @@ public class MetadataManager {
       userMetadata.fileVersion = FileVersion(major: UserMetadata.Version.major,
                                              minor: UserMetadata.Version.minor,
                                              platform: UserMetadata.Version.platform)
+      removeDuplicateOverviews()
       addMissingOverviewsForExperimentsOnDisk()
+      saveUserMetadata()
     }
 
     guard let data = try? Data(contentsOf: userMetadataURL) else {
@@ -1252,7 +1254,9 @@ public class MetadataManager {
 
     do {
       try upgradeUserMetadataVersionIfNeeded(userMetadata)
+      removeDuplicateOverviews()
       addMissingOverviewsForExperimentsOnDisk()
+      saveUserMetadata()
     } catch {
       let errorString = (error as? MetadataManagerError)?.logString ?? error.localizedDescription
       print("[MetadataManager] Error upgrading user metadata version: " + errorString)
@@ -1271,7 +1275,6 @@ public class MetadataManager {
       return
     }
 
-    var didAddAnOverview = false
     for experimentURL in experimentURLs {
       let experimentID = experimentURL.lastPathComponent
       if userMetadata.experimentOverviews.index(where: { $0.experimentID == experimentID }) == nil {
@@ -1295,12 +1298,48 @@ public class MetadataManager {
         }
         userMetadata.addExperimentOverview(overview)
         registerNewLocalExperiment(withID: overview.experimentID, isArchived: overview.isArchived)
-        didAddAnOverview = true
       }
     }
+  }
 
-    if didAddAnOverview {
-      saveUserMetadata()
+  /// Scans the overviews and removes any extra overviews for experiments that have duplicates. This
+  /// is a guard against any potential bug that accidentally adds an extra overview for an
+  /// experiment.
+  private func removeDuplicateOverviews() {
+    let urls = try? FileManager.default.contentsOfDirectory(at: experimentsDirectoryURL,
+                                                            includingPropertiesForKeys: [.nameKey])
+    guard let experimentURLs = urls else {
+      return
+    }
+
+    for experimentURL in experimentURLs {
+      let experimentID = experimentURL.lastPathComponent
+      let overviews = userMetadata.experimentOverviews.filter { $0.experimentID == experimentID }
+      guard overviews.count > 1, let experiment = self.experiment(withID: experimentID) else {
+        continue
+      }
+
+      let mostRecentOverviewColorPalette =
+          overviews.sorted { $0.lastUsedDate > $1.lastUsedDate }.first?.colorPalette
+
+      userMetadata.removeAllExperimentOverviews(withExperimentID: experimentID)
+
+      let newOverview = ExperimentOverview(experimentID: experimentID)
+      newOverview.colorPalette = mostRecentOverviewColorPalette ??
+          MDCPalette.nextExperimentListCardColorPalette(withUsedPalettes:
+              userMetadata.experimentOverviews.map { $0.colorPalette })
+      newOverview.title = experiment.title
+      newOverview.imagePath = experiment.imagePath
+      if let syncExperiment = experimentLibrary.syncExperiment(forID: experimentID) {
+        newOverview.isArchived = syncExperiment.isArchived
+        newOverview.lastUsedDate = Date(milliseconds: syncExperiment.lastModifiedTimestamp)
+      } else {
+        newOverview.isArchived = false
+        newOverview.lastUsedDate = clock.now
+      }
+
+      userMetadata.addExperimentOverview(newOverview)
+      registerNewLocalExperiment(withID: experimentID, isArchived: newOverview.isArchived)
     }
   }
 

@@ -1237,6 +1237,14 @@ class MetadataManagerTest: XCTestCase {
                    "Overview title should not have changed")
   }
 
+  func testRemoveDuplicateOverviews() {
+    let (experiment, _) = metadataManager.createExperiment()
+    metadataManager.addOverview(ExperimentOverview(experimentID: experiment.ID))
+    metadataManager.addOverview(ExperimentOverview(experimentID: experiment.ID))
+    XCTAssertEqual(
+        metadataManager.experimentOverviews.filter { $0.experimentID == experiment.ID }.count, 1)
+  }
+
   // MARK: - Helpers
 
   /// Creates an experiment that has one trial with sensor data, and asserts it and its data are on

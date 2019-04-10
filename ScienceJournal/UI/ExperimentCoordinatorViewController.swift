@@ -181,6 +181,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   private let snackbarCategoryCouldNotUpdateSensorSettings =
       "snackbarCategoryCouldNotUpdateSensorSettings"
   private let shouldAllowSharing: Bool
+  private let saveToFilesHandler = SaveToFilesHandler()
 
   // A dictionary of chart controllers, keyed by sensor ID.
   private var chartControllers = [String: ChartController]()
@@ -1461,6 +1462,15 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                                                            presentingViewController: self,
                                                            sourceView: self.menuBarButton.button,
                                                            documentManager: documentManager))
+    }
+
+    // Save to files.
+    if !RecordingState.isRecording && !experiment.isEmpty {
+      popUpMenu.addAction(
+          PopUpMenuAction.saveExperimentToFiles(experiment,
+                                                presentingViewController: self,
+                                                documentManager: documentManager,
+                                                saveToFilesHandler: saveToFilesHandler))
     }
 
     // Delete.

@@ -52,8 +52,7 @@ extension PopUpMenuAction {
   ///   - experiment: An experiment.
   ///   - presentingViewController: A view controller to present the activity VC.
   ///   - sourceView: For iPad only, the view to which the popover should point.
-  ///   - metadataManager: The metadata manager.
-  ///   - sensorDataManager: The sensor data manager.
+  ///   - documentManager: The document manager.
   /// - Returns: A pop up menu action.
   static func exportExperiment(_ experiment: Experiment,
                                presentingViewController: UIViewController,
@@ -94,23 +93,91 @@ extension PopUpMenuAction {
         if isReady {
           exportExperiment()
         } else {
-          let alertController =
-            MDCAlertController(title: String.experimentNotFinishedDownloadingTitle,
-                               message: String.experimentNotFinishedDownloadingMessage)
-          let cancelAction = MDCAlertAction(title: String.actionCancel) { (_) in
+          presentExperimentNotFinishedDownloadingAlert(fromViewController: spinnerViewController,
+                                                       cancelHandler: { (_) in
             spinnerViewController.dismissSpinner()
-          }
-          let okAction =
-              MDCAlertAction(title: String.experimentNotFinishedDownloadingConfirmButton) { (_) in
+          },
+                                                       confirmHandler: { (_) in
             exportExperiment()
-          }
-          alertController.addAction(cancelAction)
-          alertController.addAction(okAction)
-          alertController.accessibilityViewIsModal = true
-          spinnerViewController.present(alertController, animated: true)
+          })
         }
       })
     })
+  }
+
+  /// Returns an action that saves an experiment to files.
+  ///
+  /// - Parameters:
+  ///   - experiment: An experiment.
+  ///   - presentingViewController: A view controller to present the activity VC.
+  ///   - documentManager: The document manager.
+  ///   - saveToFilesHandler: The save to files handler.
+  /// - Returns: A pop up menu action.
+  static func saveExperimentToFiles(_ experiment: Experiment,
+                                    presentingViewController: UIViewController,
+                                    documentManager: DocumentManager,
+                                    saveToFilesHandler: SaveToFilesHandler) -> PopUpMenuAction {
+    return PopUpMenuAction(title: String.saveToFilesTitle,
+                           icon: UIImage(named: "ic_save_alt"),
+                           accessibilityLabel: String.saveToFilesContentDescription,
+                           handler: { _ in
+      let spinnerViewController = SpinnerViewController()
+      spinnerViewController.present(fromViewController: presentingViewController)
+
+      func saveExperimentToFiles() {
+        documentManager.createExportDocument(forExperimentWithID: experiment.ID,
+                                             completion: { (url, errors) in
+          spinnerViewController.dismissSpinner(completion: {
+            guard let url = url else {
+              // The export failed, show an error message.
+              showSnackbar(withMessage: String.saveToFilesSingleErrorMessage)
+              return
+            }
+
+            saveToFilesHandler.presentSaveToFiles(forURL: url,
+                                                  fromViewController: presentingViewController,
+                                                  completion: { (fileWasSaved) in
+              if fileWasSaved {
+                showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+              }
+              documentManager.finishedWithExportDocument(atURL: url)
+            })
+          })
+        })
+      }
+
+      documentManager.experimentIsReadyForExport(experiment, completion: { (isReady) in
+        if isReady {
+          saveExperimentToFiles()
+        } else {
+          presentExperimentNotFinishedDownloadingAlert(fromViewController: spinnerViewController,
+                                                       cancelHandler: { (_) in
+            spinnerViewController.dismissSpinner()
+          },
+                                                       confirmHandler: { (_) in
+            saveExperimentToFiles()
+          })
+        }
+      })
+    })
+  }
+
+  // MARK: - Helpers
+
+  private static func presentExperimentNotFinishedDownloadingAlert(
+      fromViewController presentingViewController: UIViewController,
+      cancelHandler: @escaping MDCActionHandler,
+      confirmHandler: @escaping MDCActionHandler) {
+    let alertController =
+      MDCAlertController(title: String.experimentNotFinishedDownloadingTitle,
+                         message: String.experimentNotFinishedDownloadingMessage)
+    let cancelAction = MDCAlertAction(title: String.actionCancel, handler: cancelHandler)
+    let okAction = MDCAlertAction(title: String.experimentNotFinishedDownloadingConfirmButton,
+                                  handler: confirmHandler)
+    alertController.addAction(cancelAction)
+    alertController.addAction(okAction)
+    alertController.accessibilityViewIsModal = true
+    presentingViewController.present(alertController, animated: true)
   }
 
 }

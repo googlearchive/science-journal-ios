@@ -115,6 +115,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   private let preferenceManager: PreferenceManager
   private let experimentsListItemsViewController: ExperimentsListItemsViewController
   private let existingDataMigrationManager: ExistingDataMigrationManager?
+  private let saveToFilesHandler = SaveToFilesHandler()
 
   override var trackedScrollView: UIScrollView? {
     return experimentsListItemsViewController.collectionView
@@ -679,6 +680,17 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
                                                            presentingViewController: self,
                                                            sourceView: attachmentButton,
                                                            documentManager: documentManager))
+    }
+
+    // Save to files.
+    if !RecordingState.isRecording,
+        let experiment = metadataManager.experiment(withID: overview.experimentID),
+        !experiment.isEmpty {
+      popUpMenu.addAction(
+          PopUpMenuAction.saveExperimentToFiles(experiment,
+                                                presentingViewController: self,
+                                                documentManager: documentManager,
+                                                saveToFilesHandler: saveToFilesHandler))
     }
 
     // Delete.

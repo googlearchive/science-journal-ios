@@ -1233,6 +1233,7 @@ public class MetadataManager {
                                              minor: UserMetadata.Version.minor,
                                              platform: UserMetadata.Version.platform)
       removeDuplicateOverviews()
+      removeOverviewsWithoutValidExperiments()
       addMissingOverviewsForExperimentsOnDisk()
       saveUserMetadata()
     }
@@ -1255,6 +1256,7 @@ public class MetadataManager {
     do {
       try upgradeUserMetadataVersionIfNeeded(userMetadata)
       removeDuplicateOverviews()
+      removeOverviewsWithoutValidExperiments()
       addMissingOverviewsForExperimentsOnDisk()
       saveUserMetadata()
     } catch {
@@ -1341,6 +1343,16 @@ public class MetadataManager {
       userMetadata.addExperimentOverview(newOverview)
       registerNewLocalExperiment(withID: experimentID, isArchived: newOverview.isArchived)
     }
+  }
+
+  /// Scans the overviews and removes any where the experiment proto is not valid. This is a guard
+  /// against any potential bug that accidentally adds an overview without properly saving an
+  /// experiment.
+  private func removeOverviewsWithoutValidExperiments() {
+    let experimentIDsOfOverviewsToRemove = experimentOverviews.map { $0.experimentID }.compactMap {
+      experiment(withID: $0) == nil ? $0 : nil
+    }
+    experimentIDsOfOverviewsToRemove.forEach { _ = removeOverview(forExperimentID: $0) }
   }
 
   /// Saves the current user metadata.

@@ -1245,6 +1245,39 @@ class MetadataManagerTest: XCTestCase {
         metadataManager.experimentOverviews.filter { $0.experimentID == experiment.ID }.count, 1)
   }
 
+  func testRemoveOverviewsWithoutValidExperiments() {
+    let (_, valid1) = metadataManager.createExperiment()
+    let (_, valid2) = metadataManager.createExperiment()
+    let invalid1 = ExperimentOverview(experimentID: "invalid1")
+    metadataManager.addOverview(invalid1)
+    let invalid2 = ExperimentOverview(experimentID: "invalid2")
+    metadataManager.addOverview(invalid2)
+    XCTAssertEqual(metadataManager.experimentOverviews.count, 4)
+    XCTAssertTrue(metadataManager.experimentOverviews.contains(where: {
+        $0.experimentID == valid1.experimentID }))
+    XCTAssertTrue(metadataManager.experimentOverviews.contains(where: {
+        $0.experimentID == valid2.experimentID }))
+    XCTAssertTrue(metadataManager.experimentOverviews.contains(where: {
+        $0.experimentID == invalid1.experimentID }))
+    XCTAssertTrue(metadataManager.experimentOverviews.contains(where: {
+        $0.experimentID == invalid2.experimentID }))
+
+    let metadataManager2 = MetadataManager(rootURL: testingRootURL,
+                                           deletedRootURL: testingRootURL,
+                                           preferenceManager: PreferenceManager(),
+                                           sensorController: MockSensorController(),
+                                           sensorDataManager: sensorDataManager)
+    XCTAssertEqual(metadataManager2.experimentOverviews.count, 2)
+    XCTAssertTrue(metadataManager2.experimentOverviews.contains(where: {
+        $0.experimentID == valid1.experimentID }))
+    XCTAssertTrue(metadataManager2.experimentOverviews.contains(where: {
+        $0.experimentID == valid2.experimentID }))
+    XCTAssertFalse(metadataManager2.experimentOverviews.contains(where: {
+        $0.experimentID == invalid1.experimentID }))
+    XCTAssertFalse(metadataManager2.experimentOverviews.contains(where: {
+        $0.experimentID == invalid2.experimentID }))
+  }
+
   // MARK: - Helpers
 
   /// Creates an experiment that has one trial with sensor data, and asserts it and its data are on

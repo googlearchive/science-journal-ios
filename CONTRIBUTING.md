@@ -23,6 +23,7 @@ If the above doesn't help, please [submit an issue](https://github.com/google/sc
 ## I want to contribute to Science Journal iOS
 
 - To start working on Science Journal iOS, check out [Your First PR](https://github.com/google/science-journal-ios/blob/master/YOUR_FIRST_PR.md).
+- We have a few limits on what changes we can accept, from a techinical perspective. It might not be obvious, so please read [Change Limitations](https://github.com/google/science-journal-ios/blob/master/CHANGE_LIMITATIONS.md).
 
 ### Google Contributor License Agreement (CLA)
 

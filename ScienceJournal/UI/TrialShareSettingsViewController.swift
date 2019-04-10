@@ -23,6 +23,15 @@ import third_party_objective_c_material_components_ios_components_Typography_Typ
 /// A view controller for managing trial share settings.
 class TrialShareSettingsViewController: ScienceJournalViewController {
 
+  /// The mode in which to export.
+  ///
+  /// - share: Share to any available app or service.
+  /// - saveToFiles: Save to Files only.
+  enum Mode {
+    case share
+    case saveToFiles
+  }
+
   private enum Metrics {
     static let maxWidth: CGFloat = 414
     static let stackSpacing: CGFloat = 14
@@ -44,6 +53,7 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
   private let progressView = MDCProgressView()
   private let verticalStack = UIStackView()
   private let switchStack = UIStackView()
+  private let mode: Mode
 
   /// The relative time switch.
   let relativeSwitch = UISwitch()
@@ -86,6 +96,20 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
         switchHeight + Metrics.stackSpacing * 2
   }
 
+  /// Designated initializer.
+  ///
+  /// - Parameters:
+  ///   - analyticsReporter: The analytics reporter.
+  ///   - mode: The mode in which to export.
+  init(analyticsReporter: AnalyticsReporter, mode: Mode) {
+    self.mode = mode
+    super.init(analyticsReporter: analyticsReporter)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) is not supported")
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -117,7 +141,12 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
 
     cancelButton.setTitle(String.actionCancel, for: .normal)
     cancelButton.translatesAutoresizingMaskIntoConstraints = false
-    shareButton.setTitle(String.exportAction, for: .normal)
+    let shareButtonTitle: String
+    switch mode {
+    case .share: shareButtonTitle = String.exportAction
+    case .saveToFiles: shareButtonTitle = String.saveToFilesTitle
+    }
+    shareButton.setTitle(shareButtonTitle, for: .normal)
     shareButton.translatesAutoresizingMaskIntoConstraints = false
     shareButton.trailingAnchor.constraint(equalTo: buttonWrapper.trailingAnchor).isActive = true
     shareButton.topAnchor.constraint(equalTo: buttonWrapper.topAnchor).isActive = true

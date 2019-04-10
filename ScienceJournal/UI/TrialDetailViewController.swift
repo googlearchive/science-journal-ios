@@ -133,6 +133,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   private let preferenceManager: PreferenceManager
   private let sensorDataManager: SensorDataManager
   private let shouldAllowSharing: Bool
+  private let saveToFilesHandler = SaveToFilesHandler()
 
   private var cellHorizontalInset: CGFloat {
     var inset: CGFloat {
@@ -1201,7 +1202,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
                                      icon: UIImage(named: "ic_share")) { _ in
         // Show bottom sheet - switch, cancel, share
         let trialShareVC =
-            TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter)
+            TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
+                                             mode: .share)
         trialShareVC.shareButton.addTarget(self,
                                            action: #selector(self.shareButtonPressed),
                                            for: .touchUpInside)
@@ -1210,6 +1212,22 @@ class TrialDetailViewController: MaterialHeaderViewController,
         self.trialShareViewController = trialShareVC
       })
     }
+
+    // Save to Files.
+    actions.append(PopUpMenuAction(title: String.saveToFilesTitle,
+                                   icon: UIImage(named: "ic_save_alt"),
+                                   accessibilityLabel: String.saveToFilesContentDescription) { _ in
+      // Show bottom sheet - switch, cancel, share
+      let trialShareVC =
+        TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
+                                         mode: .saveToFiles)
+        trialShareVC.shareButton.addTarget(self,
+                                           action: #selector(self.saveToFilesButtonPressed),
+                                           for: .touchUpInside)
+        let bottomSheetController = MDCBottomSheetController(contentViewController: trialShareVC)
+        self.present(bottomSheetController, animated: true)
+        self.trialShareViewController = trialShareVC
+    })
 
     // Archive.
     func addArchiveAction() {
@@ -1275,6 +1293,50 @@ class TrialDetailViewController: MaterialHeaderViewController,
     })
 
     return actions
+  }
+
+  /// Creates trial data for export.
+  ///
+  /// - Parameter completion: Called when complete with a Bool indicating success, and the trial
+  ///                         data file URL.
+  private func createTrialExport(completion: @escaping (Bool, URL?) -> Void) {
+    guard let trialShareViewController = trialShareViewController else { return }
+
+    let trial = trialDetailDataSource.trial
+    let filename = exportFilename
+    let isRelativeTime = trialShareViewController.relativeSwitch.isOn
+    let sensorIDs = trial.sensorLayouts.map { $0.sensorID }
+    let range = trial.cropRange ?? trial.recordingRange
+    guard let trialDataWriter = TrialDataWriter(trialID: trial.ID,
+                                                filename: filename,
+                                                isRelativeTime: isRelativeTime,
+                                                sensorIDs: sensorIDs,
+                                                range: range,
+                                                sensorDataManager: sensorDataManager) else {
+      print("[TrialDetailViewController] Error creating trial data writer.")
+      dismiss(animated: true, completion: {
+        completion(false, nil)
+      })
+      analyticsReporter.track(.trialExportError)
+      return
+    }
+
+    trialDataWriter.write(progress: { (progress) in
+      let clampedProgress = (0.0...1.0).clamp(progress)
+      trialShareViewController.setProgress(clampedProgress)
+    }) { (didSucceed) in
+      guard didSucceed else {
+        self.dismiss(animated: true, completion: {
+          completion(false, nil)
+        })
+        return
+      }
+
+      self.dismiss(animated: true, completion: {
+        completion(true, trialDataWriter.fileURL)
+      })
+      self.analyticsReporter.track(.trialExported)
+    }
   }
 
   // MARK: - Add Note
@@ -1374,53 +1436,37 @@ class TrialDetailViewController: MaterialHeaderViewController,
   }
 
   @objc private func shareButtonPressed() {
-    guard let trialShareViewController = trialShareViewController else { return }
-
-    let trial = trialDetailDataSource.trial
-    let filename = exportFilename
-    let isRelativeTime = trialShareViewController.relativeSwitch.isOn
-    let sensorIDs = trial.sensorLayouts.map { $0.sensorID }
-    let range = trial.cropRange ?? trial.recordingRange
-    guard let trialDataWriter = TrialDataWriter(trialID: trial.ID,
-                                                filename: filename,
-                                                isRelativeTime: isRelativeTime,
-                                                sensorIDs: sensorIDs,
-                                                range: range,
-                                                sensorDataManager: sensorDataManager) else {
-      print("[TrialDetailViewController] Error creating trial data writer.")
-      dismiss(animated: true, completion: {
+    createTrialExport(completion: { (success, fileURL) in
+      guard success, let fileURL = fileURL else {
         showSnackbar(withMessage: String.exportError)
-      })
-      analyticsReporter.track(.trialExportError)
-      return
-    }
-
-    trialDataWriter.write(progress: { (progress) in
-      let clampedProgress = (0.0...1.0).clamp(progress)
-      trialShareViewController.setProgress(clampedProgress)
-    }) { (didSucceed) in
-      guard didSucceed else {
-        self.dismiss(animated: true, completion: {
-          showSnackbar(withMessage: String.exportError)
-        })
-
-        self.analyticsReporter.track(.trialExportError)
         return
       }
 
-      let activityController = UIActivityViewController(activityItems: [trialDataWriter.fileURL],
+      let activityController = UIActivityViewController(activityItems: [fileURL],
                                                         applicationActivities: nil)
       if let presentationController = activityController.popoverPresentationController {
         presentationController.sourceView = self.menuBarButton.button
         presentationController.sourceRect = self.menuBarButton.button.bounds
       }
+      self.present(activityController, animated: true)
+    })
+  }
 
-      self.analyticsReporter.track(.trialExported)
+  @objc private func saveToFilesButtonPressed() {
+    createTrialExport(completion: { (success, fileURL) in
+      guard success, let fileURL = fileURL else {
+        showSnackbar(withMessage: String.saveToFilesSingleErrorMessage)
+        return
+      }
 
-      self.dismiss(animated: true, completion: {
-        self.present(activityController, animated: true)
+      self.saveToFilesHandler.presentSaveToFiles(forURL: fileURL,
+                                                 fromViewController: self,
+                                                 completion: { (fileWasSaved) in
+        if fileWasSaved {
+          showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+        }
       })
-    }
+    })
   }
 
   @objc private func editButtonPressed() {

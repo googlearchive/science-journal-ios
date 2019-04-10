@@ -45,6 +45,7 @@ class PictureDetailViewController:
   private let preferenceManager: PreferenceManager
   private let experimentInteractionOptions: ExperimentInteractionOptions
   private let shouldAllowSharing: Bool
+  private let saveToFilesHandler = SaveToFilesHandler()
 
   private var horizontalTextFieldPaddingForDisplayType: CGFloat {
     var padding: CGFloat {
@@ -388,6 +389,13 @@ class PictureDetailViewController:
       popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
                                                 presentingViewController: self,
                                                 sourceView: menuBarButton.button))
+    }
+
+    // Save to files.
+    if displayPicture.imageFileExists, let imagePath = displayPicture.imagePath {
+      popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
+                                                      presentingViewController: self,
+                                                      saveToFilesHandler: saveToFilesHandler))
     }
 
     // Delete.

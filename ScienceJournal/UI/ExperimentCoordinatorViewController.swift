@@ -551,6 +551,16 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                                                 sourceView: button))
     }
 
+    // Save to files.
+    if !RecordingState.isRecording,
+        let displayPictureNote = displayItem as? DisplayPictureNote,
+        displayPictureNote.imageFileExists,
+        let imagePath = displayPictureNote.imagePath {
+      popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
+                                                      presentingViewController: self,
+                                                      saveToFilesHandler: saveToFilesHandler))
+    }
+
     // Delete.
     func showDeleteAction() {
       popUpMenu.addAction(PopUpMenuAction(

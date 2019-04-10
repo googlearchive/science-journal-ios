@@ -762,6 +762,15 @@ class TrialDetailViewController: MaterialHeaderViewController,
                                                 sourceView: button))
     }
 
+    // Save to files.
+    if let displayPictureNote = note as? DisplayPictureNote,
+        displayPictureNote.imageFileExists,
+        let imagePath = displayPictureNote.imagePath {
+      popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
+                                                      presentingViewController: self,
+                                                      saveToFilesHandler: saveToFilesHandler))
+    }
+
     // Delete.
     func addDeleteAction() {
       popUpMenu.addAction(PopUpMenuAction(title: String.actionDelete,

@@ -46,6 +46,30 @@ extension PopUpMenuAction {
     })
   }
 
+  /// Returns an action that saves a file path to files.
+  ///
+  /// - Parameters:
+  ///   - filePath: A string path to a file.
+  ///   - presentingViewController: A view controller to present the activity VC.
+  ///   - saveToFilesHandler: The save to files handler.
+  /// - Returns: A pop up menu action.
+  static func saveToFiles(withFilePath filePath: String,
+                          presentingViewController: UIViewController,
+                          saveToFilesHandler: SaveToFilesHandler) -> PopUpMenuAction {
+    return PopUpMenuAction(title: String.saveToFilesTitle,
+                           icon: UIImage(named: "ic_save_alt"),
+                           accessibilityLabel: String.saveToFilesContentDescription,
+                           handler: { (_) in
+      saveToFilesHandler.presentSaveToFiles(forURL: URL(fileURLWithPath: filePath),
+                                            fromViewController: presentingViewController,
+                                            completion: { (fileWasSaved) in
+        if fileWasSaved {
+          showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+        }
+      })
+    })
+  }
+
   /// Returns an action that shares an experiment via the activity view controller.
   ///
   /// - Parameters:

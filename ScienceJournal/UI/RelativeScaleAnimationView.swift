@@ -23,7 +23,7 @@ class RelativeScaleAnimationView: ImageAnimationView {
     // To calculate a relative scale, there must be a valid range.
 
     let denominator = maxValue - minValue
-    guard fabs(denominator) > Double.ulpOfOne else {
+    guard denominator > Double.ulpOfOne else {
       return 0
     }
 

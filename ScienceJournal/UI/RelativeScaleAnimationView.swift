@@ -21,11 +21,13 @@ class RelativeScaleAnimationView: ImageAnimationView {
 
   override func imageIndex(forValue value: Double, minValue: Double, maxValue: Double) -> Int {
     // To calculate a relative scale, there must be a valid range.
-    guard maxValue - minValue > 0 else {
+
+    let denominator = maxValue - minValue
+    guard fabs(denominator) > Double.ulpOfOne else {
       return 0
     }
 
-    var valuePercentage = (value - minValue) / (maxValue - minValue)
+    var valuePercentage = (value - minValue) / denominator
     valuePercentage = max(min(valuePercentage, 1.0), 0)
     let index = Int(floor(valuePercentage * Double(images.count)))
     // If percentage is 1.0 index can be beyond count so clamp it.

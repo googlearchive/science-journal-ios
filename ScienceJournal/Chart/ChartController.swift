@@ -481,7 +481,7 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
     let increment = axisLabels[1] - axisLabels[0]
 
     // increment and increment + 1 are used as denominators.
-    guard increment > 0, increment + 1 > 0 else { return 0 }
+    guard increment > 0 else { return 0 }
 
     let startIndex = Int(floor((minShown - axisLabels[0]) / increment + 1))
     let endIndex = Int(ceil((maxShown - lastAxisLabel) / increment)) + axisLabels.count - 1

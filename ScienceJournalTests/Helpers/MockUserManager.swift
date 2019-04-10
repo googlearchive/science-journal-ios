@@ -28,10 +28,6 @@ class MockUserManager: UserManager {
   let experimentDataDeleter: ExperimentDataDeleter
   let documentManager: DocumentManager
 
-  var shouldVerifyAge: Bool {
-    return false
-  }
-
   var isSharingAllowed: Bool {
     return false
   }

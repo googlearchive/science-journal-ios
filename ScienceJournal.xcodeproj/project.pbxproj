@@ -306,7 +306,6 @@
 		687FAA19202C1162004C1D04 /* SensorSpec.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9FA202C115F004C1D04 /* SensorSpec.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		687FAA1A202C1162004C1D04 /* SensorConfig.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FA9FF202C1161004C1D04 /* SensorConfig.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		687FAA1B202C1162004C1D04 /* InputDevice.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FAA02202C1162004C1D04 /* InputDevice.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		68808F371EB25989008EABD4 /* VerifyAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68808F361EB25989008EABD4 /* VerifyAgeViewController.swift */; };
 		6880F0171F27D20E00EFF7BC /* RenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6880F0161F27D20E00EFF7BC /* RenameViewController.swift */; };
 		6880F01D1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6880F01C1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift */; };
 		6880F01F1F2922EF00EFF7BC /* TrialCardMoreNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6880F01E1F2922EF00EFF7BC /* TrialCardMoreNotesView.swift */; };
@@ -943,7 +942,6 @@
 		687FAA01202C1161004C1D04 /* ScalarInputConfig.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScalarInputConfig.pbobjc.h; path = third_party/sciencejournal/ios/Protos/ScalarInputConfig.pbobjc.h; sourceTree = SOURCE_ROOT; };
 		687FAA02202C1162004C1D04 /* InputDevice.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputDevice.pbobjc.m; path = third_party/sciencejournal/ios/Protos/InputDevice.pbobjc.m; sourceTree = SOURCE_ROOT; };
 		687FAA03202C1162004C1D04 /* LabelValue.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelValue.pbobjc.h; path = third_party/sciencejournal/ios/Protos/LabelValue.pbobjc.h; sourceTree = SOURCE_ROOT; };
-		68808F361EB25989008EABD4 /* VerifyAgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAgeViewController.swift; sourceTree = "<group>"; };
 		6880F0161F27D20E00EFF7BC /* RenameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenameViewController.swift; sourceTree = "<group>"; };
 		6880F01C1F28519A00EFF7BC /* ExperimentCardCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentCardCellDelegate.swift; sourceTree = "<group>"; };
 		6880F01E1F2922EF00EFF7BC /* TrialCardMoreNotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialCardMoreNotesView.swift; sourceTree = "<group>"; };
@@ -2023,7 +2021,6 @@
 				8B6054812049BC730036C1E4 /* SpinnerViewController.swift */,
 				8B17918F1F06AAA6008C0B31 /* Triggers */,
 				5CE521AC20A4A7B200767C8E /* UserFlowViewController.swift */,
-				68808F361EB25989008EABD4 /* VerifyAgeViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -3242,7 +3239,6 @@
 				5C6C62631EE07B3800798989 /* BasicSensorAppearance.swift in Sources */,
 				8BA5BF391F44DE7700EB77E8 /* CaptureSessionInterruptionObserver.swift in Sources */,
 				48C767B520F92BA800A67C4A /* SignInViewController.swift in Sources */,
-				68808F371EB25989008EABD4 /* VerifyAgeViewController.swift in Sources */,
 				8BCCDF5F1EB9265800E85517 /* CameraActionBar.swift in Sources */,
 				68CD50D81E57DD51005E928F /* SensorCardCell.swift in Sources */,
 				68BD95621E8DA45100FEB0B2 /* NotesSoundType.swift in Sources */,

@@ -30,14 +30,9 @@ class RootUserManager: UserManager {
   let experimentDataDeleter: ExperimentDataDeleter
   let documentManager: DocumentManager
 
-  var shouldVerifyAge: Bool {
-    // Age verification is required for a non-account user, if they have not done so yet.
-    return !preferenceManager.hasUserVerifiedAge
-  }
-
   var isSharingAllowed: Bool {
-    // Sharing is allowed for users age 13 or older.
-    return preferenceManager.isUser13OrOlder
+    // Sharing is not allowed for non-account users.
+    return false
   }
 
   var isDriveSyncEnabled: Bool {
@@ -60,7 +55,7 @@ class RootUserManager: UserManager {
     documentsDirectoryURL = URL.documentsDirectoryURL
 
     // Configure preference manager with no account ID.
-    preferenceManager = PreferenceManager(clock: Clock(), accountID: nil)
+    preferenceManager = PreferenceManager()
 
     let storeURL = documentsDirectoryURL.appendingPathComponent(SensorDataManager.rootStoreName)
     sensorDataManager = SensorDataManager(storeURL: storeURL)

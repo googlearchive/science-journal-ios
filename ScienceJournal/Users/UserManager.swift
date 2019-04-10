@@ -43,9 +43,6 @@ protocol UserManager {
   /// The experiment data deleter for the user.
   var experimentDataDeleter: ExperimentDataDeleter { get }
 
-  /// Whether to verify the user's age.
-  var shouldVerifyAge: Bool { get }
-
   /// Whether sharing is allowed for the user.
   var isSharingAllowed: Bool { get }
 

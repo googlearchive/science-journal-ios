@@ -71,24 +71,8 @@ class RootUserManagerTest: XCTestCase {
   }
 
   func testIsSharingAllowed() {
-    rootUserManager.preferenceManager.isUser13OrOlder = false
     XCTAssertFalse(rootUserManager.isSharingAllowed,
-                   "If the user is not age 13 or older, sharing is not allowed.")
-
-    rootUserManager.preferenceManager.isUser13OrOlder = true
-    XCTAssertTrue(rootUserManager.isSharingAllowed,
-                  "If the user is age 13 or older, sharing is allowed.")
-  }
-
-  func testShouldVerifyAge() {
-    // `setup` reset all preferences, so `preferenceManager.hasUserVerifiedAge` is currently false.
-    XCTAssertTrue(rootUserManager.shouldVerifyAge,
-                  "Age verification should occur if a non-account user has not verified age.")
-
-    // Setting `isUser13OrOlder` will set `preferenceManager.hasUserVerifiedAge` to true.
-    rootUserManager.preferenceManager.isUser13OrOlder = true
-    XCTAssertFalse(rootUserManager.shouldVerifyAge,
-                   "Age verification should not occur if a non-account user has verified age.")
+                   "Sharing is not allowed for the root user.")
   }
 
   func testIsDriveSyncEnabled() {

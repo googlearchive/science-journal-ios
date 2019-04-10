@@ -213,9 +213,3 @@ extension TriggerEditViewController {
 extension TriggerListViewController {
   override open var analyticsViewName: String { return "TriggersList" }
 }
-
-// MARK: Verify age
-
-extension VerifyAgeViewController {
-  override open var analyticsViewName: String { return "VerifyAge" }
-}

@@ -35,8 +35,6 @@ open class PreferenceManager {
     private let shouldShowArchivedExperimentsKey = "GSJ_ShouldShowArchivedExperiments"
     private let shouldShowArchivedRecordingsKey = "GSJ_ShouldShowArchivedRecordings"
     private let hasUserSeenExperimentHighlightKey = "GSJ_HasUserSeenExperimentHighlight"
-    private let isUser13OrOlderKey = "GSJ_IsUser13OrOlderKey"
-    private let hasUserVerifiedAgeKey = "GSJ_HasUserVerifiedAgeKey"
     private let hasUserSeenAudioAndBrightnessSensorBackgroundMessageKey =
         "GSJ_HasUserSeenAudioAndBrightnessSensorBackgroundMessage"
     private let defaultExperimentWasCreatedKey = "GSJ_DefaultExperimentWasCreated"
@@ -53,7 +51,7 @@ open class PreferenceManager {
     /// Designated initializer.
     ///
     /// - Parameter accountID: The ID to append to the keys for storing account specific
-    ///             preferences.
+    ///                        preferences.
     init(accountID: String? = nil) {
       self.accountID = accountID
     }
@@ -74,21 +72,11 @@ open class PreferenceManager {
       return keyAppendingAccountID(hasUserSeenExperimentHighlightKey)
     }
 
-    /// The key that was once used for the preference for the user's birthdate. We can no longer
-    /// store birthdates. However, this key needs to remain to calculate if the user is over 13 and
-    /// to remove any birthdates stored previously.
+    /// The key that was once used for the preference for the user's birthdate. We no longer
+    /// store birthdates. However, this key needs to remain to remove any birthdates stored
+    /// previously.
     var userBirthdate: String {
       return keyAppendingAccountID(userBirthdateKey)
-    }
-
-    /// The key for whether the user is 13 or older.
-    var isUser13OrOlder: String {
-      return keyAppendingAccountID(isUser13OrOlderKey)
-    }
-
-    /// The key for whether the user has verified their age.
-    var hasUserVerifiedAge: String {
-      return keyAppendingAccountID(hasUserVerifiedAgeKey)
     }
 
     /// The key to use for the preference for whether or not the user has seen the audio and
@@ -129,9 +117,6 @@ open class PreferenceManager {
       return [shouldShowArchivedExperiments,
               shouldShowArchivedRecordings,
               hasUserSeenExperimentHighlight,
-              userBirthdate,
-              isUser13OrOlder,
-              hasUserVerifiedAge,
               hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
               defaultExperimentWasCreated,
               hasUserOptedOutOfUsageTracking,
@@ -145,9 +130,6 @@ open class PreferenceManager {
       return [shouldShowArchivedExperimentsKey,
               shouldShowArchivedRecordingsKey,
               hasUserSeenExperimentHighlightKey,
-              userBirthdateKey,
-              isUser13OrOlderKey,
-              hasUserVerifiedAgeKey,
               hasUserSeenAudioAndBrightnessSensorBackgroundMessageKey,
               defaultExperimentWasCreatedKey,
               hasUserOptedOutOfUsageTrackingKey,
@@ -171,31 +153,15 @@ open class PreferenceManager {
   // MARK: - Properties
 
   private let keys: Keys
-  private let clock: Clock
 
   // MARK: - Public
 
   /// Designated initializer.
   ///
-  /// - Parameters:
-  ///   - clock: The clock to use for date calculations.
-  ///   - accountID: The ID to use for storing account specific preferences.
-  init(clock: Clock, accountID: String? = nil) {
-    self.clock = clock
-    keys = Keys(accountID: accountID)
-    migrateUserBirthdateTo13OrOlderBool()
-  }
-
-  /// Convenience initializer that uses a default clock and no account ID.
-  public convenience init() {
-    self.init(clock: Clock())
-  }
-
-  /// Convenience initializer that uses a default clock.
-  ///
   /// - Parameter accountID: The ID to use for storing account specific preferences.
-  public convenience init(accountID: String) {
-    self.init(clock: Clock(), accountID: accountID)
+  init(accountID: String? = nil) {
+    keys = Keys(accountID: accountID)
+    migrateRemoveUserBirthdate()
   }
 
   // Convenience var to standard defaults.
@@ -217,23 +183,6 @@ open class PreferenceManager {
   public var hasUserSeenExperimentHighlight: Bool {
     set { defaults.set(newValue, forKey: keys.hasUserSeenExperimentHighlight); sync() }
     get { return defaults.bool(forKey: keys.hasUserSeenExperimentHighlight) }
-  }
-
-  /// Whether the user is 13 or older.
-  public var isUser13OrOlder: Bool {
-    set {
-      hasUserVerifiedAge = true
-      defaults.set(newValue, forKey: keys.isUser13OrOlder)
-      sync()
-    }
-    get { return defaults.bool(forKey: keys.isUser13OrOlder) }
-  }
-
-  /// Whether the user has verified their age. This is set automatically when `isUser13OrOlder` is
-  /// set.
-  public private(set) var hasUserVerifiedAge: Bool {
-    set { defaults.set(newValue, forKey: keys.hasUserVerifiedAge); sync() }
-    get { return defaults.bool(forKey: keys.hasUserVerifiedAge) }
   }
 
   /// Has the user seen the message saying that the audio and brightness sensors won't continue in
@@ -300,13 +249,8 @@ open class PreferenceManager {
   // Synchronizes user defaults.
   private func sync() { defaults.synchronize() }
 
-  // Calculates whether the user is over 13, if there was a value for user birthdate, then removes
-  // the user's birthdate from user defaults.
-  private func migrateUserBirthdateTo13OrOlderBool() {
-    if let userBirthdate = defaults.object(forKey: keys.userBirthdate) as? Date {
-      isUser13OrOlder = userBirthdate.isBirthdateAge13OrOlder
-    }
-
+  // Removes the user's birthdate from user defaults.
+  private func migrateRemoveUserBirthdate() {
     defaults.removeObject(forKey: keys.userBirthdate)
   }
 

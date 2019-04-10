@@ -70,11 +70,6 @@ class AccountUserManagerTest: XCTestCase {
     XCTAssertTrue(accountUserManager.isSharingAllowed, "Sharing is allowed for accounts.")
   }
 
-  func testShouldVerifyAge() {
-    XCTAssertFalse(accountUserManager.shouldVerifyAge,
-                   "Age verification should not occur for accounts.")
-  }
-
   func testIsDriveSyncEnabled() {
     let disabledDriveConstructor = DriveConstructorDisabled()
     let accountUserManagerDriveDisabled =

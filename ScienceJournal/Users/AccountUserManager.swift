@@ -29,11 +29,6 @@ class AccountUserManager: UserManager {
   let experimentDataDeleter: ExperimentDataDeleter
   let documentManager: DocumentManager
 
-  var shouldVerifyAge: Bool {
-    // Age verification is not required for accounts.
-    return false
-  }
-
   var isSharingAllowed: Bool {
     // Sharing is allowed for accounts.
     return true

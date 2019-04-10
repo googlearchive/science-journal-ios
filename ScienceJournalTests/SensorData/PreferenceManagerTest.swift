@@ -23,8 +23,8 @@ class PreferenceManagerTest: XCTestCase {
   func testShowArchivedExperiments() {
     // Set up a root preference manager and two for specific accounts, and reset each.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
     [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
 
     // Root preference manager.
@@ -56,8 +56,8 @@ class PreferenceManagerTest: XCTestCase {
   func testShowArchivedRecordings() {
     // Set up a root preference manager and two for specific accounts, and reset each.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
     [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
 
     // Root preference manager.
@@ -88,8 +88,8 @@ class PreferenceManagerTest: XCTestCase {
   func testUserHasSeenExperimentHighlight() {
     // Set up a root preference manager and two for specific accounts, and reset each.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
     [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
 
     // Root preference manager.
@@ -115,67 +115,11 @@ class PreferenceManagerTest: XCTestCase {
                   "User has seen experiment highlight for account 2.")
   }
 
-  func testIsUser13OrOlder() {
-    // Set up a root preference manager and two for specific accounts, and reset each.
-    let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
-    [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
-
-    // Root preference manager.
-    XCTAssertFalse(rootPrefsManager.isUser13OrOlder, "User is not 13 or older.")
-    rootPrefsManager.isUser13OrOlder = true
-    XCTAssertTrue(rootPrefsManager.isUser13OrOlder, "User is 13 or older.")
-
-    // The preference manager for account 1 should not be affected by the root preference manager.
-    XCTAssertFalse(prefsManagerForAccount1.isUser13OrOlder,
-                   "User is not 13 or older for account 1.")
-    prefsManagerForAccount1.isUser13OrOlder = true
-    XCTAssertTrue(prefsManagerForAccount1.isUser13OrOlder,
-                  "User is 13 or older for account 1.")
-
-    // The preference manager for account 2 should not be affected by the root preference manager or
-    // the one for account 1.
-    XCTAssertFalse(prefsManagerForAccount2.isUser13OrOlder,
-                   "User is not 13 or older for account 2.")
-    prefsManagerForAccount2.isUser13OrOlder = true
-    XCTAssertTrue(prefsManagerForAccount2.isUser13OrOlder,
-                  "User is 13 or older for account 2.")
-  }
-
-  func testHasUserVerifiedAgeIsSetByIsUser13OrOlder() {
-    // Set up a root preference manager and two for specific accounts, and reset each.
-    let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
-    [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
-
-    // Root preference manager.
-    XCTAssertFalse(rootPrefsManager.hasUserVerifiedAge, "User has not verified their age.")
-    rootPrefsManager.isUser13OrOlder = true
-    XCTAssertTrue(rootPrefsManager.hasUserVerifiedAge, "User has verified their age.")
-
-    // The preference manager for account 1 should not be affected by the root preference manager.
-    XCTAssertFalse(prefsManagerForAccount1.hasUserVerifiedAge,
-                   "User has not verified their age for account 1.")
-    prefsManagerForAccount1.isUser13OrOlder = false
-    XCTAssertTrue(prefsManagerForAccount1.hasUserVerifiedAge,
-                  "User has verified their age for account 1.")
-
-    // The preference manager for account 2 should not be affected by the root preference manager or
-    // the one for account 1.
-    XCTAssertFalse(prefsManagerForAccount2.hasUserVerifiedAge,
-                   "User has not verified their age for account 2.")
-    prefsManagerForAccount2.isUser13OrOlder = true
-    XCTAssertTrue(prefsManagerForAccount2.hasUserVerifiedAge,
-                  "User has verified their age for account 2.")
-  }
-
   func testDefaultExperiment() {
     // Set up a root preference manager and two for specific accounts, and reset each.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
     [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
 
     // Root preference manager.
@@ -204,8 +148,8 @@ class PreferenceManagerTest: XCTestCase {
   func testUserHasOptedOutOfUsageTracking() {
     // Set up a root preference manager and two for specific accounts, and reset each.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
     [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
 
     // Root preference manager.
@@ -234,8 +178,8 @@ class PreferenceManagerTest: XCTestCase {
   func testHasUserSeenAudioAndBrightnessSensorBackgroundMessage() {
     // Set up a root preference manager and two for specific accounts, and reset each.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
     [rootPrefsManager, prefsManagerForAccount1, prefsManagerForAccount2].forEach { $0.resetAll() }
 
     // Root preference manager.
@@ -266,28 +210,25 @@ class PreferenceManagerTest: XCTestCase {
   func testResetAll() {
     // Set up a root preference manager and two for specific accounts.
     let rootPrefsManager = PreferenceManager()
-    let prefsManagerForAccount1 = PreferenceManager(clock: Clock(), accountID: "1")
-    let prefsManagerForAccount2 = PreferenceManager(clock: Clock(), accountID: "2")
+    let prefsManagerForAccount1 = PreferenceManager(accountID: "1")
+    let prefsManagerForAccount2 = PreferenceManager(accountID: "2")
 
     // Set everything to true for each preference manager.
     rootPrefsManager.shouldShowArchivedExperiments = true
     rootPrefsManager.shouldShowArchivedRecordings = true
     rootPrefsManager.hasUserSeenExperimentHighlight = true
-    rootPrefsManager.isUser13OrOlder = true
     rootPrefsManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = true
     rootPrefsManager.defaultExperimentWasCreated = true
     rootPrefsManager.hasUserOptedOutOfUsageTracking = true
     prefsManagerForAccount1.shouldShowArchivedExperiments = true
     prefsManagerForAccount1.shouldShowArchivedRecordings = true
     prefsManagerForAccount1.hasUserSeenExperimentHighlight = true
-    prefsManagerForAccount1.isUser13OrOlder = true
     prefsManagerForAccount1.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = true
     prefsManagerForAccount1.defaultExperimentWasCreated = true
     prefsManagerForAccount1.hasUserOptedOutOfUsageTracking = true
     prefsManagerForAccount2.shouldShowArchivedExperiments = true
     prefsManagerForAccount2.shouldShowArchivedRecordings = true
     prefsManagerForAccount2.hasUserSeenExperimentHighlight = true
-    prefsManagerForAccount2.isUser13OrOlder = true
     prefsManagerForAccount2.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = true
     prefsManagerForAccount2.defaultExperimentWasCreated = true
     prefsManagerForAccount2.hasUserOptedOutOfUsageTracking = true
@@ -299,10 +240,6 @@ class PreferenceManagerTest: XCTestCase {
                   "Should show archived recordings.")
     XCTAssertTrue(rootPrefsManager.hasUserSeenExperimentHighlight,
                   "User has seen experiment highlight.")
-    XCTAssertTrue(rootPrefsManager.isUser13OrOlder,
-                  "User is 13 or older.")
-    XCTAssertTrue(rootPrefsManager.hasUserVerifiedAge,
-                  "User has verified age.")
     XCTAssertTrue(rootPrefsManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
                   "User has seen audio and brightness sensor background message.")
     XCTAssertTrue(rootPrefsManager.defaultExperimentWasCreated,
@@ -318,10 +255,6 @@ class PreferenceManagerTest: XCTestCase {
                    "Should not show archived recordings.")
     XCTAssertFalse(rootPrefsManager.hasUserSeenExperimentHighlight,
                    "User has not seen experiment highlight.")
-    XCTAssertFalse(rootPrefsManager.isUser13OrOlder,
-                   "User is not 13 or older.")
-    XCTAssertFalse(rootPrefsManager.hasUserVerifiedAge,
-                   "User has not verified age.")
     XCTAssertFalse(rootPrefsManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
                    "User has not seen audio and brightness sensor background message.")
     XCTAssertFalse(rootPrefsManager.defaultExperimentWasCreated,
@@ -337,10 +270,6 @@ class PreferenceManagerTest: XCTestCase {
                   "Should show archived recordings for account 1.")
     XCTAssertTrue(prefsManagerForAccount1.hasUserSeenExperimentHighlight,
                   "User has seen experiment highlight for account 1.")
-    XCTAssertTrue(prefsManagerForAccount1.isUser13OrOlder,
-                  "User is 13 or older for account 1.")
-    XCTAssertTrue(prefsManagerForAccount1.hasUserVerifiedAge,
-                  "User has verified age for account 1.")
     XCTAssertTrue(prefsManagerForAccount1.hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
                   "User has seen audio and brightness sensor background message for account 1.")
     XCTAssertTrue(prefsManagerForAccount1.defaultExperimentWasCreated,
@@ -356,10 +285,6 @@ class PreferenceManagerTest: XCTestCase {
                    "Should not show archived recordings for account 1.")
     XCTAssertFalse(prefsManagerForAccount1.hasUserSeenExperimentHighlight,
                    "User has not seen experiment highlight for account 1.")
-    XCTAssertFalse(prefsManagerForAccount1.isUser13OrOlder,
-                   "User is not 13 or older for account 1.")
-    XCTAssertFalse(prefsManagerForAccount1.hasUserVerifiedAge,
-                   "User has not verified age for account 1.")
     XCTAssertFalse(prefsManagerForAccount1.hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
                    "User has not seen audio and brightness sensor background message for account " +
                        "1.")
@@ -376,10 +301,6 @@ class PreferenceManagerTest: XCTestCase {
                   "Should show archived recordings for account 2.")
     XCTAssertTrue(prefsManagerForAccount2.hasUserSeenExperimentHighlight,
                   "User has seen experiment highlight for account 2.")
-    XCTAssertTrue(prefsManagerForAccount2.isUser13OrOlder,
-                  "User is 13 or older for account 2.")
-    XCTAssertTrue(prefsManagerForAccount2.hasUserVerifiedAge,
-                  "User has verified age for account 2.")
     XCTAssertTrue(prefsManagerForAccount2.hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
                   "User has seen audio and brightness sensor background message for account 2.")
     XCTAssertTrue(prefsManagerForAccount2.defaultExperimentWasCreated,
@@ -395,10 +316,6 @@ class PreferenceManagerTest: XCTestCase {
                    "Should not show archived recordings for account 2.")
     XCTAssertFalse(prefsManagerForAccount2.hasUserSeenExperimentHighlight,
                    "User has not seen experiment highlight for account 2.")
-    XCTAssertFalse(prefsManagerForAccount2.isUser13OrOlder,
-                   "User is not 13 or older for account 2.")
-    XCTAssertFalse(prefsManagerForAccount2.hasUserVerifiedAge,
-                   "User has not verified age for account 2.")
     XCTAssertFalse(prefsManagerForAccount2.hasUserSeenAudioAndBrightnessSensorBackgroundMessage,
                    "User has not seen audio and brightness sensor background message for account " +
                        "2.")
@@ -417,7 +334,6 @@ class PreferenceManagerTest: XCTestCase {
     preferenceManagerToCopy.shouldShowArchivedExperiments = true
     preferenceManagerToCopy.shouldShowArchivedRecordings = true
     preferenceManagerToCopy.hasUserSeenExperimentHighlight = true
-    preferenceManagerToCopy.isUser13OrOlder = true
     preferenceManagerToCopy.hasUserSeenAudioAndBrightnessSensorBackgroundMessage = true
     preferenceManagerToCopy.defaultExperimentWasCreated = true
     preferenceManagerToCopy.hasUserOptedOutOfUsageTracking = true
@@ -432,8 +348,6 @@ class PreferenceManagerTest: XCTestCase {
     XCTAssertFalse(preferenceManager.shouldShowArchivedExperiments)
     XCTAssertFalse(preferenceManager.shouldShowArchivedRecordings)
     XCTAssertFalse(preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertFalse(preferenceManager.isUser13OrOlder)
-    XCTAssertFalse(preferenceManager.hasUserVerifiedAge)
     XCTAssertFalse(preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
     XCTAssertFalse(preferenceManager.defaultExperimentWasCreated)
 
@@ -450,52 +364,20 @@ class PreferenceManagerTest: XCTestCase {
     XCTAssertFalse(preferenceManager.shouldShowArchivedExperiments)
     XCTAssertFalse(preferenceManager.shouldShowArchivedRecordings)
     XCTAssertFalse(preferenceManager.hasUserSeenExperimentHighlight)
-    XCTAssertFalse(preferenceManager.isUser13OrOlder)
-    XCTAssertFalse(preferenceManager.hasUserVerifiedAge)
     XCTAssertFalse(preferenceManager.hasUserSeenAudioAndBrightnessSensorBackgroundMessage)
     XCTAssertFalse(preferenceManager.defaultExperimentWasCreated)
   }
 
-  func testMigrateUserBirthdateTo13OrOlderBool() {
+  func testMigrateRemoveUserBirthdate() {
     // Build the birthdate key to match what preference manager uses.
-    let noAgeGivenAccountID = "noAgeGivenAccountID"
-    let noAgeGivenBirthdateKey = "GSJ_UserBirthdate_\(noAgeGivenAccountID)"
+    let accountID = "accountID"
+    let birthdateKey = "GSJ_UserBirthdate_\(accountID)"
 
-    // Make sure there is no date in user defaults for the user, then create a preference manager.
-    // It should not calculate whether that user is 13 or older.
-    UserDefaults.standard.removeObject(forKey: noAgeGivenBirthdateKey)
-    let noAgeGivenPreferenceManager = PreferenceManager(accountID: noAgeGivenAccountID)
-    XCTAssertFalse(noAgeGivenPreferenceManager.hasUserVerifiedAge,
-                   "User has not verified their age.")
-
-    let oneYearTimeInterval: TimeInterval = 60 * 60 * 24 * 365
-
-    // Again, build the birthdate key to match what preference manager uses.
-    let over13AccountID = "over13AccountID"
-    let over13BirthdateKey = "GSJ_UserBirthdate_\(over13AccountID)"
-    let birthdateOver13 = Date(timeIntervalSinceNow: -oneYearTimeInterval * 15)
-
-    // Set a date in user defaults for a user over 13, then create a preference manager. It should
-    // calculate whether that user is 13 or older.
-    UserDefaults.standard.set(birthdateOver13, forKey: over13BirthdateKey)
-    let over13PreferenceManager = PreferenceManager(accountID: over13AccountID)
-    XCTAssertTrue(over13PreferenceManager.isUser13OrOlder, "User is 13 or older.")
-    XCTAssertTrue(over13PreferenceManager.hasUserVerifiedAge, "User has verified their age.")
-    XCTAssertNil(UserDefaults.standard.object(forKey: over13BirthdateKey),
-                 "The birthdate should be removed from user defaults.")
-
-    // Again, build the birthdate key to match what preference manager uses.
-    let under13AccountID = "under13AccountID"
-    let under13BirthdateKey = "GSJ_UserBirthdate_\(under13AccountID)"
-    let birthdateUnder13 = Date(timeIntervalSinceNow: -oneYearTimeInterval * 10)
-
-    // Set a date in user defaults for a user under 13, then create a preference manager. It should
-    // calculate whether that user is 13 or older.
-    UserDefaults.standard.set(birthdateUnder13, forKey: under13BirthdateKey)
-    let under13PreferenceManager = PreferenceManager(accountID: under13AccountID)
-    XCTAssertFalse(under13PreferenceManager.isUser13OrOlder, "User is not 13 or older.")
-    XCTAssertTrue(under13PreferenceManager.hasUserVerifiedAge, "User has verified their age.")
-    XCTAssertNil(UserDefaults.standard.object(forKey: under13BirthdateKey),
+    // Set a date in user defaults the user, then create a preference manager. It should
+    // remove the birthdate.
+    UserDefaults.standard.set(Date(), forKey: birthdateKey)
+    let _ = PreferenceManager(accountID: accountID)
+    XCTAssertNil(UserDefaults.standard.object(forKey: birthdateKey),
                  "The birthdate should be removed from user defaults.")
   }
 

@@ -27,8 +27,8 @@ protocol UserFlowViewControllerDelegate: class {
 /// Manages the navigation of the user flow which begins after a user has signed in and includes
 /// all management of data such as viewing, creating, and adding to experiments.
 class UserFlowViewController: UIViewController, ExperimentsListViewControllerDelegate,
-    ExperimentCoordinatorViewControllerDelegate, PermissionsGuideDelegate, VerifyAgeDelegate,
-    SidebarDelegate, UINavigationControllerDelegate, ExperimentItemDelegate {
+    ExperimentCoordinatorViewControllerDelegate, PermissionsGuideDelegate, SidebarDelegate,
+    UINavigationControllerDelegate, ExperimentItemDelegate {
 
   /// The user flow view controller delegate.
   weak var delegate: UserFlowViewControllerDelegate?
@@ -170,11 +170,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                          devicePreferenceManager: devicePreferenceManager,
                                          showWelcomeView: !accountsManager.supportsAccounts)
       navController.setViewControllers([permissionsVC], animated: false)
-    } else if userManager.shouldVerifyAge {
-      // Don't need the permissions guide, but do need age verification.
-      showAgeVerification(animated: false)
     } else {
-      // Don't need the permissions guide or age verification, just show the experiments list.
+      // Don't need the permissions guide, just show the experiments list.
       showExperimentsList(animated: false)
     }
 
@@ -229,10 +226,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   /// - Parameter url: A file URL.
   /// - Returns: True if the URL can be handled, otherwise false.
   func handleImportURL(_ url: URL) -> Bool {
-    guard !userManager.shouldVerifyAge else {
-      showSnackbar(withMessage: String.importAgeVerification)
-      return false
-    }
     return documentManager.handleImportURL(url)
   }
 
@@ -345,16 +338,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   // MARK: - PermissionsGuideDelegate
 
   func permissionsGuideDidComplete(_ viewController: PermissionsGuideViewController) {
-    if userManager.shouldVerifyAge {
-      showAgeVerification(animated: true)
-    } else {
-      showExperimentsList(animated: true)
-    }
-  }
-
-  // MARK: - VerifyAgeDelegate
-
-  func ageVerificationDidComplete(_ viewController: VerifyAgeViewController) {
     showExperimentsList(animated: true)
   }
 
@@ -680,16 +663,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     present(sidebar, animated: false) {
       self.sidebar.show()
     }
-  }
-
-  /// Shows the age verification view controller.
-  ///
-  /// - Parameter animated: Whether to animate the showing of the view controller.
-  func showAgeVerification(animated: Bool) {
-    let verifyAgeVC = VerifyAgeViewController(analyticsReporter: analyticsReporter,
-                                              delegate: self,
-                                              preferenceManager: preferenceManager)
-    navController.setViewControllers([verifyAgeVC], animated: animated)
   }
 
   /// Shows the experiments list view controller.

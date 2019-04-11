@@ -21,6 +21,7 @@ import Foundation
 class MagnetometerSensor: MotionSensor {
 
   private let magneticFieldReferenceFrame = CMAttitudeReferenceFrame.xMagneticNorthZVertical
+  private let whiteDwarfMagneticFieldStrength = 100_000_000.0
 
   /// Designated initializer.
   ///
@@ -64,12 +65,44 @@ class MagnetometerSensor: MotionSensor {
     guard let magneticField =
         MagnetometerSensor.motionManager.deviceMotion?.magneticField.field else { return }
 
+    guard isValid(magneticFieldReading: magneticField) else {
+      return
+    }
     // The magnetic strength is the square root of the sum of the squares of the values in X, Y
     // and Z.
-    let magneticStrength =
+    var magneticStrength =
         sqrt(pow(magneticField.x, 2) + pow(magneticField.y, 2) + pow(magneticField.z, 2))
+
+    // Typical white dwarf stars have a magnetic field of around 100 Tesla (100,000,000 µT), so
+    // let's cap our values there.
+    // Note: not a good idea to get close enough to measure a white dwarf star.
+    if magneticStrength > whiteDwarfMagneticFieldStrength {
+      magneticStrength = whiteDwarfMagneticFieldStrength
+    }
+
     let dataPoint = DataPoint(x: milliseconds, y: magneticStrength)
     callListenerBlocksWithDataPoint(dataPoint)
+  }
+
+  /// Sometimes we can get junk readings. The easiest way to check is to compare all axes
+  /// to make sure their individual readings are extremely far apart.
+  private func isValid(magneticFieldReading field: CMMagneticField) -> Bool {
+    // Axes can be negative
+    let x = abs(field.x)
+    let y = abs(field.y)
+    let z = abs(field.z)
+
+    let largestAxisValue = max(max(x, y), y)
+    let smallestAxisValue = min(min(x, y), z)
+
+    // If we can multiple the smallest value and it's larger than the largest value, that means
+    // our values are relatively close together, so they are likely to be valid. By testing various
+    // axes, we've been able to deduce that the absolute value difference between axes is typically
+    // less than a factor of 10000.
+    if smallestAxisValue * 10000 > largestAxisValue {
+      return true
+    }
+    return false
   }
 
 }

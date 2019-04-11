@@ -481,9 +481,17 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
     let increment = axisLabels[1] - axisLabels[0]
     guard increment > 0 else { return 0 }
 
-    let startIndex = Int(floor((minShown - axisLabels[0]) / increment + 1))
-    let endIndex = Int(ceil((maxShown - lastAxisLabel) / increment)) + axisLabels.count - 1
-    return endIndex - startIndex
+
+    let startIndex = Int(exactly: floor((minShown - axisLabels[0]) / Double(increment + 1)))
+    let endIndexCeil = ceil((maxShown - lastAxisLabel) / increment)
+    let endIndex = Int(exactly: endIndexCeil + Double(axisLabels.count - 1))
+
+    if let startIndex = startIndex, let endIndex = endIndex {
+      // If percentage is 1.0 index can be beyond count so clamp it.
+      return endIndex - startIndex
+    } else {
+      return 0
+    }
   }
 
   /// Returns the closest data point to a given timestamp.
@@ -581,7 +589,10 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
 
     // The number of data points that exist for each display point. The resulting number of view
     // points will be double this number since we record a min and a max.
-    let pointsPerDisplayPoint = Int(ceil(CGFloat(dataPoints.count) / chartView.bounds.width))
+    let points = Int(exactly: ceil(CGFloat(dataPoints.count) / chartView.bounds.width))
+    guard let pointsPerDisplayPoint = points else {
+      return nil
+    }
 
     var nextMax: DataPoint?
     var nextMin: DataPoint?

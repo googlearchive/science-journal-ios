@@ -27,9 +27,14 @@ class RelativeScaleAnimationView: ImageAnimationView {
 
     var valuePercentage = (value - minValue) / (maxValue - minValue)
     valuePercentage = max(min(valuePercentage, 1.0), 0)
-    let index = Int(floor(valuePercentage * Double(images.count)))
-    // If percentage is 1.0 index can be beyond count so clamp it.
-    return min(index, images.count - 1)
+    let index = Int(exactly: floor(valuePercentage * Double(images.count)))
+
+    if let index = index {
+      // If percentage is 1.0 index can be beyond count so clamp it.
+      return min(index, images.count - 1)
+    } else {
+      return 0
+    }
   }
 
 }

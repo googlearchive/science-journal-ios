@@ -85,7 +85,7 @@ class MagnetometerSensor: MotionSensor {
   }
 
   /// Sometimes we can get junk readings. The easiest way to check is to compare all axes
-  /// to make sure their individual readings are extremely far apart.
+  /// to make sure their individual readings aren't extremely far apart.
   private func isValid(magneticFieldReading field: CMMagneticField) -> Bool {
     // Axes can be negative
     let x = abs(field.x)

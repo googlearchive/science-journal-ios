@@ -550,7 +550,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let claimExperimentsVC =
         ClaimExperimentsFlowController(authAccount: authAccount,
                                        analyticsReporter: analyticsReporter,
-                                       documentManager: documentManager,
                                        existingDataMigrationManager: existingDataMigrationManager,
                                        sensorController: sensorController)
     present(claimExperimentsVC, animated: true)

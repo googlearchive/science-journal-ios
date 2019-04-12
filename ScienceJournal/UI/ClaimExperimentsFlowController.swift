@@ -68,17 +68,15 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   /// - Parameters:
   ///   - authAccount: The auth account.
   ///   - analyticsReporter: The analytics reporter.
-  ///   - documentManager: The document manager.
   ///   - existingDataMigrationManager: The existing data migration manager.
   ///   - sensorController: The sensor controller.
   init(authAccount: AuthAccount,
        analyticsReporter: AnalyticsReporter,
-       documentManager: DocumentManager,
        existingDataMigrationManager: ExistingDataMigrationManager,
        sensorController: SensorController) {
     self.authAccount = authAccount
     self.analyticsReporter = analyticsReporter
-    self.documentManager = documentManager
+    self.documentManager = existingDataMigrationManager.rootUserManager.documentManager
     self.existingDataMigrationManager = existingDataMigrationManager
     self.sensorController = sensorController
     self.preferenceManager = existingDataMigrationManager.rootUserManager.preferenceManager

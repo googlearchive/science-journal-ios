@@ -95,7 +95,7 @@ class MagnetometerSensor: MotionSensor {
     let largestAxisValue = max(max(x, y), y)
     let smallestAxisValue = min(min(x, y), z)
 
-    // If we can multiple the smallest value and it's larger than the largest value, that means
+    // If we can multiply the smallest value by 10,000 and it's larger than the largest value, that means
     // our values are relatively close together, so they are likely to be valid. By testing various
     // axes, we've been able to deduce that the absolute value difference between axes is typically
     // less than a factor of 10000.

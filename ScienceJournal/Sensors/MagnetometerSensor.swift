@@ -63,7 +63,7 @@ class MagnetometerSensor: MotionSensor {
 
   override func callListenerBlocksWithData(atMilliseconds milliseconds: Int64) {
     guard let magneticField = MagnetometerSensor.motionManager.deviceMotion?.magneticField.field,
-      isValid(magneticFieldReading: magneticField)
+        isValid(magneticFieldReading: magneticField)
     else { return }
 
     // The magnetic strength is the square root of the sum of the squares of the values in X, Y

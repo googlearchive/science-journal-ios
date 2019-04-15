@@ -29,8 +29,7 @@ class ScaleSoundType: PitchedSoundType {
                           valueMax: Double,
                           timestamp: Int64) -> Double? {
     let floorValue = floor((value - valueMin) / (valueMax - valueMin) * Double(pitches.count - 1))
-    let index = Int(exactly: floorValue)
-    if let index = index {
+    if let index = Int(exactly: floorValue) {
       return frequency(from: Double(pitches[index]))
     } else {
       return nil

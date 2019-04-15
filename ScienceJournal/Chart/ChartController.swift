@@ -487,7 +487,6 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
     let endIndex = Int(exactly: endIndexCeil + Double(axisLabels.count - 1))
 
     if let startIndex = startIndex, let endIndex = endIndex {
-      // If percentage is 1.0 index can be beyond count so clamp it.
       return endIndex - startIndex
     } else {
       return 0

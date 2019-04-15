@@ -1031,9 +1031,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     case .playback:
       // The default state where the user can scroll the view and observe the trial elements.
       title = String.runReviewActivityLabel
-      if !experimentInteractionOptions.shouldAllowEdits && !shouldAllowSharing {
-        navigationItem.rightBarButtonItems = []
-      } else if experimentInteractionOptions.shouldAllowEdits {
+      if experimentInteractionOptions.shouldAllowEdits {
         navigationItem.rightBarButtonItems = [menuBarButton, editBarButton]
       } else {
         navigationItem.rightBarButtonItems = [menuBarButton]

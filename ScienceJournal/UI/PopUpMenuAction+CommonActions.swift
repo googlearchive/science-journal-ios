@@ -145,44 +145,9 @@ extension PopUpMenuAction {
                            icon: UIImage(named: "ic_save_alt"),
                            accessibilityLabel: String.saveToFilesContentDescription,
                            handler: { _ in
-      let spinnerViewController = SpinnerViewController()
-      spinnerViewController.present(fromViewController: presentingViewController)
-
-      func saveExperimentToFiles() {
-        documentManager.createExportDocument(forExperimentWithID: experiment.ID,
-                                             completion: { (url, errors) in
-          spinnerViewController.dismissSpinner(completion: {
-            guard let url = url else {
-              // The export failed, show an error message.
-              showSnackbar(withMessage: String.saveToFilesSingleErrorMessage)
-              return
-            }
-
-            saveToFilesHandler.presentSaveToFiles(forURL: url,
-                                                  fromViewController: presentingViewController,
-                                                  completion: { (fileWasSaved) in
-              if fileWasSaved {
-                showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
-              }
-              documentManager.finishedWithExportDocument(atURL: url)
-            })
-          })
-        })
-      }
-
-      documentManager.experimentIsReadyForExport(experiment, completion: { (isReady) in
-        if isReady {
-          saveExperimentToFiles()
-        } else {
-          presentExperimentNotFinishedDownloadingAlert(fromViewController: spinnerViewController,
-                                                       cancelHandler: { (_) in
-            spinnerViewController.dismissSpinner()
-          },
-                                                       confirmHandler: { (_) in
-            saveExperimentToFiles()
-          })
-        }
-      })
+      saveToFilesHandler.presentSaveToFiles(forExperiment: experiment,
+                                               documentManager: documentManager,
+                                               presentingViewController: presentingViewController)
     })
   }
 

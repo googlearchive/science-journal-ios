@@ -49,6 +49,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   private let metadataManager: MetadataManager
   private let sensorDataManager: SensorDataManager
   private let documentManager: DocumentManager
+  private let saveToFilesHandler = SaveToFilesHandler()
 
   private var shouldAllowSharing: Bool {
     return existingDataMigrationManager.rootUserManager.isSharingAllowed
@@ -88,8 +89,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
         authAccount: authAccount,
         analyticsReporter: analyticsReporter,
         metadataManager: existingDataMigrationManager.rootUserManager.metadataManager,
-        preferenceManager: preferenceManager,
-        shouldAllowSharing: existingDataMigrationManager.rootUserManager.isSharingAllowed)
+        preferenceManager: preferenceManager)
 
     super.init(nibName: nil, bundle: nil)
   }
@@ -279,34 +279,14 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
     analyticsReporter.track(.claimingClaimSingle)
   }
 
-  func claimExperimentsShareExperiment(withID experimentID: String, attachmentButton: UIButton) {
-    guard shouldAllowSharing else { return }
+  func claimExperimentsSaveExperimentToFiles(withID experimentID: String) {
+    guard let experiment = metadataManager.experiment(withID: experimentID) else { return }
 
-    let spinnerViewController = SpinnerViewController()
-    spinnerViewController.present(fromViewController: claimExperimentsViewController) {
-      self.documentManager.createExportDocument(forExperimentWithID: experimentID,
-                                                completion: { (url, errors) in
-            spinnerViewController.dismissSpinner(completion: {
-              guard let url = url else {
-                // The export failed, show an error message.
-                showSnackbar(withMessage: String.exportError)
-                return
-              }
-              let activityVC = UIActivityViewController(activityItems: [url],
-                                                        applicationActivities: nil)
-              activityVC.completionWithItemsHandler = { (_, _, _, _) in
-                self.documentManager.finishedWithExportDocument(atURL: url)
-              }
-              if let presentationController = activityVC.popoverPresentationController {
-                // Configure as a popover on iPad if necessary.
-                presentationController.sourceView = attachmentButton
-                presentationController.sourceRect = attachmentButton.bounds
-              }
-              self.claimExperimentsViewController.present(activityVC, animated: true)
-            })
-      })
-    }
-    analyticsReporter.track(.claimingShare)
+    saveToFilesHandler.presentSaveToFiles(
+        forExperiment: experiment,
+        documentManager: documentManager,
+        presentingViewController: claimExperimentsViewController)
+    analyticsReporter.track(.claimingSaveToFiles)
   }
 
   func claimExperimentsDeleteExperiment(withID experimentID: String) {

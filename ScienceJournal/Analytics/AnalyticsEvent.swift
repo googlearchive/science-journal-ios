@@ -41,8 +41,8 @@ public struct AnalyticsEvent {
   static let claimingDeleteSingle = AnalyticsEvent(category: categoryClaimingData,
                                                    action: "DeleteSingle")
 
-  static let claimingShare = AnalyticsEvent(category: categoryClaimingData,
-                                            action: "Share")
+  static let claimingSaveToFiles = AnalyticsEvent(category: categoryClaimingData,
+                                                  action: "SaveToFiles")
 
   static let claimingViewExperiment = AnalyticsEvent(category: categoryClaimingData,
                                                      action: "ViewExperiment")

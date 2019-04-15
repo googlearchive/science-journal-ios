@@ -25,13 +25,13 @@ protocol ClaimExperimentListCellDelegate: class {
   /// - Parameter cell: The claim experiment list cell.
   func claimExperimentListCellPresssedAddToDriveButton(_ cell: ClaimExperimentListCell)
 
-  /// Tells the delegate the user tapped the share button for a cell.
+  /// Tells the delegate the user tapped the save to files button for a cell.
   ///
   /// - Parameters:
   ///   - cell: The claim experiment list cell.
-  ///   - shareButton: The share button.
+  ///   - saveToFilesButton: The save to files button.
   func claimExperimentListCell(_ cell: ClaimExperimentListCell,
-                               presssedShareButton shareButton: UIButton)
+                               pressedSaveToFilesButton saveToFilesButton: UIButton)
 
   /// Tells the delegate the user tapped the delete button for a cell.
   ///
@@ -40,13 +40,13 @@ protocol ClaimExperimentListCellDelegate: class {
 }
 
 /// A cell displaying an experiment that needs to be claimed by a user. It also displays buttons for
-/// adding the experiment to drive, sharing it or deleting it.
+/// adding the experiment to drive, saving it to files, or deleting it.
 class ClaimExperimentListCell: ExperimentsListCellBase {
 
   // MARK: - Properties
 
   private weak var delegate: ClaimExperimentListCellDelegate?
-  private let shareButton = MDCFlatButton()
+  private let saveToFilesButton = MDCFlatButton()
 
   private enum Metrics {
     static let buttonEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -79,11 +79,9 @@ class ClaimExperimentListCell: ExperimentsListCellBase {
   ///   - image: The image for this experiment or nil.
   func configureForExperimentOverview(_ experimentOverview: ExperimentOverview,
                                       delegate: ClaimExperimentListCellDelegate,
-                                      image: UIImage?,
-                                      showShareOption: Bool) {
+                                      image: UIImage?) {
     self.delegate = delegate
     configureForExperimentOverview(experimentOverview, image: image)
-    shareButton.isHidden = !showShareOption
   }
 
   /// The item size for the cell in a width.
@@ -106,16 +104,18 @@ class ClaimExperimentListCell: ExperimentsListCellBase {
     addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
     addButton.accessibilityLabel = String.claimExperimentsAddToDriveContentDescription
 
-    shareButton.setImage(UIImage(named: "ic_share"), for: .normal)
-    shareButton.addTarget(self, action: #selector(shareButtonPressed), for: .touchUpInside)
-    shareButton.accessibilityLabel = String.claimExperimentsShareContentDescription
+    saveToFilesButton.setImage(UIImage(named: "ic_save_alt"), for: .normal)
+    saveToFilesButton.addTarget(self,
+                                action: #selector(saveToFilesButtonPressed),
+                                for: .touchUpInside)
+    saveToFilesButton.accessibilityLabel = String.saveToFilesContentDescription
 
     let deleteButton = MDCFlatButton()
     deleteButton.setImage(UIImage(named: "ic_delete"), for: .normal)
     deleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
     deleteButton.accessibilityLabel = String.claimExperimentsDeleteContentDescription
 
-    [addButton, shareButton, deleteButton].forEach {
+    [addButton, saveToFilesButton, deleteButton].forEach {
       $0.setImageTintColor(MDCPalette.grey.tint600, for: .normal)
       $0.translatesAutoresizingMaskIntoConstraints = false
       $0.widthAnchor.constraint(equalToConstant: Metrics.iconDimension).isActive = true
@@ -124,7 +124,8 @@ class ClaimExperimentListCell: ExperimentsListCellBase {
       $0.imageEdgeInsets = Metrics.buttonEdgeInsets
     }
 
-    let claimButtonsStack = UIStackView(arrangedSubviews: [addButton, shareButton, deleteButton])
+    let claimButtonsStack =
+        UIStackView(arrangedSubviews: [addButton, saveToFilesButton, deleteButton])
     claimButtonsStack.alignment = .center
     claimButtonsStack.distribution = .equalCentering
     claimButtonsStack.translatesAutoresizingMaskIntoConstraints = false
@@ -139,8 +140,8 @@ class ClaimExperimentListCell: ExperimentsListCellBase {
     delegate?.claimExperimentListCellPresssedAddToDriveButton(self)
   }
 
-  @objc private func shareButtonPressed(sender: UIButton) {
-    delegate?.claimExperimentListCell(self, presssedShareButton: sender)
+  @objc private func saveToFilesButtonPressed(sender: UIButton) {
+    delegate?.claimExperimentListCell(self, pressedSaveToFilesButton: sender)
   }
 
   @objc private func deleteButtonPressed() {

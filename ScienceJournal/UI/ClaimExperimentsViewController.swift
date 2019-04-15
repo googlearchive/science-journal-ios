@@ -30,12 +30,10 @@ protocol ClaimExperimentsViewControllerDelegate: class {
   /// - Parameter experimentID: An experiment ID.
   func claimExperimentsAddExperimentToDrive(withID experimentID: String)
 
-  /// Informs the delegate the user shared the experiment.
+  /// Informs the delegate the user wants to save the experiment to files.
   ///
-  /// - Parameters:
-  ///   - experimentID: An experiment ID.
-  ///   - attachmentButton: The button to attach the share sheet to.
-  func claimExperimentsShareExperiment(withID experimentID: String, attachmentButton: UIButton)
+  /// - Parameter experimentID: An experiment ID.
+  func claimExperimentsSaveExperimentToFiles(withID experimentID: String)
 
   /// Informs the delegate the user has deleted the experiment.
   ///
@@ -74,12 +72,10 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
   ///   - analyticsReporter: The analytics reporter.
   ///   - metadataManager: The metadata manager.
   ///   - preferenceManager: The preference manager.
-  ///   - shouldAllowSharing: Whether to allow sharing.
   init(authAccount: AuthAccount,
        analyticsReporter: AnalyticsReporter,
        metadataManager: MetadataManager,
-       preferenceManager: PreferenceManager,
-       shouldAllowSharing: Bool) {
+       preferenceManager: PreferenceManager) {
     self.authAccount = authAccount
     experimentsListItemsViewController =
         ExperimentsListItemsViewController(cellClass: ClaimExperimentListCell.self,
@@ -103,8 +99,7 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
           let cell = cell as? ClaimExperimentListCell, let overview = overview {
         cell.configureForExperimentOverview(overview,
                                             delegate: strongSelf,
-                                            image: image,
-                                            showShareOption: shouldAllowSharing)
+                                            image: image)
       }
     }
     experimentsListItemsViewController.cellSizeBlock = { (width) in
@@ -253,10 +248,9 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
   }
 
   func claimExperimentListCell(_ cell: ClaimExperimentListCell,
-                               presssedShareButton shareButton: UIButton) {
+                               pressedSaveToFilesButton saveToFilesButton: UIButton) {
     guard let overview = experimentsListItemsViewController.overview(forCell: cell) else { return }
-    delegate?.claimExperimentsShareExperiment(withID: overview.experimentID,
-                                              attachmentButton: shareButton)
+    delegate?.claimExperimentsSaveExperimentToFiles(withID: overview.experimentID)
   }
 
   func claimExperimentListCellPresssedDeleteButton(_ cell: ClaimExperimentListCell) {

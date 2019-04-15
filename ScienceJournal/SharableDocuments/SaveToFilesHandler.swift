@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
 
 /// Handles saving experiments, trial data and images to the Files app.
 class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
@@ -26,7 +27,7 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
   private var completion: SaveToFilesCompletion?
   private var documentPicker: UIDocumentPickerViewController?
 
-  /// Presents the save to files browser.
+  /// Presents the save to files browser for a URL.
   ///
   /// - Parameters:
   ///   - url: The url of the file to save.
@@ -43,6 +44,61 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
       documentPicker.modalPresentationStyle = .formSheet
     }
     presentingViewController.present(documentPicker, animated: true, completion: nil)
+  }
+
+  /// Presents the save to files browser for an experiment.
+  ///
+  /// - Parameters:
+  ///   - experiment: The experiment to save.
+  ///   - documentManager: The document manager.
+  ///   - presentingViewController: A view controller to present the save to files VC.
+  func presentSaveToFiles(forExperiment experiment: Experiment,
+                          documentManager: DocumentManager,
+                          presentingViewController: UIViewController) {
+    let spinnerViewController = SpinnerViewController()
+
+    func saveExperimentToFiles() {
+      documentManager.createExportDocument(forExperimentWithID: experiment.ID) { (url, _) in
+        spinnerViewController.dismissSpinner() {
+          guard let url = url else {
+            // The export failed, show an error message.
+            showSnackbar(withMessage: String.saveToFilesSingleErrorMessage)
+            return
+          }
+
+          self.presentSaveToFiles(forURL: url,
+                                  fromViewController: presentingViewController) { fileWasSaved in
+            if fileWasSaved {
+              showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+            }
+            documentManager.finishedWithExportDocument(atURL: url)
+          }
+        }
+      }
+    }
+
+    spinnerViewController.present(fromViewController: presentingViewController) {
+      documentManager.experimentIsReadyForExport(experiment) { isReady in
+        if isReady {
+          saveExperimentToFiles()
+        } else {
+          spinnerViewController.dismissSpinner() {
+            let alertController =
+                MDCAlertController(title: String.experimentNotFinishedDownloadingTitle,
+                                   message: String.experimentNotFinishedDownloadingMessage)
+            let cancelAction = MDCAlertAction(title: String.actionCancel)
+            let okAction =
+                MDCAlertAction(title: String.experimentNotFinishedDownloadingConfirmButton) { _ in
+              saveExperimentToFiles()
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            alertController.accessibilityViewIsModal = true
+            presentingViewController.present(alertController, animated: true)
+          }
+        }
+      }
+    }
   }
 
   // MARK: - UIDocumentPickerDelegate

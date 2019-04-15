@@ -99,7 +99,7 @@ class MagnetometerSensor: MotionSensor {
     // our values are relatively close together, so they are likely to be valid. By testing various
     // axes, we've been able to deduce that the absolute value difference between axes is typically
     // less than a factor of 10000.
-    if smallestAxisValue * 10000 > largestAxisValue {
+    if smallestAxisValue * 10_000 > largestAxisValue {
       return true
     }
     return false

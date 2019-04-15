@@ -53,9 +53,13 @@ class ConductorSoundType: PitchedSoundType {
       return nil
     }
 
-    let index = Int(floor((value - valueThreshhold) / (currentMaximumValue - valueThreshhold) *
-        Double(pitches.count - 1)))
-    return frequency(from: Double(pitches[index]))
+    let numerator = floor(value - valueThreshhold)
+    let denominator = currentMaximumValue - valueThreshhold
+    if let index = Int(exactly: numerator / denominator * Double(pitches.count - 1)) {
+      return frequency(from: Double(pitches[index]))
+    } else {
+      return nil
+    }
   }
 
 }

@@ -264,7 +264,10 @@ class PacketAssemblerTest: XCTestCase {
     let bytes = [UInt8](protoData)
     let chunkSize = UInt8(isChunked ? bytes.count - 1 : bytes.count + 1)
 
-    let length = Int(ceil(Double(bytes.count) / Double(chunkSize)))
+    let potentialLength = Int(exactly: ceil(Double(bytes.count) / Double(chunkSize)))
+    guard let length = potentialLength else {
+      return
+    }
 
     var start = 0
     for index in 0..<length {

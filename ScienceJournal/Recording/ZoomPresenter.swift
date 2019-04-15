@@ -84,9 +84,13 @@ class ZoomPresenter {
 
     // Note: On Android this code rounds instead of floors. Rounding up should always produce a tier
     // with insufficient data points. Have not figured out the descrepency with Android code.
-    let actualTier = Int(floor(idealTier))
-    let maxTier = Int(zoomPresenterTierCount) - 1
-    return (0...maxTier).clamp(actualTier)
+    let actualTier = Int(exactly: floor(idealTier))
+    if let actualTier = actualTier {
+      let maxTier = zoomPresenterTierCount - 1
+      return (0...maxTier).clamp(actualTier)
+    } else {
+      return currentTier
+    }
   }
 
   /// Returns an ideal tier as a fractional value.

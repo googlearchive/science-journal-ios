@@ -19,7 +19,6 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
-.DS_Store
 
 ## Obj-C/Swift specific
 *.hmap
@@ -29,7 +28,6 @@ xcuserdata/
 
 ## CocoaPods
 Pods/
-ScienceJournal.xcworkspace
 
 ## Generated Plist
 Info-Combined.plist

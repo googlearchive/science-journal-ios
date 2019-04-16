@@ -63,7 +63,7 @@ class MagnetometerSensor: MotionSensor {
 
   override func callListenerBlocksWithData(atMilliseconds milliseconds: Int64) {
     guard let magneticField = MagnetometerSensor.motionManager.deviceMotion?.magneticField.field,
-        magneticField.isValid
+        isValid(magneticFieldReading: magneticField)
     else { return }
 
     // The magnetic strength is the square root of the sum of the squares of the values in X, Y
@@ -80,6 +80,27 @@ class MagnetometerSensor: MotionSensor {
 
     let dataPoint = DataPoint(x: milliseconds, y: magneticStrength)
     callListenerBlocksWithDataPoint(dataPoint)
+  }
+
+  /// Sometimes we can get junk readings. The easiest way to check is to compare all axes
+  /// to make sure their individual readings aren't extremely far apart.
+  private func isValid(magneticFieldReading field: CMMagneticField) -> Bool {
+    // Axes can be negative.
+    let x = abs(field.x)
+    let y = abs(field.y)
+    let z = abs(field.z)
+
+    let largestAxisValue = max(max(x, y), y)
+    let smallestAxisValue = min(min(x, y), z)
+
+    // If we can multiply the smallest value by 10,000 and it's larger than the largest value, that means
+    // our values are relatively close together, so they are likely to be valid. By testing various
+    // axes, we've been able to deduce that the absolute value difference between axes is typically
+    // less than a factor of 10,000.
+    if smallestAxisValue * 10_000 > largestAxisValue {
+      return true
+    }
+    return false
   }
 
 }

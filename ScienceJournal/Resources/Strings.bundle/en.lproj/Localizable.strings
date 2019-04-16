@@ -340,10 +340,10 @@
 /* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
 "claim_experiments_share_content_description" = "Share this unclaimed experiment";
 
-/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=50] */
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
 "claim_experiment_disk_space_error_message" = "Not enough disk space to claim experiment";
 
-/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=50] */
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
 "claim_experiments_disk_space_error_message" = "Not enough disk space to claim experiments";
 
 /* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */

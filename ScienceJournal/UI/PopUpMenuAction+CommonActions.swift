@@ -90,7 +90,7 @@ extension PopUpMenuAction {
 
       func exportExperiment() {
         documentManager.createExportDocument(forExperimentWithID: experiment.ID,
-                                             completion: { (url, errors) in
+                                             completion: { url in
           spinnerViewController.dismissSpinner(completion: {
             guard let url = url else {
               // The export failed, show an error message.

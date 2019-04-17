@@ -40,7 +40,7 @@ class ImportDocumentOperationTest: XCTestCase {
     // Create an sj file for it.
     let exportExpectation = expectation(description: "Export document finished.")
     var exportURL: URL!
-    documentManager.createExportDocument(forExperimentWithID: experiment.ID) { (url, errors) in
+    documentManager.createExportDocument(forExperimentWithID: experiment.ID) { url in
       exportURL = url
       exportExpectation.fulfill()
     }

@@ -88,7 +88,7 @@ class DocumentManagerTest: XCTestCase {
     var noTitleExportURL: URL!
     let noTitleExportExpectation = expectation(description: "No title export finished")
     documentManager.createExportDocument(
-        forExperimentWithID: noTitleExperiment.ID) { (url, errors) in
+        forExperimentWithID: noTitleExperiment.ID) { url in
       noTitleExportURL = url
       noTitleExportExpectation.fulfill()
     }
@@ -110,7 +110,7 @@ class DocumentManagerTest: XCTestCase {
     var titledExportURL: URL!
     let titledExportExpectation = expectation(description: "Titled export finished")
     documentManager.createExportDocument(
-        forExperimentWithID: titledExperiment.ID) { (url, errors) in
+        forExperimentWithID: titledExperiment.ID) { url in
       titledExportURL = url
       titledExportExpectation.fulfill()
     }

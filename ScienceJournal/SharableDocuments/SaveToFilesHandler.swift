@@ -58,7 +58,7 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
     let spinnerViewController = SpinnerViewController()
 
     func saveExperimentToFiles() {
-      documentManager.createExportDocument(forExperimentWithID: experiment.ID) { (url, _) in
+      documentManager.createExportDocument(forExperimentWithID: experiment.ID) { url in
         spinnerViewController.dismissSpinner() {
           guard let url = url else {
             // The export failed, show an error message.

@@ -173,15 +173,15 @@ class DocumentManager {
   ///
   /// - Parameters:
   ///   - experimentID: An experiment ID.
-  ///   - completion: A block called on completion with an optional url and an array of errors.
+  ///   - completion: A block called on completion with an optional url.
   ///                 Guaranteed to be called on the main thread.
   func createExportDocument(forExperimentWithID experimentID: String,
-                            completion: @escaping (URL?, [Error]) -> Void) {
+                            completion: @escaping (URL?) -> Void) {
     guard let (experiment, overview) =
         metadataManager.experimentAndOverview(forExperimentID: experimentID) else {
       sjlog_error("Failed to find experiment with ID '\(experimentID)' when exporting experiment.",
                   category: .general)
-      completion(nil, [])
+      completion(nil)
       return
     }
 
@@ -205,13 +205,13 @@ class DocumentManager {
         experiment: experiment,
         experimentURL: metadataManager.experimentDirectoryURL(for: experimentID),
         sensorDataManager: sensorDataManager)
-    let blockObserver = BlockObserver { (operation, errors) in
+    let blockObserver = BlockObserver { (operation, _) in
       DispatchQueue.main.async {
         guard let documentURL = (operation as? ExportDocumentOperation)?.documentURL else {
-          completion(nil, errors)
+          completion(nil)
           return
         }
-        completion(documentURL, errors)
+        completion(documentURL)
       }
     }
     documentExportOperation.addObserver(blockObserver)

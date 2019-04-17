@@ -275,8 +275,8 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let experimentID = "does_not_exist"
     existingDataMigrationManager.migrateExperiment(withID: experimentID, completion: { (errors) in
       switch errors[0] {
-      case .experimentLoadError(let experimentIDs):
-        XCTAssertEqual(experimentIDs[0], experimentID)
+      case .experimentLoadError(let errorExperimentID):
+        XCTAssertEqual(errorExperimentID, experimentID)
         expectation1.fulfill()
       case .experimentSaveError(_), .sensorDataFetchError(_), .assetsSaveError(_),
           .notEnoughFreeDiskSpaceToMigrate(_):

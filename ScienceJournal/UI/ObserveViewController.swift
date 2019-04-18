@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Collections_Collections
@@ -483,14 +485,12 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   func startRecording() {
     // Cannot start recording a trial if one is already in progress.
     guard recordingTrial == nil else {
-      return;
+      return
     }
 
-    for card in observeDataSource.items {
-      if card.sensor is BrightnessSensor {
-        CaptureSessionInterruptionObserver.shared.isBrightnessSensorInUse = true
-        break
-      }
+    for card in observeDataSource.items where card.sensor is BrightnessSensor {
+      CaptureSessionInterruptionObserver.shared.isBrightnessSensorInUse = true
+      break
     }
 
     beginBackgroundRecordingTask()
@@ -1542,7 +1542,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
                         didFireNoteTrigger trigger: SensorTrigger,
                         forSensor sensor: Sensor,
                         atTimestamp timestamp: Int64) {
-    if let _ = observeDataSource.sensorCard(for: sensor) {
+    if observeDataSource.sensorCard(for: sensor) != nil {
       // TODO: Add note to chart (requires new chart controller method).
       delegate?.observeViewController(self,
                                       didReceiveNoteTrigger: trigger,
@@ -1663,3 +1663,5 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
 }
+
+// swiftlint:enable file_length

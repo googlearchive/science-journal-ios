@@ -27,4 +27,3 @@ open class CommonUIComponentsOpen: CommonUIComponents {
   }
 
 }
-

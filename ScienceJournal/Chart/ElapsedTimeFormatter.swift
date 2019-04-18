@@ -80,7 +80,7 @@ class ElapsedTimeFormatter: Formatter {
     if shouldDisplayTenths {
       // Compiler complains unless we calculate this in two steps.
       var tenths = absTimestamp * tenthsInSecond / millisInSecond
-      tenths = tenths - secondsInTotalHours * tenthsInSecond -
+      tenths -= secondsInTotalHours * tenthsInSecond -
           minutes * secondsInMinute * tenthsInSecond -
           seconds * tenthsInSecond
       formatted += "." + String(tenths)

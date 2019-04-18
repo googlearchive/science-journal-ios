@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
@@ -1081,3 +1083,5 @@ extension UserFlowViewController: ExperimentStateListener {
     userManager.driveSyncManager?.syncExperimentLibrary(andReconcile: true, userInitiated: false)
   }
 }
+
+// swiftlint:enable file_length

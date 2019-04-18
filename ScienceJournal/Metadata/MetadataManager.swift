@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import ImageIO
 import MobileCoreServices
 import UIKit
@@ -1528,7 +1530,7 @@ public class MetadataManager {
   public lazy var localSyncStatus: LocalSyncStatus = {
     func createLocalSyncStatus() -> LocalSyncStatus {
       let localSyncStatus = LocalSyncStatus()
-      localSyncStatusSaveQueue.sync{
+      localSyncStatusSaveQueue.sync {
         _ = self.saveData(localSyncStatus.proto.data(), to: self.localSyncStatusURL)
       }
       return localSyncStatus
@@ -1800,3 +1802,5 @@ public class MetadataManager {
   }
 
 }
+
+// swiftlint:enable file_length

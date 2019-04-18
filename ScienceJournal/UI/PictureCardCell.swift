@@ -131,6 +131,7 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
     pictureView?.image = nil
   }
 
+  // swiftlint:disable function_parameter_count
   /// Sets the picture note for the cell, along with the style, and whether or not to show the
   /// header or inline timestamp.
   ///
@@ -147,6 +148,8 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
                       showHeader shouldShowHeader: Bool,
                       showInlineTimestamp shouldShowInlineTimestamp: Bool,
                       showCaptionButton shouldShowCaptionButton: Bool) {
+    // swiftlint:enable function_parameter_count
+
     self.pictureStyle = pictureStyle
     self.pictureNote = pictureNote
     self.metadataManager = metadataManager

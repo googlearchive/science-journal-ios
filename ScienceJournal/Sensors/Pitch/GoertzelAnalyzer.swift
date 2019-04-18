@@ -52,7 +52,7 @@ final class GoertzelAnalyzer {
       var secondGreatestPower: Double
       var frequencyWithSecondGreatestPower: Double
 
-      if (powerAtLoFrequency > powerAtHiFrequency) {
+      if powerAtLoFrequency > powerAtHiFrequency {
         greatestPower = powerAtLoFrequency
         frequencyWithGreatestPower = loFrequency
         secondGreatestPower = powerAtHiFrequency
@@ -68,23 +68,23 @@ final class GoertzelAnalyzer {
       // Goertzel power at each division.
       let interval: Double = (hiFrequency - loFrequency) / 4
       var frequency: Double = loFrequency + interval
-      while (frequency < hiFrequency) {
+      while frequency < hiFrequency {
         let power: Double = calculatePower(samples: samples, targetFrequency: frequency)
         // Keep track of the greatest power as greatestPower and the second greatest
         // power as secondGreatestPower.
-        if (power > greatestPower) {
+        if power > greatestPower {
           // Move greatestPower to secondGreatestPower.
           secondGreatestPower = greatestPower
           frequencyWithSecondGreatestPower = frequencyWithGreatestPower
           // Replace greatestPower.
           greatestPower = power
           frequencyWithGreatestPower = frequency
-        } else if (power > secondGreatestPower) {
+        } else if power > secondGreatestPower {
           // Replace secondGreatestPower.
           secondGreatestPower = power
           frequencyWithSecondGreatestPower = frequency
         }
-        frequency = frequency + interval
+        frequency += interval
       }
 
       let previousHi: Double = hiFrequency
@@ -92,7 +92,7 @@ final class GoertzelAnalyzer {
 
       // Figure out which of the two frequencies with the greatest powers is lower and
       // which is higher.
-      if (frequencyWithGreatestPower > frequencyWithSecondGreatestPower) {
+      if frequencyWithGreatestPower > frequencyWithSecondGreatestPower {
         hiFrequency = frequencyWithGreatestPower
         powerAtHiFrequency = greatestPower
         loFrequency = frequencyWithSecondGreatestPower
@@ -106,8 +106,8 @@ final class GoertzelAnalyzer {
 
       // If the low and high frequencies haven't changed, then we aren't finding a peak
       // and we can give up.
-      if (previousHi.isEssentiallyEqual(to: hiFrequency) &&
-        previousLo.isEssentiallyEqual(to: loFrequency)) {
+      if previousHi.isEssentiallyEqual(to: hiFrequency) &&
+          previousLo.isEssentiallyEqual(to: loFrequency) {
         break
       }
     } while (hiFrequency - loFrequency > accuracy)

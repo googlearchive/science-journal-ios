@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Palettes_Palettes
@@ -30,11 +32,11 @@ extension UIScrollView {
 /// A protocol used by ChartAxis to allow different numeric types to be associated with an axis.
 protocol AxisNumber: Equatable {
   init(_ v: Int)
-  static func -(lhs: Self, rhs: Self) -> Self
-  static func <(lhs: Self, rhs: Self) -> Bool
-  static func >(lhs: Self, rhs: Self) -> Bool
-  static func <=(lhs: Self, rhs: Self) -> Bool
-  static func >=(lhs: Self, rhs: Self) -> Bool
+  static func - (lhs: Self, rhs: Self) -> Self
+  static func < (lhs: Self, rhs: Self) -> Bool
+  static func > (lhs: Self, rhs: Self) -> Bool
+  static func <= (lhs: Self, rhs: Self) -> Bool
+  static func >= (lhs: Self, rhs: Self) -> Bool
 }
 
 // Conform the types that are allowed for use by ChartAxis.
@@ -49,7 +51,7 @@ struct ChartAxis<T: AxisNumber> : Equatable {
   /// - Parameters:
   ///   - lhs: A value to compare.
   ///   - rhs: Another value to compare.
-  public static func ==(lhs: ChartAxis<T>, rhs: ChartAxis<T>) -> Bool {
+  public static func == (lhs: ChartAxis<T>, rhs: ChartAxis<T>) -> Bool {
     return lhs.min == rhs.min && lhs.max == rhs.max
   }
 
@@ -449,12 +451,12 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
       let increment = yAxisLabelPoints[1] - yAxisLabelPoints[0]
 
       var nextSmallerLabel = yAxisLabelPoints[0] - increment
-      while (nextSmallerLabel > displayMinY) {
+      while nextSmallerLabel > displayMinY {
         yAxisLabelPoints.insert(nextSmallerLabel, at: 0)
         nextSmallerLabel -= increment
       }
       var nextLargerLabel = yAxisLabelPoints[yAxisLabelPoints.count - 1] + increment
-      while (nextLargerLabel < displayMaxY) {
+      while nextLargerLabel < displayMaxY {
         yAxisLabelPoints.append(nextLargerLabel)
         nextLargerLabel += increment
       }
@@ -728,7 +730,7 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
       chartView.setNeedsLayout()
     }
 
-    if (!chartView.scrollView.isUserScrolling) {
+    if !chartView.scrollView.isUserScrolling {
       updateViewForAxes()
     }
     buildPath()
@@ -1096,7 +1098,7 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
 
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     // If decelerating, wait until decelerating has ended to consider the drag movement changed.
-    if (!decelerate) {
+    if !decelerate {
       delegate?.chartController(self, scrollStateChanged: false)
     }
   }
@@ -1327,7 +1329,7 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
     delegate?.chartController(self, shouldPinToNow: true)
   }
 
-  // MARK: -  Notifications
+  // MARK: - Notifications
 
   @objc private func downloadedSensorData(notification: Notification) {
     guard Thread.isMainThread else {
@@ -1349,3 +1351,5 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
   }
 
 }
+
+// swiftlint:enable file_length

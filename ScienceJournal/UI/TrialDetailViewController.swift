@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_BottomSheet_BottomSheet
@@ -434,7 +436,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
       timeSelectLayoutUpdates()
     }
 
-    coordinator.animateAlongsideTransition(in: view, animation: { (context) in
+    coordinator.animateAlongsideTransition(in: view, animation: { (_) in
       if self.state == .timeSelect || self.state == .crop { timeSelectLayoutUpdates() }
       guard let sensorsView = self.sensorsView else { return }
       sensorsView.scrollSensorsToCurrentPage()
@@ -1267,7 +1269,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
         let alertController = MDCAlertController(title: String.deleteRunDialogTitle,
                                                  message: String.runReviewDeleteConfirm)
         let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
-        let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (action) in
+        let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (_) in
           let trialID = self.trialDetailDataSource.trial.ID
           self.itemDelegate?.trialDetailViewControllerDidRequestDeleteTrial(withID: trialID)
           self.navigationController?.popViewController(animated: true)
@@ -1637,3 +1639,5 @@ class TrialDetailViewController: MaterialHeaderViewController,
   }
 
 }
+
+// swiftlint:enable file_length

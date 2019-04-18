@@ -27,6 +27,7 @@ protocol PermissionsGuideDelegate: class {
   func permissionsGuideDidComplete(_ viewController: PermissionsGuideViewController)
 }
 
+// swiftlint:disable type_body_length
 /// An animated, multi-step guide to walk the user through granting Science Journal all the various
 /// permissions needed.
 class PermissionsGuideViewController: OnboardingViewController {
@@ -148,7 +149,7 @@ class PermissionsGuideViewController: OnboardingViewController {
                                    with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
 
-    coordinator.animate(alongsideTransition: { (context) in
+    coordinator.animate(alongsideTransition: { (_) in
       self.updateConstraintsForSize(size)
       self.view.layoutIfNeeded()
     })
@@ -446,7 +447,7 @@ class PermissionsGuideViewController: OnboardingViewController {
     UIView.animate(withDuration: permissionCheckDuration, animations: {
       self.continueButton.isEnabled = false
     }) { (_) in
-      AVAudioSession.sharedInstance().requestRecordPermission { granted in
+      AVAudioSession.sharedInstance().requestRecordPermission { _ in
         DispatchQueue.main.async {
           self.markStepDoneAndPerformNext()
         }
@@ -489,7 +490,7 @@ class PermissionsGuideViewController: OnboardingViewController {
       case .authorized, .denied, .restricted:
         self.markStepDoneAndPerformNext()
       case .notDetermined:
-        AVCaptureDevice.requestAccess(for: .video) { granted in
+        AVCaptureDevice.requestAccess(for: .video) { _ in
           DispatchQueue.main.sync {
             self.markStepDoneAndPerformNext()
           }
@@ -527,7 +528,7 @@ class PermissionsGuideViewController: OnboardingViewController {
     UIView.animate(withDuration: permissionCheckDuration, animations: {
       self.continueButton.isEnabled = false
     }) { (_) in
-      PHPhotoLibrary.requestAuthorization{ status in
+      PHPhotoLibrary.requestAuthorization { _ in
         DispatchQueue.main.sync {
           self.markStepDoneAndPerformNext()
         }
@@ -579,3 +580,5 @@ class PermissionsGuideViewController: OnboardingViewController {
   }
 
 }
+
+// swiftlint:enable type_body_length

@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Dialogs_Dialogs
@@ -506,9 +508,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
         } else {
           addViewAction()
         }
-      case .trial(_):
+      case .trial:
         addViewAction()
-      case .snapshotNote(_), .pictureNote(_), .triggerNote(_):
+      case .snapshotNote, .pictureNote, .triggerNote:
         addViewAction()
         if experimentInteractionOptions.shouldAllowEdits {
           addCommentAction()
@@ -573,7 +575,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
           let alertController = MDCAlertController(title: String.deleteRunDialogTitle,
                                                    message: String.runReviewDeleteConfirm)
           let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
-          let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (action) in
+          let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (_) in
             // Delete the trial.
             self.itemDelegate?.trialDetailViewControllerDidRequestDeleteTrial(withID: trial.ID)
           }
@@ -1415,7 +1417,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
         let alertController = MDCAlertController(title: nil,
                                                  message: String.removeCoverImageMessage)
         let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
-        let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (action) in
+        let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (_) in
           var snackbarMessage = String.removeCoverImageFailed
           if (self.delegate?.experimentViewControllerRemoveCoverImageForExperiment(
               self.experiment))! {
@@ -1487,12 +1489,12 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     popUpMenu.addAction(PopUpMenuAction(
         title: String.actionDelete,
         icon: UIImage(named: "ic_delete"),
-        accessibilityLabel: String.actionDeleteExperimentContentDescription) { a -> Void in
+        accessibilityLabel: String.actionDeleteExperimentContentDescription) { _ -> Void in
       // Prompt the user to confirm deletion.
       let alertController = MDCAlertController(title: String.deleteExperimentDialogTitle,
                                                message: String.deleteExperimentDialogMessage)
       let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
-      let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (action) in
+      let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (_) in
         if RecordingState.isRecording {
           self.drawerVC?.observeViewController.endRecording()
         }
@@ -1549,3 +1551,5 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
 }
+
+// swiftlint:enable file_length

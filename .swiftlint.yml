@@ -17,6 +17,9 @@ function_body_length:
 type_body_length:
   warning: 314 # We have some offenders that should be cleaned up.
 
+force_cast:
+  severity: warning
+
 disabled_rules:
   - closure_parameter_position  # Newlines can conflict with having params on same line as opening brace.
   - colon # Problematic for newlines.

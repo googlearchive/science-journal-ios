@@ -46,7 +46,7 @@ class PacketAssembler {
     var justData = Array(bytes.dropFirst(2))
     outputData.append(&justData, count: Int(length))
 
-    if (isLast) {
+    if isLast {
       return parse()
     }
 
@@ -99,7 +99,7 @@ class PacketAssembler {
     }
 
     var timestamp: Int64 = 0
-    if (sensorData.hasTimestampKey) {
+    if sensorData.hasTimestampKey {
       let relativeTime = Int64(sensorData.timestampKey)
       if let timeSkew = timeSkew {
         timestamp = relativeTime + timeSkew

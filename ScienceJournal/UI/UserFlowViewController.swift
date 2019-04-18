@@ -498,7 +498,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         TrialDetailViewController(trial: trial,
                                   experiment: experiment,
                                   experimentInteractionOptions: experimentInteractionOptions,
-                                  shouldAllowSharing: userManager.isSharingAllowed,
+                                  exportType: userManager.exportType,
                                   delegate: self,
                                   itemDelegate: self,
                                   analyticsReporter: analyticsReporter,
@@ -682,7 +682,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                       preferenceManager: preferenceManager,
                                       sensorDataManager: sensorDataManager,
                                       documentManager: documentManager,
-                                      shouldAllowSharing: userManager.isSharingAllowed,
+                                      exportType: userManager.exportType,
                                       shouldAllowManualSync: userManager.isDriveSyncEnabled)
     experimentsListVC.delegate = self
 
@@ -707,7 +707,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let experimentCoordinatorVC = ExperimentCoordinatorViewController(
         experiment: experiment,
         experimentInteractionOptions: experimentInteractionOptions,
-        shouldAllowSharing: userManager.isSharingAllowed,
+        exportType: userManager.exportType,
         drawerViewController: drawerVC,
         analyticsReporter: analyticsReporter,
         metadataManager: metadataManager,
@@ -767,7 +767,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       viewController =
           PictureDetailViewController(displayPicture: displayPicture,
                                       experimentInteractionOptions: experimentInteractionOptions,
-                                      shouldAllowSharing: userManager.isSharingAllowed,
+                                      exportType: userManager.exportType,
                                       delegate: self,
                                       jumpToCaption: jumpToCaption,
                                       analyticsReporter: analyticsReporter,

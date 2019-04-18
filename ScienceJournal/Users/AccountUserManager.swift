@@ -29,9 +29,8 @@ class AccountUserManager: UserManager {
   let experimentDataDeleter: ExperimentDataDeleter
   let documentManager: DocumentManager
 
-  var isSharingAllowed: Bool {
-    // Sharing is allowed for accounts.
-    return true
+  var exportType: UserExportType {
+    return .share
   }
 
   var isDriveSyncEnabled: Bool {

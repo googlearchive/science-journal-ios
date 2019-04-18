@@ -28,8 +28,8 @@ class MockUserManager: UserManager {
   let experimentDataDeleter: ExperimentDataDeleter
   let documentManager: DocumentManager
 
-  var isSharingAllowed: Bool {
-    return false
+  var exportType: UserExportType {
+    return .saveToFiles
   }
 
   var isDriveSyncEnabled: Bool {

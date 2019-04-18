@@ -44,7 +44,7 @@ class PictureDetailViewController:
   private var textFieldController: MDCTextInputController?
   private let preferenceManager: PreferenceManager
   private let experimentInteractionOptions: ExperimentInteractionOptions
-  private let shouldAllowSharing: Bool
+  private let exportType: UserExportType
   private let saveToFilesHandler = SaveToFilesHandler()
 
   private var horizontalTextFieldPaddingForDisplayType: CGFloat {
@@ -94,7 +94,7 @@ class PictureDetailViewController:
   /// - Parameters:
   ///   - displayPicture: A display picture.
   ///   - experimentInteractionOptions: Experiment interaction options.
-  ///   - shouldAllowSharing: Whether the picture should be shareable.
+  ///   - exportType: The export option type to show.
   ///   - delegate: The item delegate.
   ///   - jumpToCaption: Whether the view should jump to the caption on first load.
   ///   - analyticsReporter: The analytics reporter.
@@ -102,7 +102,7 @@ class PictureDetailViewController:
   ///   - preferenceManager: The preference manager.
   init(displayPicture: DisplayPictureNote,
        experimentInteractionOptions: ExperimentInteractionOptions,
-       shouldAllowSharing: Bool,
+       exportType: UserExportType,
        delegate: ExperimentItemDelegate?,
        jumpToCaption: Bool,
        analyticsReporter: AnalyticsReporter,
@@ -110,7 +110,7 @@ class PictureDetailViewController:
        preferenceManager: PreferenceManager) {
     self.displayPicture = displayPicture
     self.experimentInteractionOptions = experimentInteractionOptions
-    self.shouldAllowSharing = shouldAllowSharing
+    self.exportType = exportType
     self.delegate = delegate
     self.shouldJumpToCaptionOnLoad = jumpToCaption
     self.metadataManager = metadataManager
@@ -382,20 +382,19 @@ class PictureDetailViewController:
           animated: true)
     })
 
-    // Send a copy.
-    if shouldAllowSharing,
-        displayPicture.imageFileExists,
+    // Export
+    if displayPicture.imageFileExists,
         let imagePath = displayPicture.imagePath {
-      popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
-                                                presentingViewController: self,
-                                                sourceView: menuBarButton.button))
-    }
-
-    // Save to files.
-    if displayPicture.imageFileExists, let imagePath = displayPicture.imagePath {
-      popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
-                                                      presentingViewController: self,
-                                                      saveToFilesHandler: saveToFilesHandler))
+      switch exportType {
+      case .saveToFiles:
+        popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
+                                                        presentingViewController: self,
+                                                        saveToFilesHandler: saveToFilesHandler))
+      case .share:
+        popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
+                                                  presentingViewController: self,
+                                                  sourceView: menuBarButton.button))
+      }
     }
 
     // Delete.

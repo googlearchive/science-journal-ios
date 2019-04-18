@@ -108,7 +108,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   private var pullToRefreshController: PullToRefreshController?
   private var pullToRefreshControllerForEmptyView: PullToRefreshController?
   private let sensorDataManager: SensorDataManager
-  private let shouldAllowSharing: Bool
+  private let exportType: UserExportType
   private let shouldAllowManualSync: Bool
   private let snackbarCategoryArchivedExperiment = "snackbarCategoryArchivedExperiment"
   private let snackbarCategoryDeletedExperiment = "snackbarCategoryDeletedExperiment"
@@ -172,7 +172,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   ///   - preferenceManager: The preference manager.
   ///   - sensorDataManager: The sensor data manager.
   ///   - documentManager: The document manager.
-  ///   - shouldAllowSharing: Whether to allow sharing.
+  ///   - exportType: The export option type to show.
   ///   - shouldAllowManualSync: Whether to allow manual syncing.
   init(accountsManager: AccountsManager,
        analyticsReporter: AnalyticsReporter,
@@ -183,7 +183,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
        preferenceManager: PreferenceManager,
        sensorDataManager: SensorDataManager,
        documentManager: DocumentManager,
-       shouldAllowSharing: Bool,
+       exportType: UserExportType,
        shouldAllowManualSync: Bool) {
     self.accountsManager = accountsManager
     self.commonUIComponents = commonUIComponents
@@ -193,7 +193,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     self.preferenceManager = preferenceManager
     self.sensorDataManager = sensorDataManager
     self.documentManager = documentManager
-    self.shouldAllowSharing = shouldAllowSharing
+    self.exportType = exportType
     self.shouldAllowManualSync = shouldAllowManualSync
 
     experimentsListItemsViewController =
@@ -672,25 +672,23 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
       self.delegate?.experimentsListToggleArchiveStateForExperiment(withID: overview.experimentID)
     })
 
-    // Send a copy.
-    if shouldAllowSharing && !RecordingState.isRecording,
-        let experiment = metadataManager.experiment(withID: overview.experimentID),
-        !experiment.isEmpty {
-      popUpMenu.addAction(PopUpMenuAction.exportExperiment(experiment,
-                                                           presentingViewController: self,
-                                                           sourceView: attachmentButton,
-                                                           documentManager: documentManager))
-    }
-
-    // Save to files.
+    // Export
     if !RecordingState.isRecording,
         let experiment = metadataManager.experiment(withID: overview.experimentID),
         !experiment.isEmpty {
-      popUpMenu.addAction(
-          PopUpMenuAction.saveExperimentToFiles(experiment,
-                                                presentingViewController: self,
-                                                documentManager: documentManager,
-                                                saveToFilesHandler: saveToFilesHandler))
+      switch exportType {
+      case .saveToFiles:
+        popUpMenu.addAction(
+            PopUpMenuAction.saveExperimentToFiles(experiment,
+                                                  presentingViewController: self,
+                                                  documentManager: documentManager,
+                                                  saveToFilesHandler: saveToFilesHandler))
+      case .share:
+        popUpMenu.addAction(PopUpMenuAction.exportExperiment(experiment,
+                                                             presentingViewController: self,
+                                                             sourceView: attachmentButton,
+                                                             documentManager: documentManager))
+      }
     }
 
     // Delete.

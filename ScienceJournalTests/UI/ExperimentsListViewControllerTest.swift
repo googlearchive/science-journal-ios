@@ -41,7 +41,7 @@ class ExperimentListViewControllerTest: XCTestCase {
                                       preferenceManager: PreferenceManager(),
                                       sensorDataManager: sensorDataManager,
                                       documentManager: documentManager,
-                                      shouldAllowSharing: true,
+                                      exportType: .saveToFiles,
                                       shouldAllowManualSync: true)
 
     settableNetworkAvailability.setAvailability(nil)

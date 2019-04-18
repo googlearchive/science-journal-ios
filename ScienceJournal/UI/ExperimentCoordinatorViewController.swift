@@ -180,7 +180,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   private let snackbarCategoryTrialArchivedState = "snackbarCategoryTrialArchivedState"
   private let snackbarCategoryCouldNotUpdateSensorSettings =
       "snackbarCategoryCouldNotUpdateSensorSettings"
-  private let shouldAllowSharing: Bool
+  private let exportType: UserExportType
   private let saveToFilesHandler = SaveToFilesHandler()
 
   // A dictionary of chart controllers, keyed by sensor ID.
@@ -205,7 +205,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   /// - Parameters:
   ///   - experiment: The experiment.
   ///   - experimentInteractionOptions: Experiment interaction options.
-  ///   - shouldAllowSharing: Should this experiment and its contents be shareable?
+  ///   - exportType: The export option type to show.
   ///   - drawerViewController: A drawer view controller.
   ///   - analyticsReporter: An AnalyticsReporter.
   ///   - metadataManager: The metadata manager.
@@ -215,7 +215,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   ///   - documentManager: The document manager.
   init(experiment: Experiment,
        experimentInteractionOptions: ExperimentInteractionOptions,
-       shouldAllowSharing: Bool,
+       exportType: UserExportType,
        drawerViewController: DrawerViewController?,
        analyticsReporter: AnalyticsReporter,
        metadataManager: MetadataManager,
@@ -225,7 +225,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
        documentManager: DocumentManager) {
     self.experiment = experiment
     self.experimentInteractionOptions = experimentInteractionOptions
-    self.shouldAllowSharing = shouldAllowSharing
+    self.exportType = exportType
     self.drawerVC = drawerViewController
     self.metadataManager = metadataManager
     self.preferenceManager = preferenceManager
@@ -540,25 +540,21 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       }
     }
 
-    // Send a copy.
-    if shouldAllowSharing,
-        !RecordingState.isRecording,
-        let displayPictureNote = displayItem as? DisplayPictureNote,
-        displayPictureNote.imageFileExists,
-        let imagePath = displayPictureNote.imagePath {
-      popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
-                                                presentingViewController: self,
-                                                sourceView: button))
-    }
-
-    // Save to files.
+    // Export
     if !RecordingState.isRecording,
         let displayPictureNote = displayItem as? DisplayPictureNote,
         displayPictureNote.imageFileExists,
         let imagePath = displayPictureNote.imagePath {
-      popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
-                                                      presentingViewController: self,
-                                                      saveToFilesHandler: saveToFilesHandler))
+      switch exportType {
+      case .saveToFiles:
+        popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
+                                                        presentingViewController: self,
+                                                        saveToFilesHandler: saveToFilesHandler))
+      case .share:
+        popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
+                                                  presentingViewController: self,
+                                                  sourceView: button))
+      }
     }
 
     // Delete.
@@ -1466,21 +1462,22 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       showArchiveAction()
     }
 
-    // Send a copy.
-    if shouldAllowSharing && !RecordingState.isRecording && !experiment.isEmpty {
-      popUpMenu.addAction(PopUpMenuAction.exportExperiment(experiment,
-                                                           presentingViewController: self,
-                                                           sourceView: self.menuBarButton.button,
-                                                           documentManager: documentManager))
-    }
-
-    // Save to files.
+    // Export
     if !RecordingState.isRecording && !experiment.isEmpty {
-      popUpMenu.addAction(
-          PopUpMenuAction.saveExperimentToFiles(experiment,
-                                                presentingViewController: self,
-                                                documentManager: documentManager,
-                                                saveToFilesHandler: saveToFilesHandler))
+      switch exportType {
+      case .saveToFiles:
+        popUpMenu.addAction(
+            PopUpMenuAction.saveExperimentToFiles(experiment,
+                                                  presentingViewController: self,
+                                                  documentManager: documentManager,
+                                                  saveToFilesHandler: saveToFilesHandler))
+      case .share:
+        popUpMenu.addAction(
+            PopUpMenuAction.exportExperiment(experiment,
+                                             presentingViewController: self,
+                                             sourceView: self.menuBarButton.button,
+                                             documentManager: documentManager))
+      }
     }
 
     // Delete.

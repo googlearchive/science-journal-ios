@@ -16,6 +16,14 @@
 
 import Foundation
 
+/// The export option type to show for the user.
+enum UserExportType {
+  /// Show the save to files export option.
+  case saveToFiles
+  /// Show the share export option.
+  case share
+}
+
 /// Protocol for an object that manages a single user and their data. A user is not the same as an
 /// account. A user represents one set of data on one device. It may be associated with an account
 /// but in the case of the root user (the user data stored to device before account support was
@@ -43,8 +51,8 @@ protocol UserManager {
   /// The experiment data deleter for the user.
   var experimentDataDeleter: ExperimentDataDeleter { get }
 
-  /// Whether sharing is allowed for the user.
-  var isSharingAllowed: Bool { get }
+  /// The export type to use for the user.
+  var exportType: UserExportType { get }
 
   /// Whether Drive sync is enabled for the user.
   var isDriveSyncEnabled: Bool { get }

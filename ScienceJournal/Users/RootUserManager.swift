@@ -30,9 +30,8 @@ class RootUserManager: UserManager {
   let experimentDataDeleter: ExperimentDataDeleter
   let documentManager: DocumentManager
 
-  var isSharingAllowed: Bool {
-    // Sharing is not allowed for non-account users.
-    return false
+  var exportType: UserExportType {
+    return .saveToFiles
   }
 
   var isDriveSyncEnabled: Bool {

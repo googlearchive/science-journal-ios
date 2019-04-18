@@ -70,9 +70,8 @@ class RootUserManagerTest: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: dataManager.storeURL.path))
   }
 
-  func testIsSharingAllowed() {
-    XCTAssertFalse(rootUserManager.isSharingAllowed,
-                   "Sharing is not allowed for the root user.")
+  func testExportType() {
+    XCTAssertEqual(rootUserManager.exportType, .saveToFiles)
   }
 
   func testIsDriveSyncEnabled() {

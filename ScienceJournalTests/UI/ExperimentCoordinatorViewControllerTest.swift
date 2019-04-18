@@ -84,7 +84,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
     let experimentViewController =
         ExperimentCoordinatorViewController(experiment: experiment,
                                             experimentInteractionOptions: .normal,
-                                            shouldAllowSharing: true,
+                                            exportType: .saveToFiles,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
                                             metadataManager: metadataManager,
@@ -135,7 +135,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
     let experimentViewController =
         ExperimentCoordinatorViewController(experiment: experiment,
                                             experimentInteractionOptions: .normal,
-                                            shouldAllowSharing: true,
+                                            exportType: .saveToFiles,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
                                             metadataManager: metadataManager,
@@ -194,7 +194,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
     let experimentViewController =
         ExperimentCoordinatorViewController(experiment: experiment,
                                             experimentInteractionOptions: .normal,
-                                            shouldAllowSharing: true,
+                                            exportType: .saveToFiles,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
                                             metadataManager: metadataManager,
@@ -260,7 +260,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
     let experimentViewController =
         ExperimentCoordinatorViewController(experiment: experiment,
                                             experimentInteractionOptions: .normal,
-                                            shouldAllowSharing: true,
+                                            exportType: .saveToFiles,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
                                             metadataManager: metadataManager,
@@ -299,7 +299,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
     let experimentViewController =
         ExperimentCoordinatorViewController(experiment: experiment,
                                             experimentInteractionOptions: .normal,
-                                            shouldAllowSharing: true,
+                                            exportType: .saveToFiles,
                                             drawerViewController: drawerVC,
                                             analyticsReporter: AnalyticsReporterOpen(),
                                             metadataManager: metadataManager,
@@ -381,7 +381,7 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
     let experimentViewController =
         ExperimentCoordinatorViewController(experiment: experiment,
                                             experimentInteractionOptions: .normal,
-                                            shouldAllowSharing: true,
+                                            exportType: .saveToFiles,
                                             drawerViewController: nil,
                                             analyticsReporter: AnalyticsReporterOpen(),
                                             metadataManager: metadataManager,

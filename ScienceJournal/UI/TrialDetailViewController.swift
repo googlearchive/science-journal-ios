@@ -132,7 +132,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   private var currentCaption: String?
   private let preferenceManager: PreferenceManager
   private let sensorDataManager: SensorDataManager
-  private let shouldAllowSharing: Bool
+  private let exportType: UserExportType
   private let saveToFilesHandler = SaveToFilesHandler()
 
   private var cellHorizontalInset: CGFloat {
@@ -222,6 +222,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   ///   - trial: The trial.
   ///   - experiment: The experiment that owns the trial.
   ///   - experimentInteractionOptions: Experiment interaction options.
+  ///   - exportType: The export option type to show.
   ///   - shouldAllowSharing: Whether the trial should be shareable.
   ///   - delegate: The delegate.
   ///   - itemDelegate: The experiment item delegate.
@@ -233,7 +234,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   init(trial: Trial,
        experiment: Experiment,
        experimentInteractionOptions: ExperimentInteractionOptions,
-       shouldAllowSharing: Bool,
+       exportType: UserExportType,
        delegate: TrialDetailViewControllerDelegate,
        itemDelegate: ExperimentItemDelegate?,
        analyticsReporter: AnalyticsReporter,
@@ -247,7 +248,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
                               experimentInteractionOptions: experimentInteractionOptions)
     self.experiment = experiment
     self.experimentInteractionOptions = experimentInteractionOptions
-    self.shouldAllowSharing = shouldAllowSharing
+    self.exportType = exportType
     self.delegate = delegate
     self.itemDelegate = itemDelegate
     self.metadataManager = metadataManager
@@ -752,23 +753,20 @@ class TrialDetailViewController: MaterialHeaderViewController,
       }
     }
 
-    // Send a copy.
-    if shouldAllowSharing,
-        let displayPictureNote = note as? DisplayPictureNote,
-        displayPictureNote.imageFileExists,
-        let imagePath = displayPictureNote.imagePath {
-      popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
-                                                presentingViewController: self,
-                                                sourceView: button))
-    }
-
-    // Save to files.
+    // Export
     if let displayPictureNote = note as? DisplayPictureNote,
         displayPictureNote.imageFileExists,
         let imagePath = displayPictureNote.imagePath {
-      popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
-                                                      presentingViewController: self,
-                                                      saveToFilesHandler: saveToFilesHandler))
+      switch exportType {
+      case .saveToFiles:
+        popUpMenu.addAction(PopUpMenuAction.saveToFiles(withFilePath: imagePath,
+                                                        presentingViewController: self,
+                                                        saveToFilesHandler: saveToFilesHandler))
+      case .share:
+        popUpMenu.addAction(PopUpMenuAction.share(withFilePath: imagePath,
+                                                  presentingViewController: self,
+                                                  sourceView: button))
+      }
     }
 
     // Delete.
@@ -1204,37 +1202,39 @@ class TrialDetailViewController: MaterialHeaderViewController,
       addCropAction()
     }
 
-    if shouldAllowSharing {
-      actions.append(PopUpMenuAction(title: String.exportAction,
-                                     icon: UIImage(named: "ic_share")) { _ in
-        // Show bottom sheet - switch, cancel, share
+    // Export
+    func showExportAction(withTitle title: String,
+                          iconName: String,
+                          accessibilityLabel: String? = nil,
+                          trialShareMode: TrialShareSettingsViewController.Mode,
+                          action: Selector) {
+      actions.append(PopUpMenuAction(title: title,
+                                     icon: UIImage(named: iconName),
+                                     accessibilityLabel: accessibilityLabel) { _ in
+        // Show bottom sheet - switch, cancel, export
         let trialShareVC =
             TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
-                                             mode: .share)
-        trialShareVC.shareButton.addTarget(self,
-                                           action: #selector(self.shareButtonPressed),
-                                           for: .touchUpInside)
+                                             mode: trialShareMode)
+        trialShareVC.shareButton.addTarget(self, action: action, for: .touchUpInside)
         let bottomSheetController = MDCBottomSheetController(contentViewController: trialShareVC)
         self.present(bottomSheetController, animated: true)
         self.trialShareViewController = trialShareVC
       })
     }
 
-    // Save to Files.
-    actions.append(PopUpMenuAction(title: String.saveToFilesTitle,
-                                   icon: UIImage(named: "ic_save_alt"),
-                                   accessibilityLabel: String.saveToFilesContentDescription) { _ in
-      // Show bottom sheet - switch, cancel, share
-      let trialShareVC =
-        TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
-                                         mode: .saveToFiles)
-        trialShareVC.shareButton.addTarget(self,
-                                           action: #selector(self.saveToFilesButtonPressed),
-                                           for: .touchUpInside)
-        let bottomSheetController = MDCBottomSheetController(contentViewController: trialShareVC)
-        self.present(bottomSheetController, animated: true)
-        self.trialShareViewController = trialShareVC
-    })
+    switch exportType {
+    case .saveToFiles:
+      showExportAction(withTitle: String.saveToFilesTitle,
+                       iconName: "ic_save_alt",
+                       accessibilityLabel: String.saveToFilesContentDescription,
+                       trialShareMode: .saveToFiles,
+                       action: #selector(self.saveToFilesButtonPressed))
+    case .share:
+      showExportAction(withTitle: String.exportAction,
+                       iconName: "ic_share",
+                       trialShareMode: .share,
+                       action: #selector(self.shareButtonPressed))
+    }
 
     // Archive.
     func addArchiveAction() {

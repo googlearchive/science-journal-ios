@@ -66,8 +66,8 @@ class AccountUserManagerTest: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: dataManager.storeURL.path))
   }
 
-  func testIsSharingAllowed() {
-    XCTAssertTrue(accountUserManager.isSharingAllowed, "Sharing is allowed for accounts.")
+  func testExportType() {
+    XCTAssertEqual(accountUserManager.exportType, .share)
   }
 
   func testIsDriveSyncEnabled() {

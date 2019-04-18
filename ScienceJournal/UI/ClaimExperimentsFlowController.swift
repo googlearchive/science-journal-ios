@@ -51,8 +51,8 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   private let documentManager: DocumentManager
   private let saveToFilesHandler = SaveToFilesHandler()
 
-  private var shouldAllowSharing: Bool {
-    return existingDataMigrationManager.rootUserManager.isSharingAllowed
+  private var exportType: UserExportType {
+    return existingDataMigrationManager.rootUserManager.exportType
   }
 
   // Handles state updates to any experiment.
@@ -130,7 +130,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
     let experimentCoordinatorVC = ExperimentCoordinatorViewController(
         experiment: experiment,
         experimentInteractionOptions: .readOnlyWithItemDelete,
-        shouldAllowSharing: shouldAllowSharing,
+        exportType: exportType,
         drawerViewController: nil,
         analyticsReporter: analyticsReporter,
         metadataManager: metadataManager,
@@ -167,7 +167,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
         trial: trial,
         experiment: experiment,
         experimentInteractionOptions: .readOnlyWithItemDelete,
-        shouldAllowSharing: shouldAllowSharing,
+        exportType: exportType,
         delegate: self,
         itemDelegate: self,
         analyticsReporter: analyticsReporter,
@@ -195,7 +195,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
       viewController = PictureDetailViewController(
           displayPicture: displayPicture,
           experimentInteractionOptions: .readOnlyWithItemDelete,
-          shouldAllowSharing: shouldAllowSharing,
+          exportType: exportType,
           delegate: self,
           jumpToCaption: false,
           analyticsReporter: analyticsReporter,

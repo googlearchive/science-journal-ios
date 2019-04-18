@@ -689,7 +689,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     // Only save the experiment if anything changed.
     if sensorLayouts != experiment.sensorLayouts {
       experiment.sensorLayouts = sensorLayouts
-      metadataManager.saveExperimentWithoutDateChange(experiment)
+      metadataManager.saveExperimentWithoutDateOrDirtyChange(experiment)
     }
   }
 
@@ -709,7 +709,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                              didExceedTriggerFireLimitForSensor sensor: Sensor) {
     guard let sensorLayout = experiment.sensorLayoutForSensorID(sensor.sensorId) else { return }
     sensorLayout.activeSensorTriggerIDs.removeAll()
-    metadataManager.saveExperimentWithoutDateChange(experiment)
+    metadataManager.saveExperimentWithoutDateOrDirtyChange(experiment)
     updateObserveWithExperimentTriggers()
 
     showSnackbar(withMessage: String.triggersDisabledMessage,
@@ -929,7 +929,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     sensorLayout.activeSensorTriggerIDs = activeTriggerIDs
 
     // Save the experiment.
-    metadataManager.saveExperimentWithoutDateChange(experiment)
+    metadataManager.saveExperimentWithoutDateOrDirtyChange(experiment)
 
     // Update observe.
     updateObserveWithExperimentTriggers()
@@ -954,7 +954,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
         }
       }
       self.experiment.availableSensors = availableSensors
-      self.metadataManager.saveExperimentWithoutDateChange(self.experiment)
+      self.metadataManager.saveExperimentWithoutDateOrDirtyChange(self.experiment)
       self.updateObserveWithAvailableSensors()
     }
   }

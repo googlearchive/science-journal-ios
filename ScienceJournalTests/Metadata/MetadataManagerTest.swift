@@ -80,7 +80,7 @@ class MetadataManagerTest: XCTestCase {
                      "Verify cleanup succeeded.")
   }
 
-  func testSaveExperimentWithoutUpdatingLastUsedDate() {
+  func testSaveExperimentWithoutDateOrDirtyChange() {
     let settableClock = SettableClock(now: 12345)
     metadataManager.clock = settableClock
 
@@ -91,27 +91,31 @@ class MetadataManagerTest: XCTestCase {
     let syncExperiment = SyncExperiment(experimentID: experiment.ID, clock: metadataManager.clock)
     metadataManager.experimentLibrary.addExperiment(syncExperiment)
 
-    // Save with standard save method which updates last used time and confirm.
+    metadataManager.localSyncStatus.setExperimentDirty(false, withID: experiment.ID)
 
     // Change the clock time.
     settableClock.setNow(6789)
 
+    // Save with standard save method which updates last used time and confirm.
     metadataManager.saveExperiment(experiment)
     XCTAssertEqual(6789, overview.lastUsedDate.millisecondsSince1970)
     XCTAssertEqual(6789,
                    metadataManager.experimentLibrary.syncExperiment(
                       forID: experiment.ID)?.lastModifiedDate.millisecondsSince1970)
+    XCTAssertEqual(true, metadataManager.localSyncStatus.isExperimentDirty(withID: experiment.ID))
 
-    // Now save without updating last used date and confirm.
+    metadataManager.localSyncStatus.setExperimentDirty(false, withID: experiment.ID)
 
     // Change the clock time.
     settableClock.setNow(99999)
 
-    metadataManager.saveExperimentWithoutDateChange(experiment)
+    // Now save without updating last used date and confirm.
+    metadataManager.saveExperimentWithoutDateOrDirtyChange(experiment)
     XCTAssertEqual(6789, overview.lastUsedDate.millisecondsSince1970)
     XCTAssertEqual(6789,
                    metadataManager.experimentLibrary.syncExperiment(
                       forID: experiment.ID)?.lastModifiedDate.millisecondsSince1970)
+    XCTAssertEqual(false, metadataManager.localSyncStatus.isExperimentDirty(withID: experiment.ID))
   }
 
   func testOverviewOnNewExperiment() {
@@ -840,6 +844,7 @@ class MetadataManagerTest: XCTestCase {
     overview.title = experimentTitle
     overview.lastUsedDate = lastUsedDate
     overview.colorPalette = colorPalette
+    overview.isArchived = true
     let experiment = Experiment(ID: experimentID)
     experiment.setTitle(experimentTitle)
     experiment.notes.append(textNote)
@@ -854,6 +859,13 @@ class MetadataManagerTest: XCTestCase {
     XCTAssertEqual(experimentAndOverview?.overview.title, experimentTitle)
     XCTAssertEqual(experimentAndOverview?.overview.lastUsedDate, lastUsedDate)
     XCTAssertEqual(experimentAndOverview?.overview.colorPalette, colorPalette)
+    XCTAssertEqual(true, experimentAndOverview?.overview.isArchived)
+
+    let syncExperiment = metadataManager.experimentLibrary.syncExperiment(forID: "testID")!
+    XCTAssertEqual(experimentID, syncExperiment.experimentID)
+    XCTAssertEqual(lastUsedDate, syncExperiment.lastModifiedDate)
+    XCTAssertFalse(syncExperiment.isDeleted)
+    XCTAssertTrue(syncExperiment.isArchived)
   }
 
   func testExperimentLibraryAdded() {
@@ -1054,7 +1066,7 @@ class MetadataManagerTest: XCTestCase {
     experiment.setTitle("test title")
     metadataManager.clock = SettableClock(now: 5678)
     experiment.trials = [Trial(), Trial()]
-    metadataManager.saveExperimentWithoutDateChange(experiment)
+    metadataManager.saveExperimentWithoutDateOrDirtyChange(experiment)
 
     // Title and trial count should update, last used date and image path should not.
     XCTAssertEqual(experiment.title, overview.title)

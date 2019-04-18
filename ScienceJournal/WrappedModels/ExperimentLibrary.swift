@@ -123,15 +123,20 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   ///   - experimentID: The experiment ID.
   ///   - fileID: The Drive file ID.
   ///   - isArchived: Whether the experiment is archived.
+  ///   - lastModifiedTimestamp: The last modified timestamp for the experiment.
   public func addExperiment(withID experimentID: String,
                             fileID: String? = nil,
-                            isArchived: Bool = false) {
+                            isArchived: Bool = false,
+                            lastModifiedTimestamp: Int64? = nil) {
     syncExperimentsQueue.sync {
       guard !hasExperiment(withID: experimentID) else {
         return
       }
       isDirty = true
       let experiment = SyncExperiment(experimentID: experimentID, fileID: fileID, clock: clock)
+      if let lastModifiedTimestamp = lastModifiedTimestamp {
+        experiment.lastModifiedTimestamp = lastModifiedTimestamp
+      }
       experiment.isArchived = isArchived
       syncExperiments.append(experiment)
     }

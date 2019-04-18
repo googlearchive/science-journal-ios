@@ -232,11 +232,14 @@ public class MetadataManager {
   /// - Returns: True if adding the experiment and overview was successful.
   @discardableResult func addExperiment(_ experiment: Experiment,
                                         overview: ExperimentOverview) -> Bool {
-    let saveExperimentSuccess = saveExperiment(experiment, validateVersion: false)
+    let saveExperimentSuccess = saveExperimentWithoutDateOrDirtyChange(experiment,
+                                                                       validateVersion: false)
     if saveExperimentSuccess {
       userMetadata.addExperimentOverview(overview)
       saveUserMetadata()
-      registerNewLocalExperiment(withID: experiment.ID, isArchived: overview.isArchived)
+      registerNewLocalExperiment(withID: experiment.ID,
+                                 isArchived: overview.isArchived,
+                                 lastModifiedTimestamp: overview.lastUsedDate.millisecondsSince1970)
     }
     return saveExperimentSuccess
   }
@@ -515,9 +518,14 @@ public class MetadataManager {
   /// - Parameters:
   ///   - experimentID: An experiment ID.
   ///   - isArchived: Whether the experiment is archived.
-  func registerNewLocalExperiment(withID experimentID: String, isArchived: Bool = false) {
+  ///   - lastModifiedTimestamp: The last modified timestamp for the experiment.
+  func registerNewLocalExperiment(withID experimentID: String,
+                                  isArchived: Bool = false,
+                                  lastModifiedTimestamp: Int64? = nil) {
     // Add to experiment library.
-    experimentLibrary.addExperiment(withID: experimentID, isArchived: isArchived)
+    experimentLibrary.addExperiment(withID: experimentID,
+                                    isArchived: isArchived,
+                                    lastModifiedTimestamp: lastModifiedTimestamp)
     saveExperimentLibrary()
 
     // Add to local sync status as downloaded and dirty.
@@ -609,15 +617,22 @@ public class MetadataManager {
     return false
   }
 
-  /// Saves an experiment to disk but does not change its last used date. Useful for making saves
-  /// to an experiment that are not user-data-related so experiments don't get bumped to the front
-  /// of the experiment list.
+  /// Saves an experiment to disk but does not change its last used date or dirty state. Useful for
+  /// making saves to an experiment that should not trigger a Drive sync or aren't user visible data
+  /// so the experiment doesn't get bumped to the top of the experiments list.
   ///
-  /// - Parameter experiment: An experiment.
+  /// - Parameters:
+  ///   - experiment: The experiment to save.
+  ///   - validateVersion: Whether to validate the experiment version before saving. Defaults
+  ///                      to true.
   /// - Return: True if the save was successful, otherwise false.
-  @discardableResult public func saveExperimentWithoutDateChange(_ experiment: Experiment) -> Bool {
+  @discardableResult
+  public func saveExperimentWithoutDateOrDirtyChange(_ experiment: Experiment,
+                                                     validateVersion: Bool = true) -> Bool {
     do {
-      try saveExperiment(experiment, markDirty: true, updateLastModifiedDate: false)
+      try saveExperiment(experiment, markDirty: false,
+                         updateLastModifiedDate: false,
+                         validateVersion: validateVersion)
       return true
     } catch let error as MetadataManagerError {
       print("[MetadataManager] Error saving experiment: \(error.logString)")
@@ -1341,7 +1356,11 @@ public class MetadataManager {
       }
 
       userMetadata.addExperimentOverview(newOverview)
-      registerNewLocalExperiment(withID: experimentID, isArchived: newOverview.isArchived)
+
+      let lastModifiedTimestamp = newOverview.lastUsedDate.millisecondsSince1970
+      registerNewLocalExperiment(withID: experimentID,
+                                 isArchived: newOverview.isArchived,
+                                 lastModifiedTimestamp: lastModifiedTimestamp)
     }
   }
 

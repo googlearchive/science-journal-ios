@@ -21,7 +21,13 @@ import XCTest
 
 class ExperimentLibraryTest: XCTestCase {
 
-  let experimentLibrary = ExperimentLibrary()
+  var experimentLibrary: ExperimentLibrary!
+  let clock = SettableClock(now: 1000)
+
+  override func setUp() {
+    super.setUp()
+    experimentLibrary = ExperimentLibrary(clock: clock)
+  }
 
   func testExperimentArchived() {
     experimentLibrary.setExperimentArchived(true, experimentID: "123")
@@ -157,6 +163,14 @@ class ExperimentLibraryTest: XCTestCase {
     experimentLibrary.setExperimentDeleted(true, experimentID: "test_experiment_ID")
     XCTAssertTrue(experimentLibrary.isDirty,
                   "Dirty state should be true after setting an experiment to deleted.")
+  }
+
+  func testAddExperimentLastModified() {
+    experimentLibrary.addExperiment(withID: "789", isArchived: true)
+    XCTAssertEqual(1000, experimentLibrary.experimentLastModified(withID: "789"))
+
+    experimentLibrary.addExperiment(withID: "567", lastModifiedTimestamp: 2100)
+    XCTAssertEqual(2100, experimentLibrary.experimentLastModified(withID: "567"))
   }
 
 }

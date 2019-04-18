@@ -193,7 +193,7 @@ class DocumentManager {
     experiment.setTitleToDefaultIfNil()
 
     // Make sure there are no unsaved changes.
-    metadataManager.saveExperimentWithoutDateChange(experiment)
+    metadataManager.saveExperimentWithoutDateOrDirtyChange(experiment)
 
     var coverImageURL: URL?
     if let imagePath = experiment.imagePath {

@@ -882,7 +882,6 @@
 		684896E81F0207CD00DF1EE2 /* UIStackView+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ScienceJournal.swift"; sourceTree = "<group>"; };
 		684DDF491EF30A8400F50678 /* UIView+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ScienceJournal.swift"; sourceTree = "<group>"; };
 		68525A431F2BD8F700A41675 /* ExifData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExifData.swift; sourceTree = "<group>"; };
-		685310431EDE806100C42696 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6853104B1EDE830D00C42696 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6853104E1EDE84FE00C42696 /* ScienceJournalStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScienceJournalStrings.swift; sourceTree = "<group>"; };
 		6856C8961EEF0E1500FFCED5 /* MaterialHeaderCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialHeaderCollectionViewController.swift; sourceTree = "<group>"; };
@@ -2220,7 +2219,6 @@
 				687FA9D3202C113C004C1D04 /* Generated */,
 				48E745952256A7120030EB8F /* Info-Combined.plist */,
 				68EBA6E91E20421E0089FF7F /* Info.plist */,
-				68EBA6E61E20421E0089FF7F /* LaunchScreen.storyboard */,
 				68E3618A203F7F0900B1B979 /* main.swift */,
 				8B2053441E8D822500206061 /* Metadata */,
 				8B54BA161F4F0E3D006AADAA /* Notifications */,
@@ -3689,17 +3687,6 @@
 			targetProxy = 68EBA6FA1E20421E0089FF7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		68EBA6E61E20421E0089FF7F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				685310431EDE806100C42696 /* en */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6854E3761EE5C9A700044CF7 /* AdHoc */ = {

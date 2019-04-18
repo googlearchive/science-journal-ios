@@ -20,6 +20,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length
 extension String {
 
   static public var appName: String { return "app_name".localized }
@@ -534,3 +535,5 @@ extension String {
   static public var voltageUnits: String { return "voltage_units".localized }
 
 }
+
+// swiftlint:enable line_length

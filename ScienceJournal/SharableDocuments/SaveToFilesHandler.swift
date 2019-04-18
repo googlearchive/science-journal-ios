@@ -59,7 +59,7 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
 
     func saveExperimentToFiles() {
       documentManager.createExportDocument(forExperimentWithID: experiment.ID) { url in
-        spinnerViewController.dismissSpinner() {
+        spinnerViewController.dismissSpinner {
           guard let url = url else {
             // The export failed, show an error message.
             showSnackbar(withMessage: String.saveToFilesSingleErrorMessage)
@@ -82,7 +82,7 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
         if isReady {
           saveExperimentToFiles()
         } else {
-          spinnerViewController.dismissSpinner() {
+          spinnerViewController.dismissSpinner {
             let alertController =
                 MDCAlertController(title: String.experimentNotFinishedDownloadingTitle,
                                    message: String.experimentNotFinishedDownloadingMessage)

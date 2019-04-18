@@ -21,7 +21,7 @@ import Foundation
 class AudioCapture: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
 
   /// The function type for sample buffer update blocks.
-  typealias SampleBufferUpdateBlock = (UnsafeBufferPointer<Int16>) -> ()
+  typealias SampleBufferUpdateBlock = (UnsafeBufferPointer<Int16>) -> Void
 
   // MARK: - Properties
 
@@ -90,7 +90,7 @@ class AudioCapture: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
   ///                 queue, and includes a Bool indicating whether or not there is permission
   ///                 granted to use the microphone.
   func beginUsing(_ user: AnyObject,
-                  completion: @escaping (_ hasMicrophonePermission: Bool) -> ()) {
+                  completion: @escaping (_ hasMicrophonePermission: Bool) -> Void) {
     AVAudioSession.sharedInstance().requestRecordPermission { micPermissionGranted in
       self.sessionQueue.async {
         guard micPermissionGranted,

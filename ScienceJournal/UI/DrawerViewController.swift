@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import AVFoundation
 import UIKit
 
@@ -98,26 +100,34 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
 
   /// The notes view controller.
   var notesViewController: NotesViewController {
+    // swiftlint:disable force_cast
     return drawerItems.viewControllerForKey(DrawerItemKeys.notesViewControllerKey)
         as! NotesViewController
+    // swiftlint:enable force_cast
   }
 
   /// The observe view controller.
   var observeViewController: ObserveViewController {
+    // swiftlint:disable force_cast
     return drawerItems.viewControllerForKey(DrawerItemKeys.observeViewControllerKey)
         as! ObserveViewController
+    // swiftlint:enable force_cast
   }
 
   /// The camera view controller.
   var cameraViewController: CameraViewController {
+    // swiftlint:disable force_cast
     return drawerItems.viewControllerForKey(DrawerItemKeys.cameraViewControllerKey)
         as! CameraViewController
+    // swiftlint:enable force_cast
   }
 
   /// The photo library view controller.
   var photoLibraryViewController: PhotoLibraryViewController {
+    // swiftlint:disable force_cast
     return drawerItems.viewControllerForKey(DrawerItemKeys.photoLibraryViewControllerKey)
         as! PhotoLibraryViewController
+    // swiftlint:enable force_cast
   }
 
   /// The view controller currently being shown.
@@ -125,7 +135,9 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
 
   /// The drawer view.
   var drawerView: DrawerView {
+    // swiftlint:disable force_cast
     return view as! DrawerView
+    // swiftlint:enable force_cast
   }
 
   /// Whether or not the drawer is being displayed as a sidebar.
@@ -266,7 +278,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///   - animated: Whether or not to animate. Default is true.
   ///   - completion: Called when setting the position to half completes, if it can open to half.
   ///                 Otherwise called immediately.
-  func setPositionToHalf(animated: Bool = true, completion: (() -> ())? = nil) {
+  func setPositionToHalf(animated: Bool = true, completion: (() -> Void)? = nil) {
     guard drawerView.canOpenHalf && !isDisplayedAsSidebar else {
       completion?()
       return
@@ -280,7 +292,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///   - animated: Whether or not to animate. Default is true.
   ///   - completion: Called when setting the position to peeking completes, if it can open to
   ///                 peeking. Otherwise called immediately.
-  func setPositionToPeeking(animated: Bool = true, completion: (() -> ())? = nil) {
+  func setPositionToPeeking(animated: Bool = true, completion: (() -> Void)? = nil) {
     guard !isDisplayedAsSidebar else { completion?(); return }
     setPosition(drawerView.peekingPosition, animated: animated, completion: completion)
   }
@@ -313,7 +325,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///
   /// - Parameter completion: Called when the drawer position is set or immediately if there will be
   ///                         no position change.
-  func minimizeFromFull(completion: (() -> ())? = nil) {
+  func minimizeFromFull(completion: (() -> Void)? = nil) {
     guard !isDisplayedAsSidebar && isOpenFull else { completion?(); return }
     if drawerView.canOpenHalf {
       setPositionToHalf(completion: completion)
@@ -326,7 +338,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///
   /// - Parameter completion: Called when setting the position to half completes if it was full.
   ///                         Otherwise called immediately.
-  func setToCustomPositionIfFull(completion: (() -> ())? = nil) {
+  func setToCustomPositionIfFull(completion: (() -> Void)? = nil) {
     if isOpenFull {
       setPositionToCustom(completion: completion)
     } else {
@@ -340,7 +352,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///   - animated: Whether or not to animate. Default is true.
   ///   - completion: Called when setting the position to custom completes, if it can open to
   ///                 custom. Otherwise called immediately.
-  func setPositionToCustom(animated: Bool = true, completion: (() -> ())? = nil) {
+  func setPositionToCustom(animated: Bool = true, completion: (() -> Void)? = nil) {
     guard !isDisplayedAsSidebar && drawerView.canOpenToCustomPosition,
         let customDrawerPosition = drawerView.customPosition else { completion?(); return }
     setPosition(customDrawerPosition, animated: animated, completion: completion)
@@ -432,7 +444,7 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   ///   - completion: Called when setting the position completes.
   private func setPosition(_ position: DrawerPosition,
                            animated: Bool = true,
-                           completion: (() -> ())? = nil) {
+                           completion: (() -> Void)? = nil) {
     drawerView.panToPosition(position, animated: animated, completion: completion)
   }
 
@@ -595,3 +607,5 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   }
 
 }
+
+// swiftlint:enable type_length

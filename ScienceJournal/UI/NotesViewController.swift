@@ -33,7 +33,9 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
   weak var delegate: NotesViewControllerDelegate?
 
   var notesView: NotesView {
+    // swiftlint:disable force_cast
     return view as! NotesView
+    // swiftlint:enable force_cast
   }
 
   // Cached text height, to only pan the drawer up or down if the text height has changed.
@@ -213,7 +215,7 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
     guard textViewHasTextToSave, let text = notesView.textView.text else { return }
 
     clearText()
-    let saveText: () -> () = {
+    let saveText: () -> Void = {
       self.delegate?.notesViewController(self, didCreateTextForNote: text)
     }
 
@@ -361,7 +363,6 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
 
     animateForKeyboardNotification(notification)
   }
-
 
   @objc func handleKeyboardDidShowNotification(_ notification: Notification) {
     animateForKeyboardNotification(notification)

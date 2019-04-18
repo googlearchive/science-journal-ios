@@ -30,7 +30,7 @@ class PopUpMenuCell: UICollectionViewCell {
 
   /// The icon.
   var icon: UIImage? {
-    didSet{
+    didSet {
       guard let icon = icon else {
         if oldValue != nil {
           stackView.removeArrangedSubview(imageView)

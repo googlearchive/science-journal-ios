@@ -273,7 +273,7 @@ extension DocumentManager {
                                   experimentURL: newExperimentURL,
                                   sensorDataManager: sensorDataManager,
                                   metadataManager: metadataManager)
-      let observer = BlockObserver { (operation, errors) in
+      let observer = BlockObserver { (operation, _) in
         if operation.didFinishSuccessfully {
           self.metadataManager.addImportedExperiment(withID: newExperimentID)
 
@@ -291,7 +291,7 @@ extension DocumentManager {
     }
 
     let groupOperation = GroupOperation(operations: importOperations)
-    let groupObserver = BlockObserver { (operation, errors) in
+    let groupObserver = BlockObserver { (_, _) in
       completion?()
     }
     groupOperation.addObserver(groupObserver)

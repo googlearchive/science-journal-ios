@@ -24,6 +24,7 @@ enum SensorDataManagerError: Error {
   case addingSensorDataFailed
 }
 
+// swiftlint:disable type_body_length file_length
 /// The data manager for Core Data.
 open class SensorDataManager {
 
@@ -204,7 +205,7 @@ open class SensorDataManager {
   ///   - block: The block to perform.
   func performChanges(andWait wait: Bool = false,
                       save: Bool = false,
-                      block: @escaping () -> ()) {
+                      block: @escaping () -> Void) {
     let changes = {
       block()
       if save {
@@ -366,7 +367,7 @@ open class SensorDataManager {
       }
 
       let statsAdjuster = TrialStatsAdjuster(trial: trial, sensorData: sensorData)
-      statsAdjuster.recalculateStats() { trialStats in
+      statsAdjuster.recalculateStats { trialStats in
         trial.trialStats = trialStats
         trial.trialStats.forEach { $0.status = .valid }
         let userInfo: [String: Any] =
@@ -668,3 +669,4 @@ open class SensorDataManager {
   }
 
 }
+// swiftlint:enable type_body_length file_length

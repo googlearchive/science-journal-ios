@@ -35,7 +35,7 @@ class ChartControllerTest: XCTestCase, ChartControllerDelegate {
                           DataPoint(x: 5678, y: 9)]
 
   // This closure is run when a chart's data finishes loading. Put asserts that rely on data here.
-  var didFinishLoadingClosure: (() -> ())?
+  var didFinishLoadingClosure: (() -> Void)?
 
   override func setUp() {
     super.setUp()

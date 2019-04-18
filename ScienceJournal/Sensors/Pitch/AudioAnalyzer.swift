@@ -69,14 +69,14 @@ final class AudioAnalyzer {
     }
 
     let tallestPeak = peaks[0]
-    if (peaks.count == 1) {
+    if peaks.count == 1 {
       return tallestPeak.goertzelFilteredFrequency
     }
 
     // Determine the fundamental frequency by examining harmonic ratios.
     var fundamentalFrequency = determineFundamentalFrequencyFromHarmonics()
 
-    if (fundamentalFrequency == nil) {
+    if fundamentalFrequency == nil {
       // No harmonics were recognized. Return the frequency of the tallest peak.
       fundamentalFrequency = tallestPeak.goertzelFilteredFrequency
     }
@@ -135,13 +135,13 @@ final class AudioAnalyzer {
       for b in a + 1..<maxHarmonic {
         // Skip ratios if we've already looked at an equivalent ratio.
         // For instance, we skip 2:4 because we already looked at 1:2.
-        if (AudioAnalyzer.gcd(a, b) != 1) {
+        if AudioAnalyzer.gcd(a, b) != 1 {
           continue
         }
         let r = Double(b) / Double(a)
         let error = abs(ratio - r)
-        if (error <= 0.01) {
-          if (error < smallestError) {
+        if error <= 0.01 {
+          if error < smallestError {
             smallestError = error
             termA = a
             termB = b
@@ -150,7 +150,7 @@ final class AudioAnalyzer {
         }
       }
     }
-    if (foundHarmonicRatio) {
+    if foundHarmonicRatio {
       return Harmonic.addHarmonic(peakA: peakA, peakB: peakB, termA: termA, termB: termB)
     }
     return nil
@@ -160,7 +160,7 @@ final class AudioAnalyzer {
   private static func gcd(_ a: Int, _ b: Int) -> Int {
     var a = a
     var b = b
-    while (b > 0) {
+    while b > 0 {
       let temp = b
       b = a % b
       a = temp
@@ -185,7 +185,7 @@ final class AudioAnalyzer {
     // Determine the appropriate Integer key, based on the given fundamentalFrequency.
     let roundedFrequency = Int(round(fundamentalFrequency))
     // Look for existing keys close to the rounded frequency.
-    var frequencies: [Double]? = nil
+    var frequencies: [Double]?
 
     let sortedFundamentalFrequencies = mapOfFundamentalFrequencies.sorted {
       let (roundedFrequency1, _) = $0
@@ -193,13 +193,13 @@ final class AudioAnalyzer {
       return roundedFrequency1 > roundedFrequency2
     }
     for (key, existingFrequencies) in sortedFundamentalFrequencies {
-      if (abs(key - roundedFrequency) < 10) {
+      if abs(key - roundedFrequency) < 10 {
         frequencies = existingFrequencies
         break
       }
     }
 
-    if (frequencies == nil) {
+    if frequencies == nil {
       // No keys are close enough to roundedFrequency.
       frequencies = []
     }
@@ -208,10 +208,9 @@ final class AudioAnalyzer {
     mapOfFundamentalFrequencies[roundedFrequency] = frequencies
   }
 
-
   /// Chooses the best fundamental frequency based on what has been added to the
   /// mapOfFundamentalFrequencies.
-  private func chooseBestFundamentalFrequency() -> Double{
+  private func chooseBestFundamentalFrequency() -> Double {
     // mapOfFundamentalFrequencies contains one or more approximate frequencies (keys),
     // each of which is associated with one or more actual frequencies. The number of
     // actual frequencies corresponds to the number of harmonic ratios that indicate that
@@ -223,8 +222,8 @@ final class AudioAnalyzer {
     // of actual frequencies, we could choose the one with the lower approximate frequency.
     var bestFrequencies: [Double] = []
 
-    mapOfFundamentalFrequencies.forEach { (key: Int, frequencies: [Double]) in
-      if (frequencies.count > bestFrequencies.count) {
+    mapOfFundamentalFrequencies.forEach { (_, frequencies: [Double]) in
+      if frequencies.count > bestFrequencies.count {
         bestFrequencies = frequencies
       }
     }

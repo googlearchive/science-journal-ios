@@ -21,7 +21,7 @@ extension UITextView {
   /// Commits any pending autocomplete suggestions to the view's text.
   func commitPendingAutocomplete() {
     if isFirstResponder {
-      // This is a hack that commits the autocomplete suggestion without firing keyboard
+      // This is a workaround that commits the autocomplete suggestion without firing keyboard
       // notifications the way `resignFirstResponder()` does.
       inputDelegate?.selectionWillChange(self)
       inputDelegate?.selectionDidChange(self)

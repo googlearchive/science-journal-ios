@@ -4,6 +4,7 @@ platform :ios, MINIMUM_IOS_VERSION
 
 def shared_test_pods
   pod 'Protobuf', '~> 3.5.0', :inhibit_warnings => true
+  pod 'SwiftLint'
 end
 
 target 'ScienceJournal' do

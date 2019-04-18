@@ -1,0 +1,27 @@
+excluded:
+  - Pods
+  - Protos
+  - ScienceJournalTests
+  - ScienceJournalUITests
+  - third_party
+
+line_length:
+  warning: 100
+
+file_length:
+  warning: 600 # We have some longer file length we should reduce.
+
+function_body_length:
+  warning: 110 # We have some longer function bodies we should reduce.
+
+type_body_length:
+  warning: 314 # We have some offenders that should be cleaned up.
+
+disabled_rules:
+  - closure_parameter_position  # Newlines can conflict with having params on same line as opening brace.
+  - colon # Problematic for newlines.
+  - identifier_name # Generates false positives for max length.
+  - todo # We have todos and are ok with that.
+  - type_name # Types should be as verbose as needed, we also check during code review.
+  - trailing_comma # Google rules say we need a trailing comma.
+  - multiple_closures_with_trailing_closure # We're ok with this.

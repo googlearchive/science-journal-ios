@@ -173,6 +173,7 @@ PODS:
   - MotionInterchange (1.6.0)
   - Protobuf (3.5.0)
   - SSZipArchive (2.1.1)
+  - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - GoogleAPIClientForREST/Drive (~> 1.2.1)
@@ -208,6 +209,7 @@ DEPENDENCIES:
   - MaterialComponents/Typography
   - Protobuf (~> 3.5.0)
   - SSZipArchive (= 2.1.1)
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -220,6 +222,7 @@ SPEC REPOS:
     - MotionInterchange
     - Protobuf
     - SSZipArchive
+    - SwiftLint
 
 SPEC CHECKSUMS:
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
@@ -231,7 +234,8 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 8412ac5c073faaca0435da5b2344a4856c5f2353
+PODFILE CHECKSUM: 4aff6b53fddb53167d74b1576672ac6e1c17f438
 
 COCOAPODS: 1.6.1

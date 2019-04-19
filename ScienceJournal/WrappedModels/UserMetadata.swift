@@ -66,7 +66,9 @@ class UserMetadata {
   /// - Parameter proto: A user metadata proto.
   init(proto: GSJUserMetadata) {
     _experimentOverviews = proto.experimentsArray.map {
+      // swiftlint:disable force_cast
       ExperimentOverview(proto: $0 as! GSJExperimentOverview)
+      // swiftlint:enable force_cast
     }
     fileVersion = FileVersion(proto: proto.fileVersion)
     backingProto = proto

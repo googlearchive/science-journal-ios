@@ -39,8 +39,10 @@ public class LocalSyncStatus {
   ///
   /// - Parameter proto: A `GSJLocalSyncStatus` proto.
   init(proto: GSJLocalSyncStatus) {
+    // swiftlint:disable force_cast
     experimentStatuses =
         proto.experimentStatusArray.map { ExperimentStatus(proto: $0 as! GSJExperimentStatus) }
+    // swiftlint:enable force_cast
     backingProto = proto
   }
 

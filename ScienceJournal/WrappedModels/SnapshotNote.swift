@@ -35,7 +35,9 @@ class SnapshotNote: Note {
   required init(proto: GSJLabel) {
     if let snapshotValue = try? GSJSnapshotLabelValue(data: proto.protoData) {
       snapshots = snapshotValue.snapshotsArray.map { snapshotProto in
+        // swiftlint:disable force_cast
         SensorSnapshot(proto: snapshotProto as! GSJSnapshotLabelValue_SensorSnapshot)
+        // swiftlint:enable force_cast
       }
     } else {
       snapshots = [SensorSnapshot]()

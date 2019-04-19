@@ -165,8 +165,9 @@ class TrialStats {
     guard let index = index(for: type) else {
       return nil
     }
-
+    // swiftlint:disable force_cast
     let sensorStat = proto.sensorStatsArray[index] as! GSJSensorStat
+    // swiftlint:enable force_cast
     return sensorStat.statValue
   }
 

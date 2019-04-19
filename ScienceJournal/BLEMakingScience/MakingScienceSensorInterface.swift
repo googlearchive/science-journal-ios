@@ -157,7 +157,9 @@ class MakingScienceSensorInterface: BLESensorInterface {
   func presentOptions(from viewController: UIViewController, completion: @escaping () -> Void) {
     presentOptionsCompletionBlock = completion
     let dialogController = MDCDialogTransitionController()
+    // swiftlint:disable force_cast
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    // swiftlint:enable force_cast
     let dialog =
         MakingScienceSensorConfigViewController(analyticsReporter: appDelegate.analyticsReporter)
 

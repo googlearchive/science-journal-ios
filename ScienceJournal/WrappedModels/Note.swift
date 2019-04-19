@@ -91,7 +91,9 @@ public class Note {
   /// - Parameters:
   ///   - proto: A note proto.
   public required init(proto: GSJLabel) {
+    // swiftlint:disable force_cast
     let protoCopy = proto.copy() as! GSJLabel
+    // swiftlint:enable force_cast
     caption = protoCopy.hasCaption ? Caption(proto: protoCopy.caption) : nil
     backingProto = protoCopy
   }
@@ -101,7 +103,9 @@ public class Note {
   ///
   /// - Parameter note: A note.
   convenience init(note: Note) {
+    // swiftlint:disable force_cast
     self.init(proto: note.proto.copy() as! GSJLabel)
+    // swiftlint:enable force_cast
   }
 
   /// Initializes a note with an empty proto.
@@ -139,7 +143,9 @@ public class Note {
   ///   - ID: An optional ID to assign the note copy.
   /// - Returns: A copy of the note.
   private func createNoteCopy<T: Note>(note: Note, ID: String? = nil) -> T {
+    // swiftlint:disable force_cast
     let noteCopy = T(proto: self.proto.copy() as! GSJLabel)
+    // swiftlint:enable force_cast
     if let ID = ID {
       noteCopy.ID = ID
     }

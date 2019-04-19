@@ -30,7 +30,9 @@ protocol TimeAxisControllerDelegate: class {
 class TimeAxisController: UIViewController {
 
   var timeAxisView: TimeAxisView {
+    // swiftlint:disable force_cast
     return view as! TimeAxisView
+    // swiftlint:enable force_cast
   }
 
   weak var delegate: TimeAxisControllerDelegate?

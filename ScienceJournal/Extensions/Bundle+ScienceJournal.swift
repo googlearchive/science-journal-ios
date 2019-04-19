@@ -27,7 +27,9 @@ extension Bundle {
   /// Returns the app version string.
   static var appVersionString: String {
     let dictionary = Bundle.currentBundle.infoDictionary!
+    // swiftlint:disable force_cast
     return dictionary["CFBundleVersion"] as! String
+    // swiftlint:enable force_cast
   }
 
   /// Returns the build number as an integer.

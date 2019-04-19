@@ -169,10 +169,12 @@ public class Trial {
   ///
   /// - Parameter proto: A trial proto.
   init(proto: GSJTrial) {
+    // swiftlint:disable force_cast
     let protoCopy = proto.copy() as! GSJTrial
     sensorLayouts = protoCopy.sensorLayoutsArray.map { SensorLayout(proto: $0 as! GSJSensorLayout) }
     trialStats = protoCopy.trialStatsArray.map { TrialStats(proto: $0 as! GSJSensorTrialStats) }
     notes = protoCopy.labelsArray.map { Note.from($0 as! GSJLabel) }
+    // swiftlint:enable force_cast
     caption = protoCopy.hasCaption ? Caption(proto: protoCopy.caption) : nil
     backingProto = protoCopy
   }
@@ -191,7 +193,9 @@ public class Trial {
   ///
   /// - Parameter note: A note.
   convenience init(trial: Trial) {
+    // swiftlint:disable force_cast
     self.init(proto: trial.proto.copy() as! GSJTrial)
+    // swiftlint:enable force_cast
   }
 
   /// Sets the trial's title.

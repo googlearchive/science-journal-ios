@@ -163,16 +163,18 @@ public class Experiment {
   ///   - proto: An experiment proto.
   ///   - ID: A unique ID.
   public init(proto: GSJExperiment, ID: String) {
+    // swiftlint:disable force_cast
     let protoCopy = proto.copy() as! GSJExperiment
     sensorLayouts = protoCopy.sensorLayoutsArray.map { SensorLayout(proto: $0 as! GSJSensorLayout) }
     trials = protoCopy.trialsArray.map { Trial(proto: $0 as! GSJTrial) }
     notes = protoCopy.labelsArray.map { Note.from($0 as! GSJLabel) }
     sensorTriggers =
         protoCopy.sensorTriggersArray.map { SensorTrigger(proto: $0 as! GSJSensorTrigger) }
-    fileVersion = FileVersion(proto: protoCopy.fileVersion)
     availableSensors =
         protoCopy.availableSensorsArray.map {SensorEntry(proto: $0 as! GSJExperiment_SensorEntry) }
+    // swiftlint:disable force_cast
     changes = protoCopy.changesArray.map { ExperimentChange(proto: $0 as! GSJChange) }
+    fileVersion = FileVersion(proto: protoCopy.fileVersion)
     backingProto = protoCopy
     self.ID = ID
   }
@@ -209,7 +211,9 @@ public class Experiment {
   /// - Parameter searchId: The sensor id to search for.
   /// - Returns: True if the associated sensor is enabled, otherwise false.
   func isSensorEnabled(_ searchId: String) -> Bool {
+    // swiftlint:disable force_cast
     let availableSensors = proto.availableSensorsArray as! [GSJExperiment_SensorEntry]
+    // swiftlint:enable force_cast
     let availableIDs = availableSensors.compactMap { $0.sensorId }
     return availableIDs.contains(searchId)
   }

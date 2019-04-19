@@ -50,8 +50,10 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   public init(proto: GSJExperimentLibrary, clock: Clock = Clock()) {
     self.clock = clock
     folderID = proto.hasFolderId ? proto.folderId : nil
+    // swiftlint:disable force_cast
     syncExperiments =
         proto.syncExperimentArray.map { SyncExperiment(proto: $0 as! GSJSyncExperiment) }
+    // swiftlint:enable force_cast
   }
 
   /// The clock used for modified and opened dates.

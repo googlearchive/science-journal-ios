@@ -20,14 +20,18 @@ import UIKit
 class GradientView: UIView {
 
   private var gradientLayer: CAGradientLayer {
+    // swiftlint:disable force_cast
     return layer as! CAGradientLayer
+    // swiftlint:enable force_cast
   }
 
   /// An array of colors for the gradient, starting at the top and going down.
   var colors: [UIColor]? {
     get {
       guard let cgColors = gradientLayer.colors else { return nil }
+      // swiftlint:disable force_cast
       return cgColors.map { UIColor(cgColor: $0 as! CGColor) }
+      // swiftlint:enable force_cast
     }
     set {
       if let colors = newValue {

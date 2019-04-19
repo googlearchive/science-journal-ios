@@ -23,8 +23,10 @@ extension NSManagedObjectContext {
   ///
   /// - Returns: The newly inserted object.
   func insertObject<A: NSManagedObject>() -> A where A: Managed {
+    // swiftlint:disable force_cast
     return NSEntityDescription.insertNewObject(forEntityName: A.entityName,
                                                into: self) as! A
+    // swiftlint:enable force_cast
   }
 
 }

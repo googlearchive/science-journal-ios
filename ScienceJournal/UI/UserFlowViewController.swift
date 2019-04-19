@@ -26,6 +26,8 @@ protocol UserFlowViewControllerDelegate: class {
   func presentAccountSelector()
 }
 
+// swiftlint:disable type_body_length
+// TODO: Consider breaking this class into multiple classes for each delegate.
 /// Manages the navigation of the user flow which begins after a user has signed in and includes
 /// all management of data such as viewing, creating, and adding to experiments.
 class UserFlowViewController: UIViewController, ExperimentsListViewControllerDelegate,
@@ -1084,4 +1086,4 @@ extension UserFlowViewController: ExperimentStateListener {
   }
 }
 
-// swiftlint:enable file_length
+// swiftlint:enable file_length, type_body_length

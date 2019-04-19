@@ -43,6 +43,7 @@ protocol TrialDetailViewControllerDelegate: class {
                                                            forExperiment experiment: Experiment)
 }
 
+// swiftlint:disable type_body_length
 /// The detail view of a Trial which shows all the information, sensors and notes from a Trial,
 /// and allows more notes to be added. Sensors are shown in a paginated, sticky view.
 class TrialDetailViewController: MaterialHeaderViewController,
@@ -1642,4 +1643,4 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
 }
 
-// swiftlint:enable file_length
+// swiftlint:enable file_length type_body_length

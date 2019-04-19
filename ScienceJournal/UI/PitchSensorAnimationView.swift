@@ -33,6 +33,7 @@ fileprivate extension MDCTypography {
 
 }
 
+// swiftlint:disable type_body_length
 /// Animation view for the pitch sensor.
 class PitchSensorAnimationView: SensorAnimationView {
 
@@ -505,3 +506,5 @@ class PitchSensorAnimationView: SensorAnimationView {
   }
 
 }
+
+// swiftlint:enable type_body_length

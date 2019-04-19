@@ -76,6 +76,8 @@ protocol ObserveViewControllerDelegate: class {
 
 }
 
+// swiftlint:disable type_body_length
+// TODO: Consider breaking into multiple files for each delegate.
 /// Manages the view that displays sensor data, both for observing and recording.
 open class ObserveViewController: ScienceJournalCollectionViewController, ChartControllerDelegate,
                                   DrawerItemViewController, DrawerPositionListener,
@@ -1664,4 +1666,4 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
 }
 
-// swiftlint:enable file_length
+// swiftlint:enable file_length, type_body_length

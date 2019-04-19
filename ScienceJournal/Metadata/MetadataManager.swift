@@ -47,6 +47,7 @@ enum MetadataManagerError: Error {
   }
 }
 
+// swiftlint:disable type_body_length
 /// Stores experiment and trial metadata for Science Journal.
 public class MetadataManager {
 
@@ -1822,4 +1823,4 @@ public class MetadataManager {
 
 }
 
-// swiftlint:enable file_length
+// swiftlint:enable file_length, type_body_length

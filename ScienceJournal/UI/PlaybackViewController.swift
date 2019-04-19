@@ -25,6 +25,7 @@ protocol PlaybackViewControllerDelegate: class {
   func playbackViewControllerDidChangePlayheadTimestamp(forSensorID sensorID: String)
 }
 
+// swiftlint:disable type_body_length
 /// Responsible for presentation of a chart in review mode. Overlays a playback view onto a chart
 /// view. User can tap a play button to play data over time or scrub the timeline to view specific
 /// points in time.
@@ -578,3 +579,5 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
   }
 
 }
+
+// swiftlint:enable type_body_length

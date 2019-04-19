@@ -151,7 +151,7 @@ class ExperimentDataParser {
       timestamp = Timestamp(note.timestamp)
     }
 
-    switch(note) {
+    switch note {
     case let textNote as TextNote:
       return DisplayTextNoteModel(ID: note.ID,
                                   trialID: trial?.ID,

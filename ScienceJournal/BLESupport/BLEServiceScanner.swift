@@ -177,7 +177,7 @@ class BLEServiceScanner: NSObject, CBCentralManagerDelegate {
       resumeScanning()
     }
 
-    if (previouslyAvailable != isBluetoothAvailable) {
+    if previouslyAvailable != isBluetoothAvailable {
       delegate?.serviceScannerBluetoothAvailabilityChanged(self)
     }
   }

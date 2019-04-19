@@ -328,7 +328,7 @@ class ChartData {
                           endIndex: endIndex,
                           preferStart: preferStart,
                           tolerance: searchTolerance)
-    } else if (midValue > searchTimestamp) {
+    } else if midValue > searchTimestamp {
       return binarySearch(forTimestamp: searchTimestamp,
                           startIndex: startIndex,
                           endIndex: midIndex,
@@ -349,7 +349,7 @@ class ChartData {
                              endIndex: dataPoints.count - 1,
                              preferStart: false,
                              tolerance: 1)
-    guard (index >= throwAwayThreshold) else { return }
+    guard index >= throwAwayThreshold else { return }
     dataPoints.removeSubrange(0..<index)
   }
 
@@ -370,7 +370,7 @@ class ChartData {
       index = min(index + 1, endIndex)
     }
 
-    guard (endIndex - index >= throwAwayThreshold) else { return }
+    guard endIndex - index >= throwAwayThreshold else { return }
     dataPoints.removeSubrange(index..<endIndex)
   }
 
@@ -397,7 +397,7 @@ class ChartData {
                                   preferStart: false,
                                   tolerance: 1)
 
-    guard (indexEnd - indexStart >= throwAwayThreshold) else { return }
+    guard indexEnd - indexStart >= throwAwayThreshold else { return }
     dataPoints.removeSubrange(indexStart..<indexEnd)
   }
 

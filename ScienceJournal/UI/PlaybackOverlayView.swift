@@ -26,7 +26,7 @@ class PlaybackOverlayView: UIView {
   private class DottedLineView: ShapeView {
     override init(color: UIColor, frame: CGRect, coder aDecoder: NSCoder?) {
       super.init(color: color, frame: frame, coder: aDecoder)
-      shapeLayer.lineDashPattern = [2,2]
+      shapeLayer.lineDashPattern = [2, 2]
       shapeLayer.strokeColor = UIColor.lightGray.cgColor
       shapeLayer.lineWidth = 1
     }

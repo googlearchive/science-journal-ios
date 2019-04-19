@@ -22,13 +22,13 @@ class AccelerometerAnimationView: ImageAnimationView {
   override func imageIndex(forValue value: Double, minValue: Double, maxValue: Double) -> Int {
     // Because acceleromter values have a predictable normal range, calculate index based on actual
     // value.
-    if (value > 3.0) {
+    if value > 3.0 {
       return 4
-    } else if (value > 0.5) {
+    } else if value > 0.5 {
       return 3
-    } else if (value > -0.5) {
+    } else if value > -0.5 {
       return 2
-    } else if (value > -3) {
+    } else if value > -3 {
       return 1
     } else {
       return 0

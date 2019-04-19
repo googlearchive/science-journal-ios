@@ -63,12 +63,12 @@ final class SoundUtils {
     var multiplier = 1.0
     while calculatedPianoNoteFrequencies.count < numberOfPianoKeys {
       for note in SoundUtils.highNotes {
-        if (calculatedPianoNoteFrequencies.count == numberOfPianoKeys) {
+        if calculatedPianoNoteFrequencies.count == numberOfPianoKeys {
           break
         }
         calculatedPianoNoteFrequencies.append(note * multiplier)
       }
-      multiplier = multiplier / 2
+      multiplier /= 2
     }
     calculatedPianoNoteFrequencies.reverse()
   }

@@ -187,7 +187,7 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
                                         with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
 
-    coordinator.animate(alongsideTransition: { (context) in
+    coordinator.animate(alongsideTransition: { (_) in
       self.collectionView.visibleCells.forEach({ (cell) in
         if let photoLibraryCell = cell as? PhotoLibraryCell {
           photoLibraryCell.setImageDimensionConstraints(with: self.itemSize)

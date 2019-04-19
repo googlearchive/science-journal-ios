@@ -336,8 +336,12 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   func experimentViewControllerAddTrial(_ trial: Trial, recording isRecording: Bool) {}
   func experimentViewControllerDeleteTrialCompleted(_ trial: Trial,
                                                     fromExperiment experiment: Experiment) {}
+
+  // swiftlint:disable vertical_parameter_alignment
   func experimentViewControllerShouldPermanentlyDeleteTrial(_ trial: Trial,
       fromExperiment experiment: Experiment) {}
+  // swiftlint:enable vertical_parameter_alignment
+
   func experimentViewControllerDidFinishRecordingTrial(_ trial: Trial,
                                                        forExperiment experiment: Experiment) {}
 
@@ -376,8 +380,8 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
     analyticsReporter.track(.claimingViewTrialNote(displayNote))
   }
 
-  func trialDetailViewControllerDeletePictureNoteCompleted(_
-      pictureNote: PictureNote, forExperiment experiment: Experiment) {}
+  func trialDetailViewControllerDeletePictureNoteCompleted(_ pictureNote: PictureNote,
+                                                           forExperiment experiment: Experiment) {}
 
   // MARK: - UINavigationControllerDelegate
 

@@ -145,7 +145,7 @@ class ToneGenerator {
   /// Block called when the tone generator starts or stops playing. Could be due to a user action,
   /// route change or interruption. It is called with true if the tone generator is playing a tone,
   /// otherwise false.
-  private var playingStateUpdateBlock: ((Bool) -> ())?
+  private var playingStateUpdateBlock: ((Bool) -> Void)?
 
   /// The frequency the tone generator should animate to if the `soundType`
   /// `shouldAnimateToNextFrequency`, otherwise it sets the `tonePlayerNode`'s `frequency`
@@ -237,7 +237,7 @@ class ToneGenerator {
   /// action, route change or interruption.
   ///
   /// - Parameter block: Called with true if the tone generator is playing a tone, otherwise false.
-  func setPlayingStateUpdateBlock(_ block: ((Bool) -> ())?) {
+  func setPlayingStateUpdateBlock(_ block: ((Bool) -> Void)?) {
     block?(isPlayingTone)
     playingStateUpdateBlock = block
   }
@@ -285,7 +285,10 @@ class ToneGenerator {
     tonePlayerNode = nil
     engine = nil
     AudioSession.shared.endUsing()
+
+    // swiftlint:disable notification_center_detachment
     NotificationCenter.default.removeObserver(self)
+    // swiftlint:enable notification_center_detachment
   }
 
   @objc private func frequencyChangeTimerFired() {

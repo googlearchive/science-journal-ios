@@ -41,7 +41,7 @@ class PitchedSoundType : SoundType {
     var pitch = pitchMin
     while pitch <= pitchMax {
       for index in 0..<scale.endIndex {
-        if (pitch + scale[index] > pitchMax) {
+        if pitch + scale[index] > pitchMax {
           break
         }
         pitches.append(pitch + scale[index])

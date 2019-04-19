@@ -40,15 +40,15 @@ final class MovingAverage {
 
   /// Inserts value and then returns the current moving average.
   func insertAndReturnAverage(_ n: Double) -> Double {
-    if (size == bufferSize) {
+    if size == bufferSize {
       let removed = buffer[next]
-      sum = sum - removed
+      sum -= removed
     }
     buffer[next] = n
     sum += n
     next = (next + 1) % bufferSize
-    if (size < bufferSize) {
-      size = size + 1
+    if size < bufferSize {
+      size += 1
     }
     return sum / Double(size)
   }

@@ -27,10 +27,10 @@ extension Int {
     var extraEndShift = MemoryLayout.size(ofValue: originalValue) * numberOfBitsInAByte - 1
 
     originalValue = originalValue >> 1
-    while (originalValue > 0) {
+    while originalValue > 0 {
       reversedValue = reversedValue << 1
       reversedValue |= originalValue & 1
-      extraEndShift = extraEndShift - 1
+      extraEndShift -= 1
       originalValue = originalValue >> 1
     }
     // Shift when the original value's highest bits are zero.

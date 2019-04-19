@@ -42,7 +42,7 @@ class ConductorSoundType: PitchedSoundType {
     if value < currentMinimumValue {
       currentMinimumValue = value
     }
-    if (value > currentMaximumValue) {
+    if value > currentMaximumValue {
       currentMaximumValue = value
     }
 

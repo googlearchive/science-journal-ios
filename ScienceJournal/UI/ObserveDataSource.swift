@@ -213,7 +213,7 @@ class ObserveDataSource: SensorDelegate {
     if availableSensorIDs.isEmpty {
       return usableSensors
     } else {
-      return usableSensors.filter{ availableSensorIDs.contains($0.sensorId)  }
+      return usableSensors.filter { availableSensorIDs.contains($0.sensorId) }
     }
   }
 

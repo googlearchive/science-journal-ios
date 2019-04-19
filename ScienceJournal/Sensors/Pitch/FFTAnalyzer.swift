@@ -61,7 +61,7 @@ final class FFTAnalyzer {
     // At this point, peaks is sorted by FFT value, in descending order.
     // Copy the samples into the a array, converting shorts to doubles.
     for sampleIndex in 0..<AudioAnalyzer.bufferSize {
-      if (sampleIndex < samples.count) {
+      if sampleIndex < samples.count {
         a[sampleIndex] = Double(samples[sampleIndex]) / Double(Int16.max)
       } else {
         a[sampleIndex] = 0.0
@@ -101,14 +101,14 @@ final class FFTAnalyzer {
     var peaks: [Peak] = []
     for peakIndex in 0...indexOfHighestNote {
       // AudioAnalyzer and FFTAnalyzer.
-      if (movingAverageValues[peakIndex] < 2.0 * mean) {
+      if movingAverageValues[peakIndex] < 2.0 * mean {
         // Not a peak because the value is too low.
         // Peaks must be at least two times the global mean.
         continue
       }
 
       let prominenceOfPeak = determineProminenceOfPeak(index: peakIndex, boundaryValue: mean / 10)
-      if (prominenceOfPeak > 1.0) {
+      if prominenceOfPeak > 1.0 {
         let indexOfMaxMagnitude = findIndexOfMaxMagnitude(index: peakIndex)
         let frequencyEstimate = indexToFrequency(index: indexOfMaxMagnitude)
         peaks.append(
@@ -133,7 +133,7 @@ final class FFTAnalyzer {
 
     let highestFft = peaks[0].fftValue
     for i in (1..<peaks.count).reversed() {
-      if (i < 10 && peaks[i].fftValue >= highestFft / 25) {
+      if i < 10 && peaks[i].fftValue >= highestFft / 25 {
         break
       }
       peaks.remove(at: i)
@@ -149,7 +149,7 @@ final class FFTAnalyzer {
 
     for shiftIndex in (1..<AudioAnalyzer.bufferSize) {
       let j = shiftIndex.reverseBits() >>> shift
-      if (j > shiftIndex) {
+      if j > shiftIndex {
         var temp = a[j]
         a[j] = a[shiftIndex]
         a[shiftIndex] = temp
@@ -161,7 +161,7 @@ final class FFTAnalyzer {
 
     // Butterfly updates.
     var firstLevel = 2
-    while (firstLevel <= AudioAnalyzer.bufferSize) {
+    while firstLevel <= AudioAnalyzer.bufferSize {
       let lHalf = firstLevel / 2
       for secondLevel in 0..<lHalf {
         let kth = -2 * Double(secondLevel) * Double.pi / Double(firstLevel)
@@ -184,7 +184,7 @@ final class FFTAnalyzer {
           b[index2] = b[index2] + taoB
         }
       }
-      firstLevel = firstLevel + firstLevel
+      firstLevel += firstLevel
     }
   }
 
@@ -195,11 +195,9 @@ final class FFTAnalyzer {
     var maxMagnitude = magnitudes[index]
 
     let maxOrZero = max(0, index - FFTAnalyzer.movingAverageWindowSize + 1)
-    for magnitudeIndex in maxOrZero..<index {
-      if (magnitudes[magnitudeIndex] > maxMagnitude) {
-        indexOfMaxMagnitude = magnitudeIndex
-        maxMagnitude = magnitudes[indexOfMaxMagnitude]
-      }
+    for magnitudeIndex in maxOrZero..<index where magnitudes[magnitudeIndex] > maxMagnitude {
+      indexOfMaxMagnitude = magnitudeIndex
+      maxMagnitude = magnitudes[indexOfMaxMagnitude]
     }
     return indexOfMaxMagnitude
   }
@@ -225,22 +223,22 @@ final class FFTAnalyzer {
     var indexStartArea = index - 1
     var indexEndArea = index + 1
 
-    while (indexStartArea >= 0 && indexEndArea < movingAverageValues.count) {
-      if (movingAverageValues[indexStartArea] <= boundaryValue) {
+    while indexStartArea >= 0 && indexEndArea < movingAverageValues.count {
+      if movingAverageValues[indexStartArea] <= boundaryValue {
         break
       }
-      if (movingAverageValues[indexStartArea] > value) {
-        if (index - indexStartArea < 5) {
+      if movingAverageValues[indexStartArea] > value {
+        if index - indexStartArea < 5 {
         // Not a peak because a greater value is nearby.
           return 0
         }
         break
       }
-      if (movingAverageValues[indexEndArea] <= boundaryValue) {
+      if movingAverageValues[indexEndArea] <= boundaryValue {
         break
       }
-      if (movingAverageValues[indexEndArea] > value) {
-        if (indexEndArea - index < 5) {
+      if movingAverageValues[indexEndArea] > value {
+        if indexEndArea - index < 5 {
         // Not a peak because a greater value is nearby.
           return 0
         }
@@ -248,13 +246,13 @@ final class FFTAnalyzer {
       }
       localMean += movingAverageValues[indexStartArea] + movingAverageValues[indexEndArea]
       count += 2
-      indexStartArea = indexStartArea - 1
-      indexEndArea = indexEndArea + 1
+      indexStartArea -= 1
+      indexEndArea += 1
     }
-    localMean = localMean / Double(count)
+    localMean /= Double(count)
 
     // Avoid unexpected divide by zero.
-    if (localMean == 0.0) {
+    if localMean == 0.0 {
       return 0
     }
     return value / localMean

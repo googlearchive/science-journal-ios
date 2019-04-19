@@ -25,7 +25,7 @@ protocol NoteDetailEditCaptionCellDelegate: class {
 }
 
 /// A cell that displays an editable caption for a note.
-class NoteDetailEditCaptionCell: UICollectionViewCell, UITextFieldDelegate  {
+class NoteDetailEditCaptionCell: UICollectionViewCell, UITextFieldDelegate {
 
   // MARK: - Constants
 

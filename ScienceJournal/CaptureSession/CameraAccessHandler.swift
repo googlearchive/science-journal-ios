@@ -24,7 +24,7 @@ class CameraAccessHandler {
   /// - Parameter requestCompletion: Called with the status of the permission (true if granted),
   ///              when access had to be requested.
   /// - Returns: Whether or not permission has been granted.
-  static func checkForPermission(requestCompletion: ((Bool) -> ())? = nil) -> Bool {
+  static func checkForPermission(requestCompletion: ((Bool) -> Void)? = nil) -> Bool {
     let authStatus = AVCaptureDevice.authorizationStatus(for: .video)
     switch authStatus {
     case .denied, .restricted: return false

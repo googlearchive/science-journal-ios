@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
@@ -71,6 +73,7 @@ class GrabberWrapperView: UIView {
 
 }
 
+// swiftlint:disable type_body_length
 /// A container view with a tab bar that slides up from the bottom over a parent view. Can be
 /// minimized (only shows the tab bar), cover the bottom half of the view or display fullscreen
 /// (parent view is hidden).
@@ -279,7 +282,7 @@ open class DrawerView: UIView, MDCTabBarDelegate {
   ///   - completion: Called when the pan completes.
   func panToPosition(_ position: DrawerPosition,
                      animated: Bool = true,
-                     completion: (() -> ())? = nil) {
+                     completion: (() -> Void)? = nil) {
     // Calculate animation duration based on the remaining distance.
     let distanceRemaining = position.panDistance - currentPanDistance
     let remainingRatio = abs(distanceRemaining / maximumPanDistance)
@@ -290,7 +293,7 @@ open class DrawerView: UIView, MDCTabBarDelegate {
     currentPosition = position
     self.updateGrabberAccessibilityLabel()
 
-    func animatePan(completion panCompletion: (() ->())? = nil) {
+    func animatePan(completion panCompletion: (() -> Void)? = nil) {
       UIView.animate(withDuration: duration,
                      delay: 0,
                      options: [.curveEaseOut],
@@ -394,7 +397,7 @@ open class DrawerView: UIView, MDCTabBarDelegate {
   /// full.
   ///
   /// - Parameter customPosition: The custom drawer position.
-  func setCustomPosition(_ position: DrawerPosition){
+  func setCustomPosition(_ position: DrawerPosition) {
     guard position.panDistance < peekingPosition.panDistance &&
         position.panDistance > openFullPosition.panDistance else {
       return
@@ -720,3 +723,5 @@ open class DrawerView: UIView, MDCTabBarDelegate {
   }
 
 }
+
+// swiftlint:enable type_body_length file_length

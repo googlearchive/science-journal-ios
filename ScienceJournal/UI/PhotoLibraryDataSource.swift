@@ -43,7 +43,7 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
     // Photo download progress blocks, keyed by photo asset ID, called with progress, error and
     // whether or not the download is complete.
     private var progressBlocks =
-        [String : (progress: Double, error: Error?, complete: Bool) -> ()]()
+        [String : (progress: Double, error: Error?, complete: Bool) -> Void]()
 
     // MARK: - Public
 
@@ -63,13 +63,13 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
     }
 
     /// Sets a progress block for a photo asset.
-    func setProgressBlock(_ progressBlock: ((Double, Error?, Bool) -> ())?,
+    func setProgressBlock(_ progressBlock: ((Double, Error?, Bool) -> Void)?,
                           for photoAsset: PHAsset) {
       progressBlocks[photoAsset.localIdentifier] = progressBlock
     }
 
     /// Gets a progress block for a photo asset.
-    func progressBlock(for photoAsset: PHAsset) -> ((Double, Error?, Bool) -> ())? {
+    func progressBlock(for photoAsset: PHAsset) -> ((Double, Error?, Bool) -> Void)? {
       return progressBlocks[photoAsset.localIdentifier]
     }
 
@@ -180,7 +180,7 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
   func thumbnailImageForPhotoAsset(at indexPath: IndexPath,
                                    withSize size: CGSize,
                                    contentMode: PHImageContentMode,
-                                   completion: @escaping (UIImage?) -> ()) {
+                                   completion: @escaping (UIImage?) -> Void) {
     guard let photoAssetFetchResult = photoAssetFetchResult,
         let index = photoAssetIndex(for: indexPath) else {
       completion(nil)
@@ -216,8 +216,8 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
   /// - Returns: The photo asset.
   func imageForPhotoAsset(
       at indexPath: IndexPath,
-      downloadDidBegin: @escaping () -> (),
-      completion: @escaping (UIImage?, NSDictionary?, PHAsset?) -> ()) -> PHAsset? {
+      downloadDidBegin: @escaping () -> Void,
+      completion: @escaping (UIImage?, NSDictionary?, PHAsset?) -> Void) -> PHAsset? {
     guard let photoAssetFetchResult = photoAssetFetchResult,
         let index = photoAssetIndex(for: indexPath) else {
       completion(nil, nil, nil)
@@ -289,7 +289,7 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
   ///   - indexPath: The index path.
   ///   - progressBlock: The progress block.
   func setDownloadProgressListener(for indexPath: IndexPath,
-                                   progressBlock: ((Double, Error?, Bool) -> ())?) {
+                                   progressBlock: ((Double, Error?, Bool) -> Void)?) {
     guard let index = photoAssetIndex(for: indexPath),
         let photoAsset = photoAssetFetchResult?.object(at: index) else { return }
     downloadProgressHandler.setProgressBlock(progressBlock, for: photoAsset)

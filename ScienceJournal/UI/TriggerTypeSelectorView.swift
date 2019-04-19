@@ -19,7 +19,7 @@ import UIKit
 import third_party_objective_c_material_components_ios_components_Typography_Typography
 import third_party_sciencejournal_ios_ScienceJournalProtos
 
-protocol TriggerTypeSelectorDelegate {
+protocol TriggerTypeSelectorDelegate: class {
   /// Calls the delegate when the type changes.
   func triggerTypeSelectorView(_ triggerTypeSelectorView: TriggerTypeSelectorView,
                                didSelectType triggerType: GSJTriggerInformation_TriggerActionType)
@@ -29,7 +29,7 @@ protocol TriggerTypeSelectorDelegate {
 class TriggerTypeSelectorView: TriggerOptionSelectorView {
 
   // The delegate.
-  var triggerTypeSelectorDelegate: TriggerTypeSelectorDelegate?
+  weak var triggerTypeSelectorDelegate: TriggerTypeSelectorDelegate?
 
   // MARK: Properties
 

@@ -552,6 +552,8 @@
 		8BE9CECE20E6CF2C00DE796F /* DrawerItemKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE9CECD20E6CF2C00DE796F /* DrawerItemKeys.swift */; };
 		8BF4D0042127366A00752645 /* MarkExperimentDeletedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4D0032127366900752645 /* MarkExperimentDeletedOperation.swift */; };
 		8BF97B951ECE0D130048A929 /* ChartDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF97B941ECE0D130048A929 /* ChartDataTest.swift */; };
+		8BF9DA9D2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DA9C2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift */; };
+		8BF9DA9F2268BF370052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DA9E2268BF370052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift */; };
 		8BFA85C91F71B33B00297471 /* UIDevice+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA85C81F71B33B00297471 /* UIDevice+ScienceJournal.swift */; };
 		8BFA85CB1F71B5DB00297471 /* SensorSpecTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA85CA1F71B5DB00297471 /* SensorSpecTest.swift */; };
 		8BFCF97C1FAA2B5E0030A6DC /* ArchivedFlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCF97B1FAA2B5D0030A6DC /* ArchivedFlagCell.swift */; };
@@ -1195,6 +1197,8 @@
 		8BE9CECD20E6CF2C00DE796F /* DrawerItemKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerItemKeys.swift; sourceTree = "<group>"; };
 		8BF4D0032127366900752645 /* MarkExperimentDeletedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkExperimentDeletedOperation.swift; sourceTree = "<group>"; };
 		8BF97B941ECE0D130048A929 /* ChartDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataTest.swift; sourceTree = "<group>"; };
+		8BF9DA9C2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExistingDataMigrationManagerErrorArray+ScienceJournal.swift"; sourceTree = "<group>"; };
+		8BF9DA9E2268BF370052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift"; sourceTree = "<group>"; };
 		8BFA85C81F71B33B00297471 /* UIDevice+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScienceJournal.swift"; sourceTree = "<group>"; };
 		8BFA85CA1F71B5DB00297471 /* SensorSpecTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorSpecTest.swift; sourceTree = "<group>"; };
 		8BFCF97B1FAA2B5D0030A6DC /* ArchivedFlagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivedFlagCell.swift; sourceTree = "<group>"; };
@@ -2354,6 +2358,7 @@
 				8B111F6A1E412287000400F1 /* Date+ScienceJournal.swift */,
 				68587BA61F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift */,
 				D59CA3D7219F46020082A27B /* Double+ScienceJournal.swift */,
+				8BF9DA9C2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift */,
 				8BD57F4D225BB55900C1C5ED /* FileManager+ScienceJournal.swift */,
 				5C2E4E941EA6B1A700F9AA6D /* GSJBleSensorConfig+ScienceJournal.swift */,
 				8B9ADF901ECF75FB00C7DB7D /* GSJSensorStat+ScienceJournal.swift */,
@@ -2690,6 +2695,7 @@
 			isa = PBXGroup;
 			children = (
 				8B10E9561F87F08B0060A0AD /* ClosedRange+ScienceJournalTest.swift */,
+				8BF9DA9E2268BF370052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift */,
 				8BD3A1091F27B79500A5DDBD /* MDCPalette+ScienceJournalTest.swift */,
 				8BCD2F891F968F0F00CCF8DB /* Sensor+TestHelpers.swift */,
 				680CDF161F88313D00BDE61E /* TimeInterval+ScienceJournalTest.swift */,
@@ -3496,6 +3502,7 @@
 				68BD95651E8DA45100FEB0B2 /* SoundType.swift in Sources */,
 				8BCCAD561EDF593C00278F05 /* PopUpMenuAction.swift in Sources */,
 				687FAA0D202C1162004C1D04 /* SensorTriggerLabelValue.pbobjc.m in Sources */,
+				8BF9DA9D2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift in Sources */,
 				8B0682D220A33E39003DA2A3 /* ExperimentInteractionOptions.swift in Sources */,
 				8B5114EB20B49F53005953BD /* ClaimExperimentListCell.swift in Sources */,
 				680659161EC24EBD0090670C /* String+ScienceJournal.swift in Sources */,
@@ -3631,6 +3638,7 @@
 				5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */,
 				5CCB62B91F86903800F9BB7D /* CSVWriterTest.swift in Sources */,
 				5CB2CF3D223C2C3600F73F6B /* ExperimentDataDeleterTest.swift in Sources */,
+				8BF9DA9F2268BF370052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift in Sources */,
 				8B35F5081EA935D30032FE15 /* MetadataManagerTest.swift in Sources */,
 				5C880BA421936BBF00594166 /* DriveConstructorTestable.swift in Sources */,
 				5C1B09F41F43315800EFA64A /* ZoomRecorderTest.swift in Sources */,

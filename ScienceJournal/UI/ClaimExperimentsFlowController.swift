@@ -232,19 +232,6 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
     return true
   }
 
-  private func
-      migrationErrorsContainDiskSpaceError(_ errors: [ExistingDataMigrationManagerError]) -> Bool {
-    for error in errors {
-      switch error {
-      case .notEnoughFreeDiskSpaceToMigrate(_):
-        return true
-      default:
-        break
-      }
-    }
-    return false
-  }
-
   // MARK: - ClaimExperimentsViewControllerDelegate
 
   func claimExperimentsShowExperiment(withID experimentID: String) {
@@ -268,7 +255,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
             showSnackbar(withMessage: String(format: String.claimExperimentSnackbarMessage,
                                              self.authAccount.email))
             self.dismissClaimFlowIfComplete()
-          } else if self.migrationErrorsContainDiskSpaceError(errors) {
+          } else if errors.containsDiskSpaceError {
             showSnackbar(withMessage: String.claimExperimentDiskSpaceErrorMessage)
           } else {
             showSnackbar(withMessage: String.claimExperimentErrorMessage)
@@ -304,7 +291,7 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
           if errors.isEmpty {
             self.claimExperimentsViewController.dismiss(animated: true)
           } else {
-            if self.migrationErrorsContainDiskSpaceError(errors) {
+            if errors.containsDiskSpaceError {
               showSnackbar(withMessage: String.claimExperimentsDiskSpaceErrorMessage)
             } else {
               showSnackbar(withMessage: String.claimExperimentsErrorMessage)

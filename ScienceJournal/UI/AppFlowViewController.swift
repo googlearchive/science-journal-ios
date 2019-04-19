@@ -477,7 +477,9 @@ extension AppFlowViewController: ExistingDataOptionsDelegate {
       self.existingDataMigrationManager?.migrateAllExperiments(completion: { (errors) in
         spinnerViewController.dismissSpinner() {
           self.showCurrentUserOrSignIn()
-          if !errors.isEmpty {
+          if errors.containsDiskSpaceError {
+            showSnackbar(withMessage: String.claimExperimentsDiskSpaceErrorMessage)
+          } else if !errors.isEmpty {
             showSnackbar(withMessage: String.claimExperimentsErrorMessage)
           }
         }

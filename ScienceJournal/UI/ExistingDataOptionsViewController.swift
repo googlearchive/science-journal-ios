@@ -189,7 +189,7 @@ class ExistingDataOptionsViewController: ScienceJournalCollectionViewController 
           MDCAlertController(title: String.claimAllExperimentsMigrationConfirmationTitle,
                              message: message)
       let claimAction =
-          MDCAlertAction(title: String.claimAllExperimentsConfirmationAction) { (action) in
+          MDCAlertAction(title: String.claimAllExperimentsConfirmationAction) { _ in
         self.delegate?.existingDataOptionsViewControllerDidSelectSaveAllExperiments()
       }
       let cancelAction = MDCAlertAction(title: String.actionCancel)
@@ -204,7 +204,7 @@ class ExistingDataOptionsViewController: ScienceJournalCollectionViewController 
           MDCAlertController(title: String.claimExperimentsDeleteAllMigrationConfirmationTitle,
                              message: message)
       let deleteAction =
-          MDCAlertAction(title: String.claimExperimentsDeleteAllConfirmationAction) { (action) in
+          MDCAlertAction(title: String.claimExperimentsDeleteAllConfirmationAction) { _ in
         self.delegate?.existingDataOptionsViewControllerDidSelectDeleteAllExperiments()
       }
       let cancelAction = MDCAlertAction(title: String.actionCancel)

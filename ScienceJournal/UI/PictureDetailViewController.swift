@@ -374,7 +374,7 @@ class PictureDetailViewController:
     // Info.
     let popUpMenu = PopUpMenuViewController()
     popUpMenu.addAction(PopUpMenuAction(title: String.pictureDetailInfo,
-                                        icon: UIImage(named: "ic_info")) { a -> Void in
+                                        icon: UIImage(named: "ic_info")) { _ in
       self.navigationController?.pushViewController(
           PictureInfoViewController(displayPicture: self.displayPicture,
                                     analyticsReporter: self.analyticsReporter,
@@ -400,7 +400,7 @@ class PictureDetailViewController:
     // Delete.
     func addDeleteAction() {
       popUpMenu.addAction(PopUpMenuAction(title: String.deleteNoteMenuItem,
-                                          icon: UIImage(named: "ic_delete")) { a -> Void in
+                                          icon: UIImage(named: "ic_delete")) { _ in
         self.delegate?.detailViewControllerDidDeleteNote(self.displayPicture)
         self.navigationController?.popViewController(animated: true)
       })

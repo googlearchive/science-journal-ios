@@ -99,7 +99,7 @@ class MaterialHeaderCollectionViewController: VisibilityTrackingCollectionViewCo
 
     // In iOS 9, a bug in MDCNavigationBar will cause right bar items to disappear on rotation
     // unless we layout the subviews once rotation animation is complete.
-    coordinator.animate(alongsideTransition: nil) { (context) in
+    coordinator.animate(alongsideTransition: nil) { _ in
       self.appBar.navigationBar.layoutSubviews()
     }
   }

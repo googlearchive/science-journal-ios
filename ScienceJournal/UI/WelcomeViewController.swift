@@ -64,7 +64,7 @@ class WelcomeViewController: OnboardingViewController {
                                    with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
 
-    coordinator.animate(alongsideTransition: { (context) in
+    coordinator.animate(alongsideTransition: { _ in
       self.updateConstraintsForSize(size)
       self.view.layoutIfNeeded()
     })

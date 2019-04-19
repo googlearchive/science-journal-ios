@@ -700,7 +700,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
       let alertController = MDCAlertController(title: String.deleteExperimentDialogTitle,
                                                message: String.deleteExperimentDialogMessage)
       let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
-      let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (action) in
+      let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { _ in
         // Delete the experiment and update the collection view.
         self.delegate?.experimentsListDeleteExperiment(withID: overview.experimentID)
       }

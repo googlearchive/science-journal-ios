@@ -232,7 +232,7 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
   override func viewWillTransition(to size: CGSize,
                                    with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
-    coordinator.animate(alongsideTransition: nil) { (context) in
+    coordinator.animate(alongsideTransition: nil) { _ in
       self.wrapperViewTopConstraint?.constant = -self.statusBarHeight
       self.wrapperView.layoutIfNeeded()
     }
@@ -305,7 +305,7 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
 
   func sidebarAccountViewTapped() {
     // Hide the sidebar and when that's done, tell the delegate to show the account selector.
-    hide() {
+    hide {
       self.delegate?.sidebarShouldShowSignIn()
     }
     analyticsReporter.track(.signInFromSidebar)
@@ -409,7 +409,7 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
 
   func collectionView(_ collectionView: UICollectionView,
                       didSelectItemAt indexPath: IndexPath) {
-    hide() {
+    hide {
       self.delegate?.sidebarShouldShow(self.menuStructure[indexPath.item])
     }
   }

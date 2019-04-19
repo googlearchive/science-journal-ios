@@ -26,7 +26,7 @@ extension FileManager {
     var enumeratorError: Error?
     let enumerator = self.enumerator(at: url,
                                      includingPropertiesForKeys: URL.allocatedSizeResourceKeys,
-                                     options: []) { (url, error) -> Bool in
+                                     options: []) { (_, error) -> Bool in
       enumeratorError = error
       return false
     }

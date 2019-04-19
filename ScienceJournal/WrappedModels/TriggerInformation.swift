@@ -55,7 +55,7 @@ class TriggerInformation {
   var triggerAlertTypes: [GSJTriggerInformation_TriggerAlertType] {
     get {
       var types = [GSJTriggerInformation_TriggerAlertType]()
-      proto.triggerAlertTypesArray.enumerateValues({ (value, index, stop) in
+      proto.triggerAlertTypesArray.enumerateValues({ (value, _, _) in
         types.append(GSJTriggerInformation_TriggerAlertType(rawValue: value)!)
       })
       return types

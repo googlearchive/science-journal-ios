@@ -79,7 +79,7 @@ open class GSJOperationQueue: OperationQueue {
       if !concurrencyCategories.isEmpty {
         let exclusivityController = ExclusivityController.shared
         exclusivityController.addOperation(gsjOp, categories: concurrencyCategories)
-        gsjOp.addObserver(BlockObserver { operation, errors in
+        gsjOp.addObserver(BlockObserver { operation, _ in
           exclusivityController.removeOperation(operation, categories: concurrencyCategories)
         })
       }

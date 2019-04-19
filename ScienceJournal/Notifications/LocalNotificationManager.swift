@@ -51,7 +51,7 @@ class LocalNotificationManager: NSObject, UNUserNotificationCenterDelegate {
 
   /// Registers user notifications.
   func registerUserNotifications() {
-    userNotificationCenter.requestAuthorization(options: .alert) { (granted, error) in
+    userNotificationCenter.requestAuthorization(options: .alert) { (granted, _) in
       guard granted else {
         sjlog_error("Authorizationwas not granted for user notifications.", category: .general)
         DispatchQueue.main.async {

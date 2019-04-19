@@ -292,7 +292,7 @@ class TimeAxisView: UIScrollView {
 
     while tickTime < renderEndTime {
       guard let tickPosition = viewPositionForTime(tickTime) else { continue }
-      if (isLabelTick) {
+      if isLabelTick {
         addLabel(forTime: tickTime, atPosition: tickPosition)
         addLongTick(atPosition: tickPosition)
       } else {

@@ -3,6 +3,7 @@ excluded:
   - Protos
   - ScienceJournalTests
   - ScienceJournalUITests
+  - ScienceJournal/Generated
   - third_party
 
 line_length:

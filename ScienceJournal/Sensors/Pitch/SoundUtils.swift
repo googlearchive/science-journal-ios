@@ -42,7 +42,7 @@ final class SoundUtils {
 
   /// All discrete piano notes we can detect as frequencies.
   public static var pianoNoteFrequencie: [Double] {
-    if (calculatedPianoNoteFrequencies.isEmpty) {
+    if calculatedPianoNoteFrequencies.isEmpty {
       fillPianoNoteFrequencies()
     }
     return calculatedPianoNoteFrequencies

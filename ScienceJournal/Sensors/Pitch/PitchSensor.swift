@@ -64,7 +64,7 @@ final class PitchSensor: AudioSensor {
     var audioAnalyzerBuffer = [Int16]()
     setSampleBufferUpdateBlock { (audioSampleBuffer) in
       var audioSampleBufferOffset = 0
-      while (audioSampleBufferOffset < audioSampleBuffer.count) {
+      while audioSampleBufferOffset < audioSampleBuffer.count {
         // Fill the audio analyzer buffer from `audioSampleBuffer`.
         let lengthToCopy = min(audioSampleBuffer.count - audioSampleBufferOffset,
                                AudioAnalyzer.bufferSize - audioAnalyzerBuffer.count)
@@ -73,7 +73,7 @@ final class PitchSensor: AudioSensor {
         audioSampleBufferOffset += lengthToCopy
 
         // If audioAnalyzerBuffer is full, analyze it.
-        if (audioAnalyzerBuffer.count == AudioAnalyzer.bufferSize) {
+        if audioAnalyzerBuffer.count == AudioAnalyzer.bufferSize {
           if let frequency =
               audioAnalyzer.detectFundamentalFrequency(samples: audioAnalyzerBuffer) {
             var shouldSkipFrequency: Bool {

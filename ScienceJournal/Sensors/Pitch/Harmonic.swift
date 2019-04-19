@@ -37,9 +37,9 @@ final class Harmonic {
   /// Find term associated with the given peak. Assumes that the peak is part of this relationship
   /// otherwise returns 0.
   func getTermForPeak(_ peak: Peak) -> Int {
-    if (peak == peakA) {
+    if peak == peakA {
       return termA
-    } else if (peak == peakB) {
+    } else if peak == peakB {
       return termB
     }
     return 0
@@ -51,11 +51,11 @@ final class Harmonic {
 
     let peakADescendingHarmonicTerms = peakA.harmonicTerms.sorted { $0 > $1 }
     for term in peakADescendingHarmonicTerms {
-      if (term <= termA) {
+      if term <= termA {
         // We only care about terms larger than a.
         break
       }
-      if (term % termA == 0) {
+      if term % termA == 0 {
         multiplier = term / termA
         break
       }
@@ -63,20 +63,20 @@ final class Harmonic {
 
     let peakBDescendingHarmonicTerms = peakB.harmonicTerms.sorted { $0 > $1 }
     for term in peakBDescendingHarmonicTerms {
-      if (term <= termB) {
+      if term <= termB {
         // We only care about terms larger than b.
         break
       }
-      if (term % termB == 0) {
+      if term % termB == 0 {
         let m = term / termB
-        if (m > multiplier) {
+        if m > multiplier {
           multiplier = m
         }
         break
       }
     }
 
-    if (multiplier != 0) {
+    if multiplier != 0 {
       multiply(multiplier)
     }
   }

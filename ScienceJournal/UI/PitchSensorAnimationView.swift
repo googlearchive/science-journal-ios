@@ -168,7 +168,7 @@ class PitchSensorAnimationView: SensorAnimationView {
     var noteFrequencies = [Double]()
     var multiplier = 1.0
 
-    while (noteFrequencies.count < Metrics.numberOfPianoKeys) {
+    while noteFrequencies.count < Metrics.numberOfPianoKeys {
       for note in SoundUtils.highNotes {
         guard noteFrequencies.count < Metrics.numberOfPianoKeys else { break }
         noteFrequencies.append(note * multiplier)
@@ -327,7 +327,7 @@ class PitchSensorAnimationView: SensorAnimationView {
   // MARK: - Private
 
   private func backgroundColor(forLevel level: Int) -> UIColor {
-    if (level == 0) {
+    if level == 0 {
       return UIColor(red: Metrics.backgroundColorValueRedLow / 255,
                      green: Metrics.backgroundColorValueGreenLow / 255,
                      blue: Metrics.backgroundColorValueBlueLow / 255, alpha: 1)
@@ -397,7 +397,7 @@ class PitchSensorAnimationView: SensorAnimationView {
   // The difference, in half steps, between the detected pitch and the note associated with the
   // level.
   func differenceBetween(pitch: Double, andLevel level: Int) -> Double {
-    if (level == 0 || level == noteFrequencies.endIndex - 1) {
+    if level == 0 || level == noteFrequencies.endIndex - 1 {
       // If the nearest musical note is more than one half step lower than the lowest musical note
       // or more than one half step higher than the highest musical note, don't calculate the
       // difference.
@@ -411,7 +411,7 @@ class PitchSensorAnimationView: SensorAnimationView {
     // higher musical note, the dot is at the far right, which is 0 degrees, or 0 radians.
     let nearestNote = noteFrequencies[level]
     var difference = pitch - nearestNote
-    if (difference < 0) {
+    if difference < 0 {
       // The detected pitch is lower than the nearest musical note. Adjust the difference to the
       // range of -1 to 0, where -1 is the next lower note. The difference should never be less than
       // -0.5, since that would indicate that the  pitch was actually closer to the lower note.
@@ -461,7 +461,7 @@ class PitchSensorAnimationView: SensorAnimationView {
     let accessibilityLabel: String
     if level == 0 {
       accessibilityLabel = String.pitchLowContentDescription
-    } else if (level == noteFrequencies.endIndex - 1) {
+    } else if level == noteFrequencies.endIndex - 1 {
       accessibilityLabel = String.pitchHighContentDescription
     } else {
       let formatString: String

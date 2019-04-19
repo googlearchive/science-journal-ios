@@ -274,7 +274,7 @@ class PacketAssemblerTest: XCTestCase {
       var outputBytes = [UInt8]()
       let last = index == length - 1
       var l: UInt8 = chunkSize
-      if (last) {
+      if last {
         l = UInt8(bytes.count) % chunkSize
       }
       outputBytes.append(l)

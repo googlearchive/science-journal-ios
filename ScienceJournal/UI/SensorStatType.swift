@@ -44,4 +44,3 @@ enum SensorStatType {
     }
   }
 }
-

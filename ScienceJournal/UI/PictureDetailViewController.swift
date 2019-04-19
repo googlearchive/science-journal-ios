@@ -17,8 +17,10 @@
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Buttons_Buttons
-import third_party_objective_c_material_components_ios_components_private_KeyboardWatcher_KeyboardWatcher
 import third_party_objective_c_material_components_ios_components_TextFields_TextFields
+// swiftlint:disable line_length
+import third_party_objective_c_material_components_ios_components_private_KeyboardWatcher_KeyboardWatcher
+// swiftlint:enable line_length
 
 /// The detail view controller of a picture which shows the picture in a zooming, panning view and
 /// allows for caption editing.

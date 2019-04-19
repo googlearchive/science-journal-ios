@@ -36,7 +36,7 @@ extension URL {
       resourceValues.isExcludedFromBackup = true
       try docsURL.setResourceValues(resourceValues)
     } catch {
-      print("Error excluding \(docsURL) from backup \(error.localizedDescription)");
+      print("Error excluding \(docsURL) from backup \(error.localizedDescription)")
     }
   }
 

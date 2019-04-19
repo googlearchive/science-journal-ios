@@ -67,7 +67,7 @@ extension UIView {
     }
 
     let animation = CABasicAnimation()
-    animation.keyPath = "path";
+    animation.keyPath = "path"
     animation.beginTime = CACurrentMediaTime()
     animation.fromValue = startPath.cgPath
     animation.toValue = endPath.cgPath

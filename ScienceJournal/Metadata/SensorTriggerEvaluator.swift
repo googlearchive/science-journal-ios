@@ -60,7 +60,7 @@ class SensorTriggerEvaluator {
     }
     self.previousValue = value
     setLastUsedToNow()
-    return result;
+    return result
   }
 
   /// Returns an array of sensor trigger evaluators for each sensor trigger.

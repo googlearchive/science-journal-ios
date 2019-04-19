@@ -36,7 +36,9 @@ class ShadowedView: UIView {
   }
 
   var shadowLayer: MDCShadowLayer {
+    // swiftlint:disable force_cast
     return layer as! MDCShadowLayer
+    // swiftlint:enable force_cast
   }
 
   func setElevation(points: CGFloat) {

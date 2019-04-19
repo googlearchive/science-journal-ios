@@ -36,7 +36,9 @@ class CropOverlayViewController: UIViewController {
   private let cropValidator: CropValidator
 
   private var cropOverlayView: CropOverlayView {
+    // swiftlint:disable force_cast
     return view as! CropOverlayView
+    // swiftlint:enable force_cast
   }
 
   /// The time interval from the first chart data value to the crop start timestamp.

@@ -149,8 +149,10 @@ class SensorSettingsViewController: MaterialHeaderCollectionViewController,
 
   override func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    // swiftlint:disable force_cast
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sensorCellIdentifier,
                                                   for: indexPath) as! SensorSettingsCell
+    // swiftlint:enable force_cast
     dataSource.configureCell(cell, atIndexPath: indexPath)
     cell.delegate = self
     return cell
@@ -159,11 +161,13 @@ class SensorSettingsViewController: MaterialHeaderCollectionViewController,
   override func collectionView(_ collectionView: UICollectionView,
                                viewForSupplementaryElementOfKind kind: String,
                                at indexPath: IndexPath) -> UICollectionReusableView {
+    // swiftlint:disable force_cast
     let supplementaryView =
         collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                         withReuseIdentifier: kind,
                                                         for: indexPath)
         as! MDCCollectionViewTextCell
+    // swiftlint:enable force_cast
 
     if kind == UICollectionView.elementKindSectionHeader {
       if let section = SensorSettingsDataSource.Section(rawValue: indexPath.section) {

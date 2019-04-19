@@ -35,7 +35,9 @@ class EditTimestampViewController: UIViewController {
 
   /// The edit timestamp view.
   var editTimestampView: EditTimestampView {
+    // swiftlint:disable force_cast
     return view as! EditTimestampView
+    // swiftlint:enable force_cast
   }
 
   private static let selectedTextRangeKey = "selectedTextRange"

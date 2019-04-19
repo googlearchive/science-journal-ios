@@ -89,9 +89,11 @@ class SensorLayout: Equatable, Hashable {
   ///
   /// - Parameter proto: A sensor layout proto.
   init(proto: GSJSensorLayout) {
+    // swiftlint:disable force_cast
     backingProto = proto.copy() as! GSJSensorLayout
     extras = backingProto.extras as! [String: String]
     activeSensorTriggerIDs = backingProto.activeSensorTriggerIdsArray as! [String]
+    // swiftlint:enable force_cast
   }
 
   /// Initializes a sensor layout.

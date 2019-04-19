@@ -101,6 +101,14 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
     }
   }
 
+  // MARK: - Private
+
+  private func handleDocumentPicked() {
+    completion?(true)
+    completion = nil
+    documentPicker = nil
+  }
+
   // MARK: - UIDocumentPickerDelegate
 
   func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
@@ -111,9 +119,13 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
 
   func documentPicker(_ controller: UIDocumentPickerViewController,
                       didPickDocumentsAt urls: [URL]) {
-    completion?(true)
-    completion = nil
-    documentPicker = nil
+    handleDocumentPicked()
+  }
+
+  // Needed for iOS 10 support. When it is no longer supported, this can be removed.
+  func documentPicker(_ controller: UIDocumentPickerViewController,
+                      didPickDocumentAt url: URL) {
+    handleDocumentPicked()
   }
 
 }

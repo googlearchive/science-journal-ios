@@ -54,7 +54,7 @@ class ExperimentDataDeleterTest: XCTestCase {
     XCTAssertNotNil(deletedExperiment)
     assertExperimentIsDeleted(withID: experimentID)
 
-    experimentDataDeleter.restoreExperiment(deletedExperiment!)
+    _ = experimentDataDeleter.restoreExperiment(deletedExperiment!)
     assertExperimentExists(withID: experimentID)
     assertSensorDataExists(forTrialID: experiment.trials[0].ID)
   }

@@ -217,7 +217,8 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   /// - Parameters:
   ///   - lastOpenedTimestamp: The last opened timestamp.
   ///   - experimentID: The experiment ID.
-  public func setExperimentLastOpened(atTimestamp lastOpenedTimestamp: Int64, experimentID: String) {
+  public func setExperimentLastOpened(atTimestamp lastOpenedTimestamp: Int64,
+                                      experimentID: String) {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }

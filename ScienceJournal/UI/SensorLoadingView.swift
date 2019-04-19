@@ -16,8 +16,10 @@
 
 import UIKit
 
-import third_party_objective_c_material_components_ios_components_ActivityIndicator_ActivityIndicator
 import third_party_objective_c_material_components_ios_components_Typography_Typography
+// swiftlint:disable line_length
+import third_party_objective_c_material_components_ios_components_ActivityIndicator_ActivityIndicator
+// swiftlint:enable line_length
 
 /// A view that displays an activity indicator and a loading message. Used as a subview of
 /// a sensor card cell to indicate the sensor is loading.

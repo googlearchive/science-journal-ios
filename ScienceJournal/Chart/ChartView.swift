@@ -17,7 +17,9 @@
 import QuartzCore
 import UIKit
 
+// swiftlint:disable line_length
 import third_party_objective_c_material_components_ios_components_ActivityIndicator_ActivityIndicator
+// swiftlint:enable line_length
 
 protocol ChartViewDelegate: class {
   func yPositionForLabel(atIndex labelIndex: Int) -> CGFloat?

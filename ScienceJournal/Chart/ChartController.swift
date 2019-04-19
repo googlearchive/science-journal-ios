@@ -112,6 +112,8 @@ protocol ChartControllerDelegate: class {
   func chartController(_ chartController: ChartController, shouldPinToNow: Bool)
 }
 
+// swiftlint:disable type_body_length
+// TODO: Consider breaking this class into multiple files.
 /// Manages a ChartView and the data it will display. Use a ChartController instead of directly
 /// using a ChartView.
 class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
@@ -1352,4 +1354,4 @@ class ChartController: NSObject, ChartViewDelegate, UIScrollViewDelegate {
 
 }
 
-// swiftlint:enable file_length
+// swiftlint:enable file_length, type_body_length

@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Buttons_Buttons
@@ -77,6 +79,7 @@ protocol ExperimentsListViewControllerDelegate: class {
                                            forExperimentID experimentID: String)
 }
 
+// swiftlint:disable type_body_length
 /// A list of the user's experiments. This is the view the user sees on launch.
 class ExperimentsListViewController: MaterialHeaderViewController, ExperimentStateListener,
     ExperimentsListItemsDelegate, ExperimentsListCellDelegate {
@@ -724,6 +727,7 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   }
 
 }
+// swiftlint:enable type_body_length
 
 // MARK: - EditExperimentViewControllerDelegate
 
@@ -764,3 +768,5 @@ extension ExperimentsListViewController: EmptyViewDelegate {
   }
 
 }
+
+// swiftlint:enable file_length

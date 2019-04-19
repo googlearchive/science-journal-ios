@@ -126,6 +126,8 @@ protocol ExperimentCoordinatorViewControllerDelegate: class {
 
 }
 
+// swiftlint:disable type_body_length
+// TODO: Consider breaking this class into multiple files for each delegate.
 /// A coordinator view controller responsible for displaying the items in an experiment.
 class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerPositionListener,
     EditExperimentViewControllerDelegate, ImageSelectorDelegate, NotesViewControllerDelegate,
@@ -1549,4 +1551,4 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
 }
 
-// swiftlint:enable file_length
+// swiftlint:enable file_length, type_body_length

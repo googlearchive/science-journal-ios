@@ -858,7 +858,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       var spinnerVC: SpinnerViewController?
 
       let createDefaultExperiment = {
-        driveSyncManager.experimentLibraryExists() { (libraryExists) in
+        driveSyncManager.experimentLibraryExists { (libraryExists) in
           // If existence is unknown, perhaps due to a fetch error or lack of network, don't create
           // the default experiment.
           if libraryExists == false {
@@ -868,7 +868,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
             DispatchQueue.main.async {
               if let spinnerVC = spinnerVC {
-                spinnerVC.dismissSpinner() {
+                spinnerVC.dismissSpinner {
                   self.experimentsListVC?.reloadExperiments()
                   finished()
                 }
@@ -882,7 +882,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
             self.preferenceManager.defaultExperimentWasCreated = true
             DispatchQueue.main.async {
               if let spinnerVC = spinnerVC {
-               spinnerVC.dismissSpinner() {
+               spinnerVC.dismissSpinner {
                  finished()
                 }
               } else {

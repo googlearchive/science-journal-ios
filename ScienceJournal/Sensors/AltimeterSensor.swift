@@ -63,7 +63,7 @@ class AltimeterSensor: Sensor {
 
     state = .ready
     AltimeterSensor.altimeter.startRelativeAltitudeUpdates(to: .main) {
-        [weak self] (altitudeData, error) in
+        [weak self] (altitudeData, _) in
       if let altitudeData = altitudeData {
         self?.currentAltitudeData = altitudeData
       }

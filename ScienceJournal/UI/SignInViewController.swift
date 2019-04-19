@@ -80,7 +80,7 @@ class SignInViewController: OnboardingViewController {
                                    with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
 
-    coordinator.animate(alongsideTransition: { (context) in
+    coordinator.animate(alongsideTransition: { _ in
       self.updateViewForSize(size)
       self.view.layoutIfNeeded()
     })

@@ -189,7 +189,7 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
           self.experimentsListItemsViewController.itemCount, email: self.authAccount.email)
       let alertController = MDCAlertController(title: nil, message: message)
       let claimAction =
-          MDCAlertAction(title: String.claimAllExperimentsConfirmationActionConfirm) { (action) in
+          MDCAlertAction(title: String.claimAllExperimentsConfirmationActionConfirm) { _ in
         self.delegate?.claimExperimentsClaimAllExperiments()
       }
       let cancelAction = MDCAlertAction(title: String.actionCancel)
@@ -208,7 +208,7 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
           self.experimentsListItemsViewController.itemCount)
       let alertController = MDCAlertController(title: nil, message: message)
       let deleteAction =
-          MDCAlertAction(title: String.claimExperimentsDeleteAllConfirmationAction) { (action) in
+          MDCAlertAction(title: String.claimExperimentsDeleteAllConfirmationAction) { _ in
         self.delegate?.claimExperimentsDeleteAllExperiments()
       }
       let cancelAction = MDCAlertAction(title: String.actionCancel)
@@ -238,7 +238,7 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
                                              message: message)
     let cancelAction = MDCAlertAction(title: String.actionCancel)
     let claimAction =
-        MDCAlertAction(title: String.claimExperimentConfirmationActionTitle) { (action) in
+        MDCAlertAction(title: String.claimExperimentConfirmationActionTitle) { _ in
       self.delegate?.claimExperimentsAddExperimentToDrive(withID: overview.experimentID)
     }
     alertController.addAction(claimAction)
@@ -260,7 +260,7 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
     let alertController = MDCAlertController(title: String.deleteExperimentDialogTitle,
                                              message: String.deleteExperimentDialogMessage)
     let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
-    let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (action) in
+    let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { _ in
       self.delegate?.claimExperimentsDeleteExperiment(withID: overview.experimentID)
     }
     alertController.addAction(cancelAction)

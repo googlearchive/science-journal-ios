@@ -272,11 +272,11 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
     let alertController =
         MDCAlertController(title: String.editExperimentUnsavedChangesDialogTitle,
                            message: String.editExperimentUnsavedChangesDialogMessage)
-    let saveAction = MDCAlertAction(title: String.btnEditExperimentSaveChanges) { (action) in
+    let saveAction = MDCAlertAction(title: String.btnEditExperimentSaveChanges) { _ in
       self.saveButtonPressed()
     }
     let deleteAction =
-        MDCAlertAction(title: String.btnEditExperimentDiscardChanges) { (action) in
+        MDCAlertAction(title: String.btnEditExperimentDiscardChanges) { _ in
       self.dismiss(animated: true)
     }
     alertController.addAction(saveAction)

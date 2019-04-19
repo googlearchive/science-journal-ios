@@ -475,7 +475,7 @@ extension AppFlowViewController: ExistingDataOptionsDelegate {
     let spinnerViewController = SpinnerViewController()
     spinnerViewController.present(fromViewController: existingDataOptionsVC) {
       self.existingDataMigrationManager?.migrateAllExperiments(completion: { (errors) in
-        spinnerViewController.dismissSpinner() {
+        spinnerViewController.dismissSpinner {
           self.showCurrentUserOrSignIn()
           if errors.containsDiskSpaceError {
             showSnackbar(withMessage: String.claimExperimentsDiskSpaceErrorMessage)
@@ -531,7 +531,7 @@ extension AppFlowViewController {
     guard let settingsVC = userFlowViewController?.settingsVC else { return }
     let spinnerVC = SpinnerViewController()
     spinnerVC.present(fromViewController: settingsVC) {
-      self.rootUserManager.documentManager.debug_createRootUserData() {
+      self.rootUserManager.documentManager.debug_createRootUserData {
         DispatchQueue.main.async {
           self.userFlowViewController?.experimentsListVC?.refreshUnclaimedExperiments()
           spinnerVC.dismissSpinner()

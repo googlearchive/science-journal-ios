@@ -247,8 +247,7 @@ class ClaimExperimentsViewController: MaterialHeaderViewController, ClaimExperim
     present(alertController, animated: true)
   }
 
-  func claimExperimentListCell(_ cell: ClaimExperimentListCell,
-                               pressedSaveToFilesButton saveToFilesButton: UIButton) {
+  func claimExperimentListCellPressedSaveToFilesButton(_ cell: ClaimExperimentListCell) {
     guard let overview = experimentsListItemsViewController.overview(forCell: cell) else { return }
     delegate?.claimExperimentsSaveExperimentToFiles(withID: overview.experimentID)
   }

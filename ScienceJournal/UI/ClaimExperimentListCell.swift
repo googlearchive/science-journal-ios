@@ -27,11 +27,8 @@ protocol ClaimExperimentListCellDelegate: class {
 
   /// Tells the delegate the user tapped the save to files button for a cell.
   ///
-  /// - Parameters:
-  ///   - cell: The claim experiment list cell.
-  ///   - saveToFilesButton: The save to files button.
-  func claimExperimentListCell(_ cell: ClaimExperimentListCell,
-                               pressedSaveToFilesButton saveToFilesButton: UIButton)
+  /// - Parameter: cell: The claim experiment list cell.
+  func claimExperimentListCellPressedSaveToFilesButton(_ cell: ClaimExperimentListCell)
 
   /// Tells the delegate the user tapped the delete button for a cell.
   ///
@@ -141,8 +138,8 @@ class ClaimExperimentListCell: ExperimentsListCellBase {
     delegate?.claimExperimentListCellPresssedAddToDriveButton(self)
   }
 
-  @objc private func saveToFilesButtonPressed(sender: UIButton) {
-    delegate?.claimExperimentListCell(self, pressedSaveToFilesButton: sender)
+  @objc private func saveToFilesButtonPressed() {
+    delegate?.claimExperimentListCellPressedSaveToFilesButton(self)
   }
 
   @objc private func deleteButtonPressed() {

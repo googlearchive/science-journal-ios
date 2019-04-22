@@ -20,9 +20,16 @@ import third_party_objective_c_material_components_ios_components_Dialogs_Dialog
 /// Handles saving experiments, trial data and images to the Files app.
 class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
 
-  /// The completion called when save to files completes. Called with a bool indicating whether a
-  /// file was saved. If not, the user canceled.
-  typealias SaveToFilesCompletion = (Bool) -> Void
+  /// Indicates the result of the user action taken in the file picker.
+  enum SaveToFilesResult {
+    /// The file was saved.
+    case saved
+    /// The file picker was cancelled.
+    case cancelled
+  }
+
+  /// The completion called when save to files completes. Called with the save to files result.
+  typealias SaveToFilesCompletion = (SaveToFilesResult) -> Void
 
   private var completion: SaveToFilesCompletion?
   private var documentPicker: UIDocumentPickerViewController?
@@ -67,9 +74,12 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
           }
 
           self.presentSaveToFiles(forURL: url,
-                                  fromViewController: presentingViewController) { fileWasSaved in
-            if fileWasSaved {
+                                  fromViewController: presentingViewController) { result in
+            switch result {
+            case .saved:
               showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+            case .cancelled:
+              break
             }
             documentManager.finishedWithExportDocument(atURL: url)
           }
@@ -104,7 +114,7 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
   // MARK: - Private
 
   private func handleDocumentPicked() {
-    completion?(true)
+    completion?(.saved)
     completion = nil
     documentPicker = nil
   }
@@ -112,7 +122,7 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
   // MARK: - UIDocumentPickerDelegate
 
   func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-    completion?(false)
+    completion?(.cancelled)
     completion = nil
     documentPicker = nil
   }

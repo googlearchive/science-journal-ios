@@ -269,10 +269,9 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   func claimExperimentsSaveExperimentToFiles(withID experimentID: String) {
     guard let experiment = metadataManager.experiment(withID: experimentID) else { return }
 
-    saveToFilesHandler.presentSaveToFiles(
-        forExperiment: experiment,
-        documentManager: documentManager,
-        presentingViewController: claimExperimentsViewController)
+    saveToFilesHandler.presentSaveToFiles(forExperiment: experiment,
+                                          documentManager: documentManager,
+                                          presentingViewController: claimExperimentsViewController)
     analyticsReporter.track(.claimingSaveToFiles)
   }
 

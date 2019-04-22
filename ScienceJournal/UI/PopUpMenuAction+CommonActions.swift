@@ -60,13 +60,16 @@ extension PopUpMenuAction {
                            icon: UIImage(named: "ic_save_alt"),
                            accessibilityLabel: String.saveToFilesContentDescription,
                            handler: { (_) in
-      saveToFilesHandler.presentSaveToFiles(forURL: URL(fileURLWithPath: filePath),
-                                            fromViewController: presentingViewController,
-                                            completion: { (fileWasSaved) in
-        if fileWasSaved {
+      saveToFilesHandler.presentSaveToFiles(
+          forURL: URL(fileURLWithPath: filePath),
+          fromViewController: presentingViewController) { result in
+        switch result {
+        case .saved:
           showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+        case .cancelled:
+          break
         }
-      })
+      }
     })
   }
 
@@ -146,8 +149,8 @@ extension PopUpMenuAction {
                            accessibilityLabel: String.saveToFilesContentDescription,
                            handler: { _ in
       saveToFilesHandler.presentSaveToFiles(forExperiment: experiment,
-                                               documentManager: documentManager,
-                                               presentingViewController: presentingViewController)
+                                            documentManager: documentManager,
+                                            presentingViewController: presentingViewController)
     })
   }
 

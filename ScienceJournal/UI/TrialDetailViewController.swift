@@ -1472,12 +1472,14 @@ class TrialDetailViewController: MaterialHeaderViewController,
       }
 
       self.saveToFilesHandler.presentSaveToFiles(forURL: fileURL,
-                                                 fromViewController: self,
-                                                 completion: { (fileWasSaved) in
-        if fileWasSaved {
+                                                 fromViewController: self) { result in
+        switch result {
+        case .saved:
           showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
+        case .cancelled:
+          break
         }
-      })
+      }
     })
   }
 

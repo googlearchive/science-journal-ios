@@ -58,8 +58,7 @@ class LicenseViewController: MaterialHeaderViewController {
         let licenseString = try String(contentsOfFile: licenseFile,
                                        encoding: String.Encoding.utf8)
         webView.loadHTMLString(licenseString, baseURL: nil)
-      }
-      catch {
+      } catch {
         print("Could not read license file: \(license.filename).html, error: " +
             error.localizedDescription)
       }

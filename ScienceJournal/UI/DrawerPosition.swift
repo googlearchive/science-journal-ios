@@ -19,7 +19,7 @@ import UIKit
 /// Represents a position that the drawer can be open to.
 open class DrawerPosition: Equatable {
 
-  public static func ==(lhs: DrawerPosition, rhs: DrawerPosition) -> Bool {
+  public static func == (lhs: DrawerPosition, rhs: DrawerPosition) -> Bool {
     return lhs.panDistance == rhs.panDistance && lhs.canShowKeyboard == rhs.canShowKeyboard
   }
 

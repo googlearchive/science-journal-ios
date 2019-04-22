@@ -113,7 +113,7 @@ public class LocalSyncStatus {
   ///   - lastSyncedVersion: The last synced Drive version.
   ///   - experimentID: The experiment ID.
   public func setExperimentLastSyncedVersion(_ lastSyncedVersion: Int64,
-                                      withID experimentID: String) {
+                                             withID experimentID: String) {
     guard let status = experimentStatus(forID: experimentID) else {
       return
     }

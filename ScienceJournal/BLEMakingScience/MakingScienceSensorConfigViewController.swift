@@ -70,7 +70,10 @@ class MakingScienceSensorConfigViewController: ScienceJournalViewController, Opt
     }
 
     override var accessibilityLabel: String? {
+      // swiftlint:disable unused_setter_value
+      // TODO: There has to be a better way to do this.
       set {}
+      // swiftlint:enable unused_setter_value
       get {
         return String.deviceOptionsCustomSensorFrequencyCheckboxText + ", " +
             (aSwitch.isOn ? String.switchOnContentDescription : String.switchOffContentDescription)

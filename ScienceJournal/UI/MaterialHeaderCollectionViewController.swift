@@ -29,7 +29,7 @@ class MaterialHeaderCollectionViewController: VisibilityTrackingCollectionViewCo
 
   let appBar = MDCAppBar()
   let analyticsReporter: AnalyticsReporter
-  private var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
+  private weak var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
 
   // MARK: - Public
 

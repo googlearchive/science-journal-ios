@@ -95,9 +95,9 @@ extension UIView {
   ///   - traits: The optional accessibility traits. Defaults to UIAccessibilityTraitButton if not
   ///             provided.
   func configureAccessibilityWrappingView(_ view: UIView,
-      withLabel label: String? = nil,
-      hint: String? = nil,
-      traits: UIAccessibilityTraits = .button) {
+                                          withLabel label: String? = nil,
+                                          hint: String? = nil,
+                                          traits: UIAccessibilityTraits = .button) {
     addSubview(view)
     view.translatesAutoresizingMaskIntoConstraints = false
     view.isAccessibilityElement = true

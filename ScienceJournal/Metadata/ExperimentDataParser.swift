@@ -245,7 +245,6 @@ class ExperimentDataParser {
             let sensor = sensorController.sensor(for: pathString) {
           imageName = sensor.iconName
         }
-        break
       default: break
       }
     }

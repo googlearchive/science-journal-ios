@@ -105,8 +105,9 @@ extension Harmonic: Equatable {
 
 extension Harmonic: Hashable {
 
-  public var hashValue: Int {
-    return peakA.hashValue * 31 + peakB.hashValue
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(peakA)
+    hasher.combine(peakB)
   }
 
 }

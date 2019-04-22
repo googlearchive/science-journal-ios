@@ -30,7 +30,7 @@ protocol ValueFilter {
 
 /// A base version of a value filter that does not transform the value.
 class IdentityFilter: ValueFilter {
-  func filterValue(timestamp: Int64, value: Double) -> Double  {
+  func filterValue(timestamp: Int64, value: Double) -> Double {
     return value
   }
 }

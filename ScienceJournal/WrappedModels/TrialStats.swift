@@ -38,7 +38,7 @@ class TrialStats {
       return proto.hasStatStatus ? proto.statStatus : .needsUpdate
     }
     set {
-      proto.statStatus = status
+      proto.statStatus = newValue
     }
   }
 

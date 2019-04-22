@@ -48,8 +48,8 @@ final class Peak {
 
 extension Peak: Hashable {
 
-  public var hashValue: Int {
-    return fftIndex
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(fftIndex)
   }
 
 }

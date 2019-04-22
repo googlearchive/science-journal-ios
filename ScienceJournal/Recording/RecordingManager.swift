@@ -102,8 +102,8 @@ class RecordingManager: RecorderDelegate {
   /// false. Always returns false if a recording is not in progress.
   var isRecordingMissingData: Bool {
     guard isRecording else { return false }
-    for recorder in recorders {
-      if !recorder.hasRecordedOneDataPoint { return true }
+    for recorder in recorders where !recorder.hasRecordedOneDataPoint {
+      return true
     }
     return false
   }
@@ -113,10 +113,8 @@ class RecordingManager: RecorderDelegate {
 
   /// The recording manager is ready when all sensors set to record are ready.
   var isReady: Bool {
-    for recorder in recorders {
-      if recorder.sensor.state != .ready {
-        return false
-      }
+    for recorder in recorders where recorder.sensor.state != .ready {
+      return false
     }
     return true
   }

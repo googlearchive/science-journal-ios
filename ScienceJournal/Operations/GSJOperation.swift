@@ -317,7 +317,7 @@ open class GSJOperation: Operation {
     }
 
     // Comparable
-    static func <(lhs: GSJOperation.State, rhs: GSJOperation.State) -> Bool {
+    static func < (lhs: GSJOperation.State, rhs: GSJOperation.State) -> Bool {
       return lhs.rawValue < rhs.rawValue
     }
 

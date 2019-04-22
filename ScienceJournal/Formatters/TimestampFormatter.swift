@@ -50,9 +50,10 @@ class TimestampFormatter: Formatter {
       return nil
     }
 
-    guard let match = regex.firstMatch(in: timestampString,
-                                       options: [],
-                                       range: NSMakeRange(0, timestampString.count)) else {
+    let firstMatch = regex.firstMatch(in: timestampString,
+                                      options: [],
+                                      range: NSRange(location: 0, length: timestampString.count))
+    guard let match = firstMatch else {
       // Timestamp format is incorrect.
       return nil
     }
@@ -89,6 +90,7 @@ class TimestampFormatter: Formatter {
     return nil
   }
 
+  // swiftlint:disable vertical_parameter_alignment
   override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?,
       for string: String,
       errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
@@ -98,5 +100,6 @@ class TimestampFormatter: Formatter {
     }
     return false
   }
+  // swiftlint:enable vertical_parameter_alignment
 
 }

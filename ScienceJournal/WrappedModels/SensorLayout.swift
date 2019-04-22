@@ -118,14 +118,14 @@ class SensorLayout: Equatable, Hashable {
 
   // MARK: - Equatable
 
-  static func ==(lhs: SensorLayout, rhs: SensorLayout) -> Bool {
+  static func == (lhs: SensorLayout, rhs: SensorLayout) -> Bool {
     return lhs.proto.isEqual(rhs.proto)
   }
 
   // MARK: - Hashable
 
-  var hashValue: Int {
-    return proto.hash
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(proto)
   }
 
   // MARK: - Private

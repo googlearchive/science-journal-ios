@@ -42,6 +42,7 @@ class SoundIntensitySensor: AudioSensor {
                sensorTimer: sensorTimer)
   }
 
+  // swiftlint:disable vertical_parameter_alignment
   override func callListenerBlocksWithAudioSampleBuffer(_
       audioSampleBuffer: UnsafeBufferPointer<Int16>,
       atMilliseconds milliseconds: Int64) {
@@ -66,5 +67,6 @@ class SoundIntensitySensor: AudioSensor {
     let dataPoint = DataPoint(x: milliseconds, y: decibelLevel)
     callListenerBlocksWithDataPoint(dataPoint)
   }
+  // swiftlint:enable vertical_parameter_alignment
 
 }

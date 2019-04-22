@@ -532,9 +532,9 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
     }
 
     switch sensor.state {
-    case .failed(_):
+    case .failed:
       sensor.retry()
-    case .noPermission(_):
+    case .noPermission:
       if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
         UIApplication.shared.open(settingsURL)
       }

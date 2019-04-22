@@ -32,8 +32,8 @@ public struct BlockObserver {
   ///   - spawnHandler: The spawn handler.
   ///   - finishHandler: The finish handler.
   public init(startHandler: ((GSJOperation) -> Void)? = nil,
-       spawnHandler: ((GSJOperation, Operation) -> Void)? = nil,
-       finishHandler: ((GSJOperation, [Error]) -> Void)? = nil) {
+              spawnHandler: ((GSJOperation, Operation) -> Void)? = nil,
+              finishHandler: ((GSJOperation, [Error]) -> Void)? = nil) {
     self.startHandler = startHandler
     self.spawnHandler = spawnHandler
     self.finishHandler = finishHandler

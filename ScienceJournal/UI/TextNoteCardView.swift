@@ -290,5 +290,4 @@ class TextNoteCardView: ExperimentCardView {
     setNeedsLayout()
   }
 
-
 }

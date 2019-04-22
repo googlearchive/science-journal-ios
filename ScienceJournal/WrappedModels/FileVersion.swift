@@ -90,12 +90,12 @@ public class FileVersion: Comparable {
 
   // MARK: - Comparable
 
-  public static func <(lhs: FileVersion, rhs: FileVersion) -> Bool {
+  public static func < (lhs: FileVersion, rhs: FileVersion) -> Bool {
     return lhs.version < rhs.version ||
         (lhs.version == rhs.version && lhs.minorVersion < rhs.minorVersion)
   }
 
-  public static func ==(lhs: FileVersion, rhs: FileVersion) -> Bool {
+  public static func == (lhs: FileVersion, rhs: FileVersion) -> Bool {
     return lhs.version == rhs.version && lhs.minorVersion == rhs.minorVersion
   }
 

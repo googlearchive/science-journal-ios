@@ -95,7 +95,7 @@ class ExperimentChange: Equatable, Hashable {
 
   // MARK: - Equatable
 
-  static func ==(lhs: ExperimentChange, rhs: ExperimentChange) -> Bool {
+  static func == (lhs: ExperimentChange, rhs: ExperimentChange) -> Bool {
     if lhs === rhs {
       return true
     }
@@ -105,8 +105,8 @@ class ExperimentChange: Equatable, Hashable {
 
   // MARK: - Hashable
 
-  var hashValue: Int {
-    return changeID.hashValue
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(changeID)
   }
 
 }

@@ -151,8 +151,8 @@ class ExistingDataMigrationManager {
                 if let sensorData = sensorData {
                   accountSensorDataManager.addSensorDataPoints(sensorData) { result in
                     switch result {
-                    case .success(_): break
-                    case .failure(_):
+                    case .success: break
+                    case .failure:
                       trialErrors.append(.sensorDataFetchError(trialID: trial.ID))
                     }
                     // Now that adding is complete, reset the fetch context to clear up memory.

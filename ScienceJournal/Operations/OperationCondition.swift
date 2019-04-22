@@ -55,7 +55,6 @@ public protocol OperationCondition {
   /// - Returns: A new operattion.
   func dependencyForOperation(_ operation: GSJOperation) -> Operation?
 
-
   /// A method called to evaluate the condition. The method will call the completion with either
   /// passed or failed.
   ///

@@ -86,10 +86,10 @@ public func sjlog_fault(_ message: String,
 ///   - category: The Science Journal category.
 ///   - file: The file that called this function, populated by default.
 ///   - type: The OS Log type.
-fileprivate func sjlog(_ message: String,
-                       category: ScienceJournalLogCategory,
-                       file: String,
-                       type: OSLogType) {
+private func sjlog(_ message: String,
+                   category: ScienceJournalLogCategory,
+                   file: String,
+                   type: OSLogType) {
   let log = OSLog(subsystem: "com.google.ScienceJournal.app", category: category.rawValue)
   let className = String(file.split(separator: "/").last ?? "Unknown")
   os_log("[%@] %@", log: log, type: type, className, message)

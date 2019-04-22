@@ -347,7 +347,6 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
     }
   }
 
-
   func chartController(_ chartController: ChartController, shouldPinToNow: Bool) {}
 
   /// Stops playback and tone generator.

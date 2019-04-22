@@ -16,7 +16,7 @@
 
 import Foundation
 
-protocol SensorTriggerFrequencyObserverDelegate {
+protocol SensorTriggerFrequencyObserverDelegate: class {
   /// Called when the sensor being observed exceeds the maximum allowed trigger fire limit.
   ///
   /// - Parameter sensorTriggerFrequencyObserver: The sensor trigger frequency observer.
@@ -30,7 +30,7 @@ class SensorTriggerFrequencyObserver {
 
   // MARK: - Properties
 
-  private var delegate: SensorTriggerFrequencyObserverDelegate?
+  private weak var delegate: SensorTriggerFrequencyObserverDelegate?
 
   // The duration in which the fire limits are allowed.
   private let duration: Int64 = 1000

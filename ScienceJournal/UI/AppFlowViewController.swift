@@ -368,6 +368,7 @@ class AppFlowViewController: UIViewController {
     transitionToViewController(launchVC, animated: false)
   }
 
+  // swiftlint:disable vertical_parameter_alignment
   /// Uses a modal UI operation to transition to a view controller.
   ///
   /// - Parameters:
@@ -393,6 +394,7 @@ class AppFlowViewController: UIViewController {
     showViewControllerOp.addCondition(MutuallyExclusive.modalUI)
     queue.addOperation(showViewControllerOp)
   }
+  // swiftlint:enable vertical_parameter_alignment
 
 }
 

@@ -902,8 +902,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
   // MARK: - TrialDetailDataSourceDelegate
 
   func trialDetailDataSource(_ trialDetailDataSource: TrialDetailDataSource,
-      didChange changes: [CollectionViewChange],
-      scrollTo scrollIndexPath: IndexPath?) {
+                             didChange changes: [CollectionViewChange],
+                             scrollTo scrollIndexPath: IndexPath?) {
     guard isViewVisible else {
       collectionView.reloadData()
       return

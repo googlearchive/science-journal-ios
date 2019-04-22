@@ -19,9 +19,11 @@ import UIKit
 import third_party_sciencejournal_ios_ScienceJournalProtos
 
 protocol TriggerWhenSelectorDelegate: class {
+  // swiftlint:disable vertical_parameter_alignment
   /// Calls the delegate when the trigger when changes.
   func triggerWhenSelectorView(_ triggerWhenSelectorView: TriggerWhenSelectorView,
       didSelectWhenToTrigger triggerWhen: GSJTriggerInformation_TriggerWhen)
+  // swiftlint:enable vertical_parameter_alignment
 }
 
 /// A view for selecting when to trigger, in the trigger edit view.

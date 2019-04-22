@@ -143,8 +143,11 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
     cancelButton.translatesAutoresizingMaskIntoConstraints = false
     let shareButtonTitle: String
     switch mode {
-    case .share: shareButtonTitle = String.exportAction
-    case .saveToFiles: shareButtonTitle = String.saveToFilesTitle
+    case .share:
+      shareButtonTitle = String.exportAction
+    case .saveToFiles:
+      shareButtonTitle = String.saveToFilesTitle
+      shareButton.accessibilityHint = String.saveToFilesContentDescription
     }
     shareButton.setTitle(shareButtonTitle, for: .normal)
     shareButton.translatesAutoresizingMaskIntoConstraints = false

@@ -108,7 +108,8 @@ class ClaimExperimentListCell: ExperimentsListCellBase {
     saveToFilesButton.addTarget(self,
                                 action: #selector(saveToFilesButtonPressed),
                                 for: .touchUpInside)
-    saveToFilesButton.accessibilityLabel = String.saveToFilesContentDescription
+    saveToFilesButton.accessibilityLabel = String.saveToFilesTitle
+    saveToFilesButton.accessibilityHint = String.saveToFilesContentDescription
 
     let deleteButton = MDCFlatButton()
     deleteButton.setImage(UIImage(named: "ic_delete"), for: .normal)

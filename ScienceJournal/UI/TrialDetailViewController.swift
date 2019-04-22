@@ -1210,12 +1210,12 @@ class TrialDetailViewController: MaterialHeaderViewController,
     // Export
     func showExportAction(withTitle title: String,
                           iconName: String,
-                          accessibilityLabel: String? = nil,
+                          accessibilityHint: String? = nil,
                           trialShareMode: TrialShareSettingsViewController.Mode,
                           action: Selector) {
       actions.append(PopUpMenuAction(title: title,
                                      icon: UIImage(named: iconName),
-                                     accessibilityLabel: accessibilityLabel) { _ in
+                                     accessibilityHint: accessibilityHint) { _ in
         // Show bottom sheet - switch, cancel, export
         let trialShareVC =
             TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
@@ -1231,7 +1231,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     case .saveToFiles:
       showExportAction(withTitle: String.saveToFilesTitle,
                        iconName: "ic_save_alt",
-                       accessibilityLabel: String.saveToFilesContentDescription,
+                       accessibilityHint: String.saveToFilesContentDescription,
                        trialShareMode: .saveToFiles,
                        action: #selector(self.saveToFilesButtonPressed))
     case .share:

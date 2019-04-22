@@ -58,7 +58,7 @@ extension PopUpMenuAction {
                           saveToFilesHandler: SaveToFilesHandler) -> PopUpMenuAction {
     return PopUpMenuAction(title: String.saveToFilesTitle,
                            icon: UIImage(named: "ic_save_alt"),
-                           accessibilityLabel: String.saveToFilesContentDescription,
+                           accessibilityHint: String.saveToFilesContentDescription,
                            handler: { (_) in
       saveToFilesHandler.presentSaveToFiles(
           forURL: URL(fileURLWithPath: filePath),
@@ -146,7 +146,7 @@ extension PopUpMenuAction {
                                     saveToFilesHandler: SaveToFilesHandler) -> PopUpMenuAction {
     return PopUpMenuAction(title: String.saveToFilesTitle,
                            icon: UIImage(named: "ic_save_alt"),
-                           accessibilityLabel: String.saveToFilesContentDescription,
+                           accessibilityHint: String.saveToFilesContentDescription,
                            handler: { _ in
       saveToFilesHandler.presentSaveToFiles(forExperiment: experiment,
                                             documentManager: documentManager,

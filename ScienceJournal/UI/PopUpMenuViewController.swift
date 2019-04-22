@@ -201,6 +201,7 @@ class PopUpMenuViewController: UIViewController, UICollectionViewDataSource,
       popUpMenuCell.icon = actions[indexPath.item].icon
       popUpMenuCell.textLabel.text = actions[indexPath.item].title
       popUpMenuCell.accessibilityLabel = actions[indexPath.item].accessibilityLabel
+      popUpMenuCell.accessibilityHint = actions[indexPath.item].accessibilityHint
       popUpMenuCell.isEnabled = actions[indexPath.item].isEnabled
     }
     return cell

@@ -31,6 +31,9 @@ class PopUpMenuAction {
     return a11yLabel ?? title
   }
 
+  /// A description of the result of performing an action on the element.
+  let accessibilityHint: String?
+
   /// Is the action enabled?
   let isEnabled: Bool
 
@@ -45,16 +48,19 @@ class PopUpMenuAction {
   ///   - title: The action title.
   ///   - icon: The action icon.
   ///   - accessibilityLabel: A label that identifies the accessibility element.
+  ///   - accessibilityHint: A description of the result of performing an action on the element.
   ///   - isEnabled: Is the action enabled?
   ///   - handler: The action handler.
   init(title: String,
        icon: UIImage? = nil,
        accessibilityLabel: String? = nil,
+       accessibilityHint: String? = nil,
        isEnabled: Bool = true,
        handler: ((PopUpMenuAction) -> Swift.Void)? = nil) {
     self.title = title
     self.icon = icon
     self.a11yLabel = accessibilityLabel
+    self.accessibilityHint = accessibilityHint
     self.isEnabled = isEnabled
     self.handler = handler
   }

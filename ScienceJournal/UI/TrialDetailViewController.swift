@@ -703,7 +703,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     }
   }
 
-  // Displays a detail view controller for the the display item, optionally jumping to the caption
+  // Displays a detail view controller for the display item, optionally jumping to the caption
   // field when it loads.
   private func displayDetailViewController(for note: DisplayNote, jumpToCaption: Bool = false) {
     delegate?.trialDetailViewControllerShowNote(note, jumpToCaption: jumpToCaption)
@@ -902,8 +902,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
   // MARK: - TrialDetailDataSourceDelegate
 
   func trialDetailDataSource(_ trialDetailDataSource: TrialDetailDataSource,
-      didChange changes: [CollectionViewChange],
-      scrollTo scrollIndexPath: IndexPath?) {
+                             didChange changes: [CollectionViewChange],
+                             scrollTo scrollIndexPath: IndexPath?) {
     guard isViewVisible else {
       collectionView.reloadData()
       return

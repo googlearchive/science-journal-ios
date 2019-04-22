@@ -28,7 +28,7 @@ struct DiscoveredPeripheral: Equatable {
   let peripheral: CBPeripheral
   let serviceIds: [CBUUID]?
 
-  static func ==(lhs: DiscoveredPeripheral, rhs: DiscoveredPeripheral) -> Bool {
+  static func == (lhs: DiscoveredPeripheral, rhs: DiscoveredPeripheral) -> Bool {
     let serviceIdsEqual = { () -> Bool in
       if let lhsServiceIds = lhs.serviceIds, let rhsServiceIds = rhs.serviceIds {
         return lhsServiceIds == rhsServiceIds
@@ -102,11 +102,9 @@ class BLEServiceScanner: NSObject, CBCentralManagerDelegate {
       return
     }
 
-    for discovered in discoveredPeripherals {
-      if discovered.peripheral.identifier == uuid {
+    for discovered in discoveredPeripherals where discovered.peripheral.identifier == uuid {
         connectTo(discovered.peripheral, completion: completion)
         return
-      }
     }
 
     // If there isn't already a peripheral with this id, store it for later.
@@ -187,7 +185,7 @@ class BLEServiceScanner: NSObject, CBCentralManagerDelegate {
                       advertisementData: [String : Any],
                       rssi RSSI: NSNumber) {
     // Append this peripheral if it is not already in the array.
-    let serviceIds = advertisementData[CBAdvertisementDataServiceUUIDsKey] as? Array<CBUUID>
+    let serviceIds = advertisementData[CBAdvertisementDataServiceUUIDsKey] as? [CBUUID]
     let discovered =
         DiscoveredPeripheral(peripheral: peripheral,
                              serviceIds: serviceIds)

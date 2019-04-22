@@ -101,7 +101,7 @@ class AudioSensor: Sensor {
     pause()
   }
 
-  override func prepareForForeground()  {
+  override func prepareForForeground() {
     resumeCaptureSessionIfNeeded()
   }
 

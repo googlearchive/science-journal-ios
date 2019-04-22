@@ -78,6 +78,8 @@ class EditTimestampViewController: UIViewController {
 
   // MARK: - Private
 
+  // Disabling because we can't control this yet (MDComponents).
+  // swiftlint:disable block_based_kvo
   override func observeValue(forKeyPath keyPath: String?,
                              of object: Any?,
                              change: [NSKeyValueChangeKey : Any]?,
@@ -89,6 +91,7 @@ class EditTimestampViewController: UIViewController {
     }
     editTimestampView.hideValidationError()
   }
+  // swiftlint:enable block_based_kvo
 
   @objc private func textFieldChanged() {
     editTimestampView.hideValidationError()

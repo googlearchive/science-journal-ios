@@ -252,5 +252,4 @@ class RecordedTrialCardView: UIView {
     }
   }
 
-
 }

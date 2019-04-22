@@ -368,7 +368,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
   override open func viewWillTransition(to size: CGSize,
-                                   with coordinator: UIViewControllerTransitionCoordinator) {
+                                        with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
     coordinator.animate(alongsideTransition: nil, completion: { (_) in
       self.timeAxisController.chartTimeAxisInsets = self.chartTimeAxisInsets
@@ -1531,7 +1531,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
   func recordingManager(_ recordingManager: RecordingManager,
-                        didFireStartRecordingTrigger trigger: SensorTrigger){
+                        didFireStartRecordingTrigger trigger: SensorTrigger) {
     startRecording()
   }
 

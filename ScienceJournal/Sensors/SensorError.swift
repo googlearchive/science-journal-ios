@@ -72,7 +72,7 @@ enum SensorError: Error {
       return nil
     case .unavailableHardware:
       return String.actionRetry
-    case .userPermissionError(_):
+    case .userPermissionError:
       return String.sensorAlertSettingsButtonTitle
     }
   }

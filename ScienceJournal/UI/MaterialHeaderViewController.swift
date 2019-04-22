@@ -28,7 +28,7 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
 
   let appBar = MDCAppBar()
   var trackedScrollView: UIScrollView? { return nil }
-  private var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
+  private weak var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
 
   // MARK: - Public
 
@@ -127,7 +127,7 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
   }
 
   func scrollViewDidEndDragging(_ scrollView: UIScrollView,
-                                         willDecelerate decelerate: Bool) {
+                                willDecelerate decelerate: Bool) {
     if scrollView == appBar.headerViewController.headerView.trackingScrollView {
       let headerView = appBar.headerViewController.headerView
       headerView.trackingScrollDidEndDraggingWillDecelerate(decelerate)
@@ -135,8 +135,8 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
   }
 
   func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                          withVelocity velocity: CGPoint,
-                                          targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+                                 withVelocity velocity: CGPoint,
+                                 targetContentOffset: UnsafeMutablePointer<CGPoint>) {
     if scrollView == appBar.headerViewController.headerView.trackingScrollView {
       let headerView = appBar.headerViewController.headerView
       headerView.trackingScrollWillEndDragging(withVelocity: velocity,

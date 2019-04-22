@@ -176,7 +176,6 @@ class TriggerCardView: ExperimentCardView {
                width: TriggerCardView.sensorIconDimension,
                height: TriggerCardView.sensorIconDimension)
 
-
     // Breakpoint icon. Wait to set Y origin after the description label is set.
     breakpointIcon.frame =
         CGRect(x: sensorIcon.frame.maxX + ExperimentCardView.innerHorizontalPadding,

@@ -74,7 +74,7 @@ typealias RecorderListener = ((DataPoint) -> Void)
 /// Records a single sensor to the database and updates its listener.
 class Recorder: Equatable, SensorTriggerFrequencyObserverDelegate {
 
-  public static func ==(lhs: Recorder, rhs: Recorder) -> Bool {
+  public static func == (lhs: Recorder, rhs: Recorder) -> Bool {
     return lhs.sensor.sensorId == rhs.sensor.sensorId
   }
 
@@ -243,7 +243,7 @@ class Recorder: Equatable, SensorTriggerFrequencyObserverDelegate {
     case .triggerActionNote:
       delegate?.recorder(self, didFireNoteTrigger: sensorTrigger, at: timestamp)
     case .triggerActionAlert:
-      sensorTrigger.triggerInformation.triggerAlertTypes.forEach{ (alertType) in
+      sensorTrigger.triggerInformation.triggerAlertTypes.forEach { (alertType) in
         switch alertType {
         case .triggerAlertAudio:
           self.triggerAlertHelper.playTriggerAlertSound()

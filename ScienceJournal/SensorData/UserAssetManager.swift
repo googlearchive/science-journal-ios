@@ -36,8 +36,8 @@ open class UserAssetManager {
   ///   - metadataManager: A metadata manager.
   ///   - sensorDataManager: A sensor data manager.
   public init(driveSyncManager: DriveSyncManager?,
-       metadataManager: MetadataManager,
-       sensorDataManager: SensorDataManager) {
+              metadataManager: MetadataManager,
+              sensorDataManager: SensorDataManager) {
     self.driveSyncManager = driveSyncManager
     self.metadataManager = metadataManager
     self.sensorDataManager = sensorDataManager

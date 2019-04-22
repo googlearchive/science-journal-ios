@@ -104,11 +104,13 @@ final class PitchSensor: AudioSensor {
     removeSampleBufferUpdateBlock()
   }
 
+  // swiftlint:disable vertical_parameter_alignment
   override func callListenerBlocksWithAudioSampleBuffer(_
     audioSampleBuffer: UnsafeBufferPointer<Int16>, atMilliseconds milliseconds: Int64) {
     guard let pitch = nextPitchToReport else { return }
     let dataPoint = DataPoint(x: milliseconds, y: pitch)
     callListenerBlocksWithDataPoint(dataPoint)
   }
+  // swiftlint:enable vertical_parameter_alignment
 
 }

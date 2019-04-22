@@ -425,11 +425,13 @@ class TriggerEditViewController: MaterialHeaderViewController, TriggerEditDelega
 
   // MARK: - TriggerWhenSelectorDelegate
 
+  // swiftlint:disable vertical_parameter_alignment
   func triggerWhenSelectorView(_ triggerWhenSelectorView: TriggerWhenSelectorView,
       didSelectWhenToTrigger triggerWhen: GSJTriggerInformation_TriggerWhen) {
     triggerTypeSelectorView.shouldOnlyAllowTriggerActionAlert =
         triggerWhen.shouldOnlyAllowTriggerActionAlert
   }
+  // swiftlint:enable vertical_parameter_alignment
 
   // MARK: - Notifications
 

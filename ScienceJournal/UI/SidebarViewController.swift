@@ -395,7 +395,7 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
   }
 
   func collectionView(_ collectionView: UICollectionView,
-                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
                                                   for: indexPath)
     if let cell = cell as? SidebarCell {

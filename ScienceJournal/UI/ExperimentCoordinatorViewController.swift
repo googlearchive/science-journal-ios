@@ -907,8 +907,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     // If the updated trigger IDs do not contain the trigger's ID, remove it from the experiment.
     for trigger in triggersForSensor {
       if !updatedTriggerIds.contains(trigger.triggerID) {
-        guard let index = experiment.sensorTriggers.index(where:
-            { $0.triggerID == trigger.triggerID }) else { continue }
+        guard let index = experiment.sensorTriggers.index(where: {
+          $0.triggerID == trigger.triggerID
+        }) else { continue }
         experiment.sensorTriggers.remove(at: index)
       }
     }
@@ -921,8 +922,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
         experiment.sensorTriggers.append(trigger)
       } else {
         // If the experiment triggers contains the updated trigger, replace it.
-        guard let index = experiment.sensorTriggers.index(where:
-            { $0.triggerID == trigger.triggerID }) else { continue }
+        guard let index = experiment.sensorTriggers.index(where: {
+            $0.triggerID == trigger.triggerID
+        }) else { continue }
         experiment.sensorTriggers[index] = trigger
       }
     }

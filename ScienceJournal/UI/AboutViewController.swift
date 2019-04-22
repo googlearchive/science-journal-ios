@@ -170,12 +170,10 @@ class AboutViewController: MaterialHeaderCollectionViewController {
       if let stringURL = rowData.description, let url = URL(string: stringURL) {
         UIApplication.shared.open(url)
       }
-      break
     case .licenses:
       navigationController?.pushViewController(
           LicensesViewController(analyticsReporter: analyticsReporter),
           animated: true)
-      break
     default:
       return
     }

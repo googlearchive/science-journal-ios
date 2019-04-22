@@ -302,7 +302,7 @@ class ChartView: UIView {
       let lineLayer = CAShapeLayer()
       lineLayer.path = linePath.cgPath
       lineLayer.strokeColor = UIColor.gray.cgColor
-      lineLayer.lineDashPattern = [4,4]
+      lineLayer.lineDashPattern = [4, 4]
       lineLayer.lineWidth = 1
       chartContentView.layer.addSublayer(lineLayer)
       chartContentView.noteLines.append(lineLayer)

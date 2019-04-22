@@ -149,7 +149,7 @@ class BrightnessSensor: Sensor, AVCaptureVideoDataOutputSampleBufferDelegate {
     pause()
   }
 
-  override func prepareForForeground()  {
+  override func prepareForForeground() {
     resumeCaptureSessionIfNeeded()
   }
 

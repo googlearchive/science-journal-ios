@@ -228,7 +228,7 @@ class Sensor: NSObject {
     case interrupted
 
     /// This equality test does not compare associated values.
-    public static func ==(lhs: LoadingState, rhs: LoadingState) -> Bool {
+    public static func == (lhs: LoadingState, rhs: LoadingState) -> Bool {
       switch (lhs, rhs) {
       case (.paused, .paused):
         return true
@@ -236,9 +236,9 @@ class Sensor: NSObject {
         return true
       case (.ready, .ready):
         return true
-      case (.failed(_), .failed(_)):
+      case (.failed, .failed):
         return true
-      case (.noPermission(_), .noPermission(_)):
+      case (.noPermission, .noPermission):
         return true
       case (.interrupted, .interrupted):
         return true

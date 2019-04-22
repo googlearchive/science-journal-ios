@@ -253,7 +253,7 @@ public class ExperimentLibrary: CustomDebugStringConvertible {
   ///   - lastModifiedTimestamp: The last modified timestamp.
   ///   - experimentID: The experiment ID.
   public func setExperimentLastModified(atTimestamp lastModifiedTimestamp: Int64,
-                                 withExperimentID experimentID: String) {
+                                        withExperimentID experimentID: String) {
     guard let experiment = syncExperiment(forID: experimentID) else {
       return
     }

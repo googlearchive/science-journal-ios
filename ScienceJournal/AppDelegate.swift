@@ -69,6 +69,7 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
 
   open var window: UIWindow?
 
+  // swiftlint:disable vertical_parameter_alignment
   open func application(_ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     sensorController = SensorController()
@@ -110,6 +111,7 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
 
     return true
   }
+  // swiftlint:enable vertical_parameter_alignment
 
   open func applicationDidBecomeActive(_ application: UIApplication) {
     // When the app becomes active, attempt to reauthenticate the current user account and remove

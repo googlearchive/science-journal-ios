@@ -41,20 +41,16 @@ class BLEPeripheralInterface: NSObject, CBPeripheralDelegate {
 
     guard let characteristics = service?.characteristics else { return }
 
-    for characteristic in characteristics {
-      if characteristic.uuid == characteristicUUID {
-        peripheral.setNotifyValue(true, for: characteristic)
-      }
+    for characteristic in characteristics where characteristic.uuid == characteristicUUID {
+      peripheral.setNotifyValue(true, for: characteristic)
     }
   }
 
   func stopUpdatesForCharacteristic(_ characteristicUUID: CBUUID) {
     guard let characteristics = service?.characteristics else { return }
 
-    for characteristic in characteristics {
-      if characteristic.uuid == characteristicUUID {
-        peripheral.setNotifyValue(false, for: characteristic)
-      }
+    for characteristic in characteristics where characteristic.uuid == characteristicUUID {
+      peripheral.setNotifyValue(false, for: characteristic)
     }
   }
 
@@ -72,13 +68,11 @@ class BLEPeripheralInterface: NSObject, CBPeripheralDelegate {
     }
 
     // Search services for the target service.
-    for service in services {
-      if service.uuid == serviceUUID {
-        self.service = service
-        // Discover characteristics for this service.
-        peripheral.discoverCharacteristics(characteristicUUIDs, for: service)
-        break
-      }
+    for service in services where service.uuid == serviceUUID {
+      self.service = service
+      // Discover characteristics for this service.
+      peripheral.discoverCharacteristics(characteristicUUIDs, for: service)
+      break
     }
   }
 

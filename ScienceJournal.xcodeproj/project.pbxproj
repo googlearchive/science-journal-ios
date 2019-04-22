@@ -3117,7 +3117,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "Scripts/lint.sh \"${PODS_ROOT}/SwiftLint/\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

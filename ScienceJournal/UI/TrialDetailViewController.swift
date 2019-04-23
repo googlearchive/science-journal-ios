@@ -1208,38 +1208,35 @@ class TrialDetailViewController: MaterialHeaderViewController,
     }
 
     // Export
-    func showExportAction(withTitle title: String,
-                          iconName: String,
-                          accessibilityHint: String? = nil,
-                          trialShareMode: TrialShareSettingsViewController.Mode,
-                          action: Selector) {
-      actions.append(PopUpMenuAction(title: title,
-                                     icon: UIImage(named: iconName),
-                                     accessibilityHint: accessibilityHint) { _ in
-        // Show bottom sheet - switch, cancel, export
-        let trialShareVC =
-            TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
-                                             mode: trialShareMode)
-        trialShareVC.shareButton.addTarget(self, action: action, for: .touchUpInside)
-        let bottomSheetController = MDCBottomSheetController(contentViewController: trialShareVC)
-        self.present(bottomSheetController, animated: true)
-        self.trialShareViewController = trialShareVC
-      })
-    }
-
+    let exportTitle: String
+    let exportIconName: String
+    let exportAccessibilityLabel: String?
+    let exportAction: Selector
     switch exportType {
     case .saveToFiles:
-      showExportAction(withTitle: String.saveToFilesTitle,
-                       iconName: "ic_save_alt",
-                       accessibilityHint: String.saveToFilesContentDescription,
-                       trialShareMode: .saveToFiles,
-                       action: #selector(self.saveToFilesButtonPressed))
+      exportTitle = String.saveToFilesTitle
+      exportIconName = "ic_save_alt"
+      exportAccessibilityLabel = String.saveToFilesContentDescription
+      exportAction = #selector(self.saveToFilesButtonPressed)
     case .share:
-      showExportAction(withTitle: String.exportAction,
-                       iconName: "ic_share",
-                       trialShareMode: .share,
-                       action: #selector(self.shareButtonPressed))
+      exportTitle = String.exportAction
+      exportIconName = "ic_share"
+      exportAccessibilityLabel = nil
+      exportAction = #selector(self.shareButtonPressed)
     }
+    actions.append(PopUpMenuAction(title: exportTitle,
+                                   icon: UIImage(named: exportIconName),
+                                   accessibilityLabel: exportAccessibilityLabel) { _ in
+      // Show the trial share settings as a bottom sheet. It has an option for whether to export as
+      // relative time, a cancel button and the export button.
+      let trialShareVC =
+          TrialShareSettingsViewController(analyticsReporter: self.analyticsReporter,
+                                           exportType: self.exportType)
+      trialShareVC.shareButton.addTarget(self, action: exportAction, for: .touchUpInside)
+      let bottomSheetController = MDCBottomSheetController(contentViewController: trialShareVC)
+      self.present(bottomSheetController, animated: true)
+      self.trialShareViewController = trialShareVC
+    })
 
     // Archive.
     func addArchiveAction() {

@@ -23,15 +23,6 @@ import third_party_objective_c_material_components_ios_components_Typography_Typ
 /// A view controller for managing trial share settings.
 class TrialShareSettingsViewController: ScienceJournalViewController {
 
-  /// The mode in which to export.
-  ///
-  /// - share: Share to any available app or service.
-  /// - saveToFiles: Save to Files only.
-  enum Mode {
-    case share
-    case saveToFiles
-  }
-
   private enum Metrics {
     static let maxWidth: CGFloat = 414
     static let stackSpacing: CGFloat = 14
@@ -53,7 +44,7 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
   private let progressView = MDCProgressView()
   private let verticalStack = UIStackView()
   private let switchStack = UIStackView()
-  private let mode: Mode
+  private let exportType: UserExportType
 
   /// The relative time switch.
   let relativeSwitch = UISwitch()
@@ -100,9 +91,9 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
   ///
   /// - Parameters:
   ///   - analyticsReporter: The analytics reporter.
-  ///   - mode: The mode in which to export.
-  init(analyticsReporter: AnalyticsReporter, mode: Mode) {
-    self.mode = mode
+  ///   - exportType: The export option type to show.
+  init(analyticsReporter: AnalyticsReporter, exportType: UserExportType) {
+    self.exportType = exportType
     super.init(analyticsReporter: analyticsReporter)
   }
 
@@ -142,7 +133,7 @@ class TrialShareSettingsViewController: ScienceJournalViewController {
     cancelButton.setTitle(String.actionCancel, for: .normal)
     cancelButton.translatesAutoresizingMaskIntoConstraints = false
     let shareButtonTitle: String
-    switch mode {
+    switch exportType {
     case .share:
       shareButtonTitle = String.exportAction
     case .saveToFiles:

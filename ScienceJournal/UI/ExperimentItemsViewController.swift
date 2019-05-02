@@ -436,9 +436,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
-    if experimentDataSource.isArchivedFlagSection(section) &&
-        experimentDataSource.numberOfItemsInSection(
-        experimentDataSource.archivedFlagSectionIndex) == 0 {
+    if experimentDataSource.numberOfItemsInSection(section) == 0 {
       return .zero
     }
     return cellInsets

@@ -1308,8 +1308,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
     guard let trialCropRange = self.currentPlaybackViewController?.1.cropRange else {
       return
     }
-    self.cropRangeController.showTimestampEditAlert(forTrialCropRange: trialCropRange,
-                                                    andCropMarkerType: cropMarkerType)
+    self.cropRangeController.showTimestampEditAlert(for: cropMarkerType,
+                                                    trialCropRange: trialCropRange)
   }
 
   /// Creates trial data for export.

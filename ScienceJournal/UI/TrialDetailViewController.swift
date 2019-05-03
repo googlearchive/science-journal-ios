@@ -260,8 +260,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     self.preferenceManager = preferenceManager
     self.sensorDataManager = sensorDataManager
     cropValidator = CropValidator(trialRecordingRange: trial.recordingRange)
-    cropRangeController = CropRangeViewController(trialCropRange: trial.cropRange,
-                                                  trialRecordingRange: trial.recordingRange)
+    cropRangeController = CropRangeViewController(trialRecordingRange: trial.recordingRange)
 
     // MDCCollectionViewFlowLayout currently has a bug that breaks sectionHeadersPinToVisibleBounds
     // so we need to use a UICollectionViewFlowLayout instead until it's fixed. See issue:
@@ -1128,8 +1127,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
                                         recordingRange: trial.recordingRange)
       }
     }
-
-    cropRangeController.trialCropRange = editingCropRange
   }
 
   private func endCropping() {
@@ -1296,15 +1293,23 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     // Edit start time.
     actions.append(PopUpMenuAction(title: String.editCropStartTime, isEnabled: true) { _ in
-      self.cropRangeController.showTimestampEditAlert(forCropMarkerType: .start)
+      self.showTimestampEditAlert(for: .start)
     })
 
     // Edit end time.
     actions.append(PopUpMenuAction(title: String.editCropEndTime, isEnabled: true) { _ in
-      self.cropRangeController.showTimestampEditAlert(forCropMarkerType: .end)
+      self.showTimestampEditAlert(for: .end)
     })
 
     return actions
+  }
+
+  private func showTimestampEditAlert(for cropMarkerType: CropOverlayView.MarkerType) {
+    guard let trialCropRange = self.currentPlaybackViewController?.1.cropRange else {
+      return
+    }
+    self.cropRangeController.showTimestampEditAlert(forTrialCropRange: trialCropRange,
+                                                    andCropMarkerType: cropMarkerType)
   }
 
   /// Creates trial data for export.

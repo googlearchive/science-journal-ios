@@ -37,7 +37,7 @@ class CropRangeViewController: UIViewController, EditTimestampViewControllerDele
   weak var delegate: CropRangeViewControllerDelegate?
 
   /// The crop range of the trial.
-  var trialCropRange: ChartAxis<Int64>?
+  private var trialCropRange: ChartAxis<Int64>?
 
   private var alertPresentation: TimestampAlertPresentation?
   private let trialRecordingRange: ChartAxis<Int64>
@@ -47,10 +47,8 @@ class CropRangeViewController: UIViewController, EditTimestampViewControllerDele
   /// Designated initializer
   ///
   /// - Parameters:
-  ///   - trialCropRange: The trial's crop range.
   ///   - trialRecordingRange: The trial's recording range.
-  init(trialCropRange: ChartAxis<Int64>?, trialRecordingRange: ChartAxis<Int64>) {
-    self.trialCropRange = trialCropRange
+  init(trialRecordingRange: ChartAxis<Int64>) {
     self.trialRecordingRange = trialRecordingRange
     cropValidator = CropValidator(trialRecordingRange: trialRecordingRange)
     super.init(nibName: nil, bundle: nil)
@@ -62,11 +60,12 @@ class CropRangeViewController: UIViewController, EditTimestampViewControllerDele
 
   /// Shows an alert that allows the user to manually input a timestamp for the given crop marker.
   ///
-  /// - Parameter marker: A crop marker type.
-  func showTimestampEditAlert(forCropMarkerType markerType: CropOverlayView.MarkerType) {
-    guard let trialCropRange = trialCropRange else {
-      return
-    }
+  /// - Parameters
+  ///   - trialCropRange: The trial's crop range.
+  ///   - markerType: A crop marker type.
+  func showTimestampEditAlert(forTrialCropRange trialCropRange: ChartAxis<Int64>,
+                              andCropMarkerType markerType: CropOverlayView.MarkerType) {
+    self.trialCropRange = trialCropRange
 
     let editTimestampVC = EditTimestampViewController()
     editTimestampVC.delegate = self

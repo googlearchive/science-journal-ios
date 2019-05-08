@@ -25,6 +25,7 @@ protocol ExperimentItemsViewControllerDelegate: class {
                                                        button: MenuButton)
 }
 
+// swiftlint:disable type_body_length
 /// A view controller that displays experiment items in a list.
 class ExperimentItemsViewController: VisibilityTrackingViewController,
     UICollectionViewDataSource,
@@ -431,17 +432,31 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
 
   // MARK: - UICollectionViewDelegate
 
-  // TODO: Investigate why this can't just be set on the flowLayout as `sectionInset`.
-  // For some reason, it's not adding appropriate section insets to the top and bottom.
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
-    if experimentDataSource.isArchivedFlagSection(section) &&
-        experimentDataSource.numberOfItemsInSection(
-        experimentDataSource.archivedFlagSectionIndex) == 0 {
-      return .zero
+    // Determine the last section with items.
+    var lastSectionWithItems: Int?
+    for i in 0..<experimentDataSource.numberOfSections {
+      if experimentDataSource.numberOfItemsInSection(i) > 0 {
+        lastSectionWithItems = i
+      }
     }
-    return cellInsets
+
+    if experimentDataSource.numberOfItemsInSection(section) == 0 {
+      // If the section is empty, no insets.
+      return .zero
+    } else if section == lastSectionWithItems {
+      // If this is the last section with items, include the bottom inset.
+      return cellInsets
+    } else {
+      // If this is not the last section with items section, but this section has items,
+      // use standard insets without bottom. This avoids an issue where two stacked
+      // sections can have double padding.
+      var modifiedInsets = cellInsets
+      modifiedInsets.bottom = 0
+      return modifiedInsets
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView,
@@ -545,3 +560,4 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
   }
 
 }
+// swiftlint:enable type_body_length

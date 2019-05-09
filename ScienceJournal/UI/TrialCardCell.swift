@@ -50,6 +50,7 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
   }
 
   override func prepareForReuse() {
+    super.prepareForReuse()
     recordedTrialCardView.trialCardNotesView.removeAllNotes()
   }
 

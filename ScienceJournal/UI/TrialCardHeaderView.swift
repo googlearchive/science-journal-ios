@@ -60,6 +60,8 @@ class TrialCardHeaderView: UIView {
   // MARK: - Private
 
   private func configureView() {
+    autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
     isAccessibilityElement = true
     accessibilityTraits = .staticText
 

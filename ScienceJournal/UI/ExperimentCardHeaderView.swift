@@ -120,6 +120,8 @@ class ExperimentCardHeaderView: UIView {
   // MARK: - Private
 
   private func configureView() {
+    autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
     // Relative timestamp dot, for use in Trial detail timelines.
     timestampDot.tintColor = .appBarReviewBackgroundColor
     timestampDot.setContentHuggingPriority(.defaultHigh, for: .horizontal)

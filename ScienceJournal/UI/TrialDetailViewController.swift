@@ -877,12 +877,27 @@ class TrialDetailViewController: MaterialHeaderViewController,
       return
     }
 
-    let isDisplayTrialArchived = trialDetailDataSource.displayTrial.isArchived
-    if isDisplayTrialArchived && !trial.isArchived {
-      self.collectionView.deleteItems(at: [self.trialDetailDataSource.archivedFlagIndexPath])
-    } else if !isDisplayTrialArchived && trial.isArchived {
-      self.collectionView.insertItems(at: [self.trialDetailDataSource.archivedFlagIndexPath])
-    }
+    collectionView.performBatchUpdates({
+      let isDisplayTrialArchived = trialDetailDataSource.displayTrial.isArchived
+      // If the containing experiment allows additions, only then do we need to insert/delete the
+      // "Add Notes" cell. This check is needed because it is possible to enter an archived
+      // experiment with an archived trial, that could potentialy be unarchived. Or vice versa.
+      let experimentAllowsAdditions = trialDetailDataSource.experimentAllowsAdditions
+      let addNoteIndexPath = trialDetailDataSource.chartAndNotesFirstIndexPath
+
+      if isDisplayTrialArchived && !trial.isArchived {
+        collectionView.deleteItems(at: [trialDetailDataSource.archivedFlagIndexPath])
+        if experimentAllowsAdditions {
+          collectionView.insertItems(at: [addNoteIndexPath])
+        }
+      } else if !isDisplayTrialArchived && trial.isArchived {
+        if experimentAllowsAdditions {
+          collectionView.deleteItems(at: [addNoteIndexPath])
+        }
+        collectionView.insertItems(at: [trialDetailDataSource.archivedFlagIndexPath])
+      }
+    }, completion: nil)
+
     updateDisplayTrial()
   }
 

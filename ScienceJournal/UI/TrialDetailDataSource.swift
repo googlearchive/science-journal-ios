@@ -78,6 +78,10 @@ class TrialDetailDataSource {
     return IndexPath(item: 0, section: Section.chartAndNotes.rawValue)
   }
 
+  var experimentAllowsAdditions: Bool {
+    return experimentInteractionOptions.shouldAllowAdditions
+  }
+
   /// The archived flag index path.
   let archivedFlagIndexPath = IndexPath(item: 0, section: Section.archivedFlag.rawValue)
 
@@ -111,8 +115,8 @@ class TrialDetailDataSource {
     case .archivedFlag: return trial.isArchived ? 1 : 0
     case .header: return 1
     case .chartAndNotes:
-      // The notes, plus one for the add note to timeline button, if edits are allowed.
-      return displayTrial.notes.count + (experimentInteractionOptions.shouldAllowEdits ? 1 : 0)
+      // The notes, plus one for the add note to timeline button, if additions are allowed.
+      return displayTrial.notes.count + (shouldAllowNoteAdditions ? 1 : 0)
     }
   }
 
@@ -156,8 +160,9 @@ class TrialDetailDataSource {
   /// - Parameter indexPath: An index path.
   /// - Returns: True if the index path is add note, otherwise false.
   func isAddNoteIndexPath(_ indexPath: IndexPath) -> Bool {
-    return experimentInteractionOptions.shouldAllowEdits &&
-        indexPath.section == Section.chartAndNotes.rawValue && indexPath.item == 0
+    return shouldAllowNoteAdditions &&
+      indexPath.section == Section.chartAndNotes.rawValue &&
+      indexPath.item == 0
   }
 
   /// Whether the index path is the trial header index path.
@@ -173,7 +178,7 @@ class TrialDetailDataSource {
   /// - Parameter indexPath: An index path.
   /// - Returns: True if the index path is a trial note in a valid range, otherwise false.
   func isTrialNoteIndexPath(_ indexPath: IndexPath) -> Bool {
-    if experimentInteractionOptions.shouldAllowEdits {
+    if shouldAllowNoteAdditions {
       return indexPath.section == Section.chartAndNotes.rawValue && indexPath.item > 0 &&
           indexPath.item <= displayTrial.notes.count
     } else {
@@ -282,7 +287,7 @@ class TrialDetailDataSource {
   /// - Returns: The index path for the note.
   private func indexPathForNote(atIndex index: Int) -> IndexPath {
     var itemIndex = index
-    if experimentInteractionOptions.shouldAllowEdits {
+    if shouldAllowNoteAdditions {
       itemIndex += 1
     }
     return IndexPath(item: itemIndex, section: Section.chartAndNotes.rawValue)
@@ -295,10 +300,14 @@ class TrialDetailDataSource {
   /// - Returns: The index of the note in the notes array.
   private func indexOfNote(forIndexPath indexPath: IndexPath) -> Int {
     var index = indexPath.item
-    if experimentInteractionOptions.shouldAllowEdits {
+    if shouldAllowNoteAdditions {
       index -= 1
     }
     return index
   }
 
+  /// Returns true if notes are allowed to be added to this trial
+  private var shouldAllowNoteAdditions: Bool {
+    return experimentAllowsAdditions && !trial.isArchived
+  }
 }

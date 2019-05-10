@@ -48,6 +48,11 @@ struct ExperimentInteractionOptions: OptionSet {
     return contains(.canAdd)
   }
 
+  /// Whether additions can be made.
+  var shouldAllowAdditions: Bool {
+    return contains(.canAdd)
+  }
+
   /// Whether edits can be made.
   var shouldAllowEdits: Bool {
     return contains(.canEdit)

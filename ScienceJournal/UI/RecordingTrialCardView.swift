@@ -76,8 +76,7 @@ class RecordingTrialCardView: UIView {
     // Trial card header view.
     addSubview(trialCardHeaderView)
     trialCardHeaderView.backgroundColor = .trialHeaderRecordingBackgroundColor
-    trialCardHeaderView.titleLabel.text = String.experimentRecordingTitle
-    trialCardHeaderView.accessibilityLabel = trialCardHeaderView.titleLabel.text
+    trialCardHeaderView.configure(title: .experimentRecordingTitle)
   }
 
 }

@@ -18,20 +18,40 @@ import UIKit
 
 extension UIView {
 
+  struct Edge: OptionSet {
+    let rawValue: Int
+
+    static let top = Edge(rawValue: 1 << 0)
+    static let trailing = Edge(rawValue: 1 << 1)
+    static let leading = Edge(rawValue: 1 << 2)
+    static let bottom = Edge(rawValue: 1 << 3)
+  }
+
   /// Pin one view's anchors to the edges of another's.
   ///
   /// - Parameters:
   ///   - toView: The view to pin to.
+  ///   - edges: The edges to pin to.
   ///   - insets: Insets to apply to constant values for constraints.
-  func pinToEdgesOfView(_ toView: UIView, withInsets insets: UIEdgeInsets = .zero) {
-    self.topAnchor.constraint(equalTo: toView.topAnchor,
-                              constant: insets.top).isActive = true
-    self.leadingAnchor.constraint(equalTo: toView.leadingAnchor,
-                                  constant: insets.left).isActive = true
-    self.trailingAnchor.constraint(equalTo: toView.trailingAnchor,
-                                   constant: -insets.right).isActive = true
-    self.bottomAnchor.constraint(equalTo: toView.bottomAnchor,
-                                 constant: -insets.bottom).isActive = true
+  func pinToEdgesOfView(_ toView: UIView,
+                        andEdges edges: [Edge] = [.top, .trailing, .leading, .bottom],
+                        withInsets insets: UIEdgeInsets = .zero) {
+    if edges.contains(.top) {
+      topAnchor.constraint(equalTo: toView.topAnchor,
+                           constant: insets.top).isActive = true
+    }
+    if edges.contains(.leading) {
+      leadingAnchor.constraint(equalTo: toView.leadingAnchor,
+                               constant: insets.left).isActive = true
+    }
+    if edges.contains(.trailing) {
+      trailingAnchor.constraint(equalTo: toView.trailingAnchor,
+                                constant: -insets.right).isActive = true
+    }
+    if edges.contains(.bottom) {
+      bottomAnchor.constraint(equalTo: toView.bottomAnchor,
+                              constant: -insets.bottom).isActive = true
+    }
   }
 
   /// Animates the rotation transform of a view.

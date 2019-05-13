@@ -23,8 +23,6 @@ class TrialCardHeaderView: UIView {
 
   // MARK: - Properties
 
-  let titleLabel = UILabel()
-
   static var height: CGFloat {
     // Padding at the top and bottom of the view.
     var totalHeight = ExperimentCardView.innerVerticalPadding * 2
@@ -42,6 +40,8 @@ class TrialCardHeaderView: UIView {
     }
   }
 
+  private let titleLabel = UILabel()
+  private let durationLabel = UILabel()
   private let archivedFlag = ArchivedFlagView()
   private let dimmedAlpha: CGFloat = 0.3
 
@@ -57,6 +57,30 @@ class TrialCardHeaderView: UIView {
     configureView()
   }
 
+  func configure(title: String) {
+    titleLabel.text = title
+    durationLabel.text = nil
+    accessibilityLabel = title
+  }
+
+  func configure(with trial: DisplayTrial) {
+    var titleString: String
+    if let trialTitle = trial.title, !trialTitle.isEmpty {
+      titleString = trialTitle
+    } else {
+      titleString = trial.alternateTitle
+    }
+    titleLabel.text = titleString
+
+    durationLabel.text = trial.duration.map { " (\($0))" }
+
+    var accessibleTitleString = titleString
+    if let accessibleDuration = trial.accessibleDuration {
+      accessibleTitleString += ", \(accessibleDuration)"
+    }
+    accessibilityLabel = accessibleTitleString
+  }
+
   // MARK: - Private
 
   private func configureView() {
@@ -67,24 +91,49 @@ class TrialCardHeaderView: UIView {
 
     // Title label.
     addSubview(titleLabel)
-    titleLabel.font = MDCTypography.body2Font()
-    titleLabel.textColor = .white
+    applyLabelStyles(to: titleLabel)
+
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
-    let insets = UIEdgeInsets(top: ExperimentCardView.innerVerticalPadding,
-                              left: ExperimentCardView.innerHorizontalPadding,
-                              bottom: ExperimentCardView.innerVerticalPadding,
-                              right: ExperimentCardView.innerHorizontalPadding)
-    titleLabel.pinToEdgesOfView(self, withInsets: insets)
+    let titleInsets = UIEdgeInsets(top: ExperimentCardView.innerVerticalPadding,
+                                   left: ExperimentCardView.innerHorizontalPadding,
+                                   bottom: ExperimentCardView.innerVerticalPadding,
+                                   right: 0)
+    titleLabel.pinToEdgesOfView(self, andEdges: [.top, .bottom, .leading], withInsets: titleInsets)
+
+    // Duration label.
+    addSubview(durationLabel)
+    applyLabelStyles(to: durationLabel)
+
+    durationLabel.translatesAutoresizingMaskIntoConstraints = false
+    let durationInsets = UIEdgeInsets(top: ExperimentCardView.innerVerticalPadding,
+                                      left: 0,
+                                      bottom: ExperimentCardView.innerVerticalPadding,
+                                      right: ExperimentCardView.innerHorizontalPadding)
+    durationLabel.pinToEdgesOfView(
+      self,
+      andEdges: [.top, .trailing, .bottom],
+      withInsets: durationInsets
+    )
+    durationLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+
+    // Title-Duration
+    titleLabel.trailingAnchor.constraint(equalTo: durationLabel.leadingAnchor).isActive = true
 
     // Archived flag view.
     addSubview(archivedFlag)
     archivedFlag.isShadowed = false
     archivedFlag.translatesAutoresizingMaskIntoConstraints = false
     archivedFlag.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    archivedFlag.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                           constant: -insets.right).isActive = true
+    archivedFlag.trailingAnchor.constraint(
+      equalTo: trailingAnchor,
+      constant: -ExperimentCardView.innerHorizontalPadding).isActive = true
 
     updateViewForArchiveFlagState()
+  }
+
+  private func applyLabelStyles(to label: UILabel) {
+    label.font = MDCTypography.body2Font()
+    label.textColor = .white
   }
 
   private func updateViewForArchiveFlagState() {

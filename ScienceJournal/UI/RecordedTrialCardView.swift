@@ -124,21 +124,7 @@ class RecordedTrialCardView: UIView {
     experimentCardHeaderView.accessibilityLabel = experimentCardHeaderView.headerTimestampLabel.text
 
     // Title bar.
-    var titleString: String
-    if let trialTitle = trial.title, trialTitle.count > 0 {
-      titleString = trialTitle
-    } else {
-      titleString = trial.alternateTitle
-    }
-    var accessibleTitleString = titleString
-    if let duration = trial.duration {
-      titleString += " (\(duration))"
-    }
-    trialCardHeaderView.titleLabel.text = titleString
-    if let accessibleDuration = trial.accessibleDuration {
-      accessibleTitleString += ", \(accessibleDuration)"
-    }
-    trialCardHeaderView.accessibilityLabel = accessibleTitleString
+    trialCardHeaderView.configure(with: trial)
     trialCardHeaderView.isShowingArchiveFlag = trial.isArchived
 
     // Sensors view.

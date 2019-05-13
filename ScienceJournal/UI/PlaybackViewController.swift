@@ -166,6 +166,8 @@ class PlaybackViewController: UIViewController, ChartControllerDelegate, Accessi
     playButton.leftAnchor.constraint(equalTo: bottomWrapper.leftAnchor).isActive = true
     playButton.topAnchor.constraint(equalTo: bottomWrapper.topAnchor).isActive = true
     playButton.bottomAnchor.constraint(equalTo: bottomWrapper.bottomAnchor).isActive = true
+    // Adjust the image inset to align with the time axis
+    playButton.imageEdgeInsets = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
     timeAxisController.timeAxisView.leftAnchor.constraint(
         equalTo: playButton.rightAnchor).isActive = true
     timeAxisController.timeAxisView.topAnchor.constraint(

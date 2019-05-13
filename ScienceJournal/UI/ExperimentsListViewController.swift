@@ -434,7 +434,11 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   // Feature highlight that nudges the user to create an experiment if they have one or fewer
   // experiments.
   @objc private func highlightCreateActionIfNeeded() {
-    guard experimentsListItemsViewController.itemCount <= 1 else { return }
+    guard !preferenceManager.hasUserSeenExperimentHighlight else { return }
+    guard metadataManager.experimentOverviews.count <= 1 else {
+      preferenceManager.hasUserSeenExperimentHighlight = true
+      return
+    }
 
     // Set up a fake button to display a highlighted state and have a nice shadow.
     let fakeFAB = MDCFloatingButton()
@@ -528,6 +532,8 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
   }
 
   @objc private func addExperimentButtonPressed() {
+    // User is taking the featured action, so ensure that they never see the feature highlight.
+    preferenceManager.hasUserSeenExperimentHighlight = true
     delegate?.experimentsListShowNewExperiment()
   }
 

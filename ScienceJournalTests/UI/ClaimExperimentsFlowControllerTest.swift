@@ -18,7 +18,7 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-class ClaimExperimentsFlowControllerTest: XCTestCase {
+class ClaimExperimentsFlowControllerTest: XCTestCase, TestDirectories {
 
   var claimExperimentsFlowController: ClaimExperimentsFlowController!
   var existingDataMigrationManager: ExistingDataMigrationManager!
@@ -32,7 +32,10 @@ class ClaimExperimentsFlowControllerTest: XCTestCase {
                                                 networkAvailability: SettableNetworkAvailability(),
                                                 sensorController: mockSensorController,
                                                 analyticsReporter: AnalyticsReporterOpen())
-    let rootUserManager = RootUserManager(sensorController: mockSensorController)
+    let rootUserManager = RootUserManager(
+      sensorController: mockSensorController,
+      documentsDirectoryURL: createUniqueTestDirectoryURL()
+    )
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,
                                      rootUserManager: rootUserManager)

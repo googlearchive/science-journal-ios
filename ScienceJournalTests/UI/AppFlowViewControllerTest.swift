@@ -18,7 +18,7 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-class AppFlowViewControllerTest: XCTestCase {
+class AppFlowViewControllerTest: XCTestCase, TestDirectories {
 
   var appFlowViewController: AppFlowViewController!
   private var mockAccountsManager: MockAccountsManager!
@@ -31,6 +31,7 @@ class AppFlowViewControllerTest: XCTestCase {
         MockAccountsManager(mockAuthAccount: MockAuthAccount(ID: "AppFlowViewControllerTestID"))
     let analyticsReporter = AnalyticsReporterOpen()
     let sensorController = MockSensorController()
+    let documentsDirectoryURL = createUniqueTestDirectoryURL()
     #if FEATURE_FIREBASE_RC
     appFlowViewController =
         AppFlowViewController(accountsManager: mockAccountsManager,
@@ -41,7 +42,8 @@ class AppFlowViewControllerTest: XCTestCase {
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
                               remoteConfigManager: RemoteConfigManagerDisabled(),
-                              sensorController: sensorController)
+                              sensorController: sensorController,
+                              documentsDirectoryURL: documentsDirectoryURL)
     #else
     appFlowViewController =
         AppFlowViewController(accountsManager: mockAccountsManager,
@@ -51,7 +53,8 @@ class AppFlowViewControllerTest: XCTestCase {
                               driveConstructor: mockDriveConstructor,
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
-                              sensorController: sensorController)
+                              sensorController: sensorController,
+                              documentsDirectoryURL: documentsDirectoryURL)
     #endif
   }
 

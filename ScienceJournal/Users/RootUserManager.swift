@@ -49,9 +49,10 @@ class RootUserManager: UserManager {
 
   /// Designated initializer.
   ///
-  /// - Parameter sensorController: The sensor controler.
-  init(sensorController: SensorController) {
-    documentsDirectoryURL = URL.documentsDirectoryURL
+  /// - Parameter sensorController: The sensor controller.
+  /// - Parameter documentsDirectoryURL: The documents directory.
+  init(sensorController: SensorController, documentsDirectoryURL: URL = URL.documentsDirectoryURL) {
+    self.documentsDirectoryURL = documentsDirectoryURL
 
     // Configure preference manager with no account ID.
     preferenceManager = PreferenceManager()

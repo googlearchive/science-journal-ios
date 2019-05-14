@@ -18,20 +18,17 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-class RootUserManagerTest: XCTestCase {
+class RootUserManagerTest: XCTestCase, TestDirectories {
 
-  var rootUserManager: RootUserManager!
+  private var rootUserManager: RootUserManager!
 
   override func setUp() {
-    // Remove the root user during setup so we can test initialization from a clean state.
-    let rootURL = URL.documentsDirectoryURL.appendingPathComponent("Science Journal")
-    do {
-      try FileManager.default.removeItem(at: rootURL)
-    } catch {
-      print("[RootUserManagerTest] Error deleting root user: \(error)")
-    }
+    super.setUp()
 
-    rootUserManager = RootUserManager(sensorController: MockSensorController())
+    rootUserManager = RootUserManager(
+      sensorController: MockSensorController(),
+      documentsDirectoryURL: createUniqueTestDirectoryURL()
+    )
     rootUserManager.preferenceManager.resetAll()
   }
 

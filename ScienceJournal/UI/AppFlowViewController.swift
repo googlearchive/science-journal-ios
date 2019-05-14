@@ -80,6 +80,7 @@ class AppFlowViewController: UIViewController {
   ///   - networkAvailability: Network availability.
   ///   - remoteConfigManager: The remote config manager.
   ///   - sensorController: The sensor controller.
+  ///   - documentsDirectoryURL: The documents directory.
   convenience init(accountsManager: AccountsManager,
                    analyticsReporter: AnalyticsReporter,
                    commonUIComponents: CommonUIComponents,
@@ -88,7 +89,8 @@ class AppFlowViewController: UIViewController {
                    feedbackReporter: FeedbackReporter,
                    networkAvailability: NetworkAvailability,
                    remoteConfigManager: RemoteConfigManager,
-                   sensorController: SensorController) {
+                   sensorController: SensorController,
+                   documentsDirectoryURL: URL = URL.documentsDirectoryURL) {
     self.init(accountsManager: accountsManager,
               analyticsReporter: analyticsReporter,
               commonUIComponents: commonUIComponents,
@@ -96,7 +98,8 @@ class AppFlowViewController: UIViewController {
               driveConstructor: driveConstructor,
               feedbackReporter: feedbackReporter,
               networkAvailability: networkAvailability,
-              sensorController: sensorController)
+              sensorController: sensorController,
+              documentsDirectoryURL: documentsDirectoryURL)
     self.remoteConfigManager = remoteConfigManager
   }
   #endif
@@ -112,6 +115,7 @@ class AppFlowViewController: UIViewController {
   ///   - feedbackReporter: The feedback reporter.
   ///   - networkAvailability: Network availability.
   ///   - sensorController: The sensor controller.
+  ///   - documentsDirectoryURL: The documents directory.
   init(accountsManager: AccountsManager,
        analyticsReporter: AnalyticsReporter,
        commonUIComponents: CommonUIComponents,
@@ -119,7 +123,8 @@ class AppFlowViewController: UIViewController {
        driveConstructor: DriveConstructor,
        feedbackReporter: FeedbackReporter,
        networkAvailability: NetworkAvailability,
-       sensorController: SensorController) {
+       sensorController: SensorController,
+       documentsDirectoryURL: URL = URL.documentsDirectoryURL) {
     self.accountsManager = accountsManager
     self.analyticsReporter = analyticsReporter
     self.commonUIComponents = commonUIComponents
@@ -128,7 +133,10 @@ class AppFlowViewController: UIViewController {
     self.feedbackReporter = feedbackReporter
     self.networkAvailability = networkAvailability
     self.sensorController = sensorController
-    rootUserManager = RootUserManager(sensorController: sensorController)
+    rootUserManager = RootUserManager(
+      sensorController: sensorController,
+      documentsDirectoryURL: documentsDirectoryURL
+    )
     super.init(nibName: nil, bundle: nil)
 
     // Register as the delegate for AccountsManager.

@@ -322,6 +322,7 @@ extension String {
   static public var permissionsGuideWelcomeTitle: String { return "permissions_guide_welcome_title".localized }
   static public var photoForContentDescription: String { return "photo_for_content_description".localized }
   static public var photoSelectContentDescription: String { return "photo_select_content_description".localized }
+  static public var photoDiskSpaceErrorMessage: String { return "photo_disk_space_error_message".localized }
   static public var phoneSensors: String { return "phone_sensors".localized }
   static public var photosTabContentDescription: String { return "photos_tab_content_description".localized }
   static public var pictureDetailInfo: String { return "picture_detail_info".localized }

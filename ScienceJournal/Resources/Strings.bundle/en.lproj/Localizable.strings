@@ -892,6 +892,9 @@
 /* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
 "photo_select_content_description" = "Photo";
 
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Not enough disk space to add photo";
+
 /* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
 "phone_sensors" = "Internal sensors";
 

@@ -173,7 +173,7 @@ PODS:
   - MotionInterchange (1.6.0)
   - Protobuf (3.5.0)
   - SSZipArchive (2.1.1)
-  - SwiftLint (0.31.0)
+  - SwiftLint (0.32.0)
 
 DEPENDENCIES:
   - GoogleAPIClientForREST/Drive (~> 1.2.1)
@@ -234,7 +234,7 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
 
 PODFILE CHECKSUM: 4aff6b53fddb53167d74b1576672ac6e1c17f438
 

@@ -1,10 +1,6 @@
-excluded:
-  - Pods
-  - Protos
-  - ScienceJournalTests
-  - ScienceJournalUITests
-  - ScienceJournal/Generated
-  - third_party
+# This config file defines the rules, but it should not be used to specify
+# which paths are linted. Build Phase scripts exclusive to each build are
+# responsible for referencing this config file and the paths to lint.
 
 line_length:
   warning: 100

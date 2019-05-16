@@ -67,11 +67,12 @@ class ObserveViewControllerTest: XCTestCase {
     mockDelegate.mockActiveTriggers = [trigger1, trigger2]
 
     // Create an observe view controller, set the mock delegate and give it all of the triggers.
+    let sensorDataManager = createSensorDataManager()
     let observeViewController =
         ObserveViewController(analyticsReporter: AnalyticsReporterOpen(),
                               preferenceManager: PreferenceManager(),
                               sensorController: MockSensorController(),
-                              sensorDataManager: SensorDataManager.testStore)
+                              sensorDataManager: sensorDataManager)
     observeViewController.delegate = mockDelegate
     observeViewController.sensorTriggers = [trigger1, trigger2, trigger3, trigger4]
 
@@ -101,10 +102,11 @@ class ObserveViewControllerTest: XCTestCase {
       $0.triggerInformation.triggerActionType = .triggerActionAlert
       $0.triggerInformation.triggerAlertTypes = [.triggerAlertVisual]
     }
+    let sensorDataManager = createSensorDataManager()
     let observe = ObserveViewController(analyticsReporter: AnalyticsReporterOpen(),
                                         preferenceManager: PreferenceManager(),
                                         sensorController: MockSensorController(),
-                                        sensorDataManager: SensorDataManager.testStore)
+                                        sensorDataManager: sensorDataManager)
     observe.sensorTriggers = triggers
 
     XCTAssertFalse(observe.sensorHasVisualTriggers(sensor, forRecording: false),
@@ -146,10 +148,11 @@ class ObserveViewControllerTest: XCTestCase {
   func testUpdateSensorCardsForVisualTriggers() {
     // Set up observe with a sensor card for one sensor in the data source.
     let sensor = Sensor.mock(sensorId: "test sensor")
+    let sensorDataManager = createSensorDataManager()
     let observe = ObserveViewController(analyticsReporter: AnalyticsReporterOpen(),
                                         preferenceManager: PreferenceManager(),
                                         sensorController: MockSensorController(),
-                                        sensorDataManager: SensorDataManager.testStore)
+                                        sensorDataManager: sensorDataManager)
     let sensorCard = observe.observeDataSource.sensorCardWithSensor(sensor,
                                                                     cardColorPalette: .blue,
                                                                     cellStateOptions: .normal)
@@ -193,10 +196,11 @@ class ObserveViewControllerTest: XCTestCase {
     let sensor1 = Sensor.mock(sensorId: "TEST_SENSOR_1")
     let sensor2 = Sensor.mock(sensorId: "TEST_SENSOR_2")
     let sensor3 = Sensor.mock(sensorId: "TEST_SENSOR_3")
+    let sensorDataManager = createSensorDataManager()
     let observeVC = ObserveViewController(analyticsReporter: AnalyticsReporterOpen(),
                                           preferenceManager: PreferenceManager(),
                                           sensorController: MockSensorController(),
-                                          sensorDataManager: SensorDataManager.testStore)
+                                          sensorDataManager: sensorDataManager)
     _ = observeVC.observeDataSource.sensorCardWithSensor(sensor1,
                                                          cardColorPalette: .blue,
                                                          cellStateOptions: .normal)
@@ -224,11 +228,12 @@ class ObserveViewControllerTest: XCTestCase {
     let mockSensorController = MockSensorController()
     mockSensorController.addSensorToReturn(mockSensor, forSensorId: mockSensor.sensorId)
 
+    let sensorDataManager = createSensorDataManager()
     let observeViewController =
         ObserveViewController(analyticsReporter: AnalyticsReporterOpen(),
                               preferenceManager: PreferenceManager(),
                               sensorController: mockSensorController,
-                              sensorDataManager: SensorDataManager.testStore)
+                              sensorDataManager: sensorDataManager)
     observeViewController.addInitialSensorCardIfNeeded(andAddListener: false)
 
     observeViewController.applicationWillResignActive()

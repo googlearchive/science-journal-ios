@@ -21,19 +21,15 @@ import XCTest
 class ExperimentListDataSourceTest: XCTestCase {
 
   var dataSource: ExperimentsListDataSource!
-  let metadataManager = MetadataManager.testingInstance
+  var metadataManager: MetadataManager!
 
   override func setUp() {
     super.setUp()
 
+    metadataManager = createMetadataManager()
     dataSource = ExperimentsListDataSource(
         includeArchived: false,
         metadataManager: metadataManager)
-  }
-
-  override func tearDown() {
-    metadataManager.deleteRootDirectory()
-    super.tearDown()
   }
 
   func testInsertOverviewAtBeginning() {

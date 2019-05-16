@@ -18,7 +18,7 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-class ClaimExperimentsFlowControllerTest: XCTestCase, TestDirectories {
+class ClaimExperimentsFlowControllerTest: XCTestCase {
 
   var claimExperimentsFlowController: ClaimExperimentsFlowController!
   var existingDataMigrationManager: ExistingDataMigrationManager!

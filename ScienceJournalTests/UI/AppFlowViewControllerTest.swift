@@ -18,7 +18,7 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-class AppFlowViewControllerTest: XCTestCase, TestDirectories {
+class AppFlowViewControllerTest: XCTestCase {
 
   var appFlowViewController: AppFlowViewController!
   private var mockAccountsManager: MockAccountsManager!

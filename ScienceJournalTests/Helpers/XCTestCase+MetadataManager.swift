@@ -14,37 +14,21 @@
  *  limitations under the License.
  */
 
-import Foundation
+import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-extension MetadataManager {
-
-  /// Returns an instance of MetadataManager with a test directory root URL.
-  public static var testingInstance: MetadataManager {
-    return testingInstance(sensorController: MockSensorController())
-  }
-
-  public static func testingInstance(sensorController: SensorController) -> MetadataManager {
-    let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
-    let rootURL = tempDirectory.appendingPathComponent("TESTING-" + UUID().uuidString)
+extension XCTestCase {
+  public func createMetadataManager(
+    rootURL: URL? = nil,
+    sensorController: SensorController? = nil
+  ) -> MetadataManager {
+    let rootURL = rootURL ?? createUniqueTestDirectoryURL()
+    let sensorController = sensorController ?? MockSensorController()
     return MetadataManager(rootURL: rootURL,
                            deletedRootURL: rootURL,
                            preferenceManager: PreferenceManager(),
                            sensorController: sensorController,
-                           sensorDataManager: SensorDataManager.testStore)
+                           sensorDataManager: createSensorDataManager(rootURL: rootURL))
   }
-
-  func deleteRootDirectory() {
-    guard FileManager.default.fileExists(atPath: rootURL.path) else {
-      return
-    }
-
-    do {
-      try FileManager.default.removeItem(at: rootURL)
-    } catch {
-      print("[MetadataManager] Error deleting root directory: \(error)")
-    }
-  }
-
 }

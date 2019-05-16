@@ -22,30 +22,14 @@ import XCTest
 
 class WriteTrialSensorDataToDiskOperationTest: XCTestCase {
 
-  let metadataManager = MetadataManager.testingInstance
-  let sensorDataManager = SensorDataManager.testStore
+  var sensorDataManager: SensorDataManager!
   let operationQueue = GSJOperationQueue()
   let testingDirectoryName = "ExportExperimentSensorDataOperationTest"
-  var saveDirectoryURL: URL!
 
   override func setUp() {
     super.setUp()
 
-    saveDirectoryURL =
-        URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(testingDirectoryName)
-    if FileManager.default.fileExists(atPath: saveDirectoryURL.path) {
-      try! FileManager.default.removeItem(at: saveDirectoryURL)
-    }
-
-    // Clean up any old data.
-    sensorDataManager.performChanges(andWait: true, save: true) {
-      self.sensorDataManager.removeData(forTrialID: "TEST_TRIAL")
-    }
-  }
-
-  override func tearDown() {
-    metadataManager.deleteRootDirectory()
-    super.tearDown()
+    sensorDataManager = createSensorDataManager()
   }
 
   func testSensorDataProtoFromExperiment() {
@@ -75,11 +59,7 @@ class WriteTrialSensorDataToDiskOperationTest: XCTestCase {
 
     let expectation = XCTestExpectation()
 
-    XCTAssertNoThrow(try FileManager.default.createDirectory(at: saveDirectoryURL,
-                                                             withIntermediateDirectories: true,
-                                                             attributes: nil))
-
-    let saveURL = saveDirectoryURL.appendingPathComponent("test.proto")
+    let saveURL = createUniqueTestDirectoryURL().appendingPathComponent("test.proto")
     let writeTrialSensorDataToDiskOperation =
         WriteTrialSensorDataToDiskOperation(saveFileURL: saveURL,
                                             sensorDataManager: sensorDataManager,

@@ -15,22 +15,23 @@
  */
 
 import Foundation
+import XCTest
 
 /// URLs and support behavior for test-specific directories.
-protocol TestDirectories {
+public protocol TestDirectories {
   func addTeardownBlock(_ block: @escaping () -> Void)
 }
 
 extension TestDirectories {
   /// The test directory under which other test-specific directories are created.
-  var testRootDirectoryURL: URL {
-    return URL.documentsDirectoryURL.appendingPathComponent("TEST")
+  public var testRootDirectoryURL: URL {
+    return FileManager.default.temporaryDirectory.appendingPathComponent("TEST")
   }
 
   /// Create a unique test directory.
   ///
   /// - Parameter removeDuringTeardown: Whether to remove the directory during teardown.
-  func createUniqueTestDirectoryURL(removeDuringTeardown: Bool = true) -> URL {
+  public func createUniqueTestDirectoryURL(removeDuringTeardown: Bool = true) -> URL {
     let uniqueTestDirectoryURL = testRootDirectoryURL.appendingPathComponent(UUID().uuidString)
     try! FileManager.default.createDirectory(
       at: uniqueTestDirectoryURL,
@@ -44,3 +45,5 @@ extension TestDirectories {
     return uniqueTestDirectoryURL
   }
 }
+
+extension XCTestCase: TestDirectories {}

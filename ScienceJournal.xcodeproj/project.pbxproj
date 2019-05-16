@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
+		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
 		4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */; };
@@ -17,7 +18,7 @@
 		486482F320CF4EA700ADE0C9 /* SensorController+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */; };
 		4886F534209CE13E003892D7 /* TestSensorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F52E209CE13D003892D7 /* TestSensorInterface.swift */; };
 		4886F535209CE13E003892D7 /* MockSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F52F209CE13D003892D7 /* MockSensor.swift */; };
-		4886F536209CE13E003892D7 /* MetadataManager+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F530209CE13E003892D7 /* MetadataManager+Testing.swift */; };
+		4886F536209CE13E003892D7 /* XCTestCase+MetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F530209CE13E003892D7 /* XCTestCase+MetadataManager.swift */; };
 		4886F537209CE13E003892D7 /* SettableClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F531209CE13E003892D7 /* SettableClock.swift */; };
 		4886F538209CE13E003892D7 /* MockSensorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F532209CE13E003892D7 /* MockSensorController.swift */; };
 		4886F539209CE13E003892D7 /* SimpleOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886F533209CE13E003892D7 /* SimpleOperation.swift */; };
@@ -213,7 +214,7 @@
 		5CE0477F1F5F4ED000E8EAA1 /* SingleValueSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0477E1F5F4ED000E8EAA1 /* SingleValueSensor.swift */; };
 		5CE047811F60721500E8EAA1 /* SensorSpec+BLESensorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE047801F60721500E8EAA1 /* SensorSpec+BLESensorInterface.swift */; };
 		5CE047831F6195A300E8EAA1 /* SensorSpec+BLESensorInterfaceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE047821F6195A300E8EAA1 /* SensorSpec+BLESensorInterfaceTest.swift */; };
-		5CE5219F209CFD1900767C8E /* SensorDataManager+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5219E209CFD1800767C8E /* SensorDataManager+Testing.swift */; };
+		5CE5219F209CFD1900767C8E /* XCTestCase+SensorDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5219E209CFD1800767C8E /* XCTestCase+SensorDataManager.swift */; };
 		5CE521A2209D03DC00767C8E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE521A1209D03DC00767C8E /* UserManager.swift */; };
 		5CE521A4209D045700767C8E /* RootUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE521A3209D045700767C8E /* RootUserManager.swift */; };
 		5CE521A6209D052A00767C8E /* AccountUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE521A5209D052A00767C8E /* AccountUserManager.swift */; };
@@ -615,6 +616,7 @@
 		28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
+		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButtonCell.swift; sourceTree = "<group>"; };
@@ -626,7 +628,7 @@
 		486F97684E4736F8AED250F0 /* Pods-ScienceJournalUITests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		4886F52E209CE13D003892D7 /* TestSensorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSensorInterface.swift; sourceTree = "<group>"; };
 		4886F52F209CE13D003892D7 /* MockSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSensor.swift; sourceTree = "<group>"; };
-		4886F530209CE13E003892D7 /* MetadataManager+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MetadataManager+Testing.swift"; sourceTree = "<group>"; };
+		4886F530209CE13E003892D7 /* XCTestCase+MetadataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MetadataManager.swift"; sourceTree = "<group>"; };
 		4886F531209CE13E003892D7 /* SettableClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettableClock.swift; sourceTree = "<group>"; };
 		4886F532209CE13E003892D7 /* MockSensorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSensorController.swift; sourceTree = "<group>"; };
 		4886F533209CE13E003892D7 /* SimpleOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleOperation.swift; sourceTree = "<group>"; };
@@ -828,7 +830,7 @@
 		5CE047801F60721500E8EAA1 /* SensorSpec+BLESensorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SensorSpec+BLESensorInterface.swift"; sourceTree = "<group>"; };
 		5CE047821F6195A300E8EAA1 /* SensorSpec+BLESensorInterfaceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SensorSpec+BLESensorInterfaceTest.swift"; sourceTree = "<group>"; };
 		5CE3B83D1EC3779600DCB065 /* PlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackViewController.swift; sourceTree = "<group>"; };
-		5CE5219E209CFD1800767C8E /* SensorDataManager+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SensorDataManager+Testing.swift"; sourceTree = "<group>"; };
+		5CE5219E209CFD1800767C8E /* XCTestCase+SensorDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+SensorDataManager.swift"; sourceTree = "<group>"; };
 		5CE521A1209D03DC00767C8E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CE521A3209D045700767C8E /* RootUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUserManager.swift; sourceTree = "<group>"; };
 		5CE521A5209D052A00767C8E /* AccountUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUserManager.swift; sourceTree = "<group>"; };
@@ -1275,7 +1277,6 @@
 			children = (
 				5C880BA321936BBF00594166 /* DriveConstructorTestable.swift */,
 				5CC561EA20BF091800EDB677 /* ExperimentChange+Testing.swift */,
-				4886F530209CE13E003892D7 /* MetadataManager+Testing.swift */,
 				8BC1CBB620DD645800CBDB9D /* MockAccountsManager.swift */,
 				5C95134D20CB2E050033D9FA /* MockAuthAccount.swift */,
 				4886F52F209CE13D003892D7 /* MockSensor.swift */,
@@ -1283,12 +1284,14 @@
 				5CC0E91B21418E21003F620A /* MockUserAssetManager.swift */,
 				8B725C6D215BC292000CA1E2 /* MockUserManager.swift */,
 				486482F220CF4EA700ADE0C9 /* SensorController+Testing.swift */,
-				5CE5219E209CFD1800767C8E /* SensorDataManager+Testing.swift */,
 				4886F531209CE13E003892D7 /* SettableClock.swift */,
 				8B7049302139B24200763630 /* SettableNetworkAvailability.swift */,
 				4886F533209CE13E003892D7 /* SimpleOperation.swift */,
 				3F044C60228A07F900B6D551 /* TestDirectories.swift */,
 				4886F52E209CE13D003892D7 /* TestSensorInterface.swift */,
+				4886F530209CE13E003892D7 /* XCTestCase+MetadataManager.swift */,
+				5CE5219E209CFD1800767C8E /* XCTestCase+SensorDataManager.swift */,
+				3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -3620,7 +3623,7 @@
 				8B9ADF8F1ECF750000C7DB7D /* StatCalculatorTest.swift in Sources */,
 				5CC813D120D18FC000CC05E9 /* ExperimentLibraryMergerTest.swift in Sources */,
 				5C44D9D31FBC99A50050E81C /* SensorDataTest.swift in Sources */,
-				4886F536209CE13E003892D7 /* MetadataManager+Testing.swift in Sources */,
+				4886F536209CE13E003892D7 /* XCTestCase+MetadataManager.swift in Sources */,
 				8B4F2A741ECF8D1B00379274 /* ObserveDataSourceTest.swift in Sources */,
 				5CA4328C1FACF9DB0048E752 /* SensorTest.swift in Sources */,
 				8B88BA6420A5DC99004833B3 /* ExperimentInteractionOptionsTest.swift in Sources */,
@@ -3668,6 +3671,7 @@
 				D59CA3CF219CEE690082A27B /* MovingAverage.swift in Sources */,
 				8BD3A10A1F27B79500A5DDBD /* MDCPalette+ScienceJournalTest.swift in Sources */,
 				8BA65D6820570A4F0071C148 /* PitchSensorAnimationViewTest.swift in Sources */,
+				3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */,
 				5C2C2A2A2035D65B007F2FA5 /* GroupOperationTest.swift in Sources */,
 				5CC90472224521EC00F13EF0 /* DocumentManagerTest.swift in Sources */,
 				5C8286DA21B97FFA008D7184 /* NoteDetailControllerTest.swift in Sources */,
@@ -3682,7 +3686,7 @@
 				5CE6388C20ACB0F2004A712F /* LocalSyncStatusTest.swift in Sources */,
 				5C2B0EB51EFC0BCA00534EC3 /* ChartControllerTest.swift in Sources */,
 				5C7219661ED8D06C00817F0B /* ExperimentTest.swift in Sources */,
-				5CE5219F209CFD1900767C8E /* SensorDataManager+Testing.swift in Sources */,
+				5CE5219F209CFD1900767C8E /* XCTestCase+SensorDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

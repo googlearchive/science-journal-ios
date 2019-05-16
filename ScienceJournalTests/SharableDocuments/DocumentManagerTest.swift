@@ -20,12 +20,14 @@ import XCTest
 
 class DocumentManagerTest: XCTestCase {
 
-  let metadataManager = MetadataManager.testingInstance
-  let sensorDataManager = SensorDataManager.testStore
+  var metadataManager: MetadataManager!
+  var sensorDataManager: SensorDataManager!
   var documentManager: DocumentManager!
   let operationQueue = GSJOperationQueue()
 
   override func setUp() {
+    metadataManager = createMetadataManager()
+    sensorDataManager = createSensorDataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "DocumentManagerTest",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)

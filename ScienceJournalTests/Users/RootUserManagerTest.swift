@@ -18,7 +18,7 @@ import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-class RootUserManagerTest: XCTestCase, TestDirectories {
+class RootUserManagerTest: XCTestCase {
 
   private var rootUserManager: RootUserManager!
 

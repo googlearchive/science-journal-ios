@@ -21,8 +21,8 @@ import XCTest
 class ExperimentStateManagerTest: XCTestCase, ExperimentStateListener {
 
   var experimentStateManager: ExperimentStateManager!
-  var metadataManager = MetadataManager.testingInstance
-  var sensorDataManager = SensorDataManager.testStore
+  var metadataManager: MetadataManager!
+  var sensorDataManager: SensorDataManager!
 
   var experimentStateArchiveStateChangedCalled = false
   var experimentStateDeletedCalled = false
@@ -32,6 +32,8 @@ class ExperimentStateManagerTest: XCTestCase, ExperimentStateListener {
 
   override func setUp() {
     super.setUp()
+    metadataManager = createMetadataManager()
+    sensorDataManager = createSensorDataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "ExperimentStateManagerTest",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)
@@ -42,9 +44,6 @@ class ExperimentStateManagerTest: XCTestCase, ExperimentStateListener {
   }
 
   override func tearDown() {
-    // Delete test directory.
-    metadataManager.deleteRootDirectory()
-
     experimentStateManager.removeListener(self)
     super.tearDown()
   }

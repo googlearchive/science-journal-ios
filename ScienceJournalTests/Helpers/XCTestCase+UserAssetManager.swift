@@ -15,18 +15,17 @@
  */
 
 import Foundation
+import XCTest
 
 @testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-/// An asset manager that can be used for mocking.
-class MockUserAssetManager: UserAssetManager {
-
-  /// The parameters of the last call to `deleteSensorData(forTrial:experiment:)` or nil if that
-  /// method has not been called.
-  var deleteSensorDataCallParameters: (trialID: String, experimentID: String)?
-
-  override func deleteSensorData(forTrialID trialID: String, experimentID: String) {
-    deleteSensorDataCallParameters = (trialID, experimentID)
+extension XCTestCase {
+  func createMockUserAssetManager(rootURL: URL? = nil) -> MockUserAssetManager {
+    let rootURL = rootURL ?? createUniqueTestDirectoryURL()
+    return MockUserAssetManager(
+      driveSyncManager: nil,
+      metadataManager: createMetadataManager(rootURL: rootURL),
+      sensorDataManager: createSensorDataManager(rootURL: rootURL)
+    )
   }
-
 }

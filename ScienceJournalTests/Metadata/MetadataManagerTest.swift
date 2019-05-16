@@ -23,34 +23,19 @@ import XCTest
 class MetadataManagerTest: XCTestCase {
 
   var metadataManager: MetadataManager!
-  let sensorDataManager = SensorDataManager.testStore
-  let testingRootURL = URL.documentsDirectoryURL.appendingPathComponent("TESTING")
+  var sensorDataManager: SensorDataManager!
+  var testingRootURL: URL!
 
   override func setUp() {
     super.setUp()
 
-    // Clean up any old data.
-    sensorDataManager.performChanges(andWait: true, save: true) {
-      self.sensorDataManager.removeData(forTrialID: "TEST_TRIAL_1_MIGRATION")
-      self.sensorDataManager.removeData(forTrialID: "TEST_TRIAL_2_MIGRATION")
-    }
-
+    testingRootURL = createUniqueTestDirectoryURL()
+    sensorDataManager = createSensorDataManager()
     metadataManager = MetadataManager(rootURL: testingRootURL,
                                       deletedRootURL: testingRootURL,
                                       preferenceManager: PreferenceManager(),
                                       sensorController: MockSensorController(),
                                       sensorDataManager: sensorDataManager)
-  }
-
-  override func tearDown() {
-    if FileManager.default.fileExists(atPath: testingRootURL.path) {
-      do {
-        try FileManager.default.removeItem(at: testingRootURL)
-      } catch {
-        print("[MetadataManagerTest] Error deleting testing directory: \(error)")
-      }
-    }
-    super.tearDown()
   }
 
   func testSaveExperiment() {

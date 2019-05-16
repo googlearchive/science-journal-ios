@@ -23,8 +23,8 @@ class ImportDocumentOperationTest: XCTestCase {
   let operationQueue = GSJOperationQueue()
 
   func testImportExperimentWithoutTrialsDoesNotFail() {
-    let metadataManager = MetadataManager.testingInstance
-    let sensorDataManager = SensorDataManager.testStore
+    let metadataManager = createMetadataManager()
+    let sensorDataManager = createSensorDataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)
@@ -63,7 +63,7 @@ class ImportDocumentOperationTest: XCTestCase {
                                 zipURL: zipURL,
                                 extractionURL: extractionURL,
                                 experimentURL: experimentURL,
-                                sensorDataManager: SensorDataManager.testStore,
+                                sensorDataManager: sensorDataManager,
                                 metadataManager: metadataManager)
 
     let finishedExpectation = expectation(description: "Import document finished.")

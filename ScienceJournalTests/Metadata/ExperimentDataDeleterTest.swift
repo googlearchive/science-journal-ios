@@ -21,10 +21,12 @@ import XCTest
 class ExperimentDataDeleterTest: XCTestCase {
 
   var experimentDataDeleter: ExperimentDataDeleter!
-  let metadataManager = MetadataManager.testingInstance
-  let sensorDataManager = SensorDataManager.testStore
+  var metadataManager: MetadataManager!
+  var sensorDataManager: SensorDataManager!
 
   override func setUp() {
+    metadataManager = createMetadataManager()
+    sensorDataManager = createSensorDataManager()
     experimentDataDeleter = ExperimentDataDeleter(accountID: "test_id",
                                                   metadataManager: metadataManager,
                                                   sensorDataManager: sensorDataManager)

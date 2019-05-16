@@ -21,7 +21,7 @@ import XCTest
 
 class ChartControllerTest: XCTestCase, ChartControllerDelegate {
 
-  let sensorDataManager = SensorDataManager.testStore
+  var sensorDataManager: SensorDataManager!
 
   var sensor1 = Sensor.mock(sensorId: "TestSensorID",
                             name: "TestSensorName1",
@@ -40,10 +40,7 @@ class ChartControllerTest: XCTestCase, ChartControllerDelegate {
   override func setUp() {
     super.setUp()
 
-    // Clean up any old data.
-    sensorDataManager.performChanges(andWait: true, save: true) {
-      self.sensorDataManager.removeData(forTrialID: "TestTrialID")
-    }
+    sensorDataManager = createSensorDataManager()
 
     // Add data points.
     sensorDataManager.performChanges(andWait: true) {

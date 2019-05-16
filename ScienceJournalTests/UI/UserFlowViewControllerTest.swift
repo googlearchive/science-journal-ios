@@ -24,14 +24,12 @@ class PartialMockMetadataManager: MetadataManager {
 
   var createDefaultExperimentCalledExpectation: XCTestExpectation?
 
-  convenience init() {
-    let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
-    let rootURL = tempDirectory.appendingPathComponent("TESTING-" + UUID().uuidString)
+  convenience init(rootURL: URL, sensorDataManager: SensorDataManager) {
     self.init(rootURL: rootURL,
               deletedRootURL: rootURL,
               preferenceManager: PreferenceManager(),
               sensorController: MockSensorController(),
-              sensorDataManager: SensorDataManager.testStore)
+              sensorDataManager: sensorDataManager)
   }
 
   override func createDefaultExperimentIfNecessary() {
@@ -44,8 +42,8 @@ class PartialMockMetadataManager: MetadataManager {
 class UserFlowViewControllerTest: XCTestCase {
 
   let mockDriveSyncManager = MockDriveSyncManager()
-  let mockUserAssetManager = MockUserAssetManager()
-  let partialMockMetadataManager = PartialMockMetadataManager()
+  var mockUserAssetManager: MockUserAssetManager!
+  var partialMockMetadataManager: PartialMockMetadataManager!
   let preferenceManager = PreferenceManager()
   var userFlowViewController: UserFlowViewController!
 
@@ -54,10 +52,16 @@ class UserFlowViewControllerTest: XCTestCase {
 
     let authAccount = MockAuthAccount(ID: "testID")
     let mockAccountsManager = MockAccountsManager(mockAuthAccount: authAccount)
+    mockUserAssetManager = createMockUserAssetManager()
+    let sensorDataManager = createSensorDataManager()
+    partialMockMetadataManager = PartialMockMetadataManager(
+      rootURL: createUniqueTestDirectoryURL(),
+      sensorDataManager: sensorDataManager
+    )
     let mockUserManager = MockUserManager(driveSyncManager: mockDriveSyncManager,
                                           metadataManager: partialMockMetadataManager,
                                           preferenceManager: preferenceManager,
-                                          sensorDataManager: SensorDataManager.testStore,
+                                          sensorDataManager: sensorDataManager,
                                           assetManager: mockUserAssetManager)
     userFlowViewController =
         UserFlowViewController(accountsManager: mockAccountsManager,
@@ -137,10 +141,11 @@ class UserFlowViewControllerTest: XCTestCase {
         expectation(description: "The default experiment should be created.")
     let authAccount = MockAuthAccount(ID: "testID")
     let mockAccountsManager = MockAccountsManager(mockAuthAccount: authAccount)
+    let sensorDataManager = createSensorDataManager()
     let mockUserManager = MockUserManager(driveSyncManager: nil,
                                           metadataManager: partialMockMetadataManager,
                                           preferenceManager: preferenceManager,
-                                          sensorDataManager: SensorDataManager.testStore,
+                                          sensorDataManager: sensorDataManager,
                                           assetManager: mockUserAssetManager)
     userFlowViewController =
         UserFlowViewController(accountsManager: mockAccountsManager,

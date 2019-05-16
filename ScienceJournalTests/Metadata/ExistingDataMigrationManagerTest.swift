@@ -32,8 +32,9 @@ class ExistingDataMigrationManagerTest: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    accountMetadataManager = MetadataManager.testingInstance
-    accountSensorDataManager = SensorDataManager.testStore
+    let rootURL = createUniqueTestDirectoryURL()
+    accountMetadataManager = createMetadataManager(rootURL: rootURL)
+    accountSensorDataManager = createSensorDataManager(rootURL: rootURL)
     let accountPreferenceManager = PreferenceManager(accountID: "ExistingDataMigrationManagerTest")
     let accountAssetManager = UserAssetManager(driveSyncManager: nil,
                                                metadataManager: accountMetadataManager,
@@ -44,8 +45,8 @@ class ExistingDataMigrationManagerTest: XCTestCase {
                                          sensorDataManager: accountSensorDataManager,
                                          assetManager: accountAssetManager)
 
-    rootMetadataManager = MetadataManager.testingInstance(sensorController: sensorController)
-    rootSensorDataManager = SensorDataManager.testStore
+    rootMetadataManager = createMetadataManager(sensorController: sensorController)
+    rootSensorDataManager = createSensorDataManager()
     let rootPreferenceManager = PreferenceManager(accountID: "ExistingDataMigrationManagerTest")
     let rootAssetManager = UserAssetManager(driveSyncManager: nil,
                                             metadataManager: accountMetadataManager,
@@ -59,14 +60,6 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,
                                      rootUserManager: rootUserManager)
-  }
-
-  override func tearDown() {
-    super.tearDown()
-    accountMetadataManager.deleteRootDirectory()
-    accountSensorDataManager.deleteStore()
-    rootMetadataManager.deleteRootDirectory()
-    rootSensorDataManager.deleteStore()
   }
 
   func testMigrateExperiment() {

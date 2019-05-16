@@ -20,9 +20,9 @@ import XCTest
 
 class ExperimentCoordinatorViewControllerTest: XCTestCase {
 
-  let sensorDataManager = SensorDataManager.testStore
   var drawerVC: DrawerViewController!
-  let metadataManager = MetadataManager.testingInstance
+  var sensorDataManager: SensorDataManager!
+  var metadataManager: MetadataManager!
   var documentManager: DocumentManager!
 
   class MockDelegate: TriggerListDelegate {
@@ -35,8 +35,8 @@ class ExperimentCoordinatorViewControllerTest: XCTestCase {
   override func setUp() {
     super.setUp()
     let analyticsReporter = AnalyticsReporterOpen()
-    let sensorDataManager = SensorDataManager.testStore
-    let metadataManager = MetadataManager.testingInstance
+    sensorDataManager = createSensorDataManager()
+    metadataManager = createMetadataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)

@@ -23,7 +23,7 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
   var experiment: Experiment!
   var overview: ExperimentOverview!
   var experimentUpdateManager: ExperimentUpdateManager!
-  let metadataManager = MetadataManager.testingInstance
+  var metadataManager: MetadataManager!
 
   var experimentUpdateTrialNoteAddedCalled = false
   var experimentUpdateExperimentNoteAddedCalled = false
@@ -39,10 +39,11 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
 
   override func setUp() {
     super.setUp()
+    metadataManager = createMetadataManager()
     let (experiment, overview) = metadataManager.createExperiment()
     self.experiment = experiment
     self.overview = overview
-    let sensorDataManager = SensorDataManager.testStore
+    let sensorDataManager = createSensorDataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "TestAccountID",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)
@@ -55,9 +56,6 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
   }
 
   override func tearDown() {
-    // Delete test directory.
-    metadataManager.deleteRootDirectory()
-
     experimentUpdateManager.removeListener(self)
     super.tearDown()
   }
@@ -272,11 +270,15 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
     let trial = Trial()
     experiment.trials = [trial]
 
+    // When a `cropRange` is passed, stats are updated asynchronously, which can cause
+    // problems if teardown for this test has already run.
+    expectation(forNotification: SensorDataManager.TrialStatsCalculationDidComplete, object: nil)
     experimentUpdateManager.updateTrial(cropRange: ChartAxis(min: 10, max: 20),
                                         name: nil,
                                         captionString: nil,
                                         forTrialID: trial.ID)
 
+    waitForExpectations(timeout: 0.1)
     XCTAssertEqual(ChartAxis(min: 10, max: 20), trial.cropRange)
     XCTAssertTrue(experimentUpdateTrialUpdatedCalled)
 

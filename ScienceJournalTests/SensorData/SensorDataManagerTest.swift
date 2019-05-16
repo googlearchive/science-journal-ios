@@ -20,17 +20,12 @@ import XCTest
 
 class SensorDataManagerTest: XCTestCase {
 
-  var sensorDataManager = SensorDataManager.testStore
+  var sensorDataManager: SensorDataManager!
 
   override func setUp() {
     super.setUp()
 
-    // Clean up any old data.
-    sensorDataManager.performChanges(andWait: true, save: true) {
-      self.sensorDataManager.removeData(forTrialID: "TEST_TRIAL")
-      self.sensorDataManager.removeData(forTrialID: "TEST_TRIAL_2")
-      self.sensorDataManager.removeData(forTrialID: "TEST_TRIAL_3")
-    }
+    sensorDataManager = createSensorDataManager()
   }
 
 

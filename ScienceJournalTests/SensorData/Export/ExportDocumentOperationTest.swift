@@ -20,13 +20,15 @@ import XCTest
 
 class ExportDocumentOperationTest: XCTestCase {
 
-  let metadataManager = MetadataManager.testingInstance
+  var metadataManager: MetadataManager!
+  var sensorDataManager: SensorDataManager!
   var documentManager: DocumentManager!
   let operationQueue = GSJOperationQueue()
 
   override func setUp() {
     super.setUp()
-    let sensorDataManager = SensorDataManager.testStore
+    metadataManager = createMetadataManager()
+    sensorDataManager = createSensorDataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)
@@ -36,8 +38,6 @@ class ExportDocumentOperationTest: XCTestCase {
   }
 
   func testExportedExperiment() {
-    let sensorDataManager = SensorDataManager.testStore
-
     let (experiment, _) = metadataManager.createExperiment()
     let exportExperimentID = experiment.ID
     experiment.notes = [PictureNote(), TextNote(text: "note")]

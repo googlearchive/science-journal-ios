@@ -41,8 +41,9 @@ class ExperimentDataParserTest: XCTestCase {
   override func setUp() {
     super.setUp()
 
+    let metadataManager = createMetadataManager()
     experimentDataParser = ExperimentDataParser(experimentID: "TEST",
-                                                metadataManager: MetadataManager.testingInstance,
+                                                metadataManager: metadataManager,
                                                 sensorController: MockSensorController())
 
     sensor1 = Sensor.mock(sensorId: "TestSensorID1",

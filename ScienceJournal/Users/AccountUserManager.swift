@@ -121,6 +121,7 @@ class AccountUserManager: UserManager {
 
   /// Deletes the user's data and preferences.
   func deleteAllUserData() throws {
+    // TODO: Fix SQLite warning b/132878667
     try AccountDeleter(accountID: account.ID).deleteData()
   }
 

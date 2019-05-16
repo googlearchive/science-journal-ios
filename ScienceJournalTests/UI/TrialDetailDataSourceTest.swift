@@ -34,9 +34,10 @@ class TrialDetailDataSourceTest: XCTestCase {
     trial.trialNumberInExperiment = 1
     trial.notes = [note1, note2]
 
+    let metadataManager = createMetadataManager()
     let experimentDataParser =
         ExperimentDataParser(experimentID: "TEST",
-                             metadataManager: MetadataManager.testingInstance,
+                             metadataManager: metadataManager,
                              sensorController: MockSensorController())
     trialDetailDataSource = TrialDetailDataSource(trial: trial,
                                                   experimentDataParser: experimentDataParser,

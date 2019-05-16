@@ -21,13 +21,11 @@ import XCTest
 
 class TrialStatsAdjusterTest: XCTestCase {
 
-  let sensorDataManager = SensorDataManager.testStore
+  var sensorDataManager: SensorDataManager!
 
-  override func tearDown() {
-    sensorDataManager.performChanges {
-      self.sensorDataManager.mainContext.rollback()
-    }
-    super.tearDown()
+  override func setUp() {
+    super.setUp()
+    sensorDataManager = createSensorDataManager()
   }
 
   func testRecalculateStats() {

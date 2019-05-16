@@ -23,8 +23,8 @@ class ExperimentListViewControllerTest: XCTestCase {
   func testRightBarButtonItems() {
     let mockAccountsManager = MockAccountsManager()
     let settableNetworkAvailability = SettableNetworkAvailability()
-    let sensorDataManager = SensorDataManager.testStore
-    let metadataManager = MetadataManager.testingInstance
+    let sensorDataManager = createSensorDataManager()
+    let metadataManager = createMetadataManager()
     let experimentDataDeleter = ExperimentDataDeleter(accountID: "MockUser",
                                                       metadataManager: metadataManager,
                                                       sensorDataManager: sensorDataManager)

@@ -24,7 +24,7 @@ class DisplayPictureNoteTest: XCTestCase {
     // Create a display picture note with a picture path, and assert the image file does not exist.
     let pictureNoteID = "testPictureID"
     let experimentID = "testExperimentID"
-    let metadataManager = MetadataManager.testingInstance
+    let metadataManager = createMetadataManager()
     let picturePath = metadataManager.relativePicturePath(for: pictureNoteID)
     let pictureURL = metadataManager.pictureFileURL(for: picturePath, experimentID: experimentID)
     let displayPictureNote: DisplayPictureNote =

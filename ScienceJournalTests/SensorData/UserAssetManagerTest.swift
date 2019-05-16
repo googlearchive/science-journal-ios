@@ -20,20 +20,17 @@ import XCTest
 
 class UserAssetManagerTest: XCTestCase {
 
-  let sensorDataManager = SensorDataManager.testStore
+  var sensorDataManager: SensorDataManager!
   let trialID = "test_trial"
 
   override func setUp() {
     super.setUp()
 
-    // Clean up any old data.
-    sensorDataManager.performChanges(andWait: true, save: true) {
-      self.sensorDataManager.removeData(forTrialID: self.trialID)
-    }
+    sensorDataManager = createSensorDataManager()
   }
 
   func testStoreAndDeleteSensorData() {
-    let metadataManager = MetadataManager.testingInstance
+    let metadataManager = createMetadataManager()
     let userAssetManager = UserAssetManager(driveSyncManager: nil,
                                             metadataManager: metadataManager,
                                             sensorDataManager: sensorDataManager)

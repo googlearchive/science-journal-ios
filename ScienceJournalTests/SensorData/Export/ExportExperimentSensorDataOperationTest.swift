@@ -22,30 +22,16 @@ import XCTest
 
 class ExportExperimentSensorDataOperationTest: XCTestCase {
 
-  let metadataManager = MetadataManager.testingInstance
-  let sensorDataManager = SensorDataManager.testStore
+  var metadataManager: MetadataManager!
+  var sensorDataManager: SensorDataManager!
   let operationQueue = GSJOperationQueue()
   let testingDirectoryName = "ExportExperimentSensorDataOperationTest"
-  var saveDirectoryURL: URL!
 
   override func setUp() {
     super.setUp()
-    saveDirectoryURL =
-        URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(testingDirectoryName)
-    if FileManager.default.fileExists(atPath: saveDirectoryURL.path) {
-      try! FileManager.default.removeItem(at: saveDirectoryURL)
-    }
 
-    // Clean up any old data.
-    sensorDataManager.performChanges(andWait: true, save: true) {
-      self.sensorDataManager.removeData(forTrialID: "METADATA_SENSOR_EXPORT_TRIAL_1")
-      self.sensorDataManager.removeData(forTrialID: "METADATA_SENSOR_EXPORT_TRIAL_2")
-    }
-  }
-
-  override func tearDown() {
-    metadataManager.deleteRootDirectory()
-    super.tearDown()
+    metadataManager = createMetadataManager()
+    sensorDataManager = createSensorDataManager()
   }
 
   func testSensorDataProtoFromExperiment() {
@@ -93,16 +79,14 @@ class ExportExperimentSensorDataOperationTest: XCTestCase {
 
     let expectation = XCTestExpectation()
 
-    XCTAssertNoThrow(try FileManager.default.createDirectory(at: saveDirectoryURL,
-                                                             withIntermediateDirectories: true,
-                                                             attributes: nil))
+    let saveDirectoryURL = createUniqueTestDirectoryURL()
 
     let exportSensorDataOperation =
         ExportExperimentSensorDataOperation(saveDirectoryURL: saveDirectoryURL,
                                             sensorDataManager: sensorDataManager,
                                             experiment: experiment)
     let observer = BlockObserver { (operation, errors) in
-      let protoURL = self.saveDirectoryURL.appendingPathComponent("sensorData.proto")
+      let protoURL = saveDirectoryURL.appendingPathComponent("sensorData.proto")
       let data = try? Data(contentsOf: protoURL)
       XCTAssertNotNil(data)
 

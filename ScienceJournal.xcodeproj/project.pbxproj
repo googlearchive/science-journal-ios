@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
+		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
+		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
@@ -616,6 +618,8 @@
 		28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
+		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
+		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
@@ -1262,6 +1266,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F56956A228F04130039B84F /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				3F56956B228F04130039B84F /* LaunchManager.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		3F56956F228F052C0039B84F /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				3F569570228F052C0039B84F /* LaunchManagerTest.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		4850DC9A21C9798300A5C4A0 /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -2229,6 +2249,7 @@
 				687FA9D3202C113C004C1D04 /* Generated */,
 				48E745952256A7120030EB8F /* Info-Combined.plist */,
 				68EBA6E91E20421E0089FF7F /* Info.plist */,
+				3F56956A228F04130039B84F /* Launch */,
 				68E3618A203F7F0900B1B979 /* main.swift */,
 				8B2053441E8D822500206061 /* Metadata */,
 				8B54BA161F4F0E3D006AADAA /* Notifications */,
@@ -2268,6 +2289,7 @@
 				5C804CBB1FDEFED100F8D1C6 /* Formatters */,
 				4886F53B209CE14E003892D7 /* Helpers */,
 				68EBA6F41E20421E0089FF7F /* Info.plist */,
+				3F56956F228F052C0039B84F /* Launch */,
 				8B8735201E9D3A89008B26BB /* Metadata */,
 				5CA8DAF02031F92B00247FD8 /* Operations */,
 				5C1B09F21F43314B00EFA64A /* Recording */,
@@ -3437,6 +3459,7 @@
 				8B9C59481F478A820063FFA9 /* UIScrollView+ScienceJournal.swift in Sources */,
 				680659261EC39AFE0090670C /* TrialCardSensorView.swift in Sources */,
 				5CA0532D1F2BD60300FEE465 /* BrightnessSensor.swift in Sources */,
+				3F56956C228F04130039B84F /* LaunchManager.swift in Sources */,
 				8B2838FB1F8C14A8005CCB01 /* VisualTriggerView.swift in Sources */,
 				8B4B601C1E4522E6009AFB1B /* AltimeterSensor.swift in Sources */,
 				D59CA3D8219F46020082A27B /* Double+ScienceJournal.swift in Sources */,
@@ -3654,6 +3677,7 @@
 				4886F538209CE13E003892D7 /* MockSensorController.swift in Sources */,
 				5C737BDD1FD20B3000CF0597 /* TrialStatsAdjusterTest.swift in Sources */,
 				8BC1CBB520DD5CBE00CBDB9D /* UserFlowViewControllerTest.swift in Sources */,
+				3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */,
 				5CDA3D1A209B6357009E454C /* SensorDataManagerTest.swift in Sources */,
 				D59CA3D2219CEE690082A27B /* Harmonic.swift in Sources */,
 				5C61A2BA20C572D2007E7F3D /* NoteTest.swift in Sources */,

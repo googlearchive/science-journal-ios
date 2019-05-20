@@ -171,7 +171,10 @@ class AppFlowViewController: UIViewController {
     super.viewDidLoad()
 
     configureInitialLoadingView()
+  }
 
+  /// Start the running app flow.
+  func start() {
     func accountsSupported() {
       accountsManager.signInAsCurrentAccount()
     }

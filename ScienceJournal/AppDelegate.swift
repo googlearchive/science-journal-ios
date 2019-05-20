@@ -69,6 +69,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
 
   open var window: UIWindow?
 
+  private let launchManager = LaunchManager.standard
+
   // swiftlint:disable vertical_parameter_alignment
   open func application(_ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -109,11 +111,16 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = appFlowViewController
     window?.makeKeyAndVisible()
 
+    launchManager.performLaunchOperations {
+      self.appFlowViewController.start()
+    }
+
     return true
   }
   // swiftlint:enable vertical_parameter_alignment
 
   open func applicationDidBecomeActive(_ application: UIApplication) {
+    guard launchManager.state == .running else { return }
     // When the app becomes active, attempt to reauthenticate the current user account and remove
     // any lingering accounts.
     accountsManager.reauthenticateCurrentAccount()
@@ -123,6 +130,7 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
   open func application(_ app: UIApplication,
                         open url: URL,
                         options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    guard launchManager.state == .running else { return false }
     return appFlowViewController.handleImportURL(url)
   }
 

@@ -230,9 +230,17 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
   // MARK: - ImageSelectorDelegate
 
   func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
-    guard let image = UIImage(data: imageData) else { return }
-    photoPicker.photo = image
-    selectedImageInfo = (imageData, metadata)
+    // Check if the photo can be saved before proceeding. Normally this happens lower in the stack
+    // but we do it here because it is currently not possible to pass the error up the UI to here.
+    if metadataManager.canSave(imageData) {
+      guard let image = UIImage(data: imageData) else { return }
+      photoPicker.photo = image
+      selectedImageInfo = (imageData, metadata)
+    } else {
+      dismiss(animated: true) {
+        showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
+      }
+    }
   }
 
   func imageSelectorDidCancel() {}

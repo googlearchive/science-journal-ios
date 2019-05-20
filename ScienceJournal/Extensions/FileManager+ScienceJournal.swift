@@ -61,4 +61,18 @@ extension FileManager {
     return freeSize.uint64Value
   }
 
+  /// Checks if the storage space is greater than the queried byte count times the padding factor.
+  ///
+  /// - Parameters:
+  ///   - byteCount: The byte count.
+  ///   - padding: The padding factor.
+  /// - Returns: True, if storage space is greater, false otherwise.
+  func hasStorageSpace(for byteCount: UInt64, padding: Double = 1.1) -> Bool {
+    guard let availableSystemDiskSpace = availableSystemDiskSpace else {
+      return false
+    }
+
+    let safeSize = UInt64(Double(byteCount) * padding)
+    return availableSystemDiskSpace > safeSize
+  }
 }

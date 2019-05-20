@@ -727,15 +727,18 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
     let pictureNote = PictureNote()
     let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
-    guard metadataManager.saveImageData(imageData,
+    do {
+      try metadataManager.saveImageData(imageData,
                                         atPicturePath: pictureFilePath,
                                         experimentID: experiment.ID,
-                                        withMetadata: metadata) != nil else {
-      return
+                                        withMetadata: metadata)
+      pictureNote.filePath = pictureFilePath
+      addNoteToExperimentOrTrial(pictureNote)
+    } catch MetadataManagerError.photoDiskSpaceError {
+      showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
+    } catch {
+      sjlog_error("Unknown error saving picture note image: \(error)", category: .general)
     }
-
-    pictureNote.filePath = pictureFilePath
-    addNoteToExperimentOrTrial(pictureNote)
   }
 
   func imageSelectorDidCancel() {}

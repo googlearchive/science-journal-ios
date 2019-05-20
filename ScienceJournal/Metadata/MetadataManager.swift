@@ -33,6 +33,8 @@ enum MetadataManagerError: Error {
   case savingFileWithNewerVersion
   /// The experiment cannot be saved.
   case cannotSaveExperiment
+  /// A photo cannot be saved.
+  case photoDiskSpaceError
 
   var logString: String {
     switch self {
@@ -43,6 +45,8 @@ enum MetadataManagerError: Error {
       return "Attempting to save a file with a version newer than the current build."
     case .cannotSaveExperiment:
       return "Can't save an experiment because of an error."
+    case .photoDiskSpaceError:
+      return "Can't save a photo due to low storage space."
     }
   }
 }
@@ -756,11 +760,19 @@ public class MetadataManager {
     if let imageData = imageData {
       // Generate a unique filename in the assets directory.
       let imagePath = MetadataManager.assetsDirectoryName + "/" + UUID().uuidString + ".jpg"
-      saveImageData(imageData,
-                    atPicturePath: imagePath,
-                    experimentID: experiment.ID,
-                    withMetadata: metadata)
-      saveCoverImagePath(imagePath, forOverview: overview, experiment: experiment)
+      do {
+        try saveImageData(imageData,
+                          atPicturePath: imagePath,
+                          experimentID: experiment.ID,
+                          withMetadata: metadata)
+        saveCoverImagePath(imagePath, forOverview: overview, experiment: experiment)
+      } catch MetadataManagerError.photoDiskSpaceError {
+        // Shouldn't get here as the case of the adding cover photo is intercepted higher in the UI
+        // and checked for storage space
+        sjlog_error("Cannot save cover image due to low storage space.", category: .general)
+      } catch {
+        sjlog_error("Unknown error saving cover image: \(error)", category: .general)
+      }
     } else {
       saveCoverImagePath(nil, forOverview: overview, experiment: experiment)
     }
@@ -1606,6 +1618,14 @@ public class MetadataManager {
     saveData(imageData, to: pictureFileURL(for: picturePath, experimentID: experimentID))
   }
 
+  /// Checks if there is enough storage space for the data.
+  ///
+  /// - Parameter data: The data that needs to be saved.
+  /// - Returns: True if there's enough storage space to save, false otherwise.
+  func canSave(_ data: Data) -> Bool {
+    return FileManager.default.hasStorageSpace(for: UInt64(data.count))
+  }
+
   /// Saves image data and its metadata at a path and returns the combined image.
   ///
   /// - Parameters:
@@ -1617,7 +1637,7 @@ public class MetadataManager {
   @discardableResult func saveImageData(_ imageData: Data,
                                         atPicturePath picturePath: String,
                                         experimentID: String,
-                                        withMetadata metadata: NSDictionary?) -> UIImage? {
+                                        withMetadata metadata: NSDictionary?) throws -> UIImage? {
     // Grab the image as data, create a CGImageSource for it.
     guard let source = CGImageSourceCreateWithData(imageData as CFData, nil),
         let uniformTypeID = CGImageSourceGetType(source) else { return nil }
@@ -1644,13 +1664,22 @@ public class MetadataManager {
     // combining the exif with the existing data.
     CGImageDestinationFinalize(destination)
 
+    let finalData = combinedData as Data
+
+    // Check if the image can be saved, throw error if it fails.
+    guard FileManager.default.hasStorageSpace(for: UInt64(finalData.count)) else {
+      throw MetadataManagerError.photoDiskSpaceError
+    }
+
+    // Save the combined, compressed image data to disk, throw error if it fails.
+    guard saveData(finalData,
+                   to: pictureFileURL(for: picturePath, experimentID: experimentID)) else {
+      throw MetadataManagerError.photoDiskSpaceError
+    }
+
     // Create a compressed image out of the data to pass back to the controller who needs to
     // display it.
-    guard let completedImage = UIImage(data: combinedData as Data) else { return nil }
-
-    // Save the combined, compressed image data to disk.
-    saveData(combinedData as Data, to: pictureFileURL(for: picturePath, experimentID: experimentID))
-
+    guard let completedImage = UIImage(data: finalData) else { return nil }
     return completedImage
   }
 

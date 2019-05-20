@@ -72,15 +72,11 @@ class ExistingDataMigrationManager {
   // MARK: Experiments
 
   private func canMigrateExperiment(withID experimentID: String) -> Bool {
-    guard let sizeOfExperiment = sizeOfRootExperiment(withID: experimentID),
-        let freeSize = FileManager.default.availableSystemDiskSpace else {
+    guard let sizeOfExperiment = sizeOfRootExperiment(withID: experimentID) else {
       return false
     }
 
-    // Pad the size of the experiment as a safety measure.
-    let safeSize = UInt64(Double(sizeOfExperiment) * 1.1)
-
-    return freeSize > safeSize
+    return FileManager.default.hasStorageSpace(for: sizeOfExperiment)
   }
 
   private func sizeOfRootExperiment(withID experimentID: String) -> UInt64? {

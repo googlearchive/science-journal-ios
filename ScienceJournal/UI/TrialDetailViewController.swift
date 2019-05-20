@@ -1417,10 +1417,13 @@ class TrialDetailViewController: MaterialHeaderViewController,
   /// Closes the add note alert and resets all relevant data.
   ///
   /// - Parameter announcement: Optional string to announce with VoiceOver when complete.
-  private func finishAddingNote(announcement: String? = nil) {
+  private func finishAddingNote(announcement: String? = nil, errorMessage: String? = nil) {
     pendingNote = nil
     if addNoteDialog != nil {
       dismiss(animated: true, completion: {
+        if let errorMessage = errorMessage {
+          showSnackbar(withMessage: errorMessage)
+        }
         // Need to delay this announcement a bit or the VO engine eats it after the modal
         // disappears.
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -1550,12 +1553,23 @@ class TrialDetailViewController: MaterialHeaderViewController,
       // Save image
       let pictureNote = PictureNote()
       let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
-      guard metadataManager.saveImageData(imageData,
+      var savingError = false
+      var errorMessage: String?
+      do {
+        try metadataManager.saveImageData(imageData,
                                           atPicturePath: pictureFilePath,
                                           experimentID: experiment.ID,
-                                          withMetadata: metadata) != nil else {
-        print("[TrialDetailViewController] Error saving picture note image data.")
-        finishAddingNote()
+                                          withMetadata: metadata)
+      } catch MetadataManagerError.photoDiskSpaceError {
+        errorMessage = String.photoDiskSpaceErrorMessage
+        savingError = true
+      } catch {
+        sjlog_error("Unknown error saving picture note image: \(error)", category: .general)
+        savingError = true
+      }
+
+      if savingError {
+        finishAddingNote(errorMessage: errorMessage)
         return
       }
 

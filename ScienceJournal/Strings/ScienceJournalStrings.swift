@@ -71,9 +71,6 @@ extension String {
   static public var addPhotoContentDescription: String { return "add_photo_content_description".localized }
   static public var addPictureNoteContentDescription: String { return "add_picture_note_content_description".localized }
   static public var addTextNoteContentDescription: String { return "add_text_note_content_description".localized }
-  static public var ageVerifierBirthday: String { return "age_verifier_birthday".localized }
-  static public var ageVerifierGetStarted: String { return "age_verifier_get_started".localized }
-  static public var ageVerifierHeader: String { return "age_verifier_header".localized }
   static public var ambientLight: String { return "ambient_light".localized }
   static public var ambientLightUnits: String { return "ambient_light_units".localized }
   static public var amplitude: String { return "amplitude".localized }
@@ -258,7 +255,6 @@ extension String {
   static public var graphOptionsAudioFeedbackDisable: String { return "graph_options_audio_feedback_disable".localized }
   static public var headingInfoSection: String { return "heading_info_section".localized }
   static public var hertzUnits: String { return "hertz_units".localized }
-  static public var importAgeVerification: String { return "import_age_verification".localized }
   static public var importFailed: String { return "import_failed".localized }
   static public var importFailedFile: String { return "import_failed_file".localized }
   static public var importFailedRecording: String { return "import_failed_recording".localized }

@@ -139,15 +139,6 @@
 /* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
 "add_text_note_content_description" = "Add note";
 
-/* Header on age verifier screen which labels the date picker as asking for a birthday [CHAR_LIMIT=40] */
-"age_verifier_birthday" = "Birthday:";
-
-/* Button on age verifier screen which launches the app [CHAR_LIMIT=20] */
-"age_verifier_get_started" = "Get started";
-
-/* Header on age verifier screen tells the user what this screen is doing [CHAR_LIMIT=30] */
-"age_verifier_header" = "Verify your age";
-
 /* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
 "ambient_light" = "Ambient light";
 
@@ -699,9 +690,6 @@
 
 /* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
 "hertz_units" = "Hz";
-
-/* Error for attempting to import without age verification [CHAR_LIMIT=NONE] */
-"import_age_verification" = "To begin, please enter your age.";
 
 /* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
 "import_failed" = "Unfortunately, an unknown error has occurred.";

@@ -192,7 +192,9 @@ class TrialDetailSensorsView: UICollectionReusableView {
     }
     var sensor = sensors[index]
     sensor.chartPresentationView = chartPresentationView
-    let page = pages[index]
+    let pageIndex = UIApplication.shared.userInterfaceLayoutDirection == .leftToRight ? index :
+      sensors.count - (index + 1)
+    let page = pages[pageIndex]
     chartPresentationView.translatesAutoresizingMaskIntoConstraints = false
     page.addSubview(chartPresentationView)
     chartPresentationView.pinToEdgesOfView(page)

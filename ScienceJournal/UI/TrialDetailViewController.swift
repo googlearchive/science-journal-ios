@@ -1637,7 +1637,9 @@ class TrialDetailViewController: MaterialHeaderViewController,
     // In time select mode, bottom inset wasn't set properly when keyboard was dismissed.
     collectionView.contentInset.bottom = 0
     switch state {
-    case .timeSelect: finishAddingNote()
+    case .timeSelect:
+      state = .playback
+      showAddNoteDialog()
     case .crop: endCropping()
     case .playback: break
     }

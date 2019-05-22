@@ -101,7 +101,8 @@ class TrialDetailHeaderCell: UICollectionViewCell {
     // The duration of this trial.
     durationLabel.font =
         MDCTypography.fontLoader().mediumFont(ofSize: TrialDetailHeaderCell.valueFontSize)
-    durationLabel.textAlignment = .right
+    durationLabel.textAlignment =
+        UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .left : .right
     durationLabel.textColor = UIColor.appBarReviewBackgroundColor
     durationLabel.translatesAutoresizingMaskIntoConstraints = false
 

@@ -385,6 +385,7 @@ extension String {
   static public var sensorAlertSettingsButtonTitle: String { return "sensor_alert_settings_button_title".localized }
   static public var sensorBrightness: String { return "sensor_brightness".localized }
   static public var sensorCardBrightnessPermissionError: String { return "sensor_card_brightness_permission_error".localized }
+  static public var brightnessSensorBlockedByInterruption: String { return "brightness_sensor_blocked_by_interruption".localized }
   static public var sensorCardErrorText: String { return "sensor_card_error_text".localized }
   static public var sensorCardLoadingText: String { return "sensor_card_loading_text".localized }
   static public var sensorCardSoundPermissionError: String { return "sensor_card_sound_permission_error".localized }

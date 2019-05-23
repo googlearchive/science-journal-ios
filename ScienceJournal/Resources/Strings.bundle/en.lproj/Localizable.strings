@@ -1081,6 +1081,9 @@
 /* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
 "sensor_card_brightness_permission_error" = "The brightness sensor cannot be used because Science Journal does not have permission to access your camera.";
 
+/* Message describing that the use of split screen apps or picture in picture video prevents the brightness sensor from being accessible. [CHAR_LIMIT=200] */
+"brightness_sensor_blocked_by_interruption" = "The brightness sensor cannot be used because you’re either watching a Picture in Picture video or using Science Journal in Split View mode.";
+
 /* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
 "sensor_card_error_text" = "Failed to load sensor data";
 

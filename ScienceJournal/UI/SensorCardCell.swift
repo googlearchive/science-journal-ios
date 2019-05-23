@@ -377,7 +377,11 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
       sensorFailedView.isHidden = true
       sensorLoadingView.isHidden = true
     case .interrupted:
-      sensorFailedView.messageLabel.text = String.sensorCardErrorText
+      if sensor is BrightnessSensor {
+        sensorFailedView.messageLabel.text = String.brightnessSensorBlockedByInterruption
+      } else {
+        sensorFailedView.messageLabel.text = String.sensorCardErrorText
+      }
       sensorFailedView.hideActionButton()
       sensorFailedView.isHidden = false
       sensorLoadingView.isHidden = true

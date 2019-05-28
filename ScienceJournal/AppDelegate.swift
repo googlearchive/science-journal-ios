@@ -49,6 +49,11 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
     fatalError("Subclasses must override and provide a feedback reporter instance!")
   }
 
+  /// The file system layout to inject into classes.
+  open var fileSystemLayout: FileSystemLayout {
+    fatalError("Subclasses must override and provide a file system layout instance!")
+  }
+
   /// The network availability to inject into classes.
   open var networkAvailability: NetworkAvailability {
     fatalError("Subclasses must override and provide a network availability instance!")
@@ -88,7 +93,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow.init(frame: UIScreen.main.bounds)
 
     #if FEATURE_FIREBASE_RC
-    appFlowViewController = AppFlowViewController(accountsManager: accountsManager,
+    appFlowViewController = AppFlowViewController(fileSystemLayout: fileSystemLayout,
+                                                  accountsManager: accountsManager,
                                                   analyticsReporter: analyticsReporter,
                                                   commonUIComponents: commonUIComponents,
                                                   drawerConfig: drawerConfig,
@@ -98,7 +104,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
                                                   remoteConfigManager: remoteConfigManager,
                                                   sensorController: sensorController)
     #else
-    appFlowViewController = AppFlowViewController(accountsManager: accountsManager,
+    appFlowViewController = AppFlowViewController(fileSystemLayout: fileSystemLayout,
+                                                  accountsManager: accountsManager,
                                                   analyticsReporter: analyticsReporter,
                                                   commonUIComponents: commonUIComponents,
                                                   drawerConfig: drawerConfig,

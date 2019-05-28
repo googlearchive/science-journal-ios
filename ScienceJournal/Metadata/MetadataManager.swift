@@ -151,29 +151,15 @@ public class MetadataManager {
     self.sensorDataManager = sensorDataManager
     userMetadataURL = rootURL.appendingPathComponent("user_metadata")
     configureUserMetadata()
-  }
 
-  /// Convenience initializer that sets the documents URL as the root URL.
-  ///
-  /// - Parameters:
-  ///   - preferenceManager: The preference manager.
-  ///   - sensorDataManager: The sensor data manager.
-  convenience init(preferenceManager: PreferenceManager,
-                   sensorController: SensorController,
-                   sensorDataManager: SensorDataManager) {
-    let documentsURL = URL.documentsDirectoryURL
-    let rootURL = documentsURL.appendingPathComponent(MetadataManager.scienceJournalDirectoryName)
-    self.init(rootURL: rootURL,
-              deletedRootURL: documentsURL,
-              preferenceManager: preferenceManager,
-              sensorController: sensorController,
-              sensorDataManager: sensorDataManager)
-
+    // TODO: Add test for this notification - b/133773894
     // Register for trial stats update notifications.
-    NotificationCenter.default.addObserver(self,
-        selector: #selector(handleTrialStatsDidCompleteNotification(notification:)),
-        name: SensorDataManager.TrialStatsCalculationDidComplete,
-        object: nil)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(handleTrialStatsDidCompleteNotification(notification:)),
+      name: SensorDataManager.TrialStatsCalculationDidComplete,
+      object: nil
+    )
   }
 
   /// Returns the assets directory URL for a specific experiment.

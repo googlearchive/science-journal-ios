@@ -28,6 +28,25 @@ enum SensorDataManagerError: Error {
 /// The data manager for Core Data.
 open class SensorDataManager {
 
+  /// The store file for different configurations of this class.
+  enum StoreFile {
+    /// The account-specific store.
+    case account
+
+    /// The root store when not logged in.
+    case root
+
+    /// The name of the store file.
+    var name: String {
+      switch self {
+      case .account:
+        return "sensor_data.sqlite"
+      case .root:
+        return "ScienceJournal.sqlite"
+      }
+    }
+  }
+
   /// Type alias for the tuple returned when fetching stats.
   typealias StatsTuple = (firstTimestamp: Int64, lastTimestamp: Int64, numberOfDataPoints: Int)?
 
@@ -44,8 +63,6 @@ open class SensorDataManager {
   /// Notification user info dictionary key for an array of trial stats.
   static let TrialStatsDidCompleteTrialStatsKey = "TrialStatsDidCompleteTrialStatsKey"
 
-  static let rootStoreName = "ScienceJournal.sqlite"
-
   /// The managed object context associated with the main queue. Use this for fetching and inserting
   /// objects. `writerContext` is its parent and manages saving for it, so it doesn't cause a main
   /// thread pause.
@@ -54,13 +71,6 @@ open class SensorDataManager {
   /// context and performs operations in the background.
   let privateContext: NSManagedObjectContext
 
-  /// Returns an instance of `SensorDataManager` that creates the SQLite store in the documents
-  /// directory. This is where the store was located before user accounts.
-  static var rootStore: SensorDataManager {
-    let storeURL = URL.documentsDirectoryURL.appendingPathComponent(rootStoreName)
-    return SensorDataManager(storeURL: storeURL)
-  }
-
   /// The URL location of the SQLite store.
   let storeURL: URL
 
@@ -68,9 +78,11 @@ open class SensorDataManager {
 
   /// Designated initializer.
   ///
-  /// - Parameter storeURL: The URL of the SQLite store file.
-  init(storeURL: URL) {
-    self.storeURL = storeURL
+  /// - Parameters:
+  ///   - rootURL: The URL at which to create the SQLite store file.
+  ///   - store: The SQLite store file.
+  init(rootURL: URL, store: StoreFile = .account) {
+    self.storeURL = rootURL.appendingPathComponent(store.name)
 
     // Initialize the Core Data stack.
     // Managed object model.

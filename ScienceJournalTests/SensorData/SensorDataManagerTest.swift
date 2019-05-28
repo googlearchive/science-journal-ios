@@ -70,7 +70,7 @@ class SensorDataManagerTest: XCTestCase {
   }
 
   func testMultipleStoreURLs() {
-    let rootSensorDataManager = SensorDataManager.rootStore
+    let rootSensorDataManager = createSensorDataManager()
 
     // First clean up any old data.
     rootSensorDataManager.removeData(forTrialID: "TEST_TRIAL")

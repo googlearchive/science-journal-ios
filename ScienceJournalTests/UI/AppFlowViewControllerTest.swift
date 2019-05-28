@@ -31,10 +31,11 @@ class AppFlowViewControllerTest: XCTestCase {
         MockAccountsManager(mockAuthAccount: MockAuthAccount(ID: "AppFlowViewControllerTestID"))
     let analyticsReporter = AnalyticsReporterOpen()
     let sensorController = MockSensorController()
-    let documentsDirectoryURL = createUniqueTestDirectoryURL()
+    let fileSystemLayout = FileSystemLayout(baseURL: createUniqueTestDirectoryURL())
     #if FEATURE_FIREBASE_RC
     appFlowViewController =
-        AppFlowViewController(accountsManager: mockAccountsManager,
+        AppFlowViewController(fileSystemLayout: fileSystemLayout,
+                              accountsManager: mockAccountsManager,
                               analyticsReporter: analyticsReporter,
                               commonUIComponents: CommonUIComponentsOpen(),
                               drawerConfig: DrawerConfigOpen(),
@@ -42,27 +43,19 @@ class AppFlowViewControllerTest: XCTestCase {
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
                               remoteConfigManager: RemoteConfigManagerDisabled(),
-                              sensorController: sensorController,
-                              documentsDirectoryURL: documentsDirectoryURL)
+                              sensorController: sensorController)
     #else
     appFlowViewController =
-        AppFlowViewController(accountsManager: mockAccountsManager,
+        AppFlowViewController(fileSystemLayout: fileSystemLayout,
+                              accountsManager: mockAccountsManager,
                               analyticsReporter: analyticsReporter,
                               commonUIComponents: CommonUIComponentsOpen(),
                               drawerConfig: DrawerConfigOpen(),
                               driveConstructor: mockDriveConstructor,
                               feedbackReporter: FeedbackReporterOpen(),
                               networkAvailability: SettableNetworkAvailability(),
-                              sensorController: sensorController,
-                              documentsDirectoryURL: documentsDirectoryURL)
+                              sensorController: sensorController)
     #endif
-  }
-
-  override func tearDown() {
-    // Calling `currentAccountUserManager` creates the account user manager, which creates the
-    // directory for the account. Calling `deleteAllUserData` will remove that directory and disrupt
-    // the nautrual flow of this class.
-    try! appFlowViewController.currentAccountUserManager!.deleteAllUserData()
   }
 
   func testPrefStoredAfterUserMadeAMigrationChoice() {
@@ -125,6 +118,8 @@ class AppFlowViewControllerTest: XCTestCase {
 
     // Call `currentAccountUserManager` and sign in.
     let accountUserManager = appFlowViewController.currentAccountUserManager!
+    accountUserManager.preferenceManager.resetAll()
+
     appFlowViewController.devicePreferenceManager.hasAUserChosenAnExistingDataMigrationOption =
     false
     appFlowViewController.accountsManagerPermissionCheckComplete(permissionState: .granted,

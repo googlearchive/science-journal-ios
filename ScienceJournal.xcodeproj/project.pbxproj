@@ -10,6 +10,7 @@
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
 		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
+		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
@@ -620,6 +621,7 @@
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
 		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
+		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
@@ -2681,6 +2683,7 @@
 		8BBFBC1921388809008FFBF4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */,
 				8BBFBC1A213889F9008FFBF4 /* NetworkAvailability.swift */,
 				8BBFBC1C21388A29008FFBF4 /* NetworkAvailabilityDisabled.swift */,
 				5CA7921B2257B893008D62FB /* Result.swift */,
@@ -3278,6 +3281,7 @@
 				8BD3A1071F27B76B00A5DDBD /* MDCPalette+ScienceJournal.swift in Sources */,
 				4850DC9C21C979BC00A5C4A0 /* RemoteConfigManagerDisabled.swift in Sources */,
 				5CE047811F60721500E8EAA1 /* SensorSpec+BLESensorInterface.swift in Sources */,
+				3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */,
 				5C7DE8C01EC116130015F407 /* PlaybackOverlayView.swift in Sources */,
 				68EACA721EAFC96300BB5892 /* SidebarViewController.swift in Sources */,
 				8BE81BE91EB76B6D00EEC3BB /* CameraViewController.swift in Sources */,

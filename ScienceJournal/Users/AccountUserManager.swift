@@ -43,25 +43,30 @@ class AccountUserManager: UserManager {
   /// The user account.
   let account: AuthAccount
 
+  private let fileSystemLayout: FileSystemLayout
+
   // MARK: - Public
 
   /// Designated initializer.
   ///
   /// - Parameters:
+  ///   - fileSystemLayout: The file system layout.
   ///   - account: A user account.
   ///   - driveConstructor: The drive constructor.
   ///   - networkAvailability: Network availability.
   ///   - sensorController: The sensor controller.
   ///   - analyticsReporter: An analytics reporter.
-  init(account: AuthAccount,
+  init(fileSystemLayout: FileSystemLayout,
+       account: AuthAccount,
        driveConstructor: DriveConstructor,
        networkAvailability: NetworkAvailability,
        sensorController: SensorController,
        analyticsReporter: AnalyticsReporter) {
+    self.fileSystemLayout = fileSystemLayout
     self.account = account
 
     // Create a root URL for this account.
-    rootURL = AccountUserManager.rootURLForAccount(withID: account.ID)
+    rootURL = fileSystemLayout.accountURL(for: account.ID)
 
     // Create the directory if needed.
     do {
@@ -76,8 +81,7 @@ class AccountUserManager: UserManager {
     preferenceManager = PreferenceManager(accountID: account.ID)
 
     // Configure Core Data store.
-    let storeURL = rootURL.appendingPathComponent("sensor_data.sqlite")
-    sensorDataManager = SensorDataManager(storeURL: storeURL)
+    sensorDataManager = SensorDataManager(rootURL: rootURL, store: .account)
 
     // Configure metadata manager.
     metadataManager = MetadataManager(rootURL: rootURL,
@@ -122,21 +126,7 @@ class AccountUserManager: UserManager {
   /// Deletes the user's data and preferences.
   func deleteAllUserData() throws {
     // TODO: Fix SQLite warning b/132878667
-    try AccountDeleter(accountID: account.ID).deleteData()
-  }
-
-  /// Whether or not there is a root directory for this account.
-  ///
-  /// - Parameter accountID: An account ID.
-  /// - Returns: True if there is a root directory for this account, otherwise false.
-  static func hasRootDirectoryForAccount(withID accountID: String) -> Bool {
-    let rootURL = AccountUserManager.rootURLForAccount(withID: accountID)
-    return FileManager.default.fileExists(atPath: rootURL.path)
-  }
-
-  static func rootURLForAccount(withID accountID: String) -> URL {
-    assert(accountID.trimmedOrNil != nil, "Account ID cannot be an empty string.")
-    return URL.accountsDirectoryURL.appendingPathComponent(accountID)
+    try AccountDeleter(fileSystemLayout: fileSystemLayout, accountID: account.ID).deleteData()
   }
 
 }

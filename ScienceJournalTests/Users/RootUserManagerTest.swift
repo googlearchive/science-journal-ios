@@ -25,9 +25,10 @@ class RootUserManagerTest: XCTestCase {
   override func setUp() {
     super.setUp()
 
+    let fileSystemLayout = FileSystemLayout(baseURL: createUniqueTestDirectoryURL())
     rootUserManager = RootUserManager(
-      sensorController: MockSensorController(),
-      documentsDirectoryURL: createUniqueTestDirectoryURL()
+      fileSystemLayout: fileSystemLayout,
+      sensorController: MockSensorController()
     )
     rootUserManager.preferenceManager.resetAll()
   }

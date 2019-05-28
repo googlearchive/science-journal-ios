@@ -20,23 +20,26 @@ import Foundation
 class AccountDeleter {
 
   private let accountID: String
+  private let fileSystemLayout: FileSystemLayout
   private let preferenceManager: PreferenceManager
-  private let rootURL: URL
 
   /// Designated initializer.
   ///
-  /// - Parameter accountID: An account ID.
-  init(accountID: String) {
+  /// - Parameters:
+  ///   - fileSystemLayout: The file system layout.
+  ///   - accountID: An account ID.
+  init(fileSystemLayout: FileSystemLayout, accountID: String) {
+    self.fileSystemLayout = fileSystemLayout
     self.accountID = accountID
     preferenceManager = PreferenceManager(accountID: accountID)
-    rootURL = AccountUserManager.rootURLForAccount(withID: accountID)
   }
 
   /// Deletes all data for the user account.
   ///
   /// - Throws: A FileManager error if the account directory cannot be removed.
   func deleteData() throws {
-    try FileManager.default.removeItem(at: rootURL)
+    let accountURL = fileSystemLayout.accountURL(for: accountID)
+    try FileManager.default.removeItem(at: accountURL)
     preferenceManager.resetAll()
   }
 

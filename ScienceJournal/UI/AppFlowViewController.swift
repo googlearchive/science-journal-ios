@@ -29,7 +29,8 @@ class AppFlowViewController: UIViewController {
     guard let account = accountsManager.currentAccount else { return nil }
 
     if _currentAccountUserManager == nil || _currentAccountUserManager!.account.ID != account.ID {
-      _currentAccountUserManager = AccountUserManager(account: account,
+      _currentAccountUserManager = AccountUserManager(fileSystemLayout: fileSystemLayout,
+                                                      account: account,
                                                       driveConstructor: driveConstructor,
                                                       networkAvailability: networkAvailability,
                                                       sensorController: sensorController,
@@ -57,6 +58,7 @@ class AppFlowViewController: UIViewController {
   private var existingDataMigrationManager: ExistingDataMigrationManager?
   private var existingDataOptionsVC: ExistingDataOptionsViewController?
   private let feedbackReporter: FeedbackReporter
+  private let fileSystemLayout: FileSystemLayout
   private let networkAvailability: NetworkAvailability
   private let queue = GSJOperationQueue()
   private let sensorController: SensorController
@@ -71,6 +73,7 @@ class AppFlowViewController: UIViewController {
   /// Convenience initializer.
   ///
   /// - Parameters:
+  ///   - fileSystemLayout: The file system layout.
   ///   - accountsManager: The accounts manager.
   ///   - analyticsReporter: The analytics reporter.
   ///   - commonUIComponents: Common UI components.
@@ -80,8 +83,8 @@ class AppFlowViewController: UIViewController {
   ///   - networkAvailability: Network availability.
   ///   - remoteConfigManager: The remote config manager.
   ///   - sensorController: The sensor controller.
-  ///   - documentsDirectoryURL: The documents directory.
-  convenience init(accountsManager: AccountsManager,
+  convenience init(fileSystemLayout: FileSystemLayout,
+                   accountsManager: AccountsManager,
                    analyticsReporter: AnalyticsReporter,
                    commonUIComponents: CommonUIComponents,
                    drawerConfig: DrawerConfig,
@@ -89,17 +92,16 @@ class AppFlowViewController: UIViewController {
                    feedbackReporter: FeedbackReporter,
                    networkAvailability: NetworkAvailability,
                    remoteConfigManager: RemoteConfigManager,
-                   sensorController: SensorController,
-                   documentsDirectoryURL: URL = URL.documentsDirectoryURL) {
-    self.init(accountsManager: accountsManager,
+                   sensorController: SensorController) {
+    self.init(fileSystemLayout: fileSystemLayout,
+              accountsManager: accountsManager,
               analyticsReporter: analyticsReporter,
               commonUIComponents: commonUIComponents,
               drawerConfig: drawerConfig,
               driveConstructor: driveConstructor,
               feedbackReporter: feedbackReporter,
               networkAvailability: networkAvailability,
-              sensorController: sensorController,
-              documentsDirectoryURL: documentsDirectoryURL)
+              sensorController: sensorController)
     self.remoteConfigManager = remoteConfigManager
   }
   #endif
@@ -107,6 +109,7 @@ class AppFlowViewController: UIViewController {
   /// Designated initializer.
   ///
   /// - Parameters:
+  ///   - fileSystemLayout: The file system layout.
   ///   - accountsManager: The accounts manager.
   ///   - analyticsReporter: The analytics reporter.
   ///   - commonUIComponents: Common UI components.
@@ -115,16 +118,16 @@ class AppFlowViewController: UIViewController {
   ///   - feedbackReporter: The feedback reporter.
   ///   - networkAvailability: Network availability.
   ///   - sensorController: The sensor controller.
-  ///   - documentsDirectoryURL: The documents directory.
-  init(accountsManager: AccountsManager,
+  init(fileSystemLayout: FileSystemLayout,
+       accountsManager: AccountsManager,
        analyticsReporter: AnalyticsReporter,
        commonUIComponents: CommonUIComponents,
        drawerConfig: DrawerConfig,
        driveConstructor: DriveConstructor,
        feedbackReporter: FeedbackReporter,
        networkAvailability: NetworkAvailability,
-       sensorController: SensorController,
-       documentsDirectoryURL: URL = URL.documentsDirectoryURL) {
+       sensorController: SensorController) {
+    self.fileSystemLayout = fileSystemLayout
     self.accountsManager = accountsManager
     self.analyticsReporter = analyticsReporter
     self.commonUIComponents = commonUIComponents
@@ -134,8 +137,8 @@ class AppFlowViewController: UIViewController {
     self.networkAvailability = networkAvailability
     self.sensorController = sensorController
     rootUserManager = RootUserManager(
-      sensorController: sensorController,
-      documentsDirectoryURL: documentsDirectoryURL
+      fileSystemLayout: fileSystemLayout,
+      sensorController: sensorController
     )
     super.init(nibName: nil, bundle: nil)
 
@@ -303,7 +306,7 @@ class AppFlowViewController: UIViewController {
       -> Bool {
     // If an account does not yet have a directory, this is its first time signing in. Each new
     // account should have preferences migrated from the root user.
-    let shouldMigratePrefs = !AccountUserManager.hasRootDirectoryForAccount(withID: accountID)
+    let shouldMigratePrefs = !fileSystemLayout.hasAccountDirectory(for: accountID)
     if shouldMigratePrefs, let accountUserManager = currentAccountUserManager {
       let existingDataMigrationManager =
           ExistingDataMigrationManager(accountUserManager: accountUserManager,
@@ -421,7 +424,7 @@ extension AppFlowViewController: AccountsManagerDelegate {
     _currentAccountUserManager?.sensorDataManager.removeStore()
     tearDownCurrentUser()
     do {
-      try AccountDeleter(accountID: identityID).deleteData()
+      try AccountDeleter(fileSystemLayout: fileSystemLayout, accountID: identityID).deleteData()
     } catch {
       print("Failed to delete user data: \(error.localizedDescription)")
     }

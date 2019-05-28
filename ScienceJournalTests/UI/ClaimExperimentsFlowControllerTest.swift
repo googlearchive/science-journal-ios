@@ -27,14 +27,16 @@ class ClaimExperimentsFlowControllerTest: XCTestCase {
     super.setUp()
 
     let mockSensorController = MockSensorController()
-    let accountUserManager = AccountUserManager(account: MockAuthAccount(),
+    let fileSystemLayout = FileSystemLayout(baseURL: createUniqueTestDirectoryURL())
+    let accountUserManager = AccountUserManager(fileSystemLayout: fileSystemLayout,
+                                                account: MockAuthAccount(),
                                                 driveConstructor: DriveConstructorDisabled(),
                                                 networkAvailability: SettableNetworkAvailability(),
                                                 sensorController: mockSensorController,
                                                 analyticsReporter: AnalyticsReporterOpen())
     let rootUserManager = RootUserManager(
-      sensorController: mockSensorController,
-      documentsDirectoryURL: createUniqueTestDirectoryURL()
+      fileSystemLayout: fileSystemLayout,
+      sensorController: mockSensorController
     )
     existingDataMigrationManager =
         ExistingDataMigrationManager(accountUserManager: accountUserManager,

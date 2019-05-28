@@ -21,8 +21,7 @@ import XCTest
 extension XCTestCase {
   public func createSensorDataManager(rootURL: URL? = nil) -> SensorDataManager {
     let rootURL = rootURL ?? createUniqueTestDirectoryURL()
-    let storeURL = rootURL.appendingPathComponent("store.sqlite")
-    let sensorDataManager = SensorDataManager(storeURL: storeURL)
+    let sensorDataManager = SensorDataManager(rootURL: rootURL)
     addTeardownBlock {
       sensorDataManager.removeStore()
     }

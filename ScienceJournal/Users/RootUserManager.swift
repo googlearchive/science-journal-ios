@@ -44,25 +44,25 @@ class RootUserManager: UserManager {
     return FileManager.default.fileExists(atPath: metadataManager.experimentsDirectoryURL.path)
   }
 
-  private let documentsDirectoryURL: URL
+  private let fileSystemLayout: FileSystemLayout
   private let metadataRootURL: URL
 
   /// Designated initializer.
   ///
-  /// - Parameter sensorController: The sensor controller.
-  /// - Parameter documentsDirectoryURL: The documents directory.
-  init(sensorController: SensorController, documentsDirectoryURL: URL = URL.documentsDirectoryURL) {
-    self.documentsDirectoryURL = documentsDirectoryURL
+  /// - Parameters:
+  ///   - fileSystemLayout: The file system layout.
+  ///   - sensorController: The sensor controller.
+  init(fileSystemLayout: FileSystemLayout, sensorController: SensorController) {
+    self.fileSystemLayout = fileSystemLayout
 
     // Configure preference manager with no account ID.
     preferenceManager = PreferenceManager()
 
-    let storeURL = documentsDirectoryURL.appendingPathComponent(SensorDataManager.rootStoreName)
-    sensorDataManager = SensorDataManager(storeURL: storeURL)
+    sensorDataManager = SensorDataManager(rootURL: fileSystemLayout.baseURL, store: .root)
 
-    metadataRootURL = documentsDirectoryURL.appendingPathComponent("Science Journal")
+    metadataRootURL = fileSystemLayout.baseURL.appendingPathComponent("Science Journal")
     metadataManager = MetadataManager(rootURL: metadataRootURL,
-                                      deletedRootURL: documentsDirectoryURL,
+                                      deletedRootURL: fileSystemLayout.baseURL,
                                       preferenceManager: preferenceManager,
                                       sensorController: sensorController,
                                       sensorDataManager: sensorDataManager)
@@ -101,11 +101,11 @@ class RootUserManager: UserManager {
     // Delete sqlite store, including supporting temp files which have the same name as the store
     // with a prefix (e.g. "store.sqlite-wal", "store.sqlite-shm", etc.).
     let contentsURLs =
-      try FileManager.default.contentsOfDirectory(at: documentsDirectoryURL,
+      try FileManager.default.contentsOfDirectory(at: fileSystemLayout.baseURL,
                                                   includingPropertiesForKeys: nil,
                                                   options: [])
     for url in contentsURLs {
-      if url.lastPathComponent.hasPrefix(SensorDataManager.rootStoreName) {
+      if url.lastPathComponent.hasPrefix(SensorDataManager.StoreFile.root.name) {
         try FileManager.default.removeItem(at: url)
       }
     }

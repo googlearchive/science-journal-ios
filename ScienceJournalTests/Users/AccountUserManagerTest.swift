@@ -20,14 +20,17 @@ import XCTest
 
 class AccountUserManagerTest: XCTestCase {
 
-  let accountUserManager = AccountUserManager(account: MockAuthAccount(),
-                                              driveConstructor: DriveConstructorDisabled(),
-                                              networkAvailability: SettableNetworkAvailability(),
-                                              sensorController: MockSensorController(),
-                                              analyticsReporter: AnalyticsReporterOpen())
+  var accountUserManager: AccountUserManager!
 
   override func setUp() {
     super.setUp()
+    let fileSystemLayout = FileSystemLayout(baseURL: createUniqueTestDirectoryURL())
+    accountUserManager = AccountUserManager(fileSystemLayout: fileSystemLayout,
+                                            account: MockAuthAccount(),
+                                            driveConstructor: DriveConstructorDisabled(),
+                                            networkAvailability: SettableNetworkAvailability(),
+                                            sensorController: MockSensorController(),
+                                            analyticsReporter: AnalyticsReporterOpen())
     accountUserManager.preferenceManager.resetAll()
   }
 
@@ -71,9 +74,11 @@ class AccountUserManagerTest: XCTestCase {
   }
 
   func testIsDriveSyncEnabled() {
+    let fileSystemLayout = FileSystemLayout(baseURL: createUniqueTestDirectoryURL())
     let disabledDriveConstructor = DriveConstructorDisabled()
     let accountUserManagerDriveDisabled =
-        AccountUserManager(account: MockAuthAccount(),
+        AccountUserManager(fileSystemLayout: fileSystemLayout,
+                           account: MockAuthAccount(),
                            driveConstructor: disabledDriveConstructor,
                            networkAvailability: SettableNetworkAvailability(),
                            sensorController: MockSensorController(),
@@ -83,7 +88,8 @@ class AccountUserManagerTest: XCTestCase {
 
     let enabledDriveConstructor = MockDriveConstructor()
     let accountUserManagerDriveEnabled =
-        AccountUserManager(account: MockAuthAccount(),
+        AccountUserManager(fileSystemLayout: fileSystemLayout,
+                           account: MockAuthAccount(),
                            driveConstructor: enabledDriveConstructor,
                            networkAvailability: SettableNetworkAvailability(),
                            sensorController: MockSensorController(),

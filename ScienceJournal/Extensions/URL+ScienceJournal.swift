@@ -23,11 +23,6 @@ extension URL {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
   }
 
-  /// The accounts directory URL.
-  public static var accountsDirectoryURL: URL {
-    return URL.documentsDirectoryURL.appendingPathComponent("accounts")
-  }
-
   /// Excludes documents URL and data from iCloud backups.
   public static func excludeDocumentsURLFromiCloud() {
     var docsURL = URL.documentsDirectoryURL

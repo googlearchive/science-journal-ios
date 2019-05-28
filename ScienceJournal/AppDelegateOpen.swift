@@ -27,6 +27,10 @@ open class AppDelegateOpen: AppDelegate {
     return _feedbackReporter
   }
 
+  open override var fileSystemLayout: FileSystemLayout {
+    return _fileSystemLayout
+  }
+
   open override var accountsManager: AccountsManager {
     return _accountsManager
   }
@@ -55,6 +59,7 @@ open class AppDelegateOpen: AppDelegate {
 
   private let _analyticsReporter = AnalyticsReporterOpen()
   private let _feedbackReporter = FeedbackReporterOpen()
+  private let _fileSystemLayout = FileSystemLayout.production
   private let _accountsManager = AccountsManagerDisabled()
   private let _drawerConfig = DrawerConfigOpen()
   private let _driveConstructor = DriveConstructorDisabled()

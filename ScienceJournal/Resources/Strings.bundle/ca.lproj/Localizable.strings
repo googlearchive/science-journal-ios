@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Funcions noves i millores:\n• Inicia la sessió al Compte de Google per desar els experiments als teus dispositius i accedir-hi amb el compte de Google Drive. Aquesta funció estarà disponible per a tots els usuaris en les pròximes setmanes. Pots continuar utilitzant Science Journal sense iniciar la sessió.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Diverses millores de rendiment i correcció d'errors";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal de Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Explora el teu món";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Google t'ofereix Science Journal, una llibreta científica digital gratuïta.\n\nTant si ensenyes ciències com si t'agrada fer experiments científics a casa, pots prendre notes, fer fotos i anotar observacions en un sol lloc. Fes servir els sensors del teu iPhone o iPad per mesurar i crear gràfics de fenòmens com ara la llum, el so i el moviment, o connecta'l per Bluetooth a sensors externs per dur a terme experiments en el teu entorn.\n\nL'aplicació Science Journal et permet fer el següent:\n• Mesurar la llum, el so, l'acceleració, la pressió atmosfèrica i molts altres fenòmens amb els sensors integrats al teu dispositiu.\n• Prendre notes i fer fotos per documentar els teus experiments científics. Aviat afegirem més tipus de notes.\n• Connectar el dispositiu a sensors externs per Bluetooth amb determinats dispositius Arduino.\n• Crear activadors automàtics per gravar dades i prendre notes.\n• Fer servir la sonificació per sentir el moviment dels teus gràfics.\n\nAvís de permisos:\n• Bluetooth: es necessita per cercar dispositius amb sensors Bluetooth.\n• Càmera: es necessita per fer fotos per documentar experiments i per utilitzar el sensor de lluminositat.\n• Biblioteca de fotos: es necessita per desar les fotos que es facin per documentar els experiments i per afegir fotos de la biblioteca als experiments.\n• Micròfon: es necessita per utilitzar el sensor d'intensitat del so.\n•Notificacions automàtiques: es necessiten per informar-te de l'estat de les gravacions quan es posa l'aplicació en segon pla.\n\nActivitats educatives dels nostres col·laboradors: \nhttps://makingscience.withgoogle.com/science-journal/activities\nAssistència: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,ciència,educació,stem,experiments,sensors,gràfics,journal,quadern,notes,documentació,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Acceleròmetre X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Acceleròmetre Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Acceleròmetre Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Informació";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Afegeix un subtítol";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Arxiva";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Arxiva l'experiment";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Arxiva la gravació";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Cancel·la";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "D'acord";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Suprimeix";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Suprimeix l'experiment";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Suprimeix la gravació";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Suprimeix la foto";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Suprimeix la captura";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Suprimeix la nota de text";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Suprimeix la nota";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Descarta";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Ignora";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Edita";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Suggeriments";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Inclou els experiments arxivats";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Nivell";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "D'acord";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Informa";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Torna-ho a provar";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Regle";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Desa";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Configuració";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Treu de l'arxiu";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Treu l'experiment de l'arxiu";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Treu la gravació de l'arxiu";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Desfés";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Mostra els detalls";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Afegeix una nota a la cronologia";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Afegeix una nota nova";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Afegeix una foto";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Afegeix una imatge";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Afegeix una nota";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Llum ambiental";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitud";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Temperatura ambient";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Arxivada";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Els experiments arxivats no es poden modificar, però es poden suprimir";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "L'experiment s'ha arxivat.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "S'ha arxivat la gravació.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Dispositius disponibles";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Enrere";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Torna a la visualització anterior";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Baròmetre";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Crea un activador";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Afegeix una targeta de sensor nova";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Descarta els canvis";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Desa els canvis";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Mantén";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Suprimeix";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Experiment nou";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Inicia la gravació";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Salta al moment actual";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Tanca la targeta";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Atura la gravació";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Fes una foto";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Càmera: captura una foto per afegir-la a aquest experiment";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Has d'introduir el valor numèric en què s'iniciarà l'activador.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Control de reproducció dels gràfics";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Mou la posició de reproducció del gràfic i llegeix el valor d'aquesta posició";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Gràfic en temps real";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Cap a l'esquerra";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Cap a la dreta";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Desplaçat";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Gràfic";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Apropa";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Nivell de zoom";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Ajusta el zoom";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Allunya";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Selecciona una foto";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Reclama-ho tot";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Reclama-ho tot";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Afegeix a Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Vols afegir 1 experiment restant a Drive per al compte %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Vols afegir %1$@ experiments restants a Drive per al compte %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Reclama tots els experiments restants";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Vols afegir tots els experiments a Google Drive?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Vols reclamar tots els experiments?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Afegeix aquest experiment a Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Els experiments no es poden editar i continuaran al dispositiu fins que es reclamin o se suprimeixin";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Afegeix experiments a Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Reclama experiments";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Suprimeix aquest experiment";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Suprimeix-ho tot";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Vols suprimir 1 experiment restant?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Vols suprimir %ld experiments restants?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Suprimeix tots els experiments restants";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Vols suprimir tots els experiments?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Se suprimiran tots els experiments del dispositiu, inclosos els experiments arxivats. Aquesta acció no es pot desfer.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Suprimeix tot";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Hi ha %ld experiments no reclamats en aquest dispositiu.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Hi ha 1 experiment no reclamat en aquest dispositiu.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Comparteix aquest experiment no reclamat";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "No hi ha prou espai per reclamar l'experiment";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "No hi ha prou espai per reclamar experiments";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Error en reclamar l'experiment";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Error en reclamar experiments";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Vols reclamar l'experiment?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Reclama l'experiment";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Vols afegir aquest experiment a Google Drive per al compte %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "S'ha afegit l'experiment a %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Reclama experiments anteriors";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Reclama experiments";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Tanca";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Torna a la visualització anterior";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Brúixola";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "graus";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Conductor";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Continua sense iniciar la sessió";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "Fi del retall:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "No s'ha pogut l'element retallat:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Mou el marcador de fi del retall a l'esquerra";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Mou el marcador de fi del retall a la dreta";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Mou el marcador d'inici del retall a l'esquerra";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Mou el marcador d'inici del retall a la dreta";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Més opcions";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "S'ha retallat la gravació";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "La gravació no es pot retallar fora dels límits gravats inicialment";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "La gravació retallada no pot ser inferior a un segon";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Retalla";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "Inici del retall:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Valor actual";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Intensitat del so";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Experiment sense títol";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Predeterminada";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Confirmes que vols suprimir aquest experiment? Se suprimiran les gravacions i les notes que conté.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Vols suprimir l'experiment?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Suprimeix";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Suprimir la gravació?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "S'ha suprimit l'experiment.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "S'ha suprimit la gravació.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Detalls";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Marcador";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Freqüència";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Desa la configuració del sensor.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Desactiva l'escala automàtica";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Fes doble toc per editar l'element";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Fes doble toc per obrir";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Fes doble toc per seleccionar";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Fes doble toc per activar o desactivar l'opció";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Fes doble toc per veure la informació";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Ansa del tauler d'eines";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Ajusta la mida del tauler d'eines. Hi ha accions disponibles.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "tancat";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "en edició";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "pantalla completa";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "mitja pantalla";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "No es pot connectar a Google Drive. Comprova la connexió.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Xarxa desconnectada";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal no es pot connectar a Google Drive. És possible que no s'hagi pogut crear una còpia de seguretat d'alguns experiments.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Ara mateix Science Journal no es pot connectar a Google Drive. Ho tornarem a provar més tard.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google Drive no té prou espai per emmagatzemar aquest experiment.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Les dades dels experiments de Science Journal es desen a Google Drive, on les pots consultar des de qualsevol dispositiu en què hagis iniciat la sessió amb un Compte de Google.\n\nSi tens dades en aquest dispositiu, inicia la sessió per desar els teus experiments a Google Drive. Els experiments es desen a la carpeta Science Journal de Google Drive.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "No es pot accedir a Google Drive. Comprova la connexió.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Edita l'hora de finalització";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Edita l'hora d'inici";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Edita l'experiment";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Canvia el títol o la foto d'un experiment";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Canvis no desats";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Confirmes que no vols desar els canvis que has fet en aquest experiment?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Canvia la foto";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Edita l'experiment";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Edita el temps";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Edita l'hora de la nota";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Edita hora de finalització de gravació";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Edita l'hora d'inici de la gravació";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Edita la gravació";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Canvia el títol d'una gravació";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Títol de la gravació";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Encara no has desat cap observació";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "No tens experiments";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "No s'ha definit cap activador";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Activa l'escala automàtica";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Cap dels teus experiments no s'afegirà a Drive";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Suprimeix tots els experiments";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Tots els teus experiments s'afegiran a Drive";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Desa tots els teus experiments";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Tria els experiments que vols desar a Google Drive";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Tria els experiments per desar";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Hola de nou! Actualment tens %ld experiments emmagatzemats en aquest dispositiu.\n\nPer continuar, selecciona una opció:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Hola de nou! Actualment tens 1 experiment emmagatzemat en aquest dispositiu.\n\nPer continuar, selecciona una opció:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Còpia de seguretat a Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Experiment";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Experiments";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Comparteix l'experiment";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Aquest experiment no ha acabat de baixar-se. Si en comparteixes una còpia, és possible que faltin dades.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Baixada en curs";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "S'està enregistrant…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Títol de l'experiment";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "L'experiment s'ha creat amb una versió més recent de Science Journal. No podràs editar-lo en aquest dispositiu fins que no n'actualitzis la versió.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Organitza les teves reflexions i observacions prenent notes, enregistrant dades o fent fotos";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Crea un experiment";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Explora el teu món";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Comparteix";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "No s'ha pogut exportar.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Envia l'experiment";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Temps relatiu";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Exporta…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Comparteix la foto amb…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Et donem la benvinguda a Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Prova de prendre notes i gravar dades amb la barra d'eines que hi ha a més avall.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Et donem la benvinguda a Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Troba activitats per fer a\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Oblida aquest dispositiu";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Pantalla completa";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Comença";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Activa l'àudio";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Desactiva l'àudio";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Què és això?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "S'ha produït un error desconegut.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "No s'ha pogut importar. Hi ha un problema amb aquest experiment.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "S'està fent servir Science Journal. Deixa de gravar i torna-ho a provar.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Inicia la sessió per importar un experiment.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "No hi ha prou espai d'emmagatzematge";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Pots gestionar l'emmagatzematge a la configuració.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Mostra els enregistraments arxivats";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Obre la configuració";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "La càmera no es pot utilitzar perquè estàs enregistrant amb un sensor de lluminositat, que mesura les dades a través de la càmera frontal.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "La càmera no es pot utilitzar perquè estàs veient un vídeo de pantalla en pantalla o bé estàs utilitzant Science Journal en el mode Visualització dividida.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Mostra els sensors";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "No es pot fer servir la càmera perquè Science Journal no té permís per accedir-hi.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "No es pot fer servir la biblioteca de fotos perquè Science Journal no té permís per accedir-hi.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Més informació";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Més informació";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Acceleròmetre lineal";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Millores de rendiment i correcció d'errors.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Funcions noves:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Sensor d'altura tonal.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Exportar experiments a un fitxer i importar-los a altres dispositius.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Exportar fotos des d'un experiment.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Mostra més notes";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetòmetre";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menú";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Mostra un menú amb més opcions";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Configuració d'àudio";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Edita els activadors";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Defineix els activadors";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Els meus dispositius";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Posa nom a l'experiment";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Activitats";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Experiments";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Configuració";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Afegeix una descripció";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Descripció";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Nota fotogràfica";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Nota de text";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Nota de l'activador";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Nota de visualització general";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Notes";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "S'ha afegit la nota";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Notes: afegeix una nota de text a aquest experiment";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Observació: utilitza els sensors per afegir visualitzacions generals o enregistraments amb els valors d'aquest experiment";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "No es pot obrir l'experiment";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "No es pot obrir el fitxer";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Els experiments han de tenir un format de fitxer de Science Journal (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Posa en pausa";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Percentatge";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Ja està! Hem acabat de comprovar els permisos. Si vols modificar aquests permisos en el futur, pots fer-ho en qualsevol moment a la secció Science Journal de l'aplicació Configuració d'iOS.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Ara comprovarem si tenim permís per accedir a les càmeres. Utilitzem la frontal per activar el sensor de lluminositat. Pots utilitzar qualsevol de les càmeres per afegir notes amb fotos a experiments i enregistraments.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Continua";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Hem de comprovar els permisos per poder activar els sensors del maquinari, de la càmera i de la biblioteca de fotos. T'explicarem com els utilitzem abans de preguntar-te si ens concedeixes permís per accedir-hi.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Després comprovarem si tenim permís per accedir al micròfon, que s'utilitza per als sensors d'àudio. El contingut d'àudio mai no es grava, es desa ni es transmet; només es mesura la intensitat o l'altura tonal del so.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Primer comprovarem si tenim permís per enviar-te notificacions automàtiques. Només les utilitzem per avisar-te quan els enregistraments estan a punt d'acabar si poses l'aplicació en segon pla durant la gravació.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Finalment, comprovarem si tenim permís per accedir a la biblioteca de fotos, perquè puguis afegir-ne a experiments i enregistraments, i perquè puguem desar-hi les fotos que facis.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Som-hi";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Fet";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Comprova el permís";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Et donem la benvinguda a Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Foto per a";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Foto";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "No hi ha prou espai per afegir la foto";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Sensors interns";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Biblioteca de fotos: afegeix una foto de la biblioteca a aquest experiment";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Informació";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Dispositiu";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Dimensions";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Notes";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Velocitat de l'obturador";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "S'ha afegit la foto";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Altura tonal";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ semitons més greu que un %2$@ bemoll, %3$@a octava";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ semitons més greu que un %2$@, %3$@a octava";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ semitons més greu que un %2$@ sostingut, %3$@a octava";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ bemoll, %2$@a octava";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "agut";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "greu";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@a octava";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ sostingut, %2$@a octava";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ semitons més agut que un %2$@ bemoll, %3$@a octava";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ semitons més agut que un %2$@, %3$@a octava";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ semitons més agut que un %2$@ sostingut, %3$@a octava";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Píxels";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Reprodueix";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "La configuració actual del dispositiu s'ha aplicat a aquest compte";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "S'està actualitzant";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "No es pot iniciar la gravació";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Un sensor o més estan desconnectats. Torna-ho a provar.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Obre Science Journal per veure les dades enregistrades.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Ha finalitzat la gravació.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Continua";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Cancel·la la gravació";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Un o més dels teus sensors no han enregistrat cap dada. Vols cancel·lar aquest enregistrament?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "No s'estan enregistrant dades";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "S'ha aturat la gravació.";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Obre Science Journal per continuar la gravació.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "La gravació finalitzarà aviat.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Continua la gravació";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Atura la gravació";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Suprimeix la imatge de portada";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Suprimeix la imatge de portada d'aquest experiment.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Confirmes que vols suprimir la imatge de portada? Aquesta acció no es pot desfer.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "S'ha suprimit la imatge de portada.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "No s'ha pogut suprimir la imatge de portada.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "S'ha afegit la gravació";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Gravació";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Canvia el nom d'aquesta gravació";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Confirmes que vols suprimir aquesta gravació? Se suprimiran les dades gravades i les notes.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Durada";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Revisió";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Desa";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Desa els canvis i torna a la visualització anterior";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Desa l'experiment";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Vols afegir aquest experiment a la teva biblioteca?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Desa a Fitxers";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Mostra un navegador de fitxers perquè puguis desar una còpia del fitxer a una carpeta del dispositiu.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "S'ha desat el fitxer";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "S'han desat els fitxers";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "No s'ha pogut desar el fitxer. Torna-ho a provar.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "No s'han pogut desar els fitxers. Torna-ho a provar.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Escala";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Selecciona la marca de temps de la nota al gràfic";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Envia una còpia";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Configuració";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Lluminositat";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "El sensor de brillantor no es pot fer servir perquè Science Journal no té permís per accedir a la càmera.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "No s'han pogut carregar les dades del sensor";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "S'estan carregant les dades del sensor…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "No es poden utilitzar sensors d'àudio perquè Science Journal no té permís per accedir al micròfon.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Personalitzat";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Els objectes tenen tendència a quedar-se quiets o bé a continuar en moviment si s'estan movent: és el que anomenem \"principi d'inèrcia\". La primera llei de Newton expressa aquesta idea formalment: un objecte manté el seu estat de moviment o de repòs llevat que hi actuï una força desequilibradora.\n\nQuan una força desequilibradora provoca que un objecte es desplaci, diem que l'objecte accelera: la seva velocitat (o rapidesa) canvia, ja sigui perquè accelera, desaccelera o perquè canvia de direcció. L'acceleració es mesura com un canvi de la velocitat en el temps, en metres per segon o en metres per segon al quadrat (m/s²).\n\nEl teu telèfon té un dispositiu per mesurar aquests canvis en el moviment: un acceleròmetre. Dins de l'acceleròmetre hi ha petites masses suspeses que tenen llibertat per moure's. Els canvis en el moviment provoquen que aquestes masses es desplacin, de la mateixa manera que el teu cap té tendència a caure endavant quan vas en un cotxe que frena de cop. Mesurant aquests desplaçaments subtils causats per la inèrcia, l'acceleròmetre d'un telèfon pot detectar canvis en el moviment i en l'orientació, fet que resulta útil per canviar la pantalla del mode horitzontal al vertical, per jugar a videojocs al telèfon i molt més.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Probablement has notat una acceleració persistent en l'eix Z, fins i tot amb el telèfon sobre una taula. Aquesta és l'acceleració que experimentem a la superfície de la Terra a causa de la força de la gravetat, d'aproximadament 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Tot i que poques vegades ho notem, vivim en el fons d'un profund oceà d'aire: l'atmosfera de la Terra, que té una altura de 40 quilòmetres (130.000 peus). El pes de tot l'aire que des de dalt ens empeny cap avall crea el que s'anomena \"pressió atmosfèrica\".\n\nAl nivell del mar, la pressió atmosfèrica aplica una força de 6,35 kilograms en 6,45 centímetres quadrats, que equival aproximadament a 590 kilograms en una àrea de la mida d'un full de paper.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Com que hi estem acostumats, no ens adonem d'aquesta forta pressió fins que canvia, encara que sigui lleugerament, com quan anem a zones amb altituds elevades o quan viatgem amb avió. La pressió atmosfèrica també canvia segons les condicions climàtiques: disminueix amb l'aire inestable d'una tempesta i augmenta quan l'aire s'estabilitza i el cel s'asserena.\n\nEl baròmetre digital del teu telèfon mesura la pressió atmosfèrica en hectopascals (un hectopascal equival a 100 pascals, i un pascal és un newton de força aplicat sobre una àrea d'un metre quadrat). Probablement has sentit que els meteoròlegs donen la pressió atmosfèrica en mil·libars, una unitat més fàcil de pronunciar que equival als hectopascals.\n\nPotser et preguntes per què un telèfon mesura la pressió. La pressió atmosfèrica canvia considerablement, fins i tot amb petits canvis en l'elevació, per exemple, quan puges un tram d'escales. Per tant, el baròmetre digital del telèfon t'ajuda a detectar canvis en la ubicació i et permet saber, per exemple, en quin pis de l'edifici ets o si estàs passant per sobre o per sota d'un pont.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "La càmera frontal mesura la lluminositat en EV (valor d'exposició), una unitat de mesura que es basa en la velocitat de l'obturador de la càmera, el nombre f i el valor ISO, i que està determinada per la lluminositat dels píxels enregistrats amb aquesta configuració.\n\nCom més lluminós sigui el valor capturat, més alt serà l'EV. La foscor genera valors negatius.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Com que l'EV és una mesura que es basa en l'òptica i els sensors d'una càmera, l'interval de valors està limitat pel maquinari i el programari. Tot i que un sensor de llum ambiental pot gravar lux directament, la càmera frontal ha d'utilitzar el nombre f, el valor ISO i la velocitat de l'obturador per establir un punt de referència de mesurament i, a continuació, determinar l'EV en funció dels píxels de lectura després de capturar imatges. En aquest procés, els valors d'EV poden variar segons el dispositiu si els llindars del nombre f són diferents, tal com passa amb l'iPhone 8 (f1.8) i l'iPad (f2.4).\n\nCom que l'EV es determina mesurant el valor de lluminositat dels píxels capturats, les fonts de llum ambiental generen un valor molt més baix del que generarien si els luxs es determinessin amb un sensor d'infrarojos (les mesures dependrien directament de la posició de la càmera i del que capturés).";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Probablement ja sàpigues que la Terra té un camp magnètic. El que potser encara no saps és que el teu telèfon conté un dispositiu dissenyat per detectar camps magnètics: un magnetòmetre. Si es combinen les dades del magnetòmetre amb l'orientació del telèfon en l'espai, podem crear una brúixola digital.\n\nUna brúixola clàssica és un magnetòmetre de baixa tecnologia, amb una agulla magnetitzada que gira per alinear-se amb el camp magnètic que l'envolta. Dins del teu telèfon no hi ha cap brúixola en miniatura, però sí que hi ha un petit sensor de tres eixos que fa servir corrents elèctrics per detectar la força del camp magnètic en les tres dimensions espacials. Però amb això no n'hi ha prou per crear una brúixola!\n\nPer què cal que la brúixola combini les dades del magnetòmetre amb l'orientació del telèfon? Conèixer l'orientació del telèfon ens permet calcular la rotació magnètica, encara que el telèfon no estigui pla respecte al camp magnètic de la Terra. Com que sabem que la gravetat és perpendicular al camp magnètic de la Terra, podem fer servir la direcció de la gravetat juntament amb els sensors de l'acceleròmetre per determinar quina proporció del camp magnètic està en el mateix pla que el camp magnètic de la Terra.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Com ja et deus haver adonat, la brúixola respon no només al camp magnètic de la Terra, sinó també a qualsevol camp magnètic que hi hagi a prop. Els imants, els corrents elèctrics i els objectes metàl·lics poden provocar que el magnetòmetre del telèfon es desviï cap a una direcció o cap a una altra i que la lectura de la brúixola variï. Per assegurar-te que la punta vermella de la teva brúixola estigui alineada amb el camp magnètic de la Terra, situa't en un espai obert (preferiblement a l'exterior i lluny de les xarxes d'alimentació). Per calibrar el magnetòmetre, et pot ajudar moure el telèfon en forma de 8.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Els sons els produeixen les vibracions. La teva veu, per exemple, prové de les vibracions de les cordes vocals de la gola. Aquestes vibracions creen zones alternes de pressió d'aire alta i baixa que es desplacen cap a l'exterior, de la mateixa manera que s'expandeixen les ones produïdes en llançar una pedra a l'aigua.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Tots els sons es poden descriure en termes de freqüència i intensitat.\n\nLa intensitat és el que mesures amb el sensor d'intensitat del so de Science Journal, expressada en decibels (dB). La intensitat, o el volum, depèn de la distància que recorre un objecte cada cop que vibra; com més alt és el volum, més intensitat sentim.\n\nLa freqüència (també altura tonal o to) d'una ona sonora equival a la velocitat de la vibració. Com més ràpid vibri un objecte, més alta serà l'altura tonal del so resultant. El sensor d'intensitat del so de Science Journal només mesura el volum, no la freqüència.\n\nÉs important que tinguis en compte que el micròfon del teu dispositiu és molt sensible a les diferències de les ones sonores al llarg del temps, però no a la mida absoluta de cada ona. Hem triat un codi capaç de produir uns resultats semblants als de referència, que es mostren més avall. Tot i això, és possible que cada dispositiu doni, de manera sistemàtica, uns resultats més alts o baixos. Els científics calibren els sensors d'aquest tipus en funció d'una mesura coneguda. Ara per ara, Science Journal només pot dir-te si el pròxim viatge en tren és més sorollós que el pròxim concert de rock si portes el mateix telèfon a tots dos llocs.\n\nUna altra cosa que cal saber és que hi ha diferències importants entre \"intensitat del so\", \"nivell d'intensitat del so\" i \"pressió acústica\". Els tractem com si fossin el mateix, però si vols saber-ne més, a Internet trobaràs molta informació sobre les diferències.\n\nEl so més baix que pot detectar l'oïda humana es defineix com a 0 dB. Una conversa normal correspon a 60 dB, i els sons que superen els 140 dB causen dolor a l'orella humana. Tot i això, els sons poden ser perjudicials encara que no causin dolor. L'exposició contínua a sons superiors als 90 dB (d'un volum aproximat al d'una aspiradora) pot acabar causant pèrdua d'audició. \n\nL'escala de decibels és logarítmica, cosa que pot generar confusions: una font sonora de 40 dB no és el doble d'intensa que una de 20 dB, sinó que és 100 vegades més intensa. D'altra banda, si l'alarma d'un despertador produeix 70 dB, les alarmes de dos despertadors no produeixen 140 dB, sinó 73 dB. Com ja hem dit, es tracta d'una escala peculiar. \n\nRemor de fulles: 10 dB \nXiuxiueig a 1,5 metres: 20 dB \nXiuxiueig suau: 30 dB \nPluja: 50 dB \nConversa normal: 60 dB \nBatedora: 90 dB \nCotxe sense silenciador: 100 dB \nCrit a l'orella: 110 dB \nTro: 120 dB \nTrepant amb percussor: 130 dB \nAvió enlairant-se: 140 dB";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Els objectes tenen tendència a quedar-se quiets o bé a continuar en moviment si s'estan movent: és el que anomenem \"principi d'inèrcia\". La primera llei de Newton expressa aquesta idea formalment: un objecte manté el seu estat de moviment o de repòs llevat que hi actuï una força desequilibradora.\n\nQuan una força desequilibradora provoca que un objecte es desplaci, diem que l'objecte accelera: la seva velocitat (o rapidesa) canvia, ja sigui perquè accelera, desaccelera o perquè canvia de direcció. L'acceleració es mesura com un canvi de la velocitat en el temps, en metres per segon o en metres per segon al quadrat (m/s²).\n\nEl teu telèfon té un dispositiu per mesurar aquests canvis en el moviment: un acceleròmetre. Dins de l'acceleròmetre hi ha petites masses suspeses que tenen llibertat per moure's. Els canvis en el moviment provoquen que aquestes masses es desplacin, de la mateixa manera que el teu cap té tendència a caure endavant quan vas en un cotxe que frena de cop. Mesurant aquests desplaçaments subtils causats per la inèrcia, l'acceleròmetre d'un telèfon pot detectar canvis en el moviment i en l'orientació, fet que resulta útil per canviar la pantalla del mode horitzontal al vertical, per jugar a videojocs al telèfon i molt més.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "El sensor de l'acceleròmetre lineal combinat enregistra l'acceleració total en els tres eixos del telèfon, exclosa la gravetat.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "El teu telèfon conté un dispositiu dissenyat per detectar camps magnètics: un magnetòmetre. Aquest petit sensor de tres eixos fa servir corrents elèctrics per detectar la força del camp magnètic en les tres dimensions espacials. En combinar les dades d'aquests tres eixos, podem crear un sensor que detecti la força del camp magnètic total.\n\nAlguns magnetòmetres detecten camps magnètics mitjançant l'efecte Hall, és a dir, la tendència dels camps magnètics a desviar una càrrega en moviment mentre flueix. Els magnetòmetres més moderns fan servir magnetoresistències, aliatges metàl·lics que canvien la seva resistència en funció dels camps magnètics.\n\nPer què un telèfon necessita un magnetòmetre? Conèixer l'orientació del dispositiu en l'espai és útil per a les brúixoles integrades i les aplicacions de navegació, especialment per a aquelles persones que volen rebre indicacions pas a pas.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Els imants, els corrents elèctrics i els objectes metàl·lics poden provocar que el magnetòmetre del telèfon es desviï cap a una direcció o cap a una altra. Però fins i tot al mig d'un camp sense res, el magnetòmetre del telèfon sempre mostra una lectura baixa que mai no arriba a zero: és el camp magnètic de la Terra.";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Els sons els produeixen les vibracions. La teva veu, per exemple, prové de les vibracions de les cordes vocals de la gola. Aquestes vibracions creen zones alternes de pressió d'aire alta i baixa que es desplacen cap a l'exterior, de la mateixa manera que s'expandeixen les ones produïdes en llançar una pedra a l'aigua.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Tots els sons es poden descriure en termes de freqüència i intensitat. La freqüència (també altura tonal o to) d'una ona sonora equival a la velocitat de la vibració. Com més ràpid vibri un objecte, més alta serà l'altura tonal del so resultant. Mesurem aquestes vibracions en hertzs (Hz): 1 hertz = 1 vibració/segon.\n\nL'oïda humana pot detectar sons d'entre 20 i 20.000 Hz. La tecla més greu d'un piano produeix un so amb una freqüència de 27,5 Hz i la tecla més aguda, un so de 4.186,01 Hz.\n\nEl punt vermell indica la distància entre l'altura tonal detectada i la nota musical més propera. Si l'altura tonal detectada és més greu (bemoll), el punt es mostra a l'esquerra. En canvi, si és més aguda (sostingut), el punt es mostra a la dreta.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Les dades que es mostren aquí provenen de la comunicació d'un sensor extern amb el teu telèfon per Bluetooth.\n\nEl valor mostra el percentatge de la lectura de dades sense processar directament des del microcontrolador. Aquest sol ser el percentatge d'una caiguda de tensió en un sensor.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth és un estàndard de tecnologia sense fils que fa servir ones de ràdio per intercanviar dades de dispositius fixos i mòbils a través de distàncies curtes.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Les rotacions per minut (RPM) indiquen la freqüència de rotació al voltant d'un eix fix en un minut.\n\nA mesura que gira el molinet de vent, també ho fa el disc del codificador:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Això crea períodes de llum i de foscor en el sensor que es registren a Science Journal com una rotació.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Les dades que es mostren aquí provenen de la comunicació d'un sensor extern amb el teu telèfon per Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth és un estàndard de tecnologia sense fils que fa servir ones de ràdio per intercanviar dades de dispositius fixos i mòbils a través de distàncies curtes.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Acceleració del telèfon cap a l'esquerra i cap a la dreta, en m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Acceleració del telèfon cap endavant i cap enrere, en m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Acceleració del telèfon cap amunt i cap avall, en m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Pressió atmosfèrica en hectopascals (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Un sensor extern està mostrant les seves dades aquí, segons la configuració personalitzada.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Quantitat de llum, mesurada en EV, que arriba a la càmera frontal.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "L'orientació del telèfon respecte al camp magnètic de la Terra.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Intensitat del so, mesurada en decibels (dB), que arriba al sensor de so o al micròfon.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "L'acceleració total del telèfon, exclosa la força de la gravetat, en m/s².";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "La força del camp geomagnètic ambiental en microtesles.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Altura tonal, mesurada en hertzs (Hz), que arriba al sensor de so o al micròfon.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Percentatge de lectura de dades sense processar d'un sensor extern.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Nombre de rotacions per minut";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Sensor de prova que genera una ona sinusoïdal.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Sensor següent en la gravació";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Sensor anterior en la gravació";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Dades sense processar";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Rotació";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "No es poden modificar els sensors mentre s'enregistren dades";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "L'activador s'ha suprimit";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Els sensors d'àudio i de lluminositat utilitzen el micròfon i la càmera frontal, que no poden gravar dades amb Science Journal en segon pla. Si utilitzes aquests sensors durant una gravació i poses l'aplicació en segon pla, no gravaran dades fins que no tornis a l'aplicació.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Els sensors d'àudio i de lluminositat utilitzen el micròfon i la càmera frontal, que no poden gravar dades amb Science Journal en segon pla.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Nota sobre aquest sensor";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "El sensor de lluminositat no es pot utilitzar mentre es mira un vídeo de pantalla en pantalla o mentre s'utilitza Science Journal en el mode Visualització dividida.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Tensió";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Selecciona els sensors que vols utilitzar en l'experiment";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Replega la llista de sensors";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Desplega la llista de sensors";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal està desactivat";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "L'administrador del domini ha d'activar Science Journal a la consola d'administració de Google.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Canvia de compte";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Les dades són anònimes i ajuden a millorar aquesta aplicació.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Envia l'ús de dades de l'aplicació a Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Llicències de programari lliure";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Política de privadesa";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Condicions del servei";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Versió";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Lloc web de Science Journal";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Mostra les opcions";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Has iniciat la sessió com a %1$@ (%2$@).";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Obre per gestionar els comptes";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Tria un compte";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Menú de la barra lateral";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Obre un menú de la barra lateral que conté opcions de l'aplicació";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Inicia la sessió";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Ona sinusoïdal";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sinus";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "S'ha suprimit la nota";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Desfés";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Visualització general";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Afegeix una visualització general del valor de tots els sensors actuals observats a l'experiment";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "No es pot fer una visualització general perquè un o més sensors estan desconnectats. Torna-ho a provar.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Detalls de la captura";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "S'ha afegit la visualització general";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Mínim";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Màxim";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Mitjana";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Canvia de càmera";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Activat";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Desactivat";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Les gravacions retallades no poden ser inferiors a un segon";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Fes servir un format vàlid: h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Hora nova (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "La marca de temps no pot durar més que la gravació";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Edita la nota de text";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Nota de text";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Afegeix una observació";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "S'ha afegit la nota";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Gravació en curs";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Fes doble toc per anar a la pestanya Observació del tauler d'eines";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Configuració dels sensors";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "A l'experiment";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "A la gravació";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Avisa'm mitjançant";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "So";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Informació de l'activador";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Edita l'activador del sensor %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Activador nou del sensor %@";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "L'activador s'ha activat";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Vibració";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Activadors de:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "quan el valor del sensor sigui superior a";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "quan el valor del sensor sigui igual a";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "quan el valor del sensor sigui inferior a";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "quan el valor disminueixi a menys de:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "quan el valor superi";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "S'ha afegit la nota de l'activador";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Què vols que posi a la nota?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Nota de text predeterminada";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Activa'l només en gravar";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Avisa'm";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Tipus d'activador";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Escriu una nota";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Inicia la gravació";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Atura la gravació";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Valor de l'activador";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Notificació visual";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "el valor era superior";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "El valor és igual";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "el valor era inferior";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "ha disminuït per sota de:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Disminueix a menys del valor";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "El valor és superior";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "El valor és inferior";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Activa'l quan";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Supera el valor";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "ha superat el valor de:";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Edita els activadors";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Els activadors s'han desactivat perquè se n'han accionat massa alhora";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "S'ha tret l'experiment de l'arxiu.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "S'ha tret la gravació de l'arxiu.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Sensor desconegut";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Sense títol";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Fes servir Science Journal per dur a terme experiments al teu entorn";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Recopilarem informació sobre aquesta compilació de Science Journal i sobre el teu dispositiu (només recopilarem la versió del maquinari i la d'iOS; no recopilarem dades personals ni d'identificació). A continuació, adjuntarem la informació a un correu electrònic que ens pots enviar.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Ens agradaria saber la teva opinió";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Envia suggeriments";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Emissió de vídeo";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

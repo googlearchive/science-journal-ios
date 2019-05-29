@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Vedecký zápisník";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Nové funkcie a vylepšenia:\n• Prihláste sa do účtu Google, uložte si svoje experimenty a prístup k nim budete mať cez svoj účet na Disku Google vo všetkých svojich zariadeniach. Túto funkciu budú mať v najbližších týždňoch k dispozícii všetci používatelia. Vedecký zápisník sa dá naďalej používať aj bez prihlásenia.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Mnohé zlepšenia výkonu a opravy chýb";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Vedecký zápisník od Googlu";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Objavujte svet";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Vedecký zápisník je bezplatný digitálny zápisník na vedecké záznamy od Googlu.\n\nČi už ste vedecký pedagóg alebo nadšenec, ktorý sa vede venuje doma, všetky svoje poznámky, fotky a pozorovania môžete uchovávať na jednom vhodnom mieste. Pomocou senzorov v zariadení iPhone alebo iPad môžete merať a formou grafov zaznamenávať javy, ako sú napríklad svetlo, zvuk či pohyb, alebo experimentovať s okolitým svetom prostredníctvom pripojenia externých senzorov cez Bluetooth.\n\nS aplikáciou Vedeckého zápisníka môžete:\n• merať svetlo, zvuk, zrýchlenie, tlak vzduchu a ďalšie javy pomocou vstavaných senzorov v zariadení;\n• robiť si poznámky, snímať fotky a dokumentovať tak svoje vedecké experimenty (ďalšie typy poznámok budú k dispozícii čoskoro);\n• pripojiť externé senzory pri používaní vybraných zariadení Arduino s funkciou Bluetooth;\n• vytvoriť automatické spúšťače na zaznamenávanie údajov a vytváranie poznámok;\n• počúvať pohyby grafov pomocou sonifikácie.\n\nOznámenie o povoleniach:\n• Bluetooth: potrebné na vyhľadanie zariadení so senzormi Bluetooth.\n• Fotoaparát: potrebný na snímanie fotiek na dokumentovanie experimentov a pre senzor jasu.\n• Knižnica fotiek: potrebná na ukladanie fotiek nasnímaných na zdokumentovanie experimentov a na pridanie existujúcich fotiek z knižnice do experimentov.\n• Mikrofón: potrebný pre senzor intenzity zvuku.\n• Upozornenia push: potrebné na informovanie o stave zaznamenávania, keď je aplikácia na pozadí.\n\nVzdelávacie aktivity našich partnerov:\nhttps://makingscience.withgoogle.com/science-journal/activities\nPodpora: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,veda,vzdelávanie,stem,experimenty,senzory,grafy,zápisník,zošit,poznámky,dokumentovanie,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Akcelerometer X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Akcelerometer Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Akcelerometer Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Informácie";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Pridať popis";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Archivovať";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Archivovať experiment";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Archivovať záznam";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Zrušiť";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Dobre";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Odstrániť";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Odstrániť experiment";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Odstrániť záznam";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Odstrániť obrázok";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Odstrániť prehľad stavu";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Odstrániť textovú poznámku";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Odstrániť poznámku";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Zahodiť";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Odmietnuť";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Upraviť";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Spätná väzba";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Zahrnúť archivované experimenty";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Vodováha";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Nahlásiť";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Skúsiť znova";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Pravítko";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Uložiť";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Nastavenia";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Zrušiť archiváciu";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Zrušiť archiváciu experimentu";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Zrušiť archiváciu záznamu";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Späť";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Zobraziť podrobnosti";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Pridať poznámku k časovej osi";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Pridať novú poznámku";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Pridať fotku";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Pridať obrázok";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Pridať poznámku";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Senzor okolitého svetla";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitúda";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Senzor okolitej teploty";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Archivované";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Archivované experimenty nemožno upraviť, ale možno ich odstrániť";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Experiment je archivovaný.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Záznam je archivovaný.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Dostupné zariadenia";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Späť";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Návrat na predchádzajúce zobrazenie";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometer";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Vedecký zápisník";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Vytvoriť spúšťač";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Pridať novú senzorovú kartu";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Zahodiť zmeny";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Uložiť zmeny";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Ponechať";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Odstrániť";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Nový experiment";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Spustiť zaznamenávanie";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Prejsť na aktuálny čas";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Zavrieť kartu";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Zastaviť zaznamenávanie";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Odfotiť";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Fotoaparát, nasnímajte fotku, ktorá sa pridá k tomuto experimentu";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Musíte zadať číselnú hodnotu, pri ktorej sa tento spúšťač aktivuje.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Ovládanie prehrávania grafu";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Presunie pozíciu prehrávania grafu a prečíta hodnotu danej pozície";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Priebežne aktualizovaný graf";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Posunúť doľava";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Posunúť doprava";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Posunuté";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Graf";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Priblížiť";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Úroveň priblíženia";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Prispôsobiť priblíženie veľkosti obrazovky";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Oddialiť";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Vybrať fotku";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Nárokovať si všetky";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Nárok. všetko";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Pridať na Disk Google";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Chcete pridať 1 zostávajúci experiment na Disk Google účtu %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Pridať zostávajúce experimenty (%1$@) na Disk Google účtu %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Nárokovať si všetky zostávajúce experimenty";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Chcete pridať všetky experimenty na Disk Google?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Chcete si nárokovať všetky experimenty?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Pridať tento experiment na Disk Google";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Experimenty nie je možné upraviť a zostanú v zariadení dovtedy, kým si ich nebudete nárokovať alebo ich neodstránite";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Pridanie experimentov na Disk Google";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Nárokovať si experimenty";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Odstrániť tento experiment";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Odstrániť všetky";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Chcete odstrániť 1 zostávajúci experiment?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Chcete odstrániť zostávajúce experimenty (%ld)?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Odstrániť všetky zostávajúce experimenty";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Chcete odstrániť všetky experimenty?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Všetky experimenty v tomto zariadení (vrátane archivovaných) budú odstránené. Túto akciu nemožno vrátiť späť.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Odstrániť všetky";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "V tomto zariadení sú nenárokované experimenty (%ld).";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "V tomto zariadení je 1 nenárokovaný experiment.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Zdieľať tento nenárokovaný experiment";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Na disku nemáte miesto na nárokovanie experimentu";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Na disku nemáte miesto na nárokovanie experimentov";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Experiment sa nepodarilo nárokovať";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Experimenty sa nepodarilo nárokovať";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Chcete nárokovať experiment?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Nárokovať si experiment";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Chcete pridať tento experiment na Disk Google účtu %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Experiment bol pridaný do účtu %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Nárokovanie minulých experimentov";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Nárokovať si experimenty";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Zavrieť";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Návrat na predchádzajúce zobrazenie";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Kompas";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "stupne";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Dirigent";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Pokračovať bez prihlásenia";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "koniec orezania:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Orezanie sa nepodarilo uložiť:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Posunúť značku konca orezania doľava";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Posunúť značku konca orezania doprava";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Posunúť značku začiatku orezania doľava";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Posunúť značku začiatku orezania doprava";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Ďalšie možnosti";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Záznam bol orezaný";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Záznam nemožno orezať mimo pôvodne zaznamenaného rozsahu";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Záznam nemožno orezať na menej ako jednu sekundu";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Orezať";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "začiatok orezania:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Aktuálna hodnota";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Intenzita zvuku";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Experiment bez názvu";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Predvolené";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Naozaj chcete odstrániť tento experiment? Všetky príslušné záznamy a poznámky sa odstránia.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Odstrániť tento experiment?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Odstrániť";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Chcete odstrániť tento záznam?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Experiment bol odstránený.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Záznam bol odstránený.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Podrobnosti";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Pripnúť";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frekvencia";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Uložiť nastavenia senzora.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Senzor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Vypnúť automatické škálovanie";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Upravíte dvojitým klepnutím";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Otvorte dvojitým klepnutím";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Vyberte dvojitým klepnutím";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Prepnete dvojitým klepnutím";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Podrobnosti zobrazíte dvojitým klepnutím";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Úchytka vysúvacieho panela nástrojov";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Upravte veľkosť vysúvacieho panela nástrojov. K dispozícii sú akcie.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "zavreté";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "upravuje sa";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "na celú obrazovku";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "na polovicu obrazovky";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Nemožno sa pripojiť k Disku Google. Skontrolujte pripojenie.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Sieť je odpojená";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Vedecký zápisník sa nemôže pripojiť k Disku Google. Je možné, že niektoré experimenty nie sú zálohované.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Vedecký zápisník sa momentálne nemôže pripojiť k Disku Google. Skúsime to znova neskôr.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Na Disku Google nie je dosť miesta na uloženie experimentu.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Údaje experimentov vo Vedeckom zápisníku sa ukladajú a sú k dispozícii v rôznych zariadeniach prostredníctvom Disku Google. Na prístup sa vyžaduje prihlásenie do účtu Google.\n\nAk máte v tomto zariadení existujúce údaje, po prihlásení si môžete existujúce experimenty uložiť na Disk Google. Vaše experimenty sa uložia do priečinka Vedecký zápisník na Disku Google.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Nedá sa pripojiť k Disku Google. Skontrolujte pripojenie.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Upraviť čas ukončenia";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Upraviť čas začiatku";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Upraviť experiment";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Zmeniť názov alebo fotku experimentu";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Neuložené zmeny";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Naozaj nechcete uložiť zmeny, ktoré ste urobili v tomto experimente?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Zmena fotky";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Úprava experimentu";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Upraviť čas";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Úprava času poznámky";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Upraviť čas ukončenia záznamu";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Upraviť čas začiatku záznamu";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Upraviť záznam";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Zmeniť názov záznamu";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Názov záznamu";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Zatiaľ nemáte žiadne pozorovania";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Nemáte žiadne experimenty";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Nie sú nastavené žiadne spúšťače";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Zapnúť automatické škálovanie";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Žiaden z vašich experimentov sa nepridá na Disk Google";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Odstrániť všetky experimenty";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Všetky vaše experimenty sa pridajú na Disk Google";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Uložiť všetky experimenty";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Vyberte, ktoré experimenty sa majú uložiť na Disk Google";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Vybrať, ktoré exper. sa uložia";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Vitajte späť. V tomto zariadení máte momentálne uložené experimenty (%ld).\n\nPokračujte výberom niektorej z možností:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Vitajte späť. V tomto zariadení máte momentálne uložený 1 experiment.\n\nPokračujte výberom niektorej z možností:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Zálohovať na Disk Google";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Experiment";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Experimenty";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Zdieľať experiment";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Tento experiment ešte nie je úplne stiahnutý. Ak budete zdieľať jeho kópiu, niektoré údaje v ňom môžu chýbať";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Sťahuje sa";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Zaznamenáva sa…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Názov experimentu";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Tento experiment bol vytvorený v novšej verzii Vedeckého zápisníka. V tomto zariadení ho nemôžete upravovať, kým si nestiahnete najnovšiu aktualizáciu.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Utrieďte si myšlienky a pozorovania zapísaním poznámok, zaznamenaním údajov alebo nasnímaním fotiek";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Vytvorte nový experiment";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Objavujte svet";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Zdieľať";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Exportovanie nebolo úspešné.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Odoslať experiment";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relatívny čas";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Exportujú sa dáta…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Zdieľanie fotky…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Vitajte vo Vedeckom zápisníku";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Skúste pridať poznámky a zaznamenať údaje pomocou panela s nástrojmi, ktorý je nižšie.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Vitajte vo Vedeckom zápisníku!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Na adrese g.co/sciencejournalactivities nájdete aktivity,\nktoré môžete vyskúšať";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Zabudnúť toto zariadenie";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Na celú obrazovku";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Začíname";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Zapnúť zvuk";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Vypnúť zvuk";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Čo sa deje?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Ľutujeme, ale vyskytla sa neznáma chyba.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Import zlyhal. S týmto experimentom nie je niečo v  poriadku.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Vedecký zápisník sa práve používa. Zastavte nahrávanie a skúste to znova.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Ak chcete importovať experiment, prihláste sa.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "V úložisku nie je dostatok miesta";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Úložisko môžete spravovať v nastaveniach.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Zobraziť archivované záznamy";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Otvoriť nastavenia";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Fotoaparát nemožno použiť, pretože zaznamenávate pomocou senzora jasu, ktorý meria údaje cez predný fotoaparát.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Fotoaparát nemožno použiť, pretože pozeráte video pomocou funkcie obraz v obraze alebo používate Vedecký zápisník v režime rozdeleného zobrazenia.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Zobraziť senzory";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Fotoaparát nemožno použiť, pretože Vedecký zápisník k nemu nemá povolený prístup.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Vašu knižnicu fotiek nemožno použiť, pretože Vedecký zápisník k nej nemá povolený prístup.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Ďalšie informácie";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Ďalšie informácie";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Lineárny akcelerometer";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Vylepšenia výkonu a opravy chýb.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Nové funkcie:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Senzor výšky zvuku.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Export experimentov do súboru a ich import do iných zariadení.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Export fotiek z experimentu.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Zobraziť ďalšie poznámky";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Ponuka";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Zobrazí ponuku s ďalšími možnosťami";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Nastavenia zvuku";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Upraviť spúšťače";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Nastaviť spúšťače";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Moje zariadenia";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Pomenujte tento experiment";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Aktivity";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Experimenty";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Nastavenia";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Pridajte popis";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Popis";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Obrázková poznámka";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Textová poznámka";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Poznámka spúšťača";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Poznámka s prehľadom stavu";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Poznámky";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Poznámka bola pridaná";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Poznámky, pridajte textovú poznámku k tomuto experimentu";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Pozorovanie, pomocou senzorov pridajte hodnotné snímky alebo záznamy k tomuto experimentu";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Experiment nemožno otvoriť";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Súbor nemožno otvoriť";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Experimenty musia byť vo formáte súboru Vedeckého zápisníka (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Pozastaviť";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Percentá";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Hotovo! Skontrolovali sme povolenia. Ak budete v budúcnosti potrebovať tieto povolenia zmeniť, kedykoľvek to môžete urobiť v aplikácii Nastavenia iOS v sekcii Vedeckého zápisníka.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Teraz skontrolujeme povolenie na prístup k fotoaparátom. Predný fotoaparát používame v súvislosti so senzorom jasu a hociktorý fotoaparát môžete použiť na pridanie fotografických poznámok k experimentom a záznamom.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Pokračovať";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Na začiatok musíme skontrolovať povolenia, aby bolo možné aktivovať hardvérové senzory, fotoaparát a knižnicu fotiek. Skôr ako vám zobrazíme príslušné výzvy, vysvetlíme vám, ako jednotlivé prvky používame.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Ďalej skontrolujeme povolenie na prístup k mikrofónu. Mikrofón sa využíva v súvislosti so senzormi zvuku. Zvukový obsah nikdy nezaznamenávame, neukladáme ani neprenášame, meriame len intenzitu samotného zvuku.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Najskôr skontrolujeme povolenie na odosielanie oznámení push. Tie využívame len na to, aby sme vám oznámili, že sa záznamy čoskoro ukončia, ak uprostred zaznamenávania prepnete aplikáciu tak, aby bežala na pozadí.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Napokon skontrolujeme povolenie na prístup ku knižnici fotiek, aby ste mohli k experimentom a záznamom pridávať existujúce fotky a do knižnice zasa ukladať fotky, ktoré nasnímate.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Poďme na to";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Hotovo!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Skontrolovať povolenia";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Vitajte vo Vedeckom zápisníku!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Fotka k experimentu";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Fotka";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Na disku nemáte miesto na pridanie fotky";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Interné senzory";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Knižnica fotiek, pridajte k tomuto experimentu fotku z knižnice";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Informácie";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Zariadenie";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Rozmery";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Poznámky";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Rýchlosť uzávierky";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Obrázok bol pridaný";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Výška";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "O %1$@ poltóny nižšie než %2$@ s béčkom, %3$@. oktáva";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "O %1$@ poltóny nižšie než nota %2$@, %3$@. oktáva";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "O %1$@ poltóny nižšie než %2$@ s krížikom, %3$@. oktáva";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ s béčkom, %2$@. oktáva";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "vysoká výška";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "nízka výška";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@. oktáva";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ s krížikom, %2$@. oktáva";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "O %1$@ poltóny vyššie než %2$@ s béčkom, %3$@. oktáva";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "O %1$@ poltóny vyššie než nota %2$@, %3$@. oktáva";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "O %1$@ poltóny vyššie než %2$@ s krížikom, %3$@. oktáva";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pixely";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Prehrať";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Pre tento účet boli použité existujúce nastavenia zariadenia";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Obnovuje sa";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Zaznamenávanie nemožno spustiť";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Minimálne jeden z vašich senzorov je odpojený. Skúste to znova.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Otvorte Vedecký zápisník a pozrite si zaznamenané údaje.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Vaše zaznamenávanie sa skončilo.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Pokračovať";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Zrušiť zaznamenáv.";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Minimálne jeden z vašich senzorov nezaznamenal žiadne údaje. Chcete zrušiť toto zaznamenávanie?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Údaje sa nezaznamenávajú";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Zaznamenávanie sa zastavilo";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Otvorte Vedecký zápisník, aby zaznamenávanie pokračovalo.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Zaznamenávanie sa čoskoro skončí.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Ďalej zaznamenávať";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Zastaviť zaznamenávanie";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Odstrániť titulný obrázok";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Slúži na odstránenie titulného obrázka tohto experimentu.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Naozaj chcete odstrániť titulný obrázok? Táto akcia sa nedá vrátiť späť.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Titulný obrázok bol odstránený.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Titulný obrázok sa nepodarilo odstrániť.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "ot./min";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Záznam bol pridaný";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Záznam";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Premenujte tento záznam";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Naozaj chcete odstrániť tento záznam? Zaznamenané údaje a poznámky sa odstránia.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Trvanie";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Kontrola";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Uložiť";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Uložiť zmeny a vrátiť sa na predchádzajúce zobrazenie";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Uložiť experiment";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Chcete tento experiment pridať do knižnice?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Uložiť do Súborov";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Zobrazí prehliadač dokumentov, pomocou ktorého môžete uložiť kópiu tohto súboru do priečinka vo svojom zariadení.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Súbor sa uložil";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Súbory sa uložili";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Súbor sa nepodarilo uložiť. Skúste to znova.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Súbory sa nepodarilo uložiť. Skúste to znova.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Stupnica";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Vybrať časovú pečiatku poznámky v grafe";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Odoslať kópiu";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Nastavenia";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Jas";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Senzor jasu nemožno použiť, pretože Vedecký zápisník nemá povolený prístup k vášmu fotoaparátu.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Nepodarilo sa načítať údaje senzora";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Načítavajú sa údaje senzora…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Senzory zvuku nemožno použiť, pretože Vedecký zápisník nemá povolený prístup k mikrofónu.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Vlastný";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Objekty majú tendenciu zostať na mieste, ak stoja, alebo zostať v pohybe, ak sa hýbu – nazýva sa to zákon zotrvačnosti. Prvý Newtonov zákon vyjadruje túto myšlienku formálne: každý objekt zotrváva v pohybe alebo v pokoji, ak naň nepôsobí vonkajšia sila.\n\nKeď vonkajšia sila spôsobí pohyb objektu, hovoríme, že objekt zrýchli: jeho rýchlosť sa zmení (buď zrýchli, spomalí alebo zmení smer). Zrýchlenie sa meria ako zmena rýchlosti (v metroch za sekundu) v čase alebo v metroch za sekundu na druhú (m/s²).\n\nVáš telefón obsahuje zariadenie, ktoré meria tieto zmeny pohybu – akcelerometer. Vnútri akcelerometra sa nachádzajú malé závesné závažia, ktoré sa môžu voľne pohybovať. Zmeny pohybu spôsobujú pohyb týchto závaží presne tak, ako keď sa vám hlava posunie dopredu pri rýchlom zabrzdení auta. Meraním týchto jemných zotrvačných posunov dokáže akcelerometer v telefóne zaznamenať zmeny pohybu a orientácie, čo je užitočné napríklad pri prepínaní obrazovky medzi režimom na šírku a režimom na výšku, pri hraní hier v telefóne a na iné účely.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Pravdepodobne ste si všimli neustále zrýchľovanie na osi Z, aj keď je váš telefón v pokoji na stole. Ide o zrýchlenie, ktoré pôsobí na povrchu Zeme vďaka gravitačnej sile, s hodnotou približne 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Hoci si to len zriedka uvedomujeme, všetci žijeme na dne hlbokého oceána vzduchu. Je ním zemská atmosféra, ktorá siaha do výšky 40 km. Váha všetkého vzduchu, ktorá na nás z výšky dolieha, sa nazýva atmosférický tlak.\n\nNa hladine mora pôsobí atmosférický tlak silou približne 2,5 kg na centimeter štvorcový, čo predstavuje tlak o sile takmer 600 kg na plochu veľkosti klasického hárka papiera.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Na tento zdrvujúci tlak sme si zvykli, a tak si ho ani neuvedomujeme – teda pokiaľ sa čo i len trochu nezmení, ako k tomu dochádza pri výstupe do veľkých nadmorských výšok alebo počas letu v lietadle. Atmosférický tlak sa mení aj vplyvom počasia: s prichádzajúcimi búrkami alebo pri nestabilnej vzduchovej hmote klesá a keď sa vzduch stabilizuje a obloha vyjasní, naopak stúpa.\n\nDigitálny barometer v telefóne meria atmosférický tlak v hektopascaloch. (Hektopascal je 100 pascalov, pričom jeden pascal je tlak, ktorý vyvolá sila veľkosti jedného newtona na plochu s obsahom jeden meter štvorcový.) Pri predpovedi počasia ste zrejme zachytili udávaný atmosférický tlak v milibaroch – táto milšie znejúca jednotka je ekvivalentom hektopascalu.\n\nMožno sa pýtate, načo by mal telefón merať tlak? Atmosférický tlak sa výrazne mení už pri miernej zmene nadmorskej výšky, napríklad keď vyšliapete jedno poschodie. Digitálny barometer v telefóne vám teda môže pomôcť zistiť zmeny polohy, napríklad vám povie, na akom poschodí budovy sa nachádzate alebo či sa s autom pohybujete po hornom alebo dolnom poschodí mosta.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Predný fotoaparát meria svietivosť v jednotkách EV (expozičná hodnota). Tento výsledok merania vychádza z rýchlosti uzávierky fotoaparátu, clonového čísla a hodnoty ISO a určuje sa na základe jasu pixelov zaznamenaných pri daných nastaveniach.\n\nČím vyšší jas sa zaznamená, tým vyššia je hodnota EV. Tma spôsobí záporné hodnoty.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Keďže je výsledok merania EV založený na optike a senzoroch fotoaparátu, rozsah hodnôt je limitovaný hardvérom a softvérom. Senzor okolitého svetla dokáže zaznamenávať luxy priamo, predný fotoaparát však musí východiskové hodnoty merania stanoviť pomocou clonového čísla, hodnoty ISO a rýchlosti uzávierky a až potom určí hodnotu EV na základe zmerania pixelov po nasnímaní obrázkov. Vzhľadom na tento proces sa môžu hodnoty EV pri rôznych zariadeniach líšiť, ak sa líšia hraničné hodnoty clonového čísla, ako je to v prípade zariadení iPhone 8 (f1.8) a iPad (f2.4).\n\nKeďže sa hodnota EV určuje na základe merania hodnoty jasu nasnímaných pixelov, pre zdroje okolitého svetla sa zaznamená oveľa nižšia hodnota, ako by sa zaznamenala, ak by sa luxy určovali pomocou infračerveného senzora – výsledky merania priamo závisia od polohy fotoaparátu a od toho, čo sníma.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Zrejme už viete, že Zem má magnetické pole. Možno ste si však nevšimli, že váš telefón obsahuje zariadenie na zaznamenávanie magnetických polí: magnetometer. Skombinovaním údajov z magnetometra telefónu a orientácie telefónu v priestore môžeme vytvoriť digitálny kompas.\n\nStarý známy kompas je primitívnym magnetometrom so zmagnetizovanou ihlou, ktorá sa otáča tak, aby bola v súlade s okolitým magnetickým poľom. Vo vašom telefóne nie je žiaden malý kompas, ale drobný senzor s tromi osami, ktorý pomocou elektrických prúdov zisťuje silu magnetického poľa v troch priestorových dimenziách. To však na vytvorenie kompasu nestačí.\n\nPrečo musí kompas kombinovať údaje magnetometra s orientáciou telefónu? Keď poznáme orientáciu telefónu, dokážeme vypočítať magnetickú rotáciu, aj keď telefón nedržíte naležato v jednej rovine s magnetickým poľom Zeme. Vieme, že gravitačná sila pôsobí kolmo na magnetické pole Zeme, takže na základe informácie o smere pôsobenia gravitačnej sily zo senzorov akcelerometra môžeme určiť, aká časť magnetického poľa je v rovnakej rovine ako magnetické pole Zeme.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Možno ste si všimli, že kompas nereaguje len na magnetické pole Zeme, ale aj na akékoľvek iné magnetické pole v blízkosti. Magnety, elektrické prúdy a kovové objekty dokážu ľahko ovplyvniť magnetometer v telefóne a zmeniť tak meranie kompasu. Ak chcete mať istotu, že červená strelka kompasu ukazuje magnetické pole Zeme, stojte na otvorenom priestranstve (najlepšie vonku a ďaleko od elektrických drôtov). Kalibráciu magnetometra v telefóne uľahčíte, ak budete telefónom pohybovať v tvare čísla 8.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Zvuky sa tvoria pomocou vibrácií. Napríklad váš hlas vytvárajú vibrácie vašich hlasiviek. Tieto vibrácie vytvárajú striedavé zóny vysokého a nízkeho tlaku, ktoré sa šíria vpred – podobne ako kruhy na vode po hodení kamienka do jazera.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Všetky zvuky možno charakterizovať na základe ich frekvencie a intenzity.\n\nIntenzita je veličina, ktorú meriate v aplikácii Vedecký zápisník pomocou senzora intenzity zvuku, a jej jednotkou sú decibely (dB). Intenzita alebo hlasitosť závisí od vzdialenosti, ktorú vibrujúci objekt prejde pri každej vibrácii. Väčšiu intenzitu vnímame ako vyššiu hlasitosť.\n\nFrekvencia (tiež označovaná ako výška alebo tón) zvukovej vlny je ekvivalentná rýchlosti vibrovania. Čím rýchlejšie objekt vibruje, tým väčšia je výška (vyšší tón) výsledného zvuku. Vedecký zápisník nemeria frekvenciu – len hlasitosť.\n\nJe dôležité vedieť, že mikrofón vo vašom zariadení je navrhnutý tak, aby bol veľmi citlivý na rozdiely vo zvukových vlnách v priebehu času, nie však na absolútnu veľkosť každej vlny. Pokúsili sme sa vybrať kód, ktorý pravdepodobne produkuje hodnoty podobné referenčným hodnotám zobrazeným nižšie, no každé zariadenie môže poskytovať systematicky vyššie alebo nižšie hodnoty. Vedci zvyčajne takýto senzor kalibrujú na známe meranie. Zatiaľ vám Vedecký zápisník prezradí, či je vaša ďalšia jazda vlakom hlasnejšia ako váš ďalší rockový koncert, ale iba vtedy, keď v oboch prípadoch použijete ten istý telefón.\n\nDôležité je tiež vedieť, že medzi intenzitou zvuku, hladinou intenzity zvuku a akustickým tlakom sú dôležité rozdiely. My ich tu nerozlišujeme, no ak chcete vedieť viac, na internete nájdete množstvo zdrojov o rozdieloch medzi nimi.\n\nNajtichší zvuk, ktorý dokáže priemerné ľudské ucho zachytiť, je definovaný ako 0 dB. Bežný rozhovor zodpovedá približne 60 dB a zvuky zhruba nad 140 dB sú už pre ľudské ucho bolestivé. Ale zvuky nemusia byť bolestivé, aby boli škodlivé. Dlhotrvajúce vystavenie zvukom nad 90 dB (čo je približne hlasitosť vysávača) dokáže v konečnom dôsledku spôsobiť stratu sluchu.\n\nDecibelová mierka je logaritmická, takže je to s ňou trochu komplikované: zdroj zvuku s intenzitou 40 dB nie je dvakrát intenzívnejší ako zvuk s hodnotou 20 dB – je 100-krát intenzívnejší. Okrem toho tiež platí, že ak jeden budík vyprodukuje zvuk s intenzitou 70 dB, dva budíky nevyprodukujú 140 dB, ale 73 dB. Ako sme už uviedli, táto mierka je trochu zvláštna.\n\n10 dB – šum lístia\n20 dB – šepot na vzdialenosť 1,5 metra\n30 dB – jemný šepot\n50 dB – dážď\n60 dB – bežný rozhovor\n90 dB – mixér\n100 dB – auto bez tlmiča výfuku\n110 dB – kričanie do ucha\n120 dB – hrom\n130 dB zbíjačka\n140 dB – lietadlo pri vzlete";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Objekty majú tendenciu zostať na mieste, ak stoja, alebo zostať v pohybe, ak sa hýbu – nazýva sa to zákon zotrvačnosti. Prvý Newtonov zákon vyjadruje túto myšlienku formálne: každý objekt zotrváva v pohybe alebo v pokoji, ak naň nepôsobí vonkajšia sila.\n\nKeď vonkajšia sila spôsobí pohyb objektu, hovoríme, že objekt zrýchli: jeho rýchlosť sa zmení (buď zrýchli, spomalí alebo zmení smer). Zrýchlenie sa meria ako zmena rýchlosti (v metroch za sekundu) v čase alebo v metroch za sekundu na druhú (m/s²).\n\nVáš telefón obsahuje zariadenie, ktoré meria tieto zmeny pohybu – akcelerometer. Vnútri akcelerometra sa nachádzajú malé závesné závažia, ktoré sa môžu voľne pohybovať. Zmeny pohybu spôsobujú pohyb týchto závaží presne tak, ako keď sa vám hlava posunie dopredu pri rýchlom zabrzdení auta. Meraním týchto jemných zotrvačných posunov dokáže akcelerometer v telefóne zaznamenať zmeny pohybu a orientácie, čo je užitočné napríklad pri prepínaní obrazovky medzi režimom na šírku a režimom na výšku, pri hraní hier v telefóne a na iné účely.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Senzor kombinovaného lineárneho akcelerometra zaznamenáva celkové zrýchlenie vo všetkých troch osiach telefónu s vylúčením gravitácie.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Váš telefón obsahuje zariadenie na zaznamenávanie magnetických polí: magnetometer. Je to drobný senzor s tromi osami, ktorý pomocou elektrických prúdov zisťuje silu magnetického poľa v troch priestorových dimenziách. Kombináciou údajov zo všetkých troch osí vieme vytvoriť senzor celkovej sily magnetického poľa.\n\nNiektoré magnetometre zisťujú magnetické pole pomocou Hallovho javu – tendencie magnetických polí odkláňať tok elektricky nabitých častíc. Novšie magnetometre využívajú magnetorezistory – kovové zliatiny, ktoré menia svoj odpor podľa magnetického poľa.\n\nNačo telefón potrebuje magnetometer? Poznanie polohy v priestore je užitočné pre integrovaný kompas a navigačné aplikácie, zvlášť tie, ktoré poskytujú podrobnú navigáciu.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magnety, elektrické prúdy a kovové objekty môžu ľahko ovplyvniť magnetometer telefónu. Avšak aj uprostred šíreho poľa magnetometer v telefóne vždy ukazuje nízku nenulovú hodnotu: to je magnetické pole Zeme!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Zvuky sa tvoria pomocou vibrácií. Napríklad váš hlas vytvárajú vibrácie vašich hlasiviek. Tieto vibrácie vytvárajú striedavé zóny vysokého a nízkeho tlaku, ktoré sa šíria vpred – podobne ako kruhy na vode po hodení kamienka do jazera.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Všetky zvuky možno charakterizovať na základe ich frekvencie a intenzity. Frekvencia (tiež označovaná ako výška alebo tón) zvukovej vlny je ekvivalentná rýchlosti vibrovania. Čím rýchlejšie objekt vibruje, tým väčšia je výška (vyšší tón) výsledného zvuku. Tieto vibrácie sa merajú v hertzoch (Hz), pričom 1 hertz sa rovná 1 vibrácii za sekundu.\n\nĽudia počujú zvuky v rozsahu 20 až 20 000 Hz. Kláves s najhlbším tónom na klavíri vytvára zvuk s frekvenciou 27,5 Hz, zatiaľ čo kláves s najvyšším tónom vytvára zvuk s frekvenciou 4 186,01 Hz.\n\nČervená bodka označuje, ako blízko je zistená výška tónu blízko k najbližšej hudobnej note. Ak je tón nižší (zapisujeme ho s béčkom), bodka sa bude zobrazovať naľavo. Ak je tón vyšší (zapisujeme ho s krížikom), bodka sa bude zobrazovať napravo.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Údaje zobrazené v tejto časti pochádzajú z externého senzora, ktorý s vaším telefónom komunikuje prostredníctvom rozhrania Bluetooth.\n\nHodnota ukazuje percento hrubého merania priamo z vášho mikroovládača. Väčšinou ide o percento poklesu napätia v rámci senzora.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth je štandard bezdrôtovej technológie, ktorá používa rádiové vlny na výmenu dát na krátke vzdialenosti medzi pevnými aj mobilnými zariadeniami.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Otáčky za minútu (ot./min) merajú frekvenciu otáčok okolo pevnej osi za jednu minútu.\n\nOtáčanie veternej vrtule otáča disk kódovača:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "To vytvára obdobia svetla a tmy na senzore, ktoré sa vo Vedeckom zápisníku zaznamenajú ako rotácia.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Údaje zobrazené v tejto časti pochádzajú z externého senzora, ktorý s vaším telefónom komunikuje prostredníctvom rozhrania Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth je štandard bezdrôtovej technológie, ktorá používa rádiové vlny na výmenu dát na krátke vzdialenosti medzi pevnými aj mobilnými zariadeniami.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Zrýchlenie telefónu doľava a doprava v m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Zrýchlenie telefónu dopredu a dozadu v m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Zrýchlenie telefónu nahor a nadol v m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Atmosférický tlak meraný v hektopascaloch (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "V tejto časti sa zobrazujú údaje externého senzora na základe vlastných nastavení.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Množstvo svetla merané v jednotkách EV, ktoré dopadá na predný fotoaparát.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Orientácia telefónu vzhľadom na magnetické pole Zeme.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Intenzita zvuku meraná v decibeloch (dB), ktorá pôsobí na zvukový senzor alebo mikrofón.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Celkové zrýchlenie telefónu s vylúčením gravitačnej sily v m/s².";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Sila okolitého geomagnetického poľa v jednotkách mikrotesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Výška zvuku, ktorý pôsobí na zvukový senzor alebo mikrofón. Meria sa v hertzoch (Hz).";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Percento hrubého merania z externého senzora.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Počet otáčok za minútu";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Testovací senzor, ktorého výstupom je sínusoida.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Ďalší senzor v zázname";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Predchádzajúci senzor v zázname";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Hrubé";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Otáčky";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Počas zaznamenávania nie je možné upravovať senzory";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Spúšťač bol odstránený";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Senzory zvuku a jasu využívajú mikrofón a predný fotoaparát, ktoré nemôžu zaznamenávať, keď je Vedecký zápisník na pozadí. Ak tieto senzory využívate pri zaznamenávaní a aplikáciu dáte na pozadie, príslušné údaje sa nebudú zaznamenávať, kým sa do aplikácie nevrátite.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Senzory zvuku a jasu využívajú mikrofón a predný fotoaparát, ktoré nemôžu zaznamenávať, keď je Vedecký zápisník na pozadí.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Poznámka o tomto senzore";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Senzor jasu nemožno použiť, kým pozeráte video pomocou funkcie obraz v obraze alebo používate Vedecký zápisník v režime rozdeleného zobrazenia.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Napätie";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Vyberte, ktoré senzory sa majú v experimente použiť";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Zbaliť zoznam senzorov";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Rozbaliť zoznam senzorov";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Vedecký zápisník je vypnutý";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Správca vašej domény musí zapnúť Vedecký zápisník v konzole aplikácie Google Admin.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Prepnúť účty";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Údaje sú anonymné a pomáhajú zlepšovať túto aplikáciu.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Odoslať spotrebu dát aplikácie Googlu";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Licencie open source";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Pravidlá ochrany súkromia";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Zmluvné podmienky";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Verzia";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Web Vedeckého zápisníka";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Zobraziť možnosti";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Prihlásili ste sa ako %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Po otvorení môžete spravovať účty";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Výber účtu";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Ponuka bočného panela";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Otvorí ponuku bočného panela, ktorá obsahuje možnosti aplikácie";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Prihlásiť sa";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sínusoida";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sínus";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Poznámka bola odstránená";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Späť";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Prehľad stavu";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Pridá do experimentu prehľad stavu hodnôt všetkých aktuálne sledovaných senzorov";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Nemožno vytvoriť prehľad stavu, pretože minimálne jeden senzor je odpojený. Skúste to znova.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Podrobnosti prehľadu stavu";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Prehľad stavu bol pridaný";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maximum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Priemer";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Prepnutie fotoaparátu";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Zapnuté";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Vypnuté";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Záznamy nemožno orezať na menej ako jednu sekundu";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Použite platný formát, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Nový čas (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Čas musí byť v rámci záznamu";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Úprava textovej poznámky";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Textová poznámka";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Pridajte pozorovanie";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Poznámka bola pridaná";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Prebieha zaznamenávanie";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Dvojitým klepnutím prepnete zobrazenie na kartu pozorovania vo vysúvacom paneli nástrojov";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Nastavenia senzora";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "K experimentu";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "K záznamu";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Na upozornenie použiť";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Zvuk";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Podrobnosti spúšťača";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Úprava spúšťača senzora %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Nový spúšťač senzora %@";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Spúšťač bol aktivovaný";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Vibrovanie";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Spúšťače senz.";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "keď je senzor nad hodnotou";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "pri hodnote";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "keď je senzor pod hodnotou";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "keď hodnota klesne pod";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "keď hodnota stúpne nad";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Bola pridaná poznámka k spúšťaču";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Čo má poznámka obsahovať?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Predvolený text poznámky";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Spustiť len pri zaznamenávaní";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Upozorniť ma";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Typ spúšťača";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Urobiť poznámku";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Spustiť nahrávanie";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Zastaviť nahrávanie";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Hodnota pre spustenie";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Vizuálne upozornenie";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "keď bola hodnota nad";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Pri hodnote";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "keď bola hodnota pod";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "keď hodnota klesla pod";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Keď hodnota klesne pod";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Pri hodnote vyššej ako";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Pri hodnote nižšej ako";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Spúšťač aktivovať";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Keď hodnota stúpne nad";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "keď hodnota stúpla nad";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Upraviť spúšťače";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Aktivovalo sa príliš veľa spúšťačov, preto boli vypnuté";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Experiment bol presunutý z archívu.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Záznam bol presunutý z archívu.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Neznámy senzor";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Bez názvu";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Experimentujte s okolitým svetom pomocou Vedeckého zápisníka";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Zhromaždíme informácie o tejto zostave Vedeckého zápisníka a o zariadení (len o hardvéri a verzii iOS – žiadne osobné ani identifikačné informácie) a pripojíme ich k správe, ktorú nám môžete poslať.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Potešíme sa správam od vás";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Odoslať spätnú väzbu";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Videostream";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

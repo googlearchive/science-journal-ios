@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Nye funksjoner og forbedringer:\n• Logg på Google-kontoen din for å lagre og få tilgang til eksperimentene dine på flere enheter via Google Disk-kontoen din. Denne funksjonen blir tilgjengelig for alle brukere i løpet av de neste ukene. Science Journal kan fortsatt brukes uten pålogging.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Mange ytelsesforbedringer og feilrettinger";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal fra Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Utforsk verden rundt deg";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Science Journal er en gratis, digital vitenskapelig notatblokk fra Google.\n\nNå har du alle notater, bilder og observasjoner på ett og samme sted, enten du er naturfagslærer eller bare liker å gjøre eksperimenter hjemme. Bruk sensorene i en iPhone eller iPad til å måle og lage grafiske fremstillinger av forskjellige fenomener med lys, lyd og bevegelse. Du kan også koble til eksterne sensorer via Bluetooth for å gjøre eksperimenter på verden rundt deg.\n\nMed Science Journal-appen kan du gjøre følgende:\n• Mål lys, lyd, akselerasjon, lufttrykk med mer ved hjelp av de innebygde sensorene i enheten.\n• Ta notater og bilder for å dokumentere eksperimentene dine. Det kommer snart flere typer notater.\n• Koble til eksterne sensorer ved å bruke utvalgte Arduino-enheter med Bluetooth.\n• Opprett automatiske utløsere for opptak av data og notatskriving.\n• Bruk sonifikasjon til å høre bevegelse i diagrammene dine.\n\nVarsel om tillatelser:\n• Bluetooth: nødvendig for å skanne etter sensorenheter med Bluetooth.\n• Kamera: nødvendig for å ta bilder for å dokumentere eksperimenter og for lysstyrkesensoren.\n• Bildebibliotek: nødvendig for å lagre bilder som er tatt for å dokumentere eksperimenter, og for å legge til eksisterende bilder fra biblioteket i eksperimentene.\n• Mikrofon: nødvendig for lydstyrkesensoren.\n• Pushvarsling: nødvendig for å informere deg om registreringsstatus når appen kjører i bakgrunnen.\n\nUndervisningsaktiviteter fra partnerne våre:\nhttps://makingscience.withgoogle.com/science-journal/activities\nBrukerstøtte: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,vitenskap,utdanning,stem,eksperiment,sensorer,diagram,journal,notatbok,notater,dokumentere";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Akselerometer X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Akselerometer Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Akselerometer Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Info";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Legg til tekst";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Arkivér";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Arkivér eksperimentet";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Arkivér registreringen";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Avbryt";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Greit";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Slett";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Slett eksperimentet";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Slett registreringen";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Slett bildet";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Slett øyeblikksbildet";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Slett tekstnotatet";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Slett notatet";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Forkast";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Avvis";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Endre";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Gi tilbakemelding";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Ta med arkiverte eksperimenter";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Nivå";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Rapportér";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Prøv på nytt";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Linjal";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Lagre";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Innstillinger";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Fjern fra arkivet";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Fjern eksperimentet fra arkivet";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Fjern registreringen fra arkivet";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Angre";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Se detaljer";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Legg til et notat i tidslinjen";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Legg til et nytt notat";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Legg til et bilde";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Legg til et bilde";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Legg til et notat";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Omgivelseslys";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitude";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Omgivelsestemperatur";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Arkivert";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Du kan ikke endre arkiverte eksperimenter, men du kan slette dem";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Eksperimentet er arkivert.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Registreringen er arkivert.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Tilgjengelige enheter";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Tilbake";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Gå tilbake til forrige visning";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometer";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Opprett en utløser";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Legg til et nytt sensorkort";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Forkast endringer";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Lagre endringer";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Behold det";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Slett det";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Nytt eksperiment";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Start registreringen";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Hopp til nå";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Lukk kortet";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Stopp registreringen";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Ta et bilde";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Kamera, ta et bilde som skal legges til dette eksperimentet";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Du må angi en numerisk verdi for når utløseren skal slå inn.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Kontroll for avspilling av diagram";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Flytter posisjonen for avspillingen av diagrammet, og leser av verdien for den posisjonen";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Sanntidsdiagram";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Panorer mot venstre";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Panorer mot høyre";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Panorert";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Diagram";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Zoom inn";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Zoomnivå";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Zoom for å tilpasse";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Zoom ut";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Velg et bilde";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Gjør krav på alle";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Krav på alle";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Legg i Google Disk";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Vil du legge ett gjenstående eksperiment i Google Disk for %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Vil du legge %1$@ gjenstående eksperimenter i Google Disk for %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Gjør krav på alle gjenstående eksperimenter";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Legg til alle eksperimentene i Google Disk?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Gjør krav på alle eksperimentene?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Legg til dette eksperimentet i Google Disk";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Eksperimenter kan ikke endres og forblir på enheten til noen gjør krav på eller sletter dem";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Legg til eksperimenter i Google Disk";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Gjør krav på eksperimenter";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Slett dette eksperimentet";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Slett alle";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Vil du slette ett gjenstående eksperiment?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Vil du slette %ld gjenstående eksperimenter?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Slett alle gjenstående eksperimenter";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Vil du slette alle eksperimentene dine?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Alle dataene dine på denne enheten, inkludert arkiverte eksperimenter, slettes. Du kan ikke angre denne handlingen.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Slett alle";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "På denne enheten finnes det %ld eksperimenter uten eierskap.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "På denne enheten finnes det ett eksperiment uten eierskap.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Del dette eksperimentet ingen har gjort krav på";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Ikke nok plass til å gjøre krav på eksperimentet";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Ikke nok plass til å gjøre krav på eksperimentene";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Kunne ikke gjøre krav på det";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Kunne ikke gjøre krav på dem";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Gjør krav på eksperimentet?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Gjør krav på eksperimentet";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Vil du legge til dette eksperimentet i Google Disk for %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Eksperimentet er lagt til i %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Gjør krav på tidligere eksperimenter";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Gjør krav på eksperimenter";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Lukk";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Gå tilbake til forrige visning";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Kompass";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "grader";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Leder";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Fortsett uten å logge på";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "sluttpunkt for avkorting:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Kunne ikke lagre avkortingen:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Flytt markøren for sluttpunktet for avkorting til venstre";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Flytt markøren for sluttpunktet for avkorting til høyre";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Flytt markøren for startpunktet for avkorting til venstre";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Flytt markøren for startpunktet for avkorting til høyre";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Flere alternativer";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Registreringen er avkortet";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Registreringen kan ikke avkortes utenfor området som først ble registrert";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Registreringen kan ikke avkortes til mindre enn ett sekund";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Avkort";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "startpunkt for avkorting:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Nåværende verdi";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Lydintensitet";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Eksperiment uten navn";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Standard";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Er du sikker på at du vil slette eksperimentet? Alle registreringene og notatene blir slettet.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Vil du slette eksperimentet?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Slett";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Vil du slette registreringen?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Eksperimentet er slettet.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Registreringen er slettet.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Informasjon";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Nål";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frekvens";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Lagre sensorinnstillinger.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Slå av automatisk skalering";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Dobbelttrykk for å endre";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Dobbelttrykk for å åpne";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Dobbelttrykk for å velge";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Dobbelttrykk for å slå av/på";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Dobbelttrykk for å se informasjon";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Håndtak for uttrekksmenyen for verktøy";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Juster størrelsen på uttrekksmenyen for verktøy. Flere handlinger er tilgjengelig.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "lukket";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "redigerer";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "fullskjermvisning";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "fyller halve skjermen";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Kan ikke koble til Google Disk. Sjekk tilkoblingen.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Koblet fra nettverket";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal kan ikke koble til Google Disk. Noen eksperimenter blir kanskje ikke sikkerhetskopiert.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Science Journal kan ikke koble til Google Disk akkurat nå. Vi prøver på nytt senere.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google Disk har ikke nok plass til å lagre eksperimentet ditt.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Science Journal-eksperimentdata lagres og gjøres tilgjengelig på alle enhetene du bruker Google Disk på. Pålogging med en Google-konto kreves.\n\nHvis du har data på denne enheten fra før, kan du lagre de eksisterende eksperimentene dine i Google Disk så snart du er pålogget. Eksperimentene dine lagres i en «Science Journal»-mappe i Google Disk.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Får ikke kontakt med Google Disk. Sjekk tilkoblingen din.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Endre sluttiden";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Endre starttiden";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Endre eksperimentet";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Endre tittel eller bilde for et eksperiment";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Ulagrede endringer";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Er du sikker på at du ikke vil lagre endringene du har gjort i dette eksperimentet?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Bytt bilde";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Endre eksperimentet";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Endre tiden";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Endre tidspunkt for notat";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Endre sluttiden for registreringen";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Endre starttiden for registreringen";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Endre registreringen";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Endre tittelen for en registrering";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Registreringstittel";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Du har foreløpig ingen observasjoner";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Du har ingen eksperimenter";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Ingen utløsere er angitt";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Slå på automatisk skalering";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Ingen av eksperimentene dine legges til i Google Disk";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Slett alle eksperimentene dine";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Alle eksperimentene dine legges til i Google Disk";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Lagre alle eksperimentene dine";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Velg eksperimentene du vil lagre i Google Disk";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Velg eksperimenter for lagring";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Velkommen tilbake. Du har foreløpig %ld eksperimenter lagret på denne enheten.\n\nVelg et alternativ for å fortsette:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Du har lagret 1 eksperiment på denne enheten.\n\nVelg et alternativ for å fortsette:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Sikkerhetskopiér til Disk";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Eksperiment";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Eksperimenter";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Del eksperimentet";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Nedlastingen av dette eksperimentet er ikke fullført. Hvis du deler det nå, kommer det til å mangle noen data.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Nedlasting pågår";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Registrerer …";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Navn på eksperimentet";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Dette eksperimentet ble opprettet med en nyere versjon av Science Journal. Du må laste ned den nyeste oppdateringen før du kan endre det.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Organiser tankene og observasjonene dine ved å ta notater, registrere data eller ta bilder";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Opprett et nytt eksperiment";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Utforsk omgivelsene";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Del";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Eksporteringen mislyktes.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Send eksperimentet";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relative tidsstempler";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Eksporterer …";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Del bildet på …";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Velkommen til Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Prøv å ta notater og registrere data ved å bruke verktøylinjen nedenfor.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Velkommen til Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Finn aktiviteter du kan prøve, på\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Glem denne enheten";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Fullskjermvisning";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Kom i gang";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Slå på lyden";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Slå av lyden";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Hva skjer?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Det har dessverre oppstått en ukjent feil.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Importen mislyktes. Noe er galt med dette eksperimentet.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Science Journal er i bruk for øyeblikket. Stopp registreringen, og prøv på nytt.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Du må logge på før du kan importere eksperimenter.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Ikke nok lagringsplass";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Du kan administrere lagringsplassen din i innstillingene.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Vis arkiverte registreringer";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Åpne innstillingene";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Du kan ikke bruke kameraet fordi du registrerer data med en lysstyrkesensor som bruker frontkameraet.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Du kan ikke bruke kameraet fordi du ser på en video med bilde i bilde eller bruker Science Journal med delt bildevisning.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Se sensorer";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Du kan ikke bruke kameraet fordi du ikke har gitt Science Journal tilgang til det.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Du kan ikke bruke bildebiblioteket fordi du ikke har gitt Science Journal tilgang til det.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Finn ut mer";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Finn ut mer";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Lineært akselerometer";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Ytelsesforbedringer og feilrettinger.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Nye funksjoner:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• tonesensor";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• eksportering av eksperimenter til filer, og importering til andre enheter";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• eksportering av bilder fra eksperimenter";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Se flere notater";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Meny";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Viser en meny med flere alternativer";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Lydinnstillinger";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Endre utløsere";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Angi utløsere";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Mine enheter";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Gi dette eksperimentet et navn";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Aktiviteter";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Eksperimenter";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Innstillinger";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Legg til en beskrivelse";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Beskrivelse";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Bildenotat";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Tekstnotat";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Utløsernotat";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Notat til øyeblikksbilde";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Notater";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Notatet er lagt til";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Notater, legg til et tekstnotat i dette eksperimentet";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Observer, bruk sensorer til å legge til verdiøyeblikksbilder eller registreringer i dette eksperimentet";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Kan ikke åpne eksperimentet";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Kan ikke åpne filen";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Eksperimentene må være i Science Journal-filformatet (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Sett på pause";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Prosent";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Det var det. Vi er ferdige med å sjekke tillatelsene. Hvis du vil endre disse tillatelsene senere, kan du gjøre dette når som helst i Science Journal-delen i Innstillinger-appen i iOS.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Vi ber også om tilgang til kameraene dine. Vi bruker frontkameraet som lysstyrkesensor, og du kan bruke kameraet foran eller bak til å legge til bildenotater i eksperimenter og for registreringer.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Fortsett";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Vi begynner med å sjekke tillatelser, slik at vi kan aktivere de fysiske sensorene, kameraet og bildebiblioteket ditt. Vi forklarer hvordan vi bruker hver av disse før du blir bedt om å gi tilgang til dem.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "I neste trinn sjekker vi om vi har tilgang til mikrofonen din, for å bruke den som lydsensor. Lydinnholdet blir aldri tatt opp, lagret eller videresendt – vi måler bare selve lydintensiteten eller -tonen.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Først ber vi om tillatelse til å sende deg pushvarsler. Vi sender bare varsler om at registreringene dine avsluttes, hvis appen flyttes til bakgrunnen mens en registrering pågår.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Til slutt ber vi om tilgang til bildebiblioteket ditt, slik at du kan legge til bilder du har tatt, i eksperimenter og registreringer, og slik at vi kan lagre bilder du tar, i biblioteket ditt.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Sett i gang";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Ferdig.";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Sjekk tillatelsen";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Velkommen til Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Bilde for";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Bilde";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Det er ikke nok diskplass til å legge til bildet";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Interne sensorer";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Bildebibliotek, legg til et bilde fra biblioteket i dette eksperimentet";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Informasjon";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Enhet";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Størrelse";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Notater";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Lukkerhastighet";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Bildet er lagt til";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Tone";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ halvtoner mørkere enn %2$@♭, oktav %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ halvtoner mørkere enn %2$@, oktav %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ halvtoner mørkere enn %2$@♯, oktav %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@♭, oktav %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "høy tone";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "lav tone";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, oktav %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@♯, oktav %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ halvtoner lysere enn %2$@♭, oktav %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ halvtoner lysere enn %2$@, oktav %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ halvtoner lysere enn %2$@♯, oktav %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Piksler";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Spill av";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "De eksisterende enhetsinnstillingene er tatt i bruk på denne kontoen";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Oppdaterer";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Kan ikke starte registreringen";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "En eller flere av sensorene dine er frakoblet. Prøv på nytt.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Åpne Science Journal for å se dataene du har registrert.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Registreringen er avsluttet.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Fortsett";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Avbryt registreringen";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Én eller flere av sensorene dine registrerte ikke data. Vil du avbryte denne registreringen?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Data registreres ikke";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Registreringen er stoppet";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Åpne Science Journal for å fortsette registreringen.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Registreringen avsluttes snart.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Fortsett registreringen";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Stopp registreringen";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Fjern omslagsbildet";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Fjerner omslagsbildet for dette eksperimentet.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Er du sikker på at du vil fjerne omslagsbildet? Denne handlingen kan ikke angres.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Omslagsbildet er fjernet.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Kunne ikke fjerne omslagsbildet.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "O/MIN";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Registreringen er lagt til";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Registrering";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Gi denne registreringen nytt navn";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Er du sikker på at du vil slette denne registreringen? De registrerte dataene og notatene blir slettet.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Varighet";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Oversikt";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Lagre";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Lagre endringene, og gå tilbake til forrige visning";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Lagre eksperimentet";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Vil du legge til dette eksperimentet i biblioteket ditt?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Lagre i Filer";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Åpner dokumentet i en nettleser, slik at du kan lagre en kopi av denne filen i en mappe på enheten.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Filen er lagret";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Filene er lagret";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Kunne ikke lagre filen. Prøv på nytt.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Kunne ikke lagre filene. Prøv på nytt.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Skala";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Velg tidsstempel for notatet i diagrammet";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Send en kopi";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Innstillinger";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Lysstyrke";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Lysstyrkesensoren kan ikke brukes fordi Science Journal ikke har tilgang til kameraet ditt.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Sensordataene kunne ikke lastes inn";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Laster inn sensordataene …";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Lydsensorene kan ikke brukes, fordi Science Journal ikke har tilgang til mikrofonen.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Egendefinert";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Gjenstander har en tendens til enten å ligge i ro eller å fortsette bevegelsen hvis de er i bevegelse. Denne tendensen kalles treghet. Newtons første lov uttrykker dette formelt: En gjenstand beveger seg med konstant hastighet (som også kan være lik null) så lenge ingen ubalansert kraft virker på gjenstanden.\n\nNår gjenstanden påvirkes av en ubalansert kraft, sier vi at gjenstanden akselererer. Gjenstandens hastighet endres, enten ved at den går raskere, tregere eller endrer retning. Akselerasjonen måles som en endring i hastighet (meter per sekund) over tid eller meter per kvadratsekund (m/s²).\n\nTelefonen din inneholder en enhet som kan måle disse bevegelsesendringene – et akselerometer. Akselerometeret inneholder små, bevegelige masser. Endringer i bevegelse fører til at disse massene flytter seg, på samme måte som når hodet ditt vipper forover når du er i en bil som bråbremser. Ved å måle disse små bevegelsene kan akselerometeret i telefonen brukes til å registrere endringer telefonens bevegelse og retning, noe som er nyttig for å bytte skjermvisningen fra liggende format til stående, for å spille spill med mer.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Du la sikkert merke til en vedvarende akselerasjon i Z-aksen selv om telefonen lå i ro på et bord. Dette er akselerasjonen på omtrent 9,8 m/s² som vi opplever på jordens overflate som følge av gravitasjonskreftene.";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Vi legger sjeldent merke til det, men vi bor på bunnen av et hav av luft: jordens atmosfære, som strekker seg 40 km til værs. Vekten av all denne luften kalles lufttrykk\n\nVed havoverflaten utgjør lufttrykket nesten 1 kg for hver kvadratcentimenter. Det tilsvarer omtrent 590 kg på et A4-ark.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Vi merker ikke det sterke trykket fordi vi er vant til det. Men vi merker når det endrer seg, selv om det bare er litt – slik det gjør når vi kommer opp i høyden eller reiser med fly. Atmosfæretrykket varierer også etter værforholdene – det faller når luften er stormfull og turbulent, og stiger når luften stabiliserer seg og himmelen klarner opp.\n\nDet digitale barometeret i telefonen din måler atmosfæretrykket i hektopascal (hPa). (Én hektopascal er 100 pascal – og én pascal er en kraft på én newton over et område på én kvadratmeter.) Du har kanskje hørt atmosfæretrykk bli oppgitt i millibar? Det er det samme som hektopascal.\n\nDu lurer kanskje på hvorfor en telefon måler trykk? Endringer i atmosfæretrykket kan måles selv ved små høydeendringer, for eksempel når du går opp en trapp. Et digitalt barometer i en telefon kan derfor gjøre det lettere å oppdage posisjonsendringer, for eksempel hvilken etasje i en bygning du er i, eller om du kjører på øverste eller nederste plan på en bro.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Frontkameraet måler luminans i EV (eksponeringsverdi). EV er en måling av lysstyrken på pikslene som registreres gitt kameraets lukkerhastighet, blenderåpning og ISO-verdi.\n\nJo høyere lysstyrke som registreres, desto høyere EV. Mørke piksler gir negative verdier.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "EV er en måling som tar utgangspunkt i kameraets optikk og sensorer, og den er dermed begrenset av maskinvaren og programvaren i kameraet. Med en sensor for omgivelseslys kan vi registrere belysningsstyrken (i lux) direkte, men med frontkameraet er vi avhengig av å kjenne blenderåpningen, ISO-verdien og lukkerhastigheten til kameraet for å kunne danne et utgangspunkt for målingen og deretter avgjøre luminansen (i EV) basert på avlesning av piksler i bilder som er tatt. Verdiene vi måler i EV, kan dermed variere fra enhet til enhet hvis grensene for blenderåpningene varierer, slik de gjør for iPhone 8 (f1,8) og iPad (f2,4).\n\nEttersom vi fastslår luminansen ved å måle lysstyrken for piksler i bilder vi har tatt, registreres omgivelseslys med en mye lavere verdi enn det som hadde vært tilfellet hvis vi hadde målt belysningsstyrken med en infrarød sensor. Målingene avhenger direkte av kameraets posisjon og hva det registrerer.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Du visste nok fra før av at jorden har et magnetfelt, men du visste kanskje ikke at telefonen din inneholder en enhet som er utviklet for å registrere magnetiske felt: et magnetometer. Vi kan lage et digitalt kompass ved å kombinere data fra telefonens magnetometer med telefonens retning i omgivelsene.\n\nEt gammeldags kompass er et enkelt magnetometer med en magnetisk nål, der nålens retning avhenger av det omkringliggende magnetfeltet. Det finnes ikke noe lite kompass i telefonen din, men en liten sensor med tre akser, der elektrisk strøm brukes til å registrere styrken i magnetfeltet i de tre romdimensjonene. Dette i seg selv er likevel ikke nok til å lage et kompass.\n\nHvorfor trenger vi både data fra magnetometeret og informasjon om telefonens retning for å lage et kompass? Hvis vi vet telefonens retning, kan vi finne den magnetiske rotasjonen, selv om telefonen ikke ligger flatt i samme plan som jordens magnetfelt. Vi vet at tyngdekraften virker vinkelrett på jordens magnetfelt. Derfor kan vi bruke tyngdekraftens retning, som vi kjenner fra akselerometeret, til å finne ut hvor stor del av magnetfeltet som ligger i det samme planet som jordens magnetfelt.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Du har kanskje lagt merke til at kompasset ikke bare reagerer på jordens magnetfelt, men også på alle andre magnetfelt i nærheten. Magneter, elektrisk strøm og metallgjenstander kan raskt lede magnetometeret på telefonen din hit og dit, slik at kompassavlesningen endres. Stå i et åpent område – helst utendørs og langt unna strømledninger – hvis du vil være sikker på at den røde tuppen på kompasset innretter seg etter jordens magnetfelt. Det hjelper å bevege telefonen i et åttetallsmønster når du skal kalibrere magnetometeret.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Lyder lages av vibrasjoner. Stemmen din er for eksempel et resultat av vibrasjoner i stemmebåndene i halsen din. Disse vibrasjonene skaper varierende soner med høyt og lavt lufttrykk som sprer seg utover – på samme måte som de voksende, sirkelformede bølgene som oppstår når du kaster en stein i et vann.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Alle lyder kan beskrives ut fra frekvensen og intensiteten lyden har.\n\nIntensitet er det du måler her med Science Journal-sensoren for lydintensitet, i måleenheten desibel (dB). Intensiteten, eller lydstyrken, avhenger av avstanden et vibrerende objekt forflytter seg over for hver vibrasjon. Høyere intensitet oppfattes som økt lydstyrke.\n\nFrekvensen (også kalt tonen eller tonehøyden) til en lydbølge er det samme som vibrasjonshastigheten. Jo fortere et objekt vibrerer, desto høyere tone får lyden det skaper. Science Journal-sensoren for lydintensitet måler ikke frekvensen, bare lydstyrken.\n\nDet er viktig å huske på at mikrofonen i enheten din er laget for å oppfatte forskjellene i lydbølger over tid – ikke den absolutte størrelsen på hver lydbølge. Vi har prøvd å programmere appen slik at tallene du ser, samsvarer med referansetallene nedenfor, men det kan hende at du ser konsekvent høyere eller lavere tall på enkelte enheter. Forskere bruker vanligvis kjente størrelser til å kalibrere slike sensorer. Foreløpig kan du altså bruke Science Journal til å finne ut om det er høyere lydnivå på den neste togturen din eller den neste rockekonserten du går på, men bare hvis du måler med den samme telefonen i begge tilfellene.\n\nNoe annet som er viktig å huske på, er at det finnes viktige forskjeller mellom «lydintensitet», «lydintensitetsnivå» og «lydtrykk». Her skiller vi ikke mellom disse, men det finnes mange ressurser på nettet hvis du vil finne ut mer om forskjellene.\n\n0 dB er definert som den laveste lyden et vanlig menneskeøre kan registrere. Vanlige samtaler har en lydstyrke på omtrent 60 dB, og lyder over 140 dB opplever vi som smertefulle. Men lyd kan også være skadelig uten å være smertefull. Langvarig eksponering for lyder på 90 dB – omtrent lydnivået til en støvsuger – kan på sikt føre til hørselstap.\n\nDesibelskalaen er logaritmisk, noe som kan være litt forvirrende. En lydkilde på 40 dB er nemlig ikke dobbelt så intens som en på 20 dB – den er 100 ganger mer intens. Hvis ringelyden fra én vekkerklokke er på 70 dB, er ikke ringelyden fra to vekkerklokker på 140 dB, men på 73 dB. Skalaen er som sagt litt merkelig.\n\n10 dB – løv som rasler i vinden\n20 dB – hvisking på 1,5 meters avstand\n30 dB – lav hvisking\n50 dB – regn\n60 dB – normal samtale\n90 dB – blender\n100 dB – bil uten lydpotte\n110 dB – roping rett i øret\n120 dB – torden\n130 dB – trykkluftbor\n140 dB – fly som tar av";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Gjenstander har en tendens til å ligge i ro eller å fortsette en bevegelse hvis de er i bevegelse. Denne tendensen kalles treghet. Newtons første lov uttrykker dette formelt: En gjenstand forblir i ro eller beveger seg med konstant hastighet hvis ingen ubalansert kraft virker på den.\n\nNår en ubalansert kraft virker på gjenstanden, sier vi at den akselererer. Gjenstandens hastighet endres, enten ved at den går raskere, tregere eller endrer retning. Akselerasjonen måles som en endring i hastighet (meter per sekund) over tid eller meter per kvadratsekund (m/s²).\n\nTelefonen din inneholder en enhet som kan måle disse bevegelsesendringene – et akselerometer. Akselerometeret inneholder små, bevegelige masser. Endringer i bevegelse fører til at disse massene flytter seg, på samme måte som når hodet ditt detter forover når du er i en bil som bråbremser. Ved å måle disse små bevegelsene kan akselerometeret i telefonen brukes til å registrere endringer telefonens bevegelse og retning, noe som er nyttig for å bytte skjermvisningen fra liggende format til stående, for å spille spill med mer.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Den kombinerte, lineære akselerometersensoren registrerer den totale akselerasjonen i alle tre aksene på telefonen, med unntak av tyngdekraften.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Telefonen din har en innretning som er laget for å registrere magnetfelt: et magnetometer. Et magnetometer er en liten sensor med tre akser som bruker elektrisk strøm til å registrere styrken i magnetfeltet i de tre romdimensjonene. Ved å kombinere data fra alle de tre aksene kan vi lage en sensor som måler den kombinerte styrken i magnetfeltet.\n\nI enkelte magnetometre registreres magnetfelt ved å bruke halleffekten – måten magnetiske krefter påvirker elektrisk strøm på. Nyere magnetometre bruker magnetmotstander, som er metallegeringer der motstanden endres i takt med endringer i magnetfeltet de befinner seg i.\n\nHvorfor har telefoner et magnetometer? Jo, for når du skal bruke kompass- og navigasjonsapper, er det nyttig at appen har informasjon om hvilken vei du står og ser – særlig i apper der du får trinnvise retningsanvisninger.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magneter, elektrisk strøm og metallgjenstander kan enkelt lede magnetometeret på telefonen din hit og dit. Men selv om du står i et åpent område, registrerer alltid magnetometeret på telefonen en lav, positiv eller negativ verdi, og det er dette som er jordens magnetfelt.";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Lyder lages av vibrasjoner. Stemmen din er for eksempel et resultat av vibrasjoner i stemmebåndene i halsen din. Disse vibrasjonene skaper varierende soner med høyt og lavt lufttrykk som sprer seg utover – på samme måte som de voksende, sirkelformede bølgene som oppstår når du kaster en stein i et vann.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Alle lyder kan beskrives ut fra frekvensen og intensiteten lyden har. Frekvensen (også kalt tonen eller tonehøyden) til en lydbølge er det samme som vibrasjonshastigheten. Jo fortere et objekt vibrerer, desto høyere tone får lyden det skaper. Vi måler disse vibrasjonene i hertz (Hz), der 1 hertz = 1 vibrasjon/sekund.\n\nVi mennesker kan oppfatte lyd i frekvensområdet 20 til 20 000 Hz. Den dypeste frekvensen til en tangent på et piano er på 27,5 Hz og den høyeste tangentfrekvensen er på 4186,01 Hz.\n\nDen røde prikken viser hvor nært tonen som er registrert, ligger til den nærmeste noten. Hvis tonen er lavere eller «senket», vises prikken til venstre for noten. Hvis tonen er høyere eller «hevet», er den røde prikken til høyre for noten.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Dataene som vises her, registreres gjennom Bluetooth-kommunikasjon mellom en ekstern sensor og telefonen din. \n\nVerdien er prosentandelen fra rådataene som er lest av direkte fra mikrokontrolleren. Dette er vanligvis det prosentvise spenningsfallet over en sensor.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth er en trådløs teknologistandard der radiobølger brukes for å utveksle data mellom stasjonære og mobile enheter over korte distanser.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Rotasjoner per minutt (RPM) er et mål på antall rotasjoner rundt en fast akse i løpet av ett minutt.\n\nNår vindhjulet snurrer, roteres kodeskiven:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Dette skaper perioder med lys og mørke på sensoren, og disse registreres i Science Journal som en rotasjon.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Dataene som vises her, registreres gjennom en ekstern sensorkommunikasjon med telefonen din via Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth er en trådløs teknologistandard der radiobølger brukes for å utveksle data mellom stasjonære og mobile enheter over korte distanser.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Telefonens akselerasjon til høyre og venstre – i m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Telefonens akselerasjon frem og tilbake – i m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Telefonens akselerasjon opp og ned – i m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Atmosfæretrykket måles i hektopascal (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Dataene fra en ekstern sensor vises her, basert på egendefinerte innstillinger.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Lysmengden, målt i EV, som når frontkameraet.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Telefonens retning i forhold til jordens magnetfelt.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Lydintensiteten, målt i desibel (dB), som når lydsensoren eller mikrofonen.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Telefonens totale akselerasjon, med unntak av tyngdekraften, i m/s²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Styrken til omgivelsenes geomagnetiske felt i mikrotesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Tonen, målt i hertz (Hz), som når lydsensoren eller mikrofonen.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Prosentandelen av rådataene som er lest av fra en ekstern sensor.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Antallet rotasjoner per minutt";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "En testsensor som genererer en sinuskurve.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Neste sensor i registreringen";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Forrige sensor i registreringen";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Rå";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Rotasjon";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Kan ikke endre sensorene under registrering";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Utløseren er slettet";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Mikrofonen og frontkameraet brukes som lyd- og lysstyrkesensorer. De kan ikke registrere når Science Journal kjører i bakgrunnen. Hvis du bruker disse sensorene til å registrere og appen kjører i bakgrunnen, registreres det ingen data før du går tilbake til appen.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Mikrofonen og frontkameraet brukes som lyd- og lysstyrkesensorer. De kan ikke registrere når Science Journal kjører i bakgrunnen.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "En merknad om denne sensoren";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Du kan ikke bruke lysstyrkesensoren fordi du ser på en video med bilde i bilde eller bruker Science Journal med delt bildevisning.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Spenning";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Velg hvilke sensorer du vil bruke i eksperimentet";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Skjul listen over sensorer";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Vis listen over sensorer";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal er deaktivert";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Science Journal må slås på av domeneadministratoren i Google Administrasjonskonsoll.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Bytt konto";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Dataene er anonymisert og brukes til å forbedre appen.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Send appens databruk til Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Lisenser for åpen kildekode";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Personvernregler";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Vilkår for bruk";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Versjon";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Nettsted for Science Journal";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Vis alternativer";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Logget på som %1$@ (%2$@).";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Åpne for å administrere kontoene";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Velg en konto";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Sidemeny";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Åpner en sidemeny med programalternativer";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Logg på";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sinuskurve";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Notatet er slettet";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Angre";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Øyeblikksbilde";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Legger til et øyeblikksbilde av verdien til alle registrerende sensorer i eksperimentet";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Kan ikke ta øyeblikksbilde fordi én eller flere sensorer er frakoblet. Prøv på nytt.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Informasjon om øyeblikksbildet";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Øyeblikksbildet er lagt til";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maksimum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Gjennomsnitt";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Bytt kamera";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "På";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Av";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Registreringer kan ikke avkortes til mindre enn ett sekund";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Bruk et gyldig format: t:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Nytt tidspunkt (t:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Tidspunktet må være innenfor registreringstiden";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Rediger tekstnotatet";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Tekstnotat";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Legg til en observasjon";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Notatet er lagt til";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Registrering pågår";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Dobbelttrykk for å bytte til observasjonsfanen i uttrekksmenyen for verktøy";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Sensorinnstillinger";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "i eksperimentet";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "i registreringen";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Varsle meg med";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Lyd";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Utløserdetaljer";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Rediger utløseren for %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Ny utløser for %@";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "En utløser er aktivert";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Vibrasjon";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Utløsere for";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "når sensorverdien er over";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "når verdien er";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "når sensorverdien er under";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "når verdien faller under";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "når verdien går over";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Notatet om utløseren er lagt til";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Hva skal det stå i notatet?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Standard notattekst";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Utløs bare under registrering";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Varsle meg";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Utløsertype";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Lag et notat";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Start registreringen";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Stopp registreringen";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Utløserverdi";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Visuelt varsel";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "var over";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Er lik";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "var under";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "falt under";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Går under";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Er over";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Er under";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Utløs når verdien";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Går over";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "steg over";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Endre utløsere";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "For mange utløsere er utløst, og de har derfor blitt slått av";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Eksperimentet er tatt ut av arkivet.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Registreringen er flyttet ut av arkivet.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Ukjent sensor";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "uten navn";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Bruk Science Journal til å utføre eksperimenter på verden rundt deg";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Vi legger ved litt informasjon om denne versjonen av Science Journal og enheten din (kun maskinvare- og iOS-versjon – ingen personlig eller identifiserende informasjon) i en e-post du kan sende oss.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Vi vil gjerne høre fra deg";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Send tilbakemelding";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Videodatastrøm";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

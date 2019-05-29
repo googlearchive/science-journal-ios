@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Mga bagong feature at pagpapabuti:\n• Mag-sign sa iyong Google account para mai-save at ma-access ang mga eksperimento mo sa lahat ng device mo gamit ang iyong Google Drive account. Magiging available ang feature na ito sa lahat ng user sa mga susunod na linggo. Maaari pa ring gamitin ang Science Journal nang hindi nagsa-sign in.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Maraming pagpapabuti sa performance at mga pag-aayos ng bug";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal ng Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "I-explore ang Iyong Daigdig";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Ang Science Journal ay ang libreng digital na science notebook na hatid sa iyo ng Google.\n\nTagapagturo ka man ng science o hobbyist na nagsasagawa ng science sa bahay, maaari mong itabi ang lahat ng iyong mga tala, litrato, at mga obserbasyon sa isang madaling ma-access na lugar. Gamitin ang mga sensor sa iyong iPhone o iPad upang masukat at mai-graph ang mga pangyayaring tulad ng liwanag, tunog, at paggalaw, o kumonekta sa mga external sensor sa pamamagitan ng bluetooth upang makapagsagawa ng mga eksperimento sa mundong nakapaligid sa iyo.\n\nGamit ang Science Journal app, maaari kang:\n• Magsukat ng liwanag, tunog, acceleration, air pressure, at marami pang iba gamit ang mga built-in sensor ng iyong device.\n• Kumuha ng mga tala at mga litrato upang madokumento ang mga eksperimento mo sa science. Parating na ang mas marami pang uri ng tala!\n• Kumonekta sa mga external sensor gamit ang mga piling Arduino device na naka-enable ang Bluetooth.\n• Gumawa ng mga automated na trigger para sa pag-record ng data at pagkuha ng mga tala.\n• Gumamit ng sonification upang madinig ang pagkilos ng iyong mga graph.\n\nPaunawa ukol sa mga pahintulot:\n• Bluetooth: kailangan para sa pag-scan ng mga bluetooth sensor device.\n• Camera: kailangan para makakuha ng mga litrato para makapagdokumento ng mga eksperimento at para sa sensor ng liwanag.\n• Photo Library: kailangan para sa pagtatabi ng mga litratong kinuha para madokumento ang mga eksperimento at para sa pagdaragdag ng mga dati nang litrato mula sa iyong library tungo sa mga eksperimento.\n• Mikropono: kailangan para sa sensor ng tindi ng tunog.\n• Mga push notification: kailangan para maipaalam sa iyo ang status ng recording kapag bina-background ang app.\n\nMga gawaing pang-edukasyon ng aming mga partner:\nhttps://makingscience.withgoogle.com/science-journal/activities\nPara sa suporta: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,science,edukasyon,stem,eksperimento,sensor,graphing,journal,notebook,tala,documenting,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Accelerometer X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Accelerometer Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Accelerometer Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Tungkol Sa";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Lagyan ng caption";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Archive";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "I-archive ang eksperimento";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "I-archive ang recording";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Kanselahin";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "OK";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "I-delete";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "I-delete ang eksperimento";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "I-delete ang recording";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "I-delete ang larawan";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "I-delete ang snapshot";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "I-delete ang text na tala";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "I-delete ang tala";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "I-discard";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "I-dismiss";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "I-edit";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Feedback";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Isama ang mga naka-archive na eksperimento";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Antas";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Iulat";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Subukang muli";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Ruler";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "I-save";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Mga Setting";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Alisin sa archive";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Alisin sa archive ang eksperimento";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Alisin sa archive ang recording";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "I-undo";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Tingnan ang mga detalye";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Maglagay ng tala sa timeline";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Lagyan ng bagong tala";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Lagyan ng litrato";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Magdagdag ng larawan";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Magdagdag ng tala";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Liwanag sa paligid";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitude";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Temperatura sa paligid";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Na-archive";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Hindi mababago ang mga na-archive na eksperimento, pero maaaring ma-delete";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Nai-archive ang eksperimento.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Na-archive ang recording.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Mga Available na Device";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Bumalik";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Bumalik sa naunang view";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometer";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Gumawa ng trigger";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Magdagdag ng bagong sensor card";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "I-discard ang Mga Pagbabago";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "I-save ang Mga Pagbabago";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Panatilihin ito";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "I-delete ito";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Bagong eksperimento";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Simulan ang pag-record";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Tumalon sa ngayon";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Isara ang card";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Itigil ang pag-record";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Kumuha ng litrato";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Camera, Kumuha ng litratong ilalagay sa eksperimentong ito";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Kailangan mong magpasok ng numero kung saan magti-trigger ang trigger na ito.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Kontrol sa pag-playback ng chart";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Inililipat ang posisyon ng pag-playback ng chart at binabasa ang value para sa posisyon na iyon";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Live chart";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "I-pan pakaliwa";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "I-pan pakanan";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Nai-pan";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Chart";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "I-zoom in";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Antas ng zoom";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "I-zoom para kumasya";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "I-zoom out";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Pumili ng larawan";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "I-claim lahat";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "I-claim lahat";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Idagdag sa Google Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Idagdag 1 natitirang eksperimento sa Google Drive para sa %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Idagdag ang %1$@ natitirang eksperimento sa Google Drive para sa %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "I-claim ang lahat ng natitirang eksperimento";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Idagdag ang lahat ng eksperimento sa Google Drive?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "I-claim ang lahat ng eksperimento?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Idagdag ang eksperimentong ito sa Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Hindi mae-edit ang mga eksperimento at mananatili sa device hanggang sa ma-claim o ma-delete ang mga ito";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Magdagdag ng mga eksperimento sa Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Mag-claim ng mga eksperimento";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "I-delete ang eksperimentong ito";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "I-delete lahat";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "I-delete ang natitirang 1 eksperimento?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "I-delete ang natitirang %ld eksperimento?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "I-delete ang lahat ng natitirang eksperimento";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "I-delete ang lahat ng eksperimento mo?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Made-delete ang lahat ng eksperimento sa device na ito, pati ang mga na-archive na eksperimento. Hindi mo maa-undo ang aksyon na ito.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "I-delete lahat";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "May %ld (na) hindi na-claim na eksperimento sa device na ito.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "May 1 hindi na-claim na eksperimento sa device na ito.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Ibahagi ang hindi na-claim na eksperimentong ito";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Kulang ang disk para mag-claim ng eksperimento";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Kulang ang disk para mag-claim ng mga eksperimento";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Di ma-claim ang eksperimento";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Di ma-claim mga eksperimento";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "I-claim ang eksperimento?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "I-claim ang eksperimento";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Idagdag ang eksperimentong ito sa Google Drive para sa %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Idinagdag ang eksperimento sa %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Mag-claim ng mga nakaraang eksperimento";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Mag-claim ng mga eksperimento";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Isara";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Bumalik sa naunang view";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Compass";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "degrees";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Conductor";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Magpatuloy nang hindi nagsa-sign in";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "i-crop ang dulo:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Hindi mai-save ang crop:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Ilipat pakaliwa ang dulong pananda ng crop";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Ilipat pakanan ang dulong pananda ng crop";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Ilipat pakaliwa ang panimulang pananda ng crop";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Ilipat pakanan ang panimulang pananda ng crop";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Mas marami pang opsyon";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Na-crop ang recording";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Hindi maka-crop ang recording nang wala sa una nang nai-record na hanay";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Hindi maka-crop ang recording sa mas mababa sa isang segundo";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "I-crop";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "simula ng crop:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Kasalukuyang value";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Tindi ng tunog";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Eksperimentong Walang Pamagat";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Default";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Sigurado ka bang gusto mong i-delete ang eksperimentong ito? Made-delete ang lahat ng recording at tala nito.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "I-delete ang eksperimentong ito?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "I-delete";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "I-delete ang recording na ito?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Na-delete ang eksperimento.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Na-delete ang recording.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Mga Detalye";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Pin";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Dalas";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "I-save ang mga setting ng sensor.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "I-disable ang auto scale";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "I-double tap para ma-edit";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "I-double tap upang mabuksan";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "I-double tap upang mapili";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "I-double tap para ma-toggle";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "I-double tap para matingnan ang mga detalye";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Grabber ng tool drawer";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Ayusin ang laki ng tool drawer. May mga available na pagkilos.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "sarado";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "pag-edit";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "buong screen";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "kalahating screen";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Di makakonekta sa Google Drive. Tingnan ang iyong koneksyon.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Nadiskonekta ang network";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Hindi makakonekta sa Google Drive ang Science Journal. Maaaring hindi na-back up ang ilang eksperimento.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Hindi makakonekta sa Google Drive ang Science Journal sa ngayon. Susubukan naming muli sa ibang pagkakataon.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Kulang ang espasyo ng Google Drive para maitabi ang eksperimento mo.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Sine-save ang data ng eksperimento para sa Science Journal at ginagawang available sa lahat ng device gamit ang Google Drive at nangangailangan ng pag-sign in sa isang Google account.\n\nKung dati ka nang may data sa device na ito, kapag naka-sign in na, maaari mong i-save ang mga dati mo nang eksperimento sa Google Drive. Itinatabi ang mga eksperimento mo sa isang folder na “Science Journal” sa Google Drive.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Hindi maabot ang Google Drive. Tingnan ang iyong koneksyon.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "I-edit ang oras ng pagtatapos";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "I-edit ang oras ng pagsisimula";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "I-edit ang eksperimento";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Baguhin ang pamagat o litrato ng eksperimento";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Mga hindi na-save na pagbabago";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Sigurado ka ba na ayaw mong i-save ang mga pagbabagong ginawa mo sa eksperimentong ito?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Baguhin ang litrato";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "I-edit ang eksperimento";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "I-edit ang oras";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "I-edit ang oras ng tala";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "I-edit ang oras ng pagtatapos ng recording";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "I-edit ang oras ng pagsisimula ng recording";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "I-edit ang recording";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Baguhin ang pamagat ng recording";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Pamagat ng recording";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Wala ka pang obserbasyon";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Wala kang mga eksperimento";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Walang nakatakdang trigger";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "I-enable ang auto scale";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Walang eksperimento mo ang idaragdag sa Drive";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "I-delete ang lahat ng eksperimento mo";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Idaragdag sa Drive ang lahat ng eksperimento mo";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "I-save lahat eksperimento mo";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Piliin kung alin ang ise-save sa Google Drive";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Piliin ang mga ise-save";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Welcome ulit, kasalukuyang may %ld (na) eksperimento ka na nakatabi sa device na ito.\n\nPara magpatuloy, pumili ng opsyon:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Welcome ulit, kasalukuyang may 1 eksperimento ka na nakatabi sa device na ito.\n\nPara magpatuloy, pumili ng opsyon:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "I-back up sa Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Eksperimento";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Mga eksperimento";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Ibahagi eksperimento";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Hindi pa tapos i-download ang eksperimentong ito. Kung magbabahagi ka ng kopya, maaaring kulang ng ilang data";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Kasalukuyang dina-download";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Nagre-record…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Pamagat ng eksperimento";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Ginawa ito gamit ang mas bagong bersyon ng Science Journal. Hindi mo mae-edit ito sa device na ito hanggang sa ma-download mo ang pinakahuling update.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Ayusin ang iyong pananaw at obserbasyon sa pamamagitan ng pagkuha ng mga tala, pag-record ng data, o pagkuha ng litrato";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Gumawa ng bagong eksperimento";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "I-explore ang iyong mundo";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Ibahagi";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Hindi na-export.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Ipadala ang Eksperimento";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Kaukulang oras";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "I-export…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Ibahagi ang litrato sa...";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Welcome sa Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Subukang kumuha ng mga tala at data ng recording gamit ang toolbar sa ibaba!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Welcome sa Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Maghanap ng mga susubukang aktibidad sa\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Kalimutan ang device na ito";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Buong screen";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Magsimula";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "I-enable ang audio";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "I-disable ang audio";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Ano Ang Nangyayari?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Sa kasamaang palad, nagkaroon ng hindi alam na error.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Bigo ang pag-import. May problema ang eksperimentong ito.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Kasalukuyang ginagamit ng Science Journal. Pakitigil ang pag-record at subukan ulit.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Mag-sign in para makapag-import ng eksperimento.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Kulang ang espasyo ng storage";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Maaari mong pamahalaan ang iyong storage sa mga setting.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Ipakita ang mga na-archive na recording";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Buksan ang Mga Setting";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Hindi magagamit ang camera dahil nagre-record ka na may gamit na sensor ng liwanag, na sumusukat ng data sa pamamagitan ng camera sa harap.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Hindi magagamit ang camera dahil maaaring nanonood ka ng Picture in Picture na video o ginagamit ang Science Journal sa Split View mode.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Tingnan ang mga sensor";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Hindi magagamit ang camera dahil walang pahintulot ang Science Journal na ma-access ito.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Hindi magagamit ang iyong photo library dahil walang pahintulot ang Science Journal na ma-access ito.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Matuto pa";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Matuto pa";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Linear accelerometer";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Mga pagpapabuti sa performance at mga pag-aayos ng bug";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Mga bagong feature:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Sensor ng pitch ng tunog.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• I-export ang mga eksperimento sa isang file, at i-import ang mga ito sa iba pang device.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• I-export ang mga litrato sa isang eksperimento.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Tumingin pa ng mga tala";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menu";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Nagpapakita ng menu na may mas marami pang opsyon";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Mga setting ng audio";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "I-edit ang mga trigger";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Itakda ang mga trigger";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Mga Device Ko";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Pangalanan ang eksperimentong ito";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Mga Aktibidad";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Mga eksperimento";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Mga Setting";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Magdagdag ng paglalarawan";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Paglalarawan";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Larawang tala";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Text na tala";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Trigger na tala";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Snapshot na tala";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Mga Nota";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "May idinagdag na tala";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Mga tala, Maglagay ng text na tala sa eksperimentong ito";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Mag-obserba, Gamitin ang mga sensor upang makapagdagdag ng mga value na snapshot o mga recording sa eksperimentong ito";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Hindi mabuksan ang eksperimento";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Hindi mabuksan ang file";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Dapat na Science Journal (.sj) na format ng file ang mga eksperimento";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "I-pause";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Porsyento";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Ayos na! Tapos na kaming tumingin kung may mga pahintulot. Kung kailangan mong baguhin ang mga pahintulot na ito sa hinaharap, magagawa mo ito anumang oras sa seksyon ng Science Journal ng iOS Setting app.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Titingnan namin kung may pahintulot na ma-access ang camera mo. Ginagamit ang camera sa harap para sa sensor ng liwanag, at magagamit mo ang alinmang camera para maglagay ng litratong tala sa eksperimento at recording.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Magpatuloy";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Kailangan naming simulan sa pagtingin ng mga pahintulot upang ma-enable namin ang mga sensor ng hardware, ang camera at ang iyong photo library. Ipapaliwanag namin kung paano namin gamitin ang bawat isa bago ka i-prompt.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Kasunod nito, titingnan namin kung may pahintulot na i-access ang iyong mikropono. Ginagamit ang mikropono bilang mga sensor ng audio. Hindi kailanman nire-record, sino-store, o ipinapadala ang mga content ng audio, sinusukat lang namin ang tindi o pitch ng mismong tunog.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Una, titingnan namin kung may pahintulot na padalhan ka ng mga push notification. Ginagamit lang namin ang mga ito para sabihin sa iyo kung patapos na ang recording mo kung bina-background mo ang mid-recording ng app.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Panghuli, titingnan namin kung may pahintulot na ma-access ang iyong photo library para maidagdag ang mga dati nang litrato sa mga eksperimento at recording, at para ma-save sa iyong library ang mga litratong kinunan mo.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Tara na";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Tapos na!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Tingnan ang pahintulot";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Welcome sa Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Litrato para sa";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Litrato";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Kulang ang disk space para makapaglagay ng litrato";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Mga internal sensor";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Photo Library, Maglagay ng litrato mula sa iyong library sa eksperimentong ito";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Impormasyon";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Device";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Sukat";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Mga Tala";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Bilis ng shutter";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Nalagyan ng litrato";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Pitch";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ (na) kalahating hakbang na mas flat kaysa %2$@ flat, octave %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ (na) kalahating hakbang na mas flat kaysa %2$@, octave %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ (na) kalahating hakbang na mas flat kaysa %2$@ sharp, octave %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ flat, octave %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "mataas na pitch";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "mababang pitch";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, octave %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ sharp, octave %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ (na) kalahating hakbang na mas sharp kaysa %2$@ flat, octave %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ (na) kalahating hakbang na mas sharp kaysa %2$@, octave %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ (na) kalahating hakbang na mas sharp kaysa %2$@ sharp, octave %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pixels";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "I-play";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Ginamit na sa device na ito ang mga dati nang setting ng device";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Nagre-refresh";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Hindi masimulan ang pag-record";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "May isa o higit pa sa iyong mga sensor na diskonektado. Pakisubukang muli.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Buksan ang Science Journal upang matingnan ang iyong na-record na data.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Tapos na ang pag-record mo.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Magpatuloy";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Kanselahin ang pagre-record";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "May isa o higit pa sa iyong mga sensor na hindi nag-record ng anumang data. Gusto mo bang kanselahin ang pagre-record na ito?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Hindi naire-record ang data";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Tumigil ang pag-record";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Buksan ang Science Journal upang magpatuloy sa pag-record.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Matatapos na ang pag-record mo.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Ituloy ang pag-record";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Itigil ang pag-record";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Alisin ang larawan sa cover";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Inaalis ang larawan sa cover para sa eksperimentong ito.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Sigurado ka bang gusto mong alisin ang larawan sa cover? Hindi maa-undo ang pagkilos na ito.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Inalis ang larawan sa cover.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Hindi maalis ang larawan sa cover.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Naglagay ng recording";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Recording";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "I-rename ang recording na ito";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Sigurado ka bang gusto mong i-delete ang recording na ito? Made-delete ang na-record na data at mga tala.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Tagal";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Suriin";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "I-save";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "I-save ang mga pagbabago at bumalik sa naunang view";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "I-save ang eksperimento";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Gusto mo bang idagdag ang eksperimentong ito sa iyong library?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "I-save sa Mga File";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Nagpapakita ng browser ng dokumento, na nagbibigay-kakayahan sa iyo na mag-save ng kopya ng file na ito sa isang folder sa iyong device.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Nai-save ang file";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Nai-save ang mga file";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Hindi mai-save ang file. Pakisubukang muli.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Hindi mai-save ang mga file. Pakisubukang muli.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Scale";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Pumili ng timestamp ng tala sa chart";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Magpadala ng kopya";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Mga Setting";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Liwanag";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Hindi magagamit ang sensor ng liwanag dahil walang pahintulot ang Science Journal na ma-access ang iyong camera.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Hindi na-load ang sensor data";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Nilo-load ang sensor data...";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Hindi magagamit ang mga sensor ng audio dahil walang pahintulot ang Science Journal na i-access ang iyong mikropono.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Custom";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Likas sa mga bagay ang manatili sa lugar, o magpatuloy sa paggalaw kung gumagalaw ang mga ito—tinatawag nating inertia ang likas na katangiang ito. Pormal na inihahayag ng First Law ni Newton ang ideyang ito: Patuloy na kikilos o mananatili sa lugar ang isang bagay maliban kung magkakaroon ng hindi balanseng pwersa.\n\nKapag may hindi balanseng pwersa na nakapagpagalaw sa isang bagay, sinasabi nating nag-a-accelerate ang bagay: nagbabago ang velocity, o bilis nito—maaaring sa pamamagitan ng pagbilis, pagbagal, o pagbabago ng direksyon. Sinusukat ang acceleration bilang pagbabago ng velocity (metro bawat segundo) sa oras, o metro bawat segundo kuwadrado (m/s²).\n\nMay device ang iyong telepono upang masukat itong mga pagbabago sa paggalaw—isang accelerometer. Sa loob ng isang accelerometer, malayang gumalaw ang maliliit na nakalutang na bagay. Ang mga pagbabago sa paggalaw ang nagiging sanhi ng pagkilos ng mga bagay na ito, tulad ng iyong likas na pagsubsob kapag nakasakay ka sa kotse na biglang huminto. Sa pagsukat ng mga hindi kapansin-pansing pagkilos na ito na dulot ng inertia, nadedetekta ng accelerometer sa isang telepono ang mga pagbabago sa galaw at orientation, kapaki-pakinabang para sa paglipat ng screen mula sa landscape tungo sa portrait mode, para sa paglalaro sa iyong telepono, at marami pang iba.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Marahil ay may napansin kang patuloy na acceleration sa Z axis, kahit pa nakapirmi ang telepono sa ibabaw ng isang mesa. Ito ang acceleration na nararanasan natin dito sa ibabaw ng Daigdig dahil sa paghila ng gravity, humigit-kumulang ay 9.8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Bagaman bihira nating mapansin ito, lahat tayo ay nakatira sa ilalim ng isang malalim na karagatan ng hangin: Ang atmosphere ng Mundo, na umaabot paitaas nang 40 kilometro (130,000 talampakan) ang taas. Ang bigat ng lahat ng hangin na iyon na dumadagan sa atin ay gumagawa ng tinatawag na atmospheric pressure.\n\nSa dagat, nagbibigay ng 14 pounds na puwersa sa bawat square inch—katumbas iyon ng 1,300 pounds sa isang lugar na sinlaki ng karaniwang papel.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Hindi natin napapansin ang nakakapigang pressure na ito dahil sanay na tayo rito—iyon ay, hanggang sa magbago ito, kahit kaunti lang, gaya ng nangyayari kapag bumibisita tayo sa matataas na lugar o sumasakay ng mga eroplano. Nagbabago rin ang atmospheric pressure sa mga lagay ng panahon, bumababa kapag may mabagyo, hindi panatag na hangin, at tumataas kapag naging panatag ang hangin at umaliwalas ang kalangitan.\n\nSinusukat ng digital barometer sa iyong telepono sa hectopascals ang atmospheric pressure. (Ang isang hectopascal ay 100 pascals, kung saan ang pascal ay isang newton ng pwersa na inilapat sa isang metro kuwadradong area.) Malamang ay nadinig mo na ang mga forecaster ng panahon na nagbibigay ng atmospheric pressure sa millibars—katumbas ng hectopascals ang mas madaling pakinggan na unit na ito.\n\nMarahil ay nagtatanong ka: Bakit magsusukat ng pressure ang telepono? Nasusukat ang mga pagbabago sa atmospheric pressure kahit pa sa maliliit na pagbabago sa elevation, halimbawa, kapag umaakyat ka sa hagdanan. Kung kaya ang digital barometer sa isang telepono ay nakatutulong sa pagdetekta ng mga pagbabago sa lokasyon, halimbawa, pagsasabi sa iyo kung saang palapag ka na ng gusali, o kung nagmamaneho ka sa itaas o ibabang deck ng isang tulay.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Sinusukat ng camera sa harap ang liwanag sa EV (Exposure Value), isang sukat na nakabatay sa bilis ng shutter ng camera, f-number, at ISO value at tinutukoy ng liwanag ng mga na-record na pixel sa mga setting na ito.\n\nMas maliwanag ang nakuhang value, mas mataas ang EV. Bubuo ng mga negatibong value ang kadiliman.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Dahil ang EV ay isang sukat na nakabatay sa optics at mga sensor ng camera, limitado ng hardware at software ang hanay ng value. Habang direktang nakapagre-record ng lux ang sensor ng liwanag sa paligid, dapat gamitin ng camera sa harap ang f-number, ISO value, at bilis ng shutter nito upang makapagtatag ng baseline ng sukatan, pagkatapos ay matukoy ang EV batay sa pagbasa ng mga pixel matapos kumuha ng mga litrato. Gamit ang prosesong ito, maaaring mag-iba ang mga EV value sa pagitan ng mga device kung magkaiba ang mga threshold ng f-number, gaya ng sa pagitan ng iPhone 8 (f1.8) at iPad (f2.4).\n\nSapagkat natutukoy ang EV sa pamamagitan ng pagsukat sa value ng liwanag ng mga nakuhang pixel, bubuo ng higit na mababang value ang mga pinagmumulan ng liwanag sa paligid kaya kung ang lux ay tinukoy ng infrared sensor—direktang nakasalalay ang mga sukat sa posisyon ng camera at kung ano ang nakukunan nito.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Malamang ay alam mo na na may magnetic field ang Mundo. Marahil ay hindi mo alam na may lamang device ang iyong telepono na dinisenyo upang makadetekta ng mga magnetic field: isang magnetometer. Sa pamamagitan ng pagsasama ng data mula sa magnetometer ng telepono mo sa posisyon ng telepono sa kalawakan, makakagawa tayo ng digital compass.\n\nAng isang makalumang compass ay isang low-tech na magnetometer, na may magnetized na karayom na pumipihit upang humanay ito sa nakapaligid na magnetic field. Walang maliit na compass sa loob ng telepono mo, pero sa halip ay may mallit na tatlong axis na sensor na gumagamit ng kuryente para madetekta ang lakas ng magnetic field sa tatlong dimensyon ng kalawakan. Pero kulang pa rin ito para makagawa ng compass!\n\nBakit kailangang pagsamahin ng compass ang data mula sa magnetometer sa orientation ng telepono? Ang pag-alam sa orientation ng telepono ay nagbibigay-daan sa amin para makwenta ang magnetic rotation kahit pa hindi nakalapat sa parehong plane ang telepono na tulad ng sa magnetic field ng Mundo. Alam natin na perpendicular ang gravity sa magnetic field ng Mundo, kung kaya magagamit natin ang direksyon ng gravity mula sa mga sensor ng accelerometer para matukoy kung gaano kalakas ang magnetic field na nasa parehong plane na tulad ng magnetic field ng Mundo.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Marahil ay napansin mo na, tumutugon ang compass hindi lamang sa magnetic field ng Mundo, ngunit gayon din sa anuman at bawat magnetic field na maaaring nasa paligid. Mas madaling maililiko na paganito at paganoon ng mga magnet, kuryente, at mga metal na bagay ang magnetometer ng iyong telepono, na nagiging sanhi ng pagbabago ng reading ng compass. Tumayo sa isang bukas na lugar—mas mainam sa labas at malayo sa mga linya ng kuryente— kung gusto mong matiyak na humahanay sa magnetic field ng Mundo ang pulang dulo ng iyong compass. Nakatutulong ito na maigalaw ang iyong telepono sa hugis 8 na pattern upang ma-calibrate ang magnetometer sa iyong telepono.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Mula sa vibration ang mga tunog. Ang iyong boses, halimbawa, ay mula sa mga vibration ng mga vocal chord sa iyong lalamunan. Ang mga vibration na ito ay gumagawa ng mga nagsasalitang sona ng mataas at mababang presyon ng hangin na naglalakbay palabas—tulad ng maliliit na along ginawa ng isang maliit na batong inihagis sa tubig.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Lahat ng tunog ay mailalarawan ayon sa kanilang dalas (frequency) at katindihan (intensity).\n\nKatindihan ang sinusukat mo rito sa Science Journal, sa mga unit na decibels (dB). Ang katindihan, o lakas ng tunog, ay nakasalalay sa layo ng ikinikilos ng isang nagba-vibrate na bagay sa bawat pag-vibrate nito; mas matindi ang nadidinig natin bilang malakas na ingay.\n\nAng dalas o frequency (tining (pitch) o tono (tone) rin) ng isang sound wave ay katumbas ng bilis ng vibration nito. Mas mabilis mag-vibrate ang isang bagay, mas matining ang nabubuong tunog. Hindi sinusukat ng sensor ng tindi ng tunog ng Science Journal ang dalas o frequency—lakas ng tunog lang.\n\nIsang mahalagang bagay na dapat malaman ay dinisenyo ang mikropono sa iyong device para maging napakasensitibo sa mga kaibahan sa mga sound wave sa kalaunan, pero hindi ang ganap na laki ng bawat wave.  Sinubukan naming pumili ng code na malamang na gumawa ng mga numerong katulad ng mga reference na numerong ipinapakita sa ibaba, pero maaaring magbigay ng patuloy na mas mataas o mas mababang numero ang bawat device.  Karaniwang ika-calibrate ng mga scientist ang isang sensor na tulad nito sa isang kilalang sukatan.  Sa ngayon, masasabi sa iyo ng Science Journal kung ang susunod mong pagsakay sa tren ay mas maingay kaysa susunod na rock concert mo, pero kung dadalhin mo lang ang mismong telepono sa parehong event.\n\nIsa pang dapat malaman ay may mahahalagang kaibahan sa pagitan ng “sound intensity” (tindi ng tunog), “sound intensity level” (antas ng tindi ng tunog), at “sound pressure” (pressure ng tunog).  Itinuturing namin na pare-pareho lang ang mga ito rito, pero kung gusto mo pang mag-usisa, maraming online resource tungkol sa mga kaibahan.\n\nAng pinakatahimik na tunog na nadedetekta ng karaniwang tainga ng tao ay tinukoy bilang 0 dB. Ang ordinaryong pag-uusap ay katumbas ng humigit-kumulang 60 dB, at ang mga tunog na higit pa sa 140 dB ay masakit sa tainga ng tao. Ngunit hindi kailangang maging masakit ang mga tunog upang makapaminsala. Ang patuloy na pagkakalantad sa mga tunog na 90 dB—mga kasinglakas ng vacuum cleaner—ay maaaring humantong sa pagkabingi.\n\nLogarithmic ang decibel scale, na kung minsan ay nakakalito: Ang isang pinagmumulan ng tunog na 40 dB ay hindi doble ng tindi ng isang 20 dB—100 beses na mas matindi ito. Samantala, kung ang isang tumutunog na alarm clock ay gumagawa ng 70 dB, ang dalawang tumutunog na alarm clock ay hindi gumagawa ng 140 dB, sa halip ay 73 dB. Tulad ng sinabi namin, kakaibang sukatan ito.\n\n10 dB kumakaluskos na dahon\n20 dB pagbulong sa layong 5 talampakan\n30 dB mahinang pagbulong\n50 dB ulan\n60 dB normal na pag-uusap\n90 dB blender\n100 dB kotseng walang muffler\n110 dB pagsigaw sa tainga\n120 dB kulog\n130 dB jackhammer\n140 dB palipad na eroplano";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Likas sa mga bagay ang manatili sa lugar, o magpatuloy sa paggalaw kung gumagalaw ang mga ito—tinatawag nating inertia ang likas na katangiang ito. Pormal na inihahayag ng First Law ni Newton ang ideyang ito: Patuloy na kikilos o mananatili sa lugar ang isang bagay maliban kung magkakaroon ng hindi balanseng pwersa.\n\nKapag may hindi balanseng pwersa na nakapagpagalaw sa isang bagay, sinasabi nating nag-a-accelerate ang bagay: nagbabago ang velocity, o bilis nito—maaaring sa pamamagitan ng pagbilis, pagbagal, o pagbabago ng direksyon. Sinusukat ang acceleration bilang pagbabago ng velocity (metro bawat segundo) sa oras, o metro bawat segundo kuwadrado (m/s²).\n\nMay device ang iyong telepono upang masukat itong mga pagbabago sa paggalaw—isang accelerometer. Sa loob ng isang accelerometer, malayang gumalaw ang maliliit na nakalutang na bagay. Ang mga pagbabago sa paggalaw ang nagiging sanhi ng pagkilos ng mga bagay na ito, tulad ng iyong likas na pagsubsob kapag nakasakay ka sa kotse na biglang huminto. Sa pagsukat ng mga hindi kapansin-pansing pagkilos na ito na dulot ng inertia, nadedetekta ng accelerometer sa isang telepono ang mga pagbabago sa galaw at orientation, kapaki-pakinabang para sa paglipat ng screen mula sa landscape tungo sa portrait mode, para sa paglalaro sa iyong telepono, at marami pang iba.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Ang pinagsamang sensor ng linear accelerometer ay nagtatala ng kabuuang acceleration sa lahat ng tatlong axis ng telepono, hindi kasama ang gravity.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Naglalaman ng device ang iyong telepono na dinisenyo upang makadetekta ng mga magnetic field: isang magnetometer. Ang maliit na tatlong axis na sensor na ito na gumagamit ng kuryente upang madetekta ang lakas ng magnetic field sa tatlong dimensiyon ng kalawakan. Sa pamamagitan ng pagsasama-sama ng data mula sa lahat ng tatlong axis ay makakagawa tayo ng sensor ng kabuuang lakas ng magnetic field.\n\nMay ilang magnetometer na nagdedetekta ng mga magnetic field gamit ang Hall effect—ang likas na katangian ng mga magnetic field na mag-deflect ng kumikilos na charge habang dumadaloy ito. Gumagamit ng mga magnetoresistor ang mga mas bagong magnetometer, mga metal na alloy na nagbabago ng kanilang resistance bilang tugon sa mga magnetic field.\n\nBakit kailangan ng telepono ang magnetometer? Kapaki-pakinabang ang pag-alam ng iyong orientation sa kalawakan para sa mga built-in na compass at mga navigation app, lalo na ang mga naghahangad na makapagbigay ng mga direksyon sa bawat pagliko.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Mas madaling maililiko na paganito at paganoon ng mga magnet, kuryente, at mga metal na bagay ang magnetometer ng iyong telepono. Pero kahit sa gitna ng isang bakanteng field, laging nagpapakita ng mababa, hindi zero na reading ang magnetometer sa iyong telepono: ito ang magnetic field ng Mundo!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Mula sa vibration ang mga tunog. Ang iyong boses, halimbawa, ay mula sa mga vibration ng mga vocal chord sa iyong lalamunan. Ang mga vibration na ito ay gumagawa ng mga nagsasalitang sona ng mataas at mababang presyon ng hangin na naglalakbay palabas—tulad ng maliliit na along ginawa ng isang maliit na batong inihagis sa tubig.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Lahat ng tunog ay mailalarawan ayon sa kanilang dalas (frequency) at katindihan (intensity). Lahat ng tunog ay mailalarawan ayon sa kanilang dalas (frequency) at katindihan (intensity). Mas mabilis mag-vibrate ang isang bagay, mas matining ang nabubuong tunog. Sinusukat natin ang mga vibration na ito sa Hertz (Hz) kung saan ang 1 Hertz = 1 vibration/segundo.\n\nNakakarinig ang mga tao ng mga tunog na mula 20 hanggang 20,000 Hz. Ang pinakamababang key sa piano ay bumubuo ng tunog na may frequency na 27.5 Hz at ang pinakamataas na key ay bumubuo ng tunog na may frequency na 4186.01 Hz.\n\nIpinababatid ng pulang tuldok kung gaano kalapit ang nadetektang pitch sa pinakamalapit na notang musikal. Kung mas mababa o “mas-flat” ang pitch, lalabas ang tuldok sa kaliwa. Kung mas mataas ang o “mas-sharp” ang pitch, lalabas ang pulang tuldok sa kanan.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Ang data na ipinapakita rito ay nagmumula sa komunikasyon ng isang external sensor sa iyong telepono sa pamamagitan ng Bluetooth.\n\nIpinapakita ng value ang porsyento ng raw reading na direkta mula sa iyong microcontroller. Karaniwang porsyento ito ng isang pagbagsak ng boltahe sa kabuuan ng isang sensor.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Isang pamantayan sa wireless na teknolohiya ang Bluetooth na gumagamit ng radio waves upang makipagpalitan ng data sa malalapit na lugar mula sa mga nakapirmi at mobile device.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Ang Rotations per minute (RPM) ay isang sukat sa dalas ng pag-ikot sa paligid ng isang nakapirming axis sa loob ng isang minuto.\n\nHabang umiikot ang iyong wind spinner, pinaiikot nito ang encoder disc:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Gumagawa ito ng mga panahon ng liwanag at dilim sa sensor na nagrerehistro sa Science Journal bilang pag-ikot.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Nagmumula sa isang komunikasyon ng external sensor sa iyong telepono ang data na ipinapakita rito sa pamamagitan ng Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Isang pamantayan sa wireless na teknolohiya ang Bluetooth na gumagamit ng radio waves upang makipagpalitan ng data sa malalapit na lugar mula sa mga nakapirmi at mobile device.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Ang acceleration ng telepono sa kaliwa at kanan, sa m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Ang acceleration ng telepono pasulong at pabalik, sa m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Ang acceleration ng telepono pataas at pababa, sa m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Ang presyon ng atmosphere na sinusukat sa hectopascals (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "May external sensor na nagpapakita ng data nito rito, batay sa mga custom na setting.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Ang liwanag, na sinusukat sa EV, na umaabot sa camera sa harap.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Ang orientation ng telepono kaugnay ng magnetic field ng Mundo.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Ang tindi ng tunog, sinusukat sa decibels (DB), na umaabot sa sensor ng tunog o mikropono.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Ang kabuuang acceleration ng telepono, hindi kasama ang pwersa ng gravity, sa m/s²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Ang lakas ng ambient geomagnetic field sa Microtesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Ang pag-abot ng pitch ng tunog, na sinukat sa hertz (Hz), sa sensor ng tunog o mikropono.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Ang porsyento ng raw reading mula sa isang external sensor.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Ang bilang ng mga pag-ikot kada minuto";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Isang pansubok na sensor na nag-a-output ng sine wave.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Susunod na sensor sa recording";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Naunang sensor sa recording";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Raw";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Pag-ikot";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Hindi mababago ang mga sensor habang nagre-record";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Na-delete ang trigger";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Ginagamit ng mga sensor ng audio at liwanag ang mikropono at camera sa harap, na hindi makakapag-record kapag nasa background ang Science Journal. Kung mayroon ka ng mga sensor na ito sa isang recording at inilagay sa background ang app, hindi mare-record ang data para sa mga ito hanggang sa bumalik ka sa app.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Ginagamit ng mga sensor ng audio at liwanag ang mikropono at camera sa harap, na hindi makakapag-record kapag nasa background ang Science Journal.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Isang tala tungkol sa sensor na ito";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Hindi magagamit ang sensor ng liwanag habang nanonood ng Picture in Picture na video o ginagamit ang Science Journal sa mode na Split View.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Boltahe";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Pumili ng mga sensor na gagamitin sa eksperimento";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "I-collapse ang listahan ng mga sensor";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "I-expand ang listahan ng mga sensor";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Naka-disable ang Science Journal";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Kailangang i-on ng iyong administrator ng domain ang Science Journal sa console ng Google Admin.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Lumipat ng account";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Anonymous ang data at nakatutulong sa pagpapahusay sa app na ito.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Ipadala sa Google ang data ng paggamit sa app";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Mga open source na lisensya";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Patakaran sa privacy";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Mga tuntunin ng serbisyo";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Bersyon";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Science Journal website";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Ipakita ang mga opsyon";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Naka-sign in bilang %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Buksan para pamahalaan ang mga account";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Pumili ng account";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Side bar menu";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Nagbubukas ng side bar menu na naglalaman ng mga opsyon sa application";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Mag-sign in";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sine wave";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Na-delete ang tala";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "I-undo";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Snapshot";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Naglalagay ng snapshot ng value ng lahat ng kasalukuyang naobserbahang sensor sa eksperimento";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Hindi makapag-snapshot dahil may nakadiskonektang isa o higit pang sensor. Pakisubukang muli.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Mga detalye ng snapshot";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Nilagyan ng snapshot";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maximum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Average";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Lumipat ng camera";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Naka-on";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Naka-off";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Hindi maka-crop ang mga recording sa mas mababa sa isang segundo";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Gumamit ng valid na format, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Bagong oras (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Dapat na sakop ng recording ang oras";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "I-edit ang text na tala";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Text na tala";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Maglagay ng obserbasyon";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "May idinagdag na tala";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Kasalukuyang nagre-record";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "I-double tap upang lumipat sa tab na mag-obserba sa tool drawer";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Mga setting ng sensor";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Sa eksperimento";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Sa recording";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Alertuhan ako gamit ang";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Tunog";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Mga detalye ng trigger";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "I-edit ang trigger ng %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Bagong trigger ng %@";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Na-activate ang trigger";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Pag-vibrate";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Mga trigger para sa";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "kapag ang sensor ay higit pa sa";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "kapag nasa";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "kapag ang sensor ay wala pa sa";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "kapag bumababa sa";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "kapag tumataas sa";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Nalagyan ng tala sa trigger";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Ano ang dapat sabihin ng iyong tala?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Default na tekstong tala";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Mag-trigger lang kapag nagre-record";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Alertuhan ako";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Uri ng trigger";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Gumawa ng tala";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Simulan ang pagre-record";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Itigil ang pagre-record";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Value ng trigger";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Visual na notification";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "ay higit pa sa";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Nasa";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "ay mababa pa sa";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "bumaba sa";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Bumaba sa";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Ay higit pa sa";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Ay wala pang";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "I-trigger kapag";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Tumaas sa";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "lumagpas sa";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "I-edit ang Mga Trigger";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Nagkaroon ng napakaraming trigger, na-disable ang mga ito";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Inalis sa archive ang eksperimento.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Nailabas sa archive ang recording.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Hindi malamang sensor";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Walang pamagat";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Gamitin ang Science Journal upang magsagawa ng mga eksperimento sa mundong nakapaligid sa iyo";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Mangangalap kami ng kaunting impormasyon tungkol sa build na ito ng Science Journal at ng iyong device (bersyon lang ng hardware at iOS—walang personal o tumutukoy na impormasyon!), pagkatapos ay ia-attach ito sa isang email na maaari mong ipadala sa amin.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Gustong-gusto naming makarinig mula sa iyo";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Feedback";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Video stream";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

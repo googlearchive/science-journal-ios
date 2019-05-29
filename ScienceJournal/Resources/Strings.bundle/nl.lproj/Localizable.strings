@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science-journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Nieuwe functies en verbeteringen:\n• Log in op je Google-account om je experimenten op al je apparaten op te slaan en te openen via je Google Drive-account. Deze functie wordt in de komende weken voor alle gebruikers beschikbaar. Je kunt Science Journal nog steeds gebruiken zonder in te loggen.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Veel prestatieverbeteringen en bugfixes";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal van Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Verken je wereld";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Science Journal is het gratis digitale wetenschappelijke logboek van Google.\n\nOf je nu docent bent of thuis voor je plezier experimenten uitvoert, je kunt al je aantekeningen, foto's en waarnemingen bewaren op één handige plek. Gebruik de sensoren van je iPhone of iPad om licht, geluid, beweging en andere verschijnselen te meten en grafisch weer te geven of maak via Bluetooth verbinding met externe sensoren om experimenten uit te voeren en de wereld om je heen beter te begrijpen.\n\nMet de Science Journal-app kun je:\n• licht, geluid, versnelling, luchtdruk en meer meten met de ingebouwde sensoren van je apparaat,\n• aantekeningen en foto's maken van je wetenschappelijke experimenten (binnenkort kun je nog meer notitietypen gebruiken),\n• verbinding maken met externe sensoren via bepaalde Arduino-apparaten met Bluetooth,\n• automatische triggers instellen voor het vastleggen van gegevens en het maken van notities,\n• sonificatie gebruiken om het verloop van je diagrammen te horen.\n\nKennisgeving met betrekking tot rechten:\n• Bluetooth: nodig om apparaten met Bluetooth-sensoren te vinden.\n• Camera: nodig om foto's te maken om experimenten vast te leggen en voor de helderheidssensor.\n• Fotobibliotheek: nodig om foto's op te slaan om experimenten vast te leggen en om bestaande foto's aan je experimenten toe te voegen.\n• Microfoon: nodig voor de geluidsintensiteitssensor.\n• Pushmeldingen: nodig om je te informeren over de opnamestatus als je de app op de achtergrond gebruikt.\n\nEducatieve activiteiten van onze partners:\nhttps://makingscience.withgoogle.com/science-journal/activities\nGa voor ondersteuning naar: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,wetenschap,educatie,experimenten,sensoren,grafieken,dagboek,logboek,notities,documenteren";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Accelerometer X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Accelerometer Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Accelerometer Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Over";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Bijschrift toevoegen";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Archiveren";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Experiment archiveren";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Opname archiveren";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Annuleren";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "OK";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Verwijderen";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Experiment verwijderen";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Opname verwijderen";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Afbeelding verwijderen";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Momentopname verwijderen";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Tekstnotitie verwijderen";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Notitie verwijderen";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Weggooien";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Afwijzen";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Bewerken";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Feedback";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Inclusief gearchiveerde experimenten";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Waterpas";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Melden";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Opnieuw proberen";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Liniaal";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Opslaan";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Instellingen";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Terugzetten uit archief";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Experiment terugzetten uit archief";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Opname terugzetten uit archief";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Ongedaan maken";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Details weergeven";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Notitie toevoegen aan tijdlijn";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Voeg een nieuwe notitie toe";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Een foto toevoegen";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Foto toevoegen";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Notitie toevoegen";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Omgevingslicht";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitude";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Omgevingstemperatuur";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Gearchiveerd";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Gearchiveerde experimenten kunnen niet worden gewijzigd, maar kunnen wel worden verwijderd";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Experiment gearchiveerd.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Opname gearchiveerd.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Beschikbare apparaten";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Terug";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Terug naar het vorige scherm";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometer";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Trigger maken";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Nieuwe sensorkaart toevoegen";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Wijzigingen niet opslaan";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Sla de wijzigingen op";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Behoud";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Verwijder";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Nieuw experiment";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Start de opname";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Spring naar dit moment";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Kaart sluiten";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Stop de opname";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Maak een foto";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Camera, Maak een foto om aan dit experiment toe te voegen";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Je moet een numerieke waarde invoeren waarbij deze trigger wordt geactiveerd.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Afspeelregelaar voor grafiek";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Verplaatst de afspeelpositie van de grafiek en leest de waarde van die positie";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Live diagram";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Naar links schuiven";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Naar rechts schuiven";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Verschoven";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Diagram";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Inzoomen";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Zoomniveau";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Passend maken";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Uitzoomen";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Kies een foto";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Alles claimen";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Alles claimen";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Aan Google Drive toevoegen";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Eén resterend experiment aan Google Drive toevoegen voor %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "%1$@ resterende experimenten aan Google Drive toevoegen voor %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Alle resterende experimenten claimen";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Alle experimenten aan Google Drive toevoegen?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Alle experimenten claimen?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Dit experiment aan Google Drive toevoegen";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Experimenten kunnen niet worden bewerkt en blijven op het apparaat staan totdat ze worden geclaimd of verwijderd";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Experimenten aan Google Drive toevoegen";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Experimenten claimen";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Dit experiment verwijderen";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Alles verwijderen";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Eén resterend experiment verwijderen?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "%ld resterende experimenten verwijderen?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Alle resterende experimenten verwijderen";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Al je experimenten verwijderen?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Alle experimenten op dit apparaat, inclusief gearchiveerde experimenten, worden verwijderd. Je kunt deze actie niet ongedaan maken.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Alles verwijderen";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Er zijn %ld niet-geclaimde experimenten op dit apparaat.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Er is één niet-geclaimd experiment op dit apparaat.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Dit niet-geclaimde experiment verwijderen";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Te weinig schijfruimte om experiment te claimen";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Te weinig schijfruimte om experimenten te claimen";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Kan experiment niet claimen";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Kan experimenten niet claimen";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Experiment claimen?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Experiment claimen";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Dit experiment aan Google Drive toevoegen voor %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Experiment is aan %@ toegevoegd";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Eerdere experimenten claimen";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Experimenten claimen";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Sluiten";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Terug naar het vorige scherm";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Kompas";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "graden";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Geleider";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Doorgaan zonder in te loggen";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "einde van bijsnijding:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Kan bijsnijding niet opslaan:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Markering voor einde van bijsnijding naar links verplaatsen";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Markering voor einde van bijsnijding naar rechts verplaatsen";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Markering voor begin van bijsnijding naar links verplaatsen";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Markering voor begin van bijsnijding naar rechts verplaatsen";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Meer opties";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Opname bijgesneden";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "De opname kan niet worden bijgesneden buiten het oorspronkelijk opgenomen bereik";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "De opname kan niet worden bijgesneden tot minder dan een seconde";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Bijsnijden";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "begin van bijsnijding:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Huidige waarde";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Geluidsintensiteit";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Naamloos experiment";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Standaard";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Weet je zeker dat je dit experiment wilt verwijderen? Alle bijbehorende opnamen en notities worden verwijderd.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Dit experiment verwijderen?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Verwijderen";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Deze opname verwijderen?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Experiment verwijderd.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Opname verwijderd.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Gegevens";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Vastzetten";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frequentie";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Sensorinstellingen opslaan.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Automatisch schalen uit";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Dubbeltik om te bewerken";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Dubbeltik om te openen";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Dubbeltik om te selecteren";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Dubbeltik om te schakelen";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Dubbeltik om gegevens te bekijken";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Toolmenu-grijper";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Pas de grootte van het toolmenu aan. Acties beschikbaar.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "gesloten";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "bewerken";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "volledig scherm";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "half scherm";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Kan Google Drive niet bereiken. Controleer je verbinding.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Geen verbinding met netwerk";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal kan geen verbinding maken met Google Drive. Van sommige experimenten is mogelijk geen back-up gemaakt.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Science Journal kan op dit moment geen verbinding maken met Google Drive. We proberen het later opnieuw.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Er is onvoldoende ruimte op Google Drive om je experiment op te slaan.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Experimentgegevens voor Science Journal worden met Google Drive op verschillende apparaten opgeslagen en beschikbaar gemaakt. Hiervoor moet je inloggen met een Google-account.\n\nAls er al gegevens op dit apparaat staan, kun je inloggen om je bestaande experimenten op te slaan in Google Drive. Je experimenten worden dan opgeslagen in een Google Drive-map met de naam Science Journal.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Kan Google Drive niet bereiken. Controleer je verbinding.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Eindtijd bewerken";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Begintijd bewerken";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Experiment bewerken";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "De titel of foto van een experiment wijzigen";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Niet-opgeslagen wijzigingen";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Weet je zeker dat je de wijzigingen in dit experiment niet wilt opslaan?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Foto wijzigen";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Experiment bewerken";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Tijd bewerken";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Tijd notitie bewerken";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Eindtijd van opname bewerken";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Begintijd van opname bewerken";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Opname bewerken";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Titel van een opname wijzigen";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Opnametitel";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Je hebt nog geen waarnemingen";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Je hebt geen experimenten";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Geen triggers ingesteld";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Automatisch schalen aan";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Geen van je experimenten wordt aan Google Drive toegevoegd";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Al je experimenten verwijderen";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Al je experimenten worden aan Google Drive toegevoegd";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Al je experimenten opslaan";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Kies welke experimenten je op Google Drive wilt opslaan";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Kies experimenten voor opslag";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Welkom terug. Er zijn momenteel %ld experimenten op dit apparaat opgeslagen.\n\nSelecteer een optie om verder te gaan:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Welkom terug. Er is momenteel één experiment op dit apparaat opgeslagen.\n\nSelecteer een optie om verder te gaan:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Back-up maken in Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Experiment";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Experimenten";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Experiment delen";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Dit experiment is nog niet volledig gedownload. Als je een kopie deelt, ontbreken er mogelijk gegevens.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Download wordt uitgevoerd";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Opnemen…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Naam experiment";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Dit experiment is gemaakt met een nieuwere Science Journal-versie. Je kunt het pas bewerken op dit apparaat nadat je de laatste update hebt gedownload.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Organiseer je gedachten en waarnemingen door notities te maken, gegevens op te nemen en foto's te maken";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Een nieuw experiment maken";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Verken je wereld";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Delen";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Export mislukt.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Experiment verzenden";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relatieve tijd";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Exporteren…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Foto delen met…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Welkom bij Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Probeer notities te maken en gegevens op te nemen met behulp van de werkbalk hieronder.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Welkom bij Science Journal.";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Ga aan de slag met activiteiten op\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Dit apparaat vergeten";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Volledig scherm";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Aan de slag";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Audio inschakelen";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Audio uitschakelen";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Wat gebeurt er?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Er is een onbekende fout opgetreden.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Importeren mislukt. Er is iets mis met dit experiment.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Science Journal is op dit moment in gebruik. Stop de opname en probeer het opnieuw.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Log in om een experiment te importeren.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Onvoldoende opslagruimte";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Je kunt je opslag via de instellingen beheren.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Gearchiveerde opnamen weergeven";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Instellingen openen";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Je kunt de camera niet gebruiken omdat je opneemt met een helderheidssensor, die de camera aan de voorzijde gebruikt om gegevens te meten.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Je kunt de camera niet gebruiken omdat je een scherm-in-scherm-video bekijkt of Science Journal in een gedeeld scherm gebruikt.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Sensoren bekijken";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Je kunt de camera niet gebruiken omdat Science Journal hier geen toegang toe heeft.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Je kunt je fotobibliotheek niet gebruiken omdat Science Journal hier geen toegang toe heeft.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Meer informatie";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Meer informatie";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Lineaire versnellingsmeter";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Prestatieverbeteringen en bugfixes.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Nieuwe functies:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Toonhoogtesensor.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Experimenten naar een bestand exporteren en op andere apparaten importeren.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Foto's uit een experiment exporteren.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Meer notities bekijken";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menu";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Geeft een menu weer met meer opties";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Audio-instellingen";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Triggers bewerken";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Triggers instellen";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Mijn apparaten";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Geef dit experiment een naam";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Activiteiten";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Experimenten";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Instellingen";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Voeg een beschrijving toe";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Beschrijving";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Fotonotitie";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Tekstnotitie";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Triggernotitie";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Momentopnamenotitie";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Noten";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Notitie toegevoegd";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Notities, Voeg een tekstnotitie toe aan dit experiment";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Observeren, Gebruik sensoren om momentopnamen van waarden of opnamen aan dit experiment toe te voegen";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Kan experiment niet openen";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Kan bestand niet openen";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Experimenten moeten de indeling van Science Journal (.sj) hebben";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Onderbreken";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Percentage";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Klaar! We hebben alle rechten gecontroleerd. Je kunt deze rechten op elk gewenst moment aanpassen in het gedeelte Science Journal van de iOS-instellingen.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Nu kijken we of we je camera's mogen gebruiken. We gebruiken de camera aan de voorzijde voor de helderheidssensor. Je kunt beide camera's gebruiken om fotonotities aan experimenten en opnamen toe te voegen.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Doorgaan";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Eerst moeten we de rechten controleren, zodat we de hardwaresensoren, de camera en je fotobibliotheek kunnen gebruiken. We geven aan hoe we deze gebruiken voordat we om toestemming vragen.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Daarna kijken we of we toegang hebben tot je microfoon. De microfoon wordt gebruikt voor audiosensoren. De audio wordt niet opgenomen, opgeslagen of verzonden. We meten alleen de intensiteit of toonhoogte van het geluid.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Eerst kijken we of we toestemming hebben om je pushmeldingen te sturen. We gebruiken deze alleen om je te laten weten dat je opname bijna is afgelopen als je de app op de achtergrond gebruikt.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Tot slot kijken we of we toegang hebben tot je fotobibliotheek, zodat je bestaande foto's aan experimenten en opnamen kunt toevoegen en we foto's kunnen opslaan.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Aan de slag";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Klaar!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Rechten controleren";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Welkom bij Science Journal.";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Foto voor";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Foto";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Te weinig schijfruimte om foto toe te voegen";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Interne sensoren";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Fotobibliotheek, Voeg een foto uit je bibliotheek toe aan dit experiment";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Info";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Apparaat";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Afmetingen";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Notities";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Sluitersnelheid";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Foto toegevoegd";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Toonhoogte";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ halve tonen lager dan %2$@-mol, octaaf %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ halve tonen lager dan %2$@, octaaf %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ halve tonen lager dan %2$@-kruis, octaaf %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@-mol, octaaf %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "hoge toonhoogte";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "lage toonhoogte";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, octaaf %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@-kruis, octaaf %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ halve tonen hoger dan %2$@-mol, octaaf %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ halve tonen hoger dan %2$@, octaaf %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ halve tonen hoger dan %2$@-kruis, octaaf %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pixels";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Afspelen";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Bestaande apparaatinstellingen zijn toegepast op dit account";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Vernieuwen";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Kan opname niet starten";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "De verbinding met een of meer van je sensoren is verbroken. Probeer het opnieuw.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Open Science Journal om je opgenomen gegevens te bekijken.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Je opname is afgelopen.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Doorgaan";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Opname annuleren";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Een of meer sensoren hebben geen gegevens opgenomen. Wil je deze opname annuleren?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Gegevens worden niet opgenomen";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Opname gestopt";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Open Science Journal om door te gaan met opnemen.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Je opname is bijna afgelopen.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Doorgaan met opname";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Stop de opname";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Omslagafbeelding verwijderen";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Hiermee wordt de omslagafbeelding voor dit experiment verwijderd.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Weet je zeker dat je deze omslagafbeelding wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Omslagafbeelding verwijderd.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Kan omslagafbeelding niet verwijderen.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Opname toegevoegd";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Opname";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Deze opname een andere naam geven";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Weet je zeker dat je deze opname wilt verwijderen? De opgenomen gegevens en notities worden verwijderd.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Duur";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Beoordelen";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Opslaan";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Wijzigingen opslaan en teruggaan naar het vorige scherm";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Experiment opslaan";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Wil je dit experiment aan je bibliotheek toevoegen?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Opslaan in Bestanden";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Opent een documentbrowser waarmee je een kopie van dit bestand in een map op je apparaat kunt opslaan.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Bestand opgeslagen";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Bestanden opgeslagen";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Kan bestand niet opslaan. Probeer het opnieuw.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Kan bestanden niet opslaan. Probeer het opnieuw.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Toonladder";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Tijdstempel van notitie in grafiek selecteren";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Kopie verzenden";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Instellingen";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Helderheid";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Je kunt de helderheidssensor niet gebruiken omdat Science Journal geen toegang heeft tot je camera.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Laden van sensorgegevens is mislukt";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Sensorgegevens laden…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Je kunt de audiosensoren niet gebruiken omdat Science Journal geen toegang heeft tot je microfoon.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Aangepast";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Objecten hebben de neiging op hun plek te blijven of om te blijven bewegen als ze al in beweging zijn. Dit noemen we inertie. In de eerste wet van Newton wordt dit als volgt beschreven: een object blijft in zijn staat van beweging of rust, tenzij er een onevenwichtige kracht op wordt uitgeoefend.\n\nWanneer een onevenwichtige kracht een voorwerp wel in beweging brengt, zeggen we dat het voorwerp versnelt: de snelheid verandert en dat kan door sneller of langzamer te gaan of door van richting te veranderen. Versnelling wordt gemeten als verandering van snelheid (meter per seconde) in tijd, of meter per seconde kwadraat (m/s²).\n\nIn je telefoon zit een apparaatje waarmee je deze bewegingsveranderingen kunt meten: een versnellingsmeter. Deze meter bevat kleine zwevende massa's die vrij bewegen. Bij een verandering in beweging verschuiven deze massa's, net zoals je hoofd naar voren klapt als je in een auto zit die plotseling stopt. Door deze subtiele verschuivingen te meten, kan de versnellingsmeter in je telefoon veranderingen in beweging en richting waarnemen. Dat is handig bij het schakelen van de liggende naar de staande schermmodus, bij het spelen van games op je telefoon en nog veel meer.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Je hebt waarschijnlijk al opgemerkt dat er een constante versnelling op de Z-as is, zelfs als je telefoon op tafel ligt. Deze versnelling is het gevolg van de zwaartekracht hier op het aardoppervlak en bedraagt ongeveer 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Meestal merken we het niet, maar ons leven speelt zich af op de bodem van een diepe oceaan van lucht: de atmosfeer van de aarde, die maar liefst 40 kilometer hoog is. Al die lucht boven ons oefent behoorlijk wat druk uit. Dat noemen we atmosferische druk.\n\nOp zeeniveau oefent de atmosferische druk een kracht van ruim 1 kilo per vierkante centimeter uit. Dat is gelijk aan circa 590 kilo op een gebied ter grootte van een A4'tje.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Deze verpletterende druk valt ons niet op omdat we eraan gewend zijn. We voelen het wel als de druk verandert, al is het maar een beetje, bijvoorbeeld wanneer we ons op grootte hoogte bevinden of in een vliegtuig zitten. Atmosferische druk is ook afhankelijk van de weersomstandigheden. De druk gaat omlaag in stormachtige, onstabiele situaties, en omhoog wanneer de lucht zich stabiliseert en de hemel opklaart.\n\nOp de digitale barometer van je telefoon wordt de atmosferische druk gemeten in hectopascal. (Een hectopascal is 100 pascal, waarbij een pascal wordt gedefinieerd als een kracht van 1 newton die op 1 vierkante meter wordt uitgeoefend.) Bij de weersverwachting heb je vast wel eens gehoord dat de atmosferische druk in millibar wordt aangegeven. Dat klinkt heel wat vriendelijker, maar is precies hetzelfde als een hectopascal.\n\nMisschien vraag je je af waarom je telefoon deze druk kan meten. Atmosferische druk verandert meetbaar bij hoogteverschillen, zelfs bij kleine verschillen, bijvoorbeeld wanneer je een trap opgaat. Een digitale barometer op een telefoon is een handig hulpmiddel om te bepalen waar je je precies bevindt, bijvoorbeeld op welke etage van een gebouw of op het boven- of benedendek van een brug.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "De camera aan de voorzijde meet helderheid in EV (belichtingswaarde). Deze meting is gebaseerd op de sluitertijd, het f-getal en de ISO-waarde van de camera en wordt bepaald door de helderheid van de pixels die met deze instellingen zijn opgenomen.\n\nHoe helderder de vastgelegde waarde, hoe hoger de EV. Als het donker is, zijn de waarden negatief.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Omdat EV een maateenheid is die is gebaseerd op de optica en sensoren van een camera, wordt het waardebereik beperkt door hardware en software. Een omgevingslichtsensor kan lux direct opnemen, maar de camera aan de voorzijde moet het f-getal, de ISO-waarde en de sluitersnelheid gebruiken om een basis voor de meting te bepalen. De EV wordt vervolgens bepaald door pixels te lezen na het vastleggen van de beelden. EV-waarden kunnen daarom per apparaat verschillen als de f-getaldrempels verschillen, zoals het geval is bij de iPhone 8 (f1.8) en de iPad (f2.4).\n\nAangezien EV wordt bepaald door het meten van de helderheid van de vastgelegde pixels, zullen omgevingslichtbronnen een veel lagere waarde produceren dan wanneer lux door een infraroodsensor wordt bepaald. Meetwaarden zijn afhankelijk van de positie van de camera en van het onderwerp van de meting.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Je wist waarschijnlijk al dat de aarde een magnetisch veld heeft. Wat je misschien nog niet wist, is dat je telefoon een sensor bevat die magnetische velden kan opsporen: een magnetometer. Door de gegevens van de magnetometer van je telefoon te combineren met de oriëntatie van je telefoon, kunnen we een digitaal kompas maken.\n\nEen ouderwets kompas is een eenvoudige magnetometer, met een gemagnetiseerde naald die draait op basis van het omliggende magnetische veld. Er zit geen minuscuul kompas in je telefoon, maar wel een sensor met drie assen die elektrische stromen gebruikt om de sterkte van het magnetische veld te bepalen in de drie ruimtelijke dimensies. Deze sensor op zich is echter niet genoeg om een kompas mee te maken.\n\nWaarom moet een kompas de gegevens van de magnetometer combineren met de oriëntatie van de telefoon? Aan de hand van de positie van de telefoon kunnen we de magnetische rotatie bepalen, zelfs wanneer de telefoon niet vlak wordt gehouden, in dezelfde richting als het magnetische veld van de aarde. We weten dat de zwaartekracht loodrecht op het aardmagnetische veld staat, dus kunnen we de richting van de zwaartekracht, die wordt gemeten door de sensoren van de versnellingsmeter, gebruiken om te bepalen hoeveel van het magnetische veld zich in hetzelfde vlak bevindt als het aardmagnetische veld.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Het is je misschien opgevallen dat de magnetometer in je telefoon niet alleen reageert op het magnetische veld van de aarde, maar ook op alle andere magnetische velden in de buurt van de telefoon. Magneten, elektrische stromen en metalen objecten hebben een duidelijke invloed op de magnetometer van je telefoon, waardoor je kompas een andere richting op wijst. Ga op een open plek staan, bij voorkeur buiten en ver weg van elektriciteitskabels, om er zeker van te zijn dat de rode punt van je kompas zich oriënteert naar het magnetische veld van de aarde. Om de magnetometer in je telefoon te kalibreren, kun je je telefoon in de vorm van een acht bewegen.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Geluiden worden gemaakt door trillingen. Je stem is bijvoorbeeld het resultaat van trillingen van de stembanden in je keel. Deze trillingen maken gebiedjes met hoge en lage luchtdruk die naar buiten bewegen, net als de rimpelingen die ontstaan als je een steentje in een vijver gooit.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Alle geluiden kunnen in termen van hun frequentie en intensiteit worden beschreven.\n\nDe intensiteit is wat je hier met de sensor van Science Journal meet, in de eenheid decibel (dB). De intensiteit (ook wel geluidssterkte) hangt af van de afstand waarover een trillend voorwerp zich bij elke trilling verplaatst: hoe hoger de intensiteit, hoe harder een geluid voor ons klinkt.\n\nDe frequentie (ook wel toonhoogte of toon) van een geluidsgolf staat gelijk aan de trillingssnelheid ervan. Hoe sneller een voorwerp trilt, hoe hoger de toon van het geproduceerde geluid. De Science Journal-sensor voor geluidsintensiteit meet de frequentie niet, alleen de geluidssterkte.\n\nHet is belangrijk om te weten dat de microfoon in je toestel zo is ontworpen dat deze heel gevoelig is voor verschillen in geluidsgolven in de loop van de tijd, maar niet voor de absolute grootte van afzonderlijke geluidsgolven. In de app hebben we code gebruikt die waarden oplevert die vergelijkbaar zijn met de onderstaande referentiewaarden, maar ieder apparaat kan structureel hogere of lagere waarden opleveren. Meestal kalibreren wetenschappers een sensor zoals deze op basis van een bekende meting. Op dit moment kan Science Journal je vertellen of het geluid van de trein waarin je zit luider is dan dat van het rockconcert dat je hebt bezocht, maar alleen als je beide geluiden met dezelfde telefoon opneemt.\n\nOok is het goed om te weten dat er belangrijke verschillen zijn tussen de geluidsintensiteit, het geluidsintensiteitsniveau en de geluidsdruk. We behandelen ze hier als één concept, maar als je je erin wilt verdiepen, kun je online veel informatie over de verschillen vinden.\n\nHet zachtste geluid dat het gemiddelde menselijke oor kan waarnemen, is gedefinieerd als 0 dB. Een normaal gesprek komt overeen met ongeveer 60 dB en geluiden boven ongeveer 140 dB zijn pijnlijk voor het menselijk oor. Maar geluiden hoeven niet pijnlijk te zijn om ook schadelijk te zijn. Voortdurende blootstelling aan geluid van 90 dB (ongeveer de geluidssterkte van een stofzuiger) kan uiteindelijk tot gehoorverlies leiden.\n\nDe decibelschaal is logaritmisch en dat levert merkwaardige dingen op. Zo is een geluidsbron van 40 dB niet tweemaal zo intens als een geluidsbron van 20 dB: deze is 100 keer zo intens. Wanneer één rinkelende wekker 70 dB produceert, produceren twee van deze wekkers niet 140 dB, maar 73 dB. We zeiden het al: dit is een merkwaardige schaal.\n\n10 dB: ruisende bladeren\n20 dB: gefluister op 1,5 meter afstand\n30 dB: zacht gefluister\n50 dB: vallende regen\n60 dB: normaal gesprek\n90 dB: blender\n100 dB: auto zonder knaldemper\n110 dB: geschreeuw in je oor\n120 dB: donder\n130 dB: drilboor\n140 dB: opstijgend vliegtuig";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Objecten hebben de neiging op hun plek te blijven of om te blijven bewegen als ze al in beweging zijn. Dit noemen we inertie. In de eerste wet van Newton wordt dit als volgt beschreven: een object blijft in zijn staat van beweging of rust, tenzij er een onevenwichtige kracht op wordt uitgeoefend.\n\nWanneer een onevenwichtige kracht een voorwerp wel in beweging brengt, zeggen we dat het voorwerp versnelt: de snelheid verandert en dat kan door sneller of langzamer te gaan of door van richting te veranderen. Versnelling wordt gemeten als verandering van snelheid (meter per seconde) in tijd, of meter per seconde kwadraat (m/s²).\n\nIn je telefoon zit een apparaatje waarmee je deze bewegingsveranderingen kunt meten: een versnellingsmeter. Deze meter bevat kleine zwevende massa's die vrij bewegen. Bij een verandering in beweging verschuiven deze massa's, net zoals je hoofd naar voren klapt als je in een auto zit die plotseling stopt. Door deze subtiele verschuivingen te meten, kan de versnellingsmeter in je telefoon veranderingen in beweging en richting waarnemen. Dat is handig bij het schakelen van de liggende naar de staande schermmodus, bij het spelen van games op je telefoon en nog veel meer.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "De gecombineerde lineaire versnellingsmeter-sensor meet de totale versnelling op alle drie de assen van de telefoon, waarbij de zwaartekracht niet wordt meegeteld.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "In je telefoon zit een apparaatje dat magnetische velden opspoort: een magnetometer. Deze kleine sensor met drie assen gebruikt elektrische stromen om de sterkte van het magnetische veld te bepalen in de drie ruimtelijke dimensies. Door de gegevens van alle drie de assen te combineren, kunnen we een complete sensor maken om het magnetische veld mee te meten.\n\nSommige magnetometers vinden magnetische velden aan de hand van het Hall-effect: de neiging van magnetische velden om bewegende elektrische ladingen af te buigen. Nieuwere magnetometers gebruiken magneetweerstanden (metaallegeringen waarvan de weerstand wijzigt onder invloed van magnetische velden).\n\nWaar heeft een telefoon een magnetometer voor nodig? Weten in welke richting je georiënteerd bent, is handig voor ingebouwde kompas- en navigatie-apps, vooral als ze in realtime aanwijzingen moeten geven.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magneten, elektrische stromen en metalen objecten hebben een duidelijke invloed op de magnetometer van je telefoon. Maar zelfs midden in een leeg veld geeft de magnetometer in je telefoon altijd een waarde aan die net boven nul ligt: dat is het magnetische veld van de aarde.";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Geluiden worden door trillingen gemaakt. Het geluid van je stem is bijvoorbeeld het resultaat van trillingen van de stembanden in je keel. Deze trillingen maken gebiedjes met hoge en lage luchtdruk die naar buiten bewegen, net als de rimpelingen die ontstaan als je een steentje in een vijver gooit.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Alle geluiden kunnen in termen van frequentie en intensiteit worden beschreven. De frequentie (ook wel toonhoogte of toon) van een geluidsgolf staat gelijk aan de trillingssnelheid ervan. Hoe sneller een voorwerp trilt, hoe hoger de toon van het geproduceerde geluid. We meten deze trillingen in hertz (Hz), waarbij 1 Hertz gelijkstaat aan 1 trilling per seconde.\n\nHet menselijk oor kan geluiden tussen 20 en 20.000 Hz horen. De laagste snaar van een piano maakt geluid met een frequentie van 27,5 Hz en de hoogste snaar maakt geluid met een frequentie van 4186,01 Hz.\n\nDe rode stip geeft aan hoe dicht de gemeten toonhoogte bij de dichtstbijzijnde muzieknoot ligt. Als de toon lager is (richting mol), staat de stip links. Als de toon hoger is (richting kruis), staat de rode stip rechts.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "De hier getoonde gegevens zijn afkomstig van een externe sensorcommunicatie met je telefoon via Bluetooth.\n\nDe waarde geeft het percentage weer van de onbewerkte lezing van je microcontroller. Dit is meestal het percentage van een spanningsdaling over een sensor.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth is een draadloze technologiestandaard die met behulp van radiogolven gegevens over korte afstanden vanaf vaste en mobiele apparaten uitwisselt.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Rotaties per minuut (RPM) is een maateenheid voor de rotatiefrequentie om een ​​vaste as in één minuut.\n\nJe windmolentje laat de encoderschijf draaien:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Dit zorgt voor lichte en donkere perioden op de sensor die in de Science-journal als rotatie worden geregistreerd.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "De hier getoonde gegevens zijn afkomstig van een externe sensorcommunicatie met je telefoon via Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth is een standaard voor draadloze technologie die met behulp van radiogolven gegevens over korte afstanden vanaf vaste en mobiele apparaten uitwisselt.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "De versnelling van de telefoon naar links en rechts, in m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "De versnelling van de telefoon naar voren en achteren, in m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "De versnelling van de telefoon omhoog en omlaag, in m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "De atmosferische druk gemeten in hectopascal (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "De gegevens van een externe sensor worden hier weergegeven, op basis van de aangepaste instellingen.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "De hoeveelheid licht, gemeten in EV, die de camera aan de voorzijde bereikt.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "De oriëntatie van de telefoon ten opzichte van het aardmagnetische veld.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "De intensiteit van het geluid, gemeten in decibel (dB), dat de geluidssensor of microfoon bereikt.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "De totale versnelling van de telefoon, de zwaartekracht niet meegeteld, in m/s²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "De kracht van het omringende geomagnetische veld in microtesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "De toonhoogte van het geluid, gemeten in hertz (Hz), dat de geluidssensor of microfoon bereikt.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Het percentage van de onbewerkte lezing van een externe sensor.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Het aantal rotaties per minuut";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Een testsensor die een sinusgolf produceert.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Volgende sensor in opname";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Vorige sensor in opname";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Onbewerkt";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Rotatie";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Kan sensoren niet wijzigen tijdens een opname";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Trigger verwijderd";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "De sensoren voor audio en helderheid gebruiken de microfoon en de camera aan de voorzijde. Deze kunnen geen opnamen maken als Science Journal op de achtergrond draait. Als je deze sensoren voor een opname gebruikt en je verplaatst de app naar de achtergrond, worden er geen gegevens opgenomen totdat je teruggaat naar de app.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "De sensoren voor audio en helderheid gebruiken de microfoon en de camera aan de voorzijde. Deze kunnen geen opnamen maken als Science Journal op de achtergrond draait.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Een opmerking over deze sensor";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Je kunt de helderheidssensor niet gebruiken als je een scherm-in-scherm-video bekijkt of Science Journal in een gedeeld scherm gebruikt.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Voltage";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Selecteer sensoren voor gebruik in experiment";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "De lijst met sensoren samenvouwen";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "De lijst met sensoren uitvouwen";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal is uitgeschakeld";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Je domeinbeheerder moet Science Journal inschakelen in de Google Beheerdersconsole.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Schakelen tussen accounts";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Gegevens zijn anoniem en helpen bij het verbeteren van deze app.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Datagebruik van app naar Google verzenden";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Open-sourcelicenties";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Privacybeleid";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Servicevoorwaarden";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Versie";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Science Journal-website";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Opties weergeven";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Ingelogd als %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Openen om accounts te beheren";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Een account kiezen";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Zijbalkmenu";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Opent een zijbalkmenu met app-opties";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Inloggen";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sinusgolf";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Opmerking verwijderd";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Ongedaan maken";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "momentopname";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Voegt een momentopname van de waarde van alle huidige geobserveerde sensoren aan het experiment toe";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Kan geen momentopname maken, omdat een of meer sensoren zijn losgekoppeld. Probeer het opnieuw.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Gegevens van momentopname";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Momentopname toegevoegd";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maximum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Gemiddeld";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Schakelen tussen camera's";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Aan";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Uit";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Opnamen moeten minimaal één seconde duren";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Gebruik een geldige opmaak, u:mm:ss:SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Nieuwe tijd (u:mm:ss:SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "De tijd moet binnen de opname liggen";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Tekstnotitie bewerken";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Tekstnotitie";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Voeg een opmerking toe";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Notitie toegevoegd";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Aan het opnemen";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Dubbeltik om naar het observatietabblad in het toolmenu te gaan";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Sensorinstellingen";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Naar experiment";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Naar opname";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Waarschuw mij door middel van";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Geluid";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Triggergegevens";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "%@-trigger bewerken";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Nieuwe %@-trigger";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Trigger geactiveerd";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Trilling";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Triggers voor";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "wanneer de sensor hoger is dan";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "bij";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "wanneer de sensor lager is dan";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "bij waarden lager dan";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "bij waarden hoger dan";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Triggernotitie toegevoegd";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Wat moet er in de notitie staan?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Standaardtekst voor notities";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Trigger alleen bij opname";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Waarschuw mij";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Type trigger";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Maak een notitie";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Start de opname";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Stop de opname";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Triggerwaarde";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Visuele melding";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "was hoger dan";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Bij";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "was lager dan";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "werd lager dan";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Wordt lager dan";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Is hoger dan";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Is lager dan";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Triggermoment";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Wordt hoger dan";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "werd hoger dan";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Triggers bewerken";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Te veel triggers. Triggers zijn uitgeschakeld.";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Experiment uit archief gehaald.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Opname uit archief gehaald.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Onbekende sensor";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Naamloos";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Gebruik Science Journal om experimenten uit te voeren met de wereld om je heen";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "We verzamelen informatie over deze build van Science Journal en je apparaat (alleen hardware- en iOS-versie, geen persoonlijke informatie) en voegen deze toe aan een e-mail die je naar ons kunt sturen.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "We horen graag van je";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Stuur ons je mening";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Videostream";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

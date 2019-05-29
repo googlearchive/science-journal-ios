@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "विज्ञान शोध पत्रिका";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "नई सुविधाएं और सुधार :\n• अपने 'Google डिस्क' खाते का इस्तेमाल करके अपने प्रयोगों को सभी डिवाइस में सेव और एक्सेस करने के लिए अपने Google खाते में साइन इन करें. यह सुविधा आने वाले हफ़्तों में सभी उपयोगकर्ताओं के लिए उपलब्ध होगी. विज्ञान शोध पत्रिका का इस्तेमाल अब भी बिना साइन इन किए किया जा सकता है.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "प्रदर्शन में कई तरह के सुधार किए गए हैं और गड़बड़ी को ठीक किया गया है";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Google की विज्ञान शोध पत्रिका";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "अपनी दुनिया एक्सप्लोर करें";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Google की ओर से जारी विज्ञान शोध पत्रिका एक मुफ़्त डिजिटल विज्ञान नोटबुक है.\n\nचाहे आप विज्ञान के शिक्षक हों या घर पर ही शौकिया तौर पर विज्ञान के प्रयोग आज़मा रहे हों, आप अपने नोट, फ़ोटो और निरीक्षण इन सभी चीज़ों को एक सुलभ जगह रख सकते हैं. अपने iPhone या iPad के सेंसर का उपयोग करके रोशनी, ध्वनि और गति का मापन करें और उनका ग्राफ़ बनाएं या अपने आस-पास की चीज़ों पर प्रयोग करने के लिए अपने फ़ोन के ब्लूटूथ के ज़रिए बाहरी सेंसर से कनेक्ट करें.\n\nविज्ञान शोध पत्रिका ऐप से आप ये चीज़ें कर सकते हैं:\n• आप अपने फ़ोन के आतंरिक सेंसर से प्रकाश, ध्वनि, गुरुत्वाकर्षण बल, वायु दाब के अलावा और भी कई चीज़ों का मापन कर सकते हैं.\n• अपने विज्ञान प्रयोगों का दस्तावेज़ीकरण करने के लिए नोट और फ़ोटो लें. नोट के कई और प्रकार जल्द आने वाले हैं!\n• Arduino जैसे चुनिंदा ब्लूटूथ-सक्षम डिवाइस के ज़रिए बाहरी सेंसर से कनेक्ट करें.\n• डेटा रिकॉर्ड करने के लिए ऑटोमेटिक ट्रिगर और नोट्स बनाएं.\n• अपने ग्राफ़ की गतिविधि सुनने के लिए सोनिफ़िकेशन का उपयोग करें.\n\nअनुमतियों की सूचना:\n• ब्लूटूथ: ब्लूटूथ सेंसर डिवाइस स्कैन करने के लिए ज़रूरी है.\n• कैमरा: प्रयोगों के दस्तावेज़ तैयार करने के लिए उनकी तस्वीरें लेने और चमक सेंसर के लिए ज़रूरी है.\n• फ़ोटो लायब्रेरी: प्रयोग के समय ली गई फ़ोटो रिकॉर्ड रखने के लिए सेव करने और प्रयोग के समय ज़रूरत पड़ने पर लायब्रेरी के फ़ोटो इस्तेमाल में लाने के लिए ज़रूरी है.\n• माइक्रोफ़ोन: ध्वनि तीव्रता सेंसर के लिए ज़रूरी है.\n• पुश नोटिफ़िकेशन: ऐप बैकग्राउंड में चलने पर आपको रिकॉर्डिंग की स्थिति बताने के लिए ज़रूरी है.\n\nहमारे पार्टनर की शैक्षिक गतिविधियां:\nhttps://makingscience.withgoogle.com/science-journal/activities\nसहायता के लिए यहां संपर्क करें: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,विज्ञान,शिक्षा,स्टेम,प्रयोग,सेंसर,ग्राफिंग,शोध पत्रिका,नोटबुक,नोट,दस्तावेज़ीकरण,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "मी/से²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "एक्सेलेरोमीटर X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "एक्सेलेरोमीटर Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "एक्सेलेरोमीटर Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "संक्षिप्त परिचय";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "कैप्शन जोड़ें";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "संग्रहित करें";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "प्रयोग संग्रहित करें";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "रिकॉर्डिंग संग्रहित करें";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "रद्द करें";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "ठीक है";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "हटाएं";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "प्रयोग मिटाएं";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "रिकॉर्डिंग मिटाएं";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "तस्वीर मिटाएं";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "स्नैपशॉट मिटाएं";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "लिखित नोट मिटाएं";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "नोट मिटाएं";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "छोड़ें";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "खारिज करें";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "संपादित करें";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "सुझाव भेजें";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "संग्रहित अनुप्रयोगों को शामिल करें";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "स्तर";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "ठीक";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "रिपोर्ट करें";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "पुनः प्रयास करें";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "रूलर";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "सेव करें";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "सेटिंग";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "संग्रह से हटाएं";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "प्रयोग को संग्रह से हटाएं";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "रिकॉर्डिंग को संग्रह से हटाएं";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "पूर्ववत करें";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "विवरण देखें";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "टाइमलाइन में नोट जोड़ें";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "नया नोट जोड़ें";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "फ़ोटो जोड़ें";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "तस्वीर जोड़ें";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "नोट जोड़ें";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "परिवेशी प्रकाश";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "एम्प्लिट्यूड";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "परिवेशी तापमान";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "संग्रहित";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "संग्रहित प्रयोग संशोधित नहीं किए जा सकते हैं, लेकिन उन्हें मिटाया जा सकता है";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "प्रयोग संग्रहित किया गया.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "रिकॉर्डिंग संग्रहित की गई";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "उपलब्ध डिवाइस";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "वापस जाएं";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "पिछले दृश्य पर लौटें";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "बैरोमीटर";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "विज्ञान शोध पत्रिका";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "ट्रिगर बनाएं";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "नया सेंसर कार्ड जोड़ें";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "बदलाव छोड़ें";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "बदलावों को सेव करें";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "इसे बनाए रखें";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "इसे मिटाएं";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "नया प्रयोग";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "रिकॉर्डिंग शुरू करें";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "वर्तमान समय पर वापस जाएं";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "कार्ड बंद करें";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "रिकॉर्डिंग बंद करें";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "तस्वीर लें";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "कैमरा, इस प्रयोग में जोड़ने के लिए फ़ोटो लेने के काम आता है";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "आपको कोई सांख्यिक मान डालना होगा जिस पर यह ट्रिगर फ़ायर होगा.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "चार्ट प्लेबैक नियंत्रण";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "चार्ट की प्लेबैक स्थिति को बदलता है और उस स्थिति के मान का पता लगाता है";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "लाइव चार्ट";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "बाएं पैन करें";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "दाएं पैन करें";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "पैन किया गया";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "चार्ट";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "ज़ूम इन करें";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "ज़ूम स्तर";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "फ़िट करने के लिए ज़ूम करें";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "ज़ूम घटाएं";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "फ़ोटो चुनें";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "सभी के लिए दावा करें";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "सभी के लिए अनुरोध करें";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "'Google डिस्क' में जोड़ें";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "बचे हुए एक प्रयोग को %@ के लिए 'Google डिस्क' में जोड़ें?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "%2$@ के लिए, बचे हुए %1$@ प्रयोग 'Google डिस्क' में जोड़ना चाहते हैं?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "सभी बचे हुए प्रयोगों पर दावा करें";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "सभी प्रयोग 'Google डिस्क' में जोड़ें?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "सभी प्रयोगों के लिए अनुरोध करें?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "इस प्रयोग को 'Google डिस्क' में जोड़ें";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "प्रयोगों में बदलाव नहीं किया जा सकता. ये तब तक डिवाइस पर रहेंगे जब तक या तो इन पर दावा किया जाए या इन्हें मिटाया जाए";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "'Google डिस्क' में प्रयोग जोड़ें";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "प्रयोगों पर दावा करें";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "इस प्रयोग को मिटाएं";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "सभी मिटाएं";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "बचा हुआ एक प्रयोग मिटाएं?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "बचे हुए %ld प्रयोग मिटाएं?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "बचे हुए सभी प्रयोगों को मिटाएं";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "अपने सभी प्रयोगों को मिटाएं?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "संग्रहित किए गए प्रयोगों सहित इस डिवाइस के सभी प्रयोग मिटा दिए जाएंगे. मिटाए गए प्रयोग डिवाइस पर वापस नहीं लाए जा सकते हैं.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "सभी मिटाएं";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "इस डिवाइस में %ld प्रयोगों पर दावा नहीं किया गया है.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "इस डिवाइस में 1 ऐसा प्रयोग है जिस पर दावा नहीं किया गया है.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "दावे से बचे हुए इस प्रयोग को शेयर करें";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "मेमोरी में प्रयोग पर दावा करने लायक जगह नहीं है";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "मेमोरी में प्रयोगों पर दावा करने लायक जगह नहीं है";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "प्रयोग पर दावा नहीं किया जा सका";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "प्रयोगों पर दावा नहीं किया जा सका";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "प्रयोग के लिए अनुरोध करें?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "प्रयोग के लिए अनुरोध करें";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "%@ के लिए इस प्रयोग को 'Google डिस्क' में जोड़ें?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "प्रयोग को %@ में जोड़ दिया गया";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "पिछले प्रयोगों पर दावा करें";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "प्रयोगों के लिए दावा करें";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "बंद करें";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "पिछले दृश्य पर लौटें";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "कम्पास";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "डिग्री";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "कंडक्टर";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "साइन इन किए बिना आगे बढ़ें";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "क्रॉप समाप्ति:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "क्रॉप सेव नहीं किया जा सका:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "क्रॉप समाप्ति मार्कर को बाईं ओर ले जाएं";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "क्रॉप समाप्ति मार्कर को दाईं ओर ले जाएं";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "क्रॉप प्रारंभ मार्कर को बाईं ओर ले जाएं";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "क्रॉप प्रारंभ मार्कर को दाईं ओर ले जाएं";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "ज़्यादा विकल्प";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "रिकॉर्डिंग क्रॉप की गई";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "रिकॉर्डिंग को शुरुआती रिकॉर्ड की गई सीमा के बाहर क्रॉप नहीं किया जा सकता है";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "रिकॉर्डिंग को एक सेकंड से कम अवधि के लिए क्रॉप नहीं किया जा सकता है";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "क्रॉप करें";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "क्रॉप शुरुआत समय:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "मौजूदा मान";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "ध्वनि की तीव्रता";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "शीर्षक रहित प्रयोग";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "डिफ़ॉल्ट";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "क्या आप वाकई यह प्रयोग हटाना चाहते हैं? इसकी सभी रिकॉर्डिंग और नोट हटा दिए जाएंगे.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "इस प्रयोग को हटाएं?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "हटाएं";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "इस रिकॉर्डिंग को मिताएं?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "प्रयोग मिटाया गया.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "रिकॉर्डिंग मिटाई गई.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "विवरण";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "पिन करें";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "आवृत्ति";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "सेंसर सेटिंग सेव करें.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "सेंसर";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "स्वचालित मापक अक्षम करें";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "बदलाव करने के लिए दो बार टैप करें";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "खोलने के लिए दो बार टैप करें";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "चुनने के लिए दो बार टैप करें";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "टॉगल करने के लिए दो बार टैप करें";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "विवरण देखने के लिए दो बार टैप करें";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "टूल ड्रॉवर ग्रैबर";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "टूल ड्रॉवर का आकार समायोजित करें. उपलब्ध कार्रवाइयां.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "बंद";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "बदलाव करना";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "पूरी स्क्रीन";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "आधी स्क्रीन";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "'Google डिस्क' से कनेक्ट नहीं हो सका. अपना कनेक्शन जाँचें.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "नेटवर्क डिसकनेक्ट हो गया है";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "विज्ञान शोध पत्रिका को 'Google डिस्क' से कनेक्ट नहीं किया जा सकता. कुछ प्रयोगों का बैक अप नहीं लिया जा सकता है.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "विज्ञान शोध पत्रिका को अभी 'Google डिस्क' से कनेक्ट नहीं किया जा सकता. हम बाद में फिर से कोशिश करेंगे.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "'Google डिस्क' में आपके प्रयोग को स्टोर करने के लिए कम जगह है.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "विज्ञान शोध पत्रिका का प्रयोग डेटा सेव किया जाता है और 'Google डिस्क' का इस्तेमाल करके सभी डिवाइस पर उपलब्ध कराया जाता है. इसके लिए Google खाते से साइन इन करना ज़रूरी है.\n\nअगर इस डिवाइस पर आपका डेटा पहले से मौजूद है, तो साइन इन कर लेने पर आप अपने मौजूदा प्रयोगों को 'Google डिस्क' में सेव कर सकते हैं. आपके प्रयोग 'Google डिस्क' में “विज्ञान शोध पत्रिका” फ़ोल्डर में स्टोर कर लिए जाते हैं.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "'Google डिस्क' से कनेक्ट नहीं हो पाया. अपने नेटवर्क कनेक्शन की जांच कर लें.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "समाप्ति समय में बदलाव करें";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "प्रारंभ समय में बदलाव करें";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "प्रयोग में बदलाव करें";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "किसी प्रयोग के शीर्षक या फ़ोटो को बदलें";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "सेव नहीं किए गए बदलाव";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "क्या आप वाकई इस प्रयोग के लिए किए गए बदलावों को सेव नहीं करना चाहते हैं?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "फ़ोटो बदलें";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "प्रयोग में बदलाव करें";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "समय में बदलाव करें";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "नोट का समय संपादित करें";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "रिकॉर्डिंग के समाप्ति समय में बदलाव करें";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "रिकॉर्डिंग के प्रारंभ समय में बदलाव करें";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "रिकॉर्डिंग में बदलाव करें";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "रिकॉर्डिंग का शीर्षक बदलें";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "रिकॉर्डिंग शीर्षक";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "आपके पास फिलहाल कोई टिप्पणी नहीं है";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "आपके पास कोई प्रयोग नहीं है";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "कोई ट्रिगर सेट नहीं किए गए";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "स्वचालित मापक सक्षम करें";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "आपका कोई प्रयोग 'Google डिस्क' में नहीं जोड़ा जाएगा";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "अपने सभी प्रयोगों को मिटाएं";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "आपके सभी प्रयोग 'Google डिस्क' में जोड़ दिए जाएंगे";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "अपने सभी प्रयोगों को सेव करें";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "'Google डिस्क' में सेव किए जाने वाले प्रयोग चुनें";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "सेव करने के लिए प्रयोगों को चुनें";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "आपका फिर से स्वागत है. इस डिवाइस पर इस समय आपके %ld प्रयोग सेव किए गए हैं.\n\nजारी रखने के लिए एक विकल्प चुनें:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "आपका फिर से स्वागत है. इस डिवाइस पर इस समय आपका एक प्रयोग सेव किया गया है.\n\nजारी रखने के लिए एक विकल्प चुनें:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "'Google डिस्क' में बैक अप लें";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "प्रयोग";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "प्रयोग";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "प्रयोग शेयर करें";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "यह प्रयोग अभी पूरी तरह से डाउनलोड नहीं हुआ है. अगर आप इसकी कॉपी शेयर करते हैं, तो कुछ डेटा छूट जाएंगे";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "डाउनलोड जारी है";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "रिकॉर्डिंग जारी है…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "प्रयोग का शीर्षक";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "यह प्रयोग विज्ञान शोध पत्रिका के नए वर्शन पर बनाया गया है. जब तक आप नया अपडेट डाउनलोड नहीं कर लेते, इस डिवाइस से प्रयोग में बदलाव नहीं कर पाएंगे.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "नोट लेकर, डेटा रिकॉर्ड करके या तस्वीर लेकर अपने विचारों को व्यवस्थित करें";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "एक नया प्रयोग बनाएं";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "अपनी दुनिया एक्सप्लोर करें";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "शेयर करें";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "निर्यात नहीं हो सका.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "प्रयोग भेजें";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "सापेक्ष समय";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "निर्यात करें…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "फ़ोटो इस पर शेयर करें…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "विज्ञान शोध पत्रिका में आपका स्वागत है";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "नीचे दिए गए टूलबार का उपयोग करके नोट और रिकॉर्डिंग डेटा लेने की कोशिश करें!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "विज्ञान शोध पत्रिका में आपका स्वागत है!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "यहां आज़माने के लिए गतिविधियां पाएं\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "इस डिवाइस को भूल जाएं";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "पूरी स्क्रीन";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "शुरू करें";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "ऑडियो सक्षम करें";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "ऑडियो अक्षम करें";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "क्या चल रहा है?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "हर्ट्ज़";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "हम माफ़ी चाहते हैं, कोई अनजान गड़बड़ी हुई है.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "आयात नहीं हो सका. इस प्रयोग में कुछ गलत है.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "विज्ञान शोध पत्रिका अभी उपयोग में है. कृपया रिकॉर्ड करना रोकें और फिर से कोशिश करें.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "प्रयोग आयात करने के लिए साइन इन करें.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "मेमोरी में काफ़ी खाली जगह नहीं है";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "आप सेटिंग में जाकर अपनी मेमोरी की जगह प्रबंधित कर सकते हैं.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "संग्रहित रिकॉर्डिंग दिखाएं";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "सेटिंग खोलें";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "कैमरे का उपयोग नहीं किया जा सकता है क्योंकि आप एक चमक सेंसर से रिकॉर्डिंग कर रहे हैं, जो सामने वाले कैमरे के ज़रिए डेटा मापता है.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "कैमरे का उपयोग नहीं किया जा सकता है क्योंकि आप या तो पिक्चर में पिक्चर वीडियो देख रहे हैं या विज्ञान शोध पत्रिका स्प्लिट व्यू मोड में उपयोग कर रहे हैं.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "सेंसर देखें";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "कैमरे का उपयोग नहीं किया जा सकता है क्योंकि विज्ञान शोध पत्रिका के पास इसे एक्सेस करने की अनुमति नहीं है.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "आपकी फ़ोटो लायब्रेरी का उपयोग नहीं किया जा सकता है क्योंकि विज्ञान शोध पत्रिका के पास इसके एक्सेस की अनुमति नहीं है.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "ज़्यादा जानें";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "ज़्यादा जानें";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "लीनियर एक्सलरोमीटर";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "प्रदर्शन सुधार और बग की गड़बड़ी ठीक करना";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "नई विशेषताएं:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• ध्वनि पिच सेंसर.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• प्रयोगों को किसी फ़ाइल में निर्यात करें और किसी दूसरे डिवाइस पर उन्हें आयात करें.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• किसी प्रयोग से फ़ोटो निर्यात करें.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "और नोट देखें";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "मैग्नेटोमीटर";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "मेन्यू";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "ज़्यादा विकल्पों के साथ मेन्यू दिखाता है";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "ऑडियो सेटिंग";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "ट्रिगर संपादित करें";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "ट्रिगर सेट करें";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "मेरे डिवाइस";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "इस प्रयोग को नाम दें";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "गतिविधियां";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "प्रयोग";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "सेटिंग";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "विवरण जोड़ें";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "विवरण";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "चित्र नोट";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "लेख नोट";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "ट्रिगर नोट";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "स्नैपशॉट नोट";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "नोट";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "नोट जोड़ा गया";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "नोट, इस प्रयोग के लिए एक लेख नोट जोड़ता है";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "निरीक्षण टैब, इस प्रयोग में मान के स्नैपशॉट या रिकॉर्डिंग जोड़ने के लिए सेंसर का उपयोग करता है";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "प्रयोग नहीं खोला जा सकता";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "फ़ाइल नहीं खोली जा सकती";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "प्रयोग, विज्ञान शोध-पत्रिका के फ़ाइल फ़ॉर्मेट (.sj) में होने चाहिए";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "रोकें";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "प्रतिशत";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "बस, इतना ही! हमारी ओर से अनुमतियों के लिए जाँच पूरी हुई. अगर आप भविष्य में इन अनुमतियों में बदलाव करना चाहते हैं, तो आप अपने iOS सेटिंग ऐप में जाकर विज्ञान शोध पत्रिका अनुभाग में किसी भी समय ऐसा कर सकते हैं.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "अब हम आपके कैमरे के एक्सेस की अनुमति की जाँच करेंगे. हम चमक सेंसर को और बेहतर बनाने के लिए आगे के कैमरे का उपयोग करते हैं और आप प्रयोग या रिकॉर्डिंग करते समय फ़ोटो नोट जोड़ने के लिए दोनों में से किसी भी एक कैमरे का उपयोग कर सकते हैं.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "जारी रखें";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "हमें अनुमतियां जाँचने से शुरुआत करनी होगी ताकि हम हार्डवेयर सेंसर, कैमरा और आपकी फ़ोटो लायब्रेरी सक्षम कर सकें. आपको संकेत देने से पहले हम आपको बताएंगे कि हम इनमें से हर एक का उपयोग कैसे करते हैं.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "आगे, हम आपके माइक्रोफ़ोन एक्सेस की अनुमति जांचेंगे. माइक्रोफ़ोन का इस्तेमाल ऑडियो सेंसर के लिए किया जाता है. ऑडियो की सामग्री को कभी भी रिकॉर्ड, संग्रहित या संचारित नहीं किया जाता है, हम केवल ध्वनि की तीव्रता या पिच को ही मापते हैं.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "सबसे पहले, हम आपको पुश नोटिफ़िकेशन भेजने की अनुमति की जाँच करेंगे. अगर आप रिकॉर्डिंग के दौरान ऐप बैकग्राउंड में कर देते हैं, तो हम इनका उपयोग आपकी रिकॉर्डिंग कब खत्म होने वाली है केवल यह बताने के लिए करते हैं.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "अंत में, हम आपकी फ़ोटो लायब्रेरी एक्सेस करने की अनुमति की जाँच करेंगे, ताकि आप अपने मौजूदा फ़ोटो को प्रयोग और रिकॉर्डिंग में जोड़ सकें और हम आपके फ़ोटो को आपकी लायब्रेरी में वापस सेव कर सकें.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "चलिए शुरू करें";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "हो गया!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "अनुमति की जाँच करें";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "विज्ञान शोध पत्रिका में आपका स्वागत है!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "इस प्रयोग के लिए फ़ोटो";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "फ़ोटो";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "फ़ोटो जोड़ने के लिए मेमोरी में जगह नहीं है";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "आंतरिक सेंसर";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "फ़ोटो लायब्रेरी, इस प्रयोग में अपनी लायब्रेरी से एक फ़ोटो जोड़ें";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "जानकारी";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "डिवाइस";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "आयाम";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "नोट";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "शटर गति";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "तस्वीर जोड़ी गई";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "पिच";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%2$@ फ़्लैट, ऑक्टेव %3$@ की तुलना में %1$@ हाफ़ स्टेप धीमा है";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%2$@, ऑक्टेव %3$@ की तुलना में %1$@ हाफ़ स्टेप धीमा है";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%2$@ शार्प, ऑक्टेव %3$@ की तुलना में %1$@ हाफ़ स्टेप धीमा है";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ फ़्लैट, ऑक्टेव %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "ज़्यादा पिच";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "कम पिच";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, ऑक्टेव %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ शार्प, ऑक्टेव %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%2$@ फ़्लैट, ऑक्टेव %3$@ की तुलना में %1$@ हाफ़ स्टेप तेज़ है";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%2$@, ऑक्टेव  %3$@ की तुलना में %1$@ हाफ़ स्टेप तेज़ है";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%2$@ शार्प, ऑक्टेव %3$@ की तुलना में %1$@ हाफ़ स्टेप तेज़ है";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "पिक्सेल";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "चलाएं";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "मौजूदा डिवाइस सेटिंग को इस खाते पर लागू किया गया";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "रीफ़्रेश हो रहा है";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "रिकॉर्डिंग शुरू नहीं की जा सकती";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "एक या उससे ज़्यादा सेंसर कनेक्ट नहीं किए गए हैं. कृपया फिर से कोशिश करें.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "अपने रिकॉर्ड किए गए डेटा देखने के लिए विज्ञान शोध पत्रिका खोलें.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "आपकी रिकॉर्डिंग खत्म हो गई.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "जारी रखें";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "रिकॉर्डिंग रद्द करें";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "आपके एक या ज़्यादा सेंसर ने कोई डेटा रिकॉर्ड नहीं किया. क्या आप यह रिकॉर्डिंग रद्द करना चाहते हैं?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "डेटा रिकॉर्ड नहीं किया जा रहा है";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "रिकॉर्डिंग बंद हो गई";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "रिकॉर्डिंग जारी रखने के लिए विज्ञान शोध पत्रिका खोलें.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "आपकी रिकॉर्डिंग जल्द ही खत्म हो जाएगी.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "रिकॉर्डिंग जारी रखें";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "रिकॉर्डिंग बंद करें";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "कवर फ़ोटो हटाना";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "इस प्रयोग के लिए कवर फ़ोटो को हटा देता है.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "क्या आप वाकई कवर फ़ोटो हटाना चाहते हैं? इस कार्रवाई को वापस पहले जैसा नहीं किया जा सकता.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "कवर फ़ोटो हटा दी गई.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "कवर फ़ोटो हटाई नहीं जा सकी.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "रिकॉर्डिंग जोड़ी गई";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "रिकॉर्डिंग";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "इस रिकॉर्डिंग का नाम बदलें";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "क्या आप वाकई यह रिकॉर्डिंग मिटाना चाहते हैं? रिकॉर्ड किए गए डेटा और नोट हटा दिए जाएंगे.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "अवधि";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "समीक्षा करें";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "सेव करें";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "बदलाव सेव करें और पिछले दृश्य पर वापस लौटें";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "प्रयोग सेव करें";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "क्या आप इस प्रयोग को अपनी लाइब्रेरी में जोड़ना चाहते हैं?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Files में सेव करें";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "इससे दस्तावेज़ का ब्राउज़र दिखने लगता है. उसके ज़रिए आप इस फ़ाइल की कॉपी अपने डिवाइस के किसी फ़ोल्डर में सेव कर सकते हैं.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "फ़ाइल सेव की गई";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "फ़ाइलें सेव की गईं";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "फ़ाइल सेव नहीं की जा सकी. कृपया फिर से कोशिश करें.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "फ़ाइलें सेव नहीं की जा सकीं. कृपया फिर से कोशिश करें.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "मापक";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "चार्ट में नोट टाइमस्‍टैम्प चुनें";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "एक कॉपी भेजें";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "सेटिंग";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "रोशनी";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "चमक सेंसर का उपयोग नहीं किया जा सकता क्योंकि विज्ञान शोध पत्रिका के पास आपके कैमरे के एक्सेस की अनुमति नहीं है.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "सेंसर डेटा लोड होने में विफल रहा";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "सेंसर डेटा लोड हो रहा है…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "ऑडियो सेंसर इस्तेमाल नहीं किया जा सकता क्योंकि विज्ञान शोध पत्रिका के पास आपके माइक्रोफ़ोन के एक्सेस की अनुमति नहीं है.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "कस्टम";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "वस्तु की प्रवृत्ति स्थिर होती है या अगर वे चल रहे होते हैं तो चलते रहने की होती है—इस प्रवृत्ति को हम जड़त्व कहते हैं. न्यूटन का पहला नियम इस विचार को औपचारिक रूप से व्यक्त करता है: कोई वस्तु तब तक अपनी गति की अवस्था में या स्थिर अवस्था में बनी रहेगी, जब तक कि उस पर किसी असंतुलित बल से क्रिया नहीं की जाती है.\n\nजब कोई असंतुलित बल किसी वस्तु को हिलाने का कारण बनता है, तो हम कहते हैं कि वह वस्तु त्वरण करती है: उसके वेग में बदलाव, वेग में कमी या दिशा में बदलाव के ज़रिए उसकी गति या चाल में बदलाव आता है. त्वरण का मापन समय में गति (मीटर प्रति सेकंड) में हुए बदलाव या मीटर प्रति सेकंड वर्ग (m/s²) के रूप में किया जाता है.\n\nचाल में हुए इन बदलावों को मापने का डिवाइस—एक्सलरोमीटर आपके फ़ोन में मौजूद है. एक्सलरोमीटर के अंदर, गति करने के लिए स्वतंत्र कम द्रव्यमान वाली निलंबित वस्तुएं होती हैं. गति में होने वाले बदलावों के कारण ये वस्तुएं बहुत कुछ वैसे ही स्थानांतरित होती हैं, जैसे कार में होने के दौरान उसके अचानक रुक जाने पर आपका सिर आगे की ओर झुक जाता है. सूक्ष्म रूप से होने वाले इन जड़त्व संबंधी स्थानांतरणों को माप कर फ़ोन में मौजूद एक्सलरोमीटर चाल और स्क्रीन की दिशा में हुए उन बदलावों का पता लगा सकता है, जो स्क्रीन को लैंडस्केप से पोर्ट्रेट मोड में बदलने, आपके फ़ोन पर गेम खेलने और अन्य कार्यों के लिए उपयोगी हैं.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "संभवतः आपने टेबल पर फ़ोन के स्थिर होने पर भी Z अक्ष में होते सतत त्वरण पर ध्यान दिया होगा. यह त्वरण है, जिसका अनुभव हमें यहां पृथ्वी की सतह पर गुरुत्वाकर्षण बल के कारण होता है, जो करीब 9.8 मी/से² है.";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "हालांकि हम इस पर बहुत कम ध्यान देते हैं कि हम सभी हवा के एक गहरे फैलाव के तल में रहते हैं: पृथ्वी का वायुमंडल, जिसका विस्तार ऊपर की ओर 40 किलोमीटर (1,30,000 फ़ीट) ऊपर तक है. इस संपूर्ण वायु का भार हम पर ऊपर से नीचे की ओर दबाव डालते हुए एक ऐसे दबाव का निर्माण करता है जिसे वायुमंडलीय दबाव कहते हैं.\n\nसमुद्र स्तर पर, वायुमंडलीय दबाव हर वर्ग इंच पर 14 पाउंड का बल लगाता है—यह पेपर की मानक शीट के आकार के किसी क्षेत्र में करीब 1,300 पाउंड के बराबर है.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "हम इस तीव्र दबाव पर ध्यान नहीं देते हैं, क्योंकि हम इसके आदी हो गए हैं—यानी जब तक इसमें जरा भी बदलाव नहीं आता, जो कि तब होता है जब हम ऊंचे स्थानों पर जाते हैं या हवाई जहाज में यात्रा करते हैं. वायुमंडलीय दबाव में मौसम की स्थितियों के साथ बदलाव होता है, जिनमें यह तूफ़ानी, अस्थिर हवा की उपस्थिति में नीचे आता है और हवा के स्थिर होने और आकाश के साफ़ होने पर बढ़ता है.\n\nआपके फ़ोन में मौजूद डिजिटल बैरोमीटर, वायुमंडलीय दबाव को हेक्टोपास्कल में मापता है. (हेक्टोपास्कल 100 पास्कल के बराबर है, जहां पास्कल, एक वर्ग मीटर के क्षेत्र में लगाया गया एक न्यूटन बल है.) शायद आपने मौसम का पूर्वानुमान लगाने वाले व्यक्तियों को मिलीबार में वायुमंडलीय दबाव के बारे में जानकारी देते हुए सुना होगा—यह अनुकूल सी लगने वाली इकाई हेक्टोपास्कल के बराबर है.\n\nआपको शायद आश्चर्य होगा: फ़ोन, दबाव का मापन क्यों करता है? ऊंचाई में थोड़ा सा भी बदलाव होने पर, जैसे जब आप ऊंची सीढ़ियांं चढ़ते हैं, तो वायुमंडलीय दबाव में काफ़ी बदलाव होता है. इसलिए फ़ोन में मौजूद डिजिटल बैरोमीटर, स्थान में होने वाले बदलावों का पता लगाने में सहायता कर सकता है, उदाहरण के लिए आपको यह बताएगा कि आप बिल्डिंग की कौन सी मंज़िल पर हैं या यह कि क्या आप किसी पुल के ऊपरी या निचले डेक पर गाड़ी चला रहे हैं.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "आगे वाला कैमरा प्रकाश को EV (एक्‍सपोज़र मान) में मापता है, यह माप कैमरे की शटर गति, f-नंबर और ISO मान पर आधारित होता है और इन सेटिंग के आधार पर दर्ज पिक्सेल की चमक से निर्धारित किया जाता है\n\nजितना चमकदार मान कैप्चर होगा उतना ही EV ज़्यादा होगा. अंधेरा नकारात्मक मान जनरेट करेगा.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "चूंकि EV कैमरे के ऑप्टिक्स और सेंसर पर आधारित एक माप है, मान की सीमा श्रेणी हार्डवेयर और सॉफ़्‍टवेयर तक सीमित है. जहां स्क्रीन की रोशनी को अपने अाप घटाने-बढ़ाने वाला सेंसर lux को सीधे रिकॉर्ड कर सकता है वहीं सामने वाले कैमरा को एक माप आधार रेखा स्थापित करने के लिए अपना f-नंबर, ISO मान और शटर गति का उपयोग करना होगा फिर इमेज कैप्चर करने के बाद यह पिक्सेल के आधार पर EV निर्धारित करता है. इस प्रक्रिया को देखते हुए डिवाइस बदलने पर उनके f-नंबर थ्रेशोल्ड अलग होने पर EV मान अलग मिल सकते हैं, जैसे कि iPhone 8 का f-नंबर (f1.8) है जबकि iPad का f-नंबर (f2.4) है.\n\nजैसा कि EV को कैप्चर किए गए पिक्सेल की चमक के मान को माप कर निर्धारित किया गया है, अगर lux का निर्धारण इंफ़्रारेड सेंसर से किया गया है तो परिवेशी प्रकाश स्रोत अपेक्षित मान से बहुत कम मान दिखाएगा —माप सीधे तौर पर कैमरे की स्थिति और कैमरे से कैप्चर की गई फ़ोटो पर निर्भर होते हैं.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "आपको यह पहले से ही पता है कि पृथ्वी का एक चुंबकीय क्षेत्र होता है. लेकिन आपने शायद यह ध्यान नहीं दिया होगा कि आपके फ़ोन में एक ऐसा डिवाइस है, जिसे चुंबकीय क्षेत्रों का पता लगाने के लिए डिज़ाइन किया गया है: मैग्नेटोमीटर. आपके फ़ोन के मैग्नेटोमीटर डेटा को फ़ोन के स्क्रीन की दिशा से मिलाकर हम एक डिजिटल कम्पास बना सकते हैं.\n\nपहले के समय में उपयोग किया जाने वाला कम्पास, कम तकनीक वाला एक मैग्नेटोमीटर होता है जिसमें आस-पास के चुंबकीय क्षेत्र की ओर मिलान करने के लिए घूमने वाली चुंबकीय सुई होती है. आपके फ़ोन में कोई छोटा सा कम्पास नहीं होता है, बल्कि इसके बजाय एक छोटा तीन-अक्षों वाला सेंसर होता है जो तीन आयामों वाले स्थान पर चुंबकीय क्षेत्र की शक्ति का पता लगाने के लिए विद्युत धाराओं का उपयोग करता है. लेकिन कम्पास बनाने के लिए अकेले यह काफ़ी नहीं है! \n\nकम्पास को मैग्नेटोमीटर डेटा को फ़ोन के स्क्रीन की दिशा से मिलाने की ज़रूरत क्यों है? फ़ोन पृथ्वी के चुंबकीय क्षेत्र की समान सतह पर नहीं होने पर भी अपने स्क्रीन की दिशा से हमें चुंबकीय रोटेशन की गणना करने देता है. हम जानते हैं कि गुरुत्वाकर्षण पृथ्वी के चुंबकीय क्षेत्र के लिए लंबवत है, इसलिए पृथ्वी के चुंबकीय क्षेत्र की समान सतह में कितना चुंबकीय क्षेत्र है यह निर्धारित करने के लिए हम एक्सलरोमीटर सेंसर से गुरुत्वाकर्षण की दिशा का उपयोग कर सकते हैं.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "जैसा कि आपने ध्यान दिया होगा, कम्पास पृथ्वी के चुंबकीय क्षेत्र के अलावा अपने आस-पास हर किसी तरह के चुंबकीय क्षेत्र पर प्रतिक्रिया करता है. चुंबक, विद्युत धाराएं और धातु की वस्तुएं आपके फ़ोन के मैग्नेटोमीटर को आसानी से इधर-उधर विचलित कर देंगी. अगर आप सुनिश्चित होना चाहते हैं कि आपके कम्पास का लाल सिरा पृथ्वी के चुंबकीय क्षेत्र से संरेखित हो रहा है, तो किसी खुले क्षेत्र में खड़े हों—बाहर खुली जगह और पावर लाइन से दूर का क्षेत्र होना अच्छा रहेगा. इससे आपके फ़ोन में मौजूद मैग्नेटोमीटर को 8 के आकार के पैटर्न में ले जाने में सहायता मिलेगी.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "कंपन से ध्वनियां बनती हैं. उदाहरण के लिए आपकी आवाज़ आपके कंठ की स्वरतंत्री में हुए कंपनों से आती है. ये कंपन उच्च और निम्न वायु दबाव के एकांतर क्षेत्र बनाते हैं जो बाहर की ओर गति करते हैं—बहुत कुछ वैसे ही जैसे किसी तालाब में पत्थर फेंकने पर विस्तारित होती हुई गोलाकार लहरें बनती हैं.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "सभी ध्वनियों का वर्णन उनकी आवृत्ति और तीव्रता के रूप में किया जा सकता है.\n\nतीव्रता वह है, जिसका मापन आप यहां विज्ञान शोध पत्रिका ध्वनि तीव्रता सेंसर से डेसिबल (dB) की इकाई में करते हैं. तीव्रता या प्रबलता उस दूरी पर निर्भर है जो कोई कंपन करने वाली वस्तु प्रत्येक कंपन के दौरान तय करती है; हमें प्रबलता के बढ़ने पर ज़्यादा तीव्रता सुनाई देती है.\n\nध्वनि की किसी तरंग की *आवृत्ति* (इसे पिच या टोन भी कहते हैं) इसके कंपन की दर के समान होती है. जितनी तेज़ी से कोई ऑब्जेक्ट कंपन करता है, परिणामी ध्वनि का पिच भी उतना ही ज़्यादा होगा. विज्ञान शोध पत्रिका ध्वनि तीव्रता सेंसर, आवृत्ति का मापन नहीं करती है, केवल प्रबलता का मापन करती है.\n\nएक महत्वपूर्ण बात जानना ज़रूरी है कि आपके डिवाइस का माइक्रोफ़ोन इस प्रकार डिज़ाइन किया गया है कि जिससे वह समय के साथ ध्वनि तरंगों में अंतर के प्रति बहुत संवेदनशील होता है, लेकिन यह हर तरंग का सटीक आकार नहीं जान पाता है. हमने ऐसा कोड चुनने की कोशिश की है, जो नीचे दिखाए गए संदर्भ नंबर के समान नंबर देता है, लेकिन हर एक डिवाइस लगातार ज़्यादा या कम संख्या दिखा सकते हैं. वैज्ञानिक, माप निकालने के लिए आमतौर पर इस तरह के सेंसर का उपयोग करते हैं. अभी के लिए, विज्ञान शोध पत्रिका से आपको पता चल सकता है कि आपकी अगली ट्रेन की सवारी की ध्वनि आपके अगले रॉक कंसर्ट की ध्वनि की तुलना में ज़्यादा तेज है या नहीं, लेकिन इसके लिए आपकों दोनों जगहों पर समान फ़ोन उपयोग में लाना होगा.\n\nएक और बात जानना ज़रूरी है कि “ध्वनि की तीव्रता”, “ध्वनि की तीव्रता का स्तर” और “ध्वनि का दबाव” इनके बीच महत्वपूर्ण अंतर है. हालांकि यहां हम उन्हें एक जैसा ही मान रहे हैं, लेकिन अगर आप विस्तार में जानकारी चाहते हैं, तो इनके बीच के अंतरों के बारे में जानने के लिए कई ऑनलाइन संसाधन उपलब्ध हैं.\n\nवह सबसे कम ध्वनि, जिसका पता किसी सामान्य व्यक्ति के कानों से लगाया जा सकता है 0 dB के रूप में निर्धारित की गई है. सामान्य वार्तालाप 60 dB के संगत होता है, और करीब 140 dB से ज़्यादा ध्वनियां मनुष्य के कानों के लिए परेशानी भरी होती हैं. लेकिन हानिकारक होने के लिए ध्वनियों का परेशानी भरा होना आवश्यक नहीं है. 90 dB की ध्वनि के लगातार संपर्क में रहने से—जो कि किसी वैक्यूम क्लीनर की ध्वनि के जितनी तीव्र होती है—अंततः बहरापन हो सकता है.\n\nडेसिबल पैमाना लघुगणकीय है, जिसे दक्षता के लिए बनाया गया है: 40 dB के ध्वनि स्रोत की तीव्रता 20 dB वाले ध्वनि स्रोत से दोगुनी नहीं होती है—यह उससे 100 गुना ज़्यादा तेज होती है. इसके साथ, अगर बजने वाली कोई अलार्म घड़ी 70 dB ध्वनि करती है, तो बजने वाली दो अलार्म घड़ियां 140 dB ध्वनि नहीं करती हैं, बल्कि 73 dB ध्वनि करती हैं. जैसा कि हमने कहा कि यह एक अनोखा पैमाना है.\n\nपत्तियों की सरसराहट 10 dB\n5 फ़ीट की दूरी पर फुसफुसाहट 20 dB\nधीमी फ़ुसफ़ुसाहट 30 dB\nवर्षा 50 dB\nसामान्य वार्तालाप 60 dB\nब्लेंडर 90 dB\nसाइलेंसर के बिना कार 100 dB\nकान में चिल्लाना 110 dB\nतूफ़ान 120 dB\nहथौड़े की आवाज़ 130 dB\n140 dB पर ज़मीन से उड़ान भर रहा विमान";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "वस्तु की प्रवृत्ति स्थिर होती है या अगर वे चल रहे होते हैं तो चलते रहने की होती है—इस प्रवृत्ति को हम जड़त्व कहते हैं. न्यूटन का पहला नियम इस विचार को औपचारिक रूप से व्यक्त करता है: कोई वस्तु तब तक अपनी गति की अवस्था में या स्थिर अवस्था में बनी रहेगी, जब तक कि उस पर किसी असंतुलित बल से क्रिया नहीं की जाती है.\n\nजब कोई असंतुलित बल किसी वस्तु को हिलाने का कारण बनता है, तो हम कहते हैं कि वह वस्तु त्वरण करती है: उसके वेग में बदलाव, वेग में कमी या दिशा में बदलाव के ज़रिए उसकी गति या चाल में बदलाव आता है. त्वरण का मापन समय में गति (मीटर प्रति सेकंड) में हुए बदलाव या मीटर प्रति सेकंड वर्ग (m/s²) के रूप में किया जाता है.\n\nचाल में हुए इन बदलावों को मापने का डिवाइस—एक्सलरोमीटर आपके फ़ोन में मौजूद है. एक्सलरोमीटर के अंदर, गति करने के लिए स्वतंत्र कम द्रव्यमान वाली निलंबित वस्तुएं होती हैं. गति में होने वाले बदलावों के कारण ये वस्तुएं बहुत कुछ वैसे ही स्थानांतरित होती हैं, जैसे कार में होने के दौरान उसके अचानक रुक जाने पर आपका सिर आगे की ओर झुक जाता है. सूक्ष्म रूप से होने वाले इन जड़त्व संबंधी स्थानांतरणों को माप कर फ़ोन में मौजूद एक्सलरोमीटर चाल और स्क्रीन की दिशा में हुए उन बदलावों का पता लगा सकता है, जो स्क्रीन को लैंडस्केप से पोर्ट्रेट मोड में बदलने, आपके फ़ोन पर गेम खेलने और अन्य कार्यों के लिए उपयोगी है.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "संयुक्त लीनियर एक्सीलरोमीटर सेंसर गुरुत्वाकर्षण को छोड़कर फ़ोन के सभी तीन अक्षों में कुल त्वरण रिकॉर्ड करता है.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "आपके फ़ोन में एक ऐसा डिवाइस है, जिसे चुंबकीय क्षेत्रों का पता लगाने के लिए डिज़ाइन किया गया है: मैग्नेटोमीटर. यह तीन-अक्षों वाला सेंसर, तीन आयामों वाले स्थान पर चुंबकीय क्षेत्र की शक्ति का पता लगाने के लिए विद्युत धाराओं का उपयोग करता है. सभी तीन अक्षों के डेटा को मिलाकर हम कुल चुंबकीय क्षेत्र शक्ति सेंसर बना सकते हैं.\n\nकुछ मैग्नेटोमीटर, हाल प्रभाव का उपयोग करके चुंबकीय क्षेत्रों का पता लगाते हैं—जो कि चलते हुए आवेश के प्रवाहित होते समय उसे विक्षेपित करने की चुंबकीय क्षेत्र की प्रवृत्ति होती है. नए मैग्नेटोमीटर मैग्नेटोरज़िस्टर पर निर्भर होते हैं, जो ऐसी मिश्र धातुएं हैं जो चुंबकीय क्षेत्रों की प्रतिक्रिया में अपने प्रतिरोध में बदलाव करती हैं.\n\nफ़ोन में मैग्नेटोमीटर की ज़रूरत क्यों होती है? किसी स्थान पर आपके स्क्रीन की दिशा की जानकारी होना, अंतर्निहित कम्पास और नेविगेशन ऐप्लिकेशन, विशेष रूप से उन ऐप्लिकेशन के लिए उपयोगी होता है, जो मोड़-दर-मोड़ दिशानिर्देश देने की कोशिश करते हैं.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "चुंबक, विद्युत धाराएं और धातु की वस्तुएं आपके फ़ोन के मैग्नेटोमीटर को आसानी से इधर-उधर विचलित कर देंगी. लेकिन खाली क्षेत्र के दौरान भी आपके फ़ोन का मैग्नेटोमीटर हमेशा कम या गैर-शून्य रीडिंग दिखाता है. यह पृथ्वी का चुंबकीय क्षेत्र है!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "कंपन से ध्वनियां बनती हैं. जैसे कि आपकी आवाज़ आपके कंठ की स्वरतंत्री में हुए कंपनों से आती है. ये कंपन उच्च और निम्न वायु दबाव के एकांतर क्षेत्र बनाते हैं जो बाहर की ओर गति करते हैं—बहुत कुछ वैसे ही जैसे किसी तालाब में पत्थर फेंकने पर विस्तारित होती हुई गोलाकार लहरें बनती हैं.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "सभी ध्वनियों को उनकी आवृत्ति और तीव्रता के रूप में बताया जा सकता है. किसी ध्वनि तरंग की आवृत्ति (इसे पिच या टोन भी कहा जाता है) उसके कंपन की दर के समान होती है. कोई वस्तु जितनी तेज़ी से कंपन करती है, परिणामी ध्वनि की पिच उतनी ही ज़्यादा होती है. हम इन कंपनों को हर्ट्ज़ (Hz) में मापते हैं, जहां 1 हर्ट्ज़ = 1 कंपन /सेकंड है.\n\nमनुष्य 20 से 20,000 Hz की ध्वनियों को सुन सकता है.किसी पियानो की सबसे कम निचली कुंजी 27.5 Hz की आवृत्ति पैदा करती है और सबसे ऊपर की कुंजी 4186.01 Hz की आवृत्ति पैदा करती है.\n\nलाल बिंदु यह बताता है कि पता लगाई गई पिच किसी नज़दीकी संगीत नोट के कितने करीब है. अगर पिच कम या “फ़्लैट” है, तो बिंदु बाईं ओर दिखाई देगा. अगर पिच ज़्यादा या “तेज़” है, तो लाल बिंदु दाईं ओर दिखाई देगा.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "यहांं प्रदर्शित डेटा ब्लूटूथ के ज़रिए आपके फ़ोन के साथ बाहरी सेंसर के संचार से आ रहा है. \n\nमान आपके माइक्रोकंट्रोलर से सीधे असंसाधित रीडिंग का प्रतिशत दर्शाता है. यह आमतौर पर सेंसर में वोल्टेज की गिरावट का प्रतिशत होता है.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "ब्लूटूथ, नियत और मोबाइल डिवाइस से कम दूरियों पर डेटा का आदान-प्रदान करने के लिए रेडियो तरंगों का उपयोग करने वाला वायरलेस तकनीक मानक है.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "परिक्रमण प्रति मिनट (RPM) एक मिनट में किसी नियत अक्ष के चारों ओर परिक्रमण की आवृत्ति है.\n\nजैसे ही आपका विंड स्पिनर घूमता है, यह एन्कोडर डिस्क को घुमाती है:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "यह सेंसर पर प्रकाश और अंधेरे की अवधि बनाता है, जिसे विज्ञान शोध पत्रिका में परिक्रमण के रूप में पंजीकृत किया गया है.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "यहांं प्रदर्शित डेटा आपके फ़ोन के ब्लूटूथ के ज़रिए बाहरी सेंसर संचार से आ रहा है.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "ब्लूटूथ, नियत और मोबाइल डिवाइस से कम दूरियों पर डेटा का आदान-प्रदान करने के लिए रेडियो तरंगों का उपयोग करने वाला वायरलेस तकनीक मानक है.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "मी/से² में बाईं और दाईं ओर फ़ोन का त्वरण";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "मी/से² में आगे और पीछे की ओर फ़ोन का त्वरण";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "मी/से² में ऊपर और नीचे फ़ोन का त्वरण";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "हेक्टोपास्कल (hPa) में मापा गया वायुमंडलीय दाब.";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "एक बाहरी सेंसर कस्टम सेटिंग के आधार पर यहां अपना डेटा प्रदर्शित कर रहा है.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "प्रकाश की EV में मापी गई मात्रा, सामने वाले कैमरे तक पहुंच रही है.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "पृथ्वी के चुंबकीय क्षेत्र के संबंध में फ़ोन के स्क्रीन की दिशा.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "ध्वनि की डेसिबल (dB) में मापी गई तीव्रता, ध्वनि सेंसर या माइक्रोफ़ोन पर पहुंच रही है.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "गुरुत्वाकर्षण के बल को छोड़कर, m/s² में फ़ोन का कुल त्वरण";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Microtesla में परिवेशी भूचुंबकीय क्षेत्र की शक्ति.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "किसी ध्वनि सेंसर या माइक्रोफ़ोन तक पहुंचने वाली ध्वनि के पिच का मापन हर्ट्ज़ (Hz) में किया जाता है.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "बाहरी सेंसर से पढ़े जा रहे असंसाधित मान का प्रतिशत.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "प्रति मिनट परिक्रमणों की संख्या";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "एक परीक्षण सेंसर जो एक साइन तरंग बनाता है.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "रिकॉर्डिंग में अगला सेंसर";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "रिकॉर्डिंग में पिछला सेंसर";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "असंसाधित";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "परिक्रमण";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "रिकॉर्डिंग करते समय सेंसर में बदलाव नहीं कर सकते हैं";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "ट्रिगर हटाया गया";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "ऑडियो और चमक सेंसर माइक्रोफ़ोन और अगले कैमरे का इस्तेमाल करते हैं, जो विज्ञान शोध पत्रिका के बैकग्राउंड में होने पर रिकॉर्ड नहीं करता है. अगर रिकॉर्डिंग के लिए आपके पास यह सेंसर हैं और ऐप बैकग्राउंड में चल रहा है, तो ऐसी स्थिति में डेटा तब तक रिकॉर्ड नहीं होगा जब तक आप ऐप पर लौट नहीं आते हैं.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "ऑडियो और चमक सेंसर माइक्रोफ़ोन और सामने के कैमरे का इस्तेमाल करते हैं, जो विज्ञान शोध पत्रिका के बैकग्राउंड में होने पर रिकॉर्ड नहीं करता है.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "इस सेंसर के बारे में एक नोट";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "चमकदार सेंसर पिक्चर में पिक्चर वीडियो देखते समय या स्प्लिट व्यू मोड में विज्ञान शोध पत्रिका का उपयोग करते समय इस्तेमाल में नहीं लाया जा सकता है.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "वोल्टेज";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "प्रयोग में उपयोग करने के लिए सेंसर चुनें";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "सेंसर सूची छोटी करें";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "सेंसर सूची बड़ी करें";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "आपको विज्ञान शोध पत्रिका का इस्तेमाल करने की इजाज़त नहीं है";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "आपके डोमेन एडमिन को Google Admin console में विज्ञान शोध पत्रिका चालू करनी होगी.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "खाते बदलें";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "डेटा अनाम है और इस ऐप्लिकेशन के सुधार में सहायता करता है.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Google को ऐप डेटा उपयोग भेजें";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "ओपन सोर्स लाइसेंस";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "निजता नीति";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "सेवा की शर्तें";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "वर्शन";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "विज्ञान शोध पत्रिका की वेबसाइट";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "विकल्प दिखाएं";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "%1$@, %2$@ के रूप में साइन इन हैं.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "खाते प्रबंधित करने के लिए खोलें";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "एक खाता चुनें";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "साइड बार मेन्यू";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "ऐप्लिकेशन विकल्पों वाले साइड बार मेन्यू खोलता है";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "साइन इन करें";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "साइन तरंग";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "साइन";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "नोट हटाया गया";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "पूर्ववत करें";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "स्नैपशॉट";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "प्रयोग में सभी मौजूदा निरीक्षण किए गए सेंसरों के मान का स्नैपशॉट जोड़ता है";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "स्नैपशॉट नहीं लिया जा सकता है क्योंकि एक या इससे ज़्यादा सेंसर डिसकनेक्ट हैं. कृपया फिर से कोशिश करें.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "स्नैपशॉट विवरण";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "स्नैपशॉट जोड़ा गया";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "कम से कम";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "अधिकतम";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "औसत";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "कैमरा स्विच करें";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "चालू";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "बंद";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "रिकॉर्डिंग को एक सेकंड से कम के लिए क्रॉप नहीं किया जा सकता";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "मान्य फ़ॉर्मेट का उपयोग करें, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "नया समय (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "समय रिकॉर्डिंग सीमा के अंदर होना ज़रूरी है";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°‪से";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "टेक्स्ट नोट में बदलाव करें";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "लिखित नोट";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "कोई निरीक्षण जोड़ें";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "नोट जोड़ा गया";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "रिकॉर्डिंग जारी है";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "टूल ड्रॉवर में निरीक्षण टैब पर स्विच करने के लिए दो बार टैप करें";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "सेंसर सेटिंग";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "प्रयोग करने के लिए";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "रिकॉर्डिंग के लिए";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "इसका उपयोग करके मुझे सूचना दें";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "ध्वनि";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "ट्रिगर का विवरण";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "%@ ट्रिगर में बदलाव करें";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "नया %@ ट्रिगर";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "ट्रिगर सक्रिय किया गया";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "कंपन";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "इसके लिए ट्रिगर किया गया";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "जब सेंसर इससे ज़्यादा पर हो";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "जब मान इतना हो";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "जब सेंसर इससे कम हो";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "इससे कम हो जाने पर";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "इससे ज़्यादा होने पर";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "ट्रिगर नोट जोड़ा गया";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "आपके नोट में क्या बताया जाना चाहिए?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "डिफ़ॉल्ट नोट टेक्स्ट";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "केवल रिकॉर्ड करते समय ट्रिगर करें";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "मुझे सूचना दें";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "ट्रिगर का प्रकार";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "नोट बनाएं";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "रिकॉर्डिंग प्रारंभ करें";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "रिकॉर्डिंग बंद करें";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "ट्रिगर का मान";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "विज़ुअल नोटिफ़िकेशन";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "इससे ज़्यादा था";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "इस निर्दिष्ट ट्रिगर मान पर";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "इससे कम था";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "इससे कम हुआ मान";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "इससे कम हो जाने पर";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "इससे ज़्यादा होने पर";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "इससे कम होने पर";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "इस समय ट्रिगर करें";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "इससे ज़्यादा होने पर";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "इससे ज़्यादा बढ़ा हुआ मान";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "ट्रिगर में बदलाव करें";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "बहुत सारे ट्रिगर सक्रिय हैं, इसलिए उन्हें बंद कर दिया गया है";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "प्रयोग संग्रह से बाहर निकल गया.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "रिकॉर्डिंग को संग्रह से बाहर निकाला गया.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "अज्ञात सेंसर";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "शीर्षक रहित";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "अपने आस-पास की दुनिया पर प्रयोग करने के लिए विज्ञान शोध पत्रिका का इस्तेमाल करें";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "हम इस विज्ञान शोध पत्रिका और आपके डिवाइस के बारे में कुछ जानकारी जमा करेंगे (केवल हार्डवेयर और iOS वर्शन—कोई व्यक्तिगत या पहचान योग्य जानकारी नहीं!) फिर इसे ईमेल में अटैच करें और हमें भेज दें.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "हमें आपके विचार जानकर अच्छा लगेगा";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "हमें सुझाव भेजें";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "वीडियो स्ट्रीम";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

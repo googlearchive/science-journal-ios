@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Jaunas funkcijas un uzlabojumi.\n• Pierakstieties savā Google kontā, lai saglabātu un piekļūtu eksperimentiem savās ierīcēs, izmantojot Google diska kontu. Tuvākajās nedēļās šī funkcija būs pieejama visiem lietotājiem. Lietotni Science Journal joprojām var izmantot nepierakstoties.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Daudz veiktspējas uzlabojumu un kļūdu labojumu";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal no Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Izpētiet pasauli";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Lietotne Science Journal ir bezmaksas digitālais zinātnisko darbu bloknots, ko piedāvā Google.\n\nNeatkarīgi no tā, vai esat dabaszinātņu skolotājs vai veicat eksperimentus mājās hobija līmenī, šeit varat vienuviet ērti uzglabāt piezīmes, fotoattēlus un novērojumus. Izmantojiet sava iPhone vai iPad sensorus, lai mērītu dažādas parādības, piemēram, gaismu, skaņu un kustību, un veidotu diagrammas, vai pievienojiet ārējos sensorus, izmantojot Bluetooth savienojumu, lai veiktu eksperimentus apkārtējā pasaulē.\n\nAr lietotni Science Journal varat veikt tālāk norādītās darbības.\n• Mērīt gaismu, skaņu, paātrinājumu, gaisa spiedienu un vēl citus lielumus, izmantojot ierīcē iebūvētos sensorus.\n• Veikt piezīmes un uzņemt fotoattēlus, lai dokumentētu savus zinātniskos eksperimentus. Drīzumā būs pieejami jauni piezīmju veidi!\n• Veidot savienojumu ar ārējiem sensoriem, izmantojot atsevišķas Arduino ierīces, kurās ir iespējota Bluetooth funkcija.\n• Izveidot automatizētus aktivizētājus, lai ierakstītu datus un veiktu piezīmes.\n• Izmantot skaņas signālus, lai dzirdētu, kad diagrammā notiek izmaiņas.\n\nPaziņojums par atļaujām.\n• Bluetooth: nepieciešams, lai meklētu sensoru ierīces, izmantojot Bluetooth.\n• Kamera: nepieciešama, lai uzņemtu fotoattēlus eksperimentu dokumentēšanai, kā arī spilgtuma sensoram.\n• Fotoattēlu bibliotēka: nepieciešama, lai uzglabātu fotoattēlus, kas uzņemti eksperimentu dokumentēšanai, kā arī pievienotu eksperimentiem fotoattēlus no bibliotēkas.\n• Mikrofons: nepieciešams skaņas intensitātes sensoram.\n• Informatīvie paziņojumi: nepieciešami, lai informētu jūs par ierakstīšanas statusu, kad lietotne darbojas fonā.\n\nIzglītojošas aktivitātes no mūsu partneriem:\nhttps://makingscience.withgoogle.com/science-journal/activities\nAtbalsts: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,science,izglītība,stem,eksperimenti,sensori,diagrammas,journal,bloknots,piezīmes";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "X ass akselerometrs";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Y ass akselerometrs";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Z ass akselerometrs";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Par";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Pievienot parakstu";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Arhivēt";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Arhivēt eksperimentu";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Arhivēt ierakstu";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Atcelt";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Labi";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Dzēst";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Dzēst eksperimentu";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Dzēst ierakstu";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Dzēst attēlu";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Dzēst momentuzņēmumu";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Dzēst teksta piezīmi";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Dzēst piezīmi";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Atmest";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Nerādīt";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Rediģēt";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Atsauksmes";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Rādīt arhivētos eksperimentus";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Līmenis";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "Labi";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Ziņot";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Mēģināt vēlreiz";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Lineāls";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Saglabāt";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Iestatījumi";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Atarhivēt";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Atarhivēt eksperimentu";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Atarhivēt ierakstu";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Atsaukt";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Skatīt sīkāku informāciju";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Pievienot piezīmi laika skalai";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Pievienojiet jaunu piezīmi";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Pievienot fotoattēlu";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Pievienot attēlu";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Pievienot piezīmi";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Apkārtējā gaisma";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lukss";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitūda";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Apkārtējās vides temp.";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Arhivēts";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Arhivētos eksperimentus nevar pārveidot, bet var dzēst";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Eksperiments ir arhivēts.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Ieraksts ir arhivēts.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Pieejamās ierīces";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Atpakaļ";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Atgriezties iepriekšējā skatā";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometrs";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Izveidot aktivizētāju";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Pievienot jaunu sensora kartīti";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Atmest izmaiņas";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Saglabāt izmaiņas";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Paturēt";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Dzēst";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Jauns eksperiments";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Sākt ierakstīšanu";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Pāriet atpakaļ uz pašreizējo laiku";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Aizvērt kartīti";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Apturēt ierakstīšanu";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Uzņemt fotoattēlu";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Kamera. Uzņemiet fotoattēlu, ko pievienot šim eksperimentam";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Jums ir jāievada skaitliska vērtība, pie kuras šis aktivizētājs nostrādās.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Diagrammas atskaņošanas vadīkla";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Pārvieto diagrammas atskaņošanas pozīciju un nolasa attiecīgās pozīcijas vērtību";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Reāllaika diagramma";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Pārvietot pa kreisi";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Pārvietot pa labi";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Pārvietots";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Diagramma";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Tuvināt";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Tālummaiņas līmenis";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Veikt tālummaiņu, lai ietilpinātu";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Tālināt";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Izvēlēties fotoattēlu";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Pieprasīt visus eksperimentus";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Pieprasīt visus";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Pievienošana Google diskam";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Vai pievienot atlikušo eksperimentu Google diskam (%@)?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Vai pievienot %1$@ atlikušos eksperimentus Google diskam (%2$@)?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Pieprasīt visus atlikušos eksperimentus";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Vai visus eksperimentus pievienot Google diskam?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Vai pieprasīt visus eksperimentus?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Pievienot eksperimentu Google diskam";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Eksperimentus nevar rediģēt, un tie tiek saglabāti ierīcē, līdz tiek pieprasīti vai dzēsti.";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Eksperimentu pievienošana Google diskā";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Pieteikties uz eksperimentiem";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Dzēst šo eksperimentu";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Dzēst visus eksperimentus";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Vai dzēst atlikušo eksperimentu?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Vai dzēst %ld atlikušos eksperimentus?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Dzēst visus atlikušos eksperimentus";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Vai dzēst visus eksperimentus?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Tiks dzēsti visi eksperimenti šajā ierīcē, tostarp arhivētie eksperimenti. Šo darbību nevarēs atsaukt.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Dzēst visu";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Šajā ierīcē ir %ld eksperimenti, uz kuriem neesat pieteicies";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Šajā ierīcē ir viens eksperiments, uz kuru neesat pieteicies";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Kopīgot šo eksperimentu, kas nav pieprasīts";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Nepietiek vietas, lai pieprasītu eksperimentu";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Nepietiek vietas, lai pieprasītu eksperimentus";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Eksperim. nevarēja pieprasīt.";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Eksperim. nevarēja pieprasīt.";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Vai pieprasīt eksperimentu?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Pieprasīt eksperimentu";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Vai šo eksperimentu pievienot Google diskam kontā %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Pievienots kontam %@.";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Pieteikšanās — jau veiktie eksperimenti";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Eksperimentu pieprasīšana";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Aizvērt";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Atgriezties iepriekšējā skatījumā";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Kompass";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "grādi";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Vadītājs";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Turpināt bez pierakstīšanās";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "ierobežojuma beigas:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Nevarēja saglabāt ierobežojuma datus:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Pārvietot ierobežojuma beigu marķieri pa kreisi";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Pārvietot ierobežojuma beigu marķieri pa labi";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Pārvietot ierobežojuma sākuma marķieri pa kreisi";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Pārvietot ierobežojuma sākuma marķieri pa labi";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Citas opcijas";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Ieraksts ir ierobežots";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Ieraksta datus nevar ierobežot ārpus sākotnēji reģistrētā diapazona";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Ieraksta ilgumu nevar ierobežot līdz mazāk nekā vienai sekundei";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Ierobežot";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "ierobežojuma sākums:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Pašreizējā vērtība";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Skaņas intensitāte";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Eksperiments bez nosauk.";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Noklusējums";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Vai tiešām vēlaties dzēst šo eksperimentu? Visi ieraksti un piezīmes tiks dzēstas.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Vai dzēst šo eksperimentu?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Dzēst";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Vai dzēst šo ierakstu?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Eksperiments ir dzēsts.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Ieraksts ir dzēsts.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Sīkāka informācija";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Spraudīte";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Biežums";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Saglabāt sensora iestatījumus.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensors";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Atspējot automātisko skalu";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Lai rediģētu, veiciet dubultskārienu";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Lai atvērtu, veiciet dubultskārienu";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Lai atlasītu, veiciet dubultskārienu.";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Lai pārslēgtu, veiciet dubultskārienu";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Lai skatītu detalizētu informāciju, veiciet dubultskārienu";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Rīku atvilktnes satvērējs";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Pielāgojiet rīku atvilktnes lielumu. Ir pieejamas darbības.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "slēgta";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "notiek rediģēšana";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "pilnekrāna režīms";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "puse ekrāna";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Nevar izveidot savienojumu ar Google disku. Pārbaudiet savienojumu";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Nav savienojuma ar tīklu";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Lietotne Science Journal nevar izveidot savienojumu ar Google disku. Iespējams, daži eksperimenti netiks dublēti.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Šobrīd lietotne Science Journal nevar izveidot savienojumu ar Google disku. Vēlāk mēģinās vēlreiz.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google diskā nav pietiekami daudz vietas, lai saglabātu jūsu eksperimentu.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Lietotnes Science Journal eksperimentu dati tiek saglabāti un ir pieejami vairākās ierīcēs, izmantojot Google disku (ir jāpierakstās ar Google kontu).\n\nJa jums šajā ierīcē jau ir dati, pēc pierakstīšanās savus eksperimentus varat saglabāt Google diskā. Eksperimenti tiek glabāti Google diska mapē “Science Journal”.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Nevar sasniegt Google disku. Pārbaudiet savienojumu.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Rediģēt beigu laiku";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Rediģēt sākuma laiku";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Rediģēt eksperimentu";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Mainīt eksperimenta nosaukumu vai fotoattēlu";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Nesaglabātas izmaiņas";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Vai tiešām nevēlaties saglabāt šajā eksperimentā veiktās izmaiņas?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Fotoattēla maiņa";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Eksperimenta rediģēšana";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Rediģēt laiku";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Rediģēt piezīmes laiku";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Rediģēt ieraksta beigu laiku";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Rediģēt ieraksta sākuma laiku";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Rediģēt ierakstu";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Mainīt ieraksta nosaukumu";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Ieraksta nosaukums";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Vēl nav neviena novērojuma";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Jums nav neviena eksperimenta";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Aktivizētāji nav iestatīti";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Iespējot automātisko skalu";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Neviens eksperiments netiks pievienots Google diskam.";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Visu eksperimentu dzēšana";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Visi eksperimenti tiks pievienoti Google diskam.";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Visu eksperimentu saglabāšana";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Izvēlieties, kurus eksper. saglabāt Google diskā.";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Saglabājamu eksperimentu izvēle";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Laipni lūdzam atpakaļ! Pašlaik šajā ierīcē ir saglabāti %ld eksperimenti.\n\nLai turpinātu, atlasiet kādu opciju.";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Laipni lūdzam! Pašlaik šajā ierīcē ir saglabāts 1 eksperiments.\n\nLai turpinātu, atlasiet opciju.";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Dublēšana Google diskā";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Eksperiments";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Eksperimenti";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Datu kopīgošana";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Nav pabeigta šī eksperimenta lejupielāde. Ja kopīgosit kopiju, daži dati var nebūt pieejami.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Notiek lejupielāde";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Notiek ierakstīšana...";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Eksperimenta nosaukums";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Šis eksperiments tika izveidots ar jaunāku Science Journal versiju. Jūs to nevarēsit rediģēt šajā ierīcē, kamēr nebūs lejupielādēts atjauninājums.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Sakārtojiet idejas un novērojumus, veicot piezīmes, ierakstot datus vai uzņemot fotoattēlus";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Jauna eksperimenta izveide";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Izpētiet pasauli";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Kopīgošana";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Neizdevās eksportēt.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Eksperimenta sūtīšana";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relatīvais laiks";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Eksportēšana...";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Fotoattēla kopīgošana ar…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Laipni lūdzam lietotnē Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Pievienojiet piezīmes un reģistrējiet datus, izmantojot tālāk pieejamo rīkjoslu.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Laipni lūdzam lietotnē Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Šeit varat atrast aktivitātes, ko izmēģināt:\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Atmest šo ierīci";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Pilnekrāna režīms";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Sākt darbu";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Iespējot audio";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Atspējot audio";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Informācija par sensoru.";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Diemžēl radās nezināma kļūda.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Importēšana neizdevās. Radās problēma ar šo eksperimentu.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Pašlaik tiek izmantota lietotne Science Journal. Lūdzu, pārtrauciet ierakstīšanu un mēģiniet vēlreiz.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Pierakstieties, lai importētu eksperimentu.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Krātuvē nepietiek vietas";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Iestatījumos varat pārvaldīt savu krātuvi.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Rādīt arhivētos ierakstus";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Atvērt iestatījumus";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Kameru nevar izmantot, jo ierakstāt ar spilgtuma sensoru, kas mēra datus, izmantojot priekšējo kameru.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Kameru nevar izmantot, jo jūs skatāties videoklipu, izmantojot funkciju “attēls attēlā”, vai izmantojat lietotni Science Journal dalītā skatījuma režīmā.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Skatīt sensorus";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Kameru nevar izmantot, jo lietotne Science Journal nevar tai piekļūt.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Fotoattēlu bibliotēku nevar izmantot, jo lietotne Science Journal nevar tai piekļūt.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Uzzināt vairāk";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Uzzināt vairāk";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Lineārais akselerometrs";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Veiktspējas uzlabojumi un kļūdu labojumi.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Jaunas funkcijas.";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Skaņas toņa sensors.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Eksperimentu eksportēšana uz failu un importēšana uz citām ierīcēm.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Fotoattēlu eksportēšana no eksperimenta.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Skatīt vairāk piezīmju";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometrs";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Izvēlne";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Parāda izvēlni ar citām opcijām";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Audio iestatījumi";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Rediģēt aktivizēšanu";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Iestatīt slēdžus";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Manas ierīces";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Nosaukuma piešķiršana šim eksperimentam";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Aktivitātes";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Eksperimenti";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Iestatījumi";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Pievienojiet aprakstu";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Apraksts";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Attēla piezīme";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Teksta piezīme";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Aktivizētāja piezīme";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Momentuzņēmuma piezīme";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Piezīmes";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Piezīme ir pievienota";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Piezīmes. Pievienojiet teksta piezīmi šim eksperimentam";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Novērošana. Izmantojiet sensorus, lai pievienotu šim eksperimentam vērtību momentuzņēmumus vai ierakstus.";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Nevar atvērt eksperimentu";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Nevar atvērt failu";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Eksperimentiem jābūt Science Journal failā formātā (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Pārtraukt";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Procenti";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Esam pabeiguši atļauju pārbaudi. Ja kādreiz jums būs jāmaina šīs atļaujas, varat to jebkurā laikā paveikt iOS lietotņu iestatījumu sadaļā Science Journal.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Tagad pārbaudīsim kameru piekļuves atļauju. Mēs izmantojam priekšējo kameru spilgtuma sensora darbībai, un jūs varat izmantot jebkuru kameru fotoattēlu piezīmju pievienošanai eksperimentiem un ierakstiem.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Turpināt";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Vispirms mums ir jāpārbauda atļaujas, lai varētu iespējot aparatūras sensorus, kameru un fotoattēlu bibliotēku. Mēs izskaidrosim, kā izmantojam katru atļauju.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Pēc tam pārbaudīsim mikrofona piekļuves atļauju. Mikrofons tiek izmantots audio sensoriem. Audio saturs netiek ierakstīts, uzglabāts vai pārsūtīts; tiek mērīta tikai skaņas intensitāte vai tonis.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Vispirms mēs pārbaudīsim informatīvo paziņojumu sūtīšanas atļauju. Paziņojumi tiek izmantoti, lai informētu tikai par ierakstīšanas beigām, ja ierakstīšanas laikā lietotne darbojas fonā.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Visbeidzot mēs pārbaudīsim fotoattēlu bibliotēkas piekļuves atļauju, lai jūs varētu pievienot jau uzņemtos fotoattēlus eksperimentiem un ierakstiem, kā arī varētu saglabāt fotoattēlus bibliotēkā.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Aiziet";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Gatavs!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Pārbaudīt atļauju";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Laipni lūdzam lietotnē Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Fotoattēls šādam eksperimentam:";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Fotoattēls";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Diskā nepietiek vietas, lai pievienotu fotoattēlu";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Iekšējie sensori";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Fotoattēlu bibliotēka. Pievienojiet šim eksperimentam fotoattēlu no savas bibliotēkas";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Informācija";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Ierīce";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Izmēri";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Piezīmes";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Slēdža ātrums";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Fotoattēls ir pievienots";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Tonis";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "Par %1$@ pustoņiem zemāks nekā %2$@ bemols, %3$@. oktāva";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "Par %1$@ pustoņiem zemāks nekā %2$@, %3$@. oktāva";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "Par %1$@ pustoņiem zemāks nekā %2$@ diēzs, %3$@. oktāva";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ bemols, %2$@. oktāva";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "augsts tonis";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "zems tonis";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@. oktāva";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ diēzs, %2$@. oktāva";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "Par %1$@ pustoņiem augstāks nekā %2$@ bemols, %3$@. oktāva";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "Par %1$@ pustoņiem augstāks nekā %2$@, %3$@. oktāva";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "Par %1$@ pustoņiem augstāks nekā %2$@ diēzs, %3$@. oktāva";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pikseļi";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Atskaņot";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Esošie ierīces iestatījumi ir piemēroti šim kontam";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Notiek atsvaidzināšana";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Nevar sākt ierakstīšanu";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Viens vai vairāki sensori ir atvienoti. Lūdzu, mēģiniet vēlreiz.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Lai skatītu ierakstītos datus, atveriet lietotni Science Journal.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Ierakstīšana ir beigusies.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Turpināt";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Atcelt ierakstīšanu";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Viens vai vairāki sensori neierakstīja datus. Vai vēlaties atcelt šo ierakstu?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Dati netiek ierakstīti";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Ierakstīšana ir pārtraukta";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Lai turpinātu ierakstīšanu, atveriet lietotni Science Journal.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Drīz beigsies ierakstīšana.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Turpināt ierakstīšanu";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Apturēt ierakstīšanu";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Noņemt titulattēlu";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Tiks noņemts šī eksperimenta titulattēls.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Vai tiešām vēlaties noņemt titulattēlu? Šo darbību nevar atsaukt.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Titulattēls ir noņemts.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Nevarēja noņemt titulattēlu.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Ieraksts ir pievienots";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Ieraksts";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Šī ieraksta pārdēvēšana";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Vai tiešām vēlaties dzēst šo ierakstu? Ierakstītie dati un piezīmes tiks dzēsti.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Ilgums";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Pārskatīt";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Saglabāt";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Saglabāt izmaiņas un atgriezties iepriekšējā skatījumā";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Eksperimenta saglabāšana";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Vai vēlaties pievienot šo eksperimentu savai bibliotēkai?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Saglabāt lietotnē Faili";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Parāda dokumentu pārlūku, ļaujot saglabāt šī faila kopiju ierīces mapē.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Fails ir saglabāts";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Faili ir saglabāti";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Failu nevarēja saglabāt. Lūdzu, mēģiniet vēlreiz.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Failus nevarēja saglabāt. Lūdzu, mēģiniet vēlreiz.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Skala";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Atlasīt piezīmes laikspiedolu diagrammā";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Nosūtīt kopiju";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Iestatījumi";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Spilgtums";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Spilgtuma sensoru nevar izmantot, jo lietotne Science Journal nevar piekļūt kamerai.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Neizdevās ielādēt sensora datus";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Notiek sensora datu ielāde...";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Audio sensorus nevar izmantot, jo lietotne Science Journal nevar piekļūt mikrofonam.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Pielāgots";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Objektiem ir tendence palikt miera stāvoklī vai turpināt kustību, ja tie jau atrodas kustībā. Šo tendenci dēvē par inerci. Pirmais Ņūtona likums formulē to šādi: objekts nemaina savu stāvokli (miera vai kustības), ja uz to neiedarbojas ārējais spēks.\n\nJa ārējais spēks izraisa objekta kustību, mēs sakām, ka objekts tiek paātrināts: tā ātrums mainās — kustība vai nu paātrinās, vai palēninās, vai mainās tās virziens. Paātrinājumu mēra kā ātruma izmaiņas laikā (metros sekundē) vai kā metrus pret sekundēm kvadrātā (m/s²).\n\nJūsu tālrunis ir aprīkots ar ierīci, kas mēra šīs kustības izmaiņas, — akselerometru. Akselerometra iekšpusē ir novietoti nelieli saistīti atsvari, kas var brīvi kustēties. Izmaiņas kustībā izmaina šo atsvaru savstarpējo stāvokli, gluži tāpat kā jūsu galva strauji sasveras uz priekšu, kad automašīna pēkšņi apstājas. Fiksējot šīs niecīgās inerces izmaiņas, tālruņa akselerometrs var noteikt izmaiņas kustībā un orientācijā, kas noder, mainot ekrāna orientāciju no ainavas uz portreta režīmu, spēlējot spēles tālrunī, kā arī citām funkcijām.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Iespējams, esat ievērojis paātrinājumu Z asij pat tad, kad tālrunis atrodas uz galda. Tas ir paātrinājums, ko izjūtam uz Zemes virsmas tās gravitācijas dēļ, un tas ir apmēram 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Lai gan ikdienā to neievērojam, mēs dzīvojam dziļa gaisa okeāna dibenā: Zemes atmosfērā, kuras augstums ir 40 kilometru. Svaru, ar kuru šī gaisa masa iedarbojas uz mums no augšas, dēvē par atmosfēras spiedienu.\n\nJūras līmenī atmosfēras spiediens ir aptuveni 1 kg uz kvadrātcentimetru jeb aptuveni 590 kg uz parastas A4 formāta lapas laukumu.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Mēs šo milzīgo spiedienu neievērojam, jo esam pie tā pieraduši, taču tikko tas kaut nedaudz izmainās, piemēram, kāpjot kalnos vai lidojot lidmašīnā, mēs uzreiz to sajūtam. Atmosfēras spiediens arī svārstās, mainoties laika apstākļiem — samazinās vējainā laikā un pie nestabilām gaisa plūsmām, bet pieaug, kad gaisa masas stabilizējas un debesis ir skaidras.\n\nDigitālais barometrs jūsu tālrunī mēra atmosfēras spiedienu hektopaskālos. (Hektopaskālā ir 100 paskāli, un paskāls ir vienu ņūtonu liels spēks, kas darbojas uz vienu kvadrātmetru lielu laukumu.) Iespējams, esat dzirdējis, ka laika prognozēs izmanto arī atmosfēras spiediena mērvienību milibārus — šī mērvienība ir līdzvērtīga hektopaskāliem.\n\nJums droši vien rodas jautājums: kā tālrunis var noteikt spiedienu? Atmosfēras spiediena izmaiņas ir izmērāmas pat pie nelielām augstuma izmaiņām, piemēram, kāpjot pa kāpnēm. Līdz ar to digitālais barometrs tālrunī var noteikt jūsu atrašanās vietas izmaiņas, piemēram, kurā ēkas stāvā atrodaties, vai arī parādīt, vai braucat pa tilta augšējo vai apakšējo klāju.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Ar priekšējo kameru mēra spilgtumu ar mērvienību EV (ekspozīcijas vērtība). Šis mērījums balstās uz kameras slēdža ātrumu, f skaitli un ISO vērtību, un to nosaka reģistrētais pikseļu spilgtums atbilstoši šiem iestatījumiem.\n\nJo lielāka uztvertā spilgtuma vērtība, jo augstāka ir iegūtā EV vērtība. Tumsā tiks reģistrētas negatīvas vērtības.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Tā kā EV ir mērījums, kas balstās uz kameras optiku un sensoriem, aparatūra un programmatūra ierobežo vērtību diapazonu. Apkārtējās gaismas sensors var ierakstīt luksu vērtības tieši, bet priekšējai kamerai ir jāizmanto f skaitlis, ISO vērtība un slēdža ātrums, lai noteiktu mērījuma sākumpozīciju, pēc tam jānosaka EV, balstoties uz pikseļu rādījumiem pēc attēlu uzņemšanas. Ņemot vērā šo procesu, EV vērtības var atšķirties dažādām ierīcēm, ja atšķiras to f skaitļa sliekšņi, piemēram, tālrunim iPhone 8 (f skaitlis ir 1,8) un planšetdatoram iPad (f skaitlis ir 2,4).\n\nTā kā EV vērtību nosaka, mērot uztverto pikseļu spilgtuma vērtību, apkārtējās gaismas avoti radīs daudz zemāku vērtību nekā tad, ja infrasarkanais sensors būtu noteicis luksu vērtību. Mērījumi ir tieši atkarīgi no kameras pozīcijas un uzņemamā objekta.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Iespējams, jau zinājāt, ka Zemei ir magnētiskais lauks. Bet varbūt nezinājāt, ka jūsu tālrunī ir ierīce, kas ir paredzēta magnētisko lauku noteikšanai: magnetometrs. Apvienojot datus no tālruņa magnetometra ar tālruņa orientāciju telpā, var izveidot digitālo kompasu.\n\nVecmodīgais kompass ir primitīvs magnetometrs ar magnetizētu adatu, kas griežas, lai pielāgotos apkārtējam magnētiskajam laukam. Jūsu tālrunī nav kompasa, bet ir neliels trīs asu sensors, kas izmanto elektriskās strāvas, lai noteiktu magnētiskā lauka stiprumu telpā trīs dimensijās. Bet ar to vien nepietiek, lai izveidotu kompasu.\n\nKādēļ kompasam ir jāapvieno dati no magnetometra ar tālruņa orientāciju? Zinot tālruņa orientāciju, var aprēķināt magnētisko rotāciju, pat ja tālrunis netiek turēts līdzeni vienā plaknē ar Zemes magnētisko lauku. Mēs zinām, ka gravitācija ir perpendikulāra Zemes magnētiskajam laukam, tādēļ varam izmantot gravitācijas virzienu no akselerometra sensoriem, lai noteiktu magnētiskā lauka lielumu, kas ir vienā plaknē ar Zemes magnētisko lauku.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Iespējams, esat pamanījis, ka kompass reaģē ne tikai uz Zemes magnētisko lauku, bet arī uz visiem pārējiem apkārt esošajiem magnētiskajiem laukiem. Magnēti, elektriskā strāva un metāla objekti liek tālruņa magnetometra bultiņai kustēties dažādos virzienos, mainot kompasa rādījumu. Nostājieties atklātā vietā (vēlams brīvā dabā un tālu no elektrolīnijām), ja vēlaties pārliecināties, ka kompasa sarkanā bultiņa pielāgojas Zemes magnētiskajam laukam. Lai kalibrētu tālruņa magnetometru, tālruni var kustināt pa iedomātu astoņnieka trajektoriju.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Skaņas veido vibrācija. Piemēram, jūsu balss veidojas no rīkles balss saišu vibrācijām. Šīs vibrācijas rada augsta un zema gaisa spiediena zonu mainību, kas virzās uz āru — ļoti līdzīgi apļveida kustībai, ko rada dīķī iemests olis.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Visas skaņas var raksturot ar to frekvenci un intensitāti.\n\nIntensitāte ir vērtība, ko nosakāt, izmantojot Science Journal skaņas intensitātes sensoru, tās mērvienība ir decibels (dB). Intensitāte jeb skaļums ir atkarīgs no attāluma, kādā atrodas vibrācijas objekts. Lielāku intensitāti mūsu ausis uztver kā lielāku skaļumu.\n\nSkaņas viļņa frekvence (jeb tonis) izsaka tā vibrēšanas biežumu. Jo ātrāk objekts vibrē, jo augstāks ir skaņas tonis. Science Journal skaņas intensitātes sensors nevar izmērīt frekvenci, var izmērīt tikai skaļumu.\n\nSvarīgi zināt, ka jūsu ierīces mikrofons ir izveidots tā, lai tas būtu ļoti jutīgs pret skaņas viļņu atšķirībām noteiktā laika posmā, bet ne pret katra viļņa absolūto lielumu. Mēs mēģinājām izvēlēties kodu, kas, visticamāk, sniegs rādītājus, kuri ir līdzīgi tālāk minētajiem atsauces rādītājiem, bet katra ierīce var sniegt konsekventi augstākus vai zemākus rādītājus. Zinātnieki parasti kalibrē šādu sensoru, izmantojot zināmu mērījumu. Pagaidām lietotnē Science Journal var noteikt, vai brauciens ar vilcienu ir skaļāks par rokmūzikas koncertu, bet tikai tad, ja abās situācijas tiek izmantots viens un tas pats tālrunis.\n\nVērts iegaumēt arī to, ka pastāv nozīmīgas atšķirības starp “skaņas intensitāti”, “skaņas intensitātes līmeni” un “skaņas spiedienu”. Šeit mēs pieņemam, ka šīs vērtības ir viena un tā pati lieta, bet, ja vēlaties uzzināt detalizētāku informāciju, pieejami daudzi tiešsaistes resursi par šīm atšķirībām.\n\nKlusākā skaņa, ko var uztvert vidusmēra cilvēka auss, tiek pielīdzināta 0 dB vērtībai. Parastas sarunas skaļums atbilst aptuveni 60 dB, savukārt skaņas virs aptuveni 140 dB izraisa cilvēka ausī sāpju sajūtas. Kaitīga ietekme var būt ne tikai tām skaņām, kas izraisa sāpes. Ilgstoša atrašanās pat 90 dB skaņas ietekmē — strādājoša putekļsūcēja troksnis — var izraisīt paliekošu dzirdes zudumu.\n\nDecibelu skala ir logaritmiska — tas nozīmē, ka 40 dB skaņas avots ir nevis divreiz intensīvāks par 20 dB skaņu, bet gan 100 reizes lielāks. Ja modinātājpulkstenis zvana, radot 70 dB troksni, divi modinātājpulksteņi radīs nevis 140 dB, bet gan 73 dB troksni. Dīvaina skala, vai ne?\n\n10 dB lapu čaboņa\n20 dB čukstēšana no 1,5 metru attāluma\n30 dB kluss čuksts\n50 dB lietus\n60 dB normāla saruna\n90 dB blenderis\n100 dB automašīna bez trokšņu slāpētāja\n110 dB kliegšana ausī\n120 dB pērkons\n130 dB elektriskais urbis\n140 dB lidmašīnas pacelšanās";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Objektiem ir tendence palikt miera stāvoklī vai turpināt kustību, ja tie jau atrodas kustībā. Šo tendenci dēvē par inerci. Pirmais Ņūtona likums formulē to šādi: objekts nemaina savu stāvokli (miera vai kustības), ja uz to neiedarbojas ārējs spēks.\n\nJa ārējais spēks izraisa objekta kustību, mēs sakām, ka objekts tiek paātrināts: tā ātrums mainās — kustība vai nu paātrinās, vai palēninās, vai mainās tās virziens. Paātrinājumu mēra kā ātruma izmaiņas laikā (metros sekundē) vai kā metrus pret sekundēm kvadrātā (m/s²).\n\nJūsu tālrunis ir aprīkots ar ierīci, kas mēra šīs kustības izmaiņas, — akselerometru. Akselerometra iekšpusē ir novietoti nelieli saistīti atsvari, kas var brīvi kustēties. Izmaiņas kustībā izmaina šo atsvaru savstarpējo stāvokli, gluži tāpat kā jūsu galva strauji sasveras uz priekšu, kad automašīna pēkšņi apstājas. Fiksējot šīs niecīgās inerces izmaiņas, tālruņa akselerometrs var noteikt izmaiņas kustībā un orientācijā, kas noder, mainot ekrāna orientāciju no ainavas uz portreta režīmu, spēlējot spēles tālrunī, kā arī citām funkcijām.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Apvienotā lineārā akselerometra sensors reģistrē kopējo paātrinājumu visās trīs tālruņa asīs, izslēdzot gravitāciju.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Jūsu tālrunī ir ierīce, kas ir paredzēta magnētisko lauku noteikšanai: magnetometrs. Tas ir neliels trīs asu sensors, kas izmanto elektriskās strāvas, lai noteiktu magnētiskā lauka stiprumu telpā trīs dimensijās. Apvienojot datus no visām trim asīm, var izveidot kopējā magnētiskā lauka stipruma sensoru.\n\nDaži magnetometri nosaka magnētiskos laukus, izmantojot Holla efektu — magnētisko lauku īpašību novirzīt elektrisko lādiņu plūsmu. Jaunāki magnetometri paļaujas uz magnetorezistoriem, metāla sakausējumiem, kas maina pretestību, reaģējot uz magnētiskajiem laukiem.\n\nKādēļ tālrunim ir nepieciešams magnetometrs? Iebūvētajām kompasu un navigācijas lietotnēm ir noderīgi zināt jūsu orientāciju telpā, jo īpaši tām lietotnēm, kuras piedāvā detalizētas navigācijas norādes.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magnēti, elektriskā strāva un metāla objekti liek tālruņa magnetometra bultiņai kustēties dažādos virzienos. Pat atrodoties atklātā laukā, tālruņa magnetometrs vienmēr rāda kādu nelielu vērtību, kas nav nulle: tas ir Zemes magnētiskais lauks.";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Skaņas veido vibrācija. Piemēram, jūsu balss veidojas no rīkles balss saišu vibrācijām. Šīs vibrācijas rada augsta un zema gaisa spiediena zonu mainību, kas virzās uz āru — ļoti līdzīgi apļveida kustībai, ko rada dīķī iemests olis.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Visas skaņas var raksturot ar to frekvenci un intensitāti. Skaņas viļņa frekvence (jeb tonis) izsaka tā vibrēšanas biežumu. Jo ātrāk objekts vibrē, jo augstāks ir skaņas tonis. Šīs vibrācijas tiek mērītas hercos (Hz), kur viens hercs ir viens vibrācija sekundē.\n\nCilvēki spēj dzirdēt skaņas diapazonā no 20 līdz 20 000 Hz. Klusākais klavieru taustiņš rada skaņu ar frekvenci 27,5 Hz, un skaļākais klavieru taustiņš rada skaņu ar frekvenci 4186,01 Hz.\n\nSarkanais punktiņš norāda uz to, cik tuvu reģistrētais tonis ir tuvākajai mūzikas notij. Ja tonis ir zemāks, punktiņš tiks rādīts pa kreisi. Ja tonis ir augstāks, sarkanais punktiņš tiks rādīts pa labi.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Šeit redzamie dati nāk no ārējā sensora saziņas ar jūsu tālruni, izmantojot Bluetooth savienojumu.\n\nVērtība rāda neapstrādātā lasījuma procentus no mikrokontrolera. Parasti tie ir procenti no sprieguma krituma visā sensorā.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth ir bezvadu tehnoloģija, kas standarta datu apmaiņai izmanto radioviļņus īsos attālumos no fiksētajām un mobilajām ierīcēm.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Apgriezieni minūtē (RPM) rāda rotācijas biežumu ap fiksētu asi vienā minūtē.\n\nKad vēja rādītājs pagriežas, tas pagriež arī kodēšanas disku:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Tas rada gaismas un tumsas periodus sensorā, kuri lietotnē Science Journal tiek reģistrēti kā rotācija.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Šeit redzamie dati nāk no ārējā sensora saziņas ar jūsu tālruni, izmantojot Bluetooth savienojumu.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth ir bezvadu tehnoloģija, kas standarta datu apmaiņai izmanto radioviļņus īsos attālumos no fiksētajām un mobilajām ierīcēm.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Tālruņa paātrinājums uz kreiso un labo pusi, m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Tālruņa paātrinājums uz priekšu un atpakaļ, m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Tālruņa paātrinājums uz augšu un uz leju, m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Atmosfēras spiediens tiek mērīts hektopaskālos (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Ārējā sensora dati redzami šeit, pamatojoties uz pielāgotajiem iestatījumiem.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Gaismas daudzums, kas tiek mērīts ar mērvienību EV, izmantojot priekšējo kameru.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Tālruņa orientācija, ņemot vērā Zemes magnētisko lauku.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Skaņas intensitāte, mērāma decibelos (dB), sasniedzot skaņas sensoru vai mikrofonu.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Tālruņa kopējais paātrinājums, izslēdzot gravitācijas spēku (m/s²)";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Apkārtējās vides ģeomagnētiskā lauka stiprums mikroteslās.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Skaņas tonis, mērāms hercos (Hz), sasniedzot skaņas sensoru vai mikrofonu.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Neapstrādātā lasījuma procenti no ārēja sensora.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Apgriezienu skaits minūtē";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Pārbaudes sensors, kas izvada sinusa vilni.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Nākamais sensors ierakstā";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Iepriekšējais sensors ierakstā";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Neapstrādāts";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Rotācija";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Ierakstīšanas laikā sensoru iestatījumus nevar mainīt.";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Aktivizētājs ir dzēsts";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Audio un spilgtuma sensori izmanto mikrofonu un priekšējo kameru, kas nevar ierakstīt, ja Science Journal darbojas fonā. Ja ierakstā izmantojat šos sensorus un lietotne darbojas fonā, šo sensoru dati netiek ierakstīti, līdz lietotne atkal nav priekšplānā.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Audio un spilgtuma sensori izmanto mikrofonu un priekšējo kameru, kas nevar ierakstīt, ja Science Journal darbojas fonā.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Piezīme par šo sensoru";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Nevar izmantot spilgtuma sensoru, ja skatāties videoklipu, izmantojot funkciju “attēls attēlā”, vai izmantojat lietotni Science Journal dalītā skatījuma režīmā.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Spriegums";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Atlasiet sensorus, kurus izmantot eksperimentā";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Sakļaut sensoru sarakstu";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Izvērst sensoru sarakstu";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Lietotne Science Journal ir atspējota";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Jūsu domēna administratoram ir jāieslēdz lietotne Science Journal pakalpojumā Google Admin Console.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Pārslēgt kontus";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Dati ir anonīmi un palīdz uzlabot šo lietotni.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Sūtīt lietotnes datu lietojuma informāciju Google komandai";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Atvērtā pirmkoda licences";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Konfidencialitātes politika";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Pakalp. sniegšanas not.";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Versija";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Science Journal tīmekļa vietne";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Rādīt opcijas";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Pierakstījies kā %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Atveriet, lai pārvaldītu kontus";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Izvēlēties kontu";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Sānjoslas izvēlne";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Atver sānjoslas izvēlni ar lietojumprogrammas opcijām";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Pierakstīties";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sinusa viļņi";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sinuss";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Piezīme ir izdzēsta";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Atsaukt";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Momentuzņēmums";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Pievieno eksperimentam momentuzņēmumu ar visu attiecīgajā brīdī novēroto sensoru vērtībām";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Nevar uzņemt momentuzņēmumu, jo viens vai vairāki sensori ir atvienoti. Lūdzu, mēģiniet vēlreiz.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Informācija par momentuzņēmumu";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Momentuzņēmums ir pievienots";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimāli";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maksimāli";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Vidēji";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Mainīt kameru";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Ieslēgts";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Izslēgts";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Ierakstu ilgumu nevar ierobežot līdz mazāk nekā 1 sekundei";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Izmantojiet derīgu formātu: h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Jauns laiks (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Laikam jāietilpst ieraksta diapazonā";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Teksta piezīmes rediģēšana";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Teksta piezīme";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Pievienojiet novērojumu";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Piezīme ir pievienota";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Notiek ierakstīšana";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Lai pārietu uz novērojumu cilni rīku atvilktnē, veiciet dubultskārienu";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Sensoru iestatījumi";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Eksperimentam";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Ierakstam";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Brīdinājuma veids";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Skaņa";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Informācija par aktivizētāju";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Sensora %@ aktivizētāja rediģēšana";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Jauns sensora %@ aktivizētājs";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Aktivizētājs darbojas";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Vibrācija";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Aktivizētāji:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "kad sensora rādījums ir lielāks par";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "kad rādījums ir";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "kad sensora rādījums ir mazāks par";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "kad samazinās zem";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "kad pārsniedz";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Pievienota aktivizētāja piezīme";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Kas piezīmē jānorāda?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Noklusējuma piezīmes teksts";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Aktivizēt tikai ieraksta laikā";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Brīdinājums";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Aktivizēšanas veids";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Izveidot piezīmi";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Sākt ierakstīšanu";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Apturēt ierakstīšanu";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Aktivizēšanas vērtība";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Redzams paziņojums";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "bija lielāks par";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Pie šāda rādījuma:";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "bija mazāks par";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "samazinājās zem";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Samazinās zem";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Ir lielāks par";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Ir mazāks par";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Aktivizēšana";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Pārsniedz";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "pārsniedza";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Rediģēt";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Darbojās pārāk daudz aktivizētāju. Tie tika atspējoti";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Eksperiments pārvietots no arhīva.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Ieraksts izņemts no arhīva.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Nezināms sensors";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Bez nosaukuma";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Izmantojiet Science Journal, lai veiktu eksperimentus apkārtējā pasaulē";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Apkoposim informāciju par šo Science Journal versiju un jūsu ierīci (tikai par aparatūru un iOS versiju; bez personas/identif. informācijas), pēc tam pievienosim e-pasta ziņojumam, ko nosūtīt mums.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Vēlamies uzzināt jūsu domas";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Nosūtīt atsauksmi";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Video straume";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

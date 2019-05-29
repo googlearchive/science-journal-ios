@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Yeni özellikler ve iyileştirmeler:\n• Google Drive hesabınızı kullanarak cihazlarınız genelinde deneylerinizi kaydedip onlara erişmek için Google hesabınızda oturum açın. Bu özellik, ilerleyen haftalarda tüm kullanıcılara sunulacaktır. Science Journal'ı oturum açmadan kullanmaya devam edebilirsiniz.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Performansla ilgili çok sayıda iyileştirme ve hata düzeltmesi";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Google Science Journal";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Dünyanızı Keşfedin";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Science Journal, Google tarafından sunulan ücretsiz bir dijital bilim defteridir.\n\nİster bir bilim eğitmeni, ister evinizde bilim yapan bir amatör olun; notlarınızı, fotoğraflarınızı ve gözlemlerinizi tek bir pratik platformda saklayabilirsiniz. Işık, ses ve hareket gibi olayları ölçmek ve grafiklendirmek için iPhone veya iPad cihazınızın sensörlerini kullanın ya da çevrenizde deneyler yürütmek için Bluetooth ile harici sensörlere bağlanın.\n\nScience Journal uygulamasıyla şunları yapabilirsiniz:\n• Telefonunuzun dahili sensörlerini kullanarak ışığı, sesi, ivmelenmeyi, hava basıncını ve daha birçok şeyi ölçebilirsiniz.\n• Bilimsel deneylerinizi belgelendirmek için notlar alıp fotoğraflar çekebilirsiniz. Daha fazla not türü çok yakında sizinle!\n• Bluetooth özellikli belirli Arduino cihazlar kullanarak harici sensörlere bağlanabilirsiniz.\n• Veri kaydetmek ve notlar almak için otomatik tetikleyiciler oluşturabilirsiniz.\n• Grafiklerinizin hareketini duyabilmek için sonifikasyon özelliğini kullanabilirsiniz.\n\nİzin bildirimi:\n• Bluetooth: Bluetooth sensörlü cihazlar için tarama yapılırken gereklidir.\n• Kamera: Deneyleri belgelendirmek amacıyla fotoğraf çekmek üzere ve parlaklık sensörü için gereklidir.\n• Fotoğraf Kitaplığı: Deneyleri belgelendirmek amacıyla çekilen fotoğrafları depolamak ve kitaplığınızda mevcut olan fotoğrafları deneylere eklemek için gereklidir.\n• Mikrofon: Ses şiddeti sensörü için gereklidir.\n• Push bildirimleri: Uygulama arka planda çalıştığında kayıt durumu hakkında sizi bilgilendirmek için gereklidir.\n\nİş ortaklarımızın yürüttüğü eğitim faaliyetleri:\nhttps://makingscience.withgoogle.com/science-journal/activities\nDestek için: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,bilim,eğitim,kök,deneyler,sensörler,grafik,günlük,defter,notlar,belgeleme,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "X İvmeölçeri";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Y İvmeölçeri";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Z İvmeölçeri";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Hakkında";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Başlık ekle";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Arşivle";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Deneyi arşivle";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Kaydı arşivle";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "İptal";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Anladım";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Sil";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Deneyi sil";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Kaydı sil";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Resmi sil";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Anlık görüntüyü sil";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Metin notunu sil";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Notu sil";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Sil";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Kapat";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Düzenle";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Geri Bildirim";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Arşivlenmiş deneyleri dahil et";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Su Terazisi";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "Tamam";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Bildir";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Yeniden dene";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Cetvel";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Kaydet";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Ayarlar";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Arşivden çıkar";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Deneyi arşivden çıkar";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Kaydı arşivden çıkar";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Geri al";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Ayrıntıları göster";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Zaman çizelgesine not ekle";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Yeni bir not ekleyin";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Fotoğraf ekle";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Resim ekle";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Not ekle";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Ortam ışığı";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lüks";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Genlik";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Ortam sıcaklığı";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Arşivlendi";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Arşivlenen deneyler değiştirilemez ancak silinebilir";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Deney arşivlendi.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Kayıt arşivlendi.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Kullanılabilir Cihazlar";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Geri";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Önceki görünüme dön";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometre";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Tetikleyici oluştur";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Yeni sensör kartı ekle";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Değişiklikleri Sil";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Değişiklikleri Kaydet";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Tut";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Sil";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Yeni deney";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Kaydı başlat";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Şimdiki zamana atla";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Kartı kapat";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Kaydı durdur";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Fotoğraf çek";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Kamera, Bu deneye eklemek için bir fotoğraf çekin";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Bu tetikleyicinin başlatılacağı bir sayısal değer girmeniz gerekir.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Grafik oynatma kontrolü";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Grafiğin oynatma konumunu hareket ettirir ve bu konum için değeri okur";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Canlı grafik";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Sola kaydır";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Sağa kaydır";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Kaydırıldı";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Grafik";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Büyült";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Yakınlaştırma düzeyi";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Ekrana sığdır";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Uzaklaştır";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Bir fotoğraf seçin";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Tümünü talep et";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Tümünü talep et";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Drive'a ekleyin";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Kalan 1 deney, %@ için Google Drive'a eklensin mi?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Kalan %1$@ deney, %2$@ için Google Drive'a eklensin mi?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Kalan tüm deneyleri talep et";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Tüm deneyler Google Drive'a eklensin mi?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Tüm deneyler talep edilsin mi?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Bu deneyi Google Drive'a ekle";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Deneyler düzenlenemez ve talep edilene veya silinene kadar cihazda kalır.";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Deneyleri Google Drive'a ekleyin";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Denemeleri talep et";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Bu deneyi sil";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Tümünü sil";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Kalan 1 deney silinsin mi?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Kalan %ld deney silinsin mi?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Kalan tüm deneyleri sil";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Tüm deneyleriniz silinsin mi?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Arşivlenmiş deneyler dahil bu cihazdaki tüm deneyler silinecek. Bu işlemi geri alamazsınız.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Tümünü silin";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Bu cihazda %ld adet talep edilmemiş deneme mevcut.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Bu cihazda 1 adet talep edilmemiş deneme mevcut.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Talep edilmemiş bu deneyi paylaş";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Deneyde hak talebi için disk alanı yetersiz";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Deneylerde hak talebi için disk alanı yetersiz";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Deney talep edilemedi";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Deneyler talep edilemedi";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Deney talep edilsin mi?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Denemeyi talep edin";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Bu deney, %@ için Google Drive'a eklensin mi?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Deney şuraya eklendi: %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Eski denemeleri talep et";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Denemeleri talep et";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Kapat";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Önceki görünüme dön";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Pusula";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "derece";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "İletken";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Oturum açmadan devam et";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "kırpma bitişi:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Kırpma kaydedilemedi:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Kırpma bitiş işaretini sola taşıyın";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Kırpma bitiş işaretini sağa taşıyın";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Kırpma başlangıç işaretini sola taşıyın";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Kırpma başlangıç işaretini sağa taşıyın";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Diğer seçenekler";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Kayıt kırpıldı";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Kayıt, başlangıçta kaydedilen aralığın dışında kırpılamaz";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Kayıt, bir saniyeden daha kısa olacak şekilde kırpılamaz";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Kırp";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "kırpma başlangıcı:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Mevcut değer";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Ses şiddeti";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Başlıksız Deney";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Varsayılan";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Bu deneyi silmek istediğinizden emin misiniz? Deneye ait tüm kayıtlar ve notlar silinecek.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Deney silinsin mi?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Sil";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Bu kayıt silinsin mi?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Deney silindi.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Kayıt silindi.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Ayrıntılar";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Pim";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Sıklık";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Sensör ayarlarını kaydedin.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensör";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Oto. ölçeklendirmeyi devredışı bırak";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Düzenlemek için iki kez dokunun";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Açmak için iki kez dokunun";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Seçmek için iki kez dokunun";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Geçiş yapmak için iki kez dokunun";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Ayrıntıları görüntülemek için iki kez dokunun";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Araç çekmecesi kulpu";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Araç çekmecesinin boyutunu ayarlayın. İşlemler mevcuttur.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "kapalı";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "düzenleniyor";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "tam ekran";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "yarım ekran";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Google Drive'a bağlanılamıyor. Bağlantınızı kontrol edin.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Ağ bağlantısı kesildi";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal, Google Drive'a bağlanamıyor. Bazı deneyler yedeklenemeyebilir.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Science Journal şu anda Google Drive'a bağlanamıyor. Daha sonra tekrar deneyeceğiz.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google Drive'da deneyinizi depolamaya yetecek kadar yer yok.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Science Journal'daki deney verileri Google Drive kullanılarak kaydedilir ve cihazlar genelinde kullanılabilir hale getirilir. Bunun için bir Google hesabıyla oturum açılması gerekir.\n\nBu cihazda mevcut verileriniz varsa oturum açtıktan sonra deneylerinizi Google Drive'a kaydedebilirsiniz. Deneyleriniz, Google Drive'da \"Science Journal\" adlı klasörde depolanır.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Google Drive'a erişilemiyor. Bağlantınızı kontrol edin.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Bitiş zamanını düzenle";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Başlangıç zamanını düzenle";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Deneyi düzenle";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Bir deneyin başlığını veya fotoğrafını değiştir";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Kaydedilmemiş değişiklikler";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Bu deneyde yaptığınız değişiklikleri kaydetmek istemediğinizden emin misiniz?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Fotoğrafı değiştir";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Deneyi düzenle";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Zamanı düzenle";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Not zamanını düzenleyin";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Kayıt bitiş zamanını düzenleyin";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Kayıt başlangıç zamanını düzenleyin";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Kaydı düzenle";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Bir kaydın başlığını değiştir";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Kayıt başlığı";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Henüz gözleminiz yok";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Hiç deneyiniz yok";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Tetikleyici ayarlanmadı";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Oto. ölçeklendirmeyi etkinleştir";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Hiçbir deneyiniz Google Drive'a eklenmeyecek";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Tüm denemelerinizi silin";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Tüm deneyleriniz Google Drive'a eklenecek";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Tüm denemelerinizi kaydedin";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Hangi deneylerin Google Drive'a ekleneceğini seçin";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Kaydedilecek denemeleri seçin";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Tekrar hoş geldiniz. Şu anda bu cihazda depolanan %ld deneyiniz var.\n\nDevam etmek için bir seçenek belirleyin:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Tekrar hoş geldiniz. Şu anda bu cihazda depolanan 1 deneyiniz var.\n\nDevam etmek için bir seçenek belirleyin:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Google Drive'a yedekleyin";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Deney";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Deneyler";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Deneyi paylaş";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Bu deneyin indirilmesi bitmedi. Bir kopya paylaşırsanız bazı veriler eksik olabilir";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "İndirme işlemi devam ediyor";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Kaydediliyor…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Deney başlığı";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Bu deney, Science Journal'ın daha yeni bir sürümüyle oluşturuldu. En son güncellemeyi indirene kadar deneyi bu cihazda düzenleyemezsiniz.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Not alarak, veri kaydederek veya fotoğraf çekerek fikir ve gözlemlerinizi düzenleyin";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Yeni deney oluştur";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Dünyanızı keşfedin";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Paylaş";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Dışa aktarılamadı.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Deneyi Gönder";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Göreceli zaman";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Dışa aktarılıyor…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Fotoğrafı paylaş:";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Science Journal'a hoş geldiniz";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Aşağıdaki araç çubuğunu kullanarak not almayı ve veri kaydetmeyi deneyin!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Science Journal'a hoş geldiniz!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "g.co/sciencejournalactivities\nadresinde deneyebileceğiniz etkinliklere ulaşabilirsiniz";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Bu cihazı unut";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Tam ekran";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Başla";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Sesi etkinleştir";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Sesi devre dışı bırak";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Bu Sensörün Görevi Ne?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Maalesef bilinmeyen bir hata oluştu.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "İçe aktarma başarısız. Bu deney ile ilgili sorun var.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Science Journal şu anda kullanılıyor. Lütfen kaydı durdurup tekrar deneyin.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Bir deneyi içe aktarmak için oturum açın.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Yeterli depolama alanı yok";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Depolama alanınızı ayarlardan yönetebilirsiniz.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Arşivlenen kayıtları göster";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Ayarlar'ı Aç";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Ön kamera ile veri ölçen bir parlaklık sensörüyle kayıt yaptığınız için kamera kullanılamıyor.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Pencere İçinde Pencere videosu izlediğiniz veya Science Journal'ı Bölünmüş Ekran modunda kullandığınız için kamera kullanılamıyor.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Sensörleri görüntüle";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Science Journal'ın erişim izni olmadığı için kamera kullanılamıyor.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Science Journal'ın erişim izni olmadığı için fotoğraf kitaplığınız kullanılamıyor.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Daha fazla bilgi";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Daha fazla bilgi";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Doğrusal ivmeölçer";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Performans iyileştirmeleri ve hata düzeltmeleri.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Yeni özellikler:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Ses perdesi sensörü.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Deneyleri dosya olarak dışa aktarma ve diğer cihazlara içe aktarma.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Deneyden fotoğrafları dışa aktarma.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Diğer notları görüntüle";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Manyetometre";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menü";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Daha fazla seçeneğin olduğu bir menüyü gösterir";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Ses ayarları";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Tetikleyicileri düzenle";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Tetikleyicileri ayarla";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Cihazlarım";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Bu deneye ad verin";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Etkinlikler";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Deneyler";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Ayarlar";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Açıklama ekleyin";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Açıklama";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Resim notu";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Metin notu";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Tetikleyici notu";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Anlık görüntü notu";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Notlar";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Not eklendi";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Notlar, Bu deneye bir yazılı not ekleyin";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Gözlem, Bu deneye değerlere ait anlık görüntüler veya kayıtlar eklemek için sensörleri kullanın";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Deney açılamıyor";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Dosya açılamıyor";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Deneyler, Science Journal dosya biçiminde (.sj) olmalıdır";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Duraklat";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Yüzde";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Bu kadar! İzin kontrollerimiz sona erdi. Gelecekte bu izinleri değiştirmeniz gerekirse iOS Ayarlar uygulamasının Science Journal bölümünde istediğiniz zaman değiştirebilirsiniz.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Şimdi kameralarınıza erişim iznini kontrol edeceğiz. Ön kamerayı parlaklık sensörünü çalıştırmak için kullanıyoruz. Deneylere ve kayıtlara fotoğraflı notlar eklemek için her iki kamerayı da kullanabilirsiniz.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Devam";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Donanım sensörlerini, kamerayı ve fotoğraf kitaplığını etkinleştirebilmek için öncelikle izinleri kontrol etmemiz gerekiyor. Sizden onay istemeden önce her birini nasıl kullandığımızı açıklayacağız.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Ardından, mikrofonunuza erişim iznini kontrol edeceğiz. Mikrofon, ses sensörleri için kullanılır. Sesin içeriği asla kaydedilmez, saklanmaz ve iletilmez; sadece sesin şiddetini veya perdesini ölçeriz.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Öncelikle, size push bildirimleri göndermek için izni kontrol edeceğiz. Bu bildirimleri yalnızca uygulamayı kayıt sırasında arka plana atmanız halinde kayıtlarınızın bitmek üzere olduğunu haber vermek için kullanıyoruz.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Son olarak fotoğraf kitaplığınıza erişim iznini kontrol edeceğiz. Böylece mevcut fotoğraflarınızı da deneylere ve kayıtlara kaydedebileceksiniz ve biz de çektiğiniz fotoğrafları kitaplığınıza kaydedebileceğiz.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Başlayalım";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Bitti!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "İzni kontrol et";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Science Journal'a hoş geldiniz!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Fotoğrafın ait olduğu deney";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Fotoğraf";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Fotoğraf eklemek için disk alanı yetersiz";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Dahili sensörler";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Fotoğraf Kitaplığı, Bu deneye kitaplığınızdan bir fotoğraf ekleyin";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Bilgiler";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Cihaz";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Boyutlar";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Notlar";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Deklanşör hızı";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Resim eklendi";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Perde";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@, %2$@ bemolden yarım ses daha kalındır, %3$@ oktav";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@, %2$@ notasından yarım ses daha kalındır, %3$@ oktav";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@, %2$@ diyezden yarım ses daha kalındır, %3$@ oktav";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ bemol, %2$@ oktav";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "yüksek perde";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "düşük perde";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@ oktav";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ diyez, %2$@ oktav";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@, %2$@ bemolden yarım ses daha incedir, %3$@ oktav";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@, %2$@ notasından yarım ses daha incedir, %3$@ oktav";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@, %2$@ diyezden yarım ses daha incedir, %3$@ oktav";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Piksel";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Oynat";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Bu hesaba mevcut cihaz ayarları uygulandı";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Yenileniyor";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Kayıt başlatılamıyor";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Bir veya daha fazla sensörünüzün bağlantısı kesildi. Lütfen tekrar deneyin.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Kaydedilmiş verilerinizi görüntülemek için Science Journal'ı açın.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Kaydınız sona erdi.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Devam et";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Kaydı iptal et";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Bir veya daha fazla sensörünüz hiç veri kaydetmedi. Bu kaydı iptal etmek istiyor musunuz?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Veri kaydedilmiyor";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Kayıt durdu";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Kayda devam etmek için Science Journal'ı açın.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Kaydınız birazdan sona erecek.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Kayda devam et";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Kaydı durdur";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Kapak resmini kaldır";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Bu deneyin kapak resmini kaldırır.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Kapak resmini kaldırmak istediğinizden emin misiniz? Bu işlem geri alınamaz.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Kapak resmi kaldırıldı.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Kapak resmi kaldırılamadı.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Kayıt eklendi";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Kayıt";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Bu kaydı yeniden adlandırın";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Bu kaydı silmek istediğinizden emin misiniz? Kayıtlı veriler ve notlar silinecek.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Süre";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "İnceleme";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Kaydet";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Değişiklikleri kaydet ve önceki görünüme dön";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Deneyi kaydedin";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Bu deneyi kitaplığınıza eklemek ister misiniz?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Dosyalar'a kaydet";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Bu dosyanın bir kopyasını cihazınızdaki bir klasöre kopyalayabilmenizi sağlayan bir belge tarayıcısı görüntüler.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Dosya kaydedildi";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Dosyalar kaydedildi";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Dosya kaydedilemedi. Lütfen tekrar deneyin.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Dosyalar kaydedilemedi. Lütfen tekrar deneyin.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Ölçeklendirme";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Grafikte not zaman damgası seç";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Kopyasını gönder";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Ayarlar";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Parlaklık";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Science Journal'ın kameranıza erişim izni olmadığı için parlaklık sensörü kullanılamıyor.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Sensör verileri yüklenemedi";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Sensör verileri yükleniyor...";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Science Journal'ın mikrofonunuza erişim izni olmadığı için ses ses sensörleri kullanılamıyor.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Özel";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Cisimler durağan halde kalma veya hareket ediyorlarsa hareketlerine devam etme eğilimindedir. Buna eylemsizlik yasası denir. Newton'ın Birinci Yasası bu fikri resmi olarak şu şekilde ifade ediyor: Bir cisim, üzerine dengelenmemiş bir kuvvet etki etmedikçe hareket durumunu veya durağanlığını korur.\n\nCisim üzerine dengelenmemiş bir kuvvet etki edip harekete geçtiğinde buna cismin hızının artması, azalması veya yönünün değişmesiyle ivme kazanması (hızının veya süratinin değişmesi) diyoruz. İvme, zaman içinde hızdaki değişimle (saniyede alınan metre) veya metre bölü saniyenin karesiyle (m/sn²) ölçülür.\n\nTelefonunuzda bu hareket değişimlerini ölçen, ivmeölçer adında bir cihaz bulunur. İvme ölçerin içinde serbestçe hareket eden küçük ve askıda kütleler bulunur. Tıpkı aniden duran bir arabada kafanızın öne doğru sarsılması gibi, hareket değişimleri de bu kütlelerin yer değiştirmesine neden olur. Telefonlardaki ivmeölçer, bu ani eylemsizlik değişimlerini ölçerek hareket ve yöndeki değişimleri algılayabilir. Ekranı yatay moddan dikey moda geçirirken, telefonunuzda oyun oynarken ve daha birçok şey yaparken bu araçtan faydalanılır.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Telefon masada hareketsiz haldeyken bile Z ekseninde aralıksız bir ivmelenme fark etmişsinizdir. Bu, Dünya'nın yüzeyine etki eden yaklaşık 9,8 m/s²'lik yer çekimi kuvvetinden kaynaklanan ivmelenmedir.";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Çok azımız farkında olsa da, büyük bir hava kütlesinin en dibinde yaşıyoruz: Dünya'nın atmosfer tabakası 40 km (130.000 feet) kalınlığındadır. Atmosfer basıncı, üstümüze yığılmış bu hava katmanının ağırlığıdır. \n\nAtmosfer basıncı, deniz seviyesinde inç kareye 14 pound'luk güç uygular. Bu, A4 kağıdı genişliğindeki bir alanda basıncın yaklaşık 1.300 pound kadar olmasına eşdeğerdir.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Omuzlarımızdaki bu ağır basıncı hissetmememizin sebebi, buna alışkın olmamızdır. Ancak rakımı daha yüksek olan bölgeleri ziyaret ettiğimizde veya uçağa bindiğimizde olduğu gibi, en ufak değişikliği bile hissedebiliriz. Atmosfer basıncı, hava koşullarına göre de değişir, fırtınalı ve değişken havalarda basınç düşerken stabil ve açık havalarda yükselir.\n\nTelefonunuzda bulunan dijital barometre, atmosfer basıncını hektopaskal cinsinden ölçer (Hektopaskal, 100 paskal anlamına gelir, bir paskal ise metrekare başına uygulanan bir newton'lık güç demektir). Hava durumu sunucularının atmosfer basıncını milibar cinsinden aktardığını duymuşsunuzdur. Bu birim, hektopaskalın kulağa daha tanıdık gelen karşılığıdır.\n\nTelefonun basınç ölçmesinin nedenini merak ediyor olabilirsiniz. Atmosfer basıncı en ufak rakım değişimlerinde, hatta merdiven çıkarken bile ölçülebilir derecede farklılık gösterir. Telefonun bu değişimi ölçen dijital barometresi, konum değişikliklerini saptayabilir, örneğin binanın hangi katında olduğunuzu veya bir köprünün daha yüksek mi yoksa daha alçak kısmında mı olduğunuzu öğrenebilirsiniz.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Ön kamera, parlaklığı; kameranın deklanşör hızına, f değerine ve ISO değerine bağlı olan ve bu ayarlar altında kaydedilen piksellerin parlaklığıyla belirlenen bir ölçüm olan EV (Pozlama Değeri) ile ölçer.\n\nYakalanan değer ne kadar parlaksa EV de o kadar yüksek olur. Karanlık ortamlar negatif değerler verir.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "EV bir kameranın optik özellikleri ve sensörlerine bağlı bir ölçüm olduğundan, değer aralığı hem donanım hem de yazılımla sınırlanır. Ortam ışığı sensörü lüksü doğrudan kaydedebilirken, ön kamera bir ölçüm tabanı oluşturmak için f değeri, ISO değeri ve deklanşör hızını kullanır ve ardından görüntüler yakaladıktan sonra piksel okumalarına dayanarak EV değerini belirler. Bu süreçte f değeri eşikleri iPhone 8 (f1.8) ve iPad (f2.4) örneğindeki gibi farklıysa EV değerleri farklılık gösterebilir.\n\nEV değeri yakalanan piksellerin parlaklık değeri ölçülerek belirlendiğinden, ortam ışığı kaynakları, lüksün kızılötesi bir sensörle belirlendiği duruma göre daha düşük değer verir. Ölçümler doğrudan kameranın konumuna ve çektiklerine bağlıdır.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Dünya'nın manyetik bir alana sahip olduğunu muhtemelen biliyorsunuzdur. Ancak telefonunuzun manyetik alanları algılayabilecek bir cihaza, yani manyetometreye sahip olduğunu fark etmemiş olabilirsiniz. Telefonunuzun manyetometresinden alınan verilerle telefonunuzun uzaydaki yönünü bir araya getirerek dijital bir pusula oluşturuyoruz. \n\nEski pusulalar, kendisini etraftaki manyetik alanla aynı eksene getirmek için dönen manyetize iğnesi sayesinde basit bir manyetometre işlevi görür. Telefonunuzun içinde ufak bir pusula olmasa da elektrik akımlarını kullanarak uzaydaki üç boyutta manyetik alan kuvvetini ölçen üç eksenli minik bir sensör vardır. Ancak bu tek başına, pusula oluşturmaya yetmez!\n\nPusulanın neden manyetometreden alınan verilerle telefonunuzun yönünü bir araya getirmesi gerekir? Telefonun yönünü bilirsek telefon, Dünya'nın manyetik alanıyla aynı düzlemde düz tutulmadığında bile manyetik dönüşü hesaplayabiliriz. Yer çekiminin, Dünya'nın manyetik alanına dik olduğunu biliyoruz. Bu sayede, ivmeölçer sensörlerinden öğrendiğimiz yer çekimi yönünden yararlanarak, manyetik alanın ne kadarlık kısmının, Dünya'nın manyetik alanıyla aynı düzlemde olduğunu belirleyebiliriz.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Pusulanın, yalnızca Dünya'nın manyetik alanına değil, etrafınızda oluşan diğer tüm manyetik alanlara da tepki verdiğini fark etmiş olabilirsiniz. Mıknatıs, elektrik akımı ve metal nesneler, telefonunuzun manyetometresini çift taraflı olarak kolayca hareket ettirebilir. Manyetometrenizin kırmızı ibresinin Dünya'nın manyetik alanıyla hizalanabilmesi için mümkünse dışarıda, elektrik hatlarına yakın olmayan açık bir alana gidin. Telefonunuzla havada 8 çizmek, telefondaki manyetometrenin ayarlanmasına yardımcı olur.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Sesler, titreşimle oluşur. Örneğin, kendi sesinizin kaynağı gırtlağınızdaki ses tellerinde meydana gelen titreşimlerdir. Bu titreşimler, dışa doğru hareket eden ve birbiri ardına gelen yüksek ve alçak hava basıncı alanları oluşturur. Bunu, bir su birikintisine attığımız taşın oluşturduğu genişleyen dairesel dalgalara benzetebiliriz.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Tüm sesler, frekansları ve şiddetleri açısından açıklanabilir.\n\nŞiddet, burada Science Journal ses şiddeti sensörü ile desibel (dB) biriminden ölçtüğünüz değerdir. Ses şiddeti veya yüksekliği, titreşen bir nesnenin her titreştiğinde aldığı mesafeye bağlıdır; yüksek seste şiddet de büyüktür.\n\nBir ses dalgasının frekansı (perde veya ton olarak da kullanılır), titreşim hızına eşdeğerdir. Bir nesne ne kadar hızlı titreşirse ortaya çıkan sesin perdesi de o kadar yüksek olur. Science Journal ses şiddeti sensörü, sadece ses yüksekliğini ölçer. Frekansı ölçmez..\n\nBilinmesi gereken önemli bir nokta şudur: Cihazınızdaki mikrofon, zaman içinde ses dalgalarındaki farklılıklara karşı çok hassas olacak şekilde tasarlanmıştır ancak her bir dalganın mutlak büyüklüğüne karşı hassas değildir. Aşağıda gösterilen referans sayılara benzer değerler üretmesi beklenen kodu seçmeye çalıştık, ancak her cihaz sürekli olarak daha yüksek veya daha düşük değerler verebilir. Bilim insanları genellikle böyle bir sensörü bilinen bir değere kalibre eder. Science Journal şimdilik size sadece tren yolculuğunuzun gittiğiniz rock konserinden daha gürültülü olup olmadığını söyleyebilir, tabii iki etkinliğe de aynı telefonu getirmeniz koşuluyla.\n\nBilinmesi gereken bir diğer nokta da \"ses şiddeti\", \"ses şiddeti düzeyi\" ve \"ses basıncı\" kavramları arasında önemli farklar olmasıdır. Biz burada bunları aynı kavram gibi ele alıyoruz ancak daha derine inmek istiyorsanız farklılıkları hakkında birçok dijital kaynak bulabilirsiniz.\n\nOrtalama bir insan kulağının duyabileceği en düşük ses seviyesi 0 dB olarak tanımlanmıştır. Normal bir konuşma yaklaşık 60 dB değerine karşılık gelir. 140 dB üzerindeki sesler insan kulağına zarar verir. Ancak seslerin zarar vermesi için kulağı rahatsız etmesi gerekmez. Örneğin, 90 dB seviyesindeki seslere (elektrik süpürgesi gibi) sürekli maruz kalınması, sonunda duyma kaybına yol açabilir.\n\nDesibel ölçeği logaritmiktir. Bu noktada ölçüme dikkat edilmesi gerekir. Örneğin, 40 dB değerindeki bir ses kaynağı, 20 dB değerindeki ses kaynağının iki katı değil 100 katı şiddetindedir. Başka bir örnek verecek olursak, bir çalar saat alarmı 70 dB şiddetinde ses üretiyorsa iki çalar saat alarmı 140 değil, 73 dB şiddet üretir. Daha önce de söylediğimiz gibi, bu ölçek biraz farklı.\n\nYaprak hışırtısı 10 dB'dir\n1,5 metre yakından fısıldama 20 dB'dir\nHafif fısıltı 30 dB'dir\nYağmur sesi 50 dB'dir\nGünlük konuşmalar 60 dB'dir\nMikser sesi 90 dB'dir\nSusturucusuz araba sesi 100 dB'dir\nKulağın içine bağırmak 110 dB'dir\nGök gürültüsü 120 dB'dir\nKaya matkabı sesi 130 dB'dir\nKalkmakta olan uçak sesi 140 dB'dir";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Cisimler durağan halde kalma veya hareket ediyorlarsa hareketlerine devam etme eğilimindedir. Buna eylemsizlik yasası denir. Newton'ın Birinci Hareket Yasası bu fikri resmi olarak şu şekilde ifade ediyor: Bir cisim, üzerine dengelenmemiş bir kuvvet etki etmedikçe hareket durumunu veya durağanlığını korur.\n\nCisim üzerine dengelenmemiş bir kuvvet etki edip harekete geçtiğinde buna cismin hızının artması, azalması veya yönünün değişmesiyle ivme kazanması (hızının veya süratinin değişmesi) diyoruz. İvme, zaman içinde hızdaki değişimle (saniyede alınan metre) veya metre bölü saniyenin karesiyle (m/sn²) ölçülür.\n\nTelefonunuzda bu hareket değişimlerini ölçen, ivmeölçer adında bir cihaz bulunur. İvme ölçerin içinde serbestçe hareket eden küçük ve askıda kütleler bulunur. Tıpkı aniden duran bir arabada kafanızın öne doğru sarsılması gibi, hareket değişimleri de bu kütlelerin yer değiştirmesine neden olur. Telefonlardaki ivmeölçer, bu ani eylemsizlik değişimlerini ölçerek hareket ve yöndeki değişimleri algılayabilir. Ekranı yatay moddan dikey moda geçirirken, telefonunuzda oyun oynarken ve daha birçok şey yaparken bu araçtan faydalanılır.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Birleştirilmiş doğrusal ivmeölçer sensörü, yer çekimini hariç tutarak telefonunuzun üç ekseninin her birindeki toplam ivmeyi kaydeder.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Telefonunuzda manyetik alanları algılayabilecek bir cihaz, yani manyetometre bulunur. Bu üç eksenli küçük sensör, uzaydaki üç boyutta manyetik alan kuvvetini algılamak için elektrik akımlarından yararlanır. Üç eksenin her birinden gelen verileri bir araya getirerek, toplam manyetik alan kuvveti sensörü oluşturuyoruz.\n\nBazı manyetometreler, manyetik alanların hareket eden yük taşıyıcıların yönünü değiştirme eğilimi anlamına gelen Hall etkisinden yararlanarak bu alanları algılar. Daha yeni manyetometrelerde manyetik direnç, yani manyetik alanlara karşılık olarak direncini değiştiren metal alaşımlar kullanılır.\n\nPeki telefona manyetometre eklenmesinin sebebi nedir? Uzaydaki yönünüzün bilinmesi, özellikle adım adım yol tarifi veren gezinme uygulamalarında ve dahili pusulalarda oldukça işe yarar.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Mıknatıs, elektrik akımı ve metal nesneler, telefonunuzun manyetometresini çift taraflı olarak kolayca hareket ettirebilir. Ancak boş bir alanın ortasında bile telefonunuzun manyetometresi daima, sıfır olmayan düşük bir değer gösterir: Bu, Dünya'nın manyetik alanıdır!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Sesler, titreşimle oluşur. Örneğin, kendi sesinizin kaynağı gırtlağınızdaki ses tellerinde meydana gelen titreşimlerdir. Bu titreşimler, dışa doğru hareket eden ve birbiri ardına gelen yüksek ve alçak hava basıncı alanları oluşturur. Bunu, bir su birikintisine attığımız taşın oluşturduğu genişleyen dairesel dalgalara benzetebiliriz.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Tüm sesler, frekansları ve şiddetleri açısından açıklanabilir. Bir ses dalgasının frekansı (perde veya ton olarak da kullanılır), titreşim hızına eşdeğerdir. Bir nesne ne kadar hızlı titreşirse ortaya çıkan sesin perdesi de o kadar yüksek olur. Bu titreşimleri, 1 Hertz = 1 titreşim/saniye olarak hesaplanan Hertz (Hz) ölçüm birimiyle ölçeriz.\n\nİnsanlar 20 - 20.000 Hz değerleri arasındaki sesleri duyabilir. Piyanoda en düşük sesli tuş 27,5 Hz ve en yüksek sesli tuş 4186,01 Hz'dir.\n\nKırmızı nokta, tespit edilen perdenin en yakın müzik notasına olan yakınlığını belirtir. Perde daha düşük veya \"kalın\" olduğunda nokta sol tarafta görünür. Perde daha yüksek veya \"ince\" olduğunda ise kırmızı nokta sağ tarafta görünecektir.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Burada gösterilen veriler, telefonunuzun Bluetooth aracılığıyla iletişim kurduğu harici bir sensörden geliyor. \n\nDeğer, doğrudan mikrodenetleyicinizden gelen ham okuma değerlerinin yüzdesini gösteriyor. Bu, genelde bir sensördeki gerilim düşüşünün yüzdesidir.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth, sabit ve mobil cihazlardan kısa mesafeler arasında veri alışverişi yapmak için radyo dalgalarını kullanan kablosuz bir teknoloji standardıdır.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Dakikadaki devir sayısı (RPM), sabit bir eksen üzerinde bir dakikadaki dönüş sıklığının ölçümüdür. \n\nRüzgar pervanesi döndükçe kodlayıcı diski döndürür:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Bu şekilde sensörde aydınlık ve karanlık periyotlar oluşturulur. Bunlar Science Journal'da devir olarak kaydolur.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Burada gösterilen veriler, telefonunuzun Bluetooth aracılığıyla iletişim kurduğu harici bir sensörden geliyor.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth, sabit ve mobil cihazlardan kısa mesafeler arasında veri alışverişi yapmak için radyo dalgalarını kullanan kablosuz bir teknoloji standardıdır.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Telefonun sola ve sağa ivmesi (m/s² cinsinden)";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Telefonun öne ve arkaya ivmesi (m/s² cinsinden)";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Telefonun yukarı ve aşağı ivmesi (m/s² cinsinden)";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Atmosfer basıncı, hektopaskal (hPa) birimiyle ölçülür.";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Özel ayarlara bağlı olarak harici bir sensörün verileri burada gösteriliyor.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Ön kameraya ulaşan ve EV cinsinden ölçülen ışığın miktarıdır.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Dünya'nın manyetik alanına göre telefonun yönü.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Ses sensörüne veya mikrofona ulaşan ve desibel (dB) cinsinden ölçülen ses şiddetidir.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Yer çekimi kuvveti hariç, telefonunuzun toplam ivmesi (m/sn² cinsinden)";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Ortamın jeomanyetik alan kuvveti (Mikrotesla cinsinden)";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Ses sensörüne veya mikrofona ulaşan sesin perdesi hertz (Hz) cinsinden ölçülür.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Harici bir sensörden gelen ham okuma değerinin yüzdesidir.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Dakikadaki devir sayısıdır";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Sinüs dalgası üreten bir test sensörüdür.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Kayıtta sonraki sensör";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Kayıtta önceki sensör";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Ham";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Devir";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Kayıt yaparken sensörler değiştirilemez";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Tetikleyici silindi";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Ses ile parlaklık sensörleri mikrofonu ve ön kamerayı kullanır ve Science Journal arka planda çalışırken kayıt yapamazlar. Bir kayıtta bu sensörleri kullanırken uygulamayı arka plana atarsanız uygulamaya dönünceye kadar verileriniz kaydedilmez.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Ses ile parlaklık sensörleri mikrofonu ve ön kamerayı kullanır ve Science Journal arka planda çalışırken kayıt yapamazlar.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Bu sensör hakkında bir not";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Pencere İçinde Pencere videosu izlerken veya Science Journal'ı bölünmüş ekran modunda kullanırken parlaklık sensörü kullanılamaz.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Gerilim";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Deneyde kullanılacak sensörleri seçin";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Sensör listesini daralt";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Sensör listesini genişlet";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal devre dışı bırakıldı";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Science Journal'ın Google Yönetici konsolunda alan yöneticiniz tarafından etkinleştirilmesi gerekiyor.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Hesap değiştir";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Veriler anonimdir ve bu uygulamanın geliştirilmesi için kullanılır.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Uygulamanın veri kullanımını Google'a gönder";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Açık kaynak lisansları";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Gizlilik politikası";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Hizmet şartları";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Sürüm";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Science Journal web sitesi";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Seçenekleri göster";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "%1$@, %2$@ bilgileriyle oturum açıldı.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Hesapları yönetmek için açın";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Hesap seçin";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Kenar çubuğu menüsü";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Uygulama seçeneklerini içeren bir kenar çubuğu menüsü açar";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Oturum aç";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sinüs dalgası";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sinüs";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Not silindi";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Geri al";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Anlık görüntü";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Gözlemlenen tüm sensörlerin değerinin bir anlık görüntüsünü deneye ekler";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Bir veya daha çok sensörün bağlantısı kesildiğinden anlık görüntü alınamıyor. Lütfen tekrar deneyin.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Anlık görüntü bilgileri";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Anlık görüntü eklendi";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maksimum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Ortalama";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Kamera değiştir";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Açık";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Kapalı";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Kayıtlar, bir saniyeden kısa olacak şekilde kırpılamaz";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Geçerli bir biçim kullanın, sa:dk:sn.MS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Yeni süre (sa:dk:sn.MS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Süre, kayıt aralığının içinde olmalıdır";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Yazılı notu düzenleyin";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Metin notu";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Gözlem ekleyin";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Not eklendi";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Kayıt devam ediyor";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Araç çekmecesinde gözlem sekmesine geçmek için iki kez dokunun";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Sensör ayarları";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Deneye";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Kayda";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Beni şunu kullanarak uyar:";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Ses";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Tetikleyici ayrıntıları";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "%@ tetikleyicisini düzenleyin";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Yeni %@ tetikleyicisi";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Tetikleyici etkin";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Titreşim";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Tetikleyiciler:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "sensör değeri şunun üzerindeyse:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "sensör şu değerdeyse:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "sensör değeri şunun altındaysa:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "şu değerin altına düştüğünde:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "şu değerin üstüne çıktığında:";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Tetikleyici notu eklendi";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Notunuzda ne yazsın?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Varsayılan not metni";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Yalnızca kayıttayken tetikle";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Beni uyar";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Tetikleyici türü";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Not yaz";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Kaydı başlat";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Kaydı durdur";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Tetikleyici değeri";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Görsel bildirim";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "şu değerin üstündeydi:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Değere ulaşınca";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "şu değerin altındaydı:";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "şu değerin altına düştü:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Altına inerken";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Üstünde olunca";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Altında olunca";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Şu durumda tetikle";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Üstüne çıkarken";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "şu değerin üstüne çıktı:";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Tetikleyici Düzenle";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Çok fazla sayıda tetikleyici meydana geldi ve devre dışı bırakıldılar";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Deney arşivden çıkarıldı.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Kayıt arşivden çıkarıldı.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Bilinmeyen sensör";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Adsız";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Çevrenizde deneyler gerçekleştirmek için Science Journal'ı kullanın";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Science Journal'ın bu sürümü ve cihazınız hakkında bilgi toplayıp (sadece donanım ve iOS sürümü hakkında, kişisel bilgi veya kimlik bilgisi değil!) bize gönderebileceğiniz bir e-postaya ekleyeceğiz.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Düşüncelerinizi duymak isteriz";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Geri bildirim gönder";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Video akışı";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

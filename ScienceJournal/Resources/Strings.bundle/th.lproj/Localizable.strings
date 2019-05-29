@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "วารสารวิทยาศาสตร์";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "ฟีเจอร์ใหม่และการปรับปรุง:\n• ลงชื่อเข้าใช้บัญชี Google เพื่อบันทึกและเข้าถึงการทดสอบในอุปกรณ์ต่างๆ โดยใช้บัญชี Google ไดรฟ์ ฟีเจอร์นี้จะพร้อมให้บริการกับผู้ใช้ทุกรายในสัปดาห์ที่จะมาถึงนี้ คุณยังใช้วารสารวิทยาศาสตร์ได้โดยไม่ต้องลงชื่อเข้าใช้";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "การปรับปรุงประสิทธิภาพและแก้ไขข้อบกพร่องหลายรายการ";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "วารสารวิทยาศาสตร์โดย Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "สำรวจโลกรอบตัวคุณ";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "วารสารวิทยาศาสตร์เป็นสมุดบันทึกทางวิทยาศาสตร์แบบดิจิทัลฟรีที่จัดทำโดย Google\n\nโดยไม่ว่าคุณจะเป็นครูสอนวิทยาศาสตร์หรือผู้ที่ชื่นชอบการทดลองวิทยาศาสตร์ที่บ้าน คุณก็จะเก็บบันทึก รูปภาพ และการสังเกตการณ์ได้อย่างสะดวกในที่เดียว ใช้เซ็นเซอร์ใน iPhone หรือ iPad เพื่อวัดและสร้างกราฟจากปรากฏการณ์ต่างๆ เช่น แสง เสียง และการเคลื่อนไหว หรือเชื่อมต่อเข้ากับเซ็นเซอร์ภายนอกผ่านทางบลูทูธเพื่อทำการทดลองต่างๆ ในโลกรอบตัวคุณ\n\nแอปวารสารวิทยาศาสตร์ช่วยให้คุณทำสิ่งต่างๆ ต่อไปนี้ได้\n• วัดแสง เสียง ความเร่ง ความดันอากาศ และอีกมากมายด้วยเซ็นเซอร์ในอุปกรณ์.\n• จดบันทึกและถ่ายภาพเพื่อสร้างเอกสารการทดลองวิทยาศาสตร์ และเตรียมพบกับบันทึกแบบใหม่เร็วๆ นี้\n• เชื่อมต่อกับเซ็นเซอร์ภายนอกด้วยการเลือกอุปกรณ์ Arduino ที่รองรับการใช้งานบลูทูธ\n• สร้างทริกเกอร์แบบอัตโนมัติสำหรับการบันทึกข้อมูลและจดบันทึก\n• ใช้การแปลงข้อมูลเป็นเสียงเพื่อฟังเสียงกราฟ\n\nประกาศเกี่ยวกับสิทธิ์:\n• บลูทูธ: จำเป็นต้องใช้เพื่อสแกนหาอุปกรณ์เซ็นเซอร์บลูทูธ\n• กล้องถ่ายรูป: จำเป็นต้องใช้เพื่อถ่ายรูปทำบันทึกการทดลองและเซ็นเซอร์ความสว่าง\n• คลังภาพ: จำเป็นต้องใช้เพื่อจัดเก็บรูปภาพที่ถ่ายไว้สำหรับบันทึกการทดลองและเพิ่มรูปภาพที่มีอยู่จากคลังลงในการทดลอง\n• ไมโครโฟน: จำเป็นต้องใช้เป็นเซ็นเซอร์วัดความเข้มเสียง\n• ข้อความ Push: จำเป็นต้องใช้เพื่อแจ้งสถานะการบันทึกเมื่อแอปทำงานในเบื้องหลัง\n\nกิจกรรมด้านการศึกษาจากพาร์ทเนอร์:\nhttps://makingscience.withgoogle.com/science-journal/activities\nสำหรับการสนับสนุน: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,วิทยาศาสตร์,การศึกษา,stem,การทดลอง,เซ็นเซอร์,กราฟ,วารสาร,สมุดบันทึก,บันทึก,เอกสาร,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "มาตรความเร่ง X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "มาตรความเร่ง Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "มาตรความเร่ง Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "เกี่ยวกับ";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "เพิ่มคำอธิบายภาพ";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "เก็บ";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "เก็บการทดลองถาวร";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "เก็บการบันทึกถาวร";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "ยกเลิก";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "รับทราบ";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "ลบ";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "ลบการทดลอง";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "ลบการบันทึก";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "ลบภาพ";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "ลบสแนปชอต";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "ลบบันทึกข้อความ";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "ลบบันทึก";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "ยกเลิก";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "ปิด";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "แก้ไข";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "ความคิดเห็น";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "รวมการทดลองที่เก็บถาวร";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "ระดับ";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "ตกลง";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "รายงาน";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "ลองอีกครั้ง";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "ไม้บรรทัด";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "บันทึก";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "การตั้งค่า";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "ยกเลิกการเก็บ";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "ยกเลิกการเก็บการทดลองถาวร";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "การบันทึกที่ไม่ได้เก็บถาวร";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "เลิกทำ";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "ดูรายละเอียด";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "เพิ่มบันทึกในไทม์ไลน์";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "เพิ่มบันทึกใหม่";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "เพิ่มรูปภาพ";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "เพิ่มภาพ";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "เพิ่มบันทึก";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "แสงสว่างโดยรอบ";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "ลักซ์";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "แอมพลิจูด";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "อุณหภูมิแวดล้อม";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "เก็บแล้ว";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "การทดลองที่เก็บถาวรไม่สามารถแก้ไขได้ แต่ลบได้";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "เก็บถาวรการทดลองแล้ว";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "เก็บการบันทึกแล้ว";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "อุปกรณ์ที่ใช้ได้";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "กลับ";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "กลับไปยังมุมมองก่อนหน้า";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "บาโรมิเตอร์";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "วารสารวิทยาศาสตร์";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "สร้างทริกเกอร์";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "เพิ่มการ์ดเซ็นเซอร์ใหม่";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "ทิ้งการเปลี่ยนแปลง";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "บันทึกการเปลี่ยนแปลง";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "เก็บไว้";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "ลบการทดลอง";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "การทดลองใหม่";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "เริ่มบันทึก";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "กลับไปที่เวลาปัจจุบัน";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "ปิดการ์ด";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "หยุดบันทึก";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "ถ่ายรูป";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "กล้องถ่ายรูป สำหรับเพิ่มรูปถ่ายลงในการทดลองนี้";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "คุณต้องป้อนค่าตัวเลขที่จะให้ทริกเกอร์นี้เริ่มทำงาน";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "ควบคุมการเล่นแผนภูมิ";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "เลื่อนตำแหน่งการเล่นของแผนภูมิและอ่านค่าในตำแหน่งนั้น";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "แผนภูมิแบบเรียลไทม์";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "หันไปทางซ้าย";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "หันไปทางขวา";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "หันแล้ว";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "แผนภูมิ";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "ซูมเข้า";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "ระดับการซูม";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "ซูมให้พอดี";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "ซูมออก";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "เลือกรูปภาพ";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "อ้างสิทธิ์ทั้งหมด";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "อ้างสิทธิ์ทั้งหมด";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "เพิ่มไปยังไดรฟ์";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "เพิ่มการทดลองที่เหลืออยู่ 1 รายการไปยัง Google ไดรฟ์ไหม%@";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "เพิ่มการทดลองที่เหลืออยู่ %1$@ รายการไปยังไดรฟ์สำหรับ %2$@ ไหม";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "อ้างสิทธิ์การทดลองที่เหลืออยู่ทั้งหมด";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "เพิ่มการทดลองทั้งหมดไปยัง Google ไดรฟ์ใช่ไหม";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "อ้างสิทธิ์การทดลองทั้งหมดใช่ไหม";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "เพิ่มการทดลองที่ไม่มีการอ้างสิทธิ์นี้ไปยัง Google ไดรฟ์";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "ไม่สามารถแก้ไขการทดลองได้และการทดลองดังกล่าวจะยังคงอยู่ในอุปกรณ์จนกว่าจะได้รับการอ้างสิทธิ์หรือถูกลบออก";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "เพิ่มการทดลองไปยัง Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "อ้างสิทธิ์การทดลอง";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "ลบการทดลองนี้";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "ลบทั้งหมด";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "ลบการทดลองที่ไม่มีการอ้างสิทธิ์ที่เหลืออยู่ 1 รายการไหม";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "ลบการทดลองที่เหลืออยู่ %ld รายการไหม";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "ลบการทดลองที่เหลือทั้งหมด";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "ลบการทดลองทั้งหมดใช่ไหม";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "ระบบจะลบการทดลองทั้งหมดในอุปกรณ์นี้ รวมถึงการทดลองที่เก็บถาวร คุณจะเลิกทำการดำเนินการนี้ไม่ได้";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "ลบทั้งหมด";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "มีการทดลองที่ไม่มีการอ้างสิทธิ์ %ld รายการในอุปกรณ์นี้";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "มีการทดลองที่ไม่มีการอ้างสิทธิ์ 1 รายการในอุปกรณ์นี้";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "แชร์การทดลองที่ไม่มีการอ้างสิทธิ์นี้";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "ไม่มีพื้นที่ดิสก์มากพอสำหรับการอ้างสิทธิ์การทดลอง";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "ไม่มีพื้นที่ดิสก์มากพอสำหรับการอ้างสิทธิ์การทดลอง";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "อ้างสิทธิ์การทดลองไม่ได้";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "อ้างสิทธิ์การทดลองไม่ได้";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "อ้างสิทธิ์การทดลองใช่ไหม";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "อ้างสิทธิ์การทดลอง";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "เพิ่มการทดลองนี้ไปยัง Google ไดรฟ์สำหรับ %@ ใช่ไหม";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "เพิ่มการทดลองไปยัง %@ แล้ว";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "อ้างสิทธิ์การทดลองที่ผ่านมา";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "อ้างสิทธิ์การทดลอง";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "ปิด";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "กลับไปยังมุมมองก่อนหน้า";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "เข็มทิศ";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "องศา";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "ตัวนำ";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "ดำเนินการต่อโดยไม่ลงชื่อเข้าใช้";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "การครอบตัดสิ้นสุด:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "บันทึกการครอบตัดไม่ได้";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "ย้ายเครื่องหมายการครอบตัดสิ้นสุดไปทางซ้าย";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "ย้ายเครื่องหมายการครอบตัดสิ้นสุดไปทางขวา";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "ย้ายเครื่องหมายการครอบตัดเริ่มต้นไปทางซ้าย";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "ย้ายเครื่องหมายการครอบตัดเริ่มต้นไปทางขวา";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "ตัวเลือกเพิ่มเติม";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "ครอบตัดการบันทึกแล้ว";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "ครอบตัดการบันทึกภายนอกช่วงเวลาที่บันทึกในตอนแรกไม่ได้";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "ครอบตัดการบันทึกให้มีความยาวน้อยกว่า 1 วินาทีไม่ได้";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "ครอบตัด";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "การครอบตัดเริ่มต้น:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "ค่าปัจจุบัน";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "ความเข้มเสียง";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "การทดลองที่ไม่มีชื่อ";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "ค่าเริ่มต้น";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "คุณแน่ใจหรือว่าต้องการลบการทดลองนี้ ระบบจะลบการบันทึกและบันทึกของการทดลองทั้งหมด";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "ลบการทดลองนี้ใช่ไหม";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "ลบ";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "ลบการบันทึกนี้ไหม";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "ลบการทดลองแล้ว";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "ลบการบันทึกแล้ว";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "รายละเอียด";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "PIN";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "ความถี่";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "บันทึกการตั้งค่าเซ็นเซอร์";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "เซ็นเซอร์";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "ปิดใช้การปรับขนาดอัตโนมัติ";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "แตกสองครั้งเพื่อแก้ไข";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "แตะสองครั้งเพื่อเปิด";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "แตะสองครั้งเพื่อเลือก";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "แตะสองครั้งเพื่อสลับ";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "แตะสองครั้งเพื่อดูรายละเอียด";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "จับลิ้นชักเครื่องมือ";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "ปรับขนาดลิ้นชักเครื่องมือ ใช้การดำเนินการได้";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "ปิดอยู่";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "การแก้ไข";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "เต็มหน้าจอ";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "ครึ่งหน้าจอ";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "เชื่อมต่อกับ Google ไดรฟ์ไม่ได้ ตรวจสอบการเชื่อมต่อของคุณ";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "ยกเลิกการเชื่อมต่อเครือข่ายแล้ว";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "วารสารวิทยาศาสตร์เชื่อมต่อกับ Google ไดร์ฟไม่ได้ การทดลองบางส่วนอาจไม่ได้รับการสำรองข้อมูลไว้";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "วารสารวิทยาศาสตร์เชื่อมต่อกับ Google ไดร์ฟไม่ได้ในขณะนี้ เราจะลองอีกครั้งในภายหลัง";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google ไดร์ฟมีพื้นที่ไม่เพียงพอที่จะจัดเก็บการทดลอง";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "ระบบใช้ Google ไดรฟ์ในการบันทึกข้อมูลการทดลองสำหรับวารสารวิทยาศาสตร์ซึ่งทำให้ข้อมูลดังกล่าวใช้งานได้ในอุปกรณ์หลายเครื่อง ดังนั้นจึงจำเป็นต้องลงชื่อเข้าใช้ด้วยบัญชี Google \n\nหากมีข้อมูลอยู่แล้วในอุปกรณ์นี้ คุณบันทึกการทดลองที่มีอยู่ลงใน Google ไดรฟ์ได้เมื่อลงชื่อเข้าใช้ โดยระบบจะจัดเก็บการทดลองไว้ในโฟลเดอร์ \"วารสารวิทยาศาสตร์\" ใน Google ไดรฟ์";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "เข้าถึง Google ไดรฟ์ไม่ได้ ลองตรวจสอบการเชื่อมต่อของคุณ";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "แก้ไขเวลาสิ้นสุด";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "แก้ไขเวลาเริ่มต้น";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "แก้ไขการทดลอง";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "เปลี่ยนชื่อหรือรูปภาพของการทดลอง";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "ไม่บันทึกการเปลี่ยนแปลง";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "คุณแน่ใจไหมว่าไม่ต้องการบันทึกการเปลี่ยนแปลงในการทดลองนี้";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "เปลี่ยนรูปภาพ";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "แก้ไขการทดลอง";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "แก้ไขเวลา";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "แก้ไขเวลาของบันทึก";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "แก้ไขเวลาสิ้นสุดการบันทึก";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "แก้ไขเวลาเริ่มต้นการบันทึก";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "แก้ไขการบันทึก";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "เปลี่ยนชื่อการบันทึก";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "ชื่อการบันทึก";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "คุณยังไม่มีการสังเกตการณ์";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "คุณไม่มีการทดลอง";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "ไม่มีทริกเกอร์ที่ตั้งค่า";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "เปิดใช้การปรับขนาดอัตโนมัติ";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "ระบบจะไม่เพิ่มการทดลองไปยัง Google ไดรฟ์";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "ลบการทดลองทั้งหมด";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "ระบบจะเพิ่มการทดลองทั้งหมดไปยัง Google ไดรฟ์";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "บันทึกการทดลองทั้งหมด";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "เลือกการทดลองที่จะบันทึกไปยัง Google ไดรฟ์";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "เลือกการทดลองเพื่อบันทึก";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "ยินดีต้อนรับกลับมา ขณะนี้คุณมีการทดลอง %ld รายการที่จัดเก็บในอุปกรณ์นี้\n\nเลือกตัวเลือกเพื่อดำเนินการต่อ";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "ยินดีต้อนรับกลับมา ขณะนี้คุณมีการทดลอง 1 รายการที่จัดเก็บในอุปกรณ์นี้\n\nเลือกตัวเลือกเพื่อดำเนินการต่อ";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "สำรองข้อมูลไปยัง Google ไดรฟ์";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "การทดลอง";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "การทดลอง";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "แชร์การทดลอง";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "ระบบยังดาวน์โหลดการทดสอบนี้ไม่เสร็จ หากคุณแชร์สำเนา ข้อมูลบางส่วนอาจหายไป";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "กำลังดาวน์โหลด";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "กำลังบันทึก…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "ชื่อการทดลอง";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "การทดลองนี้สร้างขึ้นด้วยวารสารวิทยาศาสตร์เวอร์ชันใหม่กว่า คุณจะแก้ไขการทดลองบนอุปกรณ์นี้ไม่ได้จนกว่าจะดาวน์โหลดการอัปเดตล่าสุด";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "จัดระเบียบความคิดและการสังเกตโดยการจดโน้ต บันทึกข้อมูล หรือถ่ายรูป";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "สร้างการทดลองใหม่";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "สำรวจโลกรอบตัวคุณ";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "แชร์";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "การส่งออกล้มเหลว";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "ส่งการทดลอง";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "เวลาสัมพัทธ์";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "ส่งออก…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "แชร์รูปภาพไปยัง…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "ยินดีต้อนรับสู่วารสารวิทยาศาสตร์";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "ลองจดบันทึกและบันทึกข้อมูลโดยใช้แถบเครื่องมือด้านล่าง";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "ยินดีต้อนรับสู่วารสารวิทยาศาสตร์";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "ค้นหากิจกรรมเพื่อทดลองได้ที่\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "ไม่จำอุปกรณ์นี้";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "เต็มจอ";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "เริ่มต้น";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "เปิดใช้เสียง";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "ปิดใช้เสียง";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "เกิดอะไรขึ้น";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "ขออภัย เกิดข้อผิดพลาดที่ไม่รู้จัก";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "นำเข้าไม่สำเร็จ มีบางอย่างผิดปกติเกี่ยวกับการทดลองนี้";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "กำลังใช้งานวารสารวิทยาศาสตร์อยู่ โปรดหยุดการบันทึกแล้วลองอีกครั้ง";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "ลงชื่อเข้าใช้เพื่อนำเข้าการทดลอง";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "พื้นที่จัดเก็บข้อมูลไม่เพียงพอ";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "คุณจัดการพื้นที่จัดเก็บได้ในการตั้งค่า";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "แสดงการบันทึกที่เก็บไว้";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "เปิดการตั้งค่า";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "ไม่สามารถใช้กล้องถ่ายรูปได้เนื่องจากคุณกำลังบันทึกโดยใช้เซ็นเซอร์ความสว่าง ซึ่งวัดข้อมูลผ่านกล้องหน้า";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "ไม่สามารถใช้กล้องถ่ายรูปได้เนื่องจากคุณกำลังดูวิดีโอภาพซ้อนภาพหรือกำลังใช้โหมดมุมมองแบบแยกในวารสารวิทยาศาสตร์";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "ดูเซ็นเซอร์";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "ไม่สามารถใช้กล้องถ่ายรูปได้เนื่องจากวารสารวิทยาศาสตร์ไม่มีสิทธิ์ในการเข้าถึง";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "ไม่สามารถใช้คลังภาพเนื่องจากวารสารวิทยาศาสตร์ไม่มีสิทธิ์ในการเข้าถึง";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "ดูข้อมูลเพิ่มเติม";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "ดูข้อมูลเพิ่มเติม";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "ตัวตรวจวัดความเร่งเชิงเส้น";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "การปรับปรุงประสิทธิภาพและแก้ไขข้อบกพร่อง";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "ฟีเจอร์ใหม่:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• เซ็นเซอร์ระดับเสียง";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• ส่งออกการทดลองไปยังไฟล์ แล้วนำเข้าไปยังอุปกรณ์อื่นๆ";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• ส่งออกรูปภาพจากการทดลอง";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "ดูบันทึกเพิ่มเติม";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "เครื่องวัดค่าความเข้มข้นของสนามแม่เหล็ก";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "เมนู";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "แสดงเมนูที่มีตัวเลือกเพิ่มเติม";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "การตั้งค่าเสียง";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "แก้ไขทริกเกอร์";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "ตั้งค่าทริกเกอร์";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "อุปกรณ์ของฉัน";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "ตั้งชื่อการทดลองนี้";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "กิจกรรม";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "การทดลอง";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "การตั้งค่า";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "เพิ่มรายละเอียด";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "คำอธิบาย";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "บันทึกรูปภาพ";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "บันทึกข้อความ";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "บันทึกของทริกเกอร์";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "บันทึกของสแนปชอต";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "โน้ต";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "เพิ่มโน้ตแล้ว";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "โน้ต สำหรับเพิ่มโน้ตข้อความลงในการทดลองนี้";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "สังเกต สำหรับเพิ่มสแนปชอตโดยใช้เซ็นเซอร์หรือบันทึกค่าลงในการทดลองนี้";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "เปิดการทดลองไม่ได้";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "เปิดไฟล์ไม่ได้";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "การทดลองต้องเป็นรูปแบบไฟล์ Science Journal (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "หยุดชั่วคราว";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "เปอร์เซ็นต์";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "เราได้ตรวจสอบสิทธิ์เรียบร้อยแล้ว หากคุณต้องการแก้ไขสิทธิ์เหล่านี้ในภายหลัง คุณแก้ไขได้ทุกเมื่อจากส่วนวารสารวิทยาศาสตร์ในการตั้งค่าแอป iOS";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "ตอนนี้เราจะตรวจสอบสิทธิ์ในการเข้าถึงกล้องถ่ายรูป เราใช้กล้องหน้าเป็นเซ็นเซอร์ความสว่าง และคุณใช้กล้องถ่ายรูปเพื่อเพิ่มรูปไปยังการทดลองและการบันทึกได้";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "ต่อไป";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "เราจะเริ่มโดยการตรวจสอบสิทธิ์เพื่อให้เราเปิดใช้เซ็นเซอร์ฮาร์ดแวร์ กล้อง และคลังภาพ เราจะอธิบายการใช้งานแต่ละส่วนก่อนแจ้งเตือนคุณ";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "จากนั้น เราจะตรวจสอบสิทธิ์เข้าถึงไมโครโฟนซึ่งจะใช้เพื่อเซ็นเซอร์เสียง เนื้อหาของเสียงจะไม่ได้รับการบันทึก จัดเก็บ หรือส่งต่อ โดยเราจะวัดเพียงความเข้มและระดับของเสียงเท่านั้น";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "ก่อนอื่น เราจะตรวจสอบสิทธิ์ส่งข้อความ Push ถึงคุณ เราจะใช้สิทธิ์นี้แจ้งให้คุณทราบว่าการบันทึกกำลังจะสิ้นสุดเมื่อแอปทำงานเป็นพื้นหลัง";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "สุดท้าย เราจะตรวจสอบสิทธิ์เข้าถึงคลังภาพเพื่อให้คุณเพิ่มรูปภาพที่มีอยู่ไปยังการทดลองและการบันทึก และเพื่อให้คุณบันทึกรูปภาพที่คุณถ่ายกลับไปยังคลังภาพได้";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "เริ่มเลย";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "เรียบร้อยแล้ว!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "ตรวจสอบสิทธิ์";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "ยินดีต้อนรับสู่วารสารวิทยาศาสตร์";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "รูปภาพสำหรับ";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "รูปภาพ";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "ไม่มีพื้นที่ดิสก์มากพอสำหรับการเพิ่มรูปภาพ";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "เซ็นเซอร์ภายใน";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "คลังภาพ เพิ่มรูปภาพจากคลังมายังการทดลองนี้";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "ข้อมูล";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "อุปกรณ์";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "ขนาด";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "โน้ต";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "ความเร็วชัตเตอร์";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "เพิ่มรูปภาพแล้ว";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "ระดับเสียง";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ มีระดับเสียงต่ำกว่า %2$@ แฟลต, เสียงคู่แปด %3$@ อยู่ครึ่งระดับ";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ มีระดับเสียงต่ำกว่า %2$@, เสียงคู่แปด %3$@ อยู่ครึ่งระดับ";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ มีระดับเสียงต่ำกว่า %2$@ ชาร์ป, เสียงคู่แปด %3$@ อยู่ครึ่งระดับ";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ แฟลต, เสียงคู่แปด %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "ระดับเสียงสูง";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "ระดับเสียงต่ำ";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, เสียงคู่แปด %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ ชาร์ป, เสียงคู่แปด %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ มีระดับเสียงสูงกว่า %2$@ เสียงต่ำ, %3$@ เสียงคู่แปดอยู่ครึ่งระดับ";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ มีระดับเสียงสูงกว่า %2$@, เสียงคู่แปด %3$@ อยู่ครึ่งระดับ";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ มีระดับเสียงสูงกว่า %2$@ ชาร์ป, เสียงคู่แปด %3$@ อยู่ครึ่งระดับ";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "พิกเซล";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "เล่น";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "ระบบได้ใช้การตั้งค่าอุปกรณ์ที่มีอยู่กับบัญชีนี้";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "กำลังรีเฟรช";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "เริ่มบันทึกไม่ได้";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "มีเซ็นเซอร์อย่างน้อย 1 รายการที่ยกเลิกการเชื่อมต่อแล้ว โปรดลองอีกครั้ง";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "เปิดวารสารวิทยาศาสตร์เพื่อดูข้อมูลที่บันทึกไว้";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "การบันทึกสิ้นสุดแล้ว";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "ต่อไป";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "ยกเลิกการบันทึก";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "มีเซ็นเซอร์อย่างน้อย 1 รายการที่ไม่บันทึกข้อมูล คุณต้องการยกเลิกการบันทึกนี้ไหม";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "ไม่มีการบันทึกข้อมูล";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "การบันทึกสิ้นสุดแล้ว";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "เปิดวารสารวิทยาศาสตร์เพื่อบันทึกต่อ";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "การบันทึกจะสิ้นสุดในเร็วๆ นี้";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "บันทึกต่อ";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "หยุดบันทึก";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "นำภาพหน้าปกออก";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "นำภาพหน้าปกสำหรับการทดลองนี้ออก";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "แน่ใจไหมว่าต้องการนำภาพหน้าปกออก คุณจะยกเลิกการดำเนินการนี้ไม่ได้";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "นำภาพหน้าปกออกแล้ว";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "นำภาพหน้าปกออกไม่ได้";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "เพิ่มการบันทึก";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "การบันทึก";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "เปลี่ยนชื่อการบันทึก";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "คุณแน่ใจหรือไม่ว่าต้องการลบการบันทึกนี้ ระบบจะลบข้อมูลและบันทึกที่บันทึกไว้";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "ระยะเวลา";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "รีวิว";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "บันทึก";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "บันทึกการเปลี่ยนแปลงและกลับไปยังมุมมองก่อนหน้า";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "บันทึกการทดลอง";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "คุณต้องการเพิ่มการทดลองนี้ลงในไลบรารีไหม";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "บันทึกลงใน Files";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "แสดงเบราว์เซอร์เอกสารซึ่งช่วยให้คุณบันทึกสำเนาของไฟล์นี้ในโฟลเดอร์บนอุปกรณ์ได้";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "บันทึกไฟล์แล้ว";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "บันทึกไฟล์แล้ว";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "บันทึกไฟล์ไม่ได้ โปรดลองอีกครั้ง";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "บันทึกไฟล์ไม่ได้ โปรดลองอีกครั้ง";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "สเกล";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "เลือกการประทับเวลาของโน้ตในแผนภูมิ";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "ส่งสำเนา";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "การตั้งค่า";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "ความสว่าง";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "ใช้เซ็นเซอร์ความสว่างไม่ได้เนื่องจากวารสารวิทยาศาสตร์ไม่มีสิทธิ์ในการเข้าถึงกล้องถ่ายรูป";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "โหลดข้อมูลเซ็นเซอร์ไม่ได้";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "กำลังโหลดข้อมูลเซ็นเซอร์…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "ใช้การเซ็นเซอร์เสียงไม่ได้เนื่องจากวารสารวิทยาศาสตร์ไม่มีสิทธิ์เข้าถึงไมโครโฟน";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "กำหนดเอง";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "วัตถุมีแนวโน้มที่จะอยู่นิ่งหรือเคลื่อนที่ต่อไปหากกำลังเคลื่อนที่อยู่ แนวโน้มนี้เรียกว่าความเฉื่อย กฎข้อที่ 1 ของนิวตันกล่าวว่า วัตถุจะคงสถานะการเคลื่อนไหวหรืออยู่นิ่งจนกระทั่งได้รับผลกระทบจากแรงที่ไม่สมดุล\n\nเมื่อแรงที่ไม่สมดุลทำให้วัตถุเคลื่อนที่ เราเรียกว่าวัตถุมีความเร่ง นั่นคือ อัตราเร็วหรือความเร็วของวัตถุจะเปลี่ยนแปลงเป็นเร็วขึ้น ช้าลง หรือเปลี่ยนทิศทาง ความเร่งจะวัดจากการเปลี่ยนแปลงอัตราเร็ว (เมตรต่อวินาที) ในระยะเวลาหนึ่ง หรือเมตรต่อวินาทียกกำลังสอง (เมตร/วินาที²)\n\nโทรศัพท์มีอุปกรณ์วัดการเปลี่ยนแปลงความเคลื่อนไหวที่เรียกว่า \"ตัววัดความเร่ง\" ภายในตัววัดความเร่งจะมีมวลสารเล็กๆ ลอยอยู่อย่างเป็นอิสระ การเคลื่อนไหวที่เปลี่ยนไปจะทำให้มวลสารเคลื่อนที่ เช่นเดียวกับตอนที่ศีรษะเหวี่ยงไปด้านหน้าเมื่อรถหยุดกะทันหัน การวัดการเปลี่ยนแปลงความเฉื่อยที่ซับซ้อนนี้ทำให้ตัววัดความเร่งในโทรศัพท์ตรวจจับความเคลื่อนไหวและทิศทางที่เปลี่ยนไปได้ ซึ่งมีประโยชน์ในการสลับหน้าจอจากโหมดแนวนอนเป็นแนวตั้งสำหรับการเล่นเกมบนโทรศัพท์ และอื่นๆ";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "คุณอาจสังเกตเห็นว่าในแกน Z มีการเพิ่มความเร็วอยู่ตลอดแม้ว่าโทรศัพท์จะวางนิ่งอยู่บนโต๊ะ นี่เป็นความเร่งที่เกิดขึ้นบนพื้นผิวโลกเนื่องจากแรงดึงของแรงดึงดูด ประมาณ 9.8 เมตร/วินาที²";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "เราแทบจะไม่ได้สังเกตกันเลยว่าเราอาศัยอยู่ใต้มหาสมุทรแห่งอากาศสุดลึก ซึ่งก็คือชั้นบรรยากาศของโลกที่สูงขึ้นไปบนท้องฟ้า 40 กิโลเมตร (130,000 ฟุต) น้ำหนักของอากาศทั้งหมดที่กดทับลงมาที่เราจากด้านบนทำให้เกิดสิ่งที่เรียกว่าความดันบรรยากาศ\n\nที่ระดับน้ำทะเล ความดันบรรยากาศจะมีแรงดัน 6.4 กิโลกรัม (14 ปอนด์) ต่อ 1 ตารางนิ้ว ซึ่งเท่ากับ 590 กิโลกรัม (1,300 ปอนด์) บนพื้นที่ขนาดเท่ากับแผ่นกระดาษ A4";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "เราไม่รู้สึกถึงแรงกดที่มากมายเช่นนี้เพราะเราชินแล้ว แต่เราจะรู้สึกได้เมื่อความดันเปลี่ยนแปลงแม้จะแค่เล็กน้อยก็ตาม เช่น ตอนที่เราขึ้นไปบนพื้นที่สูงๆ หรือขึ้นเครื่องบิน ความดันบรรยากาศยังแตกต่างไปตามสภาพอากาศด้วย กล่าวคือจะลดลงเมื่อเกิดพายุและอากาศไม่มีเสถียรภาพ โดยความดันบรรยากาศจะเพิ่มขึ้นเมื่ออากาศมีเสถียรภาพและท้องฟ้าโปร่ง\n\nบาโรมิเตอร์แบบดิจิทัลในโทรศัพท์จะวัดความดันบรรยากาศในหน่วยเฮกโตปาสคาล (1 เฮกโตปาสคาลเท่ากับ 100 ปาสคาล และ 1 ปาสคาลมีแรงกด 1 นิวตันต่อพื้นที่ 1 ตารางเมตร) คุณอาจเคยได้ยินนักพยากรณ์อากาศพูดถึงความดันบรรยากาศในหน่วยมิลลิบาร์ ซึ่งหน่วยที่ฟังแล้วคุ้นเคยนี้ก็มีค่าเท่ากับเฮกโตปาสคาลนั่นเอง\n\nคุณอาจกำลังสงสัยว่าโทรศัพท์จะวัดความดันไปทำไม การเปลี่ยนแปลงของความดันบรรยากาศนั้นวัดได้ แม้ระดับความสูงจะเปลี่ยนแปลงเพียงเล็กน้อยก็ตาม เช่น เมื่อคุณขึ้นบันได ดังนั้นบาโรมิเตอร์แบบดิจิทัลในโทรศัพท์จึงตรวจจับได้เมื่อตำแหน่งเปลี่ยนแปลง เช่น บอกชั้นอาคารที่คุณอยู่ หรือบอกได้ว่าคุณกำลังขับรถอยู่บนสะพานหรือใต้สะพาน";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "กล้องหน้าวัดความสว่างในหน่วย EV (Exposure Value) โดยค่าที่วัดได้อิงจากความเร็วชัตเตอร์ ขนาดหน้ากล้อง และค่า ISO ของกล้อง โดยพิจารณาตามความสว่างของพิกเซลที่บันทึกจากการตั้งค่าเหล่านี้\n\nยิ่งกล้องรับความสว่างมาก ค่า EV ก็จะยิ่งสูงขึ้น และความมืดจะคิดเป็นค่าลบ";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "เนื่องจาก EV เป็นค่าที่อิงจากแสงและเซ็นเซอร์ของกล้อง ค่าที่วัดได้จึงถูกจำกัดโดยความสามารถของฮาร์ดแวร์และซอฟต์แวร์ แม้ว่าเซ็นเซอร์วัดแสงโดยรอบอาจวัดค่าแสงได้โดยตรง กล้องหน้าจำเป็นต้องใช้ขนาดหน้ากล้อง ค่า ISO และความเร็วชัตเตอร์เพื่อสร้างการวัดพื้นฐาน จากนั้นจึงพิจารณาค่า EV จากพิกเซลที่อ่านได้หลังจากจับภาพแล้ว จากกระบวนการนี้ ค่า EV จึงอาจต่างกันในอุปกรณ์แต่ะเครื่องหากขีดจำกัดของหน้ากล้องต่างกัน เช่น iPhone 8 มีขนาดหน้ากล้องต่ำสุดเท่ากับ 1.8 (f1.8) แต่ iPad มีขนาดหน้ากล้องต่ำสุด 2.4 (f2.4) เป็นต้น\n\nเนื่องจาก EV เป็นค่าที่คำนวณจากค่าความสว่างของพิกเซลที่จับภาพ ตวามสว่างของแสงโดยรอบจะให้ค่าที่ต่ำกว่าที่ควรจะเป็นมากหากค่าแสงนั้นอิงจากเซ็นเซอร์อินฟราเรด ทั้งนี้การวัดจะขึ้นอยู่กับตำแหน่งของกล้องถ่ายรูปและวัตถุที่ถูกถ่าย";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "คุณอาจทราบอยู่แล้วว่าโลกของเรานั้นมีสนามแม่เหล็ก แต่สิ่งที่คุณอาจไม่ทราบก็คือโทรศัพท์มีอุปกรณ์ที่ออกแบบมาเพื่อตรวจจับสนามแม่เหล็กด้วย นั่นคือเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็ก เราสร้างเข็มทิศดิจิทัลได้ด้วยการรวมข้อมูลจากเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กของโทรศัพท์เข้ากับทิศทางของโทรศัพท์ในพื้นที่ว่าง\n\nเข็มทิศในสมัยก่อนเป็นเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กที่ใช้เทคโนโลยีง่ายๆ โดยเข็มที่เป็นแม่เหล็กจะหมุนเพื่อให้อยู่ในแนวเดียวกันกับสนามแม่เหล็กที่อยู่ล้อมรอบ ทั้งนี้ไม่ได้มีเข็มทิศขนาดจิ๋วอยู่ในโทรศัพท์แต่อย่างใด แต่มีเซ็นเซอร์แบบ 3 แกนขนาดเล็กอยู่ ซึ่งจะใช้กระแสไฟฟ้าในการตรวจจับความเข้มของสนามแม่เหล็กในพื้นที่ว่าง 3 มิติ แต่ลำพังแค่เซ็นเซอร์นี้ยังไม่พอที่จะสร้างเข็มทิศ\n\nสาเหตุที่เข็มทิศต้องรวบรวมข้อมูลจากเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กเข้ากับทิศทางของโทรศัพท์คือ การรู้ทิศทางของโทรศัพท์จะทำให้เราคำนวณการหมุนของแม่เหล็กได้แม้โทรศัพท์จะไม่ได้วางอยู่ในแนวราบเดียวกับสนามแม่เหล็กโลกก็ตาม เราทราบว่าแรงโน้มถ่วงตั้งฉากกับสนามแม่เหล็กของโลก เราจึงใช้ทิศทางของแรงโน้มถ่วงจากเซ็นเซอร์ตัวตรวจวัดความเร่งเพื่อหาความเข้มข้นของสนามแม่เหล็กในระนาบเดียวกับสนามแม่เหล็กของโลกนั่นเอง";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "คุณอาจสังเกตเห็นแล้วว่าเข็มทิศนั้นตอบสนองต่อทั้งสนามแม่เหล็กของโลกและสนามแม่เหล็กต่างๆ ทั้งหมดที่มีอยู่โดยรอบ จึงทำให้แม่เหล็ก กระแสไฟฟ้า และวัตถุที่เป็นโลหะเบี่ยงเบนค่าเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กของโทรศัพท์ได้ง่ายและทำให้ค่าที่อ่านได้จากเข็มทิศเปลี่ยนไป หากต้องการให้ปลายสีแดงของเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กอยู่ในแนวขนานกับสนามแม่เหล็กโลก คุณควรยืนอยู่ในพื้นที่เปิด เช่น พื้นที่กลางแจ้งที่ไกลจากสายไฟฟ้า การหมุนโทรศัพท์เป็นรูปเลข 8 จะช่วยในการปรับเทียบเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กในโทรศัพท์ได้";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "เสียงเกิดจากการสั่นสะเทือน ตัวอย่างเช่น เสียงของคุณมาจากการสั่นสะเทือนของเส้นเสียงในกล่องเสียงในลำคอของคุณ การสั่นสะเทือนเหล่าจะสร้างพื้นที่ที่มีแรงกดอากาศสูงและต่ำสลับกันที่เปล่งออกมาภายนอก คล้ายกับวงน้ำที่ขยายตัวออกเมื่อโยนก้อนหินลงบ่อน้ำ";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "เสียงทุกชนิดอธิบายได้ในแง่ของความถี่และความเข้มได้\n\nความเข้มคือสิ่งที่คุณจะได้วัดที่นี่ด้วยเซ็นเซอร์ความเข้มเสียงของวารสารวิทยาศาสตร์ในหน่วยเดซิเบล (dB) ความเข้มหรือความดังนั้นขึ้นอยู่กับระยะทางที่วัตถุที่สั่นสะเทือนมีการเคลื่อนที่ในแต่ละครั้งที่สั่นสะเทือน เราจะได้ยินเสียงที่มีความเข้มมากขึ้นเมื่อเสียงดังขึ้น\n\nความถี่ (หรือระดับเสียงหรือโทนเสียง) ของคลื่นเสียงเทียบเท่ากับอัตราการสั่นสะเทือน ยิ่งวัตถุสั่นสะเทือนเร็วขึ้นเท่าใด เสียงที่ออกมาก็จะสูงขึ้นเท่านั้น เซ็นเซอร์ความเข้มเสียงของวารสารวิทยาศาสตร์ไม่ได้วัดความถี่ แต่วัดเฉพาะความดังเท่านั้น\n\nสิ่งสำคัญที่คุณต้องรู้คือ ไมโครโฟนในอุปกรณ์นั้นออกแบบมาให้ไวต่อคลื่นเสียงในระดับที่ต่างกันตลอดเวลา แต่จะไม่ไวต่อความดังของแต่ละคลื่นเสียง เราได้พยายามเลือกโค้ดที่มีแนวโน้มจะระบุค่าที่ใกล้เคียงกับค่าอ้างอิงที่ปรากฏด้านล่าง อย่างไรก็ตาม อุปกรณ์แต่ละเครื่องอาจแสดงค่าที่สูงกว่าหรือต่ำกว่าเสมอ นักวิทยาศาสตร์มักปรับเทียบเซ็นเซอร์นี้กับการวัดที่เป็นมาตรฐาน ขณะนี้วารสารวิทยาศาสตร์จะบอกว่าเสียงรถไฟขบวนถัดไปนั้นดังกว่าเสียงคอนเสิร์ตร็อคที่คุณจะไปได้ก็ต่อเมื่อคุณใช้โทรศัพท์เครื่องเดียวกันในการวัดเท่านั้น\n\nอีกสิ่งที่ต้องรู้คือ “ความเข้มเสียง”, “ระดับความเข้มเสียง” และ “ความดันเสียง” นั้นมีความแตกต่างที่สำคัญอยู่ แต่เราถือว่าทั้งสามสิ่งนี้เป็นสิ่งเดียวกัน หากต้องการรู้ให้ลึกขึ้น คุณอาจค้นหาเกี่ยวกับความแตกต่างเหล่านี้ได้จากแหล่งข้อมูลออนไลน์\n\nเสียงเบาที่สุดที่หูของมนุษย์ทั่วไปจะได้ยินเท่ากับ 0 dB การสนทนาโต้ตอบธรรมดาดังประมาณ 60 dB และเสียงที่ดังกว่า 140 dB จะสร้างความเจ็บปวดต่อหูของมนุษย์ แต่เสียงที่เป็นอันตรายอาจไม่ใช่เสียงที่สร้างความเจ็บปวดเสมอไป การฟังเสียงดัง 90 dB หรือดังประมาณเสียงเครื่องดูดฝุ่นอย่างต่อเนื่องเป็นเวลานานก็เป็นสาเหตุให้สูญเสียการได้ยินได้ในที่สุด\n\nตารางเดซิเบลเป็นแบบลอการิทึมซึ่งทำให้สับสนได้ง่าย: แหล่งที่มาของเสียงดัง 40 dB ไม่ได้มีความเข้มเป็น 2 เท่าของแหล่งที่มาของเสียงดัง 20 dB แต่เข้มกว่า 100 เท่า ส่วนนาฬิกาปลุกที่กำลังดัง 1 เรือนจะสร้างเสียง 70 dB แต่นาฬิกาปลุกที่กำลังดัง 2 เรือนไม่ได้สร้างเสียง 140 dB แต่เป็น 73 dB อย่างที่เราได้กล่าวไว้ ตารางเดซิเบลค่อนข้างเป็นตารางที่แปลกทีเดียว\n\nเสียงใบไม้ดังกรอบแกรบ 10 dB\nเสียงกระซิบระยะ 5 ฟุต 20 dB\nเสียงกระซิบเบาๆ 30 dB\nเสียงฝนตก 50 dB\nการสนทนาปกติดัง 60 dB\nเครื่องปั่นดัง 90 dB\nรถที่ไม่มีกระบอกลดเสียงดัง 100 dB\nการตะโกนใกล้ๆ หูดัง 110 dB\nฟ้าผ่าดัง 120 dB\nเครื่องเจาะหินดัง 130 dB\nเครื่องบินขึ้นดัง 140 dB";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "วัตถุมีแนวโน้มที่จะอยู่นิ่งหรือเคลื่อนที่ต่อไปหากกำลังเคลื่อนที่อยู่ แนวโน้มนี้เรียกว่าความเฉื่อย กฎข้อที่ 1 ของนิวตันกล่าวว่า วัตถุจะคงสถานะการเคลื่อนไหวหรืออยู่นิ่งจนกระทั่งได้รับผลกระทบจากแรงที่ไม่สมดุล\n\nเมื่อแรงที่ไม่สมดุลทำให้วัตถุเคลื่อนที่ เราเรียกว่าวัตถุมีความเร่ง นั่นคือ อัตราเร็วหรือความเร็วของวัตถุจะเปลี่ยนแปลงเป็นเร็วขึ้น ช้าลง หรือเปลี่ยนทิศทาง ความเร่งจะวัดจากการเปลี่ยนแปลงอัตราเร็ว (เมตรต่อวินาที) ในระยะเวลาหนึ่ง หรือเมตรต่อวินาทียกกำลังสอง (เมตร/วินาที²)\n\nโทรศัพท์มีอุปกรณ์วัดการเปลี่ยนแปลงความเคลื่อนไหวที่เรียกว่า \"ตัววัดความเร่ง\" ภายในตัววัดความเร่งจะมีมวลสารเล็กๆ ลอยอยู่อย่างเป็นอิสระ การเคลื่อนไหวที่เปลี่ยนไปจะทำให้มวลสารเคลื่อนที่ เช่นเดียวกับตอนที่ศีรษะเหวี่ยงไปด้านหน้าเมื่อรถหยุดกะทันหัน การวัดการเปลี่ยนแปลงความเฉื่อยที่ซับซ้อนนี้ทำให้ตัววัดความเร่งในโทรศัพท์ตรวจจับความเคลื่อนไหวและทิศทางที่เปลี่ยนไปได้ ซึ่งมีประโยชน์ในการสลับหน้าจอจากโหมดแนวนอนเป็นแนวตั้งสำหรับการเล่นเกมบนโทรศัพท์ และอื่นๆ";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "เซ็นเซอร์ตัวตรวจวัดความเร่งเชิงเส้นที่มีในตัวจะบันทึกความเร่งรวมในแกนทั้ง 3 แกนของโทรศัพท์ ยกเว้นแรงโน้มถ่วง";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "โทรศัพท์มีอุปกรณ์ที่ออกแบบมาเพื่อตรวจจับสนามแม่เหล็ก ซึ่งเป็นเซ็นเซอร์แบบ 3 แกนขนาดเล็กที่ใช้กระแสไฟฟ้าในการตรวจจับความเข้มของสนามแม่เหล็กในพื้นที่ว่าง 3 มิติ เราสร้างเซ็นเซอร์วัดความเข้มข้นของสนามแม่เหล็กที่สมบูรณ์โดยรวมข้อมูลจากแกนทั้ง 3 เข้าด้วยกัน\n\nเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กบางชนิดจะตรวจจับสนามแม่เหล็กโดยใช้ฮอลล์เอฟเฟกต์ ซึ่งเป็นความโน้มเอียงของสนามแม่เหล็กเพื่อเบนประจุไฟฟ้าที่เคลื่อนที่ในขณะที่มีการไหลของประจุ เครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กรุ่นที่ใหม่กว่าจะใช้แมกนิโตรีซิสเตอร์ ซึ่งเป็นโลหะผสมที่จะเปลี่ยนแปลงความต้านทานเมื่ออยู่ภายใต้สนามแม่เหล็ก\n\nคุณทราบหรือไม่ว่าทำไมโทรศัพท์ต้องมีเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็ก นั่นก็เพื่อให้ระบบของโทรศัพท์มีข้อมูลเกี่ยวกับทิศทางซึ่งจะเป็นประโยชน์ต่อเข็มทิศในตัวและแอปนำทาง โดยเฉพาะอย่างยิ่งสำหรับแอปที่ค้นหาเส้นทางแบบเลี้ยวต่อเลี้ยว";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "แม่เหล็ก กระแสไฟฟ้า และวัตถุที่เป็นโลหะเบี่ยงเบนค่าเครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กของโทรศัพท์ได้ง่าย แต่แม้จะอยู่กลางสนามที่เปิดโล่ง เครื่องวัดค่าความเข้มข้นของสนามแม่เหล็กในโทรศัพท์จะแสดงค่าต่ำๆ ที่ไม่ใช่ศูนย์เสมอ ซึ่งค่านี้คือค่าสนามแม่เหล็กของโลกนั่นเอง";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "เสียงเกิดจากการสั่นสะเทือน เช่น เสียงของคุณมาจากการสั่นสะเทือนของเส้นเสียงในกล่องเสียงในลำคอ การสั่นสะเทือนเหล่านี้จะสร้างพื้นที่ที่มีแรงกดอากาศสูงและต่ำสลับกันที่เปล่งออกมาภายนอก คล้ายกับวงน้ำที่ขยายตัวออกเมื่อโยนก้อนหินลงบ่อน้ำ";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "เสียงทุกชนิดอธิบายได้ในแง่ของความถี่และความเข้มได้ ความถี่ (หรือระดับเสียงหรือโทนเสียง) ของคลื่นเสียงเทียบเท่ากับอัตราการสั่นสะเทือน ยิ่งวัตถุสั่นสะเทือนเร็วขึ้นเท่าใด เสียงที่ออกมาก็จะสูงขึ้นเท่านั้น เราวัดการสั่นสะเทือนเหล่านี้ในหน่วยเฮิรตซ์ (Hz) โดย 1 เฮิรตซ์ = การสั่นสะเทือน 1 ครั้ง/วินาที\n\nมนุษย์จะได้ยินเสียงอยู่ในช่วง 20 ถึง 20,000 Hz คีย์ต่ำสุดของเปียโนสร้างเสียงที่มีความถี่ 27.5 Hz ในขณะที่คีย์สูงสุดสร้างเสียงที่มีความถี่ 4186.01 Hz \n\nจุดแดงบ่งบอกถึงความใกล้เคียงของระดับเสียงที่ตรวจจับได้เทียบกับโน้ตเสียงที่ใกล้เคียงที่สุด หากระดับเสียงนั้นต่ำกว่า จุดจะปรากฏขึ้นที่ด้านซ้าย หากระดับเสียงสูงกว่า จุดจะปรากฏขึ้นที่ด้านขวา";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "ข้อมูลที่แสดงที่นี่มาจากการสื่อสารของเซ็นเซอร์ภายนอกกับโทรศัพท์ผ่านบลูทูธ\n\nค่าดังกล่าวจะแสดงการอ่านข้อมูลดิบโดยตรงจากไมโครคอนโทรลเลอร์คิดเป็นเปอร์เซ็นต์ ซึ่งมักเป็นเปอร์เซ็นต์ของแรงดันไฟตกในเซ็นเซอร์";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "บลูทูธเป็นเทคโนโลยีไร้สายที่ใช้คลื่นวิทยุในการแลกเปลี่ยนข้อมูลระยะใกล้จากอุปกรณ์ที่อยู่กับที่และอุปกรณ์เคลื่อนที่";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "รอบต่อนาที (RPM) คือการวัดความถี่ของการหมุนรอบแกนคงที่ใน 1 นาที\n\nเมื่อกังหันลมหมุน กังหันก็จะหมุนจานเข้ารหัส:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "ซึ่งจะสร้างช่วงของความสว่างและความมืดบนเซ็นเซอร์ที่บันทึกไว้เป็นการหมุนในวารสารวิทยาศาสตร์";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "ข้อมูลที่แสดงที่นี่มาจากการสื่อสารของเซ็นเซอร์ภายนอกกับโทรศัพท์ของคุณผ่านบลูทูธ";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "บลูทูธเป็นเทคโนโลยีไร้สายที่ใช้คลื่นวิทยุในการแลกเปลี่ยนข้อมูลระยะใกล้จากอุปกรณ์ที่อยู่กับที่และอุปกรณ์เคลื่อนที่";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "ความเร่งของโทรศัพท์ไปทางซ้ายและขวา หน่วยเป็นเมตร/วินาที²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "ความเร่งของโทรศัพท์ไปด้านหน้าและหลัง หน่วยเป็นเมตร/วินาที²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "ความเร่งของโทรศัพท์ในทิศทางขึ้นและลง หน่วยเป็นเมตร/วินาที²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "ความดันบรรยากาศมีหน่วยเป็นเฮกโตพาสคาล (hPa)";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "เซ็นเซอร์ภายนอกแสดงข้อมูลของเซ็นเซอร์ที่นี่ตามการตั้งค่าที่กำหนดเอง";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "ปริมาณแสงตกกระทบกล้องหน้า หน่วยเป็น EV";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "การวางแนวของโทรศัพท์เทียบกับสนามแม่เหล็กของโลก";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "ความเข้มของเสียงตกกระทบเซ็นเซอร์เสียงหรือไมโครโฟน หน่วยเป็นเดซิเบล (dB)";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "ความเร่งรวมของโทรศัพท์โดยไม่รวมแรงโน้มถ่วง ซึ่งมีหน่วยเป็นเมตร/วินาที²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "ความเข้มข้นของสนามแม่เหล็กโดยรอบ ซึ่งมีหน่วยเป็นไมโครเทสลาร์";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "ระดับของเสียงตกกระทบเซ็นเซอร์เสียงหรือไมโครโฟน หน่วยเป็นเฮิร์ตซ์ (Hz)";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "การอ่านข้อมูลดิบจากเซ็นเซอร์ภายนอกคิดเป็นเปอร์เซ็นต์";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "จำนวนรอบที่หมุนต่อนาที";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "เซ็นเซอร์ทดสอบที่แสดงค่าเป็นคลื่นไซน์";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "เซ็นเซอร์ถัดไปในการบันทึก";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "เซ็นเซอร์ก่อนหน้าในการบันทึก";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "ข้อมูลดิบ";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "การหมุน";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "ไม่สามารถแก้ไขเซ็นเซอร์ขณะบันทึกได้";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "ลบทริกเกอร์แล้ว";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "เซ็นเซอร์เสียงและความสว่างจะใช้ไมโครโฟนและกล้องหน้า ซึ่งบันทึกไม่ได้เมื่อวารสารวิทยาศาสตร์ทำงานอยู่เบื้องหลัง หากใช้งานเซ็นเซอร์ในการบันทึกและให้แอปทำงานอยู่เบื้องหลัง ข้อมูลจากเซ็นเซอร์จะไม่ได้รับการบันทึกจนกว่าคุณกลับมาใช้งานแอป";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "เซ็นเซอร์เสียงและความสว่างจะใช้ไมโครโฟนและกล้องหน้า ซึ่งบันทึกไม่ได้เมื่อวารสารวิทยาศาสตร์ทำงานอยู่เบื้องหลัง";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "หมายเหตุเกี่ยวกับเซ็นเซอร์นี้";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "ไม่สามารถใช้เซ็นเซอร์ความสว่างได้ในขณะที่กำลังดูวิดีโอภาพซ้อนภาพหรือกำลังใช้โหมดมุมมองแบบแยกในวารสารวิทยาศาสตร์";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "แรงดันไฟฟ้า";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "เลือกเซ็นเซอร์ที่จะใช้ในการทดลอง";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "ยุบรายการเซ็นเซอร์";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "ขยายรายการเซ็นเซอร์";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "วารสารวิทยาศาสตร์ปิดอยู่";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "ผู้ดูแลระบบโดเมนของคุณจะต้องเปิดใช้วารสารวิทยาศาสตร์ในคอนโซลผู้ดูแลระบบของ Google";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "เปลี่ยนบัญชี";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "ข้อมูลจะไม่ระบุตัวตนและช่วยปรับปรุงแอปนี้";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "ส่งการใช้ข้อมูลแอปไปยัง Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "ใบอนุญาตโอเพนซอร์ส";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "นโยบายความเป็นส่วนตัว";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "ข้อกำหนดในการให้บริการ";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "เวอร์ชัน";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "เว็บไซต์วารสารวิทยาศาสตร์";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "แสดงตัวเลือก";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "ลงชื่อเข้าใช้ด้วย %1$@, %2$@";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "เปิดเพื่อจัดการบัญชี";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "เลือกบัญชี";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "เมนูแถบด้านข้าง";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "เปิดเมนูแถบด้านข้างที่มีตัวเลือกแอปพลิเคชัน";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "ลงชื่อเข้าใช้";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "คลื่นไซน์";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "ไซน์";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "ลบบันทึกแล้ว";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "เลิกทำ";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "สแนปชอต";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "เพิ่มสแนปชอตของค่าจากเซ็นเซอร์ที่ใช้งานทั้งหมดในปัจจุบันไปยังการทดลอง";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "ไม่สามารถถ่ายสแนปชอตได้เนื่องจากมีเซ็นเซอร์อย่างน้อยหนึ่งตัวที่ไม่ได้เชื่อมต่อ โปรดลองอีกครั้ง";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "รายละเอียดสแนปชอต";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "เพิ่มสแนปชอตแล้ว";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "ต่ำสุด";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "สูงสุด";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "ค่าเฉลี่ย";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "สลับกล้องถ่ายรูป";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "เปิด";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "ปิด";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "ตัดการบันทึกให้มีความยาวน้อยกว่า 1 วินาทีไม่ได้";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "โปรดใช้รูปแบบที่ถูกต้อง h.mm.ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "เวลาใหม่ (h.mm.ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "เวลาต้องอยู่ในช่วงระยะเวลาการบันทึก";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "แก้ไขบันทึกข้อความ";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "บันทึกข้อความ";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "เพิ่มการสังเกตการณ์";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "เพิ่มโน้ตแล้ว";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "กำลังบันทึก";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "แตะสองครั้งเพื่อสลับไปยังแท็บสังเกตการณ์ในลิ้นชักเครื่องมือ";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "การตั้งค่าเซ็นเซอร์";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "ไปยังการทดลอง";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "ไปยังการบันทึก";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "แจ้งเตือนด้วย";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "เสียง";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "รายละเอียดทริกเกอร์";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "แก้ไขทริกเกอร์ %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "ทริกเกอร์ %@ ใหม่";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "เปิดใช้งานทริกเกอร์แล้ว";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "การสั่น";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "ทริกเกอร์สำหรับ";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "เมื่อเซ็นเซอร์สูงกว่า";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "เมื่ออยู่ที่";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "เมื่อเซ็นเซอร์ต่ำกว่า";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "เมื่อลดต่ำกว่า";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "เมื่อเพิ่มสูงกว่า";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "เพิ่มบันทึกของทริกเกอร์แล้ว";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "ต้องการให้บันทึกบอกอะไร";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "ข้อความบันทึกเริ่มต้น";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "ทริกเกอร์เมื่อบันทึกเท่านั้น";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "แจ้งเตือนฉัน";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "ประเภททริกเกอร์";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "จดบันทึก";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "เริ่มบันทึก";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "หยุดบันทึก";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "ค่าทริกเกอร์";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "การแจ้งเตือนบนหน้าจอ";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "สูงกว่า";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "เท่ากับ";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "ต่ำกว่า";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "ลดลงต่ำกว่า";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "ลดลงต่ำกว่า";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "สูงกว่า";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "ต่ำกว่า";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "ทริกเกอร์เมื่อ";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "เพิ่มสูงกว่า";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "สูงขึ้นกว่า";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "แก้ไขทริกเกอร์";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "เกิดทริกเกอร์มากเกินไป ปิดใช้ทริกเกอร์เหล่านั้นแล้ว";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "ย้ายการทดลองออกจากการเก็บถาวรแล้ว";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "ย้ายการบันทึกออกจากที่เก็บถาวรแล้ว";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "เซ็นเซอร์ที่ไม่รู้จัก";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "ไม่มีชื่อ";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "ใช้วารสารวิทยาศาสตร์เพื่อทำการทดลองกับโลกรอบตัวคุณ";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "เราจะรวบรวมข้อมูลเวอร์ชันของวารสารวิทยาศาสตร์และอุปกรณ์ (เฉพาะฮาร์ดแวร์และเวอร์ชัน iOS โดยไม่รวบรวมข้อมูลส่วนตัวหรือข้อมูลที่ระบุตัวตน) จากนั้นจะแนบข้อมูลดังกล่าวไปยังอีเมลที่คุณส่งมาหาเราได้";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "เราอยากรับทราบความคิดเห็นของคุณ";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "ส่งความคิดเห็นถึงเรา";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "สตรีมวิดีโอ";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

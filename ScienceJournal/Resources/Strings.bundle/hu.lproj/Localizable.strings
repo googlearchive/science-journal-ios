@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Új funkciók és fejlesztések:\n• Bejelentkezés a Google-fiókba a kísérletek mentése és későbbi megtalálása érdekében (a Google Drive-fiókot használó összes eszközön). Ez a funkció a következő hetektől kezdődően minden felhasználó rendelkezésére áll. A Science Journal továbbra is használható bejelentkezés nélkül.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Számos teljesítményjavítás és programhiba-javítás";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal a Google-tól";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Fedezd fel a világot";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "A Science Journal a Google által kifejlesztett, ingyenes, digitális tudományos jegyzetfüzet\n\nAkár a tudományok oktatója vagy, akár csak hobbiból végzel tudományos tevékenységet otthon, az alkalmazás segítségével összes jegyzetedet, fotódat és megfigyelésedet egyetlen helyen, kényelmesen tárolhatod. iPhone vagy iPad készüléked érzékelőinek segítségével megmérheted és diagramon ábrázolhatod az olyan jelenségeket, mint a fény, a hangok és a mozgás, illetve Bluetooth-kapcsolat révén külső érzékelőkhöz csatlakozhatsz, és kísérleteket végezhetsz a téged körülvevő világgal.\n\nA Science Journal alkalmazással a következőkre nyílik lehetőséged:\n• A telefonodba épített érzékelők segítségével megmérheted a fényt, a hangokat, a gyorsulást, a légnyomást stb.\n• Tudományos kísérleteid dokumentálása céljából jegyzeteket és fotókat készíthetsz. Hamarosan újfajta jegyzetek is elérhetők lesznek!\n• Egyes Bluetooth-képes Arduino eszközök használatával külső érzékelőkhöz csatlakozhatsz.\n• Az adatok rögzítéséhez és jegyzetek készítéséhez automatikus aktiválókat hozhatsz létre.\n• Szonifikáció segítségével hallhatod diagramjaid mozgását.\n\nSzükséges engedélyek:\n• Bluetooth: Bluetooth-kapcsolattal csatlakozó, érzékelővel rendelkező eszközök kereséséhez szükséges.\n• Kamera: a kísérletek dokumentálása céljából fényképek készítéséhez és a fényerősség-érzékelő miatt szükséges\n• Fotótár: a kísérletek dokumentálásához készített képek tárolásához és a meglévő fotók kísérletekhez való hozzáadásához szükséges.\n• Mikrofon: a hangintenzitás-érzékelőhöz szükséges.\n• Leküldött (push) értesítések: azért szükségesek, hogy értesítést lehessen küldeni a felhasználónak a rögzítés állapotáról, amikor az alkalmazás a háttérben fut.\n\nPartnereink oktató jellegű tevékenységei:\nhttps://makingscience.withgoogle.com/science-journal/activities\nTámogatás: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,tudomány,oktatás,stem,kísérletek,érzékelők,diagramkészítés,napló,jegyzetfüzet,jegyzetek,dokumentálás,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Gyorsulásmérő X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Gyorsulásmérő Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Gyorsulásmérő Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Névjegy";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Képaláírás hozzáadása";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Archiválás";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Kísérlet archiválása";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Felvétel archiválása";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Mégse";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Rendben";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Törlés";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Kísérlet törlése";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Felvétel törlése";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Kép törlése";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Pillanatkép törlése";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Szövegjegyzet törlése";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Jegyzet törlése";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Elvetés";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Elvetés";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Szerkesztés";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Visszajelzés";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Archivált kísérletek szerepeltetése";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Vízmérték";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Bejelentés";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Újra";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Vonalzó";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Mentés";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Beállítások";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Archiválás visszavonása";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Kísérlet archiválásának visszavonása";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Felvétel archiválásának visszavonása";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Visszavonás";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Részletek megtekintése";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Jegyzet hozzáadása az idővonalhoz";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Új jegyzet hozzáadása";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Fotó hozzáadása";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Kép hozzáadása";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Jegyzet hozzáadása";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Környezeti fény";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitúdó";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Környezeti hőmérséklet";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Archiválva";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Az archivált kísérletek nem módosíthatók, de törölhetők";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Kísérlet archiválva.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Felvétel archiválva.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Rendelkezésre álló eszközök";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Vissza";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Visszatérés az előző nézetbe";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Légnyomásmérő";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Aktiváló létrehozása";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Új érzékelőkártya hozzáadása";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Módosítások elvetése";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Módosítások mentése";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Megtartom";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Törlöm";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Új kísérlet";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Rögzítés indítása";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Ugrás mostanra";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Kártya bezárása";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Rögzítés leállítása";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Fényképezés";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Kamera, a kísérlethez hozzáadandó fénykép készítése";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Az aktiváló indításához számértéket kell megadni.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Diagramlejátszó vezérlője";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "A diagram lejátszási pozícióját mozgatja, és leolvassa az adott pozícióhoz tartozó értéket";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Élő grafikon";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Balra görgetés";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Jobbra görgetés";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Pásztázott";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Grafikon";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Nagyítás";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Nagyítás/kicsinyítés szintje";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Nagyítás/kicsinyítés a mérethez";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Kicsinyítés";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Válassz ki egy fotót";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Összes követelése";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Összes követel.";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Google Drive-ra";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Hozzáadod a hátralévő 1 kísérletet a Google Drive-hoz (%@)?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Hozzáadod a hátralévő %1$@ kísérletet a Google Drive-hoz (%2$@)?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Az összes hátralévő kísérlet követelése";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Az összes kísérletet hozzáadod a Google Drive-hoz?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Az összes kísérletet követeled?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "A kísérlet hozzáadása a Google Drive-hoz";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "A kísérletek nem szerkeszthetők és mindaddig az eszközön maradnak, amíg nem követelik vagy törlik őket";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Kísérletek hozzáadása a Google Drive-ra";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Kísérletek követelése";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "A kísérlet törlése";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Összes törlése";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Törlöd a hátralévő 1 kísérletet?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Törlöd a hátralévő %ld kísérletet?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Az összes hátralévő kísérlet törlése";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Törlöd az összes kísérletet?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Az eszközön tárolt összes adatot – beleértve az archivált kísérleteket is – töröljük. Ez a művelet nem vonható vissza.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Összes törlése";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Ezen az eszközön %ld senki által nem követelt kísérlet van.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Ezen az eszközön 1 senki által nem követelt kísérlet van.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "A nem követelt kísérlet megosztása";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "A kísérlet igényléséhez nincs elég tárhely";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "A kísérletek igényléséhez nincs elég tárhely";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Kísérlet követelése sikertelen";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Kísérlet követelése sikertelen";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Követeled a kísérletet?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Kísérlet követelése";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Hozzáadod ezt a kísérletet a Google Drive-hoz a(z) %@ számára?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Kísérlet hozzáadva: %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Múltbeli kísérletek követelése";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Kísérletek követelése";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Bezárás";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Visszatérés az előző nézetbe";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Iránytű";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "fok";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Vezető";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Folytatás bejelentkezés nélkül";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "vágás vége:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "A vágás mentése sikertelen volt:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "A vágás végét jelző jelölő balra mozgatása";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "A vágás végét jelző jelölő jobbra mozgatása";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "A vágás elejét jelző jelölő balra mozgatása";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "A vágás elejét jelző jelölő jobbra mozgatása";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "További opciók";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Felvétel megvágva";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "A felvétel nem vágható az eredetileg rögzített tartományon kívül";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "A felvétel nem vágható egy másodpercnél rövidebbre";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Levágás";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "vágás kezdete:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Aktuális érték";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Hangintenzitás";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Cím nélküli kísérlet";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Alapértelmezett";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Biztosan törlöd ezt a kísérletet? A hozzá tartozó összes felvétel és jegyzet is törlődni fog.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Törlöd ezt a kísérletet?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Törlés";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Törlöd a felvételt?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Kísérlet törölve";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Felvétel törölve";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Részletek";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Rögzítés";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frekvencia";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Érzékelőbeállítások mentése";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Érzékelő";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Automatikus skálázás ki";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Dupla koppintás a szerkesztéshez";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Koppints duplán a megnyitáshoz";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Koppints duplán a kijelöléshez";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Dupla koppintás a váltáshoz";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Dupla koppintás a részletek megtekintéséhez";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Eszközfiók fogantyúja";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Az eszközfiók méretének módosítása. Műveletek állnak rendelkezésre.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "zárva";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "szerkesztés";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "teljes képernyő";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "fél képernyő";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Nincs Google Drive. Ellenőrizd az internetkapcsolatot.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Nincs hálózati kapcsolat";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "A Science Journal nem tud csatlakozni a Google Drive-hoz. Előfordulhat, hogy egyes kísérletekről nem készül biztonsági másolat.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "A Science Journal jelenleg nem tud csatlakozni a Google Drive-hoz; próbáld meg újra később.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "A Google Drive-on nincs elég hely a kísérlet tárolásához.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "A kísérleti adatok a Science Journal esetén el lesznek mentve és rendelkezésre állnak a Google Drive-ot használó eszközökön. Az elérésükhöz be kell jelentkezni a Google-fiókkal.\n\nHa már vannak adatok az eszközön, a bejelentkezést követően elmentheted a meglévő kísérleteidet a Google Drive-ra. Kísérleteidet a Google Drive „Science Journal” mappájában találod.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Nem sikerült csatlakozni a Google Drive-hoz. Ellenőrizd a kapcsolatot.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Befejezési idő szerkesztése";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Kezdési idő szerkesztése";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Kísérlet szerkesztése";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Kísérletek címének vagy fotójának módosítása";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Nem mentett módosítások";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Biztosan nem szeretnéd menteni a kísérleten végzett módosításokat?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Fotó módosítása";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Kísérlet szerkesztése";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Idő szerkesztése";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Megjegyzés idejének szerkesztése";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "A felvétel befejezési idejének szerkesztése";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "A felvétel kezdési idejének szerkesztése";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Felvétel szerkesztése";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Felvétel címének módosítása";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Felvétel címe";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Még nincs megfigyelésed";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Nincs kísérlet";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Nincs beállítva aktiváló";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Automatikus skálázás be";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Egyik kísérletet se adjuk hozzá a Google Drive-hoz";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Összes kísérlet törlése";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Összes kísérletedet hozzáadjuk a Google Drive-hoz";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Összes kísérlet mentése";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Válaszd ki a Drive-ra menteni kívánt kísérleteket";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Mentendő kísérletek kiválaszt.";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Üdvözlünk ismét! Jelenleg %ld kísérleted van ezen az eszközön.\n\nA folytatáshoz válassz egy lehetőséget:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Üdvözlünk! 1 kísérleted van az eszközön.\n\nA folytatáshoz válassz egy lehetőséget:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Bizt. mentés a Google Drive-ra";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Kísérlet";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Kísérletek";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Kísérlet megosztása";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "A kísérlet letöltése még nem fejeződött be. Ha megosztod, bizonyos adatok hiányozhatnak a másolatról.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Letöltés folyamatban";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Rögzítés…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Kísérlet címe";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Ez a kísérlet a Science Journal alkalmazás újabb verziójával készült. Amíg nem frissítesz, addig ezen az eszközön nem tudod szerkeszteni a kísérletet.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Rendszerezd gondolataidat és megfigyeléseidet jegyzetek készítésével, adatok rögzítésével vagy fényképek készítésével";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Új kísérlet létrehozása";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Fedezd fel a világot";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Megosztás";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Sikertelen exportálás.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Kísérlet küldése";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relatív időbélyegek használata";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Exportálás…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Fotó megosztása…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Üdvözlünk a Science Journal alkalmazásban";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Próbáld ki jegyzetek készítését és az adatrögzítést az alábbi eszköztár segítségével!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Üdvözlünk a Science Journal alkalmazásban!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Keress kipróbálható tevékenységeket a\ng.co/sciencejournalactivities címen";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Felejtse el ezt az eszközt";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Teljes képernyő";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Kezdő lépések";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Hang aktiválása";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Hang kikapcsolása";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Mi történik itt?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Sajnos ismeretlen hiba történt.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Az importálás sikertelen volt. Valami hiba történt a kísérlettel.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "A Science Journal jelenleg használatban van. Állítsd le a rögzítést, és próbáld meg újra.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "A kísérlet importálásához be kell jelentkezned.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Nincs elég tárhely";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "A tárhely a beállításokban kezelhető.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Archivált felvételek";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Beállítások megnyitása";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "A kamerát nem lehet használni, mert rögzítést végzel egy fényerősség-érzékelővel, amely az előlapi kamerán keresztül méri az adatokat.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "A kamerát nem lehet használni, mert vagy Kép a képben típusú videót nézel, vagy Megosztott nézet üzemmódban használod a Science Journal alkalmazást.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Érzékelők megtekintése";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "A kamerát nem lehet használni, mert a Science Journal alkalmazásnak nincs engedélye a hozzáféréshez.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "A fotótárat nem lehet használni, mert a Science Journal alkalmazásnak nincs engedélye a hozzáféréshez.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "További információ";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "További információ";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Lineáris gyorsulásmérő";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Teljesítménybeli fejlesztések és programhiba-javítások";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Új funkciók:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Hangmagasság-érzékelő.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Kísérletek exportálása fájlba és importálása más eszközökre.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Fotók exportálása kísérletből.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "További jegyzetek megtekintése";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetométer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menü";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Egy további lehetőségeket tartalmazó menüt jelenít meg";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Hangbeállítások";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Aktiválók szerkesztése";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Aktiválók beállítása";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Saját eszközök";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Adj nevet a kísérletnek";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Tevékenységek";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Kísérletek";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Beállítások";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Adj hozzá leírást";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Leírás";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Képjegyzet";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Szövegjegyzet";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Aktiválójegyzet";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Pillanatképjegyzet";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Megjegyzések";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Jegyzet hozzáadva";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Jegyzetek, Szöveges jegyzet hozzáadása a kísérlethez";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Megfigyelés, Egyedi értékek vagy értéksorozatok hozzáadása a kísérlethez érzékelők segítségével";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "A kísérlet nem nyitható meg";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "A fájl nem nyitható meg";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "A kísérleteknek Science Journal-fájlformátumban (.sj) kell lenniük";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Szüneteltetés";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Százalék";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Ennyi volt! Készen vagyunk az engedélyek ellenőrzésével. Ha a jövőben módosítanod kell ezeket az engedélyeket, ezt bármikor megteheted az iOS Beállítások alkalmazás Science Journal részében.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Most leellenőrizzük a kameráidhoz való hozzáférésre vonatkozó engedélyt. A fényérzékelőhöz az előlapi kamerát használjuk, a kísérletekhez és a felvételekhez pedig mindkét kamerával hozzáadhatsz fotójegyzeteket.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Folytatás";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Elsőként le kell ellenőriznünk az engedélyeket, hogy aktiválhassuk a hardveres érzékelőket, a kamerát és a fotótáradat. Mielőtt rákérdeznénk ezek használatára, elmagyarázzuk, melyiket hogyan használjuk.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Most ellenőrizzük a hangérzékelőkhöz használandó mikrofonodhoz való hozzáférésre vonatkozó engedélyt. A hanganyag tartalmát nem rögzítjük, tároljuk vagy továbbítjuk; kizárólag a hang intenzitását vagy magasságát mérjük.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Először ellenőrizzük, hogy van-e engedély a leküldött (push) értesítések küldésére. Ezeket kizárólag arra használjuk, hogy amikor felvétel közben háttérbe teszed az alkalmazást, szóljunk, ha felvételed a végéhez közeledik.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Végül ellenőrizzük, hogy van-e engedély a fotótáradhoz való hozzáférésre, hogy a meglévő fotóidat hozzá tudd adni kísérletekhez és felvételekhez, illetve az általad készített fotókat visszamenthessük a fotótáradba.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Álljunk is neki";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Kész!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Engedély ellenőrzése";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Üdvözlünk a Science Journal alkalmazásban!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Fotó ehhez a kísérlethez:";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Fotó";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Nincs elég tárhely a fotó hozzáadásához";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Belső érzékelők";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Fotótár, Fotó hozzáadása a kísérlethez a fotótáradból";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Információ";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Eszköz";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Méretek";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Jegyzetek";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Zársebesség";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Kép hozzáadva";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Hangmagasság";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ fél hanggal mélyebb, mint %2$@b, %3$@. oktáv";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ fél hanggal mélyebb, mint %2$@, %3$@. oktáv";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ fél hanggal mélyebb, mint %2$@#, %3$@. oktáv";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@b, %2$@. oktáv";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "felfelé módosított hang";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "lefelé módosított hang";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@. oktáv";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@#, %2$@. oktáv";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ fél hanggal magasabb, mint %2$@b, %3$@. oktáv";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ fél hanggal magasabb, mint %2$@, %3$@. oktáv";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ fél hanggal magasabb, mint %2$@#, %3$@. oktáv";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Képpontok";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Lejátszás";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "A jelenlegi eszközbeállítások alkalmazása megtörtént ennél a fióknál";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Frissítés";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "A rögzítés nem indítható el";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Egy vagy több érzékelőd le van választva. Próbáld meg újra.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Rögzített adataid megtekintéséhez nyisd meg a Science Journal alkalmazást.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "A felvételed véget ért.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Folytatás";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Rögzítés elvetése";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Egy vagy több érzékelőd egyáltalán nem rögzített adatot. Szeretnéd megszakítani ezt a rögzítést?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Nincs adatrögzítés";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "A rögzítés leállt";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "A felvétel folytatásához nyisd meg a Science Journal alkalmazást.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "A felvételed hamarosan véget ér.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Rögzítés folytatása";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Rögzítés leállítása";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Borítókép eltávolítása";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Eltávolítja a kísérlet borítóképét.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Biztosan eltávolítod a borítóképet? A művelet nem vonható vissza.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Borítókép eltávolítva.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Nem sikerült eltávolítani a borítóképet.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "ford./perc";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Felvétel hozzáadva";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Felvétel";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Felvétel átnevezése";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Biztosan törlöd ezt a felvételt? A felvett adatok és a jegyzetek is törlődni fognak.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Időtartam";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Ellenőrzés";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Mentés";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Módosítások mentése és visszatérés az előző nézethez";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Kísérlet mentése";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Hozzáadod a kísérletet a könyvtárhoz?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Mentés a Fájlok alkalmazásba";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Megjelenik a dokumentumböngésző, ahonnan lementheted a fájl másolatát az eszközödön lévő valamelyik mappába.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "A fájl mentése sikeres volt";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "A fájlok mentése sikeres volt";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Nem sikerült menteni a fájlt. Próbáld meg újra.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Nem sikerült menteni a fájlokat. Próbáld meg újra.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Skála";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Jegyzet időbélyegének kiválasztása diagramon";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Másolat küldése";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Beállítások";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Fényerő";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "A fényérzékelőt nem lehet használni, mert a Science Journal alkalmazás nem jogosult hozzáférni a fényképezőgéphez.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Az érzékelő adatainak betöltése nem sikerült";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Érzékelő adatainak betöltése…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "A hangérzékelőket nem lehet használni, mert a Science Journal alkalmazás nem jogosult hozzáférni a mikrofonodhoz.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Egyéni";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "A tárgyak egy helyben maradnak, vagy ha mozognak, mozgásban maradnak – ezt tehetetlenségnek hívjuk. Newton első törvénye formálisan is megfogalmazza ezt a tételt: minden test megmarad a mozgás állapotában, vagy megtartja nyugalmi állapotát, míg valamilyen kiegyenlítetlen erő nem hat rá.\n\nHa valamilyen kiegyenlítetlen erő kimozdítja a testet ebből az állapotából, akkor a test gyorsulásáról beszélünk: a sebessége változik – vagy nagyobb, vagy kisebb lesz, vagy megváltozik az iránya. A gyorsulást a sebesség (méter per szekundum) időbeli változásaként, vagyis méter per szekundumnégyzet (m/s²) mértékegységben határozzuk meg.\n\nA telefonodban működik egy olyan eszköz, amellyel a mozgásnak ezek a változásai mérhetők: ez a gyorsulásmérő. Ebben a szerkezetben kis felfüggesztett tömegek szabad mozgásra képesek. A mozgásban bekövetkező változások ezeket a tömegeket elmozdulásra késztetik, hasonlóképpen ahhoz, mint amikor a fejünk egy hirtelen fékező autóban előrebillen. Ezeknek a tehetetlenségből adódó apró kis elmozdulásoknak a mérésével a telefonban működő gyorsulásmérő képes a mozgás gyorsaságában és irányában bekövetkező változások észlelésére, amelynek segítségével például fekvőből állóra tudja állítani a képernyőt, vagy különféle telefonos játékokat tesz lehetővé stb.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Valószínűleg neked is feltűnt, hogy a Z-tengely irányában egy állandó gyorsulás mutatkozik, még akkor is, ha a telefonod le van rakva az asztalra. Ez a Föld felszínén érzékelhető nehézségi gyorsulás, amit a gravitáció okoz, nagysága körülbelül 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Habár ritkán gondolunk rá, mindannyian a levegő mély óceánjának alján élünk: ez a Föld légköre, amely 40 kilométer magas. A felülről ránk nehezedő összes levegő súlyát nevezzük légköri nyomásnak.\n\nA légköri nyomás tengerszinten 100 000 newton körül van négyzetméterenként – ez körülbelül 6000 newtonnak felel meg egy normál méretű papírlapon.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Mivel megszoktuk, észre se vesszük ezt a hatalmas nyomást – egészen addig, amíg meg nem változik, akár kis mértékben is, mint amikor például magasan fekvő területre látogatunk, vagy repülőgépen utazunk. A légköri nyomás az időjárási körülményekkel is változik: viharos időben, légköri instabilitás mellett csökken, a felhőzet eltűnésével és a légkör stabilizálódásával pedig emelkedik.\n\nA telefonodban lévő digitális barométer hektopascalban méri a légköri nyomást. (Egy hektopascal 100 pascalnak felel meg, ahol egy pascal egy newton nagyságú erő egy négyzetméter nagyságú területre kifejtve.) Biztosan hallottad már, amikor az időjárás-jelentésben millibarban adják meg a légköri nyomást – ez a barátságosabban hangzó mértékegység a hektopascal megfelelője.\n\nFelmerül a kérdés: mi értelme annak, hogy egy telefon mérje a nyomást? A légköri nyomás a magasság kis mértékű emelkedésekor is mérhetően változik, például olyankor is, ha felmegyünk a lépcsőn. Vagyis a telefonba helyezett digitális barométer segít a helyváltoztatás észlelésében: megtudhatod például, hogy egy épület melyik emeletén tartózkodsz, vagy hogy egy híd felső vagy alsó pályáján haladsz-e éppen.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Az előlapi kamera EV-ben (expozíciós értékben) méri a fénysűrűséget, mely mértékegység alapja a kamera zársebessége, f-száma és ISO-értéke, és az ezekkel az adott beállításokkal rögzített képpontok fényerőssége határozza meg.\n\nMinél fényesebb a rögzített érték, annál magasabb az EV. A sötétség negatív értékeket eredményez.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Mivel az EV a kamerák optikai kialakításán és érzékelőin alapul, értéktartománya hardveresen és szoftveresen is korlátozott. Míg egy környezetifény-érzékelő közvetlenül is tud luxot rögzíteni, az előlapi kamerának f-száma, ISO-értéke és zársebessége alapján kell meghatároznia a mérés alapértékeit, majd a képkészítést követően a beolvasott képpontok alapján tudja megállapítani az EV-t. A folyamat jellegéből eredően a különböző eszközök által mért EV-értékek eltérhetnek, ha az f-számok küszöbértékei eltérők, mint például az iPhone 8 (f1.8) és az iPad (f2.4) esetén.\n\nMivel az EV megállapításának alapja a rögzített képpontok fényerősségértékének mérése, a környezetifény-források sokkal kisebb értéket eredményeznek, mint ha infravörös érzékelővel állapítanánk meg a megvilágítást: a mérések ugyanis közvetlenül függnek attól, hogy a kamera hogyan áll és mit rögzít.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Valószínűleg nem újdonság a számodra, hogy a Földnek mágneses tere van. Azt viszont lehet, hogy még nem tudod, hogy a telefonodban működik egy olyan eszköz, amely észlelni tudja a mágneses mezőket: ezt magnetométernek hívjuk. A telefonod magnetométeréből származó adatoknak a telefon térbeli tájolásával való kombinációjával digitális iránytű hozható létre.\n\nA klasszikus iránytűk tulajdonképpen korai technológiát alkalmazó magnetométerek, amelyeknek mágnesezett tűje mindig úgy fordul, hogy felvegye a környező mágneses tér irányát. A telefonodban persze nem miniatűr iránytű van, hanem egy apró háromtengelyű érzékelő, amely elektromos áramok segítségével észleli a mágneses mezők erejét a tér három dimenziójában. Ez azonban önmagában még nem elég ahhoz, hogy iránytűt hozzunk létre!\n\nMiért kell az iránytűnek kombinálnia a magnetométerből származó adatokat a telefon tájolásával? A telefon tájolásának ismeretében még akkor is ki lehet számítani a mágneses forgás értékét, ha a telefon a Föld mágneses mezőjének síkjával nem párhuzamosan helyezkedik el. Tudjuk, hogy a gravitáció a Föld mágneses mezőjére merőleges irányú, így a gyorsulásmérő érzékelőiből származó, a gravitáció irányára vonatkozó információt felhasználhatjuk arra, hogy meghatározzuk, a mágneses mező milyen mértékben helyezkedik el a Föld mágneses mezőjével azonos síkban.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Ahogy az már talán neked is feltűnt, a telefonodban lévő iránytű nem csupán a Föld mágneses terére reagál, hanem minden mágneses mezőre, amelybe belekerül. A mágnesek, az elektromos áram és a fémtárgyak könnyedén eltérítik telefonod magnetométerét, ami miatt megváltozik az iránytű állása. Ha azt szeretnéd, hogy a magnetométer piros hegye valóban a Föld mágneses mezőjének irányában helyezkedjen el, állj nyílt területre, lehetőleg a szabad ég alatt, de magasfeszültségű vezetékektől távol. Telefonod magnetométerének kalibrálásához mozgasd a telefonodat 8-as alakzatban.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "A hangokat rezgések okozzák. Az emberi hang például a torkunkban lévő hangszálak rezgése révén keletkezik. Ezek a rezgések váltakozóan nagyobb és kisebb nyomású rétegeket hoznak létre a levegőben, amely nyomáseltérés a forrástól távolodik – nagyon hasonlóan ahhoz, mint amikor a tóba dobott kavics egyre táguló körkörös hullámokat képez.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Minden hang leírható a frekvenciájával és az intenzitásával.\n\nAz intenzitást a Science Journal hangintenzitás-érzékelőjével mérjük, mértékegysége a decibel (dB). Az intenzitás vagy hangosság a rezgő test által az egyes rezgések során megtett távolság függvénye – a nagyobb intenzitást hangosabbnak észleljük.\n\nA hanghullám frekvenciája (más néven hangmagassága) a rezgés gyorsaságának felel meg. Minél gyorsabban rezeg egy test, annál magasabb, vagyis nagyobb frekvenciájú hangot képez. A Science Journal hangintenzitás-érzékelője nem mér frekvenciát, csak hangosságot.\n\nA készüléked mikrofonjával kapcsolatos egyik fontos tudnivaló, hogy a hanghullámok időbeli változására rendkívül érzékeny, viszont az egyes hullámok abszolút méretére nem. Próbáltunk olyan kódot választani, amely nagy valószínűséggel az alábbi referenciaértékekhez hasonló értékeket eredményez, de az egyes készülékek következetesen magasabb vagy alacsonyabb értékeket jelezhetnek. A tudósok általában egy ismert értékhez kalibrálják a hasonló szenzorokat. Jelenleg a Science Journal csak annak a megállapítására képes, hogy a következő vonatutad nagyobb hangerővel jár-e, mint a következő rockkoncerted, de csak akkor, ha mindkét helyzetben nálad van ugyanaz a telefon.\n\nEgy másik fontos tudnivaló, hogy a „hang intenzitása”, „a hangerősség szintje” és a „hangnyomás” számos fontos dologban különbözik egymástól. Itt úgy kezeljük őket, mintha ugyanarra vonatkoznának, de ha mélyrehatóbban szeretnéd tanulmányozni a kérdést, számos internetes forrásból tájékozódhatsz a különbségeket illetően.\n\nAz átlagos emberi fül által észlelhető leghalkabb hang meghatározás szerint 0 dB. A mindennapi beszélgetések nagyjából 60 dB-nek felelnek meg, és körülbelül 140 dB az a határ, amelynél erősebb hangok már fájdalmat okoznak az emberi fülnek. De nemcsak a fájdalmas hangok lehetnek károsak. Már az is halláskárosodást okozhat, ha valaki folyamatosan 90 dB-es – körülbelül egy porszívó hangosságának megfelelő – hangoknak van kitéve.\n\nA decibel-skála logaritmikus, ami egy kicsit megbonyolítja a dolgokat: egy 40 dB-es hangforrás nem kétszer olyan erős, mint egy 20 dB-es – hanem 100-szor olyan erős. Ugyanakkor, ha egy csörgő ébresztőóra intenzitása 70 dB, akkor két csörgő ébresztőóráé nem 140 dB, hanem 73 dB. Amint említettük, fura egy skála.\n\n10 dB hangerejű zörgő avar\n20 dB hangerejű suttogás 1,5 méterről\n30 dB hangerejű halk suttogás\n50 dB hangerejű eső\n60 dB hangerejű átlagos beszélgetés\n90 dB hangerejű turmixgép\n100 dB hangerejű, kipufogódob nélküli autó\n110 dB hangerejű fülbe kiabálás\n120 dB hangerejű mennydörgés\n130 dB hangerejű légkalapács\n140 dB hangerejű felszálló repülőgép";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "A tárgyak egy helyben maradnak, vagy ha mozognak, mozgásban maradnak – ezt tehetetlenségnek hívjuk. Newton első törvénye formálisan is megfogalmazza ezt a tételt: minden test megmarad a mozgás állapotában, vagy megtartja nyugalmi állapotát, míg valamilyen kiegyenlítetlen erő nem hat rá.\n\nHa valamilyen kiegyenlítetlen erő kimozdítja a testet ebből az állapotából, akkor a test gyorsulásáról beszélünk: a sebessége változik – vagy nagyobb, vagy kisebb lesz, vagy megváltozik az iránya. A gyorsulást a sebesség (méter per szekundum) időbeli változásaként, vagyis méter per szekundumnégyzet (m/s²) mértékegységben határozzuk meg.\n\nA telefonodban működik egy olyan eszköz, amellyel a mozgásnak ezek a változásai mérhetők: ez a gyorsulásmérő. Ebben a szerkezetben kis felfüggesztett tömegek szabad mozgásra képesek. A mozgásban bekövetkező változások ezeket a tömegeket elmozdulásra késztetik, hasonlóképpen ahhoz, mint amikor a fejünk egy hirtelen fékező autóban előrebillen. Ezeknek a tehetetlenségből adódó apró kis elmozdulásoknak a mérésével a telefonban működő gyorsulásmérő képes a mozgás gyorsaságában és irányában bekövetkező változások észlelésére, amelynek segítségével például fekvőből állóra tudja állítani a képernyőt, vagy különféle telefonos játékokat tesz lehetővé stb.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "A kombinált lineáris gyorsulásmérő érzékelő a telefon mindhárom tengelyén rögzíti a teljes gyorsulást (a gravitációs erő nélkül).";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "A telefonodban működik egy olyan eszköz, amely észlelni tudja a mágneses mezőket: ezt magnetométernek hívjuk. Ez egy apró, háromtengelyű érzékelő, amely elektromos áramok segítségével észleli a mágneses mezők erejét a tér három dimenziójában. A három tengelyről származó adatok összegzésével a teljes mágneses mező erejét mérő érzékelő hozható létre.\n\nEgyes magnetométerek a mágneses tereket azáltal észlelik, hogy a mágneses terek eltérítik a mozgásban lévő töltéseket – ezt a jelenséget Hall-effektusnak hívjuk. Az újabb magnetométerek mágneses ellenállásokat használnak, vagyis olyan fémötvözeteket, amelyek mágneses mezők hatására megváltoztatják az ellenállásukat.\n\nMiért van szükség egy telefonban magnetométerre? A térben felvett irányunk ismerete hasznos a beépített iránytű- és navigációs alkalmazások számára, különösen azok esetében, amelyek célja, hogy részletes, kanyaronkénti útmutatást adjanak a felhasználónak.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "A mágnesek, az elektromos áram és a fémtárgyak könnyedén eltérítik telefonod magnetométerét. A telefonodban lévő magnetométer ugyanakkor még egy üres mező kellős közepén is mindig mutat egy alacsony, nullától különböző értéket: ez a Föld mágneses terének hatása!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "A hangokat rezgések okozzák. Az emberi hang például a torkunkban lévő hangszálak rezgése révén keletkezik. Ezek a rezgések váltakozóan nagyobb és kisebb nyomású rétegeket hoznak létre a levegőben, amely nyomáseltérés a forrástól távolodik – nagyon hasonlóan ahhoz, mint amikor a tóba dobott kavics egyre táguló körkörös hullámokat képez.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Minden hang leírható a frekvenciájával és az intenzitásával. A hanghullám frekvenciája (más néven hangmagassága) a rezgés gyorsaságának felel meg. Minél gyorsabban rezeg egy test, annál magasabb, vagyis nagyobb frekvenciájú hangot képez. Ezeket a rezgéseket hertzben (Hz) mérjük, ahol 1 hertz = 1 rezgés/másodperc.\n\nAz emberi fül a 20–20 000 Hz-es tartományban hallja a hangokat. A zongora legmélyebb hangjának frekvenciája 27,5 Hz, a legmagasabbé pedig 4186,01 Hz.\n\nA piros pont mutatja, mennyire van közel az érzékelt hangmagasság a hozzá legközelebb eső hangjegyhez. Ha a hang alacsonyabb, a piros pont a bal oldalon jelenik meg, ha pedig magasabb, akkor a jobb oldalon.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Az itt megjelenített adatok egy olyan külső érzékelőtől érkeznek, amelyik Bluetooth-on keresztül kommunikál a telefonoddal.\n\nAz érték a mikrokontrolleredről származó nyers adat százalékos értékét mutatja. Ez általában az érzékelő feszültségesésének százalékát jelenti.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "A Bluetooth egy vezeték nélkül technológiai szabvány, amelynek révén rádióhullámok segítségével kis távolságban adatcsere bonyolítható le fix és mobileszközök között.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "A percenkénti fordulatszám (ford./perc) a fix tengely körüli forgások egy perc alatti gyakoriságának mértékegysége.\n\nA szélforgód a forgómozgásával megforgatja a kódolótárcsát:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Az érzékelő ezt fényes és sötét periódusok sorozataként észleli, amit a Science Journal forgásként rögzít.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Az itt megjelenített adatok egy olyan külső érzékelőtől érkeznek, amelyik Bluetooth-on keresztül kommunikál a telefonoddal.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "A Bluetooth egy vezeték nélkül technológiai szabvány, amelynek révén rádióhullámok segítségével kis távolságban adatcsere bonyolítható le fix és mobileszközök között.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "A telefon gyorsulása balra és jobbra m/s²-ben";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "A telefon gyorsulása előre és hátra m/s²-ben";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "A telefon gyorsulása felfelé és lefelé m/s²-ben";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "A légköri nyomás mértékegysége a hektopascal (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Itt egy külső érzékelő adatai láthatók, egyéni beállítások szerint.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Az előlapi kamerába érkező fény mennyisége EV-ben.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "A telefon tájolása a Föld mágneses teréhez viszonyítva.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "A hangérzékelőbe vagy mikrofonba érkező hang intenzitása decibelben (dB).";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "A telefon teljes gyorsulása a gravitációs erő nélkül, m/s²-ben";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "A környező geomágneses mező erőssége mikroteslában.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "A hangérzékelőbe vagy mikrofonba érkező hang magassága hertzben (Hz) mérve.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Külső érzékelőből származó nyers mért adat százaléka.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Fordulatok száma percenként";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Szinuszhullámot produkáló tesztérzékelő.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "A következő érzékelő a felvételben";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Az előző érzékelő a felvételben";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Nyers";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Fordulatszám";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Felvétel közben az érzékelők nem módosíthatók";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Aktiváló törölve";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "A hang- és fényerősség-érzékelők a mikrofont és az előlapi kamerát használják, amelyek nem készítenek felvételt, ha a Science Journal a háttérben fut, csak akkor, ha visszatérsz az alkalmazásba.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "A hang- és fényerősség-érzékelők a mikrofont és az előlapi kamerát használják, amelyek nem készítenek felvételt, ha a Science Journal a háttérben fut.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Megjegyzés az érzékelőről";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "A fényerősség-érzékelőt Kép a képben típusú videó megtekintésekor vagy a Science Journal Megosztott nézet üzemmódban való használatakor nem lehet használni.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Feszültség V-ban";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Válaszd ki a kísérletben használandó érzékelőket";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Érzékelőlista összecsukása";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Érzékelőlista kibontása";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "A Science Journal le van tiltva";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "A domain adminisztrátorának engedélyeznie kell a Science Journal használatát a Google Felügyeleti Konzolon.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Fiókváltás";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Az adatok névtelenek, a céljuk pedig az alkalmazás továbbfejlesztése.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Az alkalmazás adathasználatának elküldése a Google-nak";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Nyílt forráskódú licencek";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Adatvédelmi irányelvek";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Feltételek";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Verzió";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "A Science Journal webhelye";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Opciók megjelenítése";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Bejelentkezve mint %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Nyisd meg a fiókkezeléshez";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Fiók kiválasztása";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Oldalsávmenü";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Megnyit egy alkalmazásopciókat tartalmazó oldalsávmenüt";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Bejelentkezés";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Szinuszhullám";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Jegyzet törölve";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Visszavonás";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Pillanatkép";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Hozzáadja az összes megfigyelt érzékelő értékének pillanatképét a kísérlethez";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Nem lehet pillanatképet készíteni, mert egy vagy több érzékelő le van választva. Próbáld újra.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Pillanatkép részletei";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Pillanatkép hozzáadva";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maximum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Átlag";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Kameraváltás";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Bekapcsolva";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Kikapcsolva";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "A felvételek nem vághatók egy másodpercnél rövidebbre";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Érvényes formátum: ó:pp:mm.MMM";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Új idő (ó:pp:mm.MMM)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Az időnek felvételen belül kell lennie";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Szöveges jegyzet szerkesztése";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Szövegjegyzet";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Megfigyelés hozzáadása";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Jegyzet hozzáadva";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Felvétel folyamatban";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Az eszközfiókban a megfigyelés lapra váltáshoz koppints duplán";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Érzékelőbeállítások";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "A kísérlethez";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "A felvételhez";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Értesítés a következő használatával:";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Hang";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Aktiváló részletei";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "%@ aktiválójának szerkesztése";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Új %@-aktiváló";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Aktiváló bekapcsolva";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Rezgés";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Aktiválók:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "amikor az érzékelő ezen érték felett van:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "amikor ezen az értéken van:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "amikor az érzékelő ezen érték alatt van:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "amikor ezen érték alá esik:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "amikor ezen érték fölé emelkedik:";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Aktiválójegyzet hozzáadva";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Mit kell tartalmaznia a megjegyzésednek?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Alapértelmezett szöveg";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Aktiváló csak felvétel közben";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Értesítés";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Aktiváló típusa";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Megjegyzés létrehozása";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Rögzítés indítása";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Rögzítés leállítása";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Az aktiváló értéke";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Vizuális értesítés";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "ezen érték felett volt:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Ennyi";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "ezen érték alatt volt:";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "a következő érték alá esett:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Alá esik";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Felett van";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Alatt van";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Aktiválás, amikor";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Fölé emelkedik";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "a következő érték fölé emelkedett:";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Aktiválószerkesztés";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Túl sok aktiváló jött létre, ezért a program letiltotta őket";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Kísérlet áthelyezve az archívumból.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Felvétel áthelyezve az archívumból.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Ismeretlen érzékelő";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Névtelen";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "A Science Journal alkalmazással kísérleteket végezhetsz a téged körülvevő világban";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Begyűjtünk néhány adatot a Science Journal buildjéről és az eszközödről (csak a hardverről és iOS-verzióról – személyes vagy azonosításra alkalmas adatokat nem!), majd egy e-mailhez csatoljuk őket, amelyet elküldhetsz nekünk.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Örömmel vesszük, ha visszajelzést küldesz nekünk.";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Visszajelzés küldése";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Videostream";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

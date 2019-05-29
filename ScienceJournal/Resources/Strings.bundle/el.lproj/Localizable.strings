@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Νέα χαρακτηριστικά και βελτιώσεις:\n• Συνδεθείτε στον λογαριασμό σας Google για να αποθηκεύσετε τα πειράματά σας και να έχετε πρόσβαση σε αυτά από όλες τις συσκευές σας χρησιμοποιώντας τον λογαριασμό σας στο Google Drive. Αυτή η λειτουργία θα είναι διαθέσιμη για όλους τους χρήστες τις επόμενες εβδομάδες. Μπορείτε να χρησιμοποιήσετε το Science Journal ακόμη κι αν δεν είστε συνδεδεμένοι σε λογαριασμό.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Πολλές βελτιώσεις απόδοσης και διορθώσεις σφαλμάτων";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal από την Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Εξερευνήστε τον κόσμο σας";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Η εφαρμογή Science Journal είναι το δωρεάν ψηφιακό επιστημονικό σημειωματάριο που σας προσφέρει η Google.\n\nΕίτε είστε καθηγητής επιστημών είτε ασχολείστε με τις επιστήμες από χόμπι στο σπίτι, μπορείτε να κρατάτε σημειώσεις, φωτογραφίες και παρατηρήσεις σε ένα βολικό σημείο. Χρησιμοποιήστε τους αισθητήρες του iPhone ή του iPad για να μετρήσετε και να απεικονίσετε με γραφήματα φαινόμενα, όπως το φως, τον ήχο και την κίνηση ή συνδεθείτε με εξωτερικούς αισθητήρες μέσω Bluetooth για να διεξάγετε πειράματα στο περιβάλλον γύρω σας.\n\nΜε την εφαρμογή Science Journal, μπορείτε:\n• Να μετράτε το φως, τον ήχο, την επιτάχυνση, την ατμοσφαιρική πίεση και άλλα μεγέθη χρησιμοποιώντας τους ενσωματωμένους αισθητήρες της συσκευής σας.\n• Να κρατάτε σημειώσεις και να βγάζετε φωτογραφίες για να τεκμηριώνετε τα επιστημονικά σας πειράματα. Περισσότεροι τύποι σημειώσεων θα κυκλοφορήσουν σύντομα!\n• Να συνδέεστε με εξωτερικούς αισθητήρες χρησιμοποιώντας επιλεγμένες συσκευές Arduino με Bluetooth.\n• Να δημιουργείτε αυτοματοποιημένα εναύσματα για καταγραφή δεδομένων και σημειώσεων.\n• Να χρησιμοποιείτε ηχητική αναπαράσταση για να ακούσετε την κίνηση των γραφημάτων σας.\n\nΣημείωση δικαιωμάτων:\n• Bluetooth: Απαιτείται για τη σάρωση συσκευών με αισθητήρα Bluetooth.\n• Κάμερα: Απαιτείται για τη λήψη φωτογραφιών για την τεκμηρίωση των πειραμάτων, καθώς και για τον αισθητήρα φωτεινότητας.\n• Βιβλιοθήκη φωτογραφιών: Απαιτείται για την αποθήκευση φωτογραφιών που τραβήχτηκαν για την τεκμηρίωση των πειραμάτων και για την προσθήκη υπαρχουσών φωτογραφιών από τη βιβλιοθήκη σας στα πειράματα.\n• Μικρόφωνο: Απαιτείται για τον αισθητήρα έντασης ήχου.\n• Ειδοποιήσεις push: Απαιτούνται για να ενημερώνεστε για την κατάσταση καταγραφής, όταν η εφαρμογή εκτελείται στο παρασκήνιο.\n\nΕκπαιδευτικές δραστηριότητες από τους συνεργάτες μας:\nhttps://makingscience.withgoogle.com/science-journal/activities\nΓια υποστήριξη: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,επιστήμη,μάθηση,stem,πειράματα,αισθητήρες,γράφημα,journal,σημειωματάριο,σημειώσεις,έγγραφο";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Επιταχυνσιόμετρο X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Επιταχυνσιόμετρο Υ";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Επιταχυνσιόμετρο Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Πληροφορίες";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Προσθήκη λεζάντας";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Αρχειοθέτηση";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Αρχειοθέτηση πειράματος";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Αρχειοθέτηση καταγραφής";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Ακύρωση";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Το κατάλαβα";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Διαγραφή";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Διαγραφή πειράματος";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Διαγραφή καταγραφής";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Διαγραφή εικόνας";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Διαγραφή στιγμιότυπου";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Διαγραφή σημείωσης κειμένου";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Διαγραφή σημείωσης";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Απόρριψη";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Παράβλεψη";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Επεξεργ.";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Σχόλια";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Να συμπεριληφθούν αρχειοθετημένα πειράματα";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Επίπεδο";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "ΟΚ";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Αναφορά";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Επανάληψη";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Χάρακας";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Αποθήκευση";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Ρυθμίσεις";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Αναίρεση αρχειοθέτησης";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Αναίρεση αρχειοθέτησης πειράματος";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Αναίρεση αρχειοθέτησης καταγραφής";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Αναίρεση";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Προβολή λεπτομερειών";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Προσθήκη σημείωσης στο χρονολόγιο";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Προσθήκη νέας σημείωσης";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Προσθήκη φωτογραφίας";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Προσθήκη εικόνας";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Προσθήκη σημείωσης";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Φωτισμός περιβάλλοντος";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Τονικό πλάτος";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Θερμοκρασία περιβάλλοντος";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Αρχειοθετημένα";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Δεν είναι δυνατή η τροποποίηση των αρχειοθετημένων πειραμάτων, παρά μόνο η διαγραφή τους";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Το πείραμα αρχειοθετήθηκε.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Η εγγραφή αρχειοθετήθηκε.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Διαθέσιμες συσκευές";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Πίσω";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Επιστροφή στην προηγούμενη προβολή";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Βαρόμετρο";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Δημιουργία εναύσματος";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Προσθήκη νέας κάρτας αισθητήρα";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Απόρριψη αλλαγών";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Αποθήκευση αλλαγών";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Διατήρηση";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Διαγραφή";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Νέο πείραμα";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Έναρξη εγγραφής";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Μετάβαση στην τρέχουσα χρονική στιγμή";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Κλείσιμο κάρτας";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Διακοπή εγγραφής";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Λήψη φωτογραφίας";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Κάμερα: Τραβήξτε μια φωτογραφία για να την προσθέσετε σε αυτό το πείραμα";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Πρέπει να εισαγάγετε μια αριθμητική τιμή στην οποία θα ενεργοποιείται αυτό το έναυσμα.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Έλεγχος αναπαραγωγής γραφήματος";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Μετακινεί τη θέση αναπαραγωγής του γραφήματος και διαβάζει την τιμή για αυτήν τη θέση";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Ζωντανό γράφημα";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Μετακίνηση αριστερά";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Μετακίνηση δεξιά";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Μετακινήθηκε";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Γράφημα";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Μεγέθυνση";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Επίπεδο εστίασης";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Εστίαση για προσαρμογή";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Σμίκρυνση";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Επιλογή φωτογραφίας";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Αξίωση όλων";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Αξίωση όλων";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Προσθήκη στο Google Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Προσθήκη 1 υπολειπόμενου πειράματος στο Google Drive για %@;";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Προσθήκη %1$@ υπολειπόμενων πειραμάτων στο Google Drive για %2$@;";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Αξίωση όλων των υπολειπόμενων πειραμάτων";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Προσθήκη όλων των πειραμάτων στο Google Drive;";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Αξίωση όλων των πειραμάτων;";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Προσθήκη αυτού του πειράματος στο Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Δεν είναι δυνατή η επεξεργασία των πειραμάτων και θα παραμείνουν στη συσκευή έως ότου υποβληθεί αξίωση ή διαγραφούν";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Προσθήκη πειραμάτων στο Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Αξίωση πειραμάτων";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Διαγραφή αυτού του πειράματος";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Διαγραφή όλων";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Διαγραφή 1 υπολειπόμενου πειράματος;";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Διαγραφή %ld υπολειπόμενων πειραμάτων;";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Διαγραφή όλων των υπολειπόμενων πειραμάτων";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Διαγραφή όλων των πειραμάτων;";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Όλα τα πειράματα σε αυτήν τη συσκευή, όπως και τα αρχειοθετημένα πειράματα, θα διαγραφούν. Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Διαγραφή όλων";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Υπάρχουν %ld πειράματα χωρίς αξίωση σε αυτήν τη συσκευή.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Υπάρχει 1 πείραμα χωρίς αξίωση σε αυτήν τη συσκευή.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Κοινοποίηση αυτού του πειράματος χωρίς αξίωση";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Δεν υπάρχει αρκετός χώρος για αξίωση πειράματος";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Δεν υπάρχει αρκετός χώρος για αξίωση πειραμάτων";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Αδύνατη αξίωση του πειράματος";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Αδύνατη αξίωση των πειραμάτων";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Αξίωση πειράματος;";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Αξίωση πειράματος";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Προσθήκη αυτού του πειράματος στο Google Drive για %@;";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Το πείραμα προστέθηκε στον %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Αξίωση παλιότερων πειραμάτων";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Αξίωση πειραμάτων";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Κλείσιμο";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Επιστροφή στην προηγούμενη προβολή";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Πυξίδα";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "μοίρες";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Αγωγός";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Συνέχεια χωρίς σύνδεση";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "λήξη περικοπής:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Δεν ήταν δυνατή η αποθήκευση της περικοπής:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Κινήστε τον δείκτη της λήξης της περικοπής αριστερά";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Κινήστε τον δείκτη της λήξης της περικοπής δεξιά";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Κινήστε τον δείκτη της αρχής της περικοπής αριστερά";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Κινήστε τον δείκτη της αρχής της περικοπής αριστερά";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Περισσότερες επιλογές";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Η καταγραφή περικόπηκε";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Δεν είναι δυνατή η περικοπή της καταγραφής εκτός του αρχικού καταγεγραμμένου εύρους";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Δεν είναι δυνατή η περικοπή της καταγραφής κάτω από ένα δευτερόλεπτο";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Περικοπή";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "αρχή περικοπής:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Τρέχουσα τιμή";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Ένταση ήχου";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Πείραμα χωρίς τίτλο";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Προεπιλογή";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το πείραμα; Όλες οι καταγραφές και οι σημειώσεις του θα διαγραφούν.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Διαγραφή αυτού του πειράματος;";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Διαγραφή";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Διαγραφή αυτής της εγγραφής;";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Το πείραμα διαγράφηκε.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Η καταγραφή διαγράφηκε.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Λεπτομέρειες";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Καρφίτσωμα";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Συχνότητα";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Αποθηκεύστε τις ρυθμίσεις αισθητήρα.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Αισθητήρας";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Απενεργοποίηση κλίμακας";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Πατήστε δύο φορές για επεξεργασία";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Πατήστε δύο φορές για άνοιγμα";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Πατήστε δύο φορές για επιλογή";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Πατήστε δύο φορές για εναλλαγή";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Πατήστε δύο φορές για να δείτε λεπτομέρειες";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Λαβή συρταριού εργαλείου";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Προσαρμόστε το μέγεθος του συρταριού εργαλείου. Διαθέσιμες ενέργειες.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "κλειστό";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "σε επεξεργασία";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "πλήρης οθόνη";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "μισή οθόνη";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Αδύνατη η σύνδεση στο Google Drive. Ελέγξτε τη σύνδεσή σας.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Το δίκτυο αποσυνδέθηκε";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Το Science Journal δεν μπορεί να συνδεθεί στο Google Drive. Ενδέχεται να μην δημιουργηθούν αντίγραφα ασφαλείας για όλα τα πειράματα.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Το Science Journal δεν μπορεί να συνδεθεί στο Google Drive αυτήν τη στιγμή. Θα δοκιμάσουμε ξανά αργότερα.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Το Google Drive δεν έχει αρκετό χώρο για να αποθηκεύσει το πείραμά σας.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Τα δεδομένα από τα πειράματα για το Science Journal αποθηκεύονται και διατίθενται σε συσκευές μέσω Google Drive. Επίσης, απαιτείται σύνδεση σε λογαριασμό Google.\n\nΑν έχετε δεδομένα σε αυτήν τη συσκευή, μόλις συνδεθείτε, μπορείτε να αποθηκεύσετε τα υπάρχοντα πειράματά σας στο Google Drive. Τα πειράματά σας είναι αποθηκευμένα στον φάκελο \"Science Journal\" στον Λογαριασμό σας Google.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Δεν είναι δυνατή η επικοινωνία με το Google Drive. Ελέγξτε τη σύνδεσή σας.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Επεξεργασία ώρας λήξης";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Επεξεργασία ώρας έναρξης";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Επεξεργασία πειράματος";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Αλλάξτε τίτλο ή φωτογραφία σε ένα πείραμα";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Μη αποθηκευμένες αλλαγές";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Είστε βέβαιοι ότι δεν θέλετε να αποθηκεύσετε τις αλλαγές που κάνατε σε αυτό το πείραμα;";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Αλλαγή φωτογραφίας";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Επεξεργασία πειράματος";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Επεξεργασία ώρας";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Επεξεργασία ώρας";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Επεξεργασία ώρας λήξης καταγραφής";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Επεξεργασία ώρας έναρξης καταγραφής";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Επεξεργασία εγγραφής";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Αλλάξτε τίτλο σε μια εγγραφή";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Τίτλος εγγραφής";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Δεν υπάρχουν ακόμα παρατηρήσεις";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Δεν υπάρχουν πειράματα";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Δεν έχουν ρυθμιστεί εναύσματα";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Ενεργοποίηση κλίμακας";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Κανένα πείραμα δεν θα προστεθεί στο Google Drive";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Διαγραφή όλων των πειραμάτων";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Όλα τα πειράματα θα προστεθούν στο Google Drive";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Αποθήκευση όλων των πειραμάτων";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Επιλέξτε πειράματα για αποθήκευση στο Google Drive";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Επιλέξτε πειράματα για αποθήκευση";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Καλωσορίσατε, έχετε προς το παρόν %ld πειράματα αποθηκευμένα σε αυτήν τη συσκευή.\n\nΓια να συνεχίσετε, ορίστε μια επιλογή.";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Καλωσορίσατε, προς το παρόν έχετε 1 πείραμα αποθηκευμένο σε αυτήν τη συσκευή.\n\nΓια να συνεχίσετε, ορίστε μια επιλογή:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Δημιουργία αντιγράφων ασφαλείας στο Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Πείραμα";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Πειράματα";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Κοιν. πειράματος";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Δεν έχει ολοκληρωθεί η λήψη αυτού του πειράματος. Αν μοιραστείτε ένα αντίγραφο, ορισμένα δεδομένα θα λείπουν";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Λήψη σε εξέλιξη";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Γίνεται εγγραφή…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Τίτλος πειράματος";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Αυτό το πείραμα έγινε με νεότερη έκδοση του Science Journal. Δεν είναι δυνατή η επεξεργασία του σε αυτήν τη συσκευή, μέχρι να κάνετε αναβάθμιση.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Οργανώστε τις σκέψεις και τις παρατηρήσεις σας με την καταγραφή σημειώσεων και δεδομένων ή τη λήψη εικόνων";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Δημιουργήστε ένα νέο πείραμα";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Εξερευνήστε τον κόσμο σας";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Κοινή χρήση";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Η εξαγωγή απέτυχε.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Αποστολή πειράματος";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Σχετικός χρόνος";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Εξαγωγή…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Κοινοποίηση φωτογραφίας στο…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Καλωσορίσατε στο Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Δοκιμάστε να κρατήσετε σημειώσεις και να εγγράψετε δεδομένα μέσω της παρακάτω γραμμής εργαλείων!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Καλωσορίσατε στο Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Βρείτε δραστηριότητες στο \ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Αγνόηση αυτής της συσκευής";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Πλήρης οθόνη";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Έναρξη";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Ενεργοποίηση ήχου";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Απενεργοποίηση ήχου";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Τι συμβαίνει εδώ;";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Δυστυχώς, παρουσιάστηκε άγνωστο σφάλμα.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Η εισαγωγή απέτυχε. Κάτι δεν πήγε καλά με αυτό το πείραμα.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Το Science Journal είναι προς το παρόν σε χρήση. Σταματήστε την εγγραφή και δοκιμάστε ξανά.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Συνδεθείτε για να εισαγάγετε ένα πείραμα.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Δεν υπάρχει επαρκής αποθηκευτικός χώρος";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Μπορείτε να διαχειριστείτε τον αποθηκευτικό σας χώρο από τις ρυθμίσεις.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Εμφάνιση αρχειοθετημένων εγγραφών";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Άνοιγμα ρυθμίσεων";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Δεν είναι δυνατή η χρήση της κάμερας, επειδή κάνετε εγγραφή με έναν αισθητήρα φωτεινότητας, ο οποίος μετρά δεδομένα μέσω της μπροστινής κάμερας.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Δεν είναι δυνατή η χρήση της κάμερας, επειδή είτε παρακολουθείτε ένα βίντεο με παράθεση εικόνων είτε χρησιμοποιείτε το Science Journal στη λειτουργία διαιρεμένης προβολής.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Προβολή αισθητήρων";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Δεν είναι δυνατή η χρήση της κάμερας, επειδή το Science Journal δεν έχει άδεια πρόσβασης.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Δεν είναι δυνατή η χρήση της βιβλιοθήκης φωτογραφιών, επειδή το Science Journal δεν έχει άδεια πρόσβασης.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Μάθετε περισσότερα";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Μάθετε περισσότερα";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Γραμμικό επιταχύμετρο";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Βελτιώσεις απόδοσης και διορθώσεις σφαλμάτων.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Νέες λειτουργίες:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Αισθητήρας τονικού ύψους ήχου.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Εξαγωγή πειραμάτων σε αρχείο και εισαγωγή αυτών σε άλλες συσκευές.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Εξαγωγή φωτογραφιών από πείραμα.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Προβολή περισσότερων σημειώσεων";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Μαγνητόμετρο";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Μενού";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Εμφανίζει ένα μενού με περισσότερες επιλογές";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Ρυθμίσεις ήχου";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Επεξεργασία εναυσμάτων";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Ρύθμιση εναυσμάτων";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Οι συσκευές μου";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Δώστε όνομα σε αυτό το πείραμα";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Δραστηριότητες";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Πειράματα";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Ρυθμίσεις";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Προσθέστε περιγραφή";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Περιγραφή";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Σημείωση φωτογραφίας";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Σημείωση κειμένου";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Σημείωση εναύσματος";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Σημείωση στιγμιότυπου";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Σημειώσεις";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Προστέθηκε σημείωση";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Σημειώσεις: Προσθέστε μια σημείωση κειμένου σε αυτό το πείραμα";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Παρατήρηση: Χρησιμοποιήστε αισθητήρες για να προσθέσετε στιγμιότυπα τιμής ή εγγραφές σε αυτό το πείραμα";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Δεν είναι δυνατό το άνοιγμα του πειράματος";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Δεν είναι δυνατό το άνοιγμα του αρχείου";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Τα πειράματα θα πρέπει να είναι σε μορφή αρχείου Science Journal (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Παύση";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Ποσοστό";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Αυτό ήταν! Ολοκληρώσαμε τον έλεγχο των αδειών. Αν θελήσετε να τροποποιήσετε αυτές τις άδειες στο μέλλον, μπορείτε να το κάνετε ανά πάσα στιγμή στην ενότητα Science Journal της εφαρμογής \"Ρυθμίσεις\" του iOS.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Θα ελέγξουμε την άδεια πρόσβασης στις κάμερες. Χρησιμοποιούμε την μπροστινή κάμερα για τον αισθητήρα φωτεινότητας. Χρησιμοποιήστε οποιαδήποτε κάμερα για την προσθήκη σημειώσεων φωτογραφίας σε πειράματα και εγγραφές.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Συνέχεια";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Πρέπει να ξεκινήσουμε τον έλεγχο αδειών για να μπορέσουμε να ενεργοποιήσουμε τους αισθητήρες εξοπλισμού, την κάμερα και τη βιβλιοθήκη φωτογραφιών σας. Θα σας εξηγήσουμε πώς χρησιμοποιούμε το καθένα πριν σας ρωτήσουμε.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Μετά, θα ελέγξουμε την άδεια πρόσβασης για το μικρόφωνο, που χρησιμοποιείται για τους αισθητήρες ήχου. Τα περιεχόμενα ήχου δεν εγγράφονται, αποθηκεύονται ούτε μεταδίδονται. Μετράμε μόνο την ένταση ή το τονικό ύψος του ίδιου του ήχου.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Πρώτα, θα ελέγξουμε για την άδεια αποστολής ειδοποιήσεων push. Τις χρησιμοποιούμε μόνο για ενημέρωση όταν πρόκειται να τελειώσουν οι εγγραφές σας, αν εκτελείτε στο παρασκήνιο την ενδιάμεση εγγραφή της εφαρμογής.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Τέλος, θα ελέγξουμε την άδεια πρόσβασης στη βιβλιοθήκη φωτογραφιών, για να προσθέτετε τις υπάρχουσες φωτογραφίες σας σε πειράματα και εγγραφές, και να μπορούμε να αποθηκεύουμε φωτογραφίες που τραβάτε στη βιβλιοθήκη σας.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Ας ξεκινήσουμε";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Τέλος!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Έλεγχος για άδεια";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Καλωσορίσατε στο Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Φωτογραφία για";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Φωτογραφία";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Δεν υπάρχει αρκετός ελεύθερος χώρος στον δίσκο για προσθήκη φωτογραφίας";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Εσωτερικοί αισθητήρες";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Βιβλιοθήκη φωτογραφιών: Προσθέστε μια φωτογραφία από τη βιβλιοθήκη σας σε αυτό το πείραμα";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Πληροφορίες";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Συσκευή";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Διαστάσεις";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Σημειώσεις";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Ταχύτητα κλείστρου";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Προστέθηκε εικόνα";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Τονικό ύψος";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ ημιτόνια πιο χαμηλά από %2$@ ύφεση, οκτάβα %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ ημιτόνια πιο χαμηλά από %2$@, οκτάβα %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ ημιτόνια πιο χαμηλά από %2$@ δίεση, οκτάβα %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ ύφεση, οκτάβα %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "υψηλό τονικό ύψος";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "χαμηλό τονικό ύψος";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, οκτάβα %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ δίεση, οκτάβα %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ ημιτόνια πιο ψηλά από %2$@ ύφεση, οκτάβα %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ ημιτόνια πιο ψηλά από %2$@, οκτάβα %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ ημιτόνια πιο ψηλά από %2$@ δίεση, οκτάβα %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pixel";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Αναπαραγωγή";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Οι τρέχουσες ρυθμίσεις συσκευής εφαρμόστηκαν σε αυτόν τον λογαριασμό";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Γίνεται ανανέωση";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Δεν είναι δυνατή η έναρξη της εγγραφής";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Ένας ή περισσότεροι αισθητήρες έχουν αποσυνδεθεί. Δοκιμάστε ξανά.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Ανοίξτε το Science Journal για να δείτε τα δεδομένα που έχετε καταγράψει.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Η εγγραφή τελείωσε.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Συνέχιση";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Ακύρωση εγγραφής";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Ένας ή περισσότεροι αισθητήρες δεν έχουν καταγράψει δεδομένα. Θέλετε να ακυρώσετε αυτήν την εγγραφή;";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Δεν γίνεται εγγραφή δεδομένων";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Η εγγραφή σταμάτησε";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Ανοίξτε το Science Journal για να συνεχίσετε την εγγραφή.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Η εγγραφή θα τελειώσει σύντομα.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Συνέχιση εγγραφής";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Διακοπή εγγραφής";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Κατάργηση εικόνας εξωφύλλου";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Καταργεί την εικόνα εξωφύλλου για αυτό το πείραμα.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Είστε σίγουροι ότι θέλετε να καταργήσετε την εικόνα εξωφύλλου; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Η εικόνα εξωφύλλου καταργήθηκε.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Δεν ήταν δυνατή η κατάργηση της εικόνας εξωφύλλου.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Προστέθηκε εγγραφή";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Εγγραφή";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Μετονομασία αυτής της εγγραφής";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την καταγραφή; Τα καταγεγραμμένα δεδομένα και οι σημειώσεις θα διαγραφούν.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Διάρκεια";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Αξιολόγηση";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Αποθήκευση";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Αποθήκευση αλλαγών και επιστροφή στην προηγούμενη προβολή";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Αποθήκευση πειράματος";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Θα θέλατε να προσθέσετε αυτό το πείραμα στη βιβλιοθήκη σας;";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Αποθήκευση σε Αρχεία";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Εμφανίζει ένα πρόγραμμα περιήγησης εγγράφων που σας επιτρέπει να αποθηκεύετε ένα αντίγραφο αυτού του αρχείου σε έναν φάκελο στη συσκευή σας.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Το αρχείο αποθηκεύτηκε";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Τα αρχεία αποθηκεύτηκαν";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Δεν ήταν δυνατή η αποθήκευση του αρχείου. Δοκιμάστε ξανά.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Δεν ήταν δυνατή η αποθήκευση των αρχείων. Δοκιμάστε ξανά.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Κλίμακα";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Επιλέξτε χρονική σήμανση σημείωσης στο γράφημα";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Αποστολή αντιγράφου";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Ρυθμίσεις";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Φωτεινότητα";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Δεν είναι δυνατή η χρήση του αισθητήρα φωτεινότητας, επειδή το Science Journal δεν έχει δικαίωμα πρόσβασης στην κάμερα.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Δεν ήταν δυνατή η φόρτωση των δεδομένων του αισθητήρα";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Φόρτωση δεδομένων αισθητήρα…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Αδύνατη η χρήση των αισθητήρων ήχου, επειδή το Science Journal δεν έχει δικαίωμα πρόσβασης στο μικρόφωνο.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Προσαρμογή";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Τα αντικείμενα έχουν την τάση να παραμένουν στη θέση τους ή να συνεχίζουν να κινούνται, σε περίπτωση που κινούνται. Αυτή η τάση λέγεται \"αδράνεια\". Ο Πρώτος Νόμος του Νεύτωνα διατυπώνει αυτήν την έννοια με πιο επίσημο τρόπο: \"Τα αντικείμενα διατηρούν την κατάσταση κίνησης ή ακινησίας τους, εκτός και αν ασκηθεί επάνω τους μια μη εξισορροπημένη δύναμη.\n\nΌταν μια μη εξισορροπημένη δύναμη προκαλεί την κίνηση ενός αντικειμένου, λέμε ότι το αντικείμενο βρίσκεται σε επιτάχυνση, δηλαδή μεταβάλλεται η ταχύτητά του, είτε αυξάνεται/μειώνεται είτε αλλάζει κατεύθυνση. Η επιτάχυνση υπολογίζεται ως η μεταβολή της ταχύτητας σε συνάρτηση με τον χρόνο (μέτρα ανά δευτερόλεπτο) ή σε μέτρα ανά δευτερόλεπτο στο τετράγωνο (m/s²).\n\nΤο τηλέφωνό σας διαθέτει μια συσκευή που μετράει αυτές τις μεταβολές στην κίνηση: το επιταχύμετρο. Στο εσωτερικό του επιταχύμετρου, υπάρχουν μικρές, αιωρούμενες μάζες που μπορούν να κινούνται ελεύθερα. Οι μεταβολές στην κίνηση προκαλούν τη μετακίνηση αυτών των μαζών, περίπου όπως πέφτει το κεφάλι σας προς τα εμπρός όταν βρίσκεστε σε ένα αυτοκίνητο που φρενάρει απότομα. Τα επιταχύμετρα των τηλεφώνων μπορούν να μετρήσουν αυτές τις ανεπαίσθητες μετατοπίσεις λόγω αδράνειας και να ανιχνεύσουν με αυτόν τον τρόπο μεταβολές στην κίνηση και τον προσανατολισμό. Αυτή η τεχνολογία χρησιμοποιείται για την εναλλαγή μεταξύ οριζόντιου και κατακόρυφου προσανατολισμού στην οθόνη, για να παίζετε παιχνίδια στο τηλέφωνό σας και άλλα.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Λογικά, θα παρατηρήσατε μια σταθερή επιτάχυνση στον άξονα Z, ακόμη και όταν το τηλέφωνο είναι ακίνητο επάνω σε ένα τραπέζι. Αυτή είναι η επιτάχυνση στην οποία υποβάλλονται όλα τα αντικείμενα στην επιφάνεια της Γης, λόγω της έλξης της βαρύτητας, η οποία υπολογίζεται περίπου στα 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Παρόλο που το παρατηρούμε σπάνια, όλοι ζούμε στον πυθμένα ενός βαθύ ωκεανού αέρα, δηλαδή της γήινης ατμόσφαιρας, που εκτείνεται προς τα επάνω κατά 40 χιλιόμετρα. Το βάρος όλου αυτού του αέρα που μας πιέζει προς τα κάτω δημιουργεί αυτό που ονομάζουμε ατμοσφαιρική πίεση.\n\nΣτο επίπεδο της θάλασσας, η ατμοσφαιρική πίεση ασκεί περίπου 6,35 κιλά δύναμης σε κάθε 6,45 τετραγωνικά εκατοστά κατά προσέγγιση, το οποίο ισοδυναμεί με περίπου 590 κιλά σε μια περιοχή στο μέγεθος ενός τυπικού φύλλου χαρτιού.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Δεν παρατηρούμε αυτήν την απίστευτα ισχυρή πίεση γιατί την έχουμε συνηθίσει. Αυτό ισχύει, βασικά, μέχρι να αλλάξει, ακόμα και ελάχιστα, όπως συμβαίνει όταν βρισκόμαστε σε μεγάλα υψόμετρα ή όταν ταξιδεύουμε με αεροπλάνο. Η ατμοσφαιρική πίεση μεταβάλλεται επίσης με τις καιρικές συνθήκες: μειώνεται όταν υπάρχει θυελλώδης, ασταθής αέρας και αυξάνεται όταν ο αέρας σταθεροποιείται και ο ουρανός είναι καθαρός.\n\nΤο ψηφιακό βαρόμετρο του τηλεφώνου σας μετράει την ατμοσφαιρική πίεση σε εκτοπασκάλ. (Ένα εκτοπασκάλ είναι 100 πασκάλ, όπου ένα πασκάλ είναι ένα νιούτον δύναμης που ασκείται σε μια περιοχή ενός τετραγωνικού μέτρου.) Έχετε πιθανώς ακούσει τους μετεωρολόγους να αναφέρουν την ατμοσφαιρική πίεση σε millibar. Αυτή η πιο οικεία μονάδα ισοδυναμεί με τα εκτοπασκάλ.\n\nΊσως να αναρωτιέστε γιατί ένα τηλέφωνο να μετράει την πίεση. Η ατμοσφαιρική πίεση αλλάζει με μετρήσιμο τρόπο ακόμα και με ελάχιστες αλλαγές στο υψόμετρο, π.χ. όταν ανεβαίνετε μια σκάλα. Έτσι, το ψηφιακό βαρόμετρο ενός τηλεφώνου μπορεί να βοηθήσει στον εντοπισμό των αλλαγών θέσης, π.χ. να σας ενημερώνει σε ποιον όροφο ενός κτιρίου βρίσκεστε ή αν οδηγείτε στο επάνω ή κάτω κατάστρωμα μιας γέφυρας.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Η μπροστινή κάμερα μετράει τη φωτεινότητα σε EV (Exposure Value - Τιμή έκθεσης), μια μέτρηση που βασίζεται στην ταχύτητα κλείστρου, στον αριθμό f και στην τιμή ISO της κάμερας, και η οποία καθορίζεται από τη φωτεινότητα των pixel που καταγράφηκαν με αυτές τις ρυθμίσεις.\n\nΌσο πιο φωτεινή είναι η εικόνα λήψης τόσο πιο υψηλή είναι η τιμή EV. Το σκοτάδι δημιουργεί αρνητικές τιμές.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Επειδή η τιμή EV είναι μια μέτρηση που βασίζεται στην οπτική και στους αισθητήρες της κάμερας, το εύρος της περιορίζεται από τον εξοπλισμό και το λογισμικό. Ενώ ο αισθητήρας φωτισμού περιβάλλοντος μπορεί να καταγράψει την τιμή lux απευθείας, η μπροστινή κάμερα πρέπει να χρησιμοποιήσει τον αριθμό f, την τιμή ISO και την ταχύτητα κλείστρου για τη δημιουργία μιας βάσης μέτρησης και έπειτα προσδιορίζει την τιμή EV με βάση την ανάγνωση pixel μετά τη λήψη εικόνων. Δεδομένης αυτής της διαδικασίας, οι τιμές EV μπορεί να διαφέρουν ανάμεσα σε συσκευές αν τα κατώτερα όρια αριθμού f είναι διαφορετικά, όπως στην περίπτωση του iPhone 8 (f1.8) και του iPad (f2.4).\n\nΕφόσον η τιμή EV καθορίζεται μετρώντας την τιμή φωτεινότητας των pixel που καταγράφηκαν, οι πηγές φωτισμού περιβάλλοντος θα παράγουν πολύ μικρότερη τιμή σε σχέση με αυτήν που θα παρήγαγαν αν η τιμή lux προσδιοριζόταν από έναν υπέρυθρο αισθητήρα. Οι μετρήσεις εξαρτώνται άμεσα από τη θέση της κάμερας και από το θέμα της λήψης.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Μάλλον γνωρίζετε ήδη ότι η γη έχει μαγνητικό πεδίο. Αυτό που ίσως δεν έχετε συνειδητοποιήσει είναι ότι το τηλέφωνό σας διαθέτει μια συσκευή ειδικά σχεδιασμένη για να εντοπίζει τα μαγνητικά πεδία: ένα μαγνητόμετρο. Συνδυάζοντας δεδομένα από το μαγνητόμετρο του τηλεφώνου σας με τον προσανατολισμό του τηλεφώνου σας στον χώρο, μπορούμε να δημιουργήσουμε μια ψηφιακή πυξίδα.\n\nΗ παραδοσιακή πυξίδα είναι ένα μαγνητόμετρο παλιότερης τεχνολογίας, με μια μαγνητισμένη βελόνα που στρέφεται προκειμένου να ευθυγραμμιστεί με το περιβάλλον μαγνητικό πεδίο. Το τηλέφωνό σας δεν περιέχει κάποια μικροσκοπική πυξίδα, αλλά έναν μικροσκοπικό αισθητήρα τριών αξόνων που χρησιμοποιεί ηλεκτρικά ρεύματα για να εντοπίσει την ισχύ του μαγνητικού πεδίου στις τρεις διαστάσεις του χώρου. Αλλά αυτό μόνο του δεν αρκεί για να δημιουργήσετε μια πυξίδα!\n\nΓιατί μια πυξίδα πρέπει να συνδυάσει τα δεδομένα από το μαγνητόμετρο με τον προσανατολισμό του τηλεφώνου; Ο προσανατολισμός του τηλεφώνου μάς δίνει τη δυνατότητα να υπολογίσουμε τη μαγνητική περιστροφή, ακόμα και όταν το τηλέφωνο δεν διατηρείται οριζόντιο στο ίδιο επίπεδο με το μαγνητικό πεδίο της γης. Γνωρίζουμε ότι η βαρύτητα είναι κατακόρυφη στο μαγνητικό πεδίο της γης, οπότε μπορούμε να χρησιμοποιήσουμε την κατεύθυνση της βαρύτητας από τους αισθητήρες του επιταχύμετρου για να καθορίσουμε πόσο από το μαγνητικό πεδίο είναι στο ίδιο επίπεδο με το μαγνητικό πεδίο της γης.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Όπως ίσως έχετε παρατηρήσει, η πυξίδα επηρεάζεται από το μαγνητικό πεδίο της γης, αλλά και από οποιοδήποτε και κάθε μαγνητικό πεδίο που βρίσκεται γύρω σας. Οι μαγνήτες, τα ηλεκτρικά ρεύματα και τα μεταλλικά αντικείμενα μπορούν εύκολα να οδηγήσουν το μαγνητόμετρο του τηλεφώνου σας προς διάφορες κατευθύνσεις, με αποτέλεσμα η ένδειξη της πυξίδας να αλλάξει. Σταθείτε σε μια ανοιχτή περιοχή, καλύτερα σε εξωτερικό χώρο και μακριά από γραμμές ηλεκτρικού ρεύματος, για να είστε σίγουροι ότι το κόκκινο άκρο της πυξίδας είναι ευθυγραμμισμένο με το μαγνητικό πεδίο της γης. Μπορείτε να μετακινήσετε το τηλέφωνό σας σύμφωνα με το μοτίβο της εικόνας 8 για να βαθμονομήσετε το μαγνητόμετρο του τηλεφώνου.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Οι ήχοι δημιουργούνται από τις δονήσεις. Η φωνή σας, για παράδειγμα, προέρχεται από τις δονήσεις των φωνητικών χορδών στον λάρυγγά σας. Αυτές οι δονήσεις δημιουργούν εναλλάξ ζώνες με υψηλή και χαμηλή πίεση αέρα, οι οποίες εξαπλώνονται προς τα έξω, περίπου όπως και οι κυκλικοί κυματισμοί που δημιουργούνται στην επιφάνεια μιας ήρεμης λιμνούλας όταν πετάξετε μέσα της μια πέτρα.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Όλοι οι ήχοι μπορούν να προσδιοριστούν βάσει της συχνότητας και της έντασής τους.\n\nΗ ένταση είναι η ιδιότητα που μετράτε εδώ με τον αισθητήρα έντασης ήχου Science Journal και η μονάδα μέτρησής της είναι τα ντεσιμπέλ (dB). Η ένταση ή δύναμη του ήχου εξαρτάται από την απόσταση που καλύπτει ένα δονούμενο αντικείμενο κάθε φορά που δονείται. Η υψηλότερη ένταση έχει ως αποτέλεσμα πιο δυνατό ήχο.\n\nΗ συχνότητα (ή αλλιώς τονικό ύψος ή τονικότητα) ενός ηχητικού κύματος είναι ισοδύναμη με τη συχνότητα της δόνησης που τον προκαλεί. Όσο πιο γρήγορα δονείται ένα αντικείμενο, τόσο υψηλότερη είναι η τονικότητα του ήχου που προκύπτει. Ο αισθητήρας έντασης ήχου Science Journal δεν μετράει τη συχνότητα, αλλά μόνο την ένταση.\n\nΈνα πολύ σημαντικό στοιχείο που πρέπει να γνωρίζετε είναι ότι το μικρόφωνο στη συσκευή σας είναι σχεδιασμένο έτσι ώστε να έχει αυξημένη ευαισθησία στις διαφορές των ηχητικών κυμάτων κάθε φορά, αλλά όχι στο απόλυτο μέγεθος κάθε κύματος. Δοκιμάσαμε να επιλέξουμε κώδικα που είναι πιθανό να παράγει αριθμούς παρόμοιους με τους αριθμούς αναφοράς που εμφανίζονται παρακάτω, αλλά κάθε συσκευή μπορεί να δώσει σταθερά υψηλότερους ή χαμηλότερους αριθμούς. Οι επιστήμονες συχνά βαθμονομούν έναν αισθητήρα σαν αυτόν ως προς μια γνωστή τιμή. Προς το παρόν, το Science Journal μπορεί να σας πει αν η επόμενη μετάβασή σας με τρένο έχει μεγαλύτερη ένταση ήχου από την επόμενη ροκ συναυλία που θα πάτε, αλλά μόνο αν και στις δύο περιπτώσεις, πάρετε μαζί σας το τηλέφωνο.\n\nΚάτι άλλο που θα πρέπει να ξέρετε είναι ότι υπάρχουν σημαντικές διαφορές ανάμεσα στην \"ένταση ήχου\", το \"επίπεδο έντασης ήχου\" και την \"ηχητική πίεση\". Εδώ τα αντιμετωπίζουμε όλα το ίδιο, αλλά αν θέλετε να εμβαθύνετε περισσότερο, υπάρχουν πολλοί διαδικτυακοί πόροι για να δείτε τις διαφορές.\n\nΗ χαμηλότερη ένταση ήχου που μπορεί να συλλάβει το ανθρώπινο αυτί ορίζεται στα 0 dB. Μια κανονική συζήτηση αντιστοιχεί περίπου σε 60 dB, ενώ οι ήχοι που ξεπερνούν σε ένταση τα 140 dB είναι οδυνηροί για το ανθρώπινο αυτί. Όμως οι ήχοι δεν είναι απαραίτητο να είναι οδυνηροί για να θεωρηθούν βλαβεροί. Η διαρκής έκθεση σε ήχους 90 dB (περίπου η ένταση μιας ηλεκτρικής σκούπας) μπορεί να προκαλέσει απώλεια ακοής μακροπρόθεσμα.\n\nΗ κλίμακα των ντεσιμπέλ είναι λογαριθμική, γεγονός που προκαλεί ορισμένες στατιστικές δυσκολίες: Μια πηγή ήχου 40 dB δεν έχει διπλάσια ένταση από μια πηγή ήχου στα 20 dB – είναι 100 φορές πιο έντονη. Επίσης, αν ένα ξυπνητήρι που χτυπά παράγει ήχο έντασης 70 dB, η ένταση δύο ξυπνητηριών που χτυπούν δεν είναι 140 dB, αλλά 73 dB. Όπως καταλαβαίνετε, είναι μια αρκετά περίπλοκη κλίμακα.\n\nθρόισμα φύλλων = 10 dB\nψίθυρος στο 1,5 μέτρο = 20 dB\nαπαλός ψίθυρος = 30 dB\nβροχόπτωση = 50 dB\nκανονική συζήτηση = 60 dB\nμπλέντερ = 90 dB\nαυτοκίνητο χωρίς σιλανσιέ = 100 dB\nφωνή στο αυτί = 110 dB\nκεραυνός = 120 dB\nκομπρεσέρ = 130 dB\nαπογείωση αεροπλάνου = 140 dB";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Τα αντικείμενα έχουν την τάση να παραμένουν στη θέση τους ή να συνεχίζουν να κινούνται, σε περίπτωση που κινούνται. Αυτή η τάση λέγεται \"αδράνεια\". Ο Πρώτος Νόμος του Νεύτωνα διατυπώνει αυτήν την έννοια με πιο επίσημο τρόπο: \"Τα αντικείμενα διατηρούν την κατάσταση κίνησης ή ακινησίας τους, εκτός και αν ασκηθεί επάνω τους μια μη εξισορροπημένη δύναμη.\n\nΌταν μια μη εξισορροπημένη δύναμη προκαλεί την κίνηση ενός αντικειμένου, λέμε ότι το αντικείμενο βρίσκεται σε επιτάχυνση, δηλαδή μεταβάλλεται η ταχύτητά του, είτε αυξάνεται/μειώνεται είτε αλλάζει κατεύθυνση. Η επιτάχυνση υπολογίζεται ως η μεταβολή της ταχύτητας σε συνάρτηση με τον χρόνο (μέτρα ανά δευτερόλεπτο) ή σε μέτρα ανά δευτερόλεπτο στο τετράγωνο (m/s²).\n\nΤο τηλέφωνό σας διαθέτει μια συσκευή που μετράει αυτές τις μεταβολές στην κίνηση: το επιταχύμετρο. Στο εσωτερικό του επιταχύμετρου, υπάρχουν μικρές, αιωρούμενες μάζες που μπορούν να κινούνται ελεύθερα. Οι μεταβολές στην κίνηση προκαλούν τη μετακίνηση αυτών των μαζών, περίπου όπως πέφτει το κεφάλι σας προς τα εμπρός όταν βρίσκεστε σε ένα αυτοκίνητο που φρενάρει απότομα. Τα επιταχύμετρα των τηλεφώνων μπορούν να μετρήσουν αυτές τις ανεπαίσθητες μετατοπίσεις λόγω αδράνειας και να ανιχνεύσουν με αυτόν τον τρόπο μεταβολές στην κίνηση και τον προσανατολισμό. Αυτή η τεχνολογία χρησιμοποιείται για την εναλλαγή μεταξύ οριζόντιου και κατακόρυφου προσανατολισμού στην οθόνη, για να παίζετε παιχνίδια στο τηλέφωνό σας και άλλα.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Ο συνδυασμένος γραμμικός αισθητήρας επιταχύμετρου καταγράφει τη συνολική επιτάχυνση και στους τρεις άξονες του τηλεφώνου, εξαιρούμενης της βαρύτητας.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Το τηλέφωνό σας διαθέτει μια συσκευή ειδικά σχεδιασμένη για να εντοπίζει τα μαγνητικά πεδία: ένα μαγνητόμετρο. Αυτός ο μικροσκοπικός αισθητήρας τριών αξόνων χρησιμοποιεί ηλεκτρικά ρεύματα για να εντοπίζει την ισχύ του μαγνητικού πεδίου στις τρεις διαστάσεις του χώρου. Συνδυάζοντας δεδομένα και από τους τρεις άξονες, μπορούμε να δημιουργήσουμε έναν αισθητήρα ισχύος συνολικού μαγνητικού πεδίου.\n\nΟρισμένα μαγνητόμετρα εντοπίζουν τα μαγνητικά πεδία αξιοποιώντας το φαινόμενο Hall – την τάση των μαγνητικών πεδίων να εκτρέπουν το κινούμενο φορτίο κατά τη ροή του. Τα πιο καινούργια μαγνητόμετρα βασίζονται σε μαγνητοαντιστάτες, μεταλλικά κράματα που μεταβάλλουν την αντίστασή τους με βάση τα μαγνητικά πεδία.\n\nΓιατί ένα τηλέφωνο χρειάζεται μαγνητόμετρο; Ο προσανατολισμός σας στον χώρο χρησιμεύει στην ενσωματωμένη πυξίδα και στις εφαρμογές πλοήγησης, ειδικά στις εφαρμογές που σας δίνουν αναλυτικές οδηγίες κατεύθυνσης.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Οι μαγνήτες, τα ηλεκτρικά ρεύματα και τα μεταλλικά αντικείμενα μπορούν εύκολα να οδηγήσουν το μαγνητόμετρο του τηλεφώνου σας προς διάφορες κατευθύνσεις. Αλλά ακόμα και στη μέση ενός κενού πεδίου, το μαγνητόμετρο στο τηλέφωνό σας δείχνει πάντα μια χαμηλή, μη μηδενική ένδειξη: αυτό είναι το μαγνητικό πεδίο της γης!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Οι ήχοι δημιουργούνται από τις δονήσεις. Η φωνή σας, για παράδειγμα, προέρχεται από τις δονήσεις των φωνητικών χορδών στον λάρυγγά σας. Αυτές οι δονήσεις δημιουργούν εναλλάξ ζώνες με υψηλή και χαμηλή πίεση αέρα, οι οποίες εξαπλώνονται προς τα έξω, περίπου όπως και οι κυκλικοί κυματισμοί που δημιουργούνται στην επιφάνεια μιας ήρεμης λιμνούλας όταν πετάξετε μέσα της μια πέτρα.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Όλοι οι ήχοι μπορούν να προσδιοριστούν βάσει της συχνότητας και της έντασής τους. Η συχνότητα (ή αλλιώς τονικό ύψος ή τονικότητα) ενός ηχητικού κύματος είναι ισοδύναμη με τη συχνότητα της δόνησης που τον προκαλεί. Όσο πιο γρήγορα δονείται ένα αντικείμενο, τόσο υψηλότερο είναι το τονικό ύψος του ήχου που προκύπτει. Μετράμε αυτές τις δονήσεις σε Hertz (Hz), όπου 1 Hertz ισούται με 1 δόνηση/δευτερόλεπτο. \n\nΟι άνθρωποι μπορούν να ακούσουν ήχους εύρους 20 έως 20.000 Hz. Σε ένα πιάνο, το πλήκτρο χαμηλότερης συχνότητας παράγει ήχο 27,5 Hz και το πλήκτρο υψηλότερης συχνότητας 4186,01 Hz.\n\nΗ κόκκινη κουκκίδα δείχνει πόσο κοντά είναι το εντοπισμένο τονικό ύψος στην πλησιέστερη μουσική νότα. Αν το τονικό ύψος είναι χαμηλότερο ή \"πιο ελαττωμένο\", η κουκκίδα θα εμφανίζεται στα αριστερά. Αν το τονικό ύψος είναι υψηλότερο ή \"πιο αυξημένο\", τότε η κόκκινη κουκκίδα θα εμφανίζεται στα δεξιά.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Τα δεδομένα που εμφανίζονται εδώ προέρχονται από έναν εξωτερικό αισθητήρα που επικοινωνεί με το τηλέφωνό σας μέσω Bluetooth.\n\nΗ τιμή απεικονίζει το ποσοστό της καθαρής μέτρησης απευθείας από τον μικροελεγκτή. Συνήθως αντιστοιχεί στο ποσοστό πτώσης της τάσης σε έναν αισθητήρα.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Το Bluetooth είναι ένα πρότυπο ασύρματης επικοινωνίας που χρησιμοποιεί ραδιοκύματα για την αμφίδρομη μεταφορά δεδομένων από σταθερές και κινητές συσκευές σε μικρές αποστάσεις.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Οι περιστροφές ανά λεπτό (RPM) είναι μια μονάδα μέτρησης της συχνότητας περιστροφής γύρω από έναν σταθερό άξονα μέσα σε ένα λεπτό.\n\nΚαθώς ο στρόβιλος γυρίζει, περιστρέφει τον δίσκο κωδικοποίησης:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Αυτό δημιουργεί στον αισθητήρα σκοτεινές και φωτεινές περιόδους που καταγράφονται στο Science Journal ως μια περιστροφή.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Τα δεδομένα που εμφανίζονται εδώ προέρχονται από έναν εξωτερικό αισθητήρα που επικοινωνεί με το τηλέφωνό σας μέσω Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Το Bluetooth είναι ένα πρότυπο ασύρματης επικοινωνίας που χρησιμοποιεί ραδιοκύματα για την αμφίδρομη μεταφορά δεδομένων από σταθερές και κινητές συσκευές σε μικρές αποστάσεις.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Η επιτάχυνση του τηλεφώνου προς τα αριστερά και τα δεξιά σε m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Η επιτάχυνση του τηλεφώνου προς τα εμπρός και προς τα πίσω σε m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Η επιτάχυνση του τηλεφώνου προς τα επάνω και προς τα κάτω σε m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Η ατμοσφαιρική πίεση μετράται σε εκτοπασκάλ (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Εδώ εμφανίζονται τα δεδομένα ενός εξωτερικού αισθητήρα, σύμφωνα με τις προσαρμοσμένες ρυθμίσεις.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Η ποσότητα φωτός, σε EV, που φτάνει στην μπροστινή κάμερα.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Ο προσανατολισμός του τηλέφωνου όσον αφορά το μαγνητικό πεδίο της γης.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Η ένταση του ήχου, σε (dB), που φτάνει στον αισθητήρα ήχου ή στο μικρόφωνο.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Η συνολική επιτάχυνση του τηλεφώνου, εξαιρουμένης της δύναμης της βαρύτητας, σε m/s²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Η δύναμη του ατμοσφαιρικού μαγνητικού πεδίου σε Microtesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Το τονικό ύψος του ήχου, σε hertz (Hz), που φτάνει στον αισθητήρα ήχου ή στο μικρόφωνο.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Το ποσοστό της καθαρής μέτρησης από έναν εξωτερικό αισθητήρα.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Το πλήθος των περιστροφών ανά λεπτό";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Ένας αισθητήρας δοκιμής που εξάγει ένα ημιτονοειδές κύμα.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Επόμενος αισθητήρας στην εγγραφή";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Προηγούμενος αισθητήρας στην εγγραφή";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Καθαρή τιμή";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Περιστροφή";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Αδύνατη η τροποποίηση των αισθητήρων κατά την εγγραφή";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Το έναυσμα διαγράφηκε";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Οι αισθητήρες ήχου και φωτεινότητας χρησιμοποιούν το μικρόφωνο και την μπροστινή κάμερα, τα οποία δεν μπορούν να κάνουν εγγραφή όταν το Science Journal εκτελείται στο παρασκήνιο. Αν χρησιμοποιείτε αυτούς τους αισθητήρες σε μια εγγραφή και εκτελείτε στο παρασκήνιο την εφαρμογή, δεν θα καταγραφούν δεδομένα από αυτούς μέχρι να επιστρέψετε στην εφαρμογή.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Οι αισθητήρες ήχου και φωτεινότητας χρησιμοποιούν το μικρόφωνο και την μπροστινή κάμερα, τα οποία δεν μπορούν να κάνουν εγγραφή όταν το Science Journal εκτελείται στο παρασκήνιο.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Σημείωση για τον αισθητήρα";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Δεν είναι δυνατή η χρήση του αισθητήρα φωτεινότητας όταν παρακολουθείτε ένα βίντεο με παράθεση εικόνων ή χρησιμοποιείτε το Science Journal στη λειτουργία διαιρεμένης προβολής.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Τάση";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Επιλέξτε αισθητήρες για χρήση στο πείραμα";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Σύμπτυξη της λίστας αισθητήρων";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Ανάπτυξη της λίστας αισθητήρων";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Το Science Journal είναι απενεργοποιημένο";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Το Science Journal πρέπει να ενεργοποιηθεί στην κονσόλα Google Admin από τον διαχειριστή του τομέα σας.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Εναλλαγή λογαριασμών";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Τα δεδομένα είναι ανώνυμα και θα βοηθήσουν στη βελτίωση της εφαρμογής.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Αποστολή χρήσης δεδομένων εφαρμογής στην Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Άδειες ανοικτού κώδικα";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Πολιτική απορρήτου";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Όροι Παροχής Υπηρεσιών";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Έκδοση";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Ιστότοπος Science Journal";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Εμφάνιση επιλογών";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Συνδέθηκε ως %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Άνοιγμα για διαχείριση λογαριασμών";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Επιλέξτε λογαριασμό";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Μενού πλαϊνής γραμμής";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Ανοίγει ένα μενού πλαϊνής γραμμής που περιέχει επιλογές της εφαρμογής";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Σύνδεση";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Ημιτονοειδές κύμα";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "ημίτονο";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Η σημείωση διαγράφηκε";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Αναίρεση";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Στιγμιότυπο";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Προσθέτει στο πείραμα ένα στιγμιότυπο της τιμής όλων των αισθητήρων για τους οποίους κάνετε παρατηρήσεις αυτήν τη στιγμή";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Αδυναμία λήψης στιγμιότυπου, επειδή ένας ή περισσότεροι αισθητήρες αποσυνδέθηκαν. Δοκιμάστε ξανά.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Στοιχεία σύνοψης";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Προστέθηκε στιγμιότυπο";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Ελάχιστο";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Μέγιστη τιμή";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Μέσος όρος";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Εναλλαγή κάμερας";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Ενεργό";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Ανενεργό";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Αδύνατη η περικοπή των καταγραφών κάτω από ένα δευτερόλεπτο";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Χρησιμοποιήστε έγκυρη μορφή, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Νέα ώρα (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Η ώρα πρέπει να είναι στο εύρος της καταγραφής";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Επεξεργασία σημείωσης κειμένου";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Σημείωση κειμένου";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Προσθήκη παρατήρησης";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Προστέθηκε σημείωση";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Εγγραφή σε εξέλιξη";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Πατήστε δύο φορές για να μεταβείτε στην καρτέλα παρατήρησης στο συρτάρι εργαλείων";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Ρυθμίσεις αισθητήρων";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Στο πείραμα";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Στην εγγραφή";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Να ειδοποιούμαι με";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Ήχο";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Λεπτομέρειες εναύσματος";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Επεξεργασία εναύσματος %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Νέο έναυσμα %@";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Το έναυσμα ενεργοποιήθηκε";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Δόνηση";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Εναύσματα για";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "όταν ο αισθητήρας είναι πάνω από";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "όταν είναι";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "όταν ο αισθητήρας είναι κάτω από";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "όταν μειώνεται κάτω από";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "όταν αυξάνεται πάνω από";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Προστέθηκε σημείωση εναύσματος";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Τι θα πρέπει να αναφέρεται στη σημείωσή σας;";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Προεπιλεγμένο κείμενο σημείωσης";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Έναυσμα μόνο κατά την εγγραφή";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Να ειδοποιούμαι";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Τύπος εναύσματος";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Δημιουργία σημείωσης";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Έναρξη εγγραφής";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Διακοπή εγγραφής";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Τιμή εναύσματος";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Οπτική ειδοποίηση";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "ήταν πάνω από";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Σε";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "ήταν κάτω από";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "μειώθηκε κάτω από";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Μειώνεται κάτω από";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Είναι πάνω από";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Είναι κάτω από";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Έναυσμα όταν";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Αυξάνεται πάνω από";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "αυξήθηκε πάνω από";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Επεξεργασία εναυσμάτων";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Παρουσιάστηκαν πάρα πολλά εναύσματα και απενεργοποιήθηκαν";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Το πείραμα βγήκε από το αρχείο.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Η εγγραφή μεταφέρθηκε εκτός του αρχείου.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Άγνωστος αισθητήρας";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Χωρίς τίτλο";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Χρησιμοποιήστε το Science Journal για να κάνετε πειράματα στον κόσμο γύρω σας";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Θα συλλέγουμε πληροφορίες για την έκδοση του Science Journal και τη συσκευή σας (μόνο εξοπλισμό και έκδοση iOS, όχι προσωπικά στοιχεία ή στοιχεία ταυτοποίησης). Στείλτε μας μήνυμα με τα σχόλιά σας.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Θα χαρούμε να μάθουμε τη γνώμη σας";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Αποστολή σχολίων";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Ροή βίντεο";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

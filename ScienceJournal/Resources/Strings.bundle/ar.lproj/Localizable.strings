@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "الميزات والتحسينات الجديدة:\n• يمكنك تسجيل الدخول إلى حسابك على Google لحفظ تجاربك والوصول إليها من أجهزة مختلفة باستخدام حسابك على Google Drive. ستتوفّر هذه الميزة لكلّ المستخدمين في الأسابيع المقبلة. وسيبقى بإمكانك استخدام تطبيق Science Journal بدون تسجيل الدخول إلى حسابك.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "تحسينات متعدّدة في الأداء وإصلاح الأخطاء";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal من Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "لاستكشاف العالم من حولك";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "إنّ Science Journal عبارة عن دفتر ملاحظات رقمي مجّاني من Google.‏\n\nسواء أكنت مدرّسًا في مجال العلوم أم هاويًا تُجري تجارب علمية في المنزل، يمكنك الاحتفاظ بالتعليقات والصور والملاحظات معًا في مكان واحد يسهل الوصول إليه. ويمكنك استخدام أجهزة الاستشعار في جهاز iPhone أو iPad لقياس الظواهر مثل الضوء والصوت والحركة وتمثيلها في رسوم بيانية، أو التوصيل بأجهزة استشعار خارجيّة عبر بلوتوث لإجراء تجارب عن العالم من حولك.\n\nباستخدام تطبيق Science Journal، يمكنك تنفيذ ما يلي:\n• قياس الضوء والصوت والسرعة وضغط الهواء والمزيد باستخدام أجهزة الاستشعار المضمّنة في جهازك.\n• تدوين الملاحظات والتقاط الصور لتوثيق تجاربك العلميّة، وسيتوفّر المزيد من أنواع الملاحظات قريبًا\n• توصيل الجهاز بأجهزة استشعار خارجيّة باستخدام أجهزة Arduino ‏معيّنة تتيح ميزة بلوتوث\n• إنشاء مشغّلات تلقائيّة لتسجيل البيانات وتدوين الملاحظات\n• استخدام الصوتنة لسماع حركة الرسوم البيانية\n\nإشعار بشأن الأذونات المطلوبة:\n• بلوتوث: مطلوب للبحث عن أجهزة مزوّدة بأجهزة استشعار بلوتوث\n• الكاميرا: مطلوب لالتقاط الصور وتوثيق التجارب ولجهاز استشعار السطوع\n• مكتبة الصور: مطلوب لتخزين الصور التي تمّ التقاطها لتوثيق التجارب ولإضافة صور حاليّة من مكتبتك إلى التجارب\n• الميكروفون: مطلوب لجهاز استشعار شدّة الصوت\n• الإشعارات التي تظهر على الشاشة: مطلوب لإعلامك بحالة التسجيل عند تشغيل التطبيق في الخلفيّة\n\nأنشطة تعليميّة من شركائنا:\nhttps://makingscience.withgoogle.com/science-journal/activities‏\nللحصول على الدعم: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google،علم،تعليم،علوم وتكنولوجيا وهندسة ورياضيات،تجارب،جهاز استشعار،رسم بياني،مَجلّة،دفتر ملاحظات،ملاحظة،توثيق،ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "م/ث²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "مقياس التسارع للمحور س";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "مقياس التسارع للمحور ص";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "مقياس التسارع للمحور ع";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "حول";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "إضافة تسمية توضيحيّة";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "أرشفة";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "أرشفة التجربة";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "أرشفة التسجيل";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "إلغاء";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "حسنًا";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "حذف";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "حذف التجربة";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "حذف التسجيل";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "حذف الصورة";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "حذف اللقطة";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "حذف الملاحظة النصّية";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "حذف الملاحظة";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "تجاهل";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "رفض";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "تعديل";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "تعليقات";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "تضمين التجارب المؤرشفة";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "المستوى";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "حسنًا";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "إبلاغ";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "إعادة المحاولة";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "المسطرة";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "حفظ";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "الإعدادات";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "إزالة من الأرشيف";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "إزالة التجربة من الأرشيف";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "إزالة التسجيل من الأرشيف";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "تراجع";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "عرض التفاصيل";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "إضافة ملاحظة إلى الجدول الزمني";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "إضافة ملاحظة جديدة";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "إضافة صورة";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "إضافة صورة";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "إضافة ملاحظة";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "الإضاءة المحيطة";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "لوكس";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "ذبذبة صوتية";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "درجة الحرارة المحيطة";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "مؤرشفة";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "لا يمكن تعديل التجارب المؤرشفة ولكن يمكن حذفها";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "تمت أرشفة التجربة.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "تمّت أرشفة التسجيل.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "الأجهزة المتوفرة";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "رجوع";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "عودة إلى العرض السابق";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "مقياس الضغط الجوي";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "هيكتو باسكال";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "قيمة تعريض";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "إنشاء مشغّل";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "إضافة بطاقة جهاز استشعار جديدة";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "إلغاء التغييرات";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "حفظ التغييرات";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "إبقاء المحاولة";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "حذف المحاولة";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "تجربة جديدة";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "بدء التسجيل";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "الانتقال إلى الوقت الحالي";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "إغلاق البطاقة";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "إيقاف التسجيل";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "التقاط صورة";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "الكاميرا: لالتقاط الصور وإضافتها إلى هذه التجربة";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "يجب إدخال قيمة رقميّة يتم إرسال التنبيه عند بلوغها.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "وحدة التحكّم بتشغيل المخطّط";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "نقل موضع تشغيل المخطّط وقراءة القيمة بحسب الموضع الجديد";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "مخطّط مباشر";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "تدوير محوري لليسار";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "تدوير محوري لليمين";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "وقت التدوير المحوري";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "مخطّط";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "تكبير";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "مستوى التكبير/التصغير";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "تكبير/تصغير المخطّط لملاءمة الشاشة";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "تصغير";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "اختيار صورة";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "المطالبة بكلّ التجارب";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "المطالبة بكلّ التجارب";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "إضافة إلى Google Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "هل تريد إضافة تجربة واحدة متبقّية إلى Google Drive لحساب %@؟";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "هل تريد إضافة %1$@ تجربة متبقّية إلى Google Drive لحساب %2$@؟";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "المطالبة بكلّ التّجارب المتبقّية";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "هل تريد إضافة كلّ التجارب إلى Google Drive؟";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "هل تريد المطالبة بكلّ التجارب؟";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "إضافة هذه التجربة إلى Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "لا يمكن تعديل التجارب وهي تبقى محفوظة في الجهاز إلى حين المطالبة بها أو حذفها.";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "إضافة تجارب إلى Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "المطالبة بالتَجارب";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "حذف هذه التجربة";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "حذف كلّ التجارب";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "هل تريد حذف تجربة واحدة متبقّية؟";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "هل تريد حذف %ld تجربة متبقّية؟";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "حذف كلّ التّجارب المتبقّية";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "هل تريد حذف كلّ تَجاربك؟";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "سيتمّ حذف كلّ التجارب المحفوظة على هذا الجهاز، بما في ذلك التجارب المؤرشَفة. ولا يمكنك التراجع عن هذا الإجراء.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "حذف كلّ التجارب";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "تتوفّر %ld تجربة لم تتمّ المطالبة بملكيتها على هذا الجهاز.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "تتوفّر تجربة واحدة لم تتمّ المطالبة بملكيتها على هذا الجهاز.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "مشاركة هذه التجربة غير المُطالب بملكيتها";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "لا تتوفر مساحة كافية على القرص للمطالبة بملكية التجربة.";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "لا تتوفر مساحة كافية على القرص للمطالبة بملكية التجارب.";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "تعذّرت المُطالبة بالتجربة.";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "تعذّرت المُطالبة بالتّجارب.";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "هل تريد المطالبة بالتجربة؟";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "المطالبة بالتجربة";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "هل تريد إضافة هذه التجربة إلى Google Drive لحساب %@؟";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "تمّت إضافة التجربة إلى حساب %@.";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "المطالبة بملكية تَجارب سابقة";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "المطالبة بالتَجارب";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "إغلاق";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "عودة إلى العرض السابق";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "بُوصلة";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "درجة";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "موَصِّل";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "المتابعة بدون تسجيل الدخول";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "نهاية الاقتصاص:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "تعذّر حفظ العنصر الذي تمّ اقتصاصه:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "نقل محدِّد موقع نهاية الاقتصاص نحو اليسار";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "نقل محدِّد موقع نهاية الاقتصاص نحو اليمين";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "نقل محدِّد موقع بداية الاقتصاص نحو اليسار";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "نقل محدِّد موقع بداية الاقتصاص نحو اليمين";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "المزيد من الخيارات";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "تمّ اقتصاص التسجيل";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "لا يمكن اقتصاص التسجيل خارج نطاق التجربة المُسجَّلة أساسًا";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "لا يمكن اقتصاص التسجيل إلى أقلّ من ثانية واحدة";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "اقتصاص";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "بداية الاقتصاص:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "القيمة الحاليّة";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "شدة الصوت";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "ديسيبل";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "تجربة بلا عنوان";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "تلقائية";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "هل تريد فعلاً حذف هذه التجربة؟ سيتمّ حذف كلّ التسجيلات والملاحظات المرتبطة بها.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "هل تريد حذف هذه التجربة؟";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "حذف";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "هل تريد حذف هذا التسجيل؟";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "تمّ حذف التجربة.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "تمّ حذف التسجيل.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "التفاصيل";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "رقم التعريف الشخصي";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "التكرار";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "حفظ إعدادات المستشعر";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "المستشعر";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "إيقاف المقياس التلقائي";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "يجب النقر مرّتين للتعديل";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "يجب النقر مرّتين لفتح العنصر.";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "يجب النقر مرّتين لتحديد العنصر.";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "يجب النقر مرّتين للتبديل";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "يجب النقر مرّتين لعرض التفاصيل";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "عنصر تحريك دُرج الأدوات";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "يمكنك تعديل حجم دُرج الأدوات، وعندها تنفيذ إجراءات أخرى.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "مغلق";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "تعديل";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "ملء الشاشة";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "نصف الشاشة";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "تعذّر الاتصال بـ Google Drive. يجب التحقق من اتصال الإنترنت.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "انقطع الاتصال بالشبكة";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "تعذّر ربط Science Journal بـ Google Drive، وبالتالي قد لا يتمّ الاحتفاظ بنسخة احتياطية من بعض التجارب.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "تعذّر ربط Science Journal بـ Google Drive حاليًا ولكنّنا سنُعيد المحاولة في وقت لاحق.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "لا تتوفّر مساحة كافية في Google Drive لتخزين تجربتك.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "يتمّ حفظ بيانات التجارب في تطبيق Science Journal ويمكن الوصول إليها من أجهزة متعدّدة عبر Google Drive وبعد تسجيل الدخول باستخدام حساب Google.\n\nإذا كان لديك بيانات على هذا الجهاز، يمكنك حفظ تجاربك الحالية على Google Drive بعد تسجيل الدخول. ويتمّ تخزين تجاربك في مجلّد \"Science Journal\" في حسابك على Google Drive.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "يتعذّر الوصول إلى Google Drive، يُرجى التحقّق من الاتصال بالإنترنت.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "تعديل وقت الانتهاء";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "تعديل وقت البدء";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "تعديل التجربة";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "تغيير عنوان التجربة أو صورتها";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "تغييرات غير محفوظة";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "هل تريد فعلاً إلغاء التغييرات التي أجريتها على هذه التجربة؟";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "تغيير الصورة";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "تعديل التجربة";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "تعديل الوقت";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "تعديل وقت الملاحظة";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "تعديل وقت انتهاء التسجيل";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "تعديل وقت بدء التسجيل";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "تعديل التسجيل";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "تغيير عنوان التسجيل";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "عنوان التسجيل";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "ليس لديك أي ملاحظات بعد";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "ليس لديك أي تجارب";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "لم يتم تعيين أي مشغّلات";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "تفعيل المقياس التلقائي";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "لن تتمّ إضافة أيّ من تَجاربك إلى Google Drive.";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "حذف كلّ تَجاربك";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "ستتمّ إضافة كلّ تَجاربك إلى Google Drive.";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "حفظ كلّ تَجاربك";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "يمكنك اختيار تَجارب لحفظها في Google Drive.";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "اختيار تَجارب لحفظها";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "أهلًا بك من جديد، لديك حاليًا %ld تجربة مخزّنة على هذا الجهاز.\n\nللمتابعة، يُرجى اختيار تجربة:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "أهلًا بك من جديد، لديك حاليًا تجربة واحدة مخزّنة على هذا الجهاز.\n\nللمتابعة، يُرجى اختيار هذه التجربة:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "نسخ احتياطي على Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "تجربة";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "التجارب";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "مشاركة التجربة";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "لم يكتمل تنزيل هذا الاختبار. إذا شاركت نسخة عنه، لن تكون بعض البيانات مضمّنة فيها.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "جارٍ تنزيل التجربة";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "جارٍ التسجيل…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "عنوان التجربة";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "تمّ إنشاء هذه التجربة باستخدام إصدار أحدث من تطبيق Science Journal. ولن تتمكّن من تعديل التجربة على هذا الجهاز قبل تنزيل الإصدار الأخير.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "يمكنك تنظيم أفكارك وملاحظاتك من خلال تدوين الملاحظات أو تسجيل البيانات أو التقاط الصور";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "إنشاء تجربة جديدة";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "استكشاف العالم من حولك";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "مشاركة";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "فشل التصدير.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "إرسال التجربة";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "الوقت النسبي";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "تصدير…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "مشاركة الصورة في…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "أهلاً بك في تطبيق Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "جرّب تدوين الملاحظات وتسجيل البيانات باستخدام شريط الأدوات أدناه.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "أهلاً بك في تطبيق Science Journal.";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "للعثور على أنشطة يمكنك تجربتها،\nيُرجى الانتقال إلى g.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "حذف هذا الجهاز";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "ملء الشاشة";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "البدء";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "تفعيل الصوت";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "إيقاف الصوت";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "ما هذا؟";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "هرتز";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "حدث خطأ غير معروف.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "تعذّر استيراد الملف بسبب حدوث خطأ في هذه التجربة.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "إنّ تطبيق Science Journal قيد الاستخدام حاليًا، يُرجى إيقاف التسجيل والمحاولة مجددًا.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "يجب تسجيل الدخول لاستيراد التجارب.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "مساحة التخزين غير كافية";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "يمكنك إدارة مساحة التخزين في \"الإعدادات\".";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "عرض التسجيلات المؤرشَفة";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "فتح الإعدادات";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "لا يمكنك استخدام الكاميرا لأنّك تُسجّل باستخدام جهاز استشعار سطوع يقيس البيانات عبر الكاميرا الأماميّة.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "لا يمكنك استخدام الكاميرا أثناء مشاهدة فيديو باستخدام ميزة \"نافذة ضمن النافذة\" أو أثناء استخدام تطبيق Science Journal في وضع العرض المقسّم.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "عرض أجهزة الاستشعار";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "لا يمكن استخدام الكاميرا لأنّ Science Journal لا يملك الإذن للوصول إليها.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "لا يمكن استخدام مكتبة الصور لأنّ Science Journal لا يملك الإذن للوصول إليها.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "مزيد من المعلومات";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "مزيد من المعلومات";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "مقياس تسارع خطّي";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "تحسينات في الأداء وإصلاح الأخطاء";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "الميزات الجديدة:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• جهاز استشعار حدّة الصوت";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• إمكانية تصدير التجارب إلى ملف واستيرادها على أجهزة أخرى";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• إمكانية استيراد الصور من تجربة معيّنة";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "عرض المزيد من الملاحظات";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "مقياس المغناطيسيّة";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "القائمة";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "عرض قائمة بمزيد من الخيارات";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "إعدادات الصوت";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "تعديل المشغّلات";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "تعيين المشغّلات";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "أجهزتي";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "تسمية هذه التجربة";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "الأنشطة";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "التجارب";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "الإعدادات";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "إضافة وصف";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "الوصف";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "ملاحظة مع صورة";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "ملاحظة نصيّة";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "ملاحظة تمّت إضافتها عند انطلاق المشغّل";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "ملاحظة مع لقطة";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "ملاحظات";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "تمّت إضافة الملاحظة";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "الملاحظات: لإضافة ملاحظة نصية إلى هذه التجربة";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "المراقبة: يمكنك استخدام أجهزة الاستشعار لإضافة لقطات أو تسجيلات للقِيَم إلى هذه التجربة";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "لا يمكن فتح التجربة.";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "لا يمكن فتح الملف.";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "يجب أن تكون التجارب بتنسيق ملف Science Journal‎‏ (‏‏‎.sj‏‎‎).";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "إيقاف مؤقت";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "النسبة المئويّة";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "لقد انتهينا من التحقّق من توفّر الأذونات، ويمكنك تعديل هذه الأذونات في أي وقت لاحق من قسم Science Journal في تطبيق \"الإعدادات\" على iOS.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "سنتحقّق الآن من الإذن للوصول إلى الكاميرات. فنحن نستخدم الكاميرا الأماميّة لتشغيل جهاز استشعار السطوع، ويمكنك استخدام الكاميرا الأماميّة أو الخلفيّة لإضافة ملاحظات صوريّة إلى التجارب والتسجيلات.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "متابعة";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "علينا أولاً التحقّق من الأذونات لتمكين أجهزة استشعار الأجهزة والكاميرا ومكتبة الصور، وسنشرح لك كيفيّة استخدامنا لكلّ من هذه العناصر قبل مطالبتك بمنحنا إذن الوصول إليها.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "سنتحقّق بعد ذلك من إذن الوصول إلى الميكروفون، إذ يتمّ استخدام الميكروفون لجهاز استشعار شدّة الصوت. تجدر الإشارة إلى أنّنا لا نسجّل مطلقًا محتوى الصوت أو نخزّنه أو ننقله، إنّما نقيس شدّة الصوت بحدّ ذاتها.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "سنتحقّق أوّلاً من الإذن لإرسال الإشعارات التي تظهر على الشاشة، ونحن نستخدم هذه الإشعارات لإعلامك فقط بأنّ تسجيلاتك أوشكت على الانتهاء إذا كنت تشغّل التطبيق في الخلفية وسط عملية التسجيل.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "وأخيرًا سنتحقّق من إذن الوصول إلى مكتبة صورك لكي تتمكّن من إضافة الصور الحاليّة إلى التجارب والتسجيلات، ولكي نتمكّن من حفظ الصور التي تلتقطها في مكتبتك.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "فلنبدأ";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "اكتمل التحقّق";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "التحقّق من الإذن";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "أهلاً بك في تطبيق Science Journal.";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "صورة لـ";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "صورة";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "لا تتوفر مساحة تخزين كافية على القرص لإضافة الصورة.";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "أجهزة استشعار داخلية";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "مكتبة الصور: لإضافة صورة من مكتبتك إلى هذه التجربة";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "معلومات";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "الجهاز";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "الأبعاد";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "ملاحظات";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "سرعة غالق الكاميرا";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "تمّت إضافة الصورة";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "حدّة الصوت‎‎‎‎";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ نصف نغمة أكثر انخفاضًا من %2$@ منخفضة، الأوكتاف %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ نصف نغمة أكثر انخفاضًا من %2$@، الأوكتاف %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ نصف نغمة أكثر انخفاضًا من %2$@ عالية، الأوكتاف %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ منخفضة، الأوكتاف %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "حدّة صوت عالية";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "حدّة صوت منخفضة";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@، الأوكتاف %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ عالية، الأوكتاف %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ نصف نغمة أعلى من %2$@ منخفضة، الأوكتاف %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ نصف نغمة أعلى من %2$@، الأوكتاف %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ نصف نغمة أعلى من %2$@ عالية، الأوكتاف %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "وحدات بكسل";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "تشغيل";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "تمّ تطبيق إعدادات الجهاز الحالية على هذا الحساب.";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "جارٍ تحديث الصفحة";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "تعذّر بدء التسجيل";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "انقطع الاتصال بجهاز استشعار واحد أو أكثر. يُرجى إعادة المحاولة.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "يمكنك فتح تطبيق Science Journal لعرض البيانات التي سجّلتها.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "انتهى التسجيل.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "متابعة";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "إلغاء التسجيل";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "لم يتم تسجيل أي بيانات في جهاز استشعار واحد أو أكثر. هل تريد إلغاء هذا التسجيل؟";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "لا يتم تسجيل البيانات";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "توقّف التسجيل";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "يمكنك فتح تطبيق Science Journal لمواصلة التسجيل.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "سينتهي التسجيل قريبًا.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "مواصلة التسجيل";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "إيقاف التسجيل";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "إزالة صورة الغلاف";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "تتمّ إزالة صورة الغلاف الخاصة بهذه التجربة.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "هل تريد فعلاً إزالة صورة الغلاف؟ لن تتمكّن من التراجع عن هذا الإجراء.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "تمّت إزالة صورة الغلاف.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "تعذّرت إزالة صورة الغلاف.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "دورة/دقيقة";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "تمّت إضافة التسجيل";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "تسجيل";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "إعادة تسمية هذا التسجيل";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "هل تريد فعلاً حذف هذا التسجيل؟ سيتمّ حذف البيانات والملاحظات المُسجَّلة.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "المدة";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "مراجعة";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "حفظ";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "حفظ التغييرات والعودة إلى العرض السابق";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "حفظ التجربة";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "هل تريد إضافة هذه التجربة إلى مكتبتك؟";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "حفظ المحتوى في \"الملفات\"";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "يعرض مدير مستندات، ما يسمح لك بحفظ نسخة من الملف في مجلّد على جهازك.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "تمّ حفظ الملف.";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "تمّ حفظ الملفات.";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "تعذّر حفظ الملف. يُرجى إعادة المحاولة.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "تعذّر حفظ الملفات. يُرجى إعادة المحاولة.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "الحدة";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "اختيار طابع زمني للملاحظة في المخطّط";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "إرسال نسخة";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "الإعدادات";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "السطوع";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "لا يمكن استخدام جهاز استشعار درجة السطوع لأنّ Science Journal لا يملك الإذن باستخدام الكاميرا.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "تعذّر تحميل بيانات المستشعر";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "جارٍ تحميل بيانات المستشعر…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "تعذّر استخدام أجهزة استشعار شدة الصوت لأنّ Science Journal لا يملك الإذن بالوصول إلى الميكروفون.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "مخصص";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "تميل الأجسام إلى السكون أو إلى الاستمرار في الحركة إذا كانت متحرّكة، وهو ما نُطلق عليه اسم القصور الذاتي. ويعبّر القانون الأوّل لنيوتن عن هذه الفكرة بشكل واضح حيث ينصّ على أنّ الجسم يظلّ على حالته من الحركة أو السكون ما لم تؤثّر فيه قوّة غير متوازنة.\n\nعندما تؤدّي قوّة غير متوازنة إلى تحريك الجسم قليلاً، نقول إنّ الجسم يتسارع، أي تتغيّر سرعته، فإمّا تزداد السرعة أو تقلّ أو يغيّر اتجاهه. ويُقاس التسارع بتغيّر السرعة في الوقت (متر في الثانية) أو بالمتر في الثانية المربّعة (م/ث²).\n\nيتوفّر في الهاتف جهاز لقياس التغييرات في الحركة وهو مقياس التسارع. وداخل مقياس التسارع، ثمّة كتل صغيرة معلّقة تتحرّك بطريقة غير ثابتة. تؤدّي تغيّرات الحركة إلى إزاحة هذه الكتل، كما يحدث عندما تميل رأسك للأمام عندما تتوقّف السيارة فجأةً. ومن خلال قياس تغيّرات الإزاحة الدقيقة الناتجة من القصور الذاتي، يمكن لمقياس التسارع في الهاتف اكتشاف التغيّرات في الحركة والاتجاه، ويُعدّ ذلك مفيدًا لتحويل الشاشة من الوضع الأفقي إلى الوضع العمودي وتشغيل الألعاب على الهاتف والكثير غير ذلك.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "ربما لاحظت التسارع المستمر للمحور ع حتى مع بقاء الهاتف على المنضدة من دون تحريكه. هذا هو التسارع الذي نشعر به على سطح الأرض نتيجة سحب الجاذبية، ويصل تقريبًا إلى 9,8 م/ث².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "نادرًا ما ندرك أنّنا نعيش في قعر محيط هوائيّ شاسع، وهو الغلاف الجوّي للأرض الذي يمتدّ على ارتفاع 40 كلم. إنّ وزن كلّ هذا الهواء الذي يضغط علينا من فوق يُكوّن ما يُسمّى بالضغط الجوي.\n\nوعند مستوى سطح البحر، تزن قوّة الضغط الجوّي 6 كلغ على كل بوصة مربّعة، أي ما يعادل حوالى 589 كلغ، على مساحة بحجم ورقة قياسية.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "نحن لا نلاحظ هذا الضغط الساحق عادةً لأنّنا اعتدنا عليه، لكنّنا نلاحظه عندما يتغيّر ولو قليلاً، وذلك حين ننتقل مثلاً إلى مرتفعات جبليّة أو نسافر على متن طائرات. ويتغيّر الضغط الجوي أيضًا وفقًا للأحوال الجوّية، فيهبط حين تكون الرياح عاصفة وغير مستقرّة ويرتفع حين تصبح الرياح مستقرّة والسماء صافية.\n\nإنّ مقياس الضغط الجوي الرقمي في هاتفك يقيس الضغط الجوي بالهيكتو باسكال (كل هيكتو باسكال واحد يساوي 100 باسكال، وتساوي وحدة باسكال قوّة نيوتن واحدة على مساحة متر مربّع). ولا بدّ من أنك سمعت خبراء الأرصاد الجوّية يقدّمون الضغط الجوي بالملّيبار، وهذه الوحدة التي تبدو مألوفة أكثر تعادل الهيكتو باسكال.\n\nقد تتساءل بشأن فائدة تزويد الهواتف بالقدرة على قياس الضغط. جديرٌ بالذكر أنّ الضغط الجوي يتغيّر بمقدار قيمة مُقاسة حتى في ظل التغيّرات الطفيفة في الارتفاع، كحين نصعد الدرج مثلاً. من هنا، يساعد مقياس الضغط الجوي الرقمي في الهاتف في اكتشاف التغييرات في الموقع، فيمكنه على سبيل المثال معرفة الطابق الذي أنت فيه أو ما إذا كنت تقود سيارتك تحت الجسر أو فوقه.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "تقيس الكاميرا الأماميّة الإضاءة بقيمة التعريض، وهو قياس مستند إلى سرعة غالق الكاميرا وإلى حجم فتحة العدسة وقيمة الأيزو، ويتمّ تحديده بمدى سطوع وحدات البكسل المسجّلة وفقًا لهذه الإعدادات.\n\nكلّما ارتفعت قيمة السطوع الذي يتمّ التقاطه، ارتفعت قيمة التعريض. أمّا الظلمة، فتُنتج قِيمًا سلبيّة.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "نظرًا إلى أنّ قيمة التعريض هي مقياس مستند إلى البصريّات والجهاز استشعارات في الكاميرا، يكون نطاق القيمة محدودًا بالأجهزة والبرامج. تجدر الإشارة إلى أنّ جهاز استشعار الإضاءة المحيطة يستطيع تسجيل وحدات اللوكس مباشرةً، في حين تحتاج الكاميرا الأماميّة إلى استخدام حجم فتحة العدسة وقيمة الأيزو وسرعة الغالق لإنتاج قياس أساسي، ثم تحديد قيمة التعريض بالاستناد إلى قراءة وحدات البكسل بعد التقاط الصور. بالاستناد إلى هذه العمليّة، قد تختلف قِيَم التعريض بين الأجهزة إذا كانت حدود حجم فتحة العدسة مختلفة، كما هي الحال بين جهازَي iPhone 8 (حيث يبلغ حجم فتحة العدسة 1,8)‎ وiPad (حيث يبلغ حجم فتحة العدسة 2,4)‎‏.\n\nوبما أنّه يتمّ تحديد قيمة التعريض بقياس قيمة سطوع وحدات البكسل المُلتقطة، تُنتج مصادر الإضاءة قيمة أدنى بكثير من القيمة التي كانت لتُنتجها لو تمّ قياس اللوكس بجهاز استشعار أشعّة ما تحت الحمراء، ذلك أنّ القياسات مرتبطة بشكل مباشر بوضعية الكاميرا والصور التي تلتقطها.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "أنت تعلم على الأرجح أنّ الأرض تتضمّن حقلاً مغناطيسيًا، ولكن ما لا تعرفه ربما هو أنّ هاتفك يحتوي على جهاز مصمّم لاكتشاف الحقول المغناطيسيّة، وهو مقياس المغناطيسيّة. ومن خلال جمع بيانات مقياس المغناطيسيّة في هاتفك مع اتجاه الهاتف في الكون، نتمكّن من إنشاء بوصلة رقميّة.\n\nإنّ البوصلة القديمة عبارة عن مقياس مغناطيسيّة بتقنيّة بسيطة يضمّ مؤشرًا يدور لمحاذاة نفسه مع الحقل المغناطيسي المحيط. ولا يحتوي هاتفك على بوصلة صغيرة، بل على جهاز استشعار صغير ثلاثي المحاور يستخدم التيارات الكهربائيّة لاكتشاف قوّة الحقل المغناطيسي في الأبعاد الثلاثة من الكون، لكن ذلك لا يكفي لإنشاء بوصلة.\n\nلماذا تحتاج البوصلة إلى جمع بيانات مقياس المغناطيسيّة في هاتفك مع اتجاه الهاتف؟ عندما نعرف اتجاه الهاتف، نستطيع احتساب الدوران المغناطيسي حتى عندما يكون الهاتف في وضعيّة غير مسطّحة في المستوى نفسه للحقل المغناطيسي للأرض. وعلمًا أنّ الجاذبيّة عموديّة بالنسبة إلى حقل الأرض المغناطيسي، يمكننا استخدام اتجاه الجاذبيّة من أجهزة استشعار مقياس التسارع لتحديد نسبة الحقل المغناطيسي الموجودة في المستوى نفسه من الحقل المغناطيسي للأرض.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "كما لاحظت على الأرجح، إنّ البوصلة في هاتفك تتجاوب ليس فقط مع الحقل المغناطيسي للأرض، بل أيضًا مع كل حقل مغناطيسي يحيط بها. ويستطيع المغناطيس والتيّارات الكهربائيّة والأجسام المعدنيّة توجيه مقياس المغناطيسيّة في هاتفك بسهولة في أي اتجاه، ما يؤدّي إلى تغيّر قراءة البوصلة. يمكنك الوقوف في منطقة مفتوحة، ومن المستحسن أن تكون في الخارج وبعيدًا عن خطوط الطاقة، إذا أردت التأكّد من أنّ الرأس الأحمر لمقياس المغناطيسيّة محاذٍ للحقل المغناطيسي للأرض. ننصحك بتحريك هاتفك على شكل رمز اللانهاية (8) لمعايرة مقياس المغناطيسيّة في الهاتف.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "تصدر الأصوات عن طريق الاهتزاز. على سبيل المثال، يصدر صوتك نتيجة اهتزاز الحبال الصوتية في الحلق. وتؤدي هذه الاهتزازات إلى تكوين مناطق متتالية من ضغط الهواء المرتفع والمنخفض الذي يتحرّك نحو الخارج، كما يحدث عند اتساع موجة دائرية نتيجة إلقاء حصاة في بركة مياه.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "يمكن قياس كل الأصوات من حيث التردّد والشدّة.\n\nيمكنك قياس شدّة الصوت هنا في تطبيق Science Journal بوحدة القياس ديسيبل. وتعتمد شدّة الصوت أو جهارته على المسافة التي يجتازها الجسم المهتز مع كل اهتزاز، فنحن نسمع شدّة الصوت العالية كارتفاع في جهارته. \n\nتردّد الصوت (الذي يُعرف أيضًا بحدّة الصوت أو النبرة) يساوي معدل الاهتزاز، وكلّما كان اهتزاز الجسم أسرع، ارتفعت حدّة الصوت الناتج منه، إلا أنّ جهاز استشعار شدّة الصوت في تطبيق Science Journal يقيس جهارة الصوت فقط ولا يقيس التردّد.\n\nتجدر الإشارة إلى أنّه تمّ تصميم الميكروفون في جهازك لكي يستشعر بدقة الاختلافات في موجات الصوت مع مرور الوقت، ولكنه لا يستشعر الحجم المطلق لكل موجة. وقد حاولنا اختيار رمز من المرجّح أن يُنتج أرقامًا مشابهة للأرقام المرجعية المعروضة أدناه، ولكن قد يسجّل كلّ جهاز أرقامًا أعلى أو أقل باستمرار، ويلجأ العلماء في العادة إلى معايرة جهاز استشعار مشابه لقياسٍ معروف. ويمكنك حاليًا الاستعانة بتطبيق Science Journal لمعرفة ما إذا كان صوت القطار في رحلتك القادمة أعلى من صوت حفل موسيقى الروك القادم، شرط استخدام الهاتف نفسه في الحدَثين.\n\nتجدر الإشارة أيضًا إلى وجود اختلافات مهمة بين \"شدّة الصوت\" و\"مستوى شدّة الصوت\" و\"ضغط الصوت\". إنّنا نتعامل مع هذه المفاهيم بالطريقة نفسها ولكن إذا أردت التعمّق في التفاصيل، يمكنك الاطّلاع على الكثير من المراجع المتوفرة على الإنترنت بشأن الاختلافات بينها.\n\nإنّ الحد الأدنى للصوت الذي تستطيع الأذن البشرية العادية سماعه هو 0 ديسيبل، وتعادل المحادثة العادية 60 ديسيبل. وتُعتبر الأصوات التي تتخطى 140 ديسيبل مؤلمة للأذن البشرية ولكن ليس بالضرورة أن يكون الصوت مؤلمًا ليكون مضرًّا. فالتعرّض بشكل متواصل لأصوات تبلغ 90 ديسيبل، أي ما يعادل ارتفاع صوت المكنسة الكهربائية، قد يؤدي في النهاية إلى فقدان السمع.\n\nإنّ مقياس الديسيبل لوغاريتمي، ما يجعله معقّدًا بعض الشيء: فالصوت الذي تبلغ شدّته 40 ديسيبل لا يشكّل ضعف شدّة صوت تبلغ 20 ديسيبل، ولكنه 100 مرة أكثر شدّة. كذلك، إذا كان رنين المنبّه يُصدر شدّة 70 ديسيبل، لن يُصدر رنين منبّهين 140 ديسيبل، بل 73 ديسيبل. كما سبق وذكرنا، إنه مقياس غريب بعض الشيء.\n\nصوت حفيف الأوراق: 10 ديسيبل \nالهمس على مسافة متر ونصف: 20 ديسيبل \nالهمس الخافت: 30 ديسيبل \nصوت هطول المطر: 50 ديسيبل \nمحادثة عادية: 60 ديسيبل\nصوت الخلّاط: 90 ديسيبل\nصوت سيارة بدون كاتم صوت العادم: 100 ديسيبل \nصراخ في الأذن: 110 ديسيبل\n120 صوت الرعد: 120 ديسيبل \nصوت آلة ثقب الصخور: 130 ديسيبل\nصوت طائرة تقلع: 140 ديسيبل";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "تميل الأجسام إلى السكون أو إلى الاستمرار في الحركة إذا كانت متحرّكة، وهو ما نُطلق عليه اسم القصور الذاتي. ويعبّر القانون الأوّل لنيوتن عن هذه الفكرة بشكل واضح حيث ينصّ على أنّ الجسم يظلّ على حالته من الحركة أو السكون ما لم تؤثّر فيه قوّة غير متوازنة.\n\nعندما تؤدّي قوّة غير متوازنة إلى تحريك الجسم قليلاً، نقول إنّ الجسم يتسارع، أي تتغيّر سرعته، فإمّا تزداد السرعة أو تقلّ أو يغيّر اتجاهه. ويُقاس التسارع بتغيّر السرعة في الوقت (متر في الثانية) أو بالمتر في الثانية المربّعة (م/ث²).\n\nيتوفّر في الهاتف جهاز لقياس التغييرات في الحركة وهو مقياس التسارع. وداخل مقياس التسارع، ثمّة كتل صغيرة معلّقة تتحرّك بطريقة غير ثابتة. تؤدّي تغيّرات الحركة إلى إزاحة هذه الكتل، كما يحدث عندما تميل رأسك للأمام عندما تتوقّف السيارة فجأةً. ومن خلال قياس تغيّرات الإزاحة الدقيقة الناتجة من القصور الذاتي، يمكن لمقياس التسارع في الهاتف اكتشاف التغيّرات في الحركة والاتجاه، ويُعدّ ذلك مفيدًا لتحويل الشاشة من الوضع الأفقي إلى الوضع العمودي وتشغيل الألعاب على الهاتف والكثير غير ذلك.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "يسجّل جهاز استشعار مقياس التسارع الخطّي إجمالي التسارع في المحاور الثلاثة في الهاتف، مع استبعاد الجاذبيّة.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "يحتوي هاتفك على جهاز مصمّم لاكتشاف الحقول المغناطيسيّة، وهو مقياس المغناطيسيّة. يستخدم هذا الجهاز استشعار الصغير الثلاثي المحاور التيّارات الكهربائيّة لاكتشاف قوّة الحقل المغناطيسي في الأبعاد الثلاثة للكون. ومن خلال جمع بيانات المحاور الثلاثة، يمكننا إنشاء جهاز استشعار لإجمالي قوّة الحقل المغناطيسي.\n\nتكتشف بعض مقاييس المغناطيسيّة الحقول المغناطيسيّة باستخدام تأثير \"هول\"، أي مَيل الحقول المغناطيسيّة لانحراف الشحنات المتحرّكة أثناء تحرّكها. تعتمد مقاييس المغناطيسيّة الأحدث على مقاومات المغنطة، وهي خليط معدنيّ يغيّر مقاومته استجابةً للحقول المغناطيسيّة. \n\nلِمَ يجب توفّر مقياس مغناطيسيّة في الهاتف؟ من الضروري معرفة اتجاهك في الكون لكي تعمل البوصلة المضمّنة وتطبيقات التنقّل، خاصةً تلك التي تهدف إلى توفير اتجاهات مفصّلة.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "يستطيع المغناطيس والتيّارات الكهربائيّة والأجسام المعدنيّة توجيه مقياس المغناطيسيّة في هاتفك بسهولة في أيّ اتجاه. ولكن حتى في وسط حقل فارغ، سيُظهر مقياس التسارع في هاتفك قراءة منخفضة غير صفريّة: إنّه الحقل المغناطيسي للأرض.";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "تصدر الأصوات عن طريق الاهتزاز، على سبيل المثال، يصدر صوتك نتيجة اهتزاز الحبال الصوتية في حلقك، وتؤدي هذه الاهتزازات إلى تكوين مناطق متتالية من ضغط الهواء المرتفع والمنخفض الذي يتحرّك نحو الخارج كما يحدث عند اتساع موجة دائرية نتيجة إلقاء حصاة في بركة مياه.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "يمكن قياس كل الأصوات من حيث تردّدها وشدّتها. وتردّد الصوت (الذي يُعرف أيضًا بحدّة الصوت أو النبرة) يساوي معدل الاهتزاز، وكلّما كان اهتزاز الجسم أسرع، ارتفعت حدّة الصوت الناتج منه. ونحن نقيس هذه الاهتزازات بوحدة الهرتز حيث يساوي هرتز واحد هزّة واحدة في الثانية. \n\nتستطيع الأذن البشرية العادية سماع الأصوات بين 20 و20,000 هرتز ويُنتِج مفتاح النغمة الأكثر انخفاضًا على البيانو صوتًا حدّته 27.5 هرتز، كما يُنتج مفتاح النغمة الأكثر ارتفاعًا صوتًا حدّته 4186.01 هرتز. \n\nوتشير النقطة الحمراء إلى مدى اقتراب حدّة الصوت التي تمّ رصدها من أقرب نغمة موسيقية. وإذا كانت حدّة الصوت منخفضة، ستظهر النقطة جهة اليمين، أمّا إذا كانت مرتفعة، ستظهر النقطة جهة اليسار.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "إنّ البيانات المعروضة هنا ناتجة من اتصال جهاز استشعار خارجي بالهاتف عبر بلوتوث.\n\nتعرض القيمة النسبة المئوية للقراءة الأوليّة من وحدة التحكّم الدقيقة مباشرةً، وهي عادةً النسبة المئوية لانخفاض الفولطية في الجهاز استشعار.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "إنّ بلوتوث عبارة عن معيار للتكنولوجيا اللاسلكية يستخدم موجات إشعاعية لتبادل البيانات من أجهزة ثابتة أو محمولة في نطاق مسافة قصيرة.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "الدورة في الدقيقة هي مقياس لتكرار الدوران حول محور ثابت في الدقيقة.\n\nفمع تحرّك الجزء الدوّار، يتمّ تدوير قرص وحدة الترميز:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "يؤدي ذلك إلى تكوّن فترات من الضوء والظلام على المستشعر ويتم تسجيلها في Science Journal كدورة.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "إنّ البيانات المعروضة هنا ناتجة عن اتصال جهاز استشعار خارجي بالهاتف عبر بلوتوث.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "إنّ بلوتوث عبارة عن معيار للتكنولوجيا اللاسلكية يستخدم موجات إشعاعية لتبادل البيانات من أجهزة ثابتة أو محمولة في نطاق مسافة قصيرة.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "تسارع الهاتف نحو اليسار واليمين بوحدة م/ث²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "تسارع الهاتف إلى الأمام والخلف بوحدة م/ث²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "تسارع الهاتف إلى أعلى وأسفل بوحدة م/ث²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "يُقاس الضغط الجوي بالهيكتو باسكال.";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "ثمة بيانات تابعة لجهاز استشعار خارجي معروضة هنا بناءً على الإعدادات المخصصة.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "مقدار الضوء، ويتمّ قياسه بقيمة التعريض ويصل إلى الكاميرا الأماميّة";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "اتجاه الهاتف بالنسبة إلى الحقل المغناطيسي للأرض";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "شدة الصوت، بالديسيبل، الذي يصل إلى جهاز استشعار الصوت أو الميكروفون.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "إجمالي التسارع في الهاتف، مع استبعاد قوّة الجاذبيّة، بوحدة القياس متر/ث²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "قوّة الحقل المغناطيسي المحيط للأرض، بوحدة القياس ميكروتسلا.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "حدّة الصوت الذي يرصده جهاز استشعار الصوت أو الميكروفون، وتقاس بالهرتز.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "النسبة المئوية للقراءة الأولية من جهاز استشعار خارجي.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "عدد الدورات في الدقيقة";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "جهاز استشعار اختباري يُنتج موجة جيبية";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "المستشعر التالي في التسجيل";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "المستشعر السابق في التسجيل";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "أولية";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "التدوير";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "لا يمكن تعديل أجهزة الاستشعار أثناء التسجيل.";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "تمّ حذف المشغّل";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "يستخدم جهازا استشعار الصوت والسطوع الميكروفون والكاميرا الأماميّة، فيتعذّر التسجيل أثناء تشغيل تطبيق Science Journal في الخلفيّة. وإذا كنت تستخدم هذين الجهازين للتسجيل أثناء تشغيل التطبيق في الخلفيّة، لن يتمّ تسجيل البيانات إلى أن تعود إلى التطبيق.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "يستخدم جهازا استشعار الصوت والسطوع الميكروفون والكاميرا الأماميّة، فيتعذّر التسجيل في حال كان تطبيق Science Journal مشغّلاً في الخلفيّة.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "ملاحظة بشأن هذا المستشعر";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "لا يمكنك استخدام الكاميرا أثناء مشاهدة فيديو باستخدام ميزة \"نافذة ضمن النافذة\" أو أثناء استخدام تطبيق Science Journal في وضع العرض المقسّم.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "الفولطية";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "اختيار أجهزة استشعار لاستخدامها في الاختبار";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "تصغير قائمة أجهزة الاستشعار";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "توسيع قائمة أجهزة الاستشعار";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "تطبيق Science Journal متوقّف";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "يجب أن يفعّل مشرف النطاق تطبيق Science Journal في وحدة تحكم المشرف في Google.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "تبديل الحسابات";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "تُرسل البيانات بهوية مجهولة وهي تساعد في تحسين هذا التطبيق.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "إرسال بيانات استخدام التطبيق إلى Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "تراخيص برامج مفتوحة المصدر";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "سياسة الخصوصية";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "بنود الخدمة";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "الإصدار";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "موقع Science Journal الإلكتروني";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "إظهار الخيارات";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "تمّ تسجيل الدخول باسم %1$@، %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "فتح القائمة لإدارة الحسابات";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "اختيار حساب";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "قائمة الشريط الجانبي";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "فتح قائمة الشريط الجانبي، التي تحتوي على خيارات التطبيق";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "تسجيل الدخول";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "موجة جيبية";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "جيب";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "تم حذف الملاحظة";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "تراجع";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "لقطة";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "إضافة لقطة إلى الاختبار تعرض قيمة كل أجهزة الاستشعار التي تمّت مراقبتها";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "يتعذّر تصوير اللقطة لأنّ جهاز استشعار واحد أو أكثر غير متّصل. يُرجى إعادة المحاولة.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "تفاصيل اللقطة";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "تمّت إضافة اللقطة";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "الحد الأدنى";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "الحد الأقصى";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "المتوسط";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "تبديل الكاميرا";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "قيد التشغيل";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "متوقف عن التشغيل";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "لا يمكن اقتصاص التسجيلات إلى أقلّ من ثانية واحدة";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "يجب استخدام تنسيق صالح، أي h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "وقت جديد (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "يجب أن يكون الوقت ضمن التسجيل";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "درجة مئوية";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "تعديل الملاحظة النصيّة";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "ملاحظة نصّية";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "إضافة ملاحظة";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "تمّت إضافة الملاحظة";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "التسجيل قيد التقدّم";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "انقر مرّتين للتبديل إلى علامة التبويب \"المراقبة\" في دُرج الأدوات";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "إعدادات المستشعر";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "إلى الاختبار";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "إلى التسجيل";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "إرسال تنبيه لي باستخدام";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "الصوت";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "تفاصيل المشغّل";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "تعديل مشغّل %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "مشغّل %@ جديد";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "تمّ تفعيل المشغّل";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "الاهتزاز";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "مشغّلات لـ";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "عندما تكون قيمة المستشعر أعلى من";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "عندما تكون قيمة المستشعر";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "عندما تكون قيمة المستشعر أدنى من";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "عندما تنخفض القيمة عن";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "عندما ترتفع القيمة عن";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "تمّت إضافة ملاحظة المشغّل";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "ما الذي يجب أن يرد في الملاحظة؟";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "نص الملاحظة التلقائي";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "استخدام المشغّل عند التسجيل فقط";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "إرسال تنبيه لي";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "نوع التشغيل";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "إنشاء ملاحظة";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "بدء التسجيل";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "إيقاف التسجيل";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "قيمة التشغيل";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "إشعار مرئي";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "كانت القيمة أعلى من";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "على";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "كانت القيمة أدنى من";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "انخفضت سرعته أقل من";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "تهبط دون";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "أكثر من";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "أقل من";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "إرسال تنبيه عند";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "ترتفع أكثر من";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "ارتفعت سرعته أكثر من";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "تعديل المشغّلات";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "تمّ تفعيل الكثير من المشغّلات وتمّ إيقافها كلّها";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "تم نقل التجربة من الأرشيف.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "تمّ نقل التسجيل من الأرشيف.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "جهاز استشعار غير معروف";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "بلا عنوان";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "استخدام تطبيق Science Journal لإجراء تجارب على العالم من حولك";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "سنجمع بعض المعلومات عن هذا الإصدار من تطبيق Science Journal وجهازك (الجهاز فقط وإصدار iOS، ولن نجمع أي معلومات شخصيّة أو تعريفيّة)، ويمكنك تزويدنا بهذه المعلومات من خلال إرفاقها برسالة إلكترونيّة.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "يسرّنا أن نتلقّى تعليقاتك";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "إرسال الملاحظات إلينا";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "بث الفيديو";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "فولط";

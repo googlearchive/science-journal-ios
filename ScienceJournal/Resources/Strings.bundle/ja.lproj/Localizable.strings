@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "サイエンス ジャーナル";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "新機能と改善された機能:\n• Google アカウントにログインすると、デバイスで Google ドライブ アカウントを使用して実験の保存や実験へのアクセスができます。この機能は、今後数週間の内にすべてのユーザーが利用できるようになります。サイエンス ジャーナルは引き続き、ログインなしでもご利用いただけます。";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "多数のパフォーマンス改善とバグの修正";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Google サイエンス ジャーナル";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "身のまわりの世界を調べてみよう";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "サイエンス ジャーナルは、Google が無料で提供するデジタル研究ノートです。\n\n科学の教育関係者の方も、科学が趣味という皆さんも、メモや写真、観察記録をすべて 1 か所に保存できるので便利にお使いいただけます。iPhone や iPad のセンサーを使って光、音、動きなどの現象を測定してグラフにすることも、Bluetooth 経由で外部センサーに接続して身の周りのさまざまなものを使った実験をすることもできます。\n\nサイエンス ジャーナル アプリでは、次のようなことができます。\n• お手持ちのデバイスの内蔵センサーを使って光、音、加速度、気圧などを測定する。\n• メモを取ったり写真を撮ったりして科学実験を記録する。メモの種類は今後も追加していく予定です。\n• Bluetooth 対応の特定の Arduino デバイスを使って外部センサーに接続する。\n• 自動トリガーを作成してデータの記録やメモの入力を行う。\n• ソニフィケーションを使ってグラフの動きを音で聴く。\n\nアクセス許可に関する注意点:\n• Bluetooth: Bluetooth 対応のセンサーデバイスをスキャンする場合に必要。\n• カメラ: 実験の記録のための写真を撮る場合や明るさセンサーに必要。\n• フォト ライブラリ: 実験の記録写真の保存やライブラリから既存の写真を実験に追加する場合に必要。\n• マイク: 音量センサーに必要。\n• プッシュ通知: アプリのバックグラウンド実行時に記録ステータスを通知するために必要。\n\nパートナーによる教育活動:\nhttps://makingscience.withgoogle.com/science-journal/activities\nサポートが必要な場合: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,サイエンス,教育,STEM,実験,センサー,グラフ,ジャーナル,ノートブック,メモ,ドキュメント,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "加速度計 X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "加速度計 Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "加速度計 Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "基本情報";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "説明を追加";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "アーカイブ";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "実験をアーカイブ";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "記録をアーカイブ";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "キャンセル";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "OK";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "削除";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "実験を削除";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "記録を削除";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "画像を削除";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "スナップショットを削除";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "テキストメモを削除";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "メモを削除";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "破棄";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "閉じる";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "編集";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "フィードバック";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "アーカイブ済みの実験を含める";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "水平器";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "報告する";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "再試行";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "定規";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "保存";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "設定";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "アーカイブ解除";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "実験をアーカイブ解除";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "記録をアーカイブ解除";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "元に戻す";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "詳細を表示";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "タイムラインにメモを追加";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "新しいメモを追加";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "写真を追加";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "画像を追加";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "メモを追加";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "環境光";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "ルクス";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "振幅";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "気温";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "アーカイブ済み";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "アーカイブ済みの実験は変更できませんが、削除はできます";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "実験がアーカイブされました。";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "記録をアーカイブしました。";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "接続可能なデバイス";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "戻る";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "前のビューに戻る";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "気圧計";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "サイエンス ジャーナル";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "トリガーを作成";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "新しいセンサーカードを追加";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "変更を破棄";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "変更を保存";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "削除しない";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "削除する";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "新しい実験";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "記録を開始";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "現在に移動";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "カードを閉じる";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "記録を停止";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "写真を撮る";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "カメラ: 写真を撮ってこの実験に追加します";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "このトリガーを発動させる数値を入力してください。";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "グラフ再生コントロール";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "グラフの再生位置を移動して値を読み取る";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "ライブグラフ";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "左にパン";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "右にパン";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "パンしました";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "グラフ";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "ズームイン";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "ズームレベル";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "ズームして合わせる";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "ズームアウト";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "写真を選択";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "すべてをアカウントに関連付ける";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "すべての関連付け";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Google ドライブへ追加";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "残り 1 個の実験を %@ の Google ドライブに追加しますか？";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "残り %1$@ 個の実験を %2$@ の Google ドライブに追加しますか？";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "残りの実験をすべてアカウントに関連付ける";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "すべての実験を Google ドライブに追加しますか？";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "すべての実験を関連付けますか？";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "この実験を Google ドライブに追加";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "実験はアカウントに関連付けるまで編集できず、削除するまでデバイスに残ったままになります";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Google ドライブに実験を追加する";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "実験をアカウントに関連付ける";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "この実験を削除";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "すべて削除";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "残り 1 個の実験を削除しますか？";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "残り %ld 個の実験を削除しますか？";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "残りの実験をすべて削除";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "すべての実験を削除しますか？";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "アーカイブ済みの実験を含め、このデバイス上のすべての実験が削除されます。この操作は元に戻せません。";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "すべて削除";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "アカウントに関連付けられていない実験が %ld 個あります。";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "アカウントに関連付けられていない実験が 1 個あります。";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "アカウントに関連付けられていないこの実験を共有する";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "実験を関連付けるのに十分なディスク容量がありません";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "実験を関連付けるのに十分なディスク容量がありません";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "実験をアカウントに関連付けられませんでした";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "実験をアカウントに関連付けられませんでした";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "実験を関連付けますか？";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "実験の関連付け";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "この実験を %@ の Google ドライブに追加しますか？";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "%@ に実験を追加しました";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "過去の実験をアカウントに関連付ける";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "実験をアカウントに関連付ける";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "閉じる";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "前のビューに戻る";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "コンパス";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "度";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "コンダクター";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "ログインせずに続行";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "クロップ終了:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "クロップを保存できませんでした:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "クロップ終了マーカーを左に移動します";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "クロップ終了マーカーを右に移動します";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "クロップ開始マーカーを左に移動します";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "クロップ開始マーカーを右に移動します";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "その他のオプション";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "記録がクロップされました";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "最初に記録した範囲外の記録をクロップすることはできません";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "記録を 1 秒未満までクロップすることはできません";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "クロップ";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "クロップ開始:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "現在の値";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "音量";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "無題の実験";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "デフォルト";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "この実験を削除してもよろしいですか？記録とメモがすべて削除されます。";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "この実験を削除しますか？";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "削除";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "この記録を削除しますか？";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "実験を削除しました。";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "記録を削除しました。";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "詳細";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "ピン";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "周波数";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "センサーの設定を保存します。";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "センサー";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "自動スケールを無効にする";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "ダブルタップで編集します";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "ダブルタップで開きます";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "ダブルタップで選択します";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "ダブルタップで切り替えます";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "ダブルタップで詳細を表示します";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "ツールドロワー グラバー";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "ツールドロワーのサイズを調整します。さまざまな操作ができます。";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "閉じました";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "編集中です";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "全画面に表示しています";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "画面半分に表示しています";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Google ドライブに接続できません。接続を確認してください。";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "ネットワーク接続なし";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "サイエンス ジャーナルから Google ドライブに接続できません。一部の実験がバックアップされない可能性があります。";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "現在、サイエンス ジャーナルから Google ドライブに接続できません。後ほど再試行されます。";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google ドライブに実験を保存するための十分な空き容量がありません。";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "サイエンス ジャーナル用の実験データを保存して、Google ドライブを使って複数のデバイス間で共有できるようになりました。このデータにアクセスするには Google アカウントへのログインが必要です。\n\nこのデバイスに既存データがある場合は、ログイン後に既存の実験を Google ドライブに保存できます。実験は Google ドライブの「サイエンス ジャーナル」というフォルダに保存されます。";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Google ドライブにアクセスできません。接続を確認してください。";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "終了時間を編集します";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "開始時間を編集します";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "実験を編集";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "実験のタイトルや写真を変更";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "未保存の変更";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "この実験に行った変更を破棄してもよろしいですか？";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "写真の変更";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "実験の編集";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "時間を編集";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "メモの時間の編集";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "記録終了時間の編集";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "記録開始時間の編集";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "記録を編集";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "記録のタイトルを変更";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "記録のタイトル";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "まだ何も観察されていません";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "実験がありません";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "トリガーが設定されていません";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "自動スケールを有効にする";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "実験は Google ドライブに追加されません";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "すべての実験を削除する";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "すべての実験が Google ドライブに追加されます";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "実験をすべて保存する";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Google ドライブに保存する実験を選択します";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "保存する実験を選択する";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "このデバイスには %ld 個の実験が保存されています。\n\n続行するには、オプションを選択してください。";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "このデバイスには 1 個の実験が保存されています。\n\n続行するには、オプションを選択してください。";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "ドライブへのバックアップ";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "実験";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "実験";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "実験を共有";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "この実験ではダウンロードが完了していません。コピーを共有すると、一部のデータが失われる場合があります";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "ダウンロードしています";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "記録しています…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "実験のタイトル";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "この実験は、お使いのものより新しいバージョンのサイエンス ジャーナルで作成されました。最新のアップデートをダウンロードするまで、このデバイスでは編集できません。";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "感じたことや観察したことを整理するために、メモやデータの記録、写真撮影を活用しましょう";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "新しい実験の作成";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "身の周りの世界を調べる";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "共有";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "エクスポートに失敗しました。";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "実験の送信";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "相対時間";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "エクスポート…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "写真の共有先…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "サイエンス ジャーナルへようこそ";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "下のツールバーを使用して、メモを取ったり、データを記録したりしてください！";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "サイエンス ジャーナルへようこそ！";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "\ng.co/sciencejournalactivities にあるアクティビティに挑戦してみよう";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "このデバイスとのペアを解除";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "全画面表示";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "使ってみる";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "音声を有効にする";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "音声を無効にする";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "センサーについて";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "不明なエラーが発生しました。";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "インポートできませんでした。この実験データに問題があるようです。";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "サイエンス ジャーナルは現在使用中です。記録を中止してもう一度お試しください。";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "実験をインポートするにはログインしてください。";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "保存容量が足りません";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "設定で保存容量を管理できます。";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "アーカイブされた記録を表示";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "設定を開く";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "明るさセンサーで記録している間は、フロントカメラを使ってデータを測定するため、カメラを使用できません。";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "ピクチャー イン ピクチャー動画を見ているか、Split View モードでサイエンス ジャーナルを使用しているので、カメラを使用できません。";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "センサーを表示";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "サイエンス ジャーナルにカメラへのアクセス許可がないので、カメラを使用できません。";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "サイエンス ジャーナルにフォト ライブラリへのアクセス許可がないので、フォト ライブラリを使用できません。";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "詳細";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "詳細";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "直線加速度計";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "パフォーマンスの改善とバグの修正。";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "新機能";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• 音声ピッチセンサーが追加されました。";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• 実験をファイルにエクスポートし、他のデバイスにインポートできるようになりました。";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• 実験から写真をエクスポートできるようになりました。";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "他のメモを表示";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "磁力計";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "メニュー";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "メニューに表示するオプションを増やす";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "音声設定";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "トリガーを編集";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "トリガーを設定";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "マイデバイス";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "この実験に名前を付ける";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "アクティビティ";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "テスト";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "設定";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "説明を追加してください";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "説明";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "写真メモ";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "テキストメモ";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "トリガーメモ";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "スナップショット メモ";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "音符";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "メモが追加されました";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "メモ: この実験にテキストメモを追加します";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "観察: センサーを使用して、この実験に値のスナップショットや記録を追加します";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "実験を開けません";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "ファイルを開けません";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "インポートできる実験データはサイエンス ジャーナルのファイル形式（.sj）のもののみです";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "一時停止";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "パーセント";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "完了！アクセス許可の確認が終わりました。今後これらの許可を変更する必要がある場合は、iOS 設定アプリのサイエンス ジャーナル セクションでいつでも変更できます。";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "カメラへのアクセス許可を確認します。明るさセンサーを使うにはフロントカメラを使用します。実験や記録に写真メモを追加したい場合は、別のカメラを使ってください。";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "続行";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "まずアクセス許可の確認を行って、ハードウェア センサー、カメラ、フォト ライブラリを使えるようにします。それぞれの使い方は、確認メッセージが表示される前に説明します。";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "次に、マイクへのアクセス許可を確認します。マイクは音声センサーのために使用します。音声の記録、保存、転送が行われることはありません。測定されるのは音量とピッチのみです。";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "まず、プッシュ通知の送信が許可されているかどうかを確認します。プッシュ通知は、データを記録中にアプリをバックグラウンドにした場合に、まもなく記録が終わることを知らせるときだけに使用します。";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "最後に、フォト ライブラリへのアクセス許可を確認します。確認が完了すると、既存の写真を実験や記録に追加したり、撮影した写真をライブラリに保存できるようになります。";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "はじめましょう";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "完了！";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "アクセス許可を確認";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "サイエンス ジャーナルへようこそ！";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "写真:";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "写真";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "写真を追加するのに十分なディスク容量がありません";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "内部センサー";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "フォト ライブラリ: 写真をライブラリからこの実験に追加します";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "情報";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "デバイス";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "サイズ";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "メモ";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "シャッター速度";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "写真が追加されました";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "ピッチ";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "オクターブ %3$@ の %2$@ フラットより半音 %1$@ 個分低い音";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "オクターブ %3$@ の %2$@ より半音 %1$@ 個分低い音";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "オクターブ %3$@ の %2$@ シャープより半音 %1$@ 個分低い音";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "オクターブ %2$@ の %1$@ フラット";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "高ピッチ";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "低ピッチ";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "オクターブ %2$@ の %1$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "オクターブ %2$@ の %1$@ シャープ";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "オクターブ %3$@ の %2$@ フラットより半音 %1$@ 個分高い音";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "オクターブ %3$@ の %2$@ より半音 %1$@ 個分高い音";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "オクターブ %3$@ の %2$@ シャープより半音 %1$@ 個分高い音";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "ピクセル";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "再生";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "既存のデバイス設定がこのアカウントに適用されました";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "更新しています";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "記録を開始できません";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "接続されていないセンサーがあります。もう一度お試しください。";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "記録したデータを表示するには、サイエンス ジャーナルを開いてください。";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "記録を終了しました。";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "続行";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "記録をキャンセル";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "データを記録しなかったセンサーが 1 つ以上あります。この記録をキャンセルしますか？";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "データが記録されていません";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "記録停止";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "記録を続行するには、サイエンス ジャーナルを開いてください。";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "記録がまもなく終了します。";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "記録を続行します";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "記録を停止します";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "カバー画像を削除";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "この実験のカバー画像を削除します。";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "カバー画像を削除してもよろしいですか？この操作は元に戻せません。";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "カバー画像を削除しました。";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "カバー画像を削除できませんでした。";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "記録が追加されました";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "記録しています";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "記録の名前変更";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "この記録を削除してもよろしいですか？記録されたデータとメモは削除されます。";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "時間";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "レビュー";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "保存";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "変更を保存して前のビューに戻る";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "実験の保存";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "この実験をライブラリに追加しますか？";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "[ファイル] に保存";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "ドキュメント ブラウザを表示し、このファイルをデバイス内のフォルダに保存できるようにします。";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "ファイルを保存しました";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "ファイルを保存しました";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "ファイルを保存できませんでした。もう一度お試しください。";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "ファイルを保存できませんでした。もう一度お試しください。";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "スケール";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "グラフ内のメモのタイムスタンプを選択";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "コピーを送信";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "設定";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "明るさ";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "サイエンス ジャーナルにカメラへのアクセス許可がないので、明るさセンサーを使用できません。";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "センサーデータを読み込めませんでした";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "センサーデータを読み込んでいます…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "サイエンス ジャーナルにマイクへのアクセス許可がないので、音声センサーを使用できません。";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "カスタム";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "物体にはその位置に留まる性質、また移動している場合は動き続ける性質があります。この性質を慣性といいます。ニュートンの第 1 法則は、これを「物体は、外からの力が作用しない限り、静止している物体は静止状態を続け、運動している物体は動き続ける」という基本法則にまとめています。\n\n外からの力により物体に揺れが生じると、その物体は加速します。加速とは速度が速くなったり遅くなったりすることで、速さが変化することをいいます。加速度は、速度の変化としてメートル毎秒またはメートル毎秒（m/s²）という単位で測定します。\n\n皆さんのスマートフォンには、こうした動きの変化を測定する加速度計が備わっています。加速度計の内部には、自由に動く小さな重りが吊り下がっています。運動に変化が起きると、重りが移動します。これは車に乗っているときに、車が急に停まって、頭が前方に投げ出されるのとよく似ています。こうした慣性の微妙な変化を測定することで、スマートフォンの加速度計は、動きや向きの変化を検出します。これは、スマートフォンの向きを縦や横に切り替えたり、ゲームをプレイするときなどに役立っています。";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "スマートフォンをテーブルに置いて動かしていない場合でも、Z 軸には絶えず加速度が発生していることにお気付きでしょうか。これは重力によって地球上で発生する加速度であり、約 9.8 m/s² です。";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "普段は意識することはありませんが、私たちは皆、空気という深い海の底で暮らしています。地球は上空 40 km まで大気に覆われていますが、この大気の重さにより、気圧と呼ばれるものが発生します。\n\n海抜 0 メートルでは、1 平方インチ（約 6.45 平方センチ）あたり 6.35 kg の力がかかっていることになります。これを標準的なサイズの紙にあてはめると、その上にかかる重さは 589.67 kg に相当します。";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "私たちはその圧迫感に慣れているので気づくことはありません。しかし、緯度の高い地域を訪れたときや飛行機に乗ったときは、それがわずかに変化するのを体感できます。大気圧は気象条件によっても変化します。嵐のような不安定な大気では低下し、大気が安定して快晴になると上昇します。\n\n携帯電話のデジタル気圧計は、気圧をヘクトパスカル単位で測定します（ヘクトパスカルは 100 パスカルであり、パスカルは 1 平方メートルの面積に加わる 1 ニュートンの力です）。天気予報で、気圧をミリバール単位で表現しているのを聞いたことがあるかもしれません。この単位はヘクトパスカルと同じです。\n\n皆さんは、何のためにスマートフォンで圧力を測定するのだろうと疑問に思うかもしれません。気圧は、階段を登るといったわずかな高度の変化だけでも変わります。そのため、スマートフォンのデジタル気圧計は場所の変化を検出し、皆さんが建物の何階にいるのか、あるいは車で走行中の橋のデッキが上段か下段かを知ることができます。";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "フロントカメラは輝度を EV（露出値）で測定します。EV とはカメラのシャッター速度や F 値、ISO 値に基づき、このような設定で記録されたピクセルの明るさによって決まる測定値のことです。\n\nとらえられる値が明るいほど、EV 値は高くなり、暗闇では負の値が生じます。";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "EV はカメラの光学とセンサーに基づいた測定値であるため、値の範囲はハードウェアとソフトウェアによって制限されます。周囲光センサーはルクス値を直接記録できますが、フロントカメラは測定基準を設定し、画像を撮影た後に読み取ったピクセルに基づいて EV を決定するために、F 値、ISO 値、シャッター速度を使用する必要があります。このプロセスによって、F 値の閾値が異なる場合、EV 値はデバイス間で異なることがあります。たとえば iPhone 8（f1.8）と iPad（f2.4）といった具合です。\n\nEV はとらえられたピクセルの輝度値を測定することで決まるため、周囲の光源は、赤外線センサーによってルクス値が決定された場合よりも、はるかに低い値が生じます。測定値はカメラの位置とカメラがとらえるものによって直接左右されます。";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "地球に磁場があることはすでにご存じかもしれませんが、あなたのスマートフォンに磁場を検出するために設計された「磁力計」という装置が備わっていることはご存じなかったかもしれません。スマートフォンの磁力計のデータと、空間におけるスマートフォンの向きを組み合わせると、デジタル コンパスになります。\n\n磁気を帯びた針が磁場の方向に沿って回転する昔ながらのコンパスは、いわばローテクな磁力計です。スマートフォンの中に小さなコンパスはありませんが、その代わり電流を使って磁場の強さを 3 次元で検出する小さな 3 軸センサーが備わっています。しかしこれだけではコンパスになりません。\n\nなぜコンパスが磁力計のデータをスマートフォンの向きと組み合わせる必要があるのでしょうか？それは、スマートフォンの向きを把握することで、スマートフォンを地球の磁場と同じ平面上で平らに維持していなくても、磁気回転を計算できるようになるからです。重力は地球の磁場に対して垂直であるため、加速度計センサーから得られる重力の方向を使用して、磁場がどれだけ地球の磁場と同じ平面にあるかを知ることができるのです。";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "コンパスは地球の磁場だけでなく、周囲で発生しているすべての磁場に反応していることに気付いたでしょうか。磁石、電流、金属性の物体によって、スマートフォンの磁力計の向きは簡単にあちこちに変えられてしまい、コンパスの読み取り値も変化します。コンパスの赤い先端の向きを地球の磁場の方向に合わせたい場合は、できれば屋外の、送電線から遠く離れた広い場所に立ちましょう。スマートフォンを 8 の字に動かして内蔵されている磁力計を較正すると方向を合わせやすくなります。";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "音は振動によって生じます。たとえば、皆さんの声も喉の声帯が振動することで生み出されています。このような振動によって、気圧が高いところと低いところが交互に発生する領域が生まれ、外側に向かって広がっていきます。池に小石を投げると、輪状の波が広がっていくような感じです。";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "すべての音は、周波数と強さという観点から表すことができます。\n\nサイエンス ジャーナルの音量センサーで測定するのは強さであり、単位はデシベル（dB）です。強さ、つまり音量は、物体の振動の大きさによって変化し、強さが大きくなるほど聞こえる音量も大きくなります。\n\n音波の周波数（ピッチまたはトーンとも呼ばれます）は、振動の速さに相当します。物体の振動が速いほど、生み出される音のピッチも高くなります。サイエンス ジャーナルの音量センサーでは周波数は測定されず、音量だけが測定されます。\n\nただし、デバイスのマイクは、時間の経過による音の変化には非常に敏感ですが、それぞれの音の絶対的な大きさを測ることはあまり得意ではないことは覚えておいてください。アプリの開発にあたっては、以下に示す参照数値と同じような数値を生成するコードを選択しようと努めてきましたが、高めに測定されたり低めに出たりと、デバイスごとに違うクセがあります。科学者は通常、既知の測定数値に合致させるために、このようなセンサーに対して較正という作業を行います。現時点では、サイエンス ジャーナルで電車の騒音とロック コンサートの音量を測ることはできますが、どちらの音量が大きいかを比べるためには、同じスマートフォンで両方の音量を測定する必要があります。\n\nまた、「音の強さ」、「音の強さのレベル」、「音圧」の違いを理解することも重要です。ここではすべて同じものとして扱っていますが、それらの違いについて詳しく知りたい場合は、多くのオンライン リソースが公開されているのでそちらをご覧ください。\n\n平均的な人間の耳で聴き取れる最小の音量が 0 dB と定義されています。日常会話の音量は 60 dB ほどで、140 dB を超える音は人間の耳には苦痛に感じられます。ただし有害な音量が必ずしも苦痛に感じられるわけではありません。掃除機の音量は 90 dB ほどですが、この音量の環境に継続的にさらされていると難聴を引き起こす原因となります。\n\nデシベルは対数的な尺度であるため、少々注意を要します。たとえば、40 dB の音源は 20 dB の音源と比較して強さが 2 倍というわけではなく、100 倍になります。また、音量が 70 dB のアラーム時計を 2 台鳴らした場合、音量は 140 dB ではなく 73 dB になります。このように、少しわかりにくい尺度といえます。\n\n葉が触れ合う音: 10 dB\n距離 1.5 m でのささやき: 20 dB\n小声の話し声: 30 dB\n雨音: 50 dB\n日常会話: 60 dB\nミキサーの音: 90 dB\nマフラーなしの自動車: 100 dB\n耳元での大声: 110 dB\n雷の音: 120 dB\n削岩機の音: 130 dB\n飛行機の離陸: 140 dB";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "物体にはその位置に留まる性質、また移動している場合は動き続ける性質があります。この性質を慣性といいます。ニュートンの第 1 法則は、これを「物体は、外からの力が作用しない限り、静止している物体は静止状態を続け、運動している物体は動き続ける」という基本法則にまとめています。\n\n外からの力により物体に揺れが生じると、その物体は加速します。加速とは速度が速くなったり遅くなったりすることで、速さが変化することをいいます。加速度は、速度の変化としてメートル毎秒またはメートル毎秒（m/s²）という単位で測定します。\n\n皆さんのスマートフォンには、こうした動きの変化を測定する加速度計が備わっています。加速度計の内部には、自由に動く小さな重りが吊り下がっています。運動に変化が起きると、重りが移動します。これは車に乗っているときに、車が急に停まって、頭が前方に投げ出されるのとよく似ています。こうした慣性の微妙な変化を測定することで、スマートフォンの加速度計は、動きや向きの変化を検出します。これは、スマートフォンの向きを縦や横に切り替えたり、ゲームをプレイするときなどに役立っています。";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "統合された直線加速度計のセンサーは、重力を除く加速度全体をスマートフォンの 3 つの軸すべての方向に分けて記録します。";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "スマートフォンには磁場を検知するための「磁力計」という装置が内蔵されています。この小さな三軸センサーが、電流を使って 3 次元空間の磁場の強さを検知します。3 つすべての軸のデータを集計することで、磁場全体の強さを測るセンサーとなります。\n\n磁力計の中には、ホール効果（運動する電荷の流れを歪める磁場の性質）を利用して磁場を検知するものもあります。最近の磁力計には、磁場に反応して抵抗力が変化する磁気抵抗素子という合金が使われています。\n\nでは、なぜスマートフォンに磁力計が必要なのでしょうか？それは、自分がどの方角を向いているのかがわかれば、内蔵コンパスや、詳しい道案内をするナビゲーション アプリに役立つためです。";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "磁石、電流、金属性の物体によって、スマートフォンの磁力計の向きは簡単にあちこちに変えられてしまいます。ただし、周りに何もない場所にいるときでも、スマートフォンの磁力計の値はゼロとはなりません。これは地球の磁場を示しています。";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "音は振動によって生じます。たとえば、皆さんの声も喉の声帯が振動することで生み出されています。このような振動によって、気圧が高いところと低いところが交互に発生する領域が生まれ、外側に向かって広がっていきます。池に小石を投げると、輪状の波が広がっていくような感じです。";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "すべての音は、周波数と強さという観点から表すことができます。音波の周波数（ピッチまたはトーンとも呼ばれます）は、振動の速さに相当します。物体の振動が速いほど、生み出される音のピッチも高くなります。振動の測定単位はヘルツ（Hz）で、1 ヘルツは 1 秒間に 1 回の振動です。\n\n人間が聴き取ることができる音の範囲は 20～20,000 Hz です。ピアノの最も低い鍵盤の音は周波数が 27.5 Hz で、最も高い鍵盤の音は周波数が 4186.01 Hz です。\n\n赤色の点は、検出されたピッチと一番近い音にどれだけ近いかを表しています。ピッチが低い（フラット）場合、点は左側に表示されます。ピッチが高い（シャープ）場合、点は右側に表示されます。";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "ここに表示されるデータは、スマートフォンが Bluetooth 経由で外部センサーと通信して取得したデータです。\n\nこの値は、マイクロコントローラから直接取得した未加工の読み取り値の割合を表します。これは通常、センサー全体での電圧降下の割合です。";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth は、固定デバイスや移動デバイスから電波を介して近距離でのデータ交換を行うための無線技術の規格です。";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "回転 / 分（RPM）は、固定軸を中心とした 1 分あたりの回転数を表す測定単位です。\n\n風車が回転すると、エンコーダ ディスクが回ります。";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "これによりセンサー上に明暗の周期が生じ、サイエンス ジャーナルに回転として登録されます。";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "ここに表示されるデータは、スマートフォンが Bluetooth 経由で外部センサーと通信して取得したデータです。";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth は、固定デバイスや移動デバイスから電波を介して近距離でのデータ交換を行うための無線技術の規格です。";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "左右方向へのスマートフォンの加速度（m/s²）";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "前後方向へのスマートフォンの加速度（m/s²）";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "上下方向へのスマートフォンの加速度（m/s²）";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "ヘクトパスカル（hPa）単位で計測した気圧。";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "外部センサーのデータは、カスタム設定に基づいて、ここに表示されます。";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "フロントカメラに届く光量（EV）。";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "地球の磁場に対するスマートフォンの向きです。";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "音センサーまたはマイクに届いている音の強さ（dB）。";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "重力を除く、スマートフォンの全体的な加速度（m/s²）です";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "周囲の磁場の強さ（マイクロテスラ）です。";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "音声センサーまたはマイクに届いている音のピッチ（Hz）。";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "外部センサーから取得した未加工の読み取り値の割合。";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "1 分あたりの回転数";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "正弦波を出力するテストセンサー。";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "記録中の次のセンサー";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "記録中の前のセンサー";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "未加工";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "回転";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "記録中はセンサーを変更できません";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "トリガーを削除しました";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "音声センサーや明るさセンサーは、マイクとフロントカメラを使用します。サイエンス ジャーナルをバックグラウンドで実行しているときは、これらのセンサーでは記録できません。アプリに戻ると、データの記録ができるようになります。";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "音声センサーや明るさセンサーは、マイクとフロントカメラを使用します。サイエンス ジャーナルをバックグラウンドで実行しているときは、これらのセンサーでは記録できません。";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "このセンサーについてのメモ";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "ピクチャー イン ピクチャーの動画を見ていたり、Split View モードでサイエンス ジャーナルを使用している間は、明るさセンサーを使用できません。";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "電圧";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "実験で使用するセンサーを選択してください";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "センサーリストを折りたたむ";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "センサーリストを展開する";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "サイエンス ジャーナルは無効になっています";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "ドメイン管理者が Google 管理コンソールでサイエンス ジャーナルをオンにする必要があります。";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "アカウントを切り替え";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "データは匿名で送信されアプリの改善に役立てられます。";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "アプリのデータ使用量を Google に送信";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "オープンソース ライセンス";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "プライバシー ポリシー";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "利用規約";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "バージョン";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "サイエンス ジャーナル ウェブサイト";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "オプションを表示";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "%1$@（%2$@）でログイン中";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "アカウント管理のメニューを開きます";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "アカウントを選択";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "サイドバー メニュー";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "アプリケーションのオプションがあるサイドバー メニューを開く";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "ログイン";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "正弦波";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "メモが削除されました";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "元に戻す";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "スナップショット";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "現在観測中のすべてのセンサーの値のスナップショットを実験に追加";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "未接続のセンサーがあるので、スナップショットを追加できません。もう一度お試しください。";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "スナップショットの詳細";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "スナップショットが追加されました";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "最小値";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "最大値";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "平均";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "カメラを切り替える";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "オン";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "オフ";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "記録を 1 秒未満までクロップすることはできません";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "有効な形式（h:mm:ss.SSS）にしてください";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "新しい時刻（h:mm:ss.SSS）";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "記録時間内の時刻を入力する必要があります";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "テキストメモの編集";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "テキストメモ";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "観察を追加します";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "メモが追加されました";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "記録中";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "ダブルタップでツールドロワーの観察タブに切り替えます";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "センサー設定";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "実験に追加しました";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "記録に追加しました";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "通知方法";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "通知音";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "トリガーの詳細";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "%@トリガーの編集";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "新しい %@トリガー";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "トリガーを有効にしました";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "バイブレーション";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "次のセンサーをトリガー:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "次の値より高いとき:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "次の値のとき:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "次の値より低いとき:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "次の値を下回るとき:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "次の値を上回るとき:";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "トリガーメモを追加しました";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "何をメモしますか？";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "デフォルトのメモテキスト";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "記録するときだけトリガー";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "アラート";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "トリガーのタイプ";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "メモを作成";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "記録を開始";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "記録を停止";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "トリガーの指定値";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "視覚的な通知";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "が次の値より上だったとき:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "指定値と同じとき";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "が次の値より下だったとき:";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "が次の値を下回ったとき:";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "指定値を下回ったとき";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "指定値より上のとき";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "指定値より下のとき";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "トリガーのタイミング";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "指定値を上回ったとき";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "が次の値を上回ったとき:";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "トリガーの編集";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "トリガーが多すぎるため無効にされました";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "実験がアーカイブから取り出されました。";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "記録がアーカイブから取り出されました。";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "不明なセンサー";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "無題";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "サイエンス ジャーナルを使って身の周りのものを調べてみよう";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "サイエンス ジャーナルのビルドとお使いのデバイスに関する情報を収集し（ハードウェアと iOS のバージョン。個人情報や身元確認情報は収集しません）、Google 宛の送信メールに添付いたします。";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "みなさんからのご意見をお待ちしております";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "フィードバックを送信";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "動画ストリーム";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

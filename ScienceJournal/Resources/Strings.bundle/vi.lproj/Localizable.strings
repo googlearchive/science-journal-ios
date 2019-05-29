@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Cải tiến và tính năng mới:\n• Đăng nhập vào tài khoản Google để lưu và truy cập vào các thử nghiệm của bạn trên nhiều thiết bị bằng tài khoản Google Drive. Trong vài tuần tới, tất cả mọi người đều có thể dùng tính năng này. Bạn vẫn có thể sử dụng Science Journal mà không cần đăng nhập.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Nhiều cải tiến về hiệu suất và sửa nhiều lỗi";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal của Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Khám phá thế giới của bạn";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Science Journal là sổ tay khoa học kỹ thuật số miễn phí mà Google mang đến cho bạn.\n\nDù bạn là giáo viên dạy môn khoa học hay là người thích thực hiện thí nghiệm khoa học tại nhà thì bạn có thể giữ tất cả ghi chú, hình ảnh và kết quả quan sát ở một nơi thuận tiện. Hãy sử dụng các cảm biến trong iPhone hoặc iPad để đo và lập biểu đồ cho những hiện tượng, chẳng hạn như ánh sáng, âm thanh và chuyển động hoặc kết nối với cảm biến bên ngoài thông qua Bluetooth để tiến hành thí nghiệm về thế giới quanh bạn.\n\nVới ứng dụng Science Journal, bạn có thể:\n• Đo ánh sáng, âm thanh, gia tốc, áp suất không khí và hơn thế nữa bằng cảm biến tích hợp của điện thoại.\n• Ghi chép và chụp ảnh để lưu và theo dõi các thí nghiệm khoa học. Ngoài ra, các loại ghi chú khác cũng sắp ra mắt!\n• Kết nối với cảm biến bên ngoài bằng một số thiết bị Arduino có hỗ trợ Bluetooth.\n• Tạo kích hoạt tự động để ghi dữ liệu và ghi chép.\n• Sử dụng phương thức truyền thông tin qua âm thanh để nghe chuyển động của các biểu đồ.\n\nThông báo về quyền:\n• Bluetooth: cần có quyền sử dụng Bluetooth để quét tìm thiết bị cảm biến Bluetooth.\n• Máy ảnh: cần có quyền truy cập vào máy ảnh để chụp ảnh và lưu hồ sơ về thí nghiệm cũng như để sử dụng cảm biến độ sáng.\n• Thư viện ảnh: cần có quyền truy cập vào Thư viện ảnh để lưu ảnh đã chụp để lưu và theo dõi thí nghiệm cũng như để thêm ảnh hiện có trong thư viện vào thí nghiệm.\n• Micrô: cần có quyền sử dụng micrô để dùng cho cảm biến cường độ âm thanh.\n• Thông báo đẩy: cần có quyền sử dụng thông báo để thông báo cho bạn biết trạng thái của bản ghi khi chuyển ứng dụng sang chế độ chạy nền.\n\nBạn có thể xem các hoạt động giáo dục do đối tác của chúng tôi thực hiện tại đây:\nhttps://makingscience.withgoogle.com/science-journal/activities\nĐể được hỗ trợ, hãy truy cập vào: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,khoahọc,giáodục,dựánstem,thínghiệm,cảmbiến,lậpbiểuđồ,nhậtký,sổtay,ghichú,lưuhồsơ,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Gia tốc kế X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Gia tốc kế Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Gia tốc kế Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Giới thiệu";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Thêm chú thích";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Lưu trữ";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Lưu trữ thí nghiệm";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Lưu trữ bản ghi";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Hủy";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "OK";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Xóa";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Xóa thí nghiệm";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Xóa bản ghi";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Xóa ảnh";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Xóa ảnh chụp nhanh";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Xóa ghi chú văn bản";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Xóa ghi chú";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Hủy";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Bỏ qua";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Chỉnh sửa";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Phản hồi";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Bao gồm các thí nghiệm được lưu trữ";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Cấp độ";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "OK";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Báo cáo";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Thử lại";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Thước đo";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Lưu";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Cài đặt";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Hủy lưu trữ";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Hủy lưu trữ thí nghiệm";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Hủy lưu trữ bản ghi";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Hoàn tác";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Xem chi tiết";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Thêm ghi chú vào dòng thời gian";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Thêm một ghi chú mới";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Thêm ảnh";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Thêm ảnh";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Thêm ghi chú";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Ánh sáng xung quanh";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Độ lớn";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Nhiệt độ xung quanh";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Đã lưu trữ";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Bạn không thể sửa đổi nhưng có thể xóa thí nghiệm đã lưu trữ";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Thí nghiệm được lưu trữ.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Đã lưu bản ghi.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Các thiết bị hiện có";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Quay lại";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Quay lại chế độ xem trước đó";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Khí áp kế";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Tạo trình kích hoạt";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Thêm thẻ cảm biến mới";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Hủy thay đổi";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Lưu thay đổi";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Giữ lại";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Xóa";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Thí nghiệm mới";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Bắt đầu ghi";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Chuyển đến hiện tại";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Đóng thẻ";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Dừng ghi";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Chụp ảnh";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Máy ảnh, Hãy chụp ảnh để thêm vào thí nghiệm này";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Bạn phải nhập giá trị số để kích hoạt bộ khởi động này.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Điều khiển phát lại biểu đồ";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Di chuyển vị trí phát lại của biểu đồ rồi đọc giá trị cho vị trí đó";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Biểu đồ trực tiếp";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Dời sang trái";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Dời sang phải";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Đã dời";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Biểu đồ";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Phóng to";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Mức thu phóng";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Thu phóng cho vừa";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Thu nhỏ";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Chọn ảnh";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Xác nhận tất cả";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Xác nhận tất cả";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Thêm vào Google Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Thêm 1 thử nghiệm còn lại vào Google Drive của %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Thêm %1$@ thử nghiệm còn lại vào Google Drive của %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Xác nhận tất cả các thử nghiệm còn lại";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Thêm tất cả thử nghiệm vào Google Drive?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Xác nhận tất cả thử nghiệm?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Thêm thử nghiệm này vào Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Thử nghiệm không thể được chỉnh sửa và sẽ luôn tồn tại trên thiết bị cho đến khi được xác nhận hoặc bị xóa";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Thêm thử nghiệm vào Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Xác nhận thử nghiệm";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Xóa thử nghiệm này";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Xóa tất cả";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Xóa 1 thử nghiệm còn lại?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Xóa %ld thử nghiệm còn lại?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Xóa tất cả các thử nghiệm còn lại";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Xóa tất cả thử nghiệm của bạn?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Tất cả thử nghiệm trên thiết bị này (bao gồm thử nghiệm đã lưu trữ) sẽ bị xóa. Bạn không thể hoàn tác thao tác này.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Xóa tất cả";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Có %ld thử nghiệm chưa xác nhận trên thiết bị này.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Có 1 thử nghiệm chưa xác nhận trên thiết bị này.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Chia sẻ thử nghiệm chưa xác nhận này";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Không đủ dung lượng ổ đĩa để xác nhận thí nghiệm";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Không đủ dung lượng ổ đĩa để xác nhận thí nghiệm";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Không thể xác nhận thử nghiệm";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Không thể xác nhận thử nghiệm";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Xác nhận thử nghiệm?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Xác nhận thử nghiệm";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Thêm thử nghiệm này vào Google Drive của %@ ?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Đã thêm thử nghiệm vào %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Xác nhận thử nghiệm trước đó";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Xác nhận thử nghiệm";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Đóng";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Quay lại chế độ xem trước đó";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "La bàn";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "độ";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Chất dẫn";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Tiếp tục mà không đăng nhập";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "cuối phần cắt:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Không lưu được phần cắt:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Di chuyển điểm đánh dấu cuối phần cắt sang trái";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Di chuyển điểm đánh dấu cuối phần cắt sang phải";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Di chuyển điểm đánh dấu đầu phần cắt sang trái";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Di chuyển điểm đánh dấu đầu phần cắt sang phải";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Tùy chọn khác";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Đã cắt bản ghi";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Không thể cắt bản ghi bên ngoài phạm vi đã ghi ban đầu";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Không thể cắt bản ghi xuống dưới một giây";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Cắt";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "đầu phần cắt:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Giá trị hiện tại";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Cường độ âm thanh";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Thí nghiệm chưa đặt tên";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Mặc định";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Bạn có chắc chắn muốn xóa thí nghiệm này không? Tất cả các bản ghi và ghi chú của thí nghiệm sẽ bị xóa.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Xóa thí nghiệm này?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Xóa";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Bạn muốn xóa bản ghi này?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Đã xóa thí nghiệm.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Đã xóa bản ghi.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Chi tiết";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Ghim";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Tần số";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Lưu cài đặt cảm biến.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Cảm biến";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Tắt thang đo tự động";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Nhấn đúp để chỉnh sửa";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Nhấn đúp để mở";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Nhấn đúp để chọn";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Nhấn đúp để chuyển đổi";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Nhấn đúp để xem chi tiết";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Thanh điều chỉnh ngăn kéo công cụ";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Điều chỉnh kích thước ngăn công cụ. Có thể thực hiện hành động.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "đã đóng";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "đang chỉnh sửa";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "toàn màn hình";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "nửa màn hình";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Không thể kết nối với Google Drive. Hãy kiểm tra kết nối mạng của bạn";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Đã ngắt kết nối mạng";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal không thể kết nối với Google Drive. Một số thử nghiệm có thể sẽ không được sao lưu.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Science Journal không thể kết nối với Google Drive ngay bây giờ. Chúng tôi sẽ thử lại sau.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google Drive không có đủ dung lượng để lưu trữ thử nghiệm của bạn.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Dữ liệu thử nghiệm cho Science Journal được lưu và cung cấp trên các thiết bị sử dụng Google Drive và yêu cầu đăng nhập bằng tài khoản Google.\n\nNếu bạn đang có dữ liệu trên thiết bị này thì sau khi đã đăng nhập, bạn có thể lưu các thử nghiệm hiện có của mình vào Google Drive. Các thử nghiệm của bạn được lưu trữ trong thư mục “Science Journal” trong Google Drive.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Không thể truy cập vào Google Drive. Hãy kiểm tra kết nối Internet.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Chỉnh sửa thời gian kết thúc";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Chỉnh sửa thời gian bắt đầu";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Chỉnh sửa thí nghiệm";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Thay đổi ảnh hoặc tiêu đề thí nghiệm";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Các thay đổi chưa lưu";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Bạn có chắc chắn muốn lưu các thay đổi vừa thực hiện với thí nghiệm này không?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Thay đổi ảnh";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Chỉnh sửa thí nghiệm";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Chỉnh sửa thời gian";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Chỉnh sửa thời gian ghi chú";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Chỉnh sửa thời gian kết thúc bản ghi";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Chỉnh sửa thời gian bắt đầu bản ghi";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Chỉnh sửa bản ghi";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Thay đổi tiêu đề bản ghi";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Tiêu đề bản ghi";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Bạn chưa có quan sát nào";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Bạn không có thí nghiệm nào";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Chưa đặt bộ khởi động nào";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Bật thang đo tự động";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Sẽ không thêm thử nghiệm nào vào Google Drive";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Xóa tất cả thử nghiệm của bạn";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Sẽ thêm tất cả thử nghiệm của bạn vào Google Drive";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Lưu tất cả thử nghiệm của bạn";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Chọn thử nghiệm cần lưu vào Google Drive";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Chọn thử nghiệm cần lưu";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Chào mừng bạn trở lại! Bạn hiện có %ld thí nghiệm lưu trên thiết bị này.\n\nĐể tiếp tục, hãy chọn một trong các tùy chọn sau:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Chào mừng bạn trở lại! Bạn hiện có 1 thí nghiệm lưu trên thiết bị này.\n\nĐể tiếp tục, hãy chọn một trong các tùy chọn sau:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Sao lưu lên Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Thí nghiệm";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Các thí nghiệm";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Chia sẻ thử nghiệm";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Thử nghiệm này chưa tải xuống xong. Nếu bạn chia sẻ bản sao ngay bây giờ thì một số dữ liệu có thể bị thiếu";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Đang tải xuống";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Đang ghi…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Tiêu đề thí nghiệm";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Thử nghiệm này đã được tạo bằng phiên bản Science Journal mới hơn. Bạn phải tải bản cập nhật mới nhất để chỉnh sửa thử nghiệm trên thiết bị này.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Hãy sắp xếp suy nghĩ và những hiện tượng mà bạn quan sát được bằng cách ghi chép, ghi dữ liệu hoặc chụp ảnh";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Tạo thí nghiệm mới";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Khám phá thế giới của bạn";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Chia sẻ";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Không xuất được.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Gửi thí nghiệm";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Thời gian tương đối";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Xuất…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Chia sẻ ảnh cho…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Chào mừng bạn đến với Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Hãy thử ghi chép và ghi lại dữ liệu bằng thanh công cụ bên dưới!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Chào mừng bạn đến với Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Hãy tìm các hoạt động để thử nghiệm tại\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Quên thiết bị này";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Toàn màn hình";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Bắt đầu";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Bật âm thanh";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Tắt âm thanh";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Điều gì đang diễn ra?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Rất tiếc, đã xảy ra lỗi không xác định!";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Không nhập tệp được. Đã có vấn đề với thí nghiệm này.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Science Journal hiện đang được sử dụng. Vui lòng dừng ghi dữ liệu và thử lại.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Đăng nhập để nhập thử nghiệm.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Không đủ dung lượng bộ nhớ";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Bạn có thể quản lý bộ nhớ trong phần cài đặt.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Hiện các bản ghi đã lưu";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Mở cài đặt";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Không sử dụng được máy ảnh vì bạn đang ghi dữ liệu bằng cảm biến độ sáng. Cảm biến này đo dữ liệu thông qua máy ảnh mặt trước.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Không sử dụng được máy ảnh do bạn đang xem video hình trong hình hoặc sử dụng ứng dụng Science Journal trong chế độ Split View.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Xem các cảm biến";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Không sử dụng được máy ảnh do ứng dụng Science Journal không có quyền truy cập vào máy ảnh.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Không sử dụng được thư viện ảnh của bạn do ứng dụng Science Journal không có quyền truy cập vào thư viện.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Tìm hiểu thêm";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Tìm hiểu thêm";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Gia tốc kế tuyến tính";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Cải tiến hiệu suất và bản sửa lỗi.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Các tính năng mới:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Cảm biến cao độ của âm thanh.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Xuất các thí nghiệm thành một tệp và nhập vào các thiết bị khác.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Xuất hình ảnh từ thí nghiệm.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Xem thêm ghi chú";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Từ kế";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menu";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Hiển thị menu có nhiều tùy chọn hơn";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Cài đặt âm thanh";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Chỉnh sửa bộ khởi động";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Đặt bộ khởi động";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Thiết bị của tôi";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Hãy đặt tên cho thí nghiệm này";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Hoạt động";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Các thí nghiệm";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Cài đặt";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Thêm mô tả";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Mô tả";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Ghi chú hình ảnh";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Ghi chú văn bản";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Ghi chú được kích hoạt";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Ghi chú ảnh chụp nhanh";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Ghi chú";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Đã thêm ghi chú";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Ghi chú, Thêm chú thích bằng văn bản vào thí nghiệm này";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Quan sát, Sử dụng cảm biến để thêm bản ghi hoặc ảnh chụp nhanh giá trị vào thí nghiệm này";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Không thể mở thí nghiệm";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Không thể mở tệp";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Thí nghiệm phải ở định dạng tệp Science Journal (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Tạm dừng";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Phần trăm";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Xong rồi! Chúng tôi đã kiểm tra xong các quyền. Nếu sau này cần sửa đổi các quyền này, thì bạn có thể sửa đổi bất cứ lúc nào trong phần Science Journal của ứng dụng Cài đặt iOS.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Bây giờ, chúng tôi sẽ kiểm tra quyền truy cập vào máy ảnh. Chúng tôi sử dụng máy ảnh mặt trước cho cảm biến độ sáng. Bạn có thể sử dụng bất kỳ máy ảnh nào để thêm ghi chú dạng ảnh vào thí nghiệm và bản ghi.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Tiếp tục";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Chúng tôi cần bắt đầu bằng cách kiểm tra các quyền để có thể bật cảm biến phần cứng, máy ảnh và thư viện ảnh. Chúng tôi sẽ giải thích cách chúng tôi sử dụng mỗi quyền này trước khi nhắc bạn.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Tiếp theo, chúng tôi sẽ kiểm tra quyền sử dụng micrô của bạn. Micrô được dùng làm cảm biến âm thanh. Chúng tôi không ghi lại, lưu trữ hoặc truyền nội dung âm thanh mà chỉ đo cường độ hoặc cao độ của âm thanh.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Trước tiên, chúng tôi sẽ kiểm tra quyền gửi thông báo đẩy cho bạn. Chúng tôi chỉ sử dụng thông báo này để cho bạn biết thời điểm bản ghi sắp kết thúc nếu bạn chuyển ứng dụng sang chế độ chạy trong nền khi đang ghi.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Cuối cùng, chúng tôi sẽ kiểm tra quyền truy cập vào thư viện ảnh để bạn có thể thêm ảnh hiện có vào thí nghiệm và bản ghi và chúng tôi có thể lưu ảnh mà bạn chụp trở lại thư viện.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Hãy bắt đầu nào";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Đã xong!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Kiểm tra quyền";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Chào mừng bạn đến với Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Ảnh cho";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Ảnh";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Không đủ dung lượng ổ đĩa để thêm ảnh";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Cảm biến bên trong";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Thư viện ảnh, Thêm ảnh trong thư viện vào thí nghiệm này";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Thông tin";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Thiết bị";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Kích thước";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Ghi chú";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Tốc độ màn trập";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Đã thêm ảnh";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Cao độ";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "Thấp hơn %1$@ nửa cung so với %2$@ giáng, quãng tám thứ %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "Thấp hơn %1$@ nửa cung so với %2$@, quãng tám thứ %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "Thấp hơn %1$@ nửa cung so với %2$@ thăng, quãng tám thứ %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ giáng, quãng tám thứ %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "âm cao";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "âm thấp";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, quãng tám thứ %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ thăng, quãng tám thứ %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "Lên %1$@ tông so với %2$@ giáng, quãng tám thứ %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "Cao hơn %1$@ nửa cung và so với %2$@, quãng tám thứ %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "Cao hơn %1$@ nửa cung so với %2$@ thăng, quãng tám thứ %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pixel";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Phát";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Đã áp dụng tùy chọn cài đặt thiết bị hiện tại vào tài khoản này";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Đang làm mới";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Không thể bắt đầu ghi lại";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Một hoặc nhiều cảm biến của bạn hiện không kết nối. Vui lòng thử lại.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Hãy mở ứng dụng Science Journal để xem dữ liệu đã ghi của bạn.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Bản ghi của bạn đã kết thúc.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Tiếp tục";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Hủy ghi";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Một hoặc nhiều cảm biến của bạn không ghi bất kỳ dữ liệu nào. Bạn có muốn hủy quá trình ghi này không?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Dữ liệu hiện không được ghi";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Đã dừng ghi";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Hãy mở ứng dụng Science Journal để tiếp tục ghi.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Bản ghi của bạn sẽ sớm kết thúc.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Tiếp tục ghi";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Dừng ghi";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Xóa ảnh bìa";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Xóa ảnh bìa của thử nghiệm này.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Không thể hoàn tác hành động này. Bạn có chắc chắn muốn xóa ảnh bìa không?";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Đã xóa ảnh bìa.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Không thể xóa ảnh bìa.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Đã thêm bản ghi";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Bản ghi";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Đổi tên bản ghi này";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Bạn có chắc chắn muốn xóa bản ghi này không? Dữ liệu và ghi chú đã ghi sẽ bị xóa.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Thời lượng";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Đánh giá";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Lưu";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Lưu thay đổi rồi quay lại chế độ xem trước đó";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Lưu thí nghiệm";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Bạn có muốn thêm thí nghiệm này vào thư viện không?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Lưu vào ứng dụng Files";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Hiển thị trình duyệt tài liệu để bạn lưu bản sao của tệp này vào một thư mục trên thiết bị.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Đã lưu tệp";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Đã lưu tệp";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Không lưu tệp được. Vui lòng thử lại.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Không lưu tệp được. Vui lòng thử lại.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Thang đo";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Chọn dấu thời gian ghi chú trong biểu đồ";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Gửi một bản sao";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Cài đặt";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Độ sáng";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Không sử dụng được cảm biến độ sáng vì Science Journal không có quyền sử dụng máy ảnh.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Không tải được dữ liệu cảm biến";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Đang tải dữ liệu cảm biến…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Không sử dụng được cảm biến âm thanh vì Science Journal không có quyền sử dụng micrô của bạn.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Tùy chỉnh";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Các vật thể có xu hướng đứng yên hay tiếp tục chuyển động nếu chúng đang chuyển động—chúng ta gọi xu hướng này là quán tính. Định luật thứ nhất của Newton chính thức thể hiện ý tưởng này như sau: Một vật thể sẽ tiếp tục duy trì trạng thái chuyển động hoặc đứng yên trừ khi có lực không cân bằng tác động lên vật thể đó. \n\nKhi một lực không cân bằng khiến đối tượng chuyển động, chúng ta nói vật thể đó có gia tốc: vận tốc hay tốc độ thay đổi bằng cách tăng tốc, giảm tốc hay đổi hướng. Gia tốc được đo dưới dạng thay đổi vận tốc (m/giây) theo thời gian hoặc mét trên giây bình phương (m/s²).\n\nĐiện thoại của bạn có thiết bị để đo những thay đổi về chuyển động này gọi là gia tốc kế. Bên trong gia tốc kế, các con lắc treo nhỏ chuyển động tự do. Thay đổi về chuyển động khiến những con lắc này thay đổi, gần giống như khi đầu bạn luôn có xu hướng ngả về phía trước khi ngồi trong chiếc xe dừng đột ngột. Khi đo những thay đổi quán tính rất nhỏ này, gia tốc kế trong điện thoại có thể phát hiện thay đổi về chuyển động và hướng. Khả năng này rất hữu ích trong việc chuyển màn hình từ chế độ ngang sang chế độ dọc để chơi trò chơi trên điện thoại và nhiều tiện ích khác.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Bạn có thể nhận thấy gia tốc liên tục ở trục Z, ngay cả khi điện thoại nằm yên trên bàn. Đây là gia tốc chúng ta gặp ở bề mặt trái đất do sức hút của trọng lực, khoảng 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Mặc dù chúng ta hiếm khi chú ý đến điều này nhưng tất cả chúng ta đang sống ở dưới đáy sâu của một đại dương không khí: Khí quyển của Trái đất kéo dài lên phía trên với độ cao khoảng 40 km (130.000 feet). Trọng lượng của toàn bộ lượng khí đó đẩy xuống chúng ta từ bên trên và tạo ra cái gọi là áp suất khí quyển.\n\nỞ mực nước biển, áp suất khí quyển tác dụng một lực khoảng 14 pound (6,35 kg) lên mỗi inch vuông (6,5 cm2), tương đương khoảng 1.300 pound (590 kg) lên một vùng có kích thước bằng tờ giấy thông thường.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Chúng ta không cảm nhận được áp suất nén này vì chúng ta đã quen với nó — tức là, cho đến khi áp suất thay đổi, dù chỉ là một chút, khi chúng ta ở độ cao hoặc ngồi trên máy bay. Áp suất khí quyển cũng thay đổi theo điều kiện thời tiết. Áp suất giảm xuống khi không khí không ổn định hoặc khi trời có bão và tăng lên khi không khí ổn định và bầu trời quang đãng.\n\nKhí áp kế kỹ thuật số trong điện thoại của bạn đo áp suất khí quyển theo hectopascal. (Một hectopascal bằng 100 pascal, trong đó pascal là một newton lực tác dụng lên một mét vuông diện tích). Có thể bạn đã nghe các đài dự báo thời tiết nói đến áp suất khí quyển theo mili bar — đơn vị nghe có vẻ thân thiện hơn này tương đương với hectopascal.\n\nBạn có thể tự hỏi: Tại sao một chiếc điện thoại có khả năng đo áp suất? Áp suất khí quyển thay đổi ở mức có thể đo được ngay cả khi có thay đổi rất nhỏ về độ cao, chẳng hạn khi bạn leo cầu thang. Vì vậy, khí áp kế kỹ thuật số trong một chiếc điện thoại có thể giúp phát hiện thay đổi về địa điểm, chẳng hạn như cho biết bạn đang ở tầng nào của một tòa nhà hoặc bạn đang lái xe ở sàn trên hay sàn dưới của một cây cầu.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Máy ảnh mặt trước đo độ chiếu sáng theo EV (Giá trị phơi sáng) - số đo dựa trên tốc độ màn trập của máy ảnh, số f (khẩu độ) và giá trị ISO. Số đo này được xác định bằng độ sáng của các điểm ảnh đã ghi lại dựa trên các cài đặt này.\n\nGiá trị ghi được càng sáng thì EV càng cao. Độ tối sẽ tạo ra giá trị âm.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Vì Giá trị phơi sáng (EV) là số đo dựa trên quang học và cảm biến của máy ảnh nên phạm vi giá trị bị giới hạn bởi phần cứng và phần mềm. Trong khi cảm biến ánh sáng xung quanh có thể ghi giá trị lux trực tiếp thì máy ảnh mặt trước phải sử dụng số f (khẩu độ), giá trị ISO và tốc độ màn trập để thiết lập giá trị đo cơ bản, sau đó mới xác định EV dựa trên các chỉ số đọc điểm ảnh sau khi chụp ảnh. Với quá trình này, giá trị EV có thể khác nhau giữa các thiết bị nếu ngưỡng số f khác nhau giống như trường hợp giữa iPhone 8 (f1.8) và iPad (f2.4).\n\n Vì EV được xác định bằng cách đo giá trị độ sáng của các điểm ảnh được chụp lại nên các nguồn sáng xung quanh sẽ tạo ra giá trị thấp hơn nhiều giá trị lẽ ra được tạo ra nếu lux được xác định bằng cảm biến hồng ngoại—các số đo này phụ thuộc trực tiếp vào vị trí của máy ảnh và những gì máy ảnh chụp lại.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Có lẽ bạn đã biết rằng Trái Đất có một từ trường. Điều bạn có thể chưa nhận ra đó là điện thoại của bạn có một thiết bị được thiết kế để phát hiện từ trường: đó chính là từ kế. Khi kết hợp dữ liệu từ từ kế của điện thoại với hướng của điện thoại trong không gian, chúng ta có thể tạo ra la bàn số.\n\nLa bàn kiểu cũ là từ kế công nghệ thấp có kim từ quay để tự xoay theo từ trường xung quanh. Bên trong điện thoại của bạn không có chiếc la bàn nhỏ xíu nào mà thay vào đó là cảm biến ba trục nhỏ sử dụng dòng điện để phát hiện cường độ từ trường trong ba chiều của không gian. Nhưng chỉ yếu tố này thì chưa đủ để tạo ra la bàn!\n\nVì sao la bàn cần kết hợp dữ liệu từ từ kế với hướng điện thoại? Khi biết được hướng của điện thoại, chúng ta có thể tính được vòng quay từ trường ngay cả khi không để điện thoại nằm thẳng trên cùng mặt phẳng như từ trường Trái Đất. Chúng ta biết rằng trọng lực vuông góc với từ trường Trái Đất nên có thể sử dụng hướng của trọng lực từ cảm biến gia tốc để xác định cường độ từ trường trong cùng mặt phẳng như từ trường Trái Đất.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Như bạn đã nhận thấy, la bàn không chỉ phản ứng với từ trường Trái Đất mà còn phản ứng với bất kỳ loại từ trường nào xảy ra xung quanh. Nam châm, dòng điện và các vật thể kim loại sẽ dễ dàng dẫn hướng từ kế của điện thoại theo nhiều hướng khác nhau khiến chỉ số trên la bàn thay đổi. Bạn nên đứng trong một khu vực mở — tốt nhất là ở ngoài trời và cách xa đường dây điện — nếu muốn chắc chắn rằng đầu đỏ của la bàn thẳng hàng với từ trường Trái Đất. Điều này giúp di chuyển điện thoại của bạn theo mẫu hình số 8 để hiệu chỉnh từ kế trong điện thoại.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Âm thanh do sự rung động tạo ra. Chẳng hạn, giọng nói của bạn là do các dây thanh âm của cổ họng rung lên. Những rung động này tạo nên các vùng áp lực không khí cao và thấp thay thế di chuyển ra bên ngoài — gần giống với việc mở rộng gợn sóng hình tròn do ném một viên sỏi vào ao.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Tất cả âm thanh đều có thể diễn tả được về mặt tần số và cường độ. \n\nCường độ là chỉ số bạn đo được ở đây bằng cảm biến cường độ âm thanh của Science Journal theo đơn vị deciben (dB). Cường độ hay âm lượng phụ thuộc vào khoảng cách mà vật thể rung di chuyển mỗi lần rung. Chúng ta nghe thấy cường độ lớn hơn khi âm lượng tăng lên. \n\nTần số (còn gọi là cao độ hoặc tông) của sóng âm thanh tương đương với tốc độ rung của nó. Vật thể rung càng nhanh thì cao độ của âm thanh thu được càng cao. Cảm biến cường độ âm thanh của Science Journal không đo tần số mà chỉ đo âm lượng. \n\nMột điều quan trọng cần biết là micrô trong thiết bị của bạn được thiết kế để phản ứng rất nhạy với sự khác biệt về sóng âm theo thời gian chứ không phải theo kích thước tuyệt đối của mỗi sóng âm. Chúng tôi đã thử chọn mã có khả năng tạo ra trị số giống như giá trị tham chiếu minh họa bên dưới nhưng mỗi thiết bị có thể cho kết quả là luôn là giá trị cao hơn hoặc thấp hơn. Thông thường, các nhà khoa học sẽ hiệu chuẩn loại cảm biến như vậy đến giá trị đã xác định. Hiện tại, ứng dụng Science Journal có thể cho bạn biết liệu chuyến đi tàu sắp tới của bạn có âm lượng to hơn buổi hòa nhạc rock sắp tới không nhưng với điều kiện là bạn phải mang cùng một chiếc điện thoại đến cả hai sự kiện này. \n\nMột điều nữa cần biết là “cường độ âm thanh”, “mức cường độ âm thanh” và “áp suất âm thanh” có nhiều điểm khác biệt quan trọng. Ở đây, chúng tôi coi cả ba khái niệm này là một nhưng nếu bạn muốn tìm hiểu sâu hơn thì vẫn có nhiều tài nguyên trực tuyến giải thích về các điểm khác nhau này. \n\nÂm thanh yên tĩnh nhất mà tai của một người bình thường có thể phát hiện được xác định là 0 dB. Một cuộc trò chuyện bình thường tương tứng với khoảng 60 dB và âm thanh trên mức 140 dB sẽ gây đau cho tai người. Tuy nhiên, không chỉ âm thanh gây đau mới là âm thanh có hại. Liên tục tiếp xúc với âm thanh 90 dB (xấp xỉ âm lượng của máy hút bụi) dần dần có thể làm giảm thính lực. \n\nThang đo decibel là thang đo lôgarít nên sẽ có một số điểm phức tạp: Nguồn âm thanh 40 dB không mạnh gấp hai lần nguồn âm thanh 20 dB mà mạnh hơn gấp 100 lần. Trong khi đó, nếu một chiếc đồng hồ báo thức đang reo tạo ra 70 dB thì hai chiếc đồng hồ báo thức đang reo không tạo ra 140 dB mà tạo ra 73 dB. Như chúng tôi đã nói, đây không phải thang đo thông thường. \n\n10 dB tương ứng với tiếng lá rơi xào xạc \n20 dB là tiếng thầm thì cách 5 feet (1,5 mét) \n30 dB là tiếng thì thầm khe khẽ \n50 dB là tiếng mưa rơi \n60 dB là tiếng nói chuyện bình thường \n90 dB là tiếng máy xay sinh tố \n100 dB là tiếng xe hơi không có bộ giảm thanh \n110 dB là tiếng hét vào tai \n120 dB là tiếng sấm \n130 dB là tiếng búa khoan \n140 dB là tiếng máy bay cất cánh";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Các vật thể có xu hướng đứng yên hay tiếp tục chuyển động nếu chúng đang chuyển động—chúng ta gọi xu hướng này là quán tính. Định luật thứ nhất của Newton chính thức thể hiện ý tưởng này như sau: Một vật thể sẽ tiếp tục duy trì trạng thái chuyển động hoặc đứng yên trừ khi có lực không cân bằng tác động lên vật thể đó. \n\nKhi một lực không cân bằng khiến đối tượng chuyển động, chúng ta nói vật thể đó có gia tốc: vận tốc hay tốc độ thay đổi bằng cách tăng tốc, giảm tốc hay đổi hướng. Gia tốc được đo dưới dạng thay đổi vận tốc (m/giây) theo thời gian hoặc mét trên giây bình phương (m/s²).\n\nĐiện thoại của bạn có thiết bị để đo những thay đổi về chuyển động này gọi là gia tốc kế. Bên trong gia tốc kế, các con lắc treo nhỏ chuyển động tự do. Thay đổi về chuyển động khiến những con lắc này thay đổi, gần giống như khi đầu bạn luôn có xu hướng ngả về phía trước khi ngồi trong chiếc xe dừng đột ngột. Khi đo những thay đổi quán tính rất nhỏ này, gia tốc kế trong điện thoại có thể phát hiện thay đổi về chuyển động và hướng. Khả năng này rất hữu ích trong việc chuyển màn hình từ chế độ ngang sang chế độ dọc để chơi trò chơi trên điện thoại và nhiều tiện ích khác.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Cảm biến gia tốc tuyến tính kết hợp ghi lại tổng gia tốc trong tất cả ba trục của điện thoại trừ trọng lực.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Điện thoại có một thiết bị được thiết kế để phát hiện từ trường: đó là từ kế. Cảm biến ba trục rất nhỏ này sử dụng dòng điện để phát hiện cường độ từ trường trong ba chiều của không gian. Khi kết hợp dữ liệu từ tất cả ba trục, chúng ta có thể tạo ra cảm biến cường độ từ trường tổng thể.\n\nMột số từ kế phát hiện từ trường bằng hiệu ứng Hall — các từ trường có xu hướng làm chệch hướng điện tích chuyển động khi điện tích chạy qua. Các từ kế mới hơn dựa vào từ điện trở, hợp kim kim loại thay đổi điện trở để phản hồi từ trường.\n\nVì sao điện thoại cần từ kế? Biết được hướng trong không gian sẽ hữu ích cho la bàn và ứng dụng dẫn đường tích hợp, đặc biệt là những ứng dụng tìm kiếm thông tin để đưa ra hướng dẫn chỉ đường theo từng bước rẽ.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Nam châm, dòng điện và các vật thể kim loại sẽ dễ dàng dẫn hướng từ kế của điện thoại theo nhiều hướng khác nhau. Nhưng ngay cả ở giữa một khu vực trống thì từ kế trong điện thoại của bạn sẽ luôn hiển thị giá trị thấp không bao giờ bằng 0: đó chính là từ trường Trái Đất!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Âm thanh là do sự rung động tạo ra. Chẳng hạn, giọng nói của bạn là do các dây thanh âm của cổ họng rung lên. Những rung động này tạo nên các vùng áp suất không khí cao và thấp xen kẽ di chuyển ra bên ngoài — gần giống với hiện tượng gợn sóng thành những vòng tròn lan rộng khi ném một viên sỏi vào ao.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Tất cả âm thanh đều có thể diễn tả được về mặt tần số và cường độ. Tần số (còn gọi là cao độ hoặc tông) của sóng âm thanh tương đương với tốc độ rung của nó. Vật thể rung càng nhanh thì cao độ của âm thanh thu được càng cao. Chúng tôi đo những rung động này bằng Hertz (Hz) trong đó 1 Hertz = 1 rung động/giây. \n\nCon người có thể nghe âm thanh trong phạm vi từ 20 đến 20.000 Hz. Phím trầm nhất trên đàn dương cầm sinh ra âm thanh có tần số 27,5 Hz và phím bổng nhất sinh ra âm thanh có tần số 4186,01 Hz. \n\nDấu chấm màu đỏ biểu thị cao độ được phát hiện cách nốt nhạc gần nhất bao nhiêu. Nếu cao độ nhỏ hơn/thấp hơn, thì dấu chấm sẽ xuất hiện ở bên trái. Nếu cao độ lớn hơn/cao hơn, thì dấu chấm sẽ xuất hiện ở bên phải.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Dữ liệu hiển thị tại đây đến từ cảm biến bên ngoài giao tiếp với điện thoại thông qua Bluetooth.\n\nGiá trị này cho biết tỷ lệ phần trăm của chỉ số đọc thô ngay từ bộ vi điều khiển. Đây thường là phần trăm sụt áp trên cảm biến.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth là chuẩn công nghệ không dây dùng sóng radio để trao đổi dữ liệu qua khoảng cách ngắn từ thiết bị cố định và thiết bị di động.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Số vòng trên phút (RPM) là đơn vị đo tần suất quay xung quanh một trục cố định trong một phút.\n\nKhi máy quay gió xoay, nó sẽ xoay quanh đĩa bộ mã hóa:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Điều này tạo ra các kỳ sáng tối trên cảm biến đăng ký trong Science Journal dưới dạng chuyển động quay.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Dữ liệu hiển thị ở đây là từ cảm biến bên ngoài giao tiếp với điện thoại thông qua Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth là chuẩn công nghệ không dây dùng sóng radio để trao đổi dữ liệu qua khoảng cách ngắn từ thiết bị cố định và thiết bị di động.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Gia tốc của điện thoại chuyển động trái phải tính theo m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Gia tốc của điện thoại chuyển động tiến lùi theo m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Gia tốc của điện thoại chuyển động lên xuống theo m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Áp suất khí quyển được đo bằng hectopascal (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Một cảm biến bên ngoài đang hiển thị dữ liệu ở đây dựa trên cài đặt tùy chỉnh.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Lượng ánh sáng được đo bằng Giá trị phơi sáng (EV) chiếu đến máy ảnh mặt trước.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Hướng của điện thoại tương ứng với từ trường Trái Đất.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Cường độ âm thanh được đo bằng decibel (dB) nối với cảm biến âm thanh hoặc micrô.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Tổng gia tốc của điện thoại không bao gồm trọng lực theo m/s²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Cường độ trường địa từ của môi trường xung quanh trong Microtesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Cao độ của âm thanh, được đo bằng hertz (Hz), truyền tới cảm biến âm thanh hoặc micrô.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Phần trăm chỉ số đọc thô từ cảm biến bên ngoài.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Số vòng quay trên phút";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Cảm biến thử nghiệm tạo ra sóng hình sin.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Cảm biến tiếp theo trong bản ghi";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Cảm biến trước đó trong bản ghi";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Thô";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Vòng quay";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Không thể sửa đổi cảm biến khi đang ghi dữ liệu";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Bộ khởi động đã bị xóa";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Cảm biến âm thanh và độ sáng dùng micrô và máy ảnh mặt trước và không thể ghi dữ liệu khi Science Journal chạy trong nền. Nếu bạn dùng các cảm biến này trong bản ghi nhưng lại cho ứng dụng chạy trong nền, thì dữ liệu sẽ không được ghi nhận cho đến khi bạn sử dụng lại ứng dụng.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Cảm biến âm thanh và độ sáng dùng micrô và máy ảnh mặt trước và không thể ghi dữ liệu khi Science Journal chạy trong nền.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Ghi chú về cảm biến này";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Không sử dụng được cảm biến độ sáng khi đang xem video hình trong hình hoặc sử dụng ứng dụng Science Journal trong chế độ Split View.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Vôn";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Hãy chọn cảm biến để sử dụng trong thí nghiệm";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Thu gọn danh sách cảm biến";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Mở rộng danh sách cảm biến";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal đã bị tắt";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Science Journal phải do quản trị viên miền của bạn bật trong Bảng điều khiển dành cho quản trị viên của Google.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Chuyển đổi tài khoản";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Dữ liệu ẩn danh và giúp cải tiến ứng dụng này.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Gửi mức sử dụng dữ liệu của ứng dụng đến Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Giấy phép nguồn mở";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Chính sách bảo mật";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Điều khoản dịch vụ";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Phiên bản";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Trang web Science Journal";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Hiển thị tùy chọn";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Đã đăng nhập theo tên %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Mở để quản lý các tài khoản";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Chọn tài khoản";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Menu thanh bên";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Mở menu thanh bên có các tùy chọn ứng dụng";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Đăng nhập";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sóng hình sin";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Đã xóa ghi chú";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Hoàn tác";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Ảnh chụp nhanh";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Thêm ảnh chụp nhanh giá trị của tất cả các cảm biến hiện được quan sát vào thí nghiệm";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Không thể chụp ảnh nhanh do một hoặc nhiều cảm biến đã bị ngắt kết nối. Vui lòng thử lại.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Chi tiết ảnh chụp nhanh";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Đã thêm ảnh chụp nhanh";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Tối thiểu";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Tối đa";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Trung bình";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Chuyển máy ảnh";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Bật";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Tắt";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Không thể cắt các bản ghi xuống thời lượng dưới một giây";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Sử dụng một định dạng hợp lệ, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Thời gian mới (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Thời gian phải nằm trong phạm vi bản ghi";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Chỉnh sửa ghi chú văn bản";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Ghi chú văn bản";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Thêm quan sát";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Đã thêm ghi chú";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Đang tiến hành ghi";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Nhấn đúp để chuyển sang tab quan sát trong ngăn công cụ";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Cài đặt cảm biến";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Vào thí nghiệm";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Vào bản ghi";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Thông báo cho tôi bằng";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Âm thanh";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Chi tiết trình kích hoạt";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Chỉnh sửa trình kích hoạt %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Trình kích hoạt %@ mới";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Trình k.hoạt được k.hoạt";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Rung";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Trình kích hoạt cho";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "khi cảm biến trên mức";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "khi cảm biến ở mức";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "khi cảm biến dưới mức";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "khi cảm biến giảm xuống dưới mức";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "khi cảm biến tăng trên mức";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Đã thêm ghi chú trình kích hoạt";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Ghi chú của bạn phải cho biết điều gì?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Văn bản ghi chú mặc định";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Chỉ khởi động khi ghi";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Thông báo cho tôi";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Loại bộ khởi động";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Ghi chú";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Bắt đầu ghi";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Dừng ghi";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Giá trị bộ khởi động";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Thông báo bằng hình ảnh";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "đã trên mức";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Tại";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "đã dưới mức";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "đã giảm xuống dưới mức";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Giảm xuống dưới mức";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Trên mức";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Dưới mức";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Khởi động khi";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Tăng trên mức";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "đã tăng trên mức";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Ch.sửa trình k.hoạt";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Quá nhiều trình kích hoạt đã hoạt động. Các trình này đã bị tắt.";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Thí nghiệm đã chuyển ra khỏi mục lưu trữ.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Đã chuyển bản ghi ra khỏi thư mục lưu trữ.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Cảm biến không xác định";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Không có tiêu đề";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Sử dụng Science Journal để thực hiện các thí nghiệm về vạn vật xung quanh bạn";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Chúng tôi sẽ thu thập thông tin về phiên bản Science Journal và thiết bị của bạn (chỉ phiên bản iOS và phần cứng, không phải thông tin cá nhân hoặc nhận dạng), rồi gửi thông tin đó vào email để bạn gửi cho chúng tôi.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Chúng tôi muốn nghe ý kiến phản hồi của bạn";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Gửi phản hồi";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Luồng video";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

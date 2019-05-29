@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Jurnal Sains";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Fitur baru dan peningkatan performa:\n• Login ke akun Google Anda untuk menyimpan dan mengakses eksperimen di seluruh perangkat Anda, menggunakan akun Google Drive Anda. Fitur ini akan tersedia bagi semua pengguna dalam beberapa minggu mendatang. Jurnal Sains masih dapat digunakan tanpa login.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Banyak peningkatan performa dan perbaikan bug";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Jurnal Sains dari Google";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Jelajahi Dunia Anda";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Jurnal Sains adalah buku catatan sains digital gratis dari Google.\n\nBaik sebagai pengajar sains maupun sekadar penikmat sains di rumah, Anda bisa menyimpan catatan, foto, dan hasil pengamatan di 1 tempat yang mudah diakses. Gunakan sensor di iPhone atau iPad Anda untuk mengukur dan membuat grafik dari berbagai fenomena seperti cahaya, suara, dan gerakan, atau hubungkan ke sensor eksternal melalui bluetooth untuk melakukan eksperimen di lingkungan sekitar Anda.\n\nDengan aplikasi Jurnal Sains, Anda dapat:\n• Mengukur cahaya, suara, akselerasi, tekanan udara, dan sebagainya menggunakan sensor bawaan perangkat.\n• Membuat catatan dan mengambil foto untuk mendokumentasikan eksperimen sains Anda. Jenis catatan lainnya akan segera tersedia!\n• Terhubung ke sensor eksternal menggunakan perangkat Arduino tertentu yang memiliki kapabilitas Bluetooth.\n• Membuat pemicu otomatis untuk merekam data dan membuat catatan.\n• Menggunakan sonifikasi untuk mendengarkan gerakan grafik Anda.\n\nPemberitahuan izin:\n• Bluetooth: diperlukan untuk mendeteksi perangkat yang memiliki sensor bluetooth.\n• Kamera: diperlukan untuk mengambil gambar saat mendokumentasikan eksperimen dan untuk sensor kecerahan.\n• Galeri Foto: diperlukan untuk menyimpan foto dokumentasi eksperimen dan untuk menambahkan foto yang ada di galeri ke eksperimen.\n• Mikrofon: diperlukan untuk sensor intensitas suara.\n• Notifikasi push: diperlukan untuk memberitahukan status perekaman saat aplikasi berjalan di background.\n\nAktivitas edukatif dari partner kami:\nhttps://makingscience.withgoogle.com/science-journal/activities\nUntuk mendapatkan dukungan: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,sains,pendidikan,stem,eksperimen,sensor,grafik,jurnal,notebook,catatan,dokumentasi,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Akselerometer X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Akselerometer Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Akselerometer Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "Tentang";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Tambahkan teks";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Arsipkan";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Arsipkan eksperimen";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Arsipkan rekaman";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Batal";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "OK";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Hapus";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Hapus eksperimen";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Hapus rekaman";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Hapus gambar";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Hapus ringkasan";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Hapus catatan teks";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Hapus catatan";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Hapus";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Tutup";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Edit";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Masukan";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Sertakan arsip eksperimen";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Waterpas";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "Oke";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Laporkan";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Coba lagi";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Penggaris";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Simpan";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Setelan";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Batalkan pengarsipan";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Batalkan pengarsipan eksperimen";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Batalkan pengarsipan rekaman";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Urungkan";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Lihat detail";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Tambahkan catatan ke linimasa";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Tambahkan catatan baru";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Tambahkan foto";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Tambahkan gambar";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Tambahkan catatan";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Cahaya sekitar";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "lux";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplitudo";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Suhu sekitar";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Diarsipkan";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Eksperimen yang telah diarsipkan tidak dapat diubah, tetapi dapat dihapus";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Eksperimen diarsipkan.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Rekaman diarsipkan.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Perangkat yang Tersedia";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Kembali";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Kembali ke tampilan sebelumnya";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometer";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Jurnal Sains";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Buat pemicu";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Tambahkan kartu sensor baru";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Hapus Perubahan";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Simpan Perubahan";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Simpan";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Hapus";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Eksperimen baru";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Mulai merekam";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Lompat ke waktu sekarang";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Tutup kartu";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Berhenti merekam";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Ambil gambar";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Kamera, Ambil foto untuk ditambahkan ke eksperimen ini";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Anda harus memasukkan nilai numerik yang akan mengaktifkan pemicu ini.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Kontrol pemutaran diagram";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Memindahkan posisi pemutaran diagram dan membaca nilai untuk posisi tersebut";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Diagram live";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Geser ke kiri";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Geser ke kanan";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Digeser";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Diagram";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Perbesar";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Level zoom";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Zoom agar sesuai";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Perkecil";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Pilih foto";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Klaim semua";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Klaim semua";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Tambahkan ke Google Drive";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Tambahkan 1 eksperimen yang tersisa ke Google Drive untuk %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Tambahkan %1$@ eksperimen yang tersisa ke Google Drive untuk %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Klaim semua eksperimen yang tersisa";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Tambahkan semua eksperimen ke Google Drive?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Klaim semua eksperimen?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Tambahkan eksperimen ini ke Google Drive";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Eksperimen tidak dapat diedit dan akan tetap ada di perangkat hingga diklaim atau dihapus";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Menambahkan eksperimen ke Google Drive";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Klaim eksperimen";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Hapus eksperimen ini";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Hapus semua";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Hapus 1 eksperimen yang tersisa?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Hapus %ld eksperimen yang tersisa?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Hapus semua eksperimen yang tersisa";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Hapus semua eksperimen?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Semua eksperimen di perangkat ini, termasuk eksperimen yang diarsipkan, akan dihapus. Anda tidak dapat mengurungkan tindakan ini.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Hapus semua";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Ada %ld eksperimen yang belum diklaim di perangkat ini.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Ada 1 eksperimen yang belum diklaim di perangkat ini.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Bagikan eksperimen yang belum diklaim ini";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Ruang disk tidak cukup untuk mengklaim eksperimen";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Ruang disk tidak cukup untuk mengklaim eksperimen";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Gagal mengklaim eksperimen";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Gagal mengklaim eksperimen";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Klaim eksperimen?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Klaim eksperimen";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Tambahkan eksperimen ini ke Google Drive untuk %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Eksperimen ditambahkan ke %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Klaim eksperimen lama";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Klaim eksperimen";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Tutup";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Kembali ke tampilan sebelumnya";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Kompas";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "derajat";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Konduktor";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Lanjutkan tanpa login";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "akhir crop:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Tidak dapat menyimpan hasil crop:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Pindahkan penanda akhir crop ke kiri";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Pindahkan penanda akhir crop ke kanan";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Pindahkan penanda awal crop ke kiri";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Pindahkan penanda awal crop ke kanan";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Opsi lainnya";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Rekaman di-crop";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Rekaman tidak dapat di-crop di luar rentang awal yang terekam";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Rekaman tidak dapat di-crop menjadi kurang dari 1 detik";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Crop";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "awal crop:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Nilai saat ini";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Intensitas suara";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Eksperimen Tanpa Judul";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Default";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Yakin ingin menghapus eksperimen ini? Semua rekaman dan catatannya akan dihapus.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Hapus eksperimen ini?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Hapus";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Hapus rekaman ini?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Eksperimen dihapus.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Rekaman dihapus.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Detail";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Pin";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frekuensi";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Simpan setelan sensor.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Sensor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Nonaktifkan skala otomatis";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Tap 2 kali untuk mengedit";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Tap 2 kali untuk membuka";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Tap 2 kali untuk memilih";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Tap 2 kali untuk beralih";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Tap 2 kali untuk melihat detail";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Penarik panel samping fitur";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Sesuaikan ukuran panel samping fitur. Tersedia berbagai opsi tindakan.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "ditutup";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "mengedit";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "layar penuh";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "separuh layar";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Tidak dapat terhubung ke Google Drive. Periksa koneksi Anda.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Jaringan terputus";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Jurnal Sains tidak dapat terhubung ke Google Drive. Beberapa eksperimen mungkin tidak dapat di-backup.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Jurnal Sains tidak dapat terhubung ke Google Drive saat ini. Kami akan mencobanya lagi nanti.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google Drive tidak memiliki cukup ruang untuk menyimpan eksperimen Anda.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Data eksperimen untuk Jurnal Sains disimpan dan tersedia di seluruh perangkat menggunakan Google Drive, yang memerlukan login dengan akun Google.\n\nSetelah login, Anda dapat menyimpan eksperimen yang ada ke Google Drive, jika datanya ada di perangkat ini. Eksperimen akan disimpan di folder \"Jurnal Sains\" di Google Drive.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Tidak dapat terhubung ke Google Drive. Periksa koneksi internet Anda.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Edit waktu berakhir";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Edit waktu mulai";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Edit eksperimen";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Ubah judul atau foto eksperimen";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Perubahan belum disimpan";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Anda yakin tidak ingin menyimpan perubahan yang dibuat pada eksperimen ini?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Ubah foto";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Edit eksperimen";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Edit waktu";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Edit waktu catatan";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Edit waktu berakhir rekaman";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Edit waktu mulai rekaman";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Edit rekaman";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Ubah judul rekaman";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Judul rekaman";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Belum ada pengamatan";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Anda tidak memiliki eksperimen";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Tidak ada pemicu yang ditetapkan";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Aktifkan skala otomatis";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Tidak ada eksperimen yang akan ditambahkan ke Drive";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Hapus semua eksperimen";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Semua eksperimen akan ditambahkan ke Google Drive";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Simpan semua eksperimen";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Pilih eksperimen untuk disimpan ke Google Drive";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Pilih eksperimen utk disimpan";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Selamat datang kembali. Saat ini ada %ld eksperimen disimpan di perangkat ini.\n\nUntuk melanjutkan, pilih salah satu opsi:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Selamat datang kembali. Ada 1 eksperimen di perangkat ini.\n\n Untuk lanjut, pilih satu opsi:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Backup ke Google Drive";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Eksperimen";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Eksperimen";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Bagikan eksperimen";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Eksperimen ini belum selesai mendownload data. Jika Anda membagikan salinan, beberapa data mungkin hilang";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Download sedang berlangsung";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Merekam...";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Judul eksperimen";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Eksperimen ini dibuat dengan versi Jurnal Sains yang lebih baru. Agar dapat mengedit eksperimen di perangkat ini, download versi Jurnal Sains terbaru.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Kelola ide dan hasil pengamatan Anda dengan membuat catatan, merekam data, atau mengambil gambar";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Buat eksperimen baru";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Jelajahi dunia Anda";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Bagikan";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Ekspor gagal.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Kirim Eksperimen";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Waktu relatif";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Mengekspor…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Bagikan foto dengan...";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Selamat Datang di Jurnal Sains";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Cobalah mencatat dan merekam data menggunakan toolbar di bawah ini!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Selamat Datang di Jurnal Sains!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Temukan aktivitas untuk dicoba di\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Lupakan perangkat ini";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Layar penuh";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Mulai";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Aktifkan audio";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Nonaktifkan audio";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Apa yang Sedang Terjadi?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Sayangnya, terjadi error yang tidak dikenal.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Gagal mengimpor. Ada masalah dengan eksperimen ini.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Jurnal Sains sedang digunakan. Harap berhenti merekam dan coba lagi.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Login untuk mengimpor eksperimen.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Ruang penyimpanan tidak cukup";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Anda dapat mengelola penyimpanan di setelan.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Tampilkan arsip rekaman";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Buka Setelan";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Kamera tidak dapat digunakan karena Anda merekam dengan sensor kecerahan, yang mengukur data melalui kamera depan.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Kamera tidak dapat digunakan karena Anda sedang menonton video picture-in-picture, atau menggunakan Jurnal Sains dalam mode Layar Terpisah.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Lihat sensor";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Kamera tidak dapat digunakan karena Jurnal Sains tidak memiliki izin untuk mengaksesnya.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Galeri foto tidak dapat digunakan karena Jurnal Sains tidak memiliki izin untuk mengaksesnya.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Pelajari lebih lanjut";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Pelajari lebih lanjut";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Akselerometer linier";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Peningkatan performa dan perbaikan bug.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Fitur baru:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Sensor pitch suara.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Ekspor eksperimen ke file, lalu impor ke perangkat lain.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Ekspor foto dari eksperimen.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Lihat catatan lainnya";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometer";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Menu";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Menampilkan menu dengan lebih banyak opsi";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Setelan audio";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Edit pemicu";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Tetapkan pemicu";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Perangkat Saya";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Beri nama eksperimen ini";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Aktivitas";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Eksperimen";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Setelan";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Tambahkan deskripsi";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Deskripsi";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Catatan gambar";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Catatan teks";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Catatan pemicu";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Catatan ringkasan";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Catatan";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Catatan ditambahkan";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Catatan, Tambahkan catatan teks ke eksperimen ini";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Amati, Gunakan sensor untuk menambahkan snapshot atau rekaman nilai ke eksperimen ini";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Tidak dapat membuka eksperimen";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Tidak dapat membuka file";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Eksperimen harus dalam format file Jurnal Sains (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Jeda";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Persen";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "Selesai! Kami telah memeriksa izin. Jika ingin mengubah izin ini di lain waktu, Anda bisa melakukannya kapan saja di bagian Jurnal Sains pada aplikasi Setelan iOS.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Kami akan memeriksa izin untuk mengakses kamera. Kamera depan digunakan untuk mengaktifkan sensor kecerahan, dan Anda dapat menggunakan salah satu kamera untuk menambahkan catatan foto ke eksperimen dan rekaman.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Lanjutkan";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Kami akan mulai dengan memeriksa izin agar dapat mengaktifkan sensor hardware, kamera, dan galeri foto Anda. Kami akan menjelaskan penggunaan setiap fitur ini sebelum memberikan pengarahan kepada Anda.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "Selanjutnya, kami akan memeriksa izin untuk mengakses mikrofon. Mikrofon digunakan untuk sensor audio. Isi audionya tidak akan direkam, disimpan, atau disebarkan. Kami hanya mengukur intensitas atau pitch suaranya.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Pertama-tama, kami akan memeriksa izin untuk mengirimkan notifikasi push. Notifikasi hanya akan dikirim untuk memberitahukan saat rekaman hampir berakhir, jika aplikasi Jurnal Sains berjalan di background saat perekaman.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Terakhir, kami akan memeriksa izin untuk mengakses galeri foto, agar Anda dapat menambahkan foto yang ada ke eksperimen dan rekaman, dan agar kami dapat menyimpan foto yang Anda kembalikan ke galeri foto.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Ayo mulai";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Selesai!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Periksa izin";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Selamat Datang di Jurnal Sains!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Foto untuk";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Foto";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Ruang disk tidak cukup untuk ditambahi foto";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Sensor internal";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Galeri Foto, Tambahkan foto dari galeri Anda ke eksperimen ini";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Info";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Perangkat";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Dimensi";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Catatan";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Kecepatan shutter";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Gambar ditambahkan";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Pitch";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ setengah nada lebih rendah daripada %2$@ mol, oktaf %3$@";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ setengah nada lebih rendah daripada %2$@, oktaf %3$@";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ setengah nada lebih rendah daripada %2$@ kres, oktaf %3$@";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@ mol, oktaf %2$@";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "pitch tinggi";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "pitch rendah";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, oktaf %2$@";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@ kres, oktaf %2$@";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ setengah nada lebih tinggi daripada %2$@ mol, oktaf %3$@";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ setengah nada lebih tinggi daripada %2$@, oktaf %3$@";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ setengah nada lebih tinggi daripada %2$@ kres, oktaf %3$@";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Piksel";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Putar";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Setelan perangkat yang ada telah diterapkan pada akun ini";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Memuat ulang";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Tidak dapat mulai merekam";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Satu atau beberapa sensor terputus. Coba lagi.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Buka Jurnal Sains untuk melihat data rekaman Anda.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Rekaman berakhir.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Lanjutkan";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Batalkan rekaman";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Satu atau beberapa sensor tidak merekam data apa pun. Ingin membatalkan rekaman ini?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Data tidak direkam";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Rekaman terhenti";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Buka Jurnal Sains untuk melanjutkan merekam.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Rekaman akan segera berakhir.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Lanjutkan merekam";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Berhenti merekam";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Hapus gambar sampul";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Menghapus gambar sampul untuk eksperimen ini.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Yakin ingin menghapus gambar sampul? Tindakan ini tidak dapat diurungkan.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Gambar sampul telah dihapus.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Tidak dapat menghapus gambar sampul.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Rekaman ditambahkan";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Rekaman";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Ganti nama rekaman ini";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Yakin ingin menghapus rekaman ini? Data dan catatan yang direkam akan dihapus.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Durasi";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Peninjauan";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Simpan";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Simpan perubahan dan kembali ke tampilan sebelumnya";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Simpan eksperimen";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Tambahkan eksperimen ini ke koleksi Anda?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Simpan ke File";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Menampilkan browser dokumen, sehingga Anda dapat menyimpan salinan file ini ke folder di perangkat yang dimiliki.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "File disimpan";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "File disimpan";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Tidak dapat menyimpan file. Coba lagi.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Tidak dapat menyimpan beberapa file. Coba lagi.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Skala";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Pilih stempel waktu catatan pada diagram";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Kirim salinan";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Setelan";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Kecerahan";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Sensor kecerahan tidak dapat digunakan karena Jurnal Sains tidak memiliki izin untuk mengakses kamera Anda.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Gagal memuat data sensor";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Memuat data sensor...";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Sensor audio tidak dapat digunakan karena Jurnal Sains tidak memiliki izin untuk mengakses mikrofon Anda.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Khusus";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Benda memiliki kecenderungan untuk tetap diam, atau tetap bergerak jika sedang bergerak—kecenderungan ini disebut kelembaman (inersia). Hukum Pertama Newton menyatakan gagasan ini secara formal: Benda akan mempertahankan keadaan bergerak atau diamnya kecuali jika dipengaruhi oleh gaya yang tidak seimbang.\n\nJika gaya yang tidak seimbang menyebabkan benda bergerak, benda tersebut dikatakan mengalami percepatan: velositas atau kecepatannya berubah—entah itu semakin cepat, semakin lambat, atau berubah arah. Percepatan diukur sebagai perubahan kecepatan (meter per detik) dalam waktu, atau meter per detik kuadrat (m/s²).\n\nPonsel Anda dilengkapi alat untuk mengukur perubahan gerak ini, yaitu akselerometer. Di dalam akselerometer, terdapat sejumlah massa kecil dan tergantung yang bebas bergerak. Perubahan gerak menyebabkan massa ini berpindah, sebagaimana kepala kita cenderung tersentak ke depan saat mobil yang kita naiki berhenti mendadak. Dengan mengukur perpindahan samar akibat kelembaman ini, akselerometer dalam ponsel dapat mendeteksi perubahan gerak dan arah. Hal ini berguna untuk mengubah orientasi layar dari mode lanskap ke potret, untuk bermain game di ponsel, dan banyak lagi.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Anda mungkin melihat percepatan terus-menerus dalam sumbu Z, bahkan saat ponsel diam di atas meja. Ini adalah percepatan yang kita alami di permukaan Bumi akibat gravitasi, yaitu sekitar 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Meskipun jarang disadari, kita semua hidup di dasar samudra udara: atmosfer Bumi, yang membentang ke atas hingga ketinggian 40 kilometer (130.000 kaki). Berat udara yang menekan dari atas ke bawah menciptakan apa yang disebut tekanan atmosfer.\n\nDi permukaan air laut, tekanan atmosfer melepaskan gaya sebesar 14 pound per inci persegi—yang setara dengan sekitar 1.300 pound pada area seluas selembar kertas standar.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Kita tidak menyadari tekanan yang sangat besar ini karena sudah terbiasa—namun akan terasa saat tekanan berubah meski sedikit, seperti ketika kita pergi ke dataran tinggi atau naik pesawat terbang. Tekanan atmosfer juga berbeda-beda menurut kondisi cuaca. Tekanan dapat turun ketika badai dan udara tidak stabil, lalu naik ketika udara stabil dan langit cerah.\n\nBarometer digital di ponsel Anda mengukur tekanan atmosfer dalam satuan hektopascal. (1 hektopascal sama dengan 100 pascal; 1 pascal sama dengan gaya sebesar 1 newton yang diterapkan pada area seluas 1 meter persegi). Anda mungkin pernah mendengar peramal cuaca menyebutkan tekanan atmosfer dalam satuan milibar—satuan yang terdengar lebih umum ini setara dengan hektopascal.\n\nAnda mungkin bertanya-tanya: Mengapa ponsel mengukur tekanan? Tekanan atmosfer berubah secara signifikan bahkan dengan sedikit perubahan ketinggian, seperti ketika Anda menaiki tangga. Jadi, barometer digital dalam ponsel dapat membantu mendeteksi perubahan lokasi, misalnya, memberitahukan di lantai gedung berapa Anda berada, atau apakah Anda sedang mengemudi di dek atas atau dek bawah jembatan.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Kamera depan mengukur luminasi dalam satuan EV (Exposure Value/Nilai Paparan), suatu pengukuran yang didasarkan pada kecepatan shutter, f-number, dan nilai ISO kamera, serta ditentukan oleh kecerahan piksel yang direkam dengan mempertimbangkan setelan ini.\n\nSemakin cerah objek yang ditangkap, semakin tinggi EV-nya. Kegelapan akan memberikan nilai negatif.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Karena EV merupakan pengukuran yang didasarkan pada optik dan sensor kamera, rentang nilainya dibatasi oleh hardware dan software. Sementara sensor cahaya sekitar dapat merekam lux secara langsung, kamera depan harus menggunakan f-number, nilai ISO, dan kecepatan shutter-nya untuk menetapkan data awal pengukuran, kemudian menentukan EV berdasarkan pembacaan piksel setelah objek dipotret. Karena adanya proses ini, nilai EV antar-perangkat dapat berbeda jika ambang f-number perangkat tersebut berbeda, seperti pada kasus antara iPhone 8 (f1.8) dan iPad (f2.4).\n\nKarena EV ditentukan dengan mengukur nilai kecerahan dari piksel yang ditangkap, sumber cahaya sekitar akan memberikan nilai yang jauh lebih rendah dibandingkan jika lux ditentukan dengan sensor inframerah—pengukuran bergantung langsung pada posisi kamera dan objek yang dipotret.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Anda mungkin sudah tahu bahwa Bumi adalah medan magnet. Hal yang mungkin belum Anda ketahui adalah bahwa ponsel Anda memiliki perangkat yang didesain untuk mendeteksi medan magnet: magnetometer. Dengan menggabungkan data dari magnetometer ponsel dengan orientasi ponsel di mana saja, kita dapat membuat kompas digital.\n\nKompas model lama adalah magnetometer berteknologi sederhana, dengan jarum bermagnet yang menyesuaikan posisinya dengan medan magnet di sekitar. Ponsel tidak memiliki kompas kecil seperti ini, tetapi memiliki sensor 3 sumbu kecil yang menggunakan arus listrik untuk mendeteksi kekuatan medan magnet dalam 3 dimensi ruang. Namun ini saja belum cukup untuk membuat kompas!\n\nMengapa kompas perlu menggabungkan data dari magnetometer dengan orientasi ponsel? Dengan mengetahui orientasi ponsel, kita dapat menghitung rotasi magnetis walaupun ponsel tidak berada dalam posisi sejajar dengan medan magnet Bumi. Kita tahu bahwa gravitasi tegak lurus terhadap medan magnet Bumi, jadi kita bisa menggunakan arah gravitasi dari sensor akselerometer untuk menentukan seberapa besar medan magnet yang terdeteksi dalam bidang yang sama dengan medan magnet Bumi.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Seperti yang mungkin telah Anda ketahui, kompas bereaksi bukan hanya terhadap medan magnet Bumi saja, melainkan juga terhadap setiap medan magnet yang berada di sekitarnya. Magnet, arus listrik, dan benda logam akan dengan mudah mengubah arah magnetometer ponsel Anda, sehingga menyebabkan perubahan pada bacaan kompas. Berdirilah di area terbuka, sebaiknya di luar ruangan dan jauh dari kabel listrik, untuk memastikan bahwa ujung jarum merah pada kompas Anda sejajar dengan medan magnet Bumi. Sebaiknya gerakkan ponsel Anda dalam pola angka 8 untuk mengkalibrasi magnetometer dalam ponsel tersebut.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Suara ditimbulkan oleh getaran. Suara Anda, misalnya, berasal dari getaran dalam pita suara di tenggorokan. Getaran ini menciptakan zona-zona bertekanan udara tinggi dan rendah yang saling bergantian dan merambat ke luar. Mirip riak air melingkar yang disebabkan oleh batu yang dilempar ke kolam.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Semua suara dapat dijelaskan menurut frekuensi dan intensitasnya.\n\nIntensitas adalah yang Anda ukur di sini dengan sensor intensitas suara Jurnal Sains, dalam satuan desibel (dB). Intensitas, atau kenyaringan, bergantung pada jarak yang dijangkau benda bergetar saat bergetar. Peningkatan intensitas kita dengar sebagai peningkatan kenyaringan.\n\nFrekuensi (disebut juga pitch atau nada) gelombang suara berbanding lurus dengan laju getarannya. Semakin cepat benda bergetar, semakin tinggi pitch suara yang dihasilkannya. Sensor intensitas suara Jurnal Sains tidak mengukur frekuensi—hanya kenyaringan.\n\nSatu hal yang penting untuk diketahui adalah bahwa mikrofon di perangkat Anda dirancang agar sangat sensitif terhadap perbedaan gelombang suara dari waktu ke waktu, tetapi tidak terhadap ukuran absolut setiap gelombang. Kami telah mencoba memilih kode yang kemungkinan akan memberikan angka yang mirip dengan angka acuan yang ditampilkan di bawah. Namun, setiap perangkat bisa memberikan angka yang secara konsisten lebih tinggi atau lebih rendah. Para ilmuwan biasanya akan mengkalibrasi sensor seperti ini ke sebuah ukuran yang diketahui. Untuk sementara, Jurnal Sains dapat memberi tahu apakah suara kereta api yang Anda naiki lebih bising daripada konser musik rock yang Anda hadiri, tetapi itu hanya jika Anda menggunakan ponsel yang sama untuk mengukur kedua peristiwa tersebut.\n\nHal lain yang perlu diketahui adalah bahwa ada perbedaan penting antara “intensitas suara”, “tingkat intensitas suara”, dan “tekanan suara”. Kita memperlakukan ketiganya di sini sebagai hal yang sama. Namun, jika Anda ingin mempelajarinya lebih dalam, ada banyak referensi online mengenai perbedaan ketiganya.\n\nSuara terendah yang dapat dideteksi oleh telinga manusia ditetapkan sebesar 0 dB. Percakapan biasa memiliki intensitas kurang lebih 60 dB, dan suara dengan intensitas di atas sekitar 140 dB akan terasa menyakitkan di telinga manusia. Namun, suara yang berbahaya tidak selalu menyakitkan. Paparan terus-menerus pada suara sebesar 90 dB—kurang lebih sama dengan kenyaringan mesin pengisap debu—pada akhirnya bisa menyebabkan hilangnya pendengaran. \n\nSkala desibel bersifat logaritmis, sehingga pemahamannya sedikit rumit: Intensitas sumber suara sebesar 40 dB tidak sama dengan 2 kali intensitas suara 20 dB—melainkan 100 kali lebih kuat. Sementara itu, jika dering 1 jam alarm menghasilkan 70 dB, maka dering 2 jam alarm tidak menghasilkan 140 dB, melainkan 73 dB. Seperti disebutkan tadi, skala ini memang aneh.\n\n10 dB setara dengan suara gemersik dedaunan\n20 dB setara dengan suara berbisik dari jarak 1,5 m\n30 dB  setara dengan suara bisikan lembut\n50 dB setara dengan suara hujan\n60 dB setara dengan suara percakapan normal\n90 dB setara dengan suara mesin blender\n100 dB setara dengan suara mobil tanpa peredam knalpot\n110 dB setara dengan suara teriakan di dekat telinga\n120 dB setara dengan suara petir\n130 dB setara dengan suara mesin bobok beton (jackhammer)\n140 dB setara dengan suara pesawat lepas landas";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Benda memiliki kecenderungan untuk tetap diam, atau tetap bergerak jika sedang bergerak—kecenderungan ini disebut kelembaman (inersia). Hukum Pertama Newton menyatakan gagasan ini secara formal: Benda akan mempertahankan keadaan bergerak atau diamnya kecuali jika dipengaruhi oleh gaya yang tidak seimbang.\n\nJika gaya yang tidak seimbang menyebabkan benda bergerak, benda tersebut dikatakan mengalami percepatan: velositas, atau kecepatannya, berubah—baik semakin cepat, semakin lambat, atau berubah arah. Percepatan diukur sebagai perubahan kecepatan (meter per detik) dalam waktu, atau meter per detik kuadrat (m/s²).\n\nPonsel Anda dilengkapi alat untuk mengukur perubahan gerak ini, yaitu akselerometer. Di dalam akselerometer, terdapat sejumlah massa kecil dan tergantung yang bebas bergerak. Perubahan gerak menyebabkan massa ini berpindah, sebagaimana kepala kita cenderung tersentak ke depan saat mobil yang kita naiki berhenti mendadak. Dengan mengukur perpindahan samar akibat kelembaman ini, akselerometer dalam ponsel dapat mendeteksi perubahan gerak dan arah. Hal ini berguna untuk mengubah orientasi layar dari mode lanskap ke potret, untuk bermain game di ponsel, dan banyak lagi.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Sensor akselerometer linier gabungan mencatat akselerasi total di ketiga sumbu ponsel, tidak termasuk gravitasi.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Ponsel Anda memiliki perangkat yang didesain untuk mendeteksi medan magnet: magnetometer. Ini adalah sensor kecil 3 sumbu yang menggunakan arus listrik untuk mendeteksi kekuatan medan magnet dalam 3 dimensi ruang. Dengan menggabungkan data dari ke-3 sumbu, kita dapat membuat sensor kekuatan medan magnet total.\n\nBeberapa magnetometer mendeteksi medan magnet menggunakan efek Hall, yaitu kecenderungan medan magnet untuk membelokkan muatan bergerak saat muatan tersebut mengalir. Magnetometer yang baru mengandalkan magnetoresistor, yaitu logam alloy yang mengubah resistansinya sebagai respons terhadap medan magnet.\n\nMengapa ponsel memerlukan magnetometer? Mengetahui orientasi arah adalah hal yang bermanfaat pada aplikasi kompas dan navigasi bawaan, terutama untuk aplikasi yang menyediakan fitur petunjuk arah.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magnet, arus listrik, dan benda logam akan dengan mudah mengubah arah magnetometer ponsel Anda. Bahkan di tengah lapangan kosong, magnetometer di ponsel Anda akan selalu menunjukkan bacaan rendah dan bukan nol: ini adalah medan magnet bumi!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Suara ditimbulkan oleh getaran. Suara Anda, misalnya, berasal dari getaran dalam pita suara di tenggorokan. Getaran ini menciptakan zona-zona bertekanan udara tinggi dan rendah yang saling bergantian dan merambat ke luar. Mirip riak air melingkar yang disebabkan oleh batu yang dilempar ke kolam.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Semua suara dapat dijelaskan menurut frekuensi dan intensitasnya. Frekuensi (disebut juga pitch atau nada) gelombang suara berbanding lurus dengan laju getarannya. Semakin cepat benda bergetar, semakin tinggi pitch suara yang dihasilkannya. Kita mengukur getaran ini dalam Hertz (Hz); 1 Hertz = 1 getaran/detik.\n\nManusia dapat mendengar suara dalam rentang 20 hingga 20.000 Hz. Kunci terendah piano menghasilkan suara dengan frekuensi sebesar 27,5 Hz dan kunci tertingginya menghasilkan suara dengan frekuensi sebesar 4186,01 Hz.\n\nTitik merah menunjukkan seberapa dekat pitch yang terdeteksi dengan not musik terdekat. Jika pitch lebih rendah atau “flatter”, titik ini akan muncul di sebelah kiri. Jika pitch lebih tinggi atau “sharper”, titik ini akan muncul di sebelah kanan.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Data yang ditampilkan di sini berasal dari komunikasi sensor eksternal dengan ponsel Anda melalui Bluetooth.\n\nNilai ini menampilkan persentase data mentah langsung dari pengontrol mikro Anda. Nilai tersebut biasanya merupakan persentase penurunan tegangan pada sensor.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth adalah standar teknologi nirkabel yang menggunakan gelombang radio untuk bertukar data melalui jarak pendek dari perangkat tetap dan seluler.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Rotasi per menit (RPM) adalah ukuran frekuensi putaran pada sumbu tetap dalam 1 menit.\n\nPemutar angin yang berputar akan memutar disk encoder:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Sensor ini menciptakan periode terang dan gelap pada sensor yang tercatat dalam Jurnal Sains sebagai rotasi.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Data yang ditampilkan di sini berasal dari komunikasi sensor eksternal dengan ponsel Anda melalui Bluetooth.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth adalah standar teknologi nirkabel yang menggunakan gelombang radio untuk bertukar data melalui jarak pendek dari perangkat tetap dan seluler.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Percepatan gerakan ponsel ke kiri dan kanan, dalam m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Percepatan gerakan ponsel ke depan dan belakang, dalam m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Percepatan gerakan ponsel ke atas dan bawah, dalam m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Tekanan atmosfer diukur dalam hectopascal (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Sensor eksternal menampilkan datanya di sini, berdasarkan setelan khusus.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Banyaknya cahaya, yang diukur dalam satuan EV, yang mencapai kamera depan.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Orientasi ponsel relatif terhadap medan magnet Bumi.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Intensitas suara, diukur dalam desibel (dB), yang mencapai sensor suara atau mikrofon.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Total akselerasi ponsel, tidak termasuk gaya gravitasi, dalam m/dtk²";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Kekuatan medan geomagnetik sekitar dalam Mikrotesla.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Pitch suara, diukur dalam hertz (Hz), yang mencapai sensor suara atau mikrofon.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Persentase data mentah dari sensor eksternal.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Jumlah rotasi per menit";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Sensor uji yang menghasilkan gelombang sinus.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Sensor berikutnya pada rekaman";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Sensor sebelumnya pada rekaman";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Mentah";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Rotasi";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Tidak dapat mengubah sensor saat merekam";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Pemicu dihapus";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Sensor audio dan kecerahan menggunakan mikrofon dan kamera depan, yang tidak dapat merekam saat Jurnal Sains berada di background. Jika Anda menggunakan sensor ini saat merekam dan aplikasi berjalan di background, data tidak akan direkam sampai aplikasi kembali ke layar.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Sensor audio dan kecerahan menggunakan mikrofon dan kamera depan, yang tidak dapat merekam saat Jurnal Sains berada di background.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Catatan tentang sensor ini";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Sensor kecerahan tidak dapat digunakan saat Anda menonton video picture-in-picture, atau menggunakan Jurnal Sains dalam mode Layar Terpisah.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Tegangan";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Pilih sensor yang akan digunakan dalam eksperimen";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Ciutkan daftar sensor";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Luaskan daftar sensor";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Jurnal Sains dinonaktifkan";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Jurnal Sains harus diaktifkan di konsol Google Admin oleh administrator domain Anda.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Beralih akun";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Data bersifat anonim dan membantu meningkatkan kualitas aplikasi ini.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Kirim penggunaan data aplikasi ke Google";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Lisensi open source";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Kebijakan privasi";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Persyaratan layanan";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Versi";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Situs Jurnal Sains";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Tampilkan opsi";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Login sebagai %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Buka untuk mengelola akun";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Pilih akun";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Menu kolom samping";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Membuka menu kolom samping yang berisi berbagai opsi aplikasi";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Login";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Gelombang sinus";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Catatan dihapus";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Urungkan";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Snapshot";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "Menambahkan snapshot nilai dari semua sensor yang saat ini diamati ke eksperimen";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Tidak dapat menambahkan snapshot karena 1 atau beberapa sensor tidak terhubung. Coba lagi.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Detail ringkasan";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Snapshot ditambahkan";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimum";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maksimum";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Rata-rata";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Ganti kamera";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Aktif";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Nonaktif";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Rekaman tidak dapat di-crop menjadi kurang dari 1 detik";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Gunakan format yang valid, yakni h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Waktu baru (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Stempel waktu harus berada dalam rentang waktu rekaman";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Edit catatan teks";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Catatan teks";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Tambahkan pengamatan";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Catatan ditambahkan";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Perekaman sedang berlangsung";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Tap 2 kali untuk beralih ke tab Amati di panel samping fitur";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Setelan sensor";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "Ke eksperimen";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "Ke rekaman";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Peringatkan saya menggunakan";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Suara";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Detail pemicu";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Edit pemicu %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Pemicu %@ yang baru";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Pemicu diaktifkan";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Getaran";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Pemicu untuk";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "saat nilai sensor di atas";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "saat nilainya di";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "saat nilai sensor di bawah";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "saat nilainya turun di bawah";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "saat nilainya naik di atas";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Catatan pemicu ditambahkan";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Apa yang akan dikatakan oleh catatan?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Teks catatan default";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Memicu hanya saat merekam";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Peringatkan saya";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Jenis pemicu";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Buat catatan";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Mulai merekam";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Berhenti merekam";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Nilai pemicu";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Pemberitahuan visual";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "di atas";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Pada";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "di bawah";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "turun di bawah";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Jatuh di bawah";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Di atas";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Di bawah";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Memicu saat";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Melonjak di atas";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "naik di atas";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Edit Pemicu";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Terlalu banyak pemicuan, pemicu telah dinonaktifkan";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Eksperimen dikeluarkan dari arsip.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Rekaman dikeluarkan dari arsip.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Sensor tidak dikenal";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Tanpa judul";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Gunakan Jurnal Sains untuk membuat eksperimen tentang lingkungan di sekitar Anda";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Kami memerlukan info versi Jurnal Sains dan perangkat (hardware serta versi iOS saja, tanpa informasi pribadi atau identitas), yang bisa Anda lampirkan ke email dan kirimkan kepada kami.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Kami ingin tahu pendapat Anda";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Kirim masukan";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Streaming video";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

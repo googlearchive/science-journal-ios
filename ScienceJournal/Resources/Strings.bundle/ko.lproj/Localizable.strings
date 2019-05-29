@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "과학 저널";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "새로운 기능 및 개선사항:\n• Google 계정에 로그인하여 Google 드라이브 계정으로 모든 기기에서 실험을 저장하고 액세스할 수 있습니다. 몇 주 내에 이 기능이 모든 사용자에게 제공될 예정입니다. 로그인하지 않아도 계속 과학 저널을 이용할 수 있습니다.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "다양한 성능 개선 및 버그 수정";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Google 과학 저널";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "내 주변 세상 탐색하기";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "과학 저널은 Google이 제공하는 무료 디지털 과학 노트입니다.\n\n과학 교사 또는 과학을 취미로 하는 여러분들이 메모, 사진, 관찰 자료를 한 곳에서 편리하게 관리할 수 있는 도구입니다. iPhone 또는 iPad의 센서로 빛, 소리, 움직임 등의 현상을 측정하여 그래프화하거나 블루투스를 통해 외부 센서에 연결하여 자유롭게 실험해 보세요.\n\n과학 저널 앱의 기능은 다음과 같습니다.\n• 기기에 내장된 센서를 사용하여 빛, 소리, 가속도, 기압 등을 측정합니다.\n• 메모와 사진으로 과학 실험을 기록합니다. 더 많은 메모 유형이 곧 제공됩니다.\n• 블루투스를 지원하는 Arduino 기기를 통해 외부 센서에 연결합니다.\n• 데이터를 기록하고 메모를 기재하는 자동 트리거를 만듭니다.\n• 청각화 기능으로 그래프의 움직임을 소리로 듣습니다.\n\n필수 접근권한 안내:\n• 블루투스: 블루투스 센서 기기를 검색하는 데 필요합니다.\n• 카메라: 실험을 기록하는 사진 찍기 및 밝기 센서에 필요합니다.\n• 사진 라이브러리: 실험을 기록할 목적으로 찍은 사진을 저장하고 라이브러리의 기존 사진을 실험에 추가하는 데 필요합니다.\n• 마이크: 음량 센서에 필요합니다.\n• 푸시 알림: 앱이 백그라운드 상태일 때 기록 상태를 알리는 데 필요합니다.\n\n파트너 제공 교육 활동:\nhttps://makingscience.withgoogle.com/science-journal/activities\n지원: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,과학,교육,stem,실험,센서,그래프,저널,메모장,메모,문서,ngss";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "가속도계 X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "가속도계 Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "가속도계 Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "정보";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "설명 추가";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "보관처리";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "실험 보관처리";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "기록 보관처리";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "취소";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "확인";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "삭제";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "실험 삭제";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "기록 삭제";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "사진 삭제";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "스냅샷 삭제";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "텍스트 메모 삭제";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "메모 삭제";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "삭제";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "닫기";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "수정";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "의견 보내기";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "보관처리된 실험 포함";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "수평기";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "확인";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "신고";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "다시 시도";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "눈금자";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "저장";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "설정";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "보관 취소";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "실험 보관 취소";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "기록 보관 취소";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "실행취소";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "세부정보 보기";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "타임라인에 메모 추가";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "새 메모 추가";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "사진 추가";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "사진 추가";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "메모 추가";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "주변광";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "럭스";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "진폭";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "주변 온도";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "보관됨";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "보관된 실험은 수정할 수 없지만 삭제는 가능합니다.";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "실험을 보관처리했습니다.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "기록을 보관처리했습니다.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "사용 가능한 기기";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "뒤로";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "이전 보기로 돌아가기";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "기압계";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "과학 저널";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "EV";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "트리거 만들기";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "새 센서 카드 추가";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "변경 취소";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "변경사항 저장";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "유지";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "삭제";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "새 실험";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "기록 시작";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "현재 시간으로 건너뛰기";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "카드 닫기";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "기록 중지";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "사진 찍기";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "카메라, 이 실험에 추가할 사진을 촬영합니다.";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "이 트리거가 작동할 숫자 값을 입력해야 합니다.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "차트 재생 컨트롤";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "차트의 재생 위치를 이동하고 해당 위치의 값을 읽습니다.";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "실시간 차트";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "좌측으로 이동";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "우측으로 이동";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "이동됨";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "차트";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "확대";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "확대/축소 수준";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "크기에 맞게 확대/축소";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "축소";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "사진 선택";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "모두 소유권 주장";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "모두 소유권 주장";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Google 드라이브에 추가";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "%@님의 Google 드라이브에 남은 실험 1개를 추가하시겠습니까?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "%2$@님의 Google 드라이브에 남은 실험 %1$@개를 추가하시겠습니까?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "남아 있는 모든 실험의 소유권 주장";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Google 드라이브에 모든 실험을 추가할까요?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "모든 실험의 소유권을 주장할까요?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "이 실험을 Google 드라이브에 추가";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "실험의 소유권이 주장되거나 실험이 삭제될 때까지 실험을 수정할 수 없으며 기기에 남아 있습니다.";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Google 드라이브에 실험 추가";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "실험 소유권 주장";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "실험 삭제";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "모두 삭제";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "남은 실험 1개를 삭제하시겠습니까?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "남은 실험 %ld개를 삭제하시겠습니까?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "남아 있는 모든 실험 삭제";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "모든 실험을 삭제하시겠습니까?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "보관처리한 실험을 포함한 모든 실험이 이 기기에서 삭제됩니다. 이 작업은 실행취소할 수 없습니다.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "모두 삭제";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "이 기기에 소유권을 주장하지 않은 실험이 %ld개 있습니다.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "이 기기에 소유권을 주장하지 않은 실험이 1개 있습니다.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "소유권이 주장되지 않은 실험 공유";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "실험 소유권을 주장하기에 디스크 공간이 충분하지 않습니다.";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "실험 소유권을 주장하기에 디스크 공간이 충분하지 않습니다.";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "실험 소유권을 주장할 수 없습니다.";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "실험 소유권을 주장할 수 없습니다.";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "실험의 소유권을 주장할까요?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "실험 소유권 주장";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "%@님의 Google 드라이브에 이 실험을 추가할까요?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "%@님에게 실험이 추가되었습니다.";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "이전 실험 소유권 주장";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "실험 소유권 주장";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "닫기";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "이전 보기로 돌아가기";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "나침반";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "각도";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "도체";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "로그인하지 않고 계속 진행";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "자르기 끝:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "자르기 저장 실패:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "자르기 끝 마커를 왼쪽으로 이동";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "자르기 끝 마커를 오른쪽으로 이동";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "자르기 시작 마커를 왼쪽으로 이동";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "자르기 시작 마커를 오른쪽으로 이동";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "옵션 더보기";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "기록을 잘라냈습니다.";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "처음에 기록한 범위를 벗어나도록 기록을 자를 수 없습니다.";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "기록을 1초 미만으로 자를 수 없습니다.";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "자르기";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "자르기 시작:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "현재 값";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "소리 세기";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "제목 없는 실험";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "기본값";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "이 실험을 삭제하시겠습니까? 모든 기록 및 메모가 삭제됩니다.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "이 실험을 삭제하시겠습니까?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "삭제";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "이 기록을 삭제하시겠습니까?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "실험이 삭제되었습니다.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "기록이 삭제되었습니다.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "세부정보";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "핀";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "주파수";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "센서 설정을 저장합니다.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "센서";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "자동 크기 조절 사용 중지";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "수정하려면 두 번 탭하세요.";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "열려면 두 번 탭하세요.";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "선택하려면 두 번 탭하세요.";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "전환하려면 두 번 탭하세요.";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "세부정보를 보려면 두 번 탭하세요.";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "도구 창 손잡이";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "도구 창의 크기를 조절합니다. 작업이 제공됩니다.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "닫힘";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "수정 중";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "전체화면";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "절반화면";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Google 드라이브에 연결할 수 없습니다. 연결 상태를 확인하세요.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "네트워크 연결 끊김";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "과학 저널에서 Google 드라이브에 연결할 수 없습니다. 일부 실험이 백업되지 않을 수 있습니다.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "지금은 과학 저널에서 Google 드라이브에 연결할 수 없습니다. 나중에 다시 연결 시도됩니다.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Google 드라이브에 실험을 저장하는 데 충분한 공간이 없습니다.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Google 드라이브를 사용하여 과학 저널의 실험 데이터를 여러 기기에서 저장하고 이용할 수 있으며 Google 계정으로 로그인해야 합니다.\n\n이 기기에 기존 데이터가 있는 경우 로그인하면 기존 실험을 Google 드라이브에 저장할 수 있습니다. Google 드라이브의 '과학 저널' 폴더에 실험이 저장됩니다.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Google 드라이브에 연결할 수 없습니다. 연결을 확인하세요.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "종료 시간 수정";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "시작 시간 수정";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "실험 수정";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "실험 제목 또는 사진 변경";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "저장되지 않은 변경사항";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "이 실험의 변경사항을 저장하지 않으시겠습니까?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "사진 변경";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "실험 수정";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "시간 수정";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "메모 시간 수정";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "기록 종료 시간 수정";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "기록 시작 시간 수정";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "기록 수정";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "기록 제목 변경";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "기록 제목";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "아직 관찰 항목이 없습니다.";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "실험이 없습니다.";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "트리거가 설정되지 않았습니다.";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "자동 크기 조절 사용 설정";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Google 드라이브에 실험이 저장되지 않습니다.";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "실험 모두 삭제";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "모든 실험이 Google 드라이브에 추가됩니다.";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "실험 모두 저장";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Google 드라이브에 저장할 실험을 선택하세요.";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "저장할 실험 선택";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "환영합니다. 현재 이 기기에 실험이 %ld개 저장되어 있습니다.\n\n계속하려면 옵션을 선택하세요.";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "환영합니다. 현재 이 기기에 실험이 1개 저장되어 있습니다.\n\n계속하려면 옵션을 선택하세요.";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Google 드라이브에 백업";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "실험";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "실험";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "실험 공유";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "이 실험에서 다운로드가 완료되지 않았습니다. 사본을 공유하면 일부 데이터가 누락될 수 있습니다.";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "다운로드 중";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "기록 중…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "실험 제목";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "최신 버전의 과학 저널로 만든 실험입니다. 최신 업데이트를 다운로드해야 기기에서 이 실험을 수정할 수 있습니다.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "메모, 데이터 기록, 사진 촬영으로 아이디어 및 관찰 자료를 정리합니다.";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "새 실험 만들기";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "내 주변 세상 탐색하기";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "공유";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "내보내지 못했습니다.";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "실험 보내기";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "상대 시간";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "내보내기…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "사진 공유…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "과학 저널에 오신 것을 환영합니다.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "아래 툴바를 사용해 메모를 작성하고 데이터를 기록해 보세요.";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "과학 저널에 오신 것을 환영합니다.";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "다음 페이지에서 할 만한 활동을 찾아 보세요.\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "이 기기 지우기";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "전체화면";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "시작하기";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "오디오 사용 설정";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "오디오 사용 중지";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "센서 정보";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "알 수 없는 오류가 발생했습니다.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "가져오지 못했습니다. 실험에 오류가 발생했습니다.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "과학 저널을 사용하고 있습니다. 녹음을 중지하고 다시 시도하세요.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "실험을 가져오려면 로그인하세요.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "저장용량이 부족함";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "설정에서 저장용량을 관리할 수 있습니다.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "보관처리된 기록 표시";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "설정 열기";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "전면 카메라로 데이터를 측정하는 밝기 센서를 사용하여 기록하고 있으므로 카메라를 사용할 수 없습니다.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "사진 동영상에서 사진을 보고 있거나 과학 저널을 분할 보기 모드로 사용 중이므로 카메라를 사용할 수 없습니다.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "센서 보기";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "과학 저널에 카메라 액세스 권한이 없어 카메라를 사용할 수 없습니다.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "과학 저널에 사진 라이브러리 액세스 권한이 없어 사진 라이브러리를 사용할 수 없습니다.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "자세히 알아보기";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "자세히 알아보기";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "선형 가속도계";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "성능 개선 및 버그 수정";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "새로운 기능:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• 음높이 센서";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• 실험을 파일로 내보내고 다른 기기로 가져오기";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• 실험에서 사진 내보내기";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "메모 더보기";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "자기계";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "메뉴";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "더 많은 옵션이 있는 메뉴를 표시합니다.";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "오디오 설정";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "트리거 수정";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "트리거 설정";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "내 기기";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "실험 이름 지정";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "활동";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "실험";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "설정";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "설명 추가";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "설명";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "그림 메모";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "텍스트 메모";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "트리거 메모";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "스냅샷 메모";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "음조";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "메모를 추가했습니다.";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "메모, 이 실험에 텍스트 메모를 추가합니다.";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "관찰, 센서를 사용하여 이 실험에 값 스냅샷 또는 기록을 추가합니다.";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "실험을 불러올 수 없음";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "파일을 열 수 없음";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "실험은 과학 저널 파일 형식(.sj)이어야 합니다.";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "일시중지";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "백분율";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "권한 확인을 마쳤습니다. 이후에 이 권한을 수정하려면 iOS 설정 앱에서 과학 저널 섹션으로 이동하세요.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "이제 카메라 액세스 권한을 확인합니다. 전면 카메라가 밝기 센서를 구현하는 데 사용되며, 두 카메라를 사용하여 실험에 및 기록에 사진 메모를 추가할 수 있습니다.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "계속";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "우선 하드웨어 센서, 카메라, 사진 라이브러리를 사용할 수 있는 권한이 있는지 확인하겠습니다. 각 기능이 어떻게 사용되는지 설명한 후에 허가 여부를 묻습니다.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "다음으로, 마이크 액세스 권한을 확인합니다. 마이크는 오디오 센서에 사용됩니다. 음성의 내용은 어떠한 경우에도 기록, 저장, 전송되지 않으며 오로지 음량 또는 음높이 자체만 측정합니다.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "가장 먼저, 푸시 알림을 전송할 권한을 확인합니다. 푸시 알림은 기록 중에 앱이 백그라운드로 전환된 경우 기록 완료를 알리는 데에만 사용됩니다.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "마지막으로, 사진 라이브러리 액세스 권한을 확인합니다. 실험 및 기록에 기존 사진을 추가하고 촬영한 사진을 라이브러리에 다시 저장할 수 있습니다.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "시작하기";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "확인을 마쳤습니다";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "권한 확인";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "과학 저널에 오신 것을 환영합니다.";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "사진:";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "사진";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "사진을 추가하기에 디스크 공간이 충분하지 않습니다.";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "내부 센서";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "사진 라이브러리, 라이브러리의 사진을 이 실험에 추가합니다.";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "정보";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "기기";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "크기";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "메모";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "셔터 속도";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "사진이 추가되었습니다.";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "음높이";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%2$@플랫보다 %1$@개 반음 낮음, %3$@옥타브";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%2$@보다 %1$@개 반음 낮음, %3$@옥타브";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%2$@샵보다 %1$@개 반음 낮음, %3$@옥타브";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "%1$@플랫, %2$@옥타브";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "고음";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "저음";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@옥타브";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "%1$@샵, %2$@옥타브";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%2$@플랫보다 %1$@개 반음 높음, %3$@옥타브";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%2$@보다 %1$@개 반음 높음, %3$@옥타브";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%2$@샵보다 %1$@개 반음 높음, %3$@옥타브";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "픽셀";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "재생";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "이 계정에 기존 기기 설정이 적용되었습니다.";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "새로고침 중";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "기록을 시작할 수 없음";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "하나 이상의 센서가 연결 해제되었습니다. 다시 시도해 주세요.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "과학 저널을 열고 기록된 데이터를 확인하세요.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "기록을 마쳤습니다.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "계속";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "기록 취소";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "1개 이상의 센서에서 데이터를 기록하지 않았습니다. 기록을 취소할까요?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "데이터 기록되지 않음";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "기록이 중지되었습니다.";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "과학 저널 앱을 열고 기록을 계속하세요.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "기록이 곧 완료됩니다.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "기록 계속하기";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "기록 중지";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "표지 이미지 삭제";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "이 실험에서 표지 이미지를 삭제합니다.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "표지 이미지를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "표지 이미지가 삭제되었습니다.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "표지 이미지를 삭제할 수 없습니다.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "RPM";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "기록이 추가되었습니다.";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "기록";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "기록 이름 바꾸기";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "이 기록을 삭제하시겠습니까? 기록된 데이터 및 메모가 삭제됩니다.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "길이";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "검토";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "저장";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "변경사항을 저장하고 이전 보기로 돌아갑니다.";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "실험 저장";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "이 실험을 라이브러리에 추가하시겠습니까?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "파일에 저장";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "문서 브라우저를 표시하면 이 파일의 사본을 기기의 폴더에 저장할 수 있습니다.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "파일 저장 완료";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "파일이 저장되었습니다.";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "파일을 저장할 수 없습니다. 다시 시도해 주세요.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "파일을 저장할 수 없습니다. 다시 시도해 주세요.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "음계";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "차트의 메모 타임스탬프를 선택합니다.";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "사본 보내기";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "설정";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "밝기";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "과학 저널에 카메라 액세스 권한이 없어 밝기 센서를 사용할 수 없습니다.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "센서 데이터를 로드하지 못했습니다.";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "센서 데이터 로드 중…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "과학 저널에 마이크 액세스 권한이 없어 오디오 센서를 사용할 수 없습니다.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "맞춤설정";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "물체는 정지 상태를 유지하거나 움직이는 중이었다면 계속해서 움직이려는 경향이 있습니다. 이러한 경향을 관성이라 하며, 이것이 뉴턴의 제1 법칙입니다. 즉, 물체는 힘의 평형이 깨지지 않는다면 동작 상태 또는 정지 상태를 유지하려 합니다.\n\n힘의 평형이 깨져 물체가 움직이는 원인이 되어 물체의 속도 또는 속력이 빨라지거나 느려지거나, 또는 방향이 변화하는 것을 물체가 가속한다고 합니다. 가속도는 단위 시간당 속도(초당 미터)의 변화율 또는 제곱 초당 미터 거리(m/s²)로 측정됩니다.\n\n휴대전화에는 움직임의 변화를 측정하는 장치, 즉 가속도계가 있습니다. 가속도계 내부에는 자유롭게 움직이도록 매달려 있는 작은 진자가 있습니다. 예를 들어 움직이던 차가 갑자기 멈추면 머리가 앞으로 쏠리는 것처럼 가속도계의 움직임을 변화시키면 이 작은 진자도 이동하게 됩니다. 관성에 의한 이러한 작은 움직임을 측정하는 휴대전화 속 가속도계는 물체의 움직임과 방향의 변화를 감지하여 화면을 가로 모드에서 세로 모드로 전환할 때나 게임을 할 때 등에 유용합니다.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "휴대전화를 탁자 위에 놓아둔 상태에서도 z축의 지속적인 가속을 확인할 수 있습니다. 이는 중력의 당기는 힘에 의해 지구 표면에서 발생하는 가속도이며 약 9.8m/s²입니다.";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "평상시에는 잘 느끼기 어렵지만 우리는 대기권이라는 공기의 바다 밑바닥에 살고 있습니다. 지구 대기층의 두께는 40킬로미터에 달하며 이 모든 공기가 우리를 내리누르는 힘을 대기압이라고 합니다.\n\n해수면 높이의 대기압은 1제곱센티미터에 약 1kg으로 A4 용지 1장에 624kg 정도의 무게가 작용하는 셈입니다.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "인간은 이 거대한 압력에 평소 익숙해져 있어서 잘 느끼지 못하지만, 높은 산에 오르거나 비행기를 탈 때와 같이 기압이 조금만 바뀌어도 그 변화를 알아차립니다. 대기압은 날씨에 따라서도 변화하는데 폭풍이 부는 등 기후가 불안정할 때는 기압이 떨어지고 기후가 안정된 화창한 날에는 기압이 상승합니다.\n\n휴대전화의 디지털 기압계는 대기압을 헥토파스칼 단위로 측정합니다. 1헥토파스칼은 100파스칼이며, 1파스칼은 1평방미터 면적에 1뉴턴의 힘이 작용하는 압력을 나타냅니다. 일기예보를 보면 기압을 밀리바 단위로 설명하기도 하는데 표현은 다르지만 헥토파스칼과 동일한 단위입니다.\n\n휴대전화에 압력을 측정하는 기능이 왜 있는지 궁금하지 않으신가요? 대기압은 계단을 오르내리는 등 고도가 조금만 바뀌어도 측정 가능할 정도로 변화합니다. 따라서 휴대폰의 디지털 기압계는 위치 변화를 감지하는 데 도움을 줍니다. 예를 들어 사용자가 건물 몇 층에 있는지 또는 고가도로 위를 지나는지 아니면 아래를 지나는지를 알아낼 수 있습니다.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "전면 카메라는 조도를 노출값(EV)으로 측정하는데 이 값은 카메라의 셔터 속도, f넘버, ISO 값에 따라 달라지며 이러한 설정에 따라 촬영된 픽셀의 밝기에 따라 결정됩니다.\n\n촬영 값이 밝아질수록 EV가 높으며, 어두운 곳에서는 음수 값이 나타납니다.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "EV는 카메라의 광학 장치 및 센서에 따른 측정값이므로 값 범위는 하드웨어 및 소프트웨어에 따라 제한됩니다. 주변광 센서는 조도를 직접 측정할 수 있지만 전면 카메라는 f넘버, ISO 값, 셔터 속도를 사용하여 측정 기준을 산정하고 이미지를 촬영한 후 픽셀을 판독하여 EV를 판단해야 합니다. EV 값은 이러한 과정을 거치므로 f넘버 기준값이 서로 다른 기기에서 달라질 수 있습니다. 예를 들어 iPhone 8(f1.8)과 iPad(f2.4)에서 값이 서로 다릅니다.\n\nEV는 촬영된 픽셀의 밝기 값을 측정하여 결정되므로 주변광원의 조도가 적외선 센서를 사용할 때보다 훨씬 낮게 측정되며, 카메라의 위치 및 피사체가 측정값에 직접적인 영향을 줍니다.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "지구에 자기장이 있다는 사실은 아마 아실 것입니다. 하지만 휴대전화에 자기장을 감지하는 기기가 내장되어 있다는 사실도 알고 계신가요? 바로 자기계입니다. 휴대전화의 자기계와 휴대전화 자기계의 데이터와 공간 내에서 휴대전화가 위치한 방향을 조합하여 디지털 나침반을 만들 수 있습니다.\n\n예전부터 사용되던 나침반은 구식 자기계라고 할 수 있습니다. 자기화된 바늘이 스스로 돌면서 주위 자기장과 정렬되기 때문이죠. 휴대전화에 들어 있는 것은 작은 나침반이 아니라 전류를 사용하여 3차원 공간 속에서 자기장의 세기를 감지하는 초소형 3축 센서입니다. 하지만 이것만으로는 나침반 역할을 할 수 없습니다.\n\n나침반에서 자기계의 데이터와 휴대전화 방향을 조합해야 하는 이유가 무엇일까요? 휴대전화의 방향을 알면 휴대전화를 지구의 자기장과 동일한 평면에 평평하게 놓지 않아도 자기 회전을 계산할 수 있습니다. 중력은 지구의 자기장과 수직이므로 가속도계 센서의 중력 방향을 사용하여 자기장이 지구 자기장과 얼마나 동일한 평면에 있는지 확인할 수 있습니다.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "눈치를 채셨겠지만, 나침반은 지구의 자기장뿐 아니라 주위의 모든 자기장에 반응합니다. 자석, 전류, 금속 물체 등이 휴대전화의 자기계를 이리저리 흔들어 놓아 나침반 판독 값이 변할 수 있습니다. 나침반의 빨간색 자침이 지구의 자기장과 정확히 정렬되도록 하려면 송전선에서 멀리 떨어진 야외의 탁 트인 공간에 서보세요. 8자를 그리면서 휴대전화를 움직이면 휴대전화의 자기계를 보정하는 데 도움이 됩니다.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "소리는 진동에 의해 발생합니다. 예를 들어 목소리는 성대의 진동을 통해 발생합니다. 이러한 진동은 높고 낮은 공기압이 번갈아 밖으로 배출되는 공간을 만듭니다. 이는 연못에 조약돌을 던지면 원형의 잔물결이 확대되는 것과 같습니다.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "모든 소리는 주파수와 세기로 표현할 수 있습니다.\n\n세기는 과학 저널에서 데시벨(dB) 단위로 측정되는 수치입니다. 소리의 강도나 세기는 진동하는 물체가 진동할 때마다 이동하는 거리에 따라 다릅니다. 소리가 커지면 더 큰 세기의 소리를 듣게 됩니다.\n\n음파의 주파수, 음높이 또는 음색은 진동 속도와 같습니다. 물체가 빠르게 진동할수록 진동에 의한 소리의 음높이가 더 높습니다. 과학 저널은 주파수가 아닌 세기만 측정합니다.\n\n기기의 마이크는 시간 경과에 따른 음파의 차이에 매우 민감하게 감지하도록 설계되어 있지만 각 음파의 절대적인 크기에는 민감하지 않다는 점을 알고 있어야 합니다. 과학 저널은 아래에 나와 있는 참조 수치와 비슷한 수치가 나올 가능성이 높은 코드를 채택했지만 각각의 기기에서 지속적으로 더 높거나 낮은 수치가 나올 수 있습니다. 과학자는 대개 이와 같은 센서를 알려진 측정값에 맞게 보정합니다. 현재 과학 저널로 다음에 탑승할 열차가 다음에 관람할 록 콘서트보다 시끄러운지 확인할 수 있지만 기차와 콘서트장 모두 동일한 휴대전화를 가져가는 경우에만 가능합니다.\n\n'소리 세기', '소리 세기 수준', '음압' 사이에 중요한 차이점이 있다는 점도 알고 있어야 합니다. 과학 저널에서는 모두 동일한 것으로 취급하고 있지만 더 자세히 알아보고 싶은 경우 이러한 차이점에 대한 다양한 온라인 리소스를 확인해 보세요.\n\n평균적인 사람의 청각이 감지할 수 있는 가장 작은 소리를 0dB로 정의합니다. 보통의 대화는 약 60dB이며, 약 140dB을 초과한 소리는 사람이 듣기에 고통스럽다고 합니다. 그러나 고통을 주지 않는 소리도 해로울 수 있습니다. 진공청소기가 내는 소음 수준인 90dB의 소리에 지속적으로 노출되어도 청력을 상실할 수 있습니다.\n\n데시벨 수치는 지수적이므로 착각하기 쉽습니다. 예를 들어 40dB의 음원은 20dB의 음원보다 2배가 아니라 100배나 강한 것입니다. 또한 자명종 하나가 70dB의 소리를 낸다면 자명종 두 개는 140dB이 아닌 73dB의 소리를 냅니다. 이상하죠?\n\n10dB: 나뭇잎이 바스락거리는 소리\n20dB: 1.5m 거리에서 속삭이는 소리\n30dB: 부드럽게 속삭이는 소리\n50dB: 빗소리\n60dB: 일반적인 대화\n90dB: 믹서기\n100dB: 소음기가 없는 자동차\n110dB: 귀에 대고 지르는 고함\n120dB: 천둥 소리\n130dB: 착암기 소리\n140dB: 비행기 이륙하는 소리";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "물체는 정지 상태를 유지하거나 움직이는 중이었다면 계속해서 움직이려는 경향이 있습니다. 이러한 경향을 관성이라 하며, 이것이 뉴턴의 제1 법칙입니다. 즉, 물체는 힘의 평형이 깨지지 않는다면 동작 상태 또는 정지 상태를 유지하려 합니다.\n\n힘의 평형이 깨져 물체가 움직이는 원인이 되어 물체의 속도 또는 속력이 빨라지거나 느려지거나, 또는 방향이 변화하는 것을 물체가 가속한다고 합니다. 가속도는 단위 시간당 속도(초당 미터)의 변화율 또는 제곱 초당 미터 거리(m/s²)로 측정됩니다.\n\n휴대전화에는 움직임의 변화를 측정하는 장치, 즉 가속도계가 있습니다. 가속도계 내부에는 자유롭게 움직이도록 매달려 있는 작은 진자가 있습니다. 예를 들어 움직이던 차가 갑자기 멈추면 머리가 앞으로 쏠리는 것처럼 가속도계의 움직임을 변화시키면 이 작은 진자도 이동하게 됩니다. 관성에 의한 이러한 작은 움직임을 측정하는 휴대전화 속 가속도계는 물체의 움직임과 방향의 변화를 감지하여 화면을 가로 모드에서 세로 모드로 전환할 때나 게임을 할 때 등에 유용합니다.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "조합된 선형 가속도계 센서가 중력을 제외하고 휴대전화의 모든 3개 축으로 총 가속도를 기록합니다.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "휴대전화에 자기장을 감지하는 자기계가 내장되어 있습니다. 작은 3축 센서인 자기계는 전류를 사용하여 3차원 공간 속에서 자기장의 세기를 감지합니다. 3개 축의 데이터를 모두 조합하면 자기장 전체의 세기를 감지하는 센서를 만들 수 있습니다.\n\n어떤 자기계는 홀(Hall) 효과, 즉 흐르는 전하가 자기장에 의해 굴절되는 현상으로 자기장을 감지합니다. 최신 자기계는 자기장에 반응하여 저항이 변화하는 금속합금인 자기저항 소자를 이용합니다.\n\n휴대전화에 자기계가 왜 필요할까요? 공간 속에서 방향을 판단하는 기능은 내장된 나침반 및 내비게이션 앱, 특히 방향 전환 안내를 제공하려는 앱에 특히 유용합니다.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "자석, 전류, 금속 물체 등이 휴대전화의 자기계를 이리저리 흔들어 놓을 수 있습니다. 하지만 비어 있는 공간에서도 휴대전화의 자기계가 항상 0이 아닌 작은 판독 값을 표시하며, 이것이 지구의 자기장입니다.";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "소리는 진동에 의해 발생합니다. 예를 들어 목소리는 성대의 진동을 통해 발생합니다. 이러한 진동은 높고 낮은 공기압이 번갈아 밖으로 배출되는 공간을 만듭니다. 이는 연못에 조약돌을 던지면 원형의 잔물결이 확대되는 것과 같습니다.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "모든 소리는 주파수와 세기로 표현할 수 있습니다. 음파의 주파수(다른 말로 음높이 또는 음색)는 진동률과 같습니다. 물체가 빠르게 진동할수록 진동에 의한 소리의 음높이가 더 높습니다. 과학 저널에서는 진동을 헤르츠(Hz) 단위로 측정하며 1헤르츠는 1진동/초와 같습니다(1헤르츠=1진동/초).\n\n사람은 20에서 20,000헤르츠 사이의 소리를 들을 수 있습니다. 가장 낮은 피아노 음의 주파수는 27.5Hz이고 가장 높은 음의 주파수는 4,186.01Hz입니다.\n\n빨간색 점은 감지한 음높이가 어떤 음에 가장 가까운지를 보여줍니다. 음높이가 낮거나 '내림'되는 경우 점은 왼쪽에 나타나고, 음높이가 높거나 '올림'되는 경우 오른쪽에 나타납니다.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "여기에 표시되는 데이터는 블루투스를 통해 휴대전화와 외부 센서가 통신하여 제공합니다.\n\n값은 마이크로 컨트롤러에서 직접 읽은 원본 비율을 보여줍니다. 이 값은 보통 센서의 전압 강하 비율입니다.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "블루투스는 무선 전파를 사용하여 고정된 기기와 휴대기기의 데이터를 근거리에서 교환하는 무선 기술 표준입니다.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "분당 회전수(RPM)는 고정된 축에서 1분 동안 회전하는 빈도를 측정합니다.\n\n풍력 회전자가 돌아가면 인코더 디스크가 회전합니다.";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "과학 저널에서 회전으로 인식되는 밝고 어두운 부분이 센서에서 생성됩니다.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "여기에 표시되는 데이터는 블루투스를 통해 휴대전화와 외부 센서가 통신하여 제공합니다.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "블루투스는 무선 전파를 사용하여 고정된 기기와 휴대기기의 데이터를 근거리에서 교환하는 무선 기술 표준입니다.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "휴대전화의 좌우 방향 가속도이며 단위는 m/s²입니다.";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "휴대전화의 앞뒤 방향 가속도이며 단위는 m/s²입니다.";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "휴대전화의 위아래 방향 가속도이며 단위는 m/s²입니다.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "헥토파스칼(hPa) 단위로 측정한 대기압입니다.";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "맞춤 설정에 따라 여기에 외부 센서의 데이터가 표시되고 있습니다.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "전면 카메라에 도달한 빛의 양이며 EV 단위로 측정됩니다.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "지구의 자기장에 대한 휴대전화의 방향입니다.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "사운드 센서나 마이크에 도달한 소리의 세기이며 데시벨(dB) 단위로 측정됩니다.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "중력을 제외한 휴대전화의 총 가속도이며 단위는 m/s²입니다.";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "지구 자기장의 세기이며 단위는 마이크로테슬라입니다.";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "소리 센서나 마이크에 도달한 소리의 음높이이며 헤르츠(Hz) 단위로 측정됩니다.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "외부 센서에서 읽은 원본 비율입니다.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "분당 회전수입니다.";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "사인파를 출력하는 테스트 센서입니다.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "다음 기록 센서";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "이전 기록 센서";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "원본";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "회전";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "녹화 중에는 센서를 수정할 수 없습니다.";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "트리거 삭제됨";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "오디오 및 밝기 센서는 마이크 및 전면 카메라를 사용하므로 과학 저널이 백그라운드 상태이면 기록이 불가능합니다. 이 센서로 기록하는 중에 앱을 백그라운드로 전환하면 앱으로 돌아갈 때까지 해당 데이터가 기록되지 않습니다.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "오디오 및 밝기 센서는 마이크 및 전면 카메라를 사용하므로 과학 저널이 백그라운드 상태이면 기록이 불가능합니다.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "이 센서에 대한 참고사항";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "사진 동영상에서 사진을 보고 있거나 과학 저널을 분할 보기 모드로 사용 중이므로 밝기 센서를 사용할 수 없습니다.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "전압";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "실험에 사용할 센서를 선택하세요.";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "센서 목록 접기";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "센서 목록 펼치기";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "과학 저널 사용 중지";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "도메인 관리자가 Google 관리 콘솔에서 과학 저널을 사용 설정해야 합니다.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "계정 전환";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "익명처리. 앱 개선에 사용";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Google에 앱 데이터 사용량 보내기";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "오픈소스 라이선스";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "개인정보처리방침";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "서비스 약관";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "버전";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "과학 저널 웹사이트";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "옵션 표시";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "%1$@(%2$@)(으)로 로그인됨";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "계정 관리 열기";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "계정 선택";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "사이드 바 메뉴";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "애플리케이션 옵션을 포함하는 사이드 바 메뉴를 엽니다.";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "로그인";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "사인파";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "메모를 삭제했습니다.";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "실행취소";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "스냅샷";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "현재 관찰 중인 모든 센서 값의 스냅샷을 실험에 추가합니다.";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "하나 이상의 센서가 연결 해제되어 스냅샷을 만들 수 없습니다. 다시 시도하세요.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "스냅샷 세부정보";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "스냅샷이 추가되었습니다.";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "최소";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "최대";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "평균";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "카메라 전환";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "사용";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "사용 안함";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "기록을 1초 미만으로 자를 수 없습니다.";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "올바른 형식(h:mm:ss.SSS)을 사용하세요.";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "새 시간(h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "기록에 포함된 시간이어야 합니다.";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "텍스트 메모 수정";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "텍스트 메모";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "관찰 추가";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "메모를 추가했습니다.";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "기록 진행 중";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "도구 창에서 관찰 탭으로 전환하려면 두 번 탭하세요.";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "센서 설정";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "실험에";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "기록에";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "알림 방법";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "알림음";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "트리거 세부정보";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "%@ 트리거 수정";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "새 %@ 트리거";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "트리거 활성화됨";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "진동";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "다음의 트리거:";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "센서가 다음 값을 초과할 때";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "다음 값일 때";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "센서가 다음 값 미만일 때";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "다음 값 미만으로 하락할 때";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "상승하여 다음 값을 초과할 때";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "트리거 메모가 추가되었습니다.";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "메모 내용을 입력하세요.";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "기본 메모 텍스트";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "기록 시에만 트리거 작동";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "내게 알림";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "트리거 유형";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "메모하기";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "기록 시작";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "기록 중지";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "트리거 값";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "시각적 알림";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "다음 값 초과";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "정확히 일치";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "다음 값 미만";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "다음 값 미만으로 하락";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "미만으로 하락";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "초과 시";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "미달 시";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "트리거 작동 시점";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "상승하여 초과";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "상승하여 다음 값 초과";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "트리거 수정";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "트리거가 너무 많이 발생해 사용 중지되었습니다.";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "실험을 자료실 외부로 이동했습니다.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "기록을 자료실 외부로 이동했습니다.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "알 수 없는 센서";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "제목 없음";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "과학 저널을 사용하여 자유롭게 실험해 보세요.";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "이 과학 저널 빌드 및 기기에 대해 개인 식별 정보를 제외한 하드웨어 및 iOS 버전 등의 몇 가지 정보를 수집하여 사용자가 발송하는 이메일에 첨부합니다.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "여러분의 의견을 알려주세요.";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "의견 보내기";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "동영상 스트림";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

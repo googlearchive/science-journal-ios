@@ -1,0 +1,1520 @@
+/* The name of this product. [CHAR_LIMIT=40] */
+"app_name" = "Science Journal";
+
+/* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
+"app_store_ios_changelog" = "Nove značajke i poboljšanja:\n• Prijavite se na svoj Google račun da biste mogli spremati svoje eksperimente i pristupati im na različitim uređajima pomoću računa Google diska. Ta će značajka postati dostupna svim korisnicima tijekom nadolazećih tjedana. Science Journal i dalje možete upotrebljavati bez prijave.";
+
+/* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
+"app_store_ios_generic_changelog" = "Brojna poboljšanja izvedbe i ispravci programskih pogrešaka";
+
+/* The app store localizable app name (should include "by Google" to ensure uniqueness), character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_name" = "Science Journal iz Googlea";
+
+/* The app store subtitle, appears below the app name in the app store on iOS 11, character limit is not flexible [CHAR_LIMIT=30] */
+"app_store_subtitle" = "Istražite svijet oko sebe";
+
+/* The app store description for Science Journal, character limit is not flexible [CHAR_LIMIT=4000] */
+"app_store_description" = "Science Journal besplatan je digitalni znanstveni dnevnik iz Googlea.\n\nBez obzira na to prenosite li znanstvena znanja drugima ili je znanost vaš hobi, sve svoje bilješke, fotografije i opažanja možete čuvati na jednom praktičnom mjestu. Pomoću senzora u iPhoneu ili iPadu možete mjeriti pojave kao što su svjetlost, zvuk i kretanje, prikazivati ih u obliku grafikona te se putem Bluetooth veze povezivati s vanjskim senzorima i eksperimentirati sa svijetom oko sebe.\n\nUz aplikaciju Science Journal:\n• Mjerite svjetlost, zvuk, ubrzanje, tlak zraka i druge vrijednosti pomoću senzora ugrađenih u telefon.\n• Pišite bilješke i snimajte fotografije da biste dokumentirali svoje znanstvene eksperimente. Uskoro stižu nove vrste bilješki!\n• Povezujte se s vanjskim senzorima pomoću odabranih Arduino uređaja koji podržavaju Bluetooth.\n• Izrađujte automatizirane okidače za snimanje podataka i zapisivanje bilješki.\n• Upotrebljavajte sonifikaciju da biste čuli kretanje svojih grafikona.\n\nObavijest o dopuštenjima:\n• Bluetooth: potrebno za traženje Bluetooth senzorskih uređaja.\n• Fotoaparat: potrebno za snimanje fotografija radi dokumentiranja eksperimenata i za senzor osvjetljenja.\n• Zbirka fotografija: potrebno za spremanje fotografija snimljenih radi dokumentiranja eksperimenata i za dodavanje postojećih fotografija iz zbirke u eksperimente.\n• Mikrofon: potrebno za senzor intenziteta zvuka.\n• Push obavijesti: potrebno radi obavještavanja o statusu snimanja kada je aplikacija u pozadini.\n\nObrazovne aktivnosti naših partnera:\nhttps://makingscience.withgoogle.com/science-journal/activities\nPodrška: https://productforums.google.com/forum/#!forum/sciencejournal";
+
+/* The app store keywords list, comma-separated, character limit is NOT FLEXIBLE and INCLUDES commas, DO NOT use spaces or newlines [CHAR_LIMIT=98] */
+"app_store_keywords" = "Google,znanost,obrazovanje,STEM,eksperimenti,senzori,grafikoni,dnevnik,bilježnica,bilješke,dokumentiranje,NGSS";
+
+/* Displayed units for an acceleration sensor [CHAR_LIMIT=10] */
+"acc_units" = "m/s²";
+
+/* Displayed name of a sensor that shows acceleration along the X axis [CHAR_LIMIT=25] */
+"acc_x" = "Akcelerometar X";
+
+/* Displayed name of a sensor that shows acceleration along the Y axis [CHAR_LIMIT=25] */
+"acc_y" = "Akcelerometar Y";
+
+/* Displayed name of a sensor that shows acceleration along the Z axis [CHAR_LIMIT=25] */
+"acc_z" = "Akcelerometar Z";
+
+/* Menu option for the about informational screen [CHAR_LIMIT=25] */
+"action_about" = "O projektu";
+
+/* Menu option for adding a caption to an object. [CHAR_LIMIT=25] */
+"action_add_caption" = "Dodaj opis";
+
+/* Menu option for archiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_archive" = "Arhiviraj";
+
+/* Accessibility description for the menu option that archives an experiment [CHAR_LIMIT=NONE] */
+"action_archive_experiment_content_description" = "Arhiviranje eksperimenta";
+
+/* Accessibility description for the menu option that archives a recording [CHAR_LIMIT=NONE] */
+"action_archive_recording_content_description" = "Arhiviranje snimke";
+
+/* Menu option for canceling an action. [CHAR_LIMIT=10] */
+"action_cancel" = "Odustani";
+
+/* A phrase meaning the user understands what they were told. Casual, if possible (i.e. instead of "I understand", use "Got it" [CHAR_LIMIT=15] */
+"action_confirm_casual" = "Shvaćam";
+
+/* Menu option for deleting an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_delete" = "Izbriši";
+
+/* Accessibility description for the menu option that deletes an experiment [CHAR_LIMIT=NONE] */
+"action_delete_experiment_content_description" = "Brisanje eksperimenta";
+
+/* Accessibility description for the menu option that deletes a recording [CHAR_LIMIT=NONE] */
+"action_delete_recording_content_description" = "Brisanje snimke";
+
+/* Accessibility description for the menu option that deletes a picture note [CHAR_LIMIT=NONE] */
+"action_delete_recording_picture_note_content_description" = "Brisanje slike";
+
+/* Accessibility description for the menu option that deletes a snapshot note [CHAR_LIMIT=NONE] */
+"action_delete_recording_snapshot_content_description" = "Brisanje snimke";
+
+/* Accessibility description for the menu option that deletes a text note [CHAR_LIMIT=NONE] */
+"action_delete_recording_text_note_content_description" = "Brisanje tekstne napomene";
+
+/* Accessibility description for the menu option that deletes a trigger-created note [CHAR_LIMIT=NONE] */
+"action_delete_recording_trigger_note_content_description" = "Brisanje bilješke";
+
+/* Menu option for discarding an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_discard" = "Odbaci";
+
+/* Button to dismiss [CHAR_LIMIT=25] */
+"action_dismiss" = "Odbaci";
+
+/* Menu option for editing an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_edit" = "Uredi";
+
+/* Menu option for sending feedback on the application [CHAR_LIMIT=25] */
+"action_feedback" = "Povratne informacije";
+
+/* Checkable menu item label for viewing all experiments, including the archived ones [CHAR_LIMIT=50] */
+"action_include_archived_experiments" = "Uključi arhivirane eksperimente";
+
+/* Menu option for the level tool [CHAR_LIMIT=25] */
+"action_level" = "Razina";
+
+/* Menu option for confirming an action. [CHAR_LIMIT=10] */
+"action_ok" = "U redu";
+
+/* Button to report an issue [CHAR_LIMIT=25] */
+"action_report" = "Prijavi";
+
+/* Button to retry connecting to an external source after an error [CHAR_LIMIT=25] */
+"action_retry" = "Pokušaj ponovo";
+
+/* Menu option for the ruler tool [CHAR_LIMIT=25] */
+"action_ruler" = "Ravnalo";
+
+/* Menu option for saving an entity (e.g. project, experiment) [CHAR_LIMIT=10] */
+"action_save" = "Spremi";
+
+/* Menu option for the settings screen [CHAR_LIMIT=25] */
+"action_settings" = "Postavke";
+
+/* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
+"action_unarchive" = "Poništi arhiviranje";
+
+/* Accessibility description for the menu option that unarchives an experiment [CHAR_LIMIT=NONE] */
+"action_unarchive_experiment_content_description" = "Poništavanje arhiviranja eksperimenta";
+
+/* Accessibility description for the menu option that unarchives a recording [CHAR_LIMIT=NONE] */
+"action_unarchive_recording_content_description" = "Poništavanje arhiviranja snimke";
+
+/* Undo action in the snackbar. [CHAR_LIMIT=15] */
+"action_undo" = "Poništi";
+
+/* Menu option for viewing more information about an entity (e.g. project, experiment) [CHAR_LIMIT=25] */
+"action_view_details" = "Prikaži pojedinosti";
+
+/* Text button to add a note to the trial [CHAR_LIMIT=50] */
+"add_note_button_text" = "Dodaj bilješku na vremensku traku";
+
+/* Hint text for adding a run text note [CHAR_LIMIT=100] */
+"add_note_hint_text" = "Dodajte novu bilješku";
+
+/* Content description for the button that adds a photo to a recording note [CHAR_LIMIT=NONE] */
+"add_photo_content_description" = "Dodavanje fotografije";
+
+/* Accessibility label for the add picture note button. [CHAR_LIMIT=NONE] */
+"add_picture_note_content_description" = "Dodaj sliku";
+
+/* Accessibility label for the add text note button. [CHAR_LIMIT=NONE] */
+"add_text_note_content_description" = "Dodaj napomenu";
+
+/* Displayed name of a sensor that shows ambient light as measured by the phone's proximity sensor [CHAR_LIMIT=25] */
+"ambient_light" = "Ambijentalno svjetlo";
+
+/* Displayed units for an ambient light sensor [CHAR_LIMIT=10] */
+"ambient_light_units" = "luks";
+
+/* Name for sonification type from data to volume / amplitude of sound [CHAR_LIMIT=30] */
+"amplitude" = "Amplituda";
+
+/* Displayed name of a sensor that measure ambient temperature [CHAR_LIMIT=25] */
+"ambient_temperature" = "Ambijentalna temperatura";
+
+/* Label for an item which is archived. This displays over the top of the other elements so must be short [CHAR_LIMIT=20] */
+"archived_badge" = "Arhivirano";
+
+/* Accessibility hint describing an item which is archived [CHAR_LIMIT=NONE] */
+"archived_content_description" = "Arhivirani eksperimenti ne mogu se mijenjati, no mogu se brisati";
+
+/* Message of alert when an experiment is successfully archived [CHAR_LIMIT=100] */
+"archived_experiment_message" = "Eksperiment je arhiviran.";
+
+/* Message of alert when a run is successfully archived [CHAR_LIMIT=100] */
+"archived_run_message" = "Snimka je arhivirana.";
+
+/* Section label for sensed devices that could be connected to [CHAR_LIMIT=30] */
+"available_devices" = "Dostupni uređaji";
+
+/* Content description for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_description" = "Natrag";
+
+/* Content details for a generic back button [CHAR_LIMIT=NONE] */
+"back_btn_content_details" = "Natrag na prethodni prikaz";
+
+/* Displayed name of a sensor that measures air pressure [CHAR_LIMIT=25] */
+"barometer" = "Barometar";
+
+/* Displayed units for a barometer sensor, hectopascals (hPa). [CHAR_LIMIT=10] */
+"barometer_units" = "hPa";
+
+/* Science Journal bluetooth device section title. [CHAR_LIMIT=30] */
+"bluetooth_sensor_science_journal_title" = "Science Journal";
+
+/* Displayed units for a brightness sensor, exposure value (EV). [CHAR_LIMIT=10] */
+"brightness_units" = "VE";
+
+/* Content description for a button to add a new trigger [CHAR_LIMIT=NONE] */
+"btn_add_new_trigger" = "Izrada okidača";
+
+/* The content description for the button which adds a new sensor card to the view [CHAR_LIMIT=NONE] */
+"btn_add_sensor_card_description" = "Dodavanje nove kartice senzora";
+
+/* Title for the button that discards pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_discard_changes" = "Odbaci izmjene";
+
+/* Title for the button that saves pending changes to an experiment. [40 chars] */
+"btn_edit_experiment_save_changes" = "Spremi izmjene";
+
+/* Title of the button canceling the deletion of a trial, keeping it instead. [CHAR_LIMIT=20] */
+"btn_delete_object_cancel" = "Zadrži";
+
+/* Title of the button confirming deletion of a trial. [CHAR_LIMIT=20] */
+"btn_delete_object_confirm" = "Izbriši";
+
+/* Content description for button which makes a new experiment [CHAR_LIMIT=50] */
+"btn_new_experiment_content_description" = "Novi eksperiment";
+
+/* The description of a button to start recording [CHAR_LIMIT=NONE] */
+"btn_record_description" = "Započni snimanje";
+
+/* Description for a button that allows the user to jump back to current time during observation or recording, resetting the graph [CHAR_LIMIT=NONE] */
+"btn_reset_description" = "Skok na trenutačno vrijeme";
+
+/* The content description for the dismiss / close icon on a sensor card [CHAR_LIMIT=NONE] */
+"btn_sensor_card_close" = "Zatvori karticu";
+
+/* The description of a button to stop recording [CHAR_LIMIT=NONE] */
+"btn_stop_description" = "Zaustavi snimanje";
+
+/* Content description for button to take a picture to use as the experiment image [CHAR_LIMIT=NONE] */
+"btn_take_picture_content_description" = "Snimi fotografiju";
+
+/* Accessibility hint describing the camera tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"camera_tab_content_description" = "Fotoaparat: snimite fotografiju da biste je dodali u eksperiment";
+
+/* The error shown on a snackbar when the user does not enter a numeric value for a trigger [CHAR_LIMIT=150] */
+"cannot_save_invalid_value" = "Morate unijeti brojčanu vrijednost koja će aktivirati taj okidač.";
+
+/* Content description for the chart playback control region [CHAR_LIMIT=NONE] */
+"chart_content_description" = "Upravljanje reprodukcijom grafikona";
+
+/* Content details for the chart playback control region, describing how it works [CHAR_LIMIT=NONE] */
+"chart_content_details" = "Mijenja položaj reprodukcije grafikona i prikazuje vrijednost za taj položaj";
+
+/* Content description for a live chart [CHAR_LIMIT=NONE] */
+"chart_live_content_description" = "Grafikon uživo";
+
+/* Content description for the chart pan left accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_left_content_description" = "Pomicanje ulijevo";
+
+/* Content description for the chart pan right accessibility action [CHAR_LIMIT=NONE] */
+"chart_pan_right_content_description" = "Pomicanje udesno";
+
+/* Content description for the chart pan notification after panning via accessibility action, time panned will be added [CHAR_LIMIT=NONE] */
+"chart_panned_content_description" = "Pomaknuto";
+
+/* Content description for a chart in a recording [CHAR_LIMIT=NONE] */
+"chart_recorded_content_description" = "Grafikon";
+
+/* Content description for the chart zoom in accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_in_content_description" = "Povećavanje";
+
+/* Content description for the chart's zoom level after zooming via accessibility action, percent value will be added [CHAR_LIMIT=NONE] */
+"chart_zoom_level_content_description" = "Razina zumiranja";
+
+/* Content description for the chart zoom to fit accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_to_fit_content_description" = "Zumiranje na potrebnu veličinu";
+
+/* Content description for the chart zoom out accessibility action [CHAR_LIMIT=NONE] */
+"chart_zoom_out_content_description" = "Smanjivanje";
+
+/* Button text for choosing a photo for a project [CHAR_LIMIT=50] */
+"choose_photo_button_text" = "Odabir fotografije";
+
+/* Menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_all_experiments" = "Položi prava na sve";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action" = "Položi prava na sve";
+
+/* Confirmation dialog action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_all_experiments_confirmation_action_confirm" = "Dodavanje na Google disk";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message" = "Dodati jedan preostali eksperiment na Google disk za račun %@?";
+
+/* Confirmation dialog message for claiming all remaining experiments that don't belong to an account. The first placeholder is for the number of experiments and the second is for the email address of the user. [CHAR_LIMIT=60] */
+"claim_all_experiments_confirmation_message_plural" = "Dodati preostale eksperimente (%1$@) na Google disk za račun %2$@?";
+
+/* Accessibility title for the menu action title for claiming all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_all_experiments_content_description" = "Polaganje prava na sve preostale eksperimente";
+
+/* Confirmation dialog message for claiming all experiments that don't belong to an account. [CHAR_LIMIT=50] */
+"claim_all_experiments_immediately_confirmation_message" = "Želite li sve eksperimente dodati na Google disk?";
+
+/* Confirmation dialog title for claiming all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_all_experiments_migration_confirmation_title" = "Položiti prava na sve eksperimente?";
+
+/* Accessibility title for a button that adds an unclaimed experiment to Google Drive. [CHAR_LIMIT=NONE] */
+"claim_experiments_add_to_drive_content_description" = "Dodavanje eksperimenta na Google disk";
+
+/* Subtitle for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=120] */
+"claim_experiments_add_to_drive_subtitle" = "Eksperimenti se ne mogu uređivati i ostat će na uređaju sve dok se ne zatraže ili izbrišu";
+
+/* Title for the claiming experiments header view explaining how to add experiments to Google Drive. [CHAR_LIMIT=50] */
+"claim_experiments_add_to_drive_title" = "Dodavanje eksperimenata na Google disk";
+
+/* Button title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_button_title" = "Položi prava na eksperimente";
+
+/* Accessibility title for a button that deletes an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_content_description" = "Brisanje eksperimenta";
+
+/* Menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_delete_all" = "Izbriši sve";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message" = "Izbrisati jedan preostali eksperiment?";
+
+/* Confirmation dialog message for deleting all experiments that don't belong to an account, with a placeholder for the number. [CHAR_LIMIT=60] */
+"claim_experiments_delete_all_confirmation_message_plural" = "Izbrisati preostale eksperimente (%ld)?";
+
+/* Accessibility title for the menu action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=NONE] */
+"claim_experiments_delete_all_content_description" = "Brisanje svih preostalih eksperimenata";
+
+/* Confirmation dialog title for deleting all experiments as part of the migration flow. [CHAR_LIMIT=40] */
+"claim_experiments_delete_all_migration_confirmation_title" = "Izbrisati sve eksperimente?";
+
+/* Confirmation dialog message for deleting all experiments as part of the migration flow. [CHAR_LIMIT=150] */
+"claim_experiments_delete_all_migration_confirmation_message" = "Izbrisat će se svi eksperimenti s ovog uređaja, uključujući i arhivirane eksperimente. Tu radnju ne možete poništiti.";
+
+/* Confirmation dialog action title for deleting all experiments that don't belong to an account. [CHAR_LIMIT=15] */
+"claim_experiments_delete_all_confirmation_action" = "Izbriši sve";
+
+/* Text describing that there are experiments to claim that don't belong to an account, with a placeholder for the number of experiments. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count" = "Na ovom se uređaju nalazi više eksperimenata (%ld) na koje nisu položena prava.";
+
+/* Text describing that there are experiments to claim that don't belong to an account, when there is one experiment. [CHAR_LIMIT=60] */
+"claim_experiments_description_with_count_one" = "Na ovom se uređaju nalazi jedan eksperiment na koji nisu položena prava.";
+
+/* Accessibility title for a button that shares an unclaimed experiment. [CHAR_LIMIT=NONE] */
+"claim_experiments_share_content_description" = "Dijeljenje eksperimenta na koji nisu položena prava";
+
+/* A message shown when claiming an experiment fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiment_disk_space_error_message" = "Nema dovoljno prostora na disku za polaganje prava na eksperiment";
+
+/* A message shown when claiming experiments fails because there is not enough disk space. [CHAR_LIMIT=55] */
+"claim_experiments_disk_space_error_message" = "Nema dovoljno prostora na disku za polaganje prava na eksperimente";
+
+/* A message shown when claiming an experiment fails. [CHAR_LIMIT=30] */
+"claim_experiment_error_message" = "Polaganje prava na eksperiment nije uspjelo";
+
+/* A message shown when claiming experiments fails. [CHAR_LIMIT=30] */
+"claim_experiments_error_message" = "Polaganje prava na eksperimente nije uspjelo";
+
+/* Title of the confirm dialog claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_title" = "Položiti prava na eksperiment?";
+
+/* Title of the action to confirm claiming a single experiment. [CHAR_LIMIT=30] */
+"claim_experiment_confirmation_action_title" = "Položi prava na eksperiment";
+
+/* A confirmation dialog message shown when attempting to claim a single experiment for an account, with a placeholder for the email address. [CHAR_LIMIT=60] */
+"claim_experiment_confirmation_message" = "Želite li taj eksperiment dodati na Google disk za račun %@?";
+
+/* A message shown when claiming an experiment succeeds, with a placeholder for the account email. [CHAR_LIMIT=30] */
+"claim_experiment_snackbar_message" = "Eksperiment dodan na račun %@";
+
+/* Title of the view that allows a user to claim experiments that don't belong to an account. [CHAR_LIMIT=40] */
+"claim_experiments_title" = "Polaganje prava na prošle eksperimente";
+
+/* View controller title for claiming experiments that don't belong to an account. [CHAR_LIMIT=30] */
+"claim_experiments_view_title" = "Položi prava na eksperimente";
+
+/* Accessibility description for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_description" = "Zatvori";
+
+/* Accessibility details for the close button on a view [CHAR_LIMIT=NONE] */
+"close_btn_content_details" = "Natrag na prethodni prikaz";
+
+/* Displayed name of a sensor that shows a compass orientation [CHAR_LIMIT=25]  */
+"compass" = "Kompas";
+
+/* Units for a compass sensor [CHAR_LIMIT=10] */
+"compass_units" = "stupnjevi";
+
+/* The string used to join two strings when there is a merge conflict. [CHAR_LIMIT=3] */
+"concatenation_separator" = " / ";
+
+/* Name for sonification type from data to a pentatonic scale with silence for low values [CHAR_LIMIT=30] */
+"conductor" = "Vodič";
+
+/* Title of button that allows user to use app without signing in. [CHAR_LIMIT=50] */
+"continue_without_signin" = "Nastavi bez prijave";
+
+/* The accessibility description of the review recording crop end marker [CHAR_LIMIT=NONE] */
+"crop_end_seekbar_content_description" = "završetak obrezivanja:";
+
+/* Error message to show the user when a crop failed. This will be followed by more detailed information. [CHAR_LIMIT=50] */
+"crop_failed_message" = "Obrezivanje se ne može spremiti:";
+
+/* Content description for the crop end marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_left_content_description" = "Pomicanje završnog markera obrezivanja ulijevo";
+
+/* Content description for the crop end marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_end_right_content_description" = "Pomicanje završnog markera obrezivanja udesno";
+
+/* Content description for the crop start marker move left accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_left_content_description" = "Pomicanje početnog markera obrezivanja ulijevo";
+
+/* Content description for the crop start marker move right accessibility action [CHAR_LIMIT=NONE] */
+"crop_move_start_right_content_description" = "Pomicanje početnog markera obrezivanja udesno";
+
+/* Content description for the crop overflow menu button [CHAR_LIMIT=NONE] */
+"crop_overflow_menu_content_description" = "Više opcija";
+
+/* Message to show the user when a crop succeeded [CHAR_LIMIT=150] */
+"crop_recording_completed_message" = "Snimka obrezana";
+
+/* Error message when the user tries to save crop with bounds outside of the trial [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_large" = "Snimka se ne može obrezati izvan prvotno snimljenog raspona";
+
+/* Error message when the user tries to save a crop that is too small, i.e. less than one second [CHAR_LIMIT=100] */
+"crop_recording_failed_range_too_small" = "Snimka se ne može obrezati na manje od jedne sekunde";
+
+/* Run review menu option to crop a run [CHAR_LIMIT=25] */
+"crop_run" = "Obrezivanje";
+
+/* The accessibility description of the review recording crop start marker [CHAR_LIMIT=NONE] */
+"crop_start_seekbar_content_description" = "početak obrezivanja:";
+
+/* Content description phrase for the current value [CHAR_LIMIT=NONE] */
+"current_value_content_description" = "Trenutačna vrijednost";
+
+/* Sound intensity sensor name [CHAR_LIMIT=25] */
+"decibel" = "Intenzitet zvuka";
+
+/* Displayed units for a sound intensity sensor, decibels [CHAR_LIMIT=10] */
+"decibel_units" = "dB";
+
+/* Default experiment name [CHAR_LIMIT=25] */
+"default_experiment_name" = "Eksperiment bez naslova";
+
+/* Default sonification type name [CHAR_LIMIT=30] */
+"default_sonification" = "Zadano";
+
+/* Dialog message for deleting an experiment [CHAR_LIMIT=NONE] */
+"delete_experiment_dialog_message" = "Jeste li sigurni da želite izbrisati taj eksperiment? Sve će se njegove snimke i bilješke izbrisati.";
+
+/* Dialog title for deleting an experiment [CHAR_LIMIT=30] */
+"delete_experiment_dialog_title" = "Izbrisati taj eksperiment?";
+
+/* Menu option to delete a note [CHAR_LIMIT=25] */
+"delete_note_menu_item" = "Izbriši";
+
+/* Title for alert asking for confirmation to delete a run [CHAR_LIMIT=30] */
+"delete_run_dialog_title" = "Izbrisati tu snimku?";
+
+/* Message of alert when an experiment is successfully deleted [CHAR_LIMIT=100] */
+"deleted_experiment_message" = "Eksperiment je izbrisan.";
+
+/* Message of alert when a recording is successfully deleted [CHAR_LIMIT=100] */
+"deleted_recording_message" = "Snimka je izbrisana.";
+
+/* Heading for a section that has details about a snapshot or trigger note [CHAR_LIMIT=50] */
+"details_header" = "Pojedinosti";
+
+/* Custom sensor dialog pin label text [CHAR_LIMIT=100] */
+"device_options_custom_sensor_pin_label_text" = "Prikvačivanje";
+
+/* Custom sensor dialog frequency checkbox label text [CHAR_LIMIT=40] */
+"device_options_custom_sensor_frequency_checkbox_text" = "Frekvencija";
+
+/* Accessibility hint for the device options OK button. [CHAR_LIMIT=NONE] */
+"device_options_ok_content_description" = "Spremanje postavki senzora.";
+
+/* Device options view sensor label text [CHAR_LIMIT=100] */
+"device_options_sensor_label_text" = "Senzor";
+
+/* Menu option to disable auto scale (zoom out in Y) for a run [CHAR_LIMIT=30] */
+"disable_auto_zoom" = "Onemogući automatsku ljestvicu";
+
+/* Accessibility hint telling a user how to edit an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_edit" = "Dodirnite dvaput za uređivanje";
+
+/* Accessibility hint telling a user how to open an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_open" = "Dodirnite dvaput za otvaranje";
+
+/* Accessibility hint telling a user how to select an item using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_select" = "Dodirnite dvaput za odabir";
+
+/* Generic accessibility hint for a switch. [CHAR_LIMIT=NONE] */
+"double_tap_to_toggle" = "Dodirnite dvaput za prebacivanje";
+
+/* Accessibility hint telling a user how to open an item and view its details using the double-tap gesture [CHAR_LIMIT=NONE] */
+"double_tap_to_view_details" = "Dodirnite dvaput za pregled pojedinosti";
+
+/* Accessibility description for the drawer's grabber which allows users to move the drawer. The drawer's current position will be added (example: "half-screen") [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_description" =  "Premještanje ladice s alatima";
+
+/* Accessibility details for the drawer's grabber which allows users to move the drawer [CHAR_LIMIT=NONE] */
+"drawer_grabber_content_details" =  "Prilagodite veličinu ladice s alatima. Dostupno je više radnji.";
+
+/* Accessibility description for the drawer's position when closed [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_closed_content_description" =  "zatvoreno";
+
+/* Accessibility description for the drawer's position when in text editing mode [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_custom_content_description" =  "uređivanje";
+
+/* Accessibility description for the drawer's position when fullscreen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_full_content_description" =  "puni zaslon";
+
+/* Accessibility description for the drawer's position when half-screen [CHAR_LIMIT=NONE] */
+"drawer_grabber_position_half_content_description" =  "pola zaslona";
+
+/* Snackbar message shown when there is no connection to Google Drive available. [CHAR_LIMIT=60] */
+"drive_error_no_connection" = "Ne može se uspostaviti veza s Google diskom. Provjerite vezu.";
+
+/* A11y label for the no connection to Google Drive button. [CHAR_LIMIT=NONE] */
+"drive_error_no_connection_content_description" = "Mrežna veza prekinuta";
+
+/* Text of generic Drive error. [CHAR_LIMIT=150] */
+"drive_error_unknown" = "Science Journal ne može se povezati s Google diskom. Neki se eksperimenti možda neće sigurnosno kopirati.";
+
+/* Text of temporary Drive error. [CHAR_LIMIT=150] */
+"drive_error_temporary" = "Science Journal trenutačno se ne može povezati s Google diskom. Pokušajte ponovo kasnije.";
+
+/* Text of out of space Drive error. [CHAR_LIMIT=150] */
+"drive_error_space" = "Na Google disku nema dovoljno prostora za pohranu eksperimenta.";
+
+/* A message telling the user how their data is used and synced to Google Drive once they sign in and informing them about the ability to claim existing data after signing in. [CHAR_LIMIT=] */
+"drive_sync_information" = "Podaci o eksperimentima za Science Journal spremaju se i dostupni su na uređajima na kojima je instaliran Google disk, uz prijavu Google računom.\n\nAko imate podatke na ovom uređaju, svoje postojeće eksperimente možete spremiti na Google disk kad se prijavite. Eksperimenti se pohranjuju u mapi \"Science Journal\" na Google disku.";
+
+/* Snackbar message when Google Drive cannot be reached due to potential network issue. [CHAR_LIMIT=100] */
+"drive_sync_cannot_reach_google_drive" = "Ne možemo pristupiti Google disku. Provjerite vezu.";
+
+/* Content description for the manual edit crop end time menu option [CHAR_LIMIT=30] */
+"edit_crop_end_time" = "Uređivanje vremena završetka";
+
+/* Content description for the manual edit crop start time menu option [CHAR_LIMIT=30] */
+"edit_crop_start_time" = "Uređivanje vremena početka";
+
+/* Content description for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_description" = "Uredi eksperiment";
+
+/* Content details for the edit experiment button [CHAR_LIMIT=NONE] */
+"edit_experiment_btn_content_details" = "Promjena naslova ili fotografije eksperimenta";
+
+/* Title of the alert dialog asking you to confirm deleting pending changes to an experiment. [50 chars] */
+"edit_experiment_unsaved_changes_dialog_title" = "Promjene koje niste spremili";
+
+/* Message of the alert dialog asking you to confirm deleting pending changes to an experiment. [200 chars] */
+"edit_experiment_unsaved_changes_dialog_message" = "Jeste li sigurni da ne želite spremiti promjene za taj eksperiment?";
+
+/* Title for the field that allows you to change the photo for the experiment. [CHAR_LIMIT=50] */
+"edit_experiment_change_photo" = "Promijeni fotografiju";
+
+/* Title for the edit experiment view allowing you to change the experiment title and picture. [CHAR_LIMIT=50] */
+"edit_experiment_title" = "Uređivanje eksperimenta";
+
+/* Menu option to edit a note's timestamp [CHAR_LIMIT=30] */
+"edit_note_time_menu_item" = "Uredi vrijeme";
+
+/* Title of contextual action bar shown when editing a note's time [CHAR_LIMIT=25] */
+"edit_note_time" = "Uredite vrijeme bilješke";
+
+/* Title of a dialog to manually edit a recordings's end time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_end_time_title" = "Uređivanje vremena završetka snimanja";
+
+/* Title of a dialog to manually edit a recording's start time when cropping [CHAR_LIMIT=40] */
+"edit_recording_crop_start_time_title" = "Uređivanje vremena početka snimanja";
+
+/* Content description for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_description" = "Uredi snimku";
+
+/* Content details for the edit trial button [CHAR_LIMIT=NONE] */
+"edit_run_btn_content_details" = "Promijeni naslov snimke";
+
+/* Hint text for edit recording title text input [CHAR_LIMIT=30] */
+"edit_trial_title_hint" = "Naslov snimke";
+
+/* Message shown to user if they have no recordings or notes yet. [CHAR_LIMIT=60] */
+"empty_experiment" = "Nemate još nijedno opažanje";
+
+/* Message shown to the user when they have no experiments [CHAR_LIMIT=100] */
+"empty_project" = "Nemate nijedan eksperiment";
+
+/* Description of a list of triggers which is empty [CHAR_LIMIT=100] */
+"empty_trigger_list" = "Nema postavljenih okidača";
+
+/* Menu option to enable auto scale (zoom in in Y) for a run [CHAR_LIMIT=30] */
+"enable_auto_zoom" = "Omogući automatsku ljestvicu";
+
+/* Description for the existing data option for deleting all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_delete_all_experiments_description" = "Nijedan vaš eksperiment neće se dodati Google disk";
+
+/* Title for the existing data option for deleting all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_delete_all_experiments_title" = "Brisanje svih vaših eksperimenata";
+
+/* Description for the existing data option for saving all experiments. [CHAR_LIMIT=50] */
+"existing_data_option_save_all_experiments_description" = "Svi će se vaši eksperimenti dodati na Google disk";
+
+/* Title for the existing data option for saving all experiments. [CHAR_LIMIT=30] */
+"existing_data_option_save_all_experiments_title" = "Spremanje svih vaših eksperimenata";
+
+/* Description for the existing data option for selecting experiments to save. [CHAR_LIMIT=50] */
+"existing_data_option_select_experiments_description" = "Odaberite koje ćete eksperimente spremiti na Google disk";
+
+/* Title for the existing data option for selecting experiments to save. [CHAR_LIMIT=30] */
+"existing_data_option_select_experiments_title" = "Odabir eksperimenata za spremanje";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there are multiple. [CHAR_LIMIT=120] */
+"existing_data_options_experiment_count_text_multiple" = "Dobro došli natrag. Na ovom uređaju trenutačno imate više pohranjenih eksperimenata (%ld).\n\nOdaberite opciju za nastavak:";
+
+/* Explains how many experiments there are on device that can be deleted or synced, when there is one. [CHAR_LIMIT=80] */
+"existing_data_options_experiment_count_text_single" = "Dobro došli natrag. Na ovom uređaju trenutačno imate jedan pohranjeni eksperiment.\n\nOdaberite opciju za nastavak:";
+
+/* The title of the screen that shows existing experiments that can be synced. [CHAR_LIMIT=30] */
+"existing_data_options_title" = "Izrada sigurnosne kopije na Google disku";
+
+/* The word describing a scientific experiment, singular. [CHAR_LIMIT=20] */
+"experiment" = "Eksperiment";
+
+/* The word describing a scientific experiment, plural. [CHAR_LIMIT=20] */
+"experiments" = "Eksperimenti";
+
+/* The alert confirm cutton title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=20] */
+"experiment_not_finished_downloading_confirm_button" = "Podijeli eksperiment";
+
+/* The alert message when sharing an experiment that has not finished downloading. [CHAR_LIMIT=120] */
+"experiment_not_finished_downloading_message" = "Nije dovršeno preuzimanje tog eksperimenta. Ako podijelite kopiju, neki će podaci možda nedostajati";
+
+/* The alert title when sharing an experiment that has not finished downloading. [CHAR_LIMIT=30] */
+"experiment_not_finished_downloading_title" = "Preuzimanje u tijeku";
+
+/* Title for an experiment cell which appears during an active recording session. [CHAR_LIMIT=30] */
+"experiment_recording_title" = "Snimanje…";
+
+/* Hint (aka. placeholder) for experiment title input field [CHAR_LIMIT=50] */
+"experiment_title_hint" = "Naslov eksperimenta";
+
+/* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
+"experiment_version_too_new_to_edit" = "Taj je eksperiment izrađen pomoću novije verzije Science Journala. Nećete ga moći uređivati na ovom uređaju sve dok ne preuzmete najnoviju nadogradnju.";
+
+/* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
+"experiments_tutorial_message" = "Organizirajte svoje misli i opažanja pisanjem bilješki, bilježenjem podataka ili snimanjem fotografija";
+
+/* The title for the tutorial popup suggesting a user create a new Experiment. [CHAR_LIMIT=50] */
+"experiments_tutorial_title" = "Izradite novi eksperiment";
+
+/* Title for the welcome screen when a user is not signed in. [CHAR_LIMIT=40] */
+"explore_your_world" = "Istražujte svijet oko sebe";
+
+/* Name of the menu item to data from graphs [CHAR_LIMIT=25] */
+"export_action" = "Dijeli";
+
+/* Snackbar message shown to user if the export fails [CHAR_LIMIT=50] */
+"export_error" = "Izvoz nije uspio";
+
+/* Dialog title for the chooser that pops up after exporting an experiment [CHAR_LIMIT=50] */
+"export_experiment_chooser_title" = "Slanje eksperimenta";
+
+/* Export option for selecting whether to use relative timestamps when exporting (0, 1, 2) vs absolute time [CHAR_LIMIT=100] */
+"export_options_relative_time" = "Relativno vrijeme";
+
+/* Dialog title shown when exporting the data to another app [CHAR_LIMIT=100] */
+"export_options_title" = "Izvoz…";
+
+/* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
+"export_photo_chooser_title" = "Dijeljenje fotografije na…";
+
+/* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
+"first_experiment_title" = "Dobro došli u Science Journal";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_text_note" = "Pokušajte sastaviti bilješke i bilježiti podatke putem alatne trake u nastavku!";
+
+/* Text note contents for first note in first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_picture_note_caption" = "Dobro došli u Science Journal!";
+
+/* Text note contents for the second text note in the first experiment [CHAR_LIMIT=NONE] */
+"first_experiment_second_text_note" = "Pronađite aktivnosti u kojima se možete okušati na adresi\ng.co/sciencejournalactivities";
+
+/* Menu option to forget pairing relationship with an external device [CHAR_LIMIT=30] */
+"forget_device" = "Zaboravi ovaj uređaj";
+
+/* Content description for a fullscreen button [CHAR_LIMIT=NONE] */
+"fullscreen_content_description" = "Puni zaslon";
+
+/* Button title for the welcome screen to get started with the app. [CHAR_LIMIT=50] */
+"get_started" = "Početak";
+
+/* The name of the setting to turn on audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_enable" = "Omogući zvuk";
+
+/* The name of the setting to turn off audio graph feedback. [CHAR_LIMIT=25] */
+"graph_options_audio_feedback_disable" = "Onemogući zvuk";
+
+/* The heading on a sensor info page where the user can learn more about a sensor [CHAR_LIMIT=40] */
+"heading_info_section" = "Što se događa?";
+
+/* Displayed units for a pitch sensor, hertz [CHAR_LIMIT=10] */
+"hertz_units" = "Hz";
+
+/* Generic Error for attempting to import [CHAR_LIMIT=NONE] */
+"import_failed" = "Nažalost, došlo je do nepoznate pogreške.";
+
+/* Error for attempting to import a corrupted file [CHAR_LIMIT=NONE] */
+"import_failed_file" = "Uvoz nije uspio. Nešto nije u redu s tim eksperimentom.";
+
+/* Error for attempting to import while recording [CHAR_LIMIT=NONE] */
+"import_failed_recording" = "Science Journal trenutačno je u upotrebi. Zaustavite snimanje i pokušajte ponovo.";
+
+/* Error message when user attempts to import an experiment before signing in. [CHAR_LIMIT=150] */
+"import_sign_in_error" = "Prijavite se da biste uvezli eksperiment.";
+
+/* Headline for insufficient storage dialog [CHAR_LIMIT=50] */
+"import_storage_limit" = "Nema dovoljno prostora za pohranu";
+
+/* Body for insufficient storage dialog [CHAR_LIMIT=NONE] */
+"import_storage_limit_body" = "Pohranom možete upravljati u postavkama.";
+
+/* Menu option to include archived recordings when viewing a list of recordings in an experiment [CHAR_LIMIT=30] */
+"include_archived_trials" = "Prikaži arhivirane snimke";
+
+/* Title for the button that takes a user to the iOS system settings for Science Journal which allows them to modify camera and photo library permissions. [CHAR_LIMIT=50] */
+"input_blocked_open_settings_button" = "Otvori postavke";
+
+/* Message describing that the use of a brightness sensor while recording prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_brightness_sensor" = "Fotoaparat se ne može upotrijebiti jer bilježite podatke pomoću senzora osvjetljenja koji mjeri podatke putem prednjeg fotoaparata.";
+
+/* Message describing that the use of split screen apps or picture in picture video prevents the camera from being accessible. [CHAR_LIMIT=200] */
+"input_camera_blocked_by_interruption" = "Fotoaparat se ne može upotrijebiti jer gledate videozapis sa slikom u slici ili upotrebljavate Science Journal u načinu rada s podijeljenim prikazom.";
+
+/* Title for the button that takes a user to the observe tab when their camera is blocked by the brightness sensor. [CHAR_LIMIT=30] */
+"input_camera_blocked_view_sensors_button" = "Prikaži senzore";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_camera_permission_denied" = "Fotoaparat se ne može upotrijebiti jer Science Journal nema dopuštenje da mu pristupi.";
+
+/* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
+"input_photo_library_permission_denied" = "Zbirka fotografija ne može se upotrijebiti jer Science Journal nema dopuštenje da joj pristupi.";
+
+/* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
+"learn_more" = "Saznajte više";
+
+/* Accessibility description of the learn more button for a sensor [CHAR_LIMIT=NONE] */
+"learn_more_btn_content_description" = "Saznajte više";
+
+/* Displayed name of a sensor that shows total magnitude of acceleration excluding gravity [CHAR_LIMIT=25]  */
+"linear_accelerometer" = "Linearni akcelerometar";
+
+/* Reusable partial string for changelog mentioning that we fixed bugs.  This should start with two newlines to give it space  [CHAR LIMIT=75] */
+"listing_changelog_bug_fixes" = "Poboljšanja izvedbe i ispravljene programske pogreške.";
+
+/* Reusable partial string for changelog introducing new features [CHAR LIMIT=50] */
+"listing_changelog_features" = "Nove značajke:";
+
+/* Separator between features and bugs in release notes when both are present.  Should be two newlines  [CHAR LIMIT=5] */
+"listing_changelog_separator" = "\n\n";
+
+/* Feature 1 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=80] */
+"listing_h_feature_1" = "\n• Senzor visine tona.";
+
+/* Feature 2 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=120] */
+"listing_h_feature_2" = "\n• Izvoz eksperimenata u datoteku i njihov uvoz na drugim uređajima.";
+
+/* Feature 3 of the H release.  Should begin with a newline and bullet character [CHAR LIMIT=100] */
+"listing_h_feature_3" = "\n• Izvoz fotografija iz eksperimenta.";
+
+/* Button to view more notes in a trial [CHAR_LIMIT=50] */
+"load_more_notes_btn" = "Prikaži više bilješki";
+
+/* Displayed name of a sensor that shows magnetic field strength measured by the phone's magnetometer [CHAR_LIMIT=25]  */
+"magnetic_field_strength" = "Magnetometar";
+
+/* Displayed units for a magnetic strength sensor [CHAR_LIMIT=10] */
+"magnetic_strength_units" = "μT";
+
+/* Content description for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_description" = "Izbornik";
+
+/* Content details for a generic menu button [CHAR_LIMIT=NONE] */
+"menu_btn_content_details" = "Prikaz izbornika s više opcija";
+
+/* Menu option to change the audio settings [CHAR_LIMIT=25] */
+"menu_item_audio_settings" = "Postavke zvuka";
+
+/* Menu option to edit triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_edit_triggers" = "Uredi okidače";
+
+/* Menu option to set triggers for a particular sensor [CHAR_LIMIT=25] */
+"menu_item_set_triggers" = "Postavi okidače";
+
+/* Section label for devices that I have previously connected to [CHAR_LIMIT=30] */
+"my_devices" = "Moji uređaji";
+
+/* Title of a dialog to name an experiment that is not yet named [CHAR_LIMIT=50] */
+"name_experiment_dialog_title" = "Dodijelite naziv eksperimentu";
+
+/* Title of the navigation item to go to making science activities [CHAR_LIMIT=25] */
+"navigation_item_activities" = "Aktivnosti";
+
+/* Title of the navigation item to select experiment list page [CHAR_LIMIT=25] */
+"navigation_item_experiments" = "Eksperimenti";
+
+/* Title of the navigation item to show settings [CHAR_LIMIT=25] */
+"navigation_item_settings" = "Postavke";
+
+/* Hint text for the caption text input field while picture note editing [CHAR_LIMIT=30] */
+"note_caption_hint" = "Dodajte opis";
+
+/* Hint text for the caption text input field while picture viewing in read-only mode [CHAR_LIMIT=30] */
+"note_caption_hint_read_only" = "Opis";
+
+/* Accessibility title for a picture note [CHAR_LIMIT=NONE] */
+"note_content_description_picture" = "Bilješka sa slikom";
+
+/* Accessibility title for a text note [CHAR_LIMIT=NONE] */
+"note_content_description_text" = "Tekstna bilješka";
+
+/* Accessibility title for a trigger note [CHAR_LIMIT=NONE] */
+"note_content_description_trigger" = "Bilješka okidača";
+
+/* Accessibility title for a snapshot note [CHAR_LIMIT=NONE] */
+"note_content_description_snapshot" = "Bilješka snimke";
+
+/* Name for sonification type from data to a pitch envelope [CHAR_LIMIT=30] */
+"notes" = "Bilješke";
+
+/* Accessibility announcement when a note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"note_added_content_description" = "Bilješka je dodana";
+
+/* Accessibility hint describing the notes tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"notes_tab_content_description" = "Bilješke: dodajte tekstualnu bilješku za taj eksperiment";
+
+/* Accessibility hint describing the observe tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"observe_tab_content_description" = "Promatranje: upotrijebite senzore da biste eksperimentu dodali važne slike ili snimke";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_experiment_failed" = "Eksperiment se ne može otvoriti";
+
+/* Headline for import error dialogs [CHAR_LIMIT=50] */
+"open_file_failed" = "Datoteka se ne može otvoriti";
+
+/* Body for import error dialogs [CHAR_LIMIT=NONE] */
+"open_file_failed_body" = "Eksperimenti moraju biti datoteke u formatu Science Journala (.sj)";
+
+/* Content description for a pause button [CHAR_LIMIT=NONE] */
+"pause_content_description" = "Pauziraj";
+
+/* Content description for a percent value [CHAR_LIMIT=NONE] */
+"percent_content_description" = "Postotak";
+
+/* The thank you message once permission requests are complete. [CHAR_LIMIT=220] */
+"permissions_guide_all_done_message" = "To je sve! Gotovi smo s provjerom dopuštenja. Ako ta dopuštenja kasnije trebate promijeniti, možete to učiniti bilo kada u odjeljku Science Journal u aplikaciji Postavke na iOS-u.";
+
+/* A description of the camera permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_camera_info" = "Sada ćemo zatražiti dopuštenje za pristup fotoaparatima. Prednji fotoaparat služi kao senzor osvjetljenja, a oba fotoaparata možete upotrijebiti za dodavanje fotografskih bilješki eksperimentima i snimkama.";
+
+/* The title of the button that exists the permissions request guide and loads the app. [CHAR_LIMIT=20] */
+"permissions_guide_finish_button_title" = "Nastavi";
+
+/* The welcome message introduction when prompting the user through a series of permissions prompts. [CHAR_LIMIT=220] */
+"permissions_guide_message_intro" = "Za početak ćemo provjeriti dopuštenja da bismo mogli omogućiti hardverske senzore, fotoaparat i zbirku fotografija. Svako ćemo dopuštenje objasniti prije nego što ga zatražimo.";
+
+/* A description of the microphone permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_microphone_info" = "U nastavku, provjerit ćemo dopuštenje za pristup mikrofonu. Mikrofon se upotrebljava kao senzori zvuka. Sadržaj zvuka nikad ne snimamo, ne spremamo i ne prenosimo; samo mjerimo intenzitet i visinu tona zvuka.";
+
+/* A description of the push notification permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_notifications_info" = "Najprije ćemo provjeriti dopuštenje za slanje push obavijesti. Upotrijebit ćemo ih samo da vas obavijestimo kad će snimanja završiti ako aplikaciju premjestite u pozadinu tijekom snimanja.";
+
+/* A description of the photo library permission and why we need it. [CHAR_LIMIT=220] */
+"permissions_guide_photo_library_info" = "Naposljetku ćemo provjeriti pristup zbirci fotografija da biste postojeće fotografije mogli dodati eksperimentima i snimkama te da bismo fotografije koje snimate mogli spremati u zbirku.";
+
+/* The title of the button that starts to guide the user through a series of permissions prompts. [CHAR_LIMIT=20] */
+"permissions_guide_start_button_title" = "Krenimo";
+
+/* The message to tell a user we're done checking for a permission [CHAR_LIMIT=20] */
+"permissions_guide_check_complete" = "Gotovo!";
+
+/* The title of the button that starts the current permission check [CHAR_LIMIT=30] */
+"permissions_guide_continue_button_title" = "Provjera dopuštenja";
+
+/* The welcome message title when prompting the user through a series of permissions prompts. [CHAR_LIMIT=50] */
+"permissions_guide_welcome_title" = "Dobro došli u Science Journal!";
+
+/* Content description for the image for an experiment, will be combined with the experiment name. [CHAR_LIMIT=NONE] */
+"photo_for_content_description" = "Fotografija za eksperiment";
+
+/* Accessibility description for a photo thumbnail [CHAR_LIMIT=NONE] */
+"photo_select_content_description" = "Fotografija";
+
+/* Snackbar message shown when adding a photo fails because there is not enough disk space. [CHAR_LIMIT=100] */
+"photo_disk_space_error_message" = "Nema dovoljno prostora na disku za dodavanje fotografije";
+
+/* Name for a drop down that shows built-in sensors on the phone [CHAR_LIMIT=30] */
+"phone_sensors" = "Interni senzori";
+
+/* Accessibility hint describing the photos tab (add commas for clarity with voice over pauses) [CHAR_LIMIT=NONE] */
+"photos_tab_content_description" = "Zbirka fotografija: dodajte eksperimentu fotografiju iz zbirke";
+
+/* Title for the menu item that shows more metadata for a picture in a picture detail view. [CHAR_LIMIT=30] */
+"picture_detail_info" = "Informacije";
+
+/* Title for the picture details EXIF information row for device used to take the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_device" = "Uređaj";
+
+/* Title for the picture details EXIF information row for the dimensions of the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_dimensions" = "Dimenzije";
+
+/* Title for the picture details EXIF information row for the notes set on the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_notes" = "Bilješke";
+
+/* Title for the picture details EXIF information row for the shutter speed used when taking the picture. [CHAR_LIMIT=30] */
+"picture_detail_exif_shutter_speed" = "Brzina okidača";
+
+/* Accessibility announcement when a picture is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"picture_note_added_content_description" = "Fotografija je dodana";
+
+/* Pitch sensor name [CHAR_LIMIT=25] */
+"pitch" = "Visina tona";
+
+/* Content description for a pitch that is flatter than a flat musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_flat_note_content_description" = "%1$@ polutona niže od sniženog %2$@, %3$@. oktava";
+
+/* Content description for a pitch that is flatter than a natural musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_natural_note_content_description" = "%1$@ polutona niže od %2$@, %3$@. oktava";
+
+/* Content description for a pitch that is flatter than a sharp musical note. The number of half steps flatter will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flatter_than_sharp_note_content_description" = "%1$@ polutona niže od povišenog %2$@, %3$@. oktava";
+
+/* Content description for a pitch that is equal to a flat musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_flat_note_content_description" = "Sniženi %1$@, %2$@. oktava";
+
+/* Content description for high pitch [CHAR_LIMIT=NONE] */
+"pitch_high_content_description" = "visok ton";
+
+/* Content description for low pitch [CHAR_LIMIT=NONE] */
+"pitch_low_content_description" = "nizak ton";
+
+/* Content description for a pitch that is equal to a natural musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_natural_note_content_description" = "%1$@, %2$@. oktava";
+
+/* Content description for a pitch that is equal to a sharp musical note. The musical note will be used in the first placeholder, and the octave number will be used in the second placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharp_note_content_description" = "Povišeni %1$@, %2$@. oktava";
+
+/* Content description for a pitch that is sharper than a flat musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_flat_note_content_description" = "%1$@ polutona više od sniženog %2$@, %3$@. oktava";
+
+/* Content description for a pitch that is sharper than a natural musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_natural_note_content_description" = "%1$@ polutona više od %2$@, %3$@. oktava";
+
+/* Content description for a pitch that is sharper than a sharp musical note. The number of half steps sharper will be used in the first placeholder, the musical note will be used in the second placeholder, and the octave number will be used in the third placeholder. [CHAR_LIMIT=NONE] */
+"pitch_sharper_than_sharp_note_content_description" = "%1$@ polutona više od povišenog %2$@, %3$@. oktava";
+
+/* A plural version of the word describing the measurement of a dot on a screen. [CHAR_LIMIT=10] */
+"pixels" = "Pikseli";
+
+/* Content description for a play button [CHAR_LIMIT=NONE] */
+"play_content_description" = "Reproduciraj";
+
+/* Snackbar message when preferences are migrated from root to account users. [CHAR_LIMIT=100] */
+"preference_migration_message" = "Na taj su račun primijenjene postojeće postavke uređaja";
+
+/* Accessibility announcement indicating pull to refresh has been initiated. [CHAR_LIMIT=NONE] */
+"pull_to_refresh_content_description" = "Osvježavanje";
+
+/* Displayed units for a raw sensor, a percentage [CHAR_LIMIT=10] */
+"raw_units" = "%";
+
+/* The title of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=50] */
+"recording_start_failed" = "Snimanje se ne može pokrenuti";
+
+/* The message of a dialog displayed when a recording can't be started due to a disconnected sensor. [CHAR_LIMIT=150] */
+"recording_start_failed_sensor_disconnected" = "Prekinuta je veza s jednim ili više senzora. Pokušajte ponovo.";
+
+/* The recording ended local notification alert body. [CHAR_LIMIT=74] */
+"recording_ended_dialog_message" = "Otvorite Science Journal da biste pregledali snimljene podatke.";
+
+/* The recording ended local notification alert title. [CHAR_LIMIT=35] */
+"recording_ended_dialog_title" = "Snimanje je završilo.";
+
+/* The action button to continue recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_continue" = "Nastavi";
+
+/* The action button to cancel recording after an attempt to stop but one or more sensors had not data [CHAR_LIMIT=20] */
+"recording_stop_failed_cancel" = "Otkaži snimanje";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=150] */
+"recording_stop_failed_no_data" = "Jedan ili više senzora nije snimilo podatke. Želite li otkazati snimanje?";
+
+/* The title of a dialog displayed when a recording could not be stopped because not all sensors had data [CHAR_LIMIT=50] */
+"recording_stop_failed_no_data_title" = "Podaci se ne snimaju";
+
+/* The title of a dialog displayed when a recording stopped. [CHAR_LIMIT=50] */
+"recording_stopped" = "Snimanje je zaustavljeno";
+
+/* The recording will end local notification alert body. [74 chars] */
+"recording_will_end_dialog_message" = "Otvorite Science Journal da nastavite sa snimanjem.";
+
+/* The recording will end local notification alert title. [35 chars] */
+"recording_will_end_dialog_title" = "Snimanje će uskoro završiti.";
+
+/* The recording will end local notification alert action title for continuing recording. [CHAR_LIMIT=30] */
+"recording_will_end_continue" = "Nastavi snimanje";
+
+/* The recording will end local notification alert action title for stopping recording. [CHAR_LIMIT=30] */
+"recording_will_end_stop" = "Zaustavi snimanje";
+
+/* Menu title for the option to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=30] */
+"remove_cover_image" = "Ukloni naslovnu sliku";
+
+/* Accessibility label for the menu item to remove an experiment's cover image during the claim flow. [CHAR_LIMIT=NONE] */
+"remove_cover_image_content_description" = "Uklanjanje naslovne slike za taj eksperiment.";
+
+/* Confirmation dialog message when trying to delete the cover image for an experiment during the claim flow. [CHAR_LIMIT=200] */
+"remove_cover_image_message" = "Jeste li sigurni da želite ukloniti naslovnu sliku? Tu radnju ne možete poništiti.";
+
+/* Snackbar message when a cover image is successfully removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_successful" = "Naslovna je slika uklonjena.";
+
+/* Snackbar message when a cover image failed to be removed from an experiment. [CHAR_LIMIT=100] */
+"remove_cover_image_failed" = "Naslovna slika ne može se ukloniti.";
+
+/* Displayed units for an RPM sensor [CHAR_LIMIT=10] */
+"rpm_units" = "o/min";
+
+/* Accessibility announcement when a recording is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"run_added_content_description" = "Snimka je dodana";
+
+/* Title for an untitled trial, which is known as a recording. [CHAR_LIMIT=40] */
+"run_default_title" = "Snimanje";
+
+/* Title for the dialog asking a user to rename a trial recording. [CHAR_LIMIT=60] */
+"run_rename_dialog_title" = "Preimenujte snimku";
+
+/* Alert content to confirm that a run should really be deleted [CHAR_LIMIT=NONE] */
+"run_review_delete_confirm" = "Jeste li sigurni da želite izbrisati tu snimku? Snimljeni podaci i bilješke izbrisat će se.";
+
+/* The label for the duration of the experiment run [CHAR_LIMIT=20] */
+"run_review_duration" = "Trajanje";
+
+/* The title for the run review activity [CHAR_LIMIT=25] */
+"run_review_activity_label" = "Pregled";
+
+/* Accessibility description for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_description" = "Spremi";
+
+/* Accessibility details for the save button on a view [CHAR_LIMIT=NONE] */
+"save_btn_content_details" = "Spremite promjene i vratite se na prethodni prikaz";
+
+/* Title for Add To Library confirmation dialog [CHAR_LIMIT=25] */
+"save_experiment" = "Spremi eksperiment";
+
+/* Text for Add To Library confirmation dialog [CHAR_LIMIT=NONE] */
+"save_experiment_text" = "Želite li taj eksperiment dodati u svoju knjižnicu?";
+
+/* Title of the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. "Files" in this case should be capitalized as it is an iOS-specific proper noun. [CHAR_LIMIT=40] */
+"save_to_files_title" = "Spremi u Datoteke";
+
+/* Accessibility hint for the menu item allowing a user to save the experiment, image or trial to the Files app on iOS. [CHAR_LIMIT=NONE] */
+"save_to_files_content_description" = "Prikazuje preglednik dokumenata u kojem možete spremiti kopiju te datoteke u mapu na svojem uređaju.";
+
+/* Message informing a user a single file was saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_success_message" = "Datoteka je spremljena";
+
+/* Message informing a user multiple files were saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_success_message" = "Datoteke su spremljene";
+
+/* Message informing a user a single file was not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_single_error_message" = "Datoteka se nije mogla spremiti. Pokušajte ponovo.";
+
+/* Message informing a user multiple files were not saved to device successfully. [CHAR_LIMIT=100] */
+"save_to_files_multiple_error_message" = "Datoteke se nisu mogle spremiti. Pokušajte ponovo.";
+
+/* Name for sonification type from data to a pentatonic scale [CHAR_LIMIT=30] */
+"scale" = "Ljestvica";
+
+/* Content description for the button that selects a note's timestamp in a playback chart in a recording [CHAR_LIMIT=NONE] */
+"select_timestamp_content_description" = "Odaberite vremensku oznaku bilješke na grafikonu";
+
+/* Name of the menu item to export an experiment file [CHAR_LIMIT=25] */
+"send_copy_action" = "Pošalji kopiju";
+
+/* The title of the button that takes a user to system settings when alerted about the app needing sensor access. [CHAR_LIMIT=15] */
+"sensor_alert_settings_button_title" = "Postavke";
+
+/* Device options dropdown item for the brightness sensor [CHAR_LIMIT=40] */
+"sensor_brightness" = "Svjetlina";
+
+/* Message to display to a user when a brightness sensor card failed because of camera permissions. [CHAR_LIMIT=120] */
+"sensor_card_brightness_permission_error" = "Senzor svjetline ne može se upotrijebiti jer Science Journal nema dopuštenje da pristupi fotoaparatu.";
+
+/* Message to display to the user when a sensor card failed to load data [CHAR_LIMIT=100] */
+"sensor_card_error_text" = "Učitavanje podataka senzora nije uspjelo";
+
+/* Message to display to a user when a sensor card is loading data from the sensor [CHAR_LIMIT=50] */
+"sensor_card_loading_text" = "Učitavanje podataka senzora…";
+
+/* Message to display to a user when an audio sensor card failed because of microphone permissions. [CHAR_LIMIT=120] */
+"sensor_card_sound_permission_error" = "Senzori zvuka ne mogu se upotrijebiti jer Science Journal nema dopuštenje da pristupi mikrofonu.";
+
+/* Device options dropdown item for Custom sensor [CHAR_LIMIT=40] */
+"sensor_custom" = "Prilagođeno";
+
+/* Long description of a accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_acc" = "Tijela imaju tendenciju mirovanja, odnosno gibanja ako su u pokretu – tu tendenciju nazivamo inercijom. Prvi Newtonov zakon tu ideju formalizira na sljedeći način: tijelo ostaje u stanju mirovanja ili gibanja sve dok neka sila ne dovede do promjene tog stanja.\n\nKad sila uzrokuje pomicanje tijela, kažemo da ono ubrzava: njegova se brzina mijenja, bilo da se radilo o ubrzavanju, usporavanju ili promjeni smjera. Ubrzanje se mjeri kao promjena brzine u jedinici vremena (metri u sekundi), odnosno u metrima u sekundi na kvadrat (m/s²).\n\nVaš telefon ima uređaj koji mjeri te promjene kretanja – akcelerometar. U akcelerometru se nalaze male mase koje se slobodno kreću. Uslijed promjena u gibanju te se mase pomiču, slično kao što se vaša glava pomiče unaprijed ako se nađete u automobilu koji naglo zakoči. Mjereći te suptilne inercijske pomake, akcelerometar u telefonu prepoznaje promjene u pokretima i smjeru, što je korisna značajka prilikom okretanja zaslona iz pejzažnog u portretni način rada, igranja igara na telefonu i prilikom drugih radnji.";
+
+/* Long description of a accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_acc" = "Vjerojatno ste primijetili neprekidno ubrzanje po osi Z, čak i kad telefon leži na stolu. To je ubrzanje kojem smo izloženi zbog Zemljine gravitacije koja nas privlači brzinom od približno 9,8 m/s².";
+
+/* Long description of an barometer sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_barometer" = "Iako to možda tako ne doživljavamo, svi mi zapravo živimo na dnu dubokog oceana zraka: Zemljine atmosfere visine od 40 km. Masa čitavog tog zraka koji nas pritišće stvara atmosferski tlak.\n\nNa morskoj razini atmosferski tlak iznosi 96 kPa, odnosno 96 njutna po kvadratnom metru. Za usporedbu, na području standardne veličine lista papira, ekvivalentna vrijednost tog pritiska iznosila bi približno 8900 kPa.";
+
+/* Long description of an barometer sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_barometer" = "Taj tlak ne osjećamo jer smo na njega navikli, no primjećujemo čak i njegove neznatne promjene, primjerice kad smo na većim nadmorskim visinama ili u zrakoplovu. Atmosferski tlak ovisi i o vremenskim uvjetima: niži je u području olujnog, nestabilnog zraka, a viši kad je zrak stabilniji i nebo bez oblaka.\n\nDigitalni barometar u telefonu mjeri atmosferski tlak u hektopaskalima. (Jedan hektopaskal iznosi 100 paskala, a paskal je jedan njutn sile po kvadratnom metru.) Vjerojatno ste čuli da prognostičari iskazuju atmosferski tlak u milibarima. Ta jedinica možda zvuči poznatije, ali istovjetna je hektopaskalu.\n\nMožda se pitate sljedeće: zašto se telefonom može mjeriti atmosferski tlak? Atmosferski tlak mijenja se čak i uslijed sitnih promjena nadmorske visine, na primjer kad hodate uz stepenice. Dakle, digitalni barometar u vašem telefonu može vam pomoći u otkrivanju promjene lokacije. Primjerice, može vam reći na kojem se katu zgrade nalazite ili vozite li se nadvožnjakom ili podvožnjakom.";
+
+/* Long description of a brightness sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_brightness" = "Prednji fotoaparat očitava osvjetljenje u vrijednosti ekspozicije (VE), mjeri koja se temelji na brzini okidača fotoaparata, F-broju i ISO vrijednosti, a ovisi o svjetlini piksela snimljenih uz navedene postavke.\n\nŠto je zabilježena svjetlina veća, veća je i vrijednost ekspozicije. Ta će vrijednost biti negativna u tami.";
+
+/* Long description of a brightness sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_brightness" = "Budući da je vrijednost ekspozicije mjera koja se temelji na optičkim komponentama i senzorima fotoaparata, raspon vrijednosti ograničen je hardverom i softverom. Dok senzor ambijentalnog osvjetljenja može izravno mjeriti lukse, prednji fotoaparat mora odrediti osnovicu mjerenja na temelju F-broja, ISO vrijednosti brzine okidača, a zatim nakon snimanja fotografije utvrditi vrijednost ekspozicije na temelju analize piksela. S obzirom na taj postupak, vrijednosti ekspozicije mogu se razlikovati ovisno o uređaju ako se prag F-broja razlikuje, kao što je to slučaj između uređaja iPhone 8 (F/1,8) i iPad (F/2,4).\n\nBudući da vrijednost ekspozicije ovisi o mjerenju vrijednosti svjetline snimljenih piksela, izvori ambijentalnog osvjetljenja imat će mnogo manju vrijednost nego kad se luksi mjere infracrvenim senzorom jer su mjerenja izravno ovisna o položaju fotoaparata i onoga što se snima.";
+
+/* Long description of a compass sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_compass" = "Vjerojatno već znate da Zemlja ima magnetsko polje. No možda ne znate da vaš telefon sadrži uređaj koji otkriva magnetska polja: magnetometar. Ako podatke s magnetometra telefona povežemo s orijentacijom telefona u prostoru, možemo izraditi digitalni kompas.\n\nObičan kompas vrsta je magnetometra \"stare tehnologije\", čija se igla pomiče uslijed djelovanja magnetskog polja. Telefoni u sebi nemaju sićušan kompas, već senzor s tri osi koji pomoću električne struje otkriva snagu magnetskog polja u tri prostorne dimenzije. No to nije dovoljno za izradu kompasa!\n\nZašto je za kompas potrebno povezati podatke s magnetometra i orijentaciju telefona? Orijentacija telefona omogućuje nam da izračunamo magnetsku rotaciju čak i kad telefon nije postavljen ravno, u istoj ravnini kao Zemljino magnetsko polje. Budući da znamo da gravitacija djeluje okomito na Zemljino magnetsko polje, možemo upotrijebiti smjer gravitacije iz senzora akcelerometra da bismo utvrdili koliko je magnetskog polja u istoj ravnini kao Zemljino magnetsko polje.";
+
+/* Long description of a compass sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_compass" = "Možda ste primijetili da kompas ne reagira samo na Zemljino magnetsko polje, već i na svako drugo magnetsko polje u njegovoj blizini. Magneti, električne struje i metalni predmeti mogu isto tako utjecati na magnetometar u telefonu i uzrokovati promjene u očitavanju kompasa. Iziđite na otvoreni prostor, po mogućnosti van i podalje od električnih vodova, da biste bili sigurni da se crveni vršak magnetometra poravnao sa Zemljinim magnetskim poljem. Ako trebate kalibrirati magnetometar u telefonu, izvodite telefonom kretnje u obliku brojke 8.";
+
+/* Long description of a decibel sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_decibel" = "Zvukove proizvode vibracije. Primjerice, vaš glas nastaje vibriranjem vaših glasnica. Te vibracije stvaraju različite zone visokog i niskog zračnog tlaka koje se šire prema van – slično kružnom širenju valova koji nastaju kada u jezero bacite kamenčić.";
+
+/* Long description of a decibel sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_decibel" = "Svi se zvukovi mogu opisati kroz svoju frekvenciju i intenzitet.\n\nPomoću senzora intenziteta zvuka u Science Journalu mjerite intenzitet u decibelima (dB). Intenzitet, odnosno glasnoća, ovisi o udaljenosti koju tijelo koje vibrira prijeđe prilikom svake vibracije; veći intenzitet doživljavamo kao veću glasnoću.\n\nFrekvencija (ili visina tona) zvučnog vala ekvivalent je brzine vibracije. Što brže tijelo vibrira, to je nastali zvuk viši. Senzor intenziteta zvuka u Science Journalu ne mjeri frekvenciju, već samo glasnoću. Senzor intenziteta zvuka u Science Journalu ne mjeri frekvenciju, već samo glasnoću.\n\nVažno je napomenuti da je mikrofon u vašem uređaju dizajniran tako da bude vrlo osjetljiv na razlike u zvučnim valovima tijekom vremena, ali ne i na apsolutnu veličinu svakog vala. Pokušali smo odabrati kôd koji će vjerojatno generirati brojeve slične referentnim brojevima koji su navedeni ispod, no svaki uređaj može dati konzistentno veće ili manje brojeve. Znanstvenici takve senzore obično kalibriraju prema poznatim mjerenjima. Science Journal vam zasad može reći je li vaše sljedeće putovanje vlakom glasnije od sljedećeg rock koncerta, no samo ako ponesete telefon na ta mjesta.\n\nJoš jedna bitna napomena: postoje važne razlike između \"intenziteta zvuka\", \"razine intenziteta zvuka\" i \"tlaka zvuka\". Ovdje ih tretiramo kao istu stvar, no ako želite produbiti svoja znanja, dostupni su brojni online resursi o njihovim razlikama.\n\nNajtiši zvuk koji prosječno ljudsko uho može čuti definira se kao 0 dB. Uobičajeni razgovor odgovara vrijednosti od približno 60 dB, a zvukovi iznad 140 dB bolni su za ljudsko uho. Međutim, zvukovi ne moraju biti bolni da bi bili štetni. Neprekidna izloženost zvukovima od 90 dB, što otprilike odgovara buci koju proizvodi usisavač, može naposljetku dovesti do gubitka sluha.\n\nLjestvica decibela je logaritamska, zbog čega izvor zvuka od 40 dB nije dvostruko intenzivniji od 20 dB, već 100 puta intenzivniji. Osim toga, ako jedna budilica daje 70 dB, dvije budilice ne daju 140 dB, već 73 dB. Kao što smo rekli, to je osebujna ljestvica.\n\n10 dB: šuštanje lišća\n20 dB: šapat na 1,5 m\n30 dB: tihi šapat\n50 dB: kiša\n60 dB: normalan razgovor\n90 dB: mikser\n100 dB: automobil bez ispušnog prigušivača\n110 dB: vikanje u uho\n120 dB: grmljavina\n130 dB: pneumatska bušilica\n140: uzlijetanje zrakoplova";
+
+/* Long description of the combined linear accelerometer sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_linear_acc" = "Tijela imaju tendenciju mirovanja, odnosno gibanja ako su u pokretu – tu tendenciju nazivamo inercijom. Prvi Newtonov zakon tu ideju formalizira na sljedeći način: svako tijelo ostaje u stanju mirovanja ili gibanja sve dok neka sila ne dovede do promjene tog stanja.\n\nKad sila uzrokuje pomicanje tijela, kažemo da ono ubrzava: njegova se brzina mijenja, bilo da se radilo o ubrzavanju, usporavanju ili promjeni smjera. Ubrzanje se mjeri kao promjena brzine u jedinici vremena (metri u sekundi), odnosno u metrima u sekundi na kvadrat (m/s²).\n\nVaš telefon ima uređaj koji mjeri te promjene kretanja – akcelerometar. U akcelerometru se nalaze male mase koje se slobodno kreću. Uslijed promjena u gibanju te se mase pomiču, slično kao što se vaša glava pomiče unaprijed ako se nađete u automobilu koji naglo zakoči. Mjereći te suptilne inercijske pomake, akcelerometar u telefonu prepoznaje promjene u pokretima i smjeru, što je korisna značajka prilikom okretanja zaslona iz pejzažnog u portretni način rada, igranja igara na telefonu i prilikom drugih radnji.";
+
+/* Long description of the combined linear accelerometer sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_linear_acc" = "Senzor kombiniranog linearnog akcelerometra bilježi ukupno ubrzanje za sve tri osi telefona, osim gravitacije.";
+
+/* Long description of a magnetic strength sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_magnetic_strength" = "Vaš telefon sadrži uređaj koji otkriva magnetska polja: magnetometar. Taj sićušan senzor s tri osi pomoću električne struje otkriva snagu magnetskog polja u tri prostorne dimenzije. Kombiniranjem podataka s tih triju osi možemo izraditi senzor jačine cjelokupnog magnetskog polja.\n\nNeki magnetometri otkrivaju magnetska polja pomoću Hallova efekta – sklonosti magnetskog polja da odbija naboj u pokretu. Noviji magnetometri imaju magnetske otpornike, metalne legure koje mijenjaju otpor s promjenom magnetskog polja.\n\nZašto telefoni imaju magnetometar? Orijentacija u prostoru korisna je za aplikacije s ugrađenim kompasom i za navigaciju, prvenstveno one koje pokazuju detaljne navigacijske upute.";
+
+/* Long description of a magnetic rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_magnetic_strength" = "Magneti, električne struje i metalni predmeti mogu isto tako utjecati na magnetometar u telefonu. No čak i usred praznog polja magnetometar u telefonu uvijek prikazuje nisku vrijednost koja nije nula: to je Zemljino magnetsko polje!";
+
+/* Long description of a pitch sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_pitch" = "Zvukove proizvode vibracije. Primjerice, vaš glas nastaje vibriranjem vaših glasnica. Te vibracije stvaraju različite zone visokog i niskog zračnog tlaka koje se šire prema van – slično kružnom širenju valova koji nastaju kada u jezero bacite kamenčić.";
+
+/* Long description of a pitch sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_pitch" = "Svi se zvukovi mogu opisati kroz svoju frekvenciju i intenzitet. Frekvencija (ili visina tona) zvučnog vala ekvivalent je brzine vibracije. Što brže tijelo vibrira, to je nastali zvuk viši. Te vibracije mjerimo u hercima (Hz), pri čemu je 1 herc jednak 1 vibraciji u sekundi.\n\nLjudi mogu čuti zvukove u rasponu od 20 do 20.000 Hz. Tipka za najdublji ton na klaviru stvara zvuk čija frekvencija iznosi 27,5 Hz, a tipka za najviši ton stvara zvuk frekvencije 4186,01 Hz.\n\nCrvena točka označava koliko se prepoznata visina tona nalazi blizu najbliže note. Ako je visina tona niža (snižen ton), točka se nalazi na lijevoj strani. Ako je visina tona viša (povišen ton), crvena točka nalazi se na desnoj strani.";
+
+/* Long description of a raw sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_raw" = "Ovdje prikazani podaci rezultat su komunikacije vanjskog senzora s vašim telefonom putem Bluetooth veze.\n\nVrijednost prikazuje postotak izravnog neobrađenog očitanja s mikrokontrolera. To je obično vrijednost pada napona na senzoru.";
+
+/* Long description of a raw bluetooth sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_raw" = "Bluetooth je standard za bežični prijenos podataka koji koristi radiovalove za razmjenu podataka između fiksnih i mobilnih uređaja na malim udaljenostima.";
+
+/* Long description of a rotation sensor that is displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_rotation" = "Broj okretaja u minuti (o/min) mjera je frekvencije okretanja oko fiksne osi u jednoj minuti.\n\nKako se okreće, vjetromjer okreće disk kodera:";
+
+/* Long description of a rotation sensor that is displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_rotation" = "Tako nastaju razdoblja osvijetljenosti i zatamnjenja na senzoru, što Science Journal registrira kao okretaj.";
+
+/* Long description of an unknown bluetooth sensor displayed above a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_first_paragraph_unknown_bluetooth" = "Ovdje prikazani podaci rezultat su komunikacije vanjskog senzora s vašim telefonom putem Bluetooth veze.";
+
+/* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
+"sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth je standard za bežični prijenos podataka koji koristi radiovalove za razmjenu podataka između fiksnih i mobilnih uređaja na malim udaljenostima.";
+
+/* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_x" = "Ubrzanje telefona lijevo-desno, u m/s²";
+
+/* One-sentence description of the accelerometer Y sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_y" = "Ubrzanje telefona naprijed-natrag, u m/s²";
+
+/* One-sentence description of the accelerometer Z sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_acc_z" = "Ubrzanje telefona gore-dolje, u m/s²";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_barometer" = "Atmosferski tlak mjeri se u hektopaskalima (hPa).";
+
+/* One-sentence description of an unknown bluetooth sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_bluetooth" = "Vanjski senzor ovdje prikazuje podatke na temelju prilagođenih postavki.";
+
+/* One-sentence description of the brightness sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_brightness" = "Količina svjetlosti izmjerena u vrijednosti ekspozicije koja dopire do prednjeg fotoaparata.";
+
+/* One-sentence description of the compass sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_compass" = "Orijentacija telefona u odnosu na Zemljino magnetsko polje.";
+
+/* One-sentence description of the Decibel sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_decibel" = "Intenzitet zvuka izmjeren u decibelima (dB) koji dopire do senzora zvuka ili mikrofona.";
+
+/* One-sentence description of the combined linear accelerometer sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_linear_acc" = "Ukupno ubrzanje telefona u m/s², isključujući silu gravitacije";
+
+/* One-sentence description of the magnetic strength sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_magnetic_strength" = "Jakost prostornog geomagnetskog polja u mikroteslama";
+
+/* One-sentence description of the pitch sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_pitch" = "Visina tona u hercima (Hz) koja dolazi do senzora ili mikrofona.";
+
+/* One-sentence description of the raw sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_raw" = "Postotak izravnog neobrađenog očitanja s vanjskog senzora.";
+
+/* One-sentence description of the rotation sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_rotation" = "Broj okretaja u minuti";
+
+/* One-sentence description of the sine wave sensor [CHAR_LIMIT=100] */
+"sensor_desc_short_sine_wave" = "Testni senzor koji omogućuje prikaz sinusoidnih valova.";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_next_content_description" = "Sljedeći senzor za snimanje";
+
+/* Content description for a button which switches to the next sensor in a recording [CHAR_LIMIT=NONE] */
+"sensor_previous_content_description" = "Prethodni senzor za snimanje";
+
+/* Device options dropdown item for preconfigured sensor with value in raw percentage [CHAR_LIMIT=40] */
+"sensor_raw" = "Neobrađeno";
+
+/* Device options dropdown item for preconfigured sensor with value in rotations per minute [CHAR_LIMIT=40] */
+"sensor_rotation_rpm" = "Okretaj";
+
+/* Message alerting the user that changes to sensor settings could not be made, because a recording is in progress [CHAR_LIMIT=60] */
+"sensor_settings_could_not_update_while_recording" = "Izmjena senzora nije moguća tijekom snimanja";
+
+/* The text on a snackbar alerting the user that a trigger has been deleted [CHAR_LIMIT=100] */
+"sensor_trigger_deleted" = "Okidač je izbrisan";
+
+/* A message shown when using the audio or brightness sensors for the first time, saying that it will not continue in the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_background_message" = "Senzori zvuka i osvijetljenosti upotrebljavaju mikrofon i prednji fotoaparat, koji se ne mogu upotrijebiti za snimanje kad je Science Journal u pozadini. Ako te senzore upotrebljavate za snimanje, a aplikaciju premjestite u pozadinu, podaci će se prestati bilježiti sve dok se ne vratite u aplikaciju.";
+
+/* A message shown when recording stopped because only the audio or brightness sensor were recording and the app went into the background. [CHAR_LIMIT=100] */
+"sensor_type_audio_and_brightness_recording_stopped_message" = "Senzori zvuka i osvijetljenosti upotrebljavaju mikrofon i prednji fotoaparat, koji se ne mogu upotrijebiti za snimanje kad je Science Journal u pozadini.";
+
+/* Title for an alert dialog that will give the user information about a sensor's limits. [CHAR_LIMIT=30] */
+"sensor_type_background_issue_dialog_title" = "Napomena o senzoru";
+
+/* Message describing that hardware being unavailable due to the use of split screen apps or picture in picture video prevents the brightness sensor from being used. [CHAR_LIMIT=200] */
+"sensor_type_brightness_unavailable_message" = "Senzor osvjetljenja ne može se upotrijebiti kad gledate videozapis sa slikom u slici ili upotrebljavate Science Journal u načinu rada s podijeljenim prikazom.";
+
+/* Device options dropdown item for preconfigured sensor with value in volts [CHAR_LIMIT=40] */
+"sensor_voltage" = "Električni napon";
+
+/* Help text instructing a user to choose sensors for use in an experiment. [CHAR_LIMIT=60] */
+"sensor_help_select_sensors" = "Odaberite senzore za upotrebu u eksperimentu";
+
+/* Accessibility description for a collapsing the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_collapse_content_description" = "Sažmi popis senzora";
+
+/* Accessibility description for a expanding the sensor picker in a sensor card [CHAR_LIMIT=NONE] */
+"sensors_list_expand_content_description" = "Proširi popis senzora";
+
+/* The title of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=60] */
+"server_permission_denied_title" = "Science Journal onemogućen";
+
+/* The body of an alert telling the user they have been denied permission to use Science Journal by their domain administrator. [CHAR_LIMIT=200] */
+"server_permission_denied_message" = "Administrator vaše domene treba uključiti Science Journal na administratorskoj konzoli za Google.";
+
+/* Title of a button allowing a user to switch accounts when their current account is disabled by their domain administrator. [CHAR_LIMIT=30] */
+"server_switch_accounts_title" = "Prelazak na drugi račun";
+
+/* Description of the settings item that allows you to send data usage to Google. [CHAR_LIMIT=100] */
+"settings_data_usage_description" = "Podaci su anonimni i pomažu nam u poboljšavanju aplikacije.";
+
+/* Title for the settings item that allows you to send data usage to Google. [CHAR_LIMIT=80] */
+"settings_data_usage_title" = "Pošaljite podatke o upotrebi aplikacije Googleu";
+
+/* Title of a settings item that displays the app's open source licenses [CHAR_LIMIT=25] */
+"settings_open_source_title" = "Licence otvorenog koda";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=30] */
+"settings_privacy_policy_title" = "Pravila o privatnosti";
+
+/* Title of a settings item that displays the app's terms of service [CHAR_LIMIT=25] */
+"settings_terms_title" = "Uvjeti pružanja usluge";
+
+/* Title of a settings item that displays the app's version [CHAR_LIMIT=25] */
+"settings_version_title" = "Verzija";
+
+/* Title of a settings item that displays the Science Journal website [CHAR_LIMIT=45] */
+"settings_website_title" = "Web-lokacija Science Journala";
+
+/* Content description for a button which shows an options dropdown menu [CHAR_LIMIT=NONE] */
+"show_options_content_description" = "Prikaži opcije";
+
+/* Accessibility label for the sidebar account view which displays the signed in account and opens the account chooser. placeholder 1 is the full name of the user, and placeholder 2 is the user's email address. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_description" = "Prijavljeni ste kao %1$@, %2$@.";
+
+/* Accessibility hint for the sidebar account view which displays the signed in account and opens the account chooser, instructing the user that tapping on that button will result in opening the accounts list. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_in_content_details" = "Otvorite za upravljanje računima";
+
+/* Accessibility label for the sidebar account view which opens the account chooser when no account is signed in. [CHAR_LIMIT=NONE] */
+"sidebar_account_view_signed_out_content_description" = "Odaberite račun";
+
+/* Accessibility hint of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_description" = "Bočni izbornik";
+
+/* Accessibility details of the sidebar menu button [CHAR_LIMIT=NONE] */
+"sidebar_menu_content_details" = "Otvara se bočni izbornik s opcijama aplikacije";
+
+/* The title of a button which allows the user to sign in to their Google account [CHAR_LIMIT=25] */
+"sign_in" = "Prijava";
+
+/* Displayed name of a sensor that shows a sine wave [CHAR_LIMIT=25] */
+"sine_wave" = "Sinusni val";
+
+/* Displayed units for a sine wave sensor [CHAR_LIMIT=10] */
+"sine_units" = "sin";
+
+/* Text for snackbar shown when a run note is deleted [CHAR_LIMIT=100] */
+"snackbar_note_deleted" = "Napomena izbrisana";
+
+/* Text for a snackbar action to undo something [CHAR_LIMIT=20] */
+"snackbar_undo" = "Poništi";
+
+/* Accessibility title for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_text" = "Snimka";
+
+/* Accessibility description for the snapshot button. [CHAR_LIMIT=NONE] */
+"snapshot_button_content_details" = "U eksperiment se dodaje snimka s vrijednostima trenutačno aktivnih senzora";
+
+/* The text on a snackbar displayed when a snapshot could not be taken because a sensor is not connected [CHAR_LIMIT=100] */
+"snapshot_failed_disconnected" = "Snimanje snimke nije moguće jer jedan ili više senzora nisu povezani. Pokušajte ponovo.";
+
+/* Title of an activity to view details about a snapshot [CHAR_LIMIT=30] */
+"snapshot_label_details_title" = "Pojedinosti snimke";
+
+/* Accessibility announcement when a snapshot is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"snapshot_note_added_content_description" = "Snimka je dodana";
+
+/* Content description for the minimum stat icon [CHAR_LIMIT=NONE] */
+"stat_min" = "Minimalno";
+
+/* Content description for the maximum stat icon [CHAR_LIMIT=NONE] */
+"stat_max" = "Maksimalno";
+
+/* Content description for the average stat icon [CHAR_LIMIT=NONE] */
+"stat_average" = "Prosjek";
+
+/* Content description for the switch camera button [CHAR_LIMIT=NONE] */
+"switch_camera_content_description" = "Promjena fotoaparata";
+
+/* Used by accessibility to describe the on state of a switch. [CHAR_LIMIT=NONE] */
+"switch_on_content_description" = "Uključeno";
+
+/* Used by accessibility to describe the off state of a switch. [CHAR_LIMIT=NONE] */
+"switch_off_content_description" = "Isključeno";
+
+/* Error text for the manual crop timestamp entry field when the timestamp would result in an invalid crop range of less than one second [CHAR_LIMIT=59] */
+"timestamp_picker_crop_range_error" = "Snimke se ne mogu obrezati na manje od jedne sekunde";
+
+/* Error text for the manual timestamp entry field when the timestamp is in an invalid format [CHAR_LIMIT=55] */
+"timestamp_picker_format_error" = "Upotrijebite važeći format, h:mm:ss.SSS";
+
+/* Label for the timestamp picker text field, where the user enters a time in a certain format like h:mm:ss.SSS (milliseconds) [CHAR_LIMIT=80]*/
+"timestamp_picker_prompt" = "Novo vrijeme (h:mm:ss.SSS)";
+
+/* Error text for the manual timestamp entry field when the timestamp is outside of the run range [CHAR_LIMIT=55] */
+"timestamp_picker_recording_range_error" = "Vrijeme mora biti unutar trajanja snimke";
+
+/* Displayed units for an ambient temperature sensor [CHAR_LIMIT=10] */
+"temperature_units" = "°C";
+
+/* Title of a activity to edit the value of a text note [CHAR_LIMIT=30] */
+"text_label_details_title" = "Uređivanje tekstualne bilješke";
+
+/* Title of a activity to view a text note that is read-only [CHAR_LIMIT=30] */
+"text_label_details_title_read_only" = "Tekstna bilješka";
+
+/* Hint text for adding a text note from the observe fragment [CHAR_LIMIT=100] */
+"text_label_hint" = "Dodajte opažanje";
+
+/* Accessibility announcement when a text note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"text_note_added_content_description" = "Bilješka je dodana";
+
+/* Content description for a graphic representing an in-progress recording [CHAR_LIMIT=NONE] */
+"throbber_content_description" = "Snimanje je u tijeku";
+
+/* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
+"throbber_content_details" = "Dvaput pritisnite da biste otvorili karticu s opažanjima u ladici s alatima";
+
+/* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
+"title_activity_sensor_settings" = "Postavke senzora";
+
+/* Accessibility phrase used when content is added to an experiment, appended to the content type. Example: "text note added" is then appened with "to experiment" [CHAR_LIMIT=NONE] */
+"to_experiment_content_description" = "U eksperiment";
+
+/* Accessibility phrase used when content is added to a recording, appended to the content type. Example: "text note added" is then appened with "to recording" [CHAR_LIMIT=NONE] */
+"to_run_content_description" = "U snimku";
+
+/* Prompt for a user to select what type of trigger alert they want to turn on [CHAR_LIMIT=60] */
+"trigger_alert_prompt" = "Način obavijesti";
+
+/* The name of an alert that makes sound  when triggered [CHAR_LIMIT=20] */
+"trigger_audio_alert" = "Zvuk";
+
+/* Title for the trigger detail view. [CHAR_LIMIT=30] */
+"trigger_details_title" = "Pojedinosti okidača";
+
+/* Title for the trigger edit view when it is editing an existing trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_format" = "Uređivanje okidača za senzor %@";
+
+/* Title for the trigger edit view when it is creating a new trigger. The sensor name for the trigger will be used in the placeholder. [CHAR_LIMIT=60] */
+"trigger_edit_title_new_format" = "Novi okidač za senzor %@";
+
+/* Text to display when a trigger is activated in the trigger bar [CHAR_LIMIT=25] */
+"trigger_fired_text" = "Okidač je aktiviran";
+
+/* The name of an alert that makes haptic feedback or vibration when triggered [CHAR_LIMIT=20] */
+"trigger_haptic_alert" = "Vibracija";
+
+/* Title for the trigger list view. The sensor name will be appended. [CHAR_LIMIT=15] */
+"trigger_list_title" = "Okidači za";
+
+/* Text describing when a sensor trigger should fire, when it should fire when above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_above" = "kad senzor očita vrijednost višu od";
+
+/* Text describing when a sensor trigger should fire, when it should fire when at a value. [CHAR_LIMIT=40] */
+"trigger_list_when_at" = "kad iznosi točno";
+
+/* Text describing when a sensor trigger should fire, when it should fire when below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_below" = "kad senzor očita vrijednost nižu od";
+
+/* Text describing when a sensor trigger should fire, when it should fire when dropping below a value. [CHAR_LIMIT=40] */
+"trigger_list_when_dropping_below" = "kad se spušta ispod";
+
+/* Text describing when a sensor trigger should fire, when it should fire when rising above a value. [CHAR_LIMIT=40] */
+"trigger_list_when_rising_above" = "kad raste iznad";
+
+/* Accessibility announcement when a trigger note is added to an experiment or recording [CHAR_LIMIT=NONE] */
+"trigger_note_added_content_description" = "Bilješka za okidač dodana je";
+
+/* The hint text for the trigger note text field [CHAR_LIMIT=50] */
+"trigger_note_text_hint" = "Što želite da piše u bilješci?";
+
+/* The label for the trigger note text field [CHAR_LIMIT=30] */
+"trigger_note_text_label" = "Zadani tekst bilješke";
+
+/* The option to only use the trigger while the app is recording, instead of all the time [CHAR_LIMIT=30] */
+"trigger_only_when_recording" = "Aktiviraj samo pri snimanju";
+
+/* The name of a trigger type, when the trigger firing causes an alert to the user [CHAR_LIMIT=30] */
+"trigger_type_alert" = "Obavijesti me";
+
+/* The label for a drop-down to choose the type of action a trigger will take [CHAR_LIMIT=30] */
+"trigger_type_label" = "Vrsta okidača";
+
+/* The name of a trigger type, when the trigger firing causes a note to be made [CHAR_LIMIT=30] */
+"trigger_type_note" = "Napravi bilješku";
+
+/* The name of a trigger type, when the trigger firing causes recording to start [CHAR_LIMIT=30] */
+"trigger_type_start_recording" = "Započni snimanje";
+
+/* The name of a trigger type, when the trigger firing causes recording to stop [CHAR_LIMIT=30] */
+"trigger_type_stop_recording" = "Zaustavi snimanje";
+
+/* Label for trigger value text input field [CHAR_LIMIT=30] */
+"trigger_value_label" = "Vrijednost okidača";
+
+/* The name of an alert that makes a visual change when triggered [CHAR_LIMIT=20] */
+"trigger_visual_alert" = "Vizualna obavijest";
+
+/* For triggers, the past tense of "is above". [CHAR_LIMIT=40] */
+"trigger_when_above" = "nalazila se iznad";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value is *at* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_at" = "Iznosi točno";
+
+/* For triggers, the past tense of "is below". [CHAR_LIMIT=40] */
+"trigger_when_below" = "nalazila se ispod";
+
+/* For triggers, the past tense of "drops below". [CHAR_LIMIT=40] */
+"trigger_when_dropped_below" = "spuštala se ispod";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *falls below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_drops_below" = "Spušta se ispod";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_above" = "Nalazi se iznad";
+
+/* The name of an option when the trigger will fire, in this case to fire whenever the sensor value *is below* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_is_below" = "Nalazi se ispod";
+
+/* The label for a drop-down to chose the time when a trigger will fire [CHAR_LIMIT=30] */
+"trigger_when_label" = "Aktiviraj kad vrijednost";
+
+/* The name of an option when the trigger will fire, in this case to fire when the sensor value *rises above* the specified trigger value [CHAR_LIMIT=30] */
+"trigger_when_rises_above" = "Raste iznad";
+
+/* For triggers, the past tense of "rises above". [CHAR_LIMIT=40] */
+"trigger_when_rose_above" = "rasla je iznad";
+
+/* The title of a snackbar action shown when triggers are disabled due to too many occuring within a duration of time, allowing the user to edit their triggers. [CHAR_LIMIT=20] */
+"triggers_disabled_action_title" = "Uređivanje okidača";
+
+/* A snackbar message shown when triggers are disabled due to too many occuring within a duration of time. [CHAR_LIMIT=NONE] */
+"triggers_disabled_message" = "Aktivirano je previše okidača i zato su onemogućeni";
+
+/* Message of alert when an experiment moves out of archive [CHAR_LIMIT=100] */
+"unarchived_experiment_message" = "Eksperiment premješten iz arhive.";
+
+/* Message of alert when a run moves out of archive [CHAR_LIMIT=100] */
+"unarchived_run_message" = "Snimka je premještena iz arhive.";
+
+/* The name for an unknown sensor [CHAR_LIMIT=25] */
+"unknown_sensor" = "Nepoznati senzor";
+
+/* A word describing a file or experiment that has not been named. Will be combined with the localized word for experiment. [CHAR_LIMIT=20] */
+"untitled" = "Bez naslova";
+
+/* Subtitle for the welcome screen when a user is not signed in. [CHAR_LIMIT=180] */
+"use_science_journal" = "Upotrebljavajte Science Journal za provođenje eksperimenata sa svijetom oko sebe";
+
+/* Message in the modal describing what the feedback option does. [CHAR_LIMIT=200] */
+"user_feedback_email_info_message" = "Prikupit ćemo podatke o ovoj verziji Science Journala i uređaju (samo hardver i verziju iOS-a, bez osobnih ili identifikacijskih podatka) te ih dodati kao privitak e-poruci koju ćete nam moći poslati.";
+
+/* Title for the modal describing what the feedback option does. [CHAR_LIMIT=50] */
+"user_feedback_email_info_title" = "Zanima nas što mislite";
+
+/* Title for the button to initiate a feedback email. [CHAR_LIMIT=20] */
+"user_feedback_email_info_send_button" = "Povratne informacije";
+
+/* Displayed name of a sensor that records and displays a video stream [CHAR_LIMIT=25] */
+"video_stream" = "Stream videozapisa";
+
+/* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
+"voltage_units" = "V";

@@ -50,6 +50,13 @@ enum SidebarRow {
     case .about: return "ic_info_36pt"
     }
   }
+
+  var accessoryIcon: String? {
+    switch self {
+    case .website: return "ic_open_in_browser"
+    default: return nil
+    }
+  }
 }
 
 /// Controls the contents of the sidebar menu and manages its appearance and disappearance.
@@ -403,6 +410,11 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
       cell.titleLabel.text = cellData.title
       cell.accessibilityLabel = cell.titleLabel.text
       cell.iconView.image = UIImage(named: cellData.icon)
+      var accessoryImage: UIImage?
+      if let accessoryIcon = cellData.accessoryIcon {
+        accessoryImage = UIImage(named: accessoryIcon)
+      }
+      cell.accessoryIconView.image = accessoryImage
     }
     return cell
   }

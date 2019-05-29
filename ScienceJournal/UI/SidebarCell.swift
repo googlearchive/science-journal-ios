@@ -27,11 +27,13 @@ class SidebarCell: UICollectionViewCell {
   let iconDimension: CGFloat = 24.0
   let iconPadding: CGFloat = 16.0
   let titlePadding: CGFloat = 72.0
+  let sidebarIconColor = UIColor(red: 0.451, green: 0.451, blue: 0.451, alpha: 1.0)
 
   // MARK: - Properties
 
   let iconView = UIImageView()
   let titleLabel = UILabel()
+  let accessoryIconView = UIImageView()
   private let inkView = MDCInkView()
   private let statusBarCoverView = UIView()
 
@@ -59,7 +61,7 @@ class SidebarCell: UICollectionViewCell {
 
     // Icon
     contentView.addSubview(iconView)
-    iconView.tintColor = UIColor(red: 0.451, green: 0.451, blue: 0.451, alpha: 1.0)
+    iconView.tintColor = sidebarIconColor
     iconView.translatesAutoresizingMaskIntoConstraints = false
     iconView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     iconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: iconPadding).isActive = true
@@ -74,6 +76,17 @@ class SidebarCell: UICollectionViewCell {
     titleLabel.centerYAnchor.constraint(equalTo: iconView.centerYAnchor).isActive = true
     titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                         constant: titlePadding).isActive = true
+
+    // Accessory icon view
+    contentView.addSubview(accessoryIconView)
+    accessoryIconView.tintColor = sidebarIconColor
+    accessoryIconView.translatesAutoresizingMaskIntoConstraints = false
+    accessoryIconView.centerYAnchor.constraint(
+      equalTo: centerYAnchor).isActive = true
+    accessoryIconView.trailingAnchor.constraint(
+      equalTo: trailingAnchor, constant: -iconPadding).isActive = true
+    accessoryIconView.widthAnchor.constraint(equalToConstant: iconDimension).isActive = true
+    accessoryIconView.heightAnchor.constraint(equalToConstant: iconDimension).isActive = true
   }
 
   // MARK: Ink

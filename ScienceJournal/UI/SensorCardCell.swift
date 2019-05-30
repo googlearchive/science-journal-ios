@@ -222,7 +222,7 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
     visualTriggerView.removeFromSuperview()
     sensorPickerView.tabBar.items = []
     chartView = nil
-    currentValueView.animatingIconView?.reset()
+    currentValueView.animatingIconView.reset()
     currentValueView.textLabel.text = ""
     setStateOptions(.showingSensorPicker, animated: false)
   }

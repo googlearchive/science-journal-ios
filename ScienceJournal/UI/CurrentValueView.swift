@@ -28,11 +28,10 @@ class CurrentValueView: UIView {
   let textLabel = UILabel()
   let infoButton = MDCFlatButton()
 
-  var animatingIconView: SensorAnimationView? {
+  var animatingIconView = SensorAnimationView() {
     didSet {
-      oldValue?.removeFromSuperview()
+      oldValue.removeFromSuperview()
 
-      guard let animatingIconView = animatingIconView else { return }
       animatingIconWrapperView.addSubview(animatingIconView)
       animatingIconView.translatesAutoresizingMaskIntoConstraints = false
       animatingIconView.pinToEdgesOfView(animatingIconWrapperView)
@@ -67,7 +66,7 @@ class CurrentValueView: UIView {
   ///   - minValue: A minimum used to scale the value.
   ///   - maxValue: A maximum used to scale the value.
   func setAnimatingIconValue(_ value: Double, minValue: Double, maxValue: Double) {
-    animatingIconView?.setValue(value, minValue: minValue, maxValue: maxValue)
+    animatingIconView.setValue(value, minValue: minValue, maxValue: maxValue)
   }
 
   /// The height of the current value view.

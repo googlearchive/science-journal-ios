@@ -234,10 +234,10 @@ class NotesView: UIView {
         placeholderLabel.topAnchor.constraint(equalTo: textView.topAnchor)
     placeholderLabelTopConstraint?.isActive = true
     placeholderLabelLeadingConstraint =
-        placeholderLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
+        placeholderLabel.leadingAnchor.constraint(equalTo: textView.leadingAnchor)
     placeholderLabelLeadingConstraint?.isActive = true
     placeholderLabelTrailingConstraint =
-        placeholderLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+        placeholderLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor)
     placeholderLabelTrailingConstraint?.isActive = true
 
     updateTextViewTextContainerInset()

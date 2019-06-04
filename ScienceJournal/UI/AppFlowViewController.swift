@@ -173,11 +173,6 @@ class AppFlowViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    configureInitialLoadingView()
-  }
-
-  /// Start the running app flow.
-  func start() {
     func accountsSupported() {
       accountsManager.signInAsCurrentAccount()
     }
@@ -372,14 +367,6 @@ class AppFlowViewController: UIViewController {
     _currentAccountUserManager?.tearDown()
     _currentAccountUserManager = nil
     userFlowViewController = nil
-  }
-
-  private func configureInitialLoadingView() {
-    // Grab a copy of the launch storyboard view controller and transition to it, which makes it
-    // look like the app is still loading.
-    let launchVC = UIStoryboard(name: "LaunchScreen", bundle: Bundle.currentBundle)
-        .instantiateViewController(withIdentifier: "viewController") as UIViewController
-    transitionToViewController(launchVC, animated: false)
   }
 
   // swiftlint:disable vertical_parameter_alignment

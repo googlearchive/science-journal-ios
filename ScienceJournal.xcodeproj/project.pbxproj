@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
+		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
 		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
@@ -619,6 +620,7 @@
 		28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
+		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
 		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
@@ -1271,6 +1273,7 @@
 		3F56956A228F04130039B84F /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */,
 				3F56956B228F04130039B84F /* LaunchManager.swift */,
 			);
 			path = Launch;
@@ -3600,6 +3603,7 @@
 				8B1791AE1F0FFAB7008C0B31 /* MDCTabBar+ScienceJournal.swift in Sources */,
 				489182C21E4542CE00E91D73 /* ChartData.swift in Sources */,
 				8B94040B209A0F470058AD65 /* ExperimentsListCellBase.swift in Sources */,
+				3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */,
 				687232231F703F8E0080E57F /* MaterialLeftBarButtonItems.swift in Sources */,
 				4850DC9921C9797C00A5C4A0 /* RemoteConfigManager.swift in Sources */,
 				8B9BEC352134863B00225EF5 /* CommonUIComponentsOpen.swift in Sources */,

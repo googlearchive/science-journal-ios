@@ -92,6 +92,20 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
 
     window = UIWindow.init(frame: UIScreen.main.bounds)
 
+    let launchContainerViewController =
+      LaunchContainerViewController(presenting: self.createAppFlowViewController())
+    window?.rootViewController = launchContainerViewController
+    window?.makeKeyAndVisible()
+
+    launchManager.performLaunchOperations {
+      launchContainerViewController.presentPostLaunchViewController()
+    }
+
+    return true
+  }
+  // swiftlint:enable vertical_parameter_alignment
+
+  private func createAppFlowViewController() -> AppFlowViewController {
     #if FEATURE_FIREBASE_RC
     appFlowViewController = AppFlowViewController(fileSystemLayout: fileSystemLayout,
                                                   accountsManager: accountsManager,
@@ -114,17 +128,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
                                                   networkAvailability: networkAvailability,
                                                   sensorController: sensorController)
     #endif
-
-    window?.rootViewController = appFlowViewController
-    window?.makeKeyAndVisible()
-
-    launchManager.performLaunchOperations {
-      self.appFlowViewController.start()
-    }
-
-    return true
+    return appFlowViewController
   }
-  // swiftlint:enable vertical_parameter_alignment
 
   open func applicationDidBecomeActive(_ application: UIApplication) {
     guard launchManager.state == .running else { return }

@@ -14,6 +14,7 @@ target 'ScienceJournal' do
   ## Drive
   pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1', :inhibit_warnings => true
   ## MDC
+  pod 'MaterialComponents/ActionSheet'
   pod 'MaterialComponents/ActivityIndicator'
   pod 'MaterialComponents/AnimationTiming'
   pod 'MaterialComponents/AppBar'

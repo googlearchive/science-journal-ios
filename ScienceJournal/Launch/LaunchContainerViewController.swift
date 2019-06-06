@@ -52,6 +52,10 @@ final public class LaunchContainerViewController: UIViewController {
     self.launchScreenViewController = launchScreenViewController
   }
 
+  override public var preferredStatusBarStyle: UIStatusBarStyle {
+    return children.last?.preferredStatusBarStyle ?? .lightContent
+  }
+
   /// Present the post-launch view controller.
   public func presentPostLaunchViewController() {
     transitionToViewController(postLaunchViewController(), animated: false) {

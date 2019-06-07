@@ -109,6 +109,12 @@
 /* Menu option for the settings screen [CHAR_LIMIT=25] */
 "action_settings" = "Settings";
 
+/* Menu option for the export to PDF in action sheet [CHAR_LIMIT=50] */
+"action_share_pdf" = "Share as a PDF (.pdf)";
+
+/* Menu option for the export to Science Journal file in action sheet [CHAR_LIMIT=50] */
+"action_share_sj" = "Share as a Science Journal file (.sj)";
+
 /* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */
 "action_unarchive" = "Unarchive";
 
@@ -657,6 +663,9 @@
 
 /* Dialog title for the chooser that pops up after exporting a photo [CHAR_LIMIT=50] */
 "export_photo_chooser_title" = "Share photo to…";
+
+/* Title for the overlay modal displayed when generating PDF for export [CHAR_LIMIT=50] */
+"export_pdf_modal_title" = "Preparing PDF";
 
 /* Experiment name for first (comes with install) experiment [CHAR_LIMIT=100] */
 "first_experiment_title" = "Welcome to Science Journal";

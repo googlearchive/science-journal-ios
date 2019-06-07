@@ -61,6 +61,8 @@ extension String {
   static public var actionRuler: String { return "action_ruler".localized }
   static public var actionSave: String { return "action_save".localized }
   static public var actionSettings: String { return "action_settings".localized }
+  static public var actionSharePdf: String { return "action_share_pdf".localized }
+  static public var actionShareSj: String { return "action_share_sj".localized }
   static public var actionUnarchive: String { return "action_unarchive".localized }
   static public var actionUnarchiveExperimentContentDescription: String { return "action_unarchive_experiment_content_description".localized }
   static public var actionUnarchiveRecordingContentDescription: String { return "action_unarchive_recording_content_description".localized }
@@ -244,6 +246,7 @@ extension String {
   static public var exportOptionsRelativeTime: String { return "export_options_relative_time".localized }
   static public var exportOptionsTitle: String { return "export_options_title".localized }
   static public var exportPhotoChooserTitle: String { return "export_photo_chooser_title".localized }
+  static public var exportPdfModalTitle: String { return "export_pdf_modal_title".localized }
   static public var firstExperimentTitle: String { return "first_experiment_title".localized }
   static public var firstExperimentTextNote: String { return "first_experiment_text_note".localized }
   static public var firstExperimentPictureNoteCaption: String { return "first_experiment_picture_note_caption".localized }

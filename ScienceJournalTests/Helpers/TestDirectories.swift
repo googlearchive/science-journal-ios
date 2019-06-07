@@ -30,19 +30,57 @@ extension TestDirectories {
 
   /// Create a unique test directory.
   ///
-  /// - Parameter removeDuringTeardown: Whether to remove the directory during teardown.
-  public func createUniqueTestDirectoryURL(removeDuringTeardown: Bool = true) -> URL {
-    let uniqueTestDirectoryURL = testRootDirectoryURL.appendingPathComponent(UUID().uuidString)
+  /// - Parameters:
+  ///   - pathComponent: The path component to append.
+  ///   - removeDuringTeardown: Whether to remove the directory during teardown.
+  public func createUniqueTestDirectoryURL(
+    appendingPathComponent pathComponent: String? = nil,
+    removeDuringTeardown: Bool = true
+  ) -> URL {
+    let uniqueTestDirectoryURL =
+      generateUniqueTestDirectoryURL(appendingPathComponent: pathComponent,
+                                     removeDuringTeardown: removeDuringTeardown)
     try! FileManager.default.createDirectory(
       at: uniqueTestDirectoryURL,
       withIntermediateDirectories: true
     )
+    return uniqueTestDirectoryURL
+  }
+
+  /// Generate a unique test directory URL.
+  ///
+  /// - Parameters:
+  ///   - pathComponent: The path component to append.
+  ///   - removeDuringTeardown: Whether to remove the directory during teardown.
+  public func generateUniqueTestDirectoryURL(
+    appendingPathComponent pathComponent: String? = nil,
+    removeDuringTeardown: Bool = true
+  ) -> URL {
+    var uniqueTestDirectoryURL = testRootDirectoryURL.appendingPathComponent(UUID().uuidString)
     if removeDuringTeardown {
-      addTeardownBlock {
-        try! FileManager.default.removeItem(at: uniqueTestDirectoryURL)
-      }
+      removeItemDuringTeardown(uniqueTestDirectoryURL)
+    }
+    if let pathComponent = pathComponent {
+      uniqueTestDirectoryURL.appendPathComponent(pathComponent)
     }
     return uniqueTestDirectoryURL
+  }
+
+  /// Add a teardown block to remove the specified URL.
+  ///
+  /// - Parameters:
+  ///   - url: The URL to remove.
+  public func removeItemDuringTeardown(_ url: URL) {
+    addTeardownBlock {
+      guard FileManager.default.fileExists(atPath: url.path) else {
+        return
+      }
+      do {
+        try FileManager.default.removeItem(at: url)
+      } catch {
+        XCTFail("failed to remove \(url) during teardown")
+      }
+    }
   }
 }
 

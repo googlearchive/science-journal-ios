@@ -19,6 +19,17 @@ import Foundation
 /// Common, app-specific paths
 public struct FileSystemLayout {
 
+  /// The version of the file system layout.
+  public enum Version: Int {
+
+    /// The layout for versions <= 3.1. (User data stored in `Documents`)
+    case one = 1
+
+    /// The layout for versions >= 3.2 (User data stored in `Application Support`)
+    case two = 2
+
+  }
+
   /// The production configuration
   public static let production = FileSystemLayout(baseURL: URL.documentsDirectoryURL)
 
@@ -45,6 +56,14 @@ public struct FileSystemLayout {
   /// - Returns: The URL for the specified account.
   public func accountURL(for accountID: String) -> URL {
     return accountsDirectoryURL.appendingPathComponent(accountID)
+  }
+
+}
+
+extension FileSystemLayout.Version: Comparable {
+
+  public static func < (lhs: FileSystemLayout.Version, rhs: FileSystemLayout.Version) -> Bool {
+    return lhs.rawValue < rhs.rawValue
   }
 
 }

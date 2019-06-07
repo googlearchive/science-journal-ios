@@ -16,6 +16,8 @@
 
 import Foundation
 
+// TODO: Revisit testability http://b/134675146
+
 /// Manages preferences that are device-specific, not tied to any user.
 class DevicePreferenceManager {
 
@@ -26,6 +28,8 @@ class DevicePreferenceManager {
         "GSJ_HasAUserChosenAnExistingDataMigrationOptionKey"
     static let hasAUserCompletedPermissionsGuideKey =
         "GSJ_HasUserCompletedPermissionsGuide"
+    static let fileSystemLayoutVersion =
+        "GSJ_FileSystemLayoutVersion"
   }
 
   // MARK: - Properties
@@ -33,24 +37,49 @@ class DevicePreferenceManager {
   /// Whether at least one user has chosen a migration option for existing data.
   var hasAUserChosenAnExistingDataMigrationOption: Bool {
     get {
-      return UserDefaults.standard.bool(forKey: Keys.hasAUserChosenAnExistingDataMigrationOption)
+      return defaults.bool(forKey: Keys.hasAUserChosenAnExistingDataMigrationOption)
     }
     set {
       // Store the boolean value.
-      UserDefaults.standard.set(newValue, forKey: Keys.hasAUserChosenAnExistingDataMigrationOption)
-      UserDefaults.standard.synchronize()
+      defaults.set(newValue, forKey: Keys.hasAUserChosenAnExistingDataMigrationOption)
+      defaults.synchronize()
     }
   }
 
   /// Whether at least one user has completed the permissions guide.
   var hasAUserCompletedPermissionsGuide: Bool {
     get {
-      return UserDefaults.standard.bool(forKey: Keys.hasAUserCompletedPermissionsGuideKey)
+      return defaults.bool(forKey: Keys.hasAUserCompletedPermissionsGuideKey)
     }
     set {
-      UserDefaults.standard.set(newValue, forKey: Keys.hasAUserCompletedPermissionsGuideKey)
-      UserDefaults.standard.synchronize()
+      defaults.set(newValue, forKey: Keys.hasAUserCompletedPermissionsGuideKey)
+      defaults.synchronize()
     }
+  }
+
+  /// The file system layout version.
+  var fileSystemLayoutVersion: FileSystemLayout.Version {
+    get {
+      let intValue = defaults.object(forKey: Keys.fileSystemLayoutVersion) as? Int
+      return intValue.flatMap(FileSystemLayout.Version.init(rawValue:)) ?? .one
+    }
+    set {
+      defaults.set(newValue.rawValue, forKey: Keys.fileSystemLayoutVersion)
+      defaults.synchronize()
+    }
+  }
+
+  private let defaults: UserDefaults
+
+  // MARK: - Public
+
+  /// Designated Initializer.
+  ///
+  ///
+  /// - Parameters:
+  ///   - defaults: The `UserDefaults` instance to use. Defaults to `.standard`.
+  init(defaults: UserDefaults = .standard) {
+    self.defaults = defaults
   }
 
 }

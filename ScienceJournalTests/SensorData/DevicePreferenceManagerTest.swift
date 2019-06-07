@@ -21,7 +21,7 @@ import XCTest
 class DevicePreferenceManagerTest: XCTestCase {
 
   func testHasAUserChosenAnExistingDataMigrationOption() {
-    let devicePreferences = DevicePreferenceManager()
+    let devicePreferences = DevicePreferenceManager(defaults: createTestDefaults())
     devicePreferences.hasAUserChosenAnExistingDataMigrationOption = true
     XCTAssertTrue(devicePreferences.hasAUserChosenAnExistingDataMigrationOption)
     devicePreferences.hasAUserChosenAnExistingDataMigrationOption = false
@@ -29,11 +29,18 @@ class DevicePreferenceManagerTest: XCTestCase {
   }
 
   func testHasAUserCompletedPermissionsGuide() {
-    let devicePreferences = DevicePreferenceManager()
+    let devicePreferences = DevicePreferenceManager(defaults: createTestDefaults())
     devicePreferences.hasAUserCompletedPermissionsGuide = true
     XCTAssertTrue(devicePreferences.hasAUserCompletedPermissionsGuide)
     devicePreferences.hasAUserCompletedPermissionsGuide = false
     XCTAssertFalse(devicePreferences.hasAUserCompletedPermissionsGuide)
+  }
+
+  func testFileSystemLayoutVersion() {
+    let devicePreferences = DevicePreferenceManager(defaults: createTestDefaults())
+    XCTAssertEqual(devicePreferences.fileSystemLayoutVersion, FileSystemLayout.Version.one)
+    devicePreferences.fileSystemLayoutVersion = FileSystemLayout.Version.one
+    XCTAssertEqual(devicePreferences.fileSystemLayoutVersion, FileSystemLayout.Version.one)
   }
 
 }

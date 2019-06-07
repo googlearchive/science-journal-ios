@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
+		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
+		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
+		3F2A630022A15EF500A320C6 /* FileSystemLayoutMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */; };
+		3F2A630222A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */; };
 		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
@@ -620,7 +624,11 @@
 		28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
+		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
+		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
+		3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigration.swift; sourceTree = "<group>"; };
+		3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationTest.swift; sourceTree = "<group>"; };
 		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
@@ -1270,9 +1278,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F173E1D22AAC94800E9D249 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		3F56956A228F04130039B84F /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */,
 				3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */,
 				3F56956B228F04130039B84F /* LaunchManager.swift */,
 			);
@@ -1282,6 +1299,7 @@
 		3F56956F228F052C0039B84F /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */,
 				3F569570228F052C0039B84F /* LaunchManagerTest.swift */,
 			);
 			path = Launch;
@@ -1317,6 +1335,7 @@
 				4886F530209CE13E003892D7 /* XCTestCase+MetadataManager.swift */,
 				5CE5219E209CFD1800767C8E /* XCTestCase+SensorDataManager.swift */,
 				3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */,
+				3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2284,7 +2303,6 @@
 		68EBA6F11E20421E0089FF7F /* ScienceJournalTests */ = {
 			isa = PBXGroup;
 			children = (
-				5CC90470224521C600F13EF0 /* SharableDocuments */,
 				5CAD5EE21E8B0157008F50C3 /* BLE */,
 				5C7DE8C71EC24F450015F407 /* Chart */,
 				5C61A2BE20C6CDCF007E7F3D /* Drive */,
@@ -2301,13 +2319,15 @@
 				5C55E4E11ED37CA200181E2D /* SensorData */,
 				5CBD9ABF1F74325900D22D21 /* SensorFilters */,
 				8B7C566B1E9FD8CA00DEF009 /* Sensors */,
+				5CC90470224521C600F13EF0 /* SharableDocuments */,
+				3F173E1D22AAC94800E9D249 /* Shared */,
+				D54E27F021A346980055743E /* TestResources */,
 				8B34E5001F7577D9003D9555 /* Triggers */,
 				8BF97B981ECE0F3B0048A929 /* UI */,
 				8B8207E62075198C0090C5E9 /* UsageTrackerTest.swift */,
 				5CE521A720A2246400767C8E /* Users */,
 				8BFA85CC1F72B03100297471 /* ViewData */,
 				5C7219631ED8D06C00817F0B /* WrappedModels */,
-				D54E27F021A346980055743E /* TestResources */,
 			);
 			path = ScienceJournalTests;
 			sourceTree = "<group>";
@@ -3508,6 +3528,7 @@
 				3F56956C228F04130039B84F /* LaunchManager.swift in Sources */,
 				8B2838FB1F8C14A8005CCB01 /* VisualTriggerView.swift in Sources */,
 				8B4B601C1E4522E6009AFB1B /* AltimeterSensor.swift in Sources */,
+				3F2A630022A15EF500A320C6 /* FileSystemLayoutMigration.swift in Sources */,
 				D59CA3D8219F46020082A27B /* Double+ScienceJournal.swift in Sources */,
 				68E36191203F7F1500B1B979 /* AnalyticsReporterOpen.swift in Sources */,
 				6880F0171F27D20E00EFF7BC /* RenameViewController.swift in Sources */,
@@ -3650,6 +3671,7 @@
 				8B1791DB1F1E7481008C0B31 /* TriggerListViewControllerTest.swift in Sources */,
 				5CB5E1182073E8F000249167 /* ZoomPresenterTest.swift in Sources */,
 				4886F537209CE13E003892D7 /* SettableClock.swift in Sources */,
+				3F2A630222A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift in Sources */,
 				8BF97B951ECE0D130048A929 /* ChartDataTest.swift in Sources */,
 				5C61A2C020C6CFAF007E7F3D /* ExperimentMergerTest.swift in Sources */,
 				8B1791D91F1E7137008C0B31 /* ObserveViewControllerTest.swift in Sources */,
@@ -3678,6 +3700,7 @@
 				8BCD2F8A1F968F0F00CCF8DB /* Sensor+TestHelpers.swift in Sources */,
 				486482F320CF4EA700ADE0C9 /* SensorController+Testing.swift in Sources */,
 				685841321F16D3D2000E4F7C /* PreferenceManagerTest.swift in Sources */,
+				3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */,
 				8B9F06191EF42D0F0030B011 /* TriggerNoteTest.swift in Sources */,
 				5C62DC1E200681EF00A4F348 /* ExperimentUpdateManagerTest.swift in Sources */,
 				D59CA3DD219F51350082A27B /* Int+ScienceJournal.swift in Sources */,
@@ -3713,6 +3736,7 @@
 				8B59229F1F9E2E570090DB6F /* LocalizedNumberFormatterTest.swift in Sources */,
 				D59CA3C3219CEE690082A27B /* FFTAnalyzer.swift in Sources */,
 				5CAAD4432023C48B0072FB0F /* ExperimentStateManagerTest.swift in Sources */,
+				3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */,
 				8B8207E72075198C0090C5E9 /* UsageTrackerTest.swift in Sources */,
 				D59CA3CC219CEE690082A27B /* AudioAnalyzer.swift in Sources */,
 				8B725C6E215BC292000CA1E2 /* MockUserManager.swift in Sources */,

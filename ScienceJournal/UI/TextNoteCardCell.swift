@@ -61,7 +61,8 @@ class TextNoteCardCell: AutoLayoutMaterialCardCell {
   ///   - shouldShowInlineTimestamp: Whether or not to show the inline timestamp.
   func setTextNote(_ textNote: DisplayTextNote,
                    showHeader shouldShowHeader: Bool,
-                   showInlineTimestamp shouldShowInlineTimestamp: Bool) {
+                   showInlineTimestamp shouldShowInlineTimestamp: Bool,
+                   showMenuButton shouldShowMenuButton: Bool = true) {
     // Remove the previous text note view.
     let textSubviews = textNoteWrapperView.subviews
     for subview in textSubviews {
@@ -81,6 +82,7 @@ class TextNoteCardCell: AutoLayoutMaterialCardCell {
     headerView.headerTimestampLabel.text = textNote.timestamp.string
     headerView.accessibilityLabel = headerView.headerTimestampLabel.text
     headerView.isTimestampRelative = textNote.timestamp.isRelative
+    headerView.showMenuButton = shouldShowMenuButton
 
     // Set the order of elements to be the wrapping view first, then the header.
     accessibilityElements = [accessibilityWrappingView, headerView, textNoteView]

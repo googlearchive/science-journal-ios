@@ -136,6 +136,43 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     ObserveViewControllerDelegate, SensorSettingsDelegate, TriggerListDelegate,
     ExperimentItemsViewControllerDelegate, ExperimentUpdateListener, ExperimentStateListener {
 
+  // Provides the configuration for views under this controller's tree for various states.
+  enum DisplayState {
+    case normal
+    case recording // Not implemented for app flow. Currently only used to provide values.
+    case pdfExport
+
+    var maxDisplayNotes: Int? {
+      // The default max notes to show when parsing trials into display trials.
+      let defaultMaxDisplayNotes = 2
+
+      switch self {
+      case .normal:
+        return defaultMaxDisplayNotes
+      case .pdfExport, .recording:
+        return nil
+      }
+    }
+
+    func showCaptionButton(for experimentInteractionOptions: ExperimentInteractionOptions) -> Bool {
+      switch self {
+      case .normal, .recording:
+        return experimentInteractionOptions.shouldAllowEdits
+      case .pdfExport:
+        return false
+      }
+    }
+
+    var showMenuButton: Bool {
+      switch self {
+      case .normal, .recording:
+        return true
+      case .pdfExport:
+        return false
+      }
+    }
+  }
+
   // MARK: - Properties
 
   /// The edit bar button. Exposed for testing.
@@ -203,6 +240,21 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   /// Should the experiment require a name? Default is true. If false, user will not be asked to
   /// rename the experiment when leaving the VC if the title is not set.
   var requireExperimentTitle: Bool = true
+
+  // Defines the current state of the views in this controller's tree.
+  // Setting this causes a full reload of the collection view and will cause a visual blink, but
+  // it is expected that this will happen behind an overlaid view for now.
+  var displayState = DisplayState.normal {
+    didSet {
+      experimentItemsViewController.displayState = displayState
+      switch displayState {
+      case .normal, .pdfExport:
+        reloadExperimentItems()
+      case .recording:
+        break
+      }
+    }
+  }
 
   // MARK: - Public
 
@@ -1280,7 +1332,8 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   private func parseExperimentItems() -> [DisplayItem] {
     let includeArchivedRecordings = preferenceManager.shouldShowArchivedRecordings
     let trialsToInclude = experiment.trials.filter { !$0.isArchived || includeArchivedRecordings }
-    var displayTrials = experimentDataParser.parsedTrials(trialsToInclude)
+    var displayTrials = experimentDataParser.parsedTrials(trialsToInclude,
+                                                          maxNotes: displayState.maxDisplayNotes)
 
     // The recording trial will be handled separately, so remove it if there is one.
     let recordingTrial = drawerVC?.observeViewController.recordingTrial
@@ -1327,7 +1380,8 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   // MARK: - Experiment Updates
 
   private func createDisplayTrial(fromTrial trial: Trial, isRecording: Bool) -> DisplayTrial {
-    let maxNotes: Int? = isRecording ? nil : 2
+    let maxNotes: Int? = isRecording ? DisplayState.recording.maxDisplayNotes :
+        DisplayState.normal.maxDisplayNotes
     var displayTrial =
         experimentDataParser.parseTrial(trial,
                                         maxNotes: maxNotes,

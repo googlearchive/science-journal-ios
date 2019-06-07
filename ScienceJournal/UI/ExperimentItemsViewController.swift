@@ -66,6 +66,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     }
   }
 
+  var displayState: ExperimentCoordinatorViewController.DisplayState = .normal
+
   /// The scroll position to use when adding items. This is changed when adding content to a trial
   /// while recording but should be replaced by logic that can scroll to a view within a trial cell.
   var collectionViewChangeScrollPosition = UICollectionView.ScrollPosition.top
@@ -320,7 +322,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
       let showHeader = experimentDataSource.isExperimentDataSection(indexPath.section)
       let isRecordingTrial = experimentDataSource.isRecordingTrialSection(indexPath.section)
       let displayItem = experimentDataSource.item(inSection: section, atIndex: indexPath.item)
-      let showCaptionButton = experimentInteractionOptions.shouldAllowEdits
+      let showCaptionButton = displayState.showCaptionButton(for: experimentInteractionOptions)
+      let showMenuButton = displayState.showMenuButton
 
       let cell: UICollectionViewCell
       switch displayItem?.itemType {
@@ -328,7 +331,10 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: textNoteCardCellIdentifier,
                                                   for: indexPath)
         if let cell = cell as? TextNoteCardCell {
-          cell.setTextNote(textNote, showHeader: showHeader, showInlineTimestamp: isRecordingTrial)
+          cell.setTextNote(textNote,
+                           showHeader: showHeader,
+                           showInlineTimestamp: isRecordingTrial,
+                           showMenuButton: showMenuButton)
           cell.delegate = self
         }
       case .snapshotNote(let snapshotNote)?:
@@ -338,7 +344,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
           cell.setSnapshotNote(snapshotNote,
                                showHeader: showHeader,
                                showInlineTimestamp: isRecordingTrial,
-                               showCaptionButton: showCaptionButton)
+                               showCaptionButton: showCaptionButton,
+                               showMenuButton: showMenuButton)
           cell.delegate = self
         }
       case .trial(let trial)?:
@@ -351,7 +358,9 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
           if trial.status == .recording {
             cell.configureRecordingCellWithTrial(trial, metadataManager: metadataManager)
           } else {
-            cell.configureCellWithTrial(trial, metadataManager: metadataManager)
+            cell.configureCellWithTrial(trial,
+                                        metadataManager: metadataManager,
+                                        showMenuButton: showMenuButton)
           }
           cell.delegate = self
         }
@@ -365,7 +374,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                               metadataManager: metadataManager,
                               showHeader: showHeader,
                               showInlineTimestamp: isRecordingTrial,
-                              showCaptionButton: showCaptionButton)
+                              showCaptionButton: showCaptionButton,
+                              showMenuButton: showMenuButton)
           cell.delegate = self
         }
       case .triggerNote(let displayTriggerNote)?:
@@ -375,7 +385,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
           cell.setTriggerNote(displayTriggerNote,
                               showHeader: showHeader,
                               showInlineTimestamp: isRecordingTrial,
-                              showCaptionButton: showCaptionButton)
+                              showCaptionButton: showCaptionButton,
+                              showMenuButton: showMenuButton)
           cell.delegate = self
         }
       case .none:

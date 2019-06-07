@@ -103,7 +103,8 @@ class SnapshotCardCell: FrameLayoutMaterialCardCell {
   func setSnapshotNote(_ snapshotNote: DisplaySnapshotNote,
                        showHeader shouldShowHeader: Bool,
                        showInlineTimestamp shouldShowInlineTimestamp: Bool,
-                       showCaptionButton shouldShowCaptionButton: Bool) {
+                       showCaptionButton shouldShowCaptionButton: Bool,
+                       showMenuButton shouldShowMenuButton: Bool = true) {
     self.snapshotNote = snapshotNote
 
     // Remove any snapshot views that are not needed.
@@ -145,6 +146,8 @@ class SnapshotCardCell: FrameLayoutMaterialCardCell {
       headerView.showCaptionButton = shouldShowCaptionButton
       captionView.isHidden = true
     }
+
+    headerView.showMenuButton = shouldShowMenuButton
 
     setNeedsLayout()
   }

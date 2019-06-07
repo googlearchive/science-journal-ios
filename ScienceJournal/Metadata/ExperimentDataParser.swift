@@ -54,9 +54,11 @@ class ExperimentDataParser {
   ///
   /// - Parameters:
   ///   - trials: The array of trial objects.
+  ///   - maxNotes: The maximum number of trial notes to show before hiding the rest. Defaults to
+  ///               showing all notes.
   /// - Returns: An array of display trial objects.
-  func parsedTrials(_ trials: [Trial]) -> [DisplayTrial] {
-    return trials.map { parseTrial($0, maxNotes: 2) }
+  func parsedTrials(_ trials: [Trial], maxNotes: Int? = nil) -> [DisplayTrial] {
+    return trials.map { parseTrial($0, maxNotes: maxNotes) }
   }
 
   /// Parses a trial into a display trial.

@@ -71,6 +71,13 @@ class ExperimentCardHeaderView: UIView {
     }
   }
 
+  /// Show or hide the menu icon.
+  var showMenuButton: Bool = true {
+    didSet {
+      menuButton.isHidden = !showMenuButton
+    }
+  }
+
   /// If the timestamp for this view is relative, show the leading dot.
   var isTimestampRelative: Bool = false {
     didSet {

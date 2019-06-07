@@ -146,7 +146,8 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
                       metadataManager: MetadataManager,
                       showHeader shouldShowHeader: Bool,
                       showInlineTimestamp shouldShowInlineTimestamp: Bool,
-                      showCaptionButton shouldShowCaptionButton: Bool) {
+                      showCaptionButton shouldShowCaptionButton: Bool,
+                      showMenuButton shouldShowMenuButton: Bool = true) {
     self.pictureStyle = pictureStyle
     self.pictureNote = pictureNote
     self.metadataManager = metadataManager
@@ -180,6 +181,8 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
       captionView.isHidden = true
       headerView.showCaptionButton = shouldShowCaptionButton
     }
+
+    headerView.showMenuButton = shouldShowMenuButton
 
     setNeedsLayout()
   }

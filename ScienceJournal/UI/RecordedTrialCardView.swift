@@ -118,10 +118,11 @@ class RecordedTrialCardView: UIView {
   /// Configures the recorded view for the trial.
   ///
   /// - Parameter trial: The trial.
-  func configure(withTrial trial: DisplayTrial) {
+  func configure(withTrial trial: DisplayTrial, showMenuButton: Bool = true) {
     // Header view.
     experimentCardHeaderView.headerTimestampLabel.text = trial.timestamp.string
     experimentCardHeaderView.accessibilityLabel = experimentCardHeaderView.headerTimestampLabel.text
+    experimentCardHeaderView.showMenuButton = showMenuButton
 
     // Title bar.
     trialCardHeaderView.configure(with: trial)

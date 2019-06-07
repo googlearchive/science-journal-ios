@@ -88,13 +88,14 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
   /// - Parameters:
   ///   - trial: The trial.
   ///   - metadataManager: The metadata manager.
-  func configureCellWithTrial(_ trial: DisplayTrial, metadataManager: MetadataManager) {
+  func configureCellWithTrial(_ trial: DisplayTrial, metadataManager: MetadataManager,
+                              showMenuButton: Bool = true) {
     self.metadataManager = metadataManager
     recordingTrialCardView.removeFromSuperview()
     recordedTrialCardView.frame = wrapperView.bounds
     recordedTrialCardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     wrapperView.addSubview(recordedTrialCardView)
-    recordedTrialCardView.configure(withTrial: trial)
+    recordedTrialCardView.configure(withTrial: trial, showMenuButton: showMenuButton)
     recordedTrialCardView.experimentCardHeaderView.menuButton.addTarget(
         self,
         action: #selector(menuButtonPressed(sender:)),

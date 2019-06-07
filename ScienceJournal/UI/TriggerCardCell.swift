@@ -129,7 +129,8 @@ class TriggerCardCell: FrameLayoutMaterialCardCell {
   func setTriggerNote(_ triggerNote: DisplayTriggerNote,
                       showHeader shouldShowHeader: Bool,
                       showInlineTimestamp shouldShowInlineTimestamp: Bool,
-                      showCaptionButton shouldShowCaptionButton: Bool) {
+                      showCaptionButton shouldShowCaptionButton: Bool,
+                      showMenuButton shouldShowMenuButton: Bool = true) {
     self.triggerNote = triggerNote
 
     // Trigger view.
@@ -153,6 +154,8 @@ class TriggerCardCell: FrameLayoutMaterialCardCell {
       headerView.showCaptionButton = shouldShowCaptionButton
       captionView.isHidden = true
     }
+
+    headerView.showMenuButton = shouldShowMenuButton
 
     setNeedsLayout()
   }

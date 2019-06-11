@@ -61,6 +61,8 @@ extension String {
   static public var actionRuler: String { return "action_ruler".localized }
   static public var actionSave: String { return "action_save".localized }
   static public var actionSettings: String { return "action_settings".localized }
+  static public var actionSavePdf: String { return "action_save_pdf".localized }
+  static public var actionSaveSj: String { return "action_save_sj".localized }
   static public var actionSharePdf: String { return "action_share_pdf".localized }
   static public var actionShareSj: String { return "action_share_sj".localized }
   static public var actionUnarchive: String { return "action_unarchive".localized }

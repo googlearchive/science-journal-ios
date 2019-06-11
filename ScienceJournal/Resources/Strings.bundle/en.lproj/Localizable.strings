@@ -109,10 +109,16 @@
 /* Menu option for the settings screen [CHAR_LIMIT=25] */
 "action_settings" = "Settings";
 
-/* Menu option for the export to PDF in action sheet [CHAR_LIMIT=50] */
+/* Menu option for the export to PDF in action sheet [CHAR_LIMIT=60] */
+"action_save_pdf" = "Save as a PDF (.pdf)";
+
+/* Menu option for the export to Science Journal file in action sheet [CHAR_LIMIT=60] */
+"action_save_sj" = "Save as a Science Journal file (.sj)";
+
+/* Menu option for the export to PDF in action sheet [CHAR_LIMIT=60] */
 "action_share_pdf" = "Share as a PDF (.pdf)";
 
-/* Menu option for the export to Science Journal file in action sheet [CHAR_LIMIT=50] */
+/* Menu option for the export to Science Journal file in action sheet [CHAR_LIMIT=60] */
 "action_share_sj" = "Share as a Science Journal file (.sj)";
 
 /* Menu option for unarchiving an entity (e.g. experiment, recording) [CHAR_LIMIT=30] */

@@ -28,12 +28,15 @@ class SpinnerViewController: UIViewController {
     static let darkenedColor = UIColor(white: 0, alpha: 0.7)
   }
 
+  public var backgroundColor = Metrics.darkenedColor
+  public var statusBarStyle = UIStatusBarStyle.lightContent
+
   // MARK: Public
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = Metrics.darkenedColor
+    view.backgroundColor = backgroundColor
 
     view.addSubview(spinner)
     spinner.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +51,7 @@ class SpinnerViewController: UIViewController {
   }
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
+    return statusBarStyle
   }
 
   /// Presents the spinner view controller.

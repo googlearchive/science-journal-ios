@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Palettes_Palettes
@@ -571,4 +573,76 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
   }
 
 }
-// swiftlint:enable type_body_length
+
+#if FEATURE_PDF_EXPORT
+extension ExperimentItemsViewController {
+
+  // Generates a PDF from the current experiment collectionView. Work in progress.
+  private func generatePDF() {
+    let captureWidth: CGFloat = 500
+    let captureScale: CGFloat = 2
+
+    let frame = CGRect(x: self.view.bounds.origin.x,
+                       y: self.view.bounds.origin.y,
+                       width: self.view.bounds.size.width,
+                       height: collectionView.contentSize.height)
+
+    func createPDFDataFromSnapshotCollection(
+        _ snapshotCollection: ScrollViewSnapshotCollection) -> NSMutableData {
+      let data = NSMutableData()
+      guard snapshotCollection.snapshots.count > 0 else { return data }
+
+      let finalFrame = CGRect(origin: .zero, size: snapshotCollection.finalSize)
+
+      UIGraphicsBeginPDFContextToData(data, finalFrame, nil)
+      UIGraphicsBeginPDFPageWithInfo(finalFrame, nil)
+      var offsetY: CGFloat = 0
+      for snapshot in snapshotCollection.snapshots {
+        let rect = CGRect(x: 0,
+                          y: offsetY,
+                          width: snapshot.size.width,
+                          height: snapshot.size.height)
+        snapshot.draw(in: rect)
+        offsetY += snapshot.size.height
+      }
+      UIGraphicsEndPDFContext()
+      return data
+    }
+
+    func renderPDFDataFromSnapshotCollection(_ snapshotCollection: ScrollViewSnapshotCollection) {
+      let data = createPDFDataFromSnapshotCollection(snapshotCollection)
+      let tempDirectory = FileManager.default.temporaryDirectory
+      let outputFileURL = tempDirectory.appendingPathComponent("Experiment.pdf")
+      data.write(to: outputFileURL, atomically: true)
+    }
+
+    let spinnerVC = SpinnerViewController()
+    spinnerVC.backgroundColor = .white
+    spinnerVC.statusBarStyle = .default
+    spinnerVC.present(fromViewController: self, completion: {
+      let originalCVFrame = self.collectionView.frame
+      self.collectionView.frame = CGRect(x: 0,
+                                         y: 0,
+                                         width: captureWidth,
+                                         height: originalCVFrame.size.height)
+      self.collectionView.collectionViewLayout.invalidateLayout()
+
+      DispatchQueue.main.async {
+        self.collectionView.snapshotContents(scale: captureScale, completion: {
+            (snapshotCollection) -> Void in
+          guard let snapshotCollection = snapshotCollection else { return }
+          self.collectionView.frame = originalCVFrame
+          self.collectionView.collectionViewLayout.invalidateLayout()
+
+          spinnerVC.dismissSpinner(completion: {
+            renderPDFDataFromSnapshotCollection(snapshotCollection)
+          })
+        })
+      }
+    })
+  }
+
+}
+#endif
+
+// swiftlint:enable file_length, type_body_length

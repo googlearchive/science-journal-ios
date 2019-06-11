@@ -54,6 +54,7 @@
 		48D02B7A2220CA750063AC28 /* AnalyticsScreenViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D02B792220CA750063AC28 /* AnalyticsScreenViews.swift */; };
 		48D81BD72086AC9400773294 /* DrawerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD62086AC9400773294 /* DrawerConfig.swift */; };
 		48D81BDA2086AD0C00773294 /* DrawerConfigOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */; };
+		48E48DC122A63CEB004301E4 /* UIScrollView+Capturing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */; };
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
 		5C0EDCEF1FE30F280014E825 /* CropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCEE1FE30F280014E825 /* CropValidator.swift */; };
 		5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */; };
@@ -676,6 +677,7 @@
 		48D02B792220CA750063AC28 /* AnalyticsScreenViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsScreenViews.swift; sourceTree = "<group>"; };
 		48D81BD62086AC9400773294 /* DrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfig.swift; sourceTree = "<group>"; };
 		48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigOpen.swift; sourceTree = "<group>"; };
+		48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Capturing.swift"; sourceTree = "<group>"; };
 		48E745952256A7120030EB8F /* Info-Combined.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Combined.plist"; sourceTree = "<group>"; };
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
 		4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2440,6 +2442,7 @@
 				689BE6AD1EF21C6E00EE0F9E /* UIColor+ScienceJournal.swift */,
 				8BFA85C81F71B33B00297471 /* UIDevice+ScienceJournal.swift */,
 				8BA5BF331F44904F00EB77E8 /* UIPanGestureRecognizer+ScienceJournal.swift */,
+				48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */,
 				8B9C59471F478A820063FFA9 /* UIScrollView+ScienceJournal.swift */,
 				684896E81F0207CD00DF1EE2 /* UIStackView+ScienceJournal.swift */,
 				5C8784A421679E040046786D /* UITextView+ScienceJournal.swift */,
@@ -3446,6 +3449,7 @@
 				689C321A1EF9DE99002C824C /* TriggerCardCell.swift in Sources */,
 				687FAA16202C1162004C1D04 /* GadgetInfo.pbobjc.m in Sources */,
 				5CBD9ABC1F7425A700D22D21 /* ComposeFilter.swift in Sources */,
+				48E48DC122A63CEB004301E4 /* UIScrollView+Capturing.swift in Sources */,
 				489182C11E4542CE00E91D73 /* ChartController.swift in Sources */,
 				688509571F0712AD00D3A1A3 /* TextNoteDetailViewController.swift in Sources */,
 				68CA86371EC4F06900E13AE0 /* TextNoteCardCell.swift in Sources */,

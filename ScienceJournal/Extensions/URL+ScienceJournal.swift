@@ -23,15 +23,23 @@ extension URL {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
   }
 
-  /// Excludes documents URL and data from iCloud backups.
-  public static func excludeDocumentsURLFromiCloud() {
-    var docsURL = URL.documentsDirectoryURL
+  /// The application support directory URL.
+  public static var applicationSupportDirectoryURL: URL {
+    return FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+  }
+
+  /// Exclude the specified URL from iCloud backups.
+  ///
+  /// - Parameter url: the URL to exclude.
+  public static func excludeFromiCloudBackups(url: URL) {
+    var url = url
     do {
       var resourceValues = URLResourceValues()
       resourceValues.isExcludedFromBackup = true
-      try docsURL.setResourceValues(resourceValues)
+      try url.setResourceValues(resourceValues)
     } catch {
-      print("Error excluding \(docsURL) from backup \(error.localizedDescription)")
+      sjlog_error("Error excluding \(url) from backup \(error.localizedDescription)",
+                  category: .general)
     }
   }
 

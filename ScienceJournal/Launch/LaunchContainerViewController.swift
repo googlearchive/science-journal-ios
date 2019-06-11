@@ -24,9 +24,10 @@ final public class LaunchContainerViewController: UIViewController {
 
   // MARK: - Properties
 
-  // TODO: use a typealias after we're on Swift 5.1
+  // TODO: Use a typealias after we're on Swift 5.1.
   // https://bugs.swift.org/browse/SR-2688
-  private let postLaunchViewController: () -> UIViewController
+  private let launchSuccessViewController: () -> UIViewController
+  private let launchFailureViewController: () -> UIViewController
   private var launchScreenViewController: UIViewController?
 
   // MARK: - Public
@@ -34,9 +35,16 @@ final public class LaunchContainerViewController: UIViewController {
   /// Designated initializer.
   ///
   /// - Parameters:
-  ///   - postLaunchViewController: An autoclosure that returns the post-launch view controller.
-  public init(presenting postLaunchViewController: @escaping @autoclosure () -> UIViewController) {
-    self.postLaunchViewController = postLaunchViewController
+  ///   - launchSuccessViewController: An autoclosure that returns the view controller to present
+  ///     on launch success.
+  ///   - launchFailureViewController: An autoclosure that returns the view controller to present
+  ///     on launch failure.
+  public init(
+    onSuccess launchSuccessViewController: @escaping @autoclosure () -> UIViewController,
+    onFailure launchFailureViewController: @escaping @autoclosure () -> UIViewController
+  ) {
+    self.launchSuccessViewController = launchSuccessViewController
+    self.launchFailureViewController = launchFailureViewController
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -56,11 +64,22 @@ final public class LaunchContainerViewController: UIViewController {
     return children.last?.preferredStatusBarStyle ?? .lightContent
   }
 
-  /// Present the post-launch view controller.
-  public func presentPostLaunchViewController() {
-    transitionToViewController(postLaunchViewController(), animated: false) {
-      // Ensure the `launchScreenViewController` is released.
-      self.launchScreenViewController = nil
+  /// Present the launch success view controller.
+  public func presentLaunchSuccessViewController() {
+    transitionToViewController(launchSuccessViewController(), animated: false) {
+      self.launchCleanup()
+    }
+  }
+
+  private func launchCleanup() {
+    // Ensure the `launchScreenViewController` is released.
+    self.launchScreenViewController = nil
+  }
+
+  /// Present the launch failure view controller.
+  public func presentLaunchFailureViewController() {
+    transitionToViewController(launchFailureViewController(), animated: true) {
+      self.launchCleanup()
     }
   }
 

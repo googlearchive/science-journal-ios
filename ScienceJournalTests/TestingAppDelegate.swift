@@ -16,12 +16,7 @@
 
 import UIKit
 
-let appDelegateClass: AnyClass =
-  NSClassFromString("TestingAppDelegate") ?? AppDelegateOpen.self
-
-_ = UIApplicationMain(
-  CommandLine.argc,
-  CommandLine.unsafeArgv,
-  nil,
-  NSStringFromClass(appDelegateClass)
-)
+@objc(TestingAppDelegate)
+class TestingAppDelegate: UIResponder, UIApplicationDelegate {
+  var window: UIWindow?
+}

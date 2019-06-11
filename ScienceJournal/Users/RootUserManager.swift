@@ -44,8 +44,7 @@ class RootUserManager: UserManager {
     return FileManager.default.fileExists(atPath: metadataManager.experimentsDirectoryURL.path)
   }
 
-  private let fileSystemLayout: FileSystemLayout
-  private let metadataRootURL: URL
+  private let rootURL: URL
 
   /// Designated initializer.
   ///
@@ -53,16 +52,15 @@ class RootUserManager: UserManager {
   ///   - fileSystemLayout: The file system layout.
   ///   - sensorController: The sensor controller.
   init(fileSystemLayout: FileSystemLayout, sensorController: SensorController) {
-    self.fileSystemLayout = fileSystemLayout
+    self.rootURL = fileSystemLayout.rootUserURL
 
     // Configure preference manager with no account ID.
     preferenceManager = PreferenceManager()
 
-    sensorDataManager = SensorDataManager(rootURL: fileSystemLayout.baseURL, store: .root)
+    sensorDataManager = SensorDataManager(rootURL: rootURL)
 
-    metadataRootURL = fileSystemLayout.baseURL.appendingPathComponent("Science Journal")
-    metadataManager = MetadataManager(rootURL: metadataRootURL,
-                                      deletedRootURL: fileSystemLayout.baseURL,
+    metadataManager = MetadataManager(rootURL: rootURL,
+                                      deletedRootURL: rootURL,
                                       preferenceManager: preferenceManager,
                                       sensorController: sensorController,
                                       sensorDataManager: sensorDataManager)
@@ -87,28 +85,7 @@ class RootUserManager: UserManager {
   }
 
   func deleteAllUserData() throws {
-    // Delete metadata.
-    let directories = [metadataRootURL,
-                       experimentDataDeleter.deletedAssetsDirectoryURL,
-                       experimentDataDeleter.deletedDataDirectoryURL]
-    for url in directories {
-      guard FileManager.default.fileExists(atPath: url.path) else {
-        continue
-      }
-      try FileManager.default.removeItem(at: url)
-    }
-
-    // Delete sqlite store, including supporting temp files which have the same name as the store
-    // with a prefix (e.g. "store.sqlite-wal", "store.sqlite-shm", etc.).
-    let contentsURLs =
-      try FileManager.default.contentsOfDirectory(at: fileSystemLayout.baseURL,
-                                                  includingPropertiesForKeys: nil,
-                                                  options: [])
-    for url in contentsURLs {
-      if url.lastPathComponent.hasPrefix(SensorDataManager.StoreFile.root.name) {
-        try FileManager.default.removeItem(at: url)
-      }
-    }
+    try FileManager.default.removeItem(at: rootURL)
 
     // NOTE: Preferences are not deleted when deleting the root user because they will be used as
     // defaults for this device when new users are added. This is to ensure that if a user had

@@ -17,6 +17,10 @@
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
+		3FCABBAE22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */; };
+		3FCABBB022AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */; };
+		3FCABBB222AEF1FD00118021 /* LaunchFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */; };
+		3FD3E30222AB05D2004FA302 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3E30122AB05D2004FA302 /* TestingAppDelegate.swift */; };
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
 		4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */; };
@@ -633,6 +637,10 @@
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
+		3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationOperation.swift; sourceTree = "<group>"; };
+		3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationOperationTest.swift; sourceTree = "<group>"; };
+		3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFailureViewController.swift; sourceTree = "<group>"; };
+		3FD3E30122AB05D2004FA302 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButtonCell.swift; sourceTree = "<group>"; };
@@ -1290,7 +1298,9 @@
 			isa = PBXGroup;
 			children = (
 				3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */,
+				3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */,
 				3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */,
+				3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */,
 				3F56956B228F04130039B84F /* LaunchManager.swift */,
 			);
 			path = Launch;
@@ -1299,6 +1309,7 @@
 		3F56956F228F052C0039B84F /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */,
 				3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */,
 				3F569570228F052C0039B84F /* LaunchManagerTest.swift */,
 			);
@@ -2321,6 +2332,7 @@
 				8B7C566B1E9FD8CA00DEF009 /* Sensors */,
 				5CC90470224521C600F13EF0 /* SharableDocuments */,
 				3F173E1D22AAC94800E9D249 /* Shared */,
+				3FD3E30122AB05D2004FA302 /* TestingAppDelegate.swift */,
 				D54E27F021A346980055743E /* TestResources */,
 				8B34E5001F7577D9003D9555 /* Triggers */,
 				8BF97B981ECE0F3B0048A929 /* UI */,
@@ -3309,6 +3321,7 @@
 				5C7EFC5B202E29970007F99E /* OperationCondition.swift in Sources */,
 				D59CA3DC219F51350082A27B /* Int+ScienceJournal.swift in Sources */,
 				5C612F1420AC7E8E0097CCAB /* ExperimentLibrary.swift in Sources */,
+				3FCABBB222AEF1FD00118021 /* LaunchFailureViewController.swift in Sources */,
 				689155E61F0C5DDB006EEDD1 /* MaterialBarButtonItem.swift in Sources */,
 				5C6E574C20348D8300EE8457 /* ScalarSensorData.pbobjc.m in Sources */,
 				5C0EDCF61FEABD8C0014E825 /* ExperimentCoordinatorViewController.swift in Sources */,
@@ -3449,6 +3462,7 @@
 				68EB69FB1E5E3BC10040C06A /* ObserveFooterCell.swift in Sources */,
 				5C85CA5D1F2FD6D9005FADA0 /* AddTrialNoteViewController.swift in Sources */,
 				8B1791CA1F140F22008C0B31 /* TriggerEditSectionHeaderView.swift in Sources */,
+				3FCABBAE22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift in Sources */,
 				5C6C62671EE09D7200798989 /* SensorSnapshot.swift in Sources */,
 				5CBD9ABA1F7418E700D22D21 /* FrequencyBuffer.swift in Sources */,
 				8BC53EA61F7A9BEA004417F8 /* SensorTriggerFrequencyObserver.swift in Sources */,
@@ -3677,6 +3691,7 @@
 				8B1791D91F1E7137008C0B31 /* ObserveViewControllerTest.swift in Sources */,
 				D59CA3D5219CEE690082A27B /* Peak.swift in Sources */,
 				8B1791961F0A8A19008C0B31 /* TriggerListDataSourceTest.swift in Sources */,
+				3FCABBB022AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift in Sources */,
 				8B91B7EA21AF1B07002368F7 /* UserAssetManagerTest.swift in Sources */,
 				680CDF171F88313D00BDE61E /* TimeInterval+ScienceJournalTest.swift in Sources */,
 				4886F539209CE13E003892D7 /* SimpleOperation.swift in Sources */,
@@ -3778,6 +3793,7 @@
 				8B92732521B1AFB6009BDB0E /* ElapsedTimeEventManagerTest.swift in Sources */,
 				D54E27EF21A3423A0055743E /* AudioAnalyzerTest.swift in Sources */,
 				5CC0E91C21418E21003F620A /* MockUserAssetManager.swift in Sources */,
+				3FD3E30222AB05D2004FA302 /* TestingAppDelegate.swift in Sources */,
 				5CE6388C20ACB0F2004A712F /* LocalSyncStatusTest.swift in Sources */,
 				5C2B0EB51EFC0BCA00534EC3 /* ChartControllerTest.swift in Sources */,
 				5C7219661ED8D06C00817F0B /* ExperimentTest.swift in Sources */,

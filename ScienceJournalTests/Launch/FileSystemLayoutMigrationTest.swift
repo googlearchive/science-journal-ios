@@ -53,7 +53,7 @@ class FileSystemLayoutMigrationTest: XCTestCase {
   func testMigrateRootUser() {
     createLegacyDirectoryStructure(at: fromBaseDirectory)
     let fromRootUserDirectory = from(directory: "Science Journal")
-    let toRootUserDirectory = to(directory: "accounts/root")
+    let toRootUserDirectory = to(directory: "root")
     assertExists(directory: fromRootUserDirectory)
     assertDoesNotExist(directory: toRootUserDirectory)
 
@@ -66,7 +66,7 @@ class FileSystemLayoutMigrationTest: XCTestCase {
   func testMigrateRootUserDeletedData() {
     createLegacyDirectoryStructure(at: fromBaseDirectory)
     let fromRootUserDeletedDataDirectory = from(directory: "DeletedData")
-    let toRootUserDeletedDataDirectory = to(directory: "accounts/root/DeletedData")
+    let toRootUserDeletedDataDirectory = to(directory: "root/DeletedData")
     assertExists(directory: fromRootUserDeletedDataDirectory)
     assertDoesNotExist(directory: toRootUserDeletedDataDirectory)
 
@@ -86,9 +86,9 @@ class FileSystemLayoutMigrationTest: XCTestCase {
     let fromSQLiteFile = from(file: "ScienceJournal.sqlite")
     let fromSQLiteSHMFile = from(file: "ScienceJournal.sqlite-shm")
     let fromSQLiteWALFile = from(file: "ScienceJournal.sqlite-wal")
-    let toSQLiteFile = to(file: "accounts/root/sensor_data.sqlite")
-    let toSQLiteSHMFile = to(file: "accounts/root/sensor_data.sqlite-shm")
-    let toSQLiteWALFile = to(file: "accounts/root/sensor_data.sqlite-wal")
+    let toSQLiteFile = to(file: "root/sensor_data.sqlite")
+    let toSQLiteSHMFile = to(file: "root/sensor_data.sqlite-shm")
+    let toSQLiteWALFile = to(file: "root/sensor_data.sqlite-wal")
     assertExists(file: fromSQLiteFile)
     assertExists(file: fromSQLiteSHMFile)
     assertExists(file: fromSQLiteWALFile)
@@ -109,11 +109,11 @@ class FileSystemLayoutMigrationTest: XCTestCase {
     typealias FSLM = FileSystemLayoutMigration
     XCTAssertEqual(migration.steps, [
       FSLM.Step(from: "accounts", to: "accounts"),
-      FSLM.Step(from: "Science Journal", to: "accounts/root"),
-      FSLM.Step(from: "DeletedData", to: "accounts/root/DeletedData"),
-      FSLM.Step(from: "ScienceJournal.sqlite", to: "accounts/root/sensor_data.sqlite"),
-      FSLM.Step(from: "ScienceJournal.sqlite-shm", to: "accounts/root/sensor_data.sqlite-shm"),
-      FSLM.Step(from: "ScienceJournal.sqlite-wal", to: "accounts/root/sensor_data.sqlite-wal"),
+      FSLM.Step(from: "Science Journal", to: "root"),
+      FSLM.Step(from: "DeletedData", to: "root/DeletedData"),
+      FSLM.Step(from: "ScienceJournal.sqlite", to: "root/sensor_data.sqlite"),
+      FSLM.Step(from: "ScienceJournal.sqlite-shm", to: "root/sensor_data.sqlite-shm"),
+      FSLM.Step(from: "ScienceJournal.sqlite-wal", to: "root/sensor_data.sqlite-wal"),
     ])
   }
 
@@ -175,6 +175,7 @@ class FileSystemLayoutMigrationTest: XCTestCase {
     XCTAssertNoThrow(try fileManager.removeItem(at: from(directory: "DeletedData")))
 
     XCTAssertNoThrow(try migration.execute())
+    XCTAssertNoThrow(try migration.cleanup())
   }
 
   func testCleanupDoesNotRunIfMigrationFailed() {
@@ -198,6 +199,19 @@ class FileSystemLayoutMigrationTest: XCTestCase {
     XCTAssertNoThrow(try migration.cleanup())
 
     XCTAssertFalse(migration.isNeeded, "expected migration to not be needed")
+  }
+
+  func testBaseURLIsExcludedFromBackups() {
+    createLegacyDirectoryStructure(at: fromBaseDirectory)
+    XCTAssertNoThrow(try migration.execute())
+    XCTAssertNoThrow(try migration.cleanup())
+
+
+    if let values = try? toBaseDirectory.resourceValues(forKeys: [.isExcludedFromBackupKey]) {
+      XCTAssertEqual(values.isExcludedFromBackup, true)
+    } else {
+      XCTFail("expected resource values")
+    }
   }
 
   // MARK: - Test Helpers

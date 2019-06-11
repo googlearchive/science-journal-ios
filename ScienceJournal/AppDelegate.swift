@@ -79,10 +79,10 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
   // swiftlint:disable vertical_parameter_alignment
   open func application(_ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
     sensorController = SensorController()
 
-    // Exclude data from iCloud backups.
-    URL.excludeDocumentsURLFromiCloud()
+    excludeDataFromiCloudBackups()
 
     // Initialize the capture session interruption observer.
     _ = CaptureSessionInterruptionObserver.shared
@@ -92,18 +92,34 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
 
     window = UIWindow.init(frame: UIScreen.main.bounds)
 
-    let launchContainerViewController =
-      LaunchContainerViewController(presenting: self.createAppFlowViewController())
+    let launchContainerViewController = createLaunchContainerViewController()
     window?.rootViewController = launchContainerViewController
     window?.makeKeyAndVisible()
 
-    launchManager.performLaunchOperations {
-      launchContainerViewController.presentPostLaunchViewController()
+    launchManager.performLaunchOperations { completionState in
+      switch completionState {
+      case .success:
+        launchContainerViewController.presentLaunchSuccessViewController()
+      case .failure:
+        launchContainerViewController.presentLaunchFailureViewController()
+      }
     }
 
     return true
   }
   // swiftlint:enable vertical_parameter_alignment
+
+  private func excludeDataFromiCloudBackups() {
+    URL.excludeFromiCloudBackups(url: URL.documentsDirectoryURL)
+    URL.excludeFromiCloudBackups(url: FileSystemLayout.Version.two.baseURL)
+  }
+
+  private func createLaunchContainerViewController() -> LaunchContainerViewController {
+    return LaunchContainerViewController(
+      onSuccess: self.createAppFlowViewController(),
+      onFailure: LaunchFailureViewController(feedbackReporter: self.feedbackReporter)
+    )
+  }
 
   private func createAppFlowViewController() -> AppFlowViewController {
     #if FEATURE_FIREBASE_RC
@@ -132,7 +148,7 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   open func applicationDidBecomeActive(_ application: UIApplication) {
-    guard launchManager.state == .running else { return }
+    guard launchManager.state == .completed(.success) else { return }
     // When the app becomes active, attempt to reauthenticate the current user account and remove
     // any lingering accounts.
     accountsManager.reauthenticateCurrentAccount()
@@ -142,7 +158,7 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
   open func application(_ app: UIApplication,
                         open url: URL,
                         options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    guard launchManager.state == .running else { return false }
+    guard launchManager.state == .completed(.success) else { return false }
     return appFlowViewController.handleImportURL(url)
   }
 

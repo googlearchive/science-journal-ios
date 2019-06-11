@@ -28,10 +28,19 @@ public struct FileSystemLayout {
     /// The layout for versions >= 3.2 (User data stored in `Application Support`)
     case two = 2
 
+    var baseURL: URL {
+      switch self {
+      case .one:
+        return URL.documentsDirectoryURL
+      case .two:
+        return URL.applicationSupportDirectoryURL.appendingPathComponent("Science Journal")
+      }
+    }
+
   }
 
   /// The production configuration
-  public static let production = FileSystemLayout(baseURL: URL.documentsDirectoryURL)
+  public static let production = FileSystemLayout(baseURL: Version.two.baseURL)
 
   /// The base URL that other URLs are relative to.
   let baseURL: URL
@@ -41,13 +50,9 @@ public struct FileSystemLayout {
     return baseURL.appendingPathComponent("accounts")
   }
 
-  /// Whether or not there is a root directory for this account.
-  ///
-  /// - Parameter accountID: An account ID.
-  /// - Returns: True if there is a root directory for this account, otherwise false.
-  public func hasAccountDirectory(for accountID: String) -> Bool {
-    let accountPath = accountURL(for: accountID).path
-    return FileManager.default.fileExists(atPath: accountPath)
+  /// The root user URL.
+  public var rootUserURL: URL {
+    return baseURL.appendingPathComponent("root")
   }
 
   /// The account URL for the specified account.
@@ -56,6 +61,15 @@ public struct FileSystemLayout {
   /// - Returns: The URL for the specified account.
   public func accountURL(for accountID: String) -> URL {
     return accountsDirectoryURL.appendingPathComponent(accountID)
+  }
+
+  /// Whether or not there is a root directory for this account.
+  ///
+  /// - Parameter accountID: An account ID.
+  /// - Returns: True if there is a root directory for this account, otherwise false.
+  public func hasAccountDirectory(for accountID: String) -> Bool {
+    let accountPath = accountURL(for: accountID).path
+    return FileManager.default.fileExists(atPath: accountPath)
   }
 
 }

@@ -81,7 +81,7 @@ class AccountUserManager: UserManager {
     preferenceManager = PreferenceManager(accountID: account.ID)
 
     // Configure Core Data store.
-    sensorDataManager = SensorDataManager(rootURL: rootURL, store: .account)
+    sensorDataManager = SensorDataManager(rootURL: rootURL)
 
     // Configure metadata manager.
     metadataManager = MetadataManager(rootURL: rootURL,

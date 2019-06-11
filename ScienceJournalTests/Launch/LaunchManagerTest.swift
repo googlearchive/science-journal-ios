@@ -20,26 +20,58 @@ import XCTest
 
 class LaunchManagerTest: XCTestCase {
 
-  func testCompletionIsCalled() {
-    let manager = LaunchManager()
+  func testQueueIsSerial() {
+    let queue = GSJOperationQueue()
+    XCTAssertNotEqual(queue.maxConcurrentOperationCount, 1)
 
-    let completionIsCalled = expectation(description: "completion is called")
-    manager.performLaunchOperations {
-      completionIsCalled.fulfill()
-    }
-    waitForExpectations(timeout: 0.1)
+    _ = LaunchManager(queue: queue)
+
+    XCTAssertEqual(queue.maxConcurrentOperationCount, 1)
   }
 
-  func testStateIsSet() {
+  func testCompletionIsCalledBeforeRunningStateIsSet() {
     let manager = LaunchManager()
-    XCTAssertEqual(manager.state, .launching)
 
     let e = expectation(description: "")
-    manager.performLaunchOperations {
+    manager.performLaunchOperations { completionState in
+      XCTAssertEqual(manager.state, .launching)
+      XCTAssertEqual(completionState, .success)
       e.fulfill()
-      XCTAssertEqual(manager.state, .running)
     }
     waitForExpectations(timeout: 0.1)
+
+    XCTAssertEqual(manager.state, .completed(.success))
+  }
+
+  func testCompletionIsCalledBeforeFailedStateIsSet() {
+    let manager = LaunchManager(operations: [FailingOperation()])
+
+    let e = expectation(description: "")
+    manager.performLaunchOperations { completionState in
+      XCTAssertEqual(manager.state, .launching)
+      XCTAssertEqual(completionState, .failure)
+      e.fulfill()
+    }
+    waitForExpectations(timeout: 0.1)
+
+    XCTAssertEqual(manager.state, .completed(.failure))
+  }
+
+  func testStandardOperations() {
+    let manager = LaunchManager.standard
+
+    XCTAssertEqual(manager.operations.count, 1)
+    XCTAssert(manager.operations.first is FileSystemLayoutMigrationOperation,
+              "expected an instance of FileSystemLayoutMigrationOperation")
+  }
+
+  class FailingOperation: GSJOperation {
+    enum Error: Swift.Error {
+      case test
+    }
+    override func execute() {
+      finish(withErrors: [Error.test])
+    }
   }
 
 }

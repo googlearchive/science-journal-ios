@@ -49,11 +49,11 @@ final class FileSystemLayoutMigration {
   /// The ordered steps in the migration.
   let steps: [Step] = [
     Step(from: "accounts", to: "accounts"),
-    Step(from: "Science Journal", to: "accounts/root"),
-    Step(from: "DeletedData", to: "accounts/root/DeletedData"),
-    Step(from: "ScienceJournal.sqlite", to: "accounts/root/sensor_data.sqlite"),
-    Step(from: "ScienceJournal.sqlite-shm", to: "accounts/root/sensor_data.sqlite-shm"),
-    Step(from: "ScienceJournal.sqlite-wal", to: "accounts/root/sensor_data.sqlite-wal"),
+    Step(from: "Science Journal", to: "root"),
+    Step(from: "DeletedData", to: "root/DeletedData"),
+    Step(from: "ScienceJournal.sqlite", to: "root/sensor_data.sqlite"),
+    Step(from: "ScienceJournal.sqlite-shm", to: "root/sensor_data.sqlite-shm"),
+    Step(from: "ScienceJournal.sqlite-wal", to: "root/sensor_data.sqlite-wal"),
   ]
 
   /// Whether or not a migration is needed.
@@ -82,7 +82,7 @@ final class FileSystemLayoutMigration {
   ///   - devicePreferenceManager: the device preference manager.
   init(from fromBaseDirectory: URL,
        to toBaseDirectory: URL,
-       devicePreferenceManager: DevicePreferenceManager) {
+       devicePreferenceManager: DevicePreferenceManager = DevicePreferenceManager()) {
     self.fromBaseDirectory = fromBaseDirectory
     self.toBaseDirectory = toBaseDirectory
     self.devicePreferenceManager = devicePreferenceManager
@@ -118,6 +118,7 @@ final class FileSystemLayoutMigration {
       try fileManager.removeItem(at: toBaseDirectory)
     }
     try fileManager.createDirectory(at: toBaseDirectory, withIntermediateDirectories: true)
+    URL.excludeFromiCloudBackups(url: toBaseDirectory)
   }
 
   private func copyItem(at atURL: URL, to toURL: URL) throws {
@@ -144,9 +145,15 @@ final class FileSystemLayoutMigration {
 
     try steps
       .map { fromBaseDirectory.appendingPathComponent($0.from) }
-      .forEach(fileManager.removeItem(at:))
+      .forEach(removeItem(at:))
 
     devicePreferenceManager.fileSystemLayoutVersion = postMigrationFileSystemLayoutVersion
+  }
+
+  private func removeItem(at atURL: URL) throws {
+    if fileManager.fileExists(atPath: atURL.path) {
+      try fileManager.removeItem(at: atURL)
+    }
   }
 
 }

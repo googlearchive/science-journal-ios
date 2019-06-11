@@ -14,14 +14,16 @@
  *  limitations under the License.
  */
 
-import UIKit
+import XCTest
 
-let appDelegateClass: AnyClass =
-  NSClassFromString("TestingAppDelegate") ?? AppDelegateOpen.self
+@testable import third_party_sciencejournal_ios_ScienceJournalOpen
 
-_ = UIApplicationMain(
-  CommandLine.argc,
-  CommandLine.unsafeArgv,
-  nil,
-  NSStringFromClass(appDelegateClass)
-)
+class FileSystemLayoutMigrationOperationTest: XCTestCase {
+
+  func testConfiguration() {
+    let operation = FileSystemLayoutMigrationOperation()
+    XCTAssertEqual(operation.fromURL, FileSystemLayout.Version.one.baseURL)
+    XCTAssertEqual(operation.toURL, FileSystemLayout.Version.two.baseURL)
+  }
+
+}

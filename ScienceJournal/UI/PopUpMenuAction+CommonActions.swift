@@ -156,7 +156,7 @@ extension PopUpMenuAction {
 
   // MARK: - Helpers
 
-  private static func presentExperimentNotFinishedDownloadingAlert(
+  static func presentExperimentNotFinishedDownloadingAlert(
       fromViewController presentingViewController: UIViewController,
       cancelHandler: @escaping MDCActionHandler,
       confirmHandler: @escaping MDCActionHandler) {

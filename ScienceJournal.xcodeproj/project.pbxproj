@@ -56,6 +56,7 @@
 		48D81BDA2086AD0C00773294 /* DrawerConfigOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */; };
 		48E48DC122A63CEB004301E4 /* UIScrollView+Capturing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */; };
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
+		58512C6C22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */; };
 		5C0EDCEF1FE30F280014E825 /* CropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCEE1FE30F280014E825 /* CropValidator.swift */; };
 		5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */; };
 		5C0EDCF41FE94C270014E825 /* ExperimentItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */; };
@@ -682,6 +683,7 @@
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
 		4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTypeSelectionHandler.swift; sourceTree = "<group>"; };
 		5C0EDCEE1FE30F280014E825 /* CropValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidator.swift; sourceTree = "<group>"; };
 		5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidatorTest.swift; sourceTree = "<group>"; };
 		5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentItemsViewController.swift; sourceTree = "<group>"; };
@@ -1742,6 +1744,7 @@
 		5CC9046B2244388B00F13EF0 /* SharableDocuments */ = {
 			isa = PBXGroup;
 			children = (
+				58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */,
 				5CC9046E224438B300F13EF0 /* DocumentManager.swift */,
 				8B9A8C69225E68C30082897B /* SaveToFilesHandler.swift */,
 			);
@@ -3620,6 +3623,7 @@
 				5C63833E2100CA8D008281DF /* NoteDetailController.swift in Sources */,
 				5CA166D91F97AF8000379DE6 /* SensorCard.swift in Sources */,
 				5CAD5EF51E952F8C008F50C3 /* PacketAssembler.swift in Sources */,
+				58512C6C22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift in Sources */,
 				68EACA671EAFC05300BB5892 /* ExperimentsListViewController.swift in Sources */,
 				48C767B120F7F1BB00A67C4A /* OnboardingViewController.swift in Sources */,
 				8BCB0F8E21A32593003FB9E7 /* ElapsedTimeEventManager.swift in Sources */,

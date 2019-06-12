@@ -19,6 +19,8 @@ import UIKit
 /// A single action to display in a pop up menu.
 class PopUpMenuAction {
 
+  typealias Handler = (PopUpMenuAction) -> Void
+
   /// The action title.
   let title: String
 
@@ -38,7 +40,7 @@ class PopUpMenuAction {
   let isEnabled: Bool
 
   /// The action handler.
-  let handler: ((PopUpMenuAction) -> Swift.Void)?
+  let handler: Handler?
 
   private var a11yLabel: String?
 

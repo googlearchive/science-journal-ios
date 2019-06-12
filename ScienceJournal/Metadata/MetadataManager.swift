@@ -152,7 +152,6 @@ public class MetadataManager {
     userMetadataURL = rootURL.appendingPathComponent("user_metadata")
     configureUserMetadata()
 
-    // TODO: Add test for this notification - b/133773894
     // Register for trial stats update notifications.
     NotificationCenter.default.addObserver(
       self,
@@ -160,6 +159,10 @@ public class MetadataManager {
       name: SensorDataManager.TrialStatsCalculationDidComplete,
       object: nil
     )
+  }
+
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
 
   /// Returns the assets directory URL for a specific experiment.

@@ -1275,6 +1275,34 @@ class MetadataManagerTest: XCTestCase {
         $0.experimentID == invalid2.experimentID }))
   }
 
+  func testTrialStatsCalculationDidCompleteNotificationIsHandled() {
+    let experiment = createExperimentAndAssert()
+    guard let trial = experiment.trials.first else {
+      XCTFail("expected trial")
+      return
+    }
+    if let t = metadataManager.experiment(withID: experiment.ID)?.trial(withID: trial.ID) {
+      XCTAssert(t.trialStats.isEmpty)
+    } else {
+      XCTFail("expected trial")
+    }
+
+    let trialStats = TrialStats(sensorID: "test-sensor-id")
+    let userInfo: [String : Any] = [
+      SensorDataManager.TrialStatsDidCompleteExperimentIDKey: experiment.ID,
+      SensorDataManager.TrialStatsDidCompleteTrialIDKey: trial.ID,
+      SensorDataManager.TrialStatsDidCompleteTrialStatsKey: [trialStats]
+    ]
+    NotificationCenter.default.post(name: SensorDataManager.TrialStatsCalculationDidComplete,
+                                    object: nil, userInfo: userInfo)
+
+    if let t = metadataManager.experiment(withID: experiment.ID)?.trial(withID: trial.ID) {
+      XCTAssertEqual(t.trialStats.first?.sensorID, "test-sensor-id")
+    } else {
+      XCTFail("expected trial")
+    }
+  }
+
   // MARK: - Helpers
 
   /// Creates an experiment that has one trial with sensor data, and asserts it and its data are on

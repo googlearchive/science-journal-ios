@@ -745,6 +745,12 @@
 /* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
 "input_photo_library_permission_denied" = "Your photo library cannot be used because Science Journal does not have permission to access it.";
 
+/* Message informing a user the app has hit an unrecoverable launch failure and cannot continue, suggesting they contact us for help. [CHAR_LIMIT=500] */
+"launch_failure_message" = "Sorry, something went wrong. Contact us by sending feedback.";
+
+/* Title for the button that allows a user to send feedback when encountering an unrecoverable launch failure. [CHAR_LIMIT=120] */
+"launch_failure_send_feedback_button" = "Send feedback";
+
 /* The title of the button that gives a user more information about Drive sync. [CHAR_LIMIT=25] */
 "learn_more" = "Learn more";
 

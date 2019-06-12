@@ -273,6 +273,8 @@ extension String {
   static public var inputCameraBlockedViewSensorsButton: String { return "input_camera_blocked_view_sensors_button".localized }
   static public var inputCameraPermissionDenied: String { return "input_camera_permission_denied".localized }
   static public var inputPhotoLibraryPermissionDenied: String { return "input_photo_library_permission_denied".localized }
+  static public var launchFailureMessage: String { return "launch_failure_message".localized }
+  static public var launchFailureSendFeedbackButton: String { return "launch_failure_send_feedback_button".localized }
   static public var learnMore: String { return "learn_more".localized }
   static public var learnMoreBtnContentDescription: String { return "learn_more_btn_content_description".localized }
   static public var linearAccelerometer: String { return "linear_accelerometer".localized }

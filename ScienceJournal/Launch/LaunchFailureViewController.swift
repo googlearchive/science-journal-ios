@@ -15,9 +15,18 @@
  */
 
 import UIKit
+import third_party_objective_c_material_components_ios_components_Buttons_Buttons
+import third_party_objective_c_material_components_ios_components_Typography_Typography
 
-// TODO: Implement visual design. http://b/135037267
+/// A view controller displayed to the user when launch operations encounter a permanent failure.
 class LaunchFailureViewController: UIViewController {
+
+  private struct Metrics {
+    static let logoDimension: CGFloat = 100
+    static let stackViewSpacing: CGFloat = 10
+    static let stackViewHorizontalPadding: CGFloat = 20
+    static let stackViewMaxWidth: CGFloat = 280
+  }
 
   private let feedbackReporter: FeedbackReporter
   private let feedbackViewController: UIViewController?
@@ -36,24 +45,46 @@ class LaunchFailureViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
 
-    let label = UILabel()
-    label.text = "Something went wrong"
-    label.textAlignment = .center
-    label.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(label)
+    let logo = UIImageView(image: UIImage(named: "launch_image_icon"))
+    logo.translatesAutoresizingMaskIntoConstraints = false
+    logo.widthAnchor.constraint(equalToConstant: Metrics.logoDimension).isActive = true
+    logo.heightAnchor.constraint(equalTo: logo.widthAnchor).isActive = true
 
-    label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    let errorLabel = UILabel()
+    errorLabel.translatesAutoresizingMaskIntoConstraints = false
+    errorLabel.text = String.launchFailureMessage
+    errorLabel.font = MDCTypography.subheadFont()
+    errorLabel.textColor = .black
+    errorLabel.textAlignment = .center
+    errorLabel.numberOfLines = 0
+
+    let wrappingStackView = UIStackView(arrangedSubviews: [logo, errorLabel])
+    wrappingStackView.translatesAutoresizingMaskIntoConstraints = false
+    wrappingStackView.axis = .vertical
+    wrappingStackView.spacing = Metrics.stackViewSpacing
+    wrappingStackView.distribution = .equalCentering
+    wrappingStackView.alignment = .center
+    view.addSubview(wrappingStackView)
+
+    wrappingStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    wrappingStackView.leadingAnchor.constraint(
+        equalTo: view.leadingAnchor,
+        constant: Metrics.stackViewHorizontalPadding).isActive = true
+    wrappingStackView.trailingAnchor.constraint(
+        equalTo: view.trailingAnchor,
+        constant: -Metrics.stackViewHorizontalPadding).isActive = true
+    wrappingStackView.widthAnchor.constraint(
+        lessThanOrEqualToConstant: Metrics.stackViewMaxWidth).isActive = true
 
     if feedbackViewController != nil {
-      let button = UIButton(type: .custom)
-      button.setTitle("Send Feedback", for: .normal)
-      button.setTitleColor(.black, for: .normal)
-      button.addTarget(self, action: #selector(sendFeedback), for: .touchUpInside)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      view.addSubview(button)
-      button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-      button.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: -20).isActive = true
+      let feedbackButton = MDCFlatButton()
+      feedbackButton.translatesAutoresizingMaskIntoConstraints = false
+      feedbackButton.hasOpaqueBackground = true
+      feedbackButton.setTitleColor(.white, for: .normal)
+      feedbackButton.setBackgroundColor(.appBarDefaultBackgroundColor, for: .normal)
+      feedbackButton.setTitle(String.launchFailureSendFeedbackButton, for: .normal)
+      feedbackButton.addTarget(self, action: #selector(sendFeedback), for: .touchUpInside)
+      wrappingStackView.addArrangedSubview(feedbackButton)
     }
   }
 

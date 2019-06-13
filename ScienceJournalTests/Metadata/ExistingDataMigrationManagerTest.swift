@@ -540,6 +540,8 @@ class ExistingDataMigrationManagerTest: XCTestCase {
       expectation3.fulfill()
     }
 
+    waitForExpectations(timeout: 1)
+
     // Assert the first experiment is deleted, second is still there.
     XCTAssertNil(
         rootUserManager.metadataManager.experimentAndOverview(forExperimentID: experimentID1))

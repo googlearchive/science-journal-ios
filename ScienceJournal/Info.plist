@@ -40,7 +40,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<false/>
+	<true/>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Science Journal uses Bluetooth to connect to external sensors and capture their data in experiments.</string>
 	<key>NSCameraUsageDescription</key>

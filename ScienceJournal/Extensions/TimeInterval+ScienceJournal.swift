@@ -35,10 +35,19 @@ extension TimeInterval {
   }
 
   /// Returns the time interval as an accessible string in component format with hours, minutes and
-  /// seconds without abbreviation.
-  /// Example: "One hour 46 minutes 11 seconds"
+  /// seconds without abbreviation.  When there are fractional seconds present on the time interval,
+  /// this will include them as milliseconds.
+  /// Example: "One hour 46 minutes 11 seconds" and "One second 250 milliseconds".
   var accessibleDurationString: String {
-    return TimeInterval.accessibleIntervalFormatter.string(from: self) ?? ""
+    return TimeInterval.accessibleIntervalFormatter.string(from: self, appending: fractional)
+  }
+
+  /// The fractional seconds available on the time interval.
+  /// Example: 250 when the time interval equals 1.250, and 0 when the time interval equals 3.0.
+  private var fractional: Int64 {
+    let remainder = truncatingRemainder(dividingBy: 1)
+    guard remainder > 0.0 else { return 0 }
+    return Int64(remainder * 1000)
   }
 
 }

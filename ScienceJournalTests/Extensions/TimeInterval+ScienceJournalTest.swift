@@ -30,4 +30,9 @@ class TimeInterval_ScienceJournalTest: XCTestCase {
     XCTAssertEqual(interval.accessibleDurationString, "one hour, three minutes, twelve seconds")
   }
 
+  func testAccessibleDurationStringWithFractionalSeconds() {
+    let interval: TimeInterval = 1.250
+    XCTAssertEqual(interval.accessibleDurationString, "one second 250 milliseconds")
+  }
+
 }

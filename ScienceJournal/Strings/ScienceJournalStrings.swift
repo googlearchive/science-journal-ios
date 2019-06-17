@@ -485,6 +485,7 @@ extension String {
   static public var textNoteAddedContentDescription: String { return "text_note_added_content_description".localized }
   static public var throbberContentDescription: String { return "throbber_content_description".localized }
   static public var throbberContentDetails: String { return "throbber_content_details".localized }
+  static public var timeIntervalMilliseconds: String { return "time_interval_milliseconds".localized }
   static public var titleActivitySensorSettings: String { return "title_activity_sensor_settings".localized }
   static public var toExperimentContentDescription: String { return "to_experiment_content_description".localized }
   static public var toRunContentDescription: String { return "to_run_content_description".localized }

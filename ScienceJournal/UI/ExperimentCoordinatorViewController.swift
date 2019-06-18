@@ -1677,8 +1677,15 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   private func showPDFExportFlow() {
-    // TODO: Generate PDF in temporary directory and get URL
-    let pdfURL = URL(fileURLWithPath: "")
+    let savedState = displayState
+    displayState = .pdfExport
+    experimentItemsViewController.generatePDF { pdfURL in
+      self.present(pdfURL: pdfURL)
+      self.displayState = savedState
+    }
+  }
+
+  private func present(pdfURL: URL) {
     switch exportType {
     case .saveToFiles:
       saveToFilesHandler.presentSaveToFiles(forURL: pdfURL, fromViewController: self) { result in

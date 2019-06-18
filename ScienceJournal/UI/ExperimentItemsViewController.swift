@@ -574,11 +574,10 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
 
 }
 
-#if FEATURE_PDF_EXPORT
 extension ExperimentItemsViewController {
 
   // Generates a PDF from the current experiment collectionView. Work in progress.
-  private func generatePDF() {
+  func generatePDF(completion: @escaping (URL) -> Void) {
     let captureWidth: CGFloat = 500
     let captureScale: CGFloat = 2
 
@@ -609,11 +608,13 @@ extension ExperimentItemsViewController {
       return data
     }
 
-    func renderPDFDataFromSnapshotCollection(_ snapshotCollection: ScrollViewSnapshotCollection) {
-      let data = createPDFDataFromSnapshotCollection(snapshotCollection)
-      let tempDirectory = FileManager.default.temporaryDirectory
-      let outputFileURL = tempDirectory.appendingPathComponent("Experiment.pdf")
-      data.write(to: outputFileURL, atomically: true)
+    func renderPDFDataFromSnapshotCollection(_ snapshotCollection: ScrollViewSnapshotCollection) ->
+      URL {
+        let data = createPDFDataFromSnapshotCollection(snapshotCollection)
+        let tempDirectory = FileManager.default.temporaryDirectory
+        let outputFileURL = tempDirectory.appendingPathComponent("Experiment.pdf")
+        data.write(to: outputFileURL, atomically: true)
+        return outputFileURL
     }
 
     let spinnerVC = SpinnerViewController()
@@ -635,7 +636,7 @@ extension ExperimentItemsViewController {
           self.collectionView.collectionViewLayout.invalidateLayout()
 
           spinnerVC.dismissSpinner(completion: {
-            renderPDFDataFromSnapshotCollection(snapshotCollection)
+            completion(renderPDFDataFromSnapshotCollection(snapshotCollection))
           })
         })
       }
@@ -643,6 +644,5 @@ extension ExperimentItemsViewController {
   }
 
 }
-#endif
 
 // swiftlint:enable file_length, type_body_length

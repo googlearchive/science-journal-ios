@@ -91,11 +91,17 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   }()
 
   // Drawer view controller is created lazily to avoid loading drawer contents until needed.
-  private lazy var drawerVC = DrawerViewController(analyticsReporter: analyticsReporter,
-                                                   drawerConfig: drawerConfig,
-                                                   preferenceManager: preferenceManager,
-                                                   sensorController: sensorController,
-                                                   sensorDataManager: sensorDataManager)
+  private lazy var drawerVC: DrawerViewController? = {
+    if FeatureFlags.isActionAreaEnabled {
+      return nil
+    } else {
+      return DrawerViewController(analyticsReporter: analyticsReporter,
+                                  drawerConfig: drawerConfig,
+                                  preferenceManager: preferenceManager,
+                                  sensorController: sensorController,
+                                  sensorDataManager: sensorDataManager)
+    }
+  }()
 
   /// Designated initializer.
   ///
@@ -942,7 +948,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     if viewController is ExperimentsListViewController {
       // Reset open experiment update manager and observe state in the drawer when the list appears.
       openExperimentUpdateManager = nil
-      drawerVC.observeViewController.prepareForReuse()
+      drawerVC?.observeViewController.prepareForReuse()
     }
   }
 

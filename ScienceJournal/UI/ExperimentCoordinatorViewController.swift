@@ -348,10 +348,19 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     // Experiment items view controller. This must be configured before the drawer or empty view,
     // because both rely on the experiment items count.
-    experimentItemsViewController.view.translatesAutoresizingMaskIntoConstraints = false
-    addChild(experimentItemsViewController)
-    view.addSubview(experimentItemsViewController.view)
-    experimentItemsViewController.view.pinToEdgesOfView(view)
+    if FeatureFlags.isActionAreaEnabled {
+      let actionAreaController = ActionAreaController(primary: experimentItemsViewController)
+      addChild(actionAreaController)
+      view.addSubview(actionAreaController.view)
+      actionAreaController.view.pinToEdgesOfView(view)
+      actionAreaController.didMove(toParent: self)
+    } else {
+      experimentItemsViewController.view.translatesAutoresizingMaskIntoConstraints = false
+      addChild(experimentItemsViewController)
+      view.addSubview(experimentItemsViewController.view)
+      experimentItemsViewController.view.pinToEdgesOfView(view)
+      experimentItemsViewController.didMove(toParent: self)
+    }
     setCollectionViewInset()
     reloadExperimentItems()
 

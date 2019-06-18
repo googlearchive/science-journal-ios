@@ -16,11 +16,13 @@
 		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
+		3F71B71622B466D90015074A /* ActionAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71B71522B466D90015074A /* ActionAreaController.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		3FCABBAE22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */; };
 		3FCABBB022AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */; };
 		3FCABBB222AEF1FD00118021 /* LaunchFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */; };
 		3FD3E30222AB05D2004FA302 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3E30122AB05D2004FA302 /* TestingAppDelegate.swift */; };
+		3FDE85A322B3FFA600420D25 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE85A222B3FFA600420D25 /* FeatureFlags.swift */; };
 		48282B6C20CB0079007A2102 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */; };
 		48282B6D20CB0079007A2102 /* SettingsButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */; };
 		4845F77A20BE1C0300FCBA71 /* SidebarAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845F77920BE1C0300FCBA71 /* SidebarAccountView.swift */; };
@@ -638,11 +640,13 @@
 		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
+		3F71B71522B466D90015074A /* ActionAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaController.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationOperation.swift; sourceTree = "<group>"; };
 		3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationOperationTest.swift; sourceTree = "<group>"; };
 		3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFailureViewController.swift; sourceTree = "<group>"; };
 		3FD3E30122AB05D2004FA302 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		3FDE85A222B3FFA600420D25 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		448E6B7483EF116C957E4A33 /* Pods-ScienceJournalTests.dogfood.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.dogfood.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.dogfood.xcconfig"; sourceTree = "<group>"; };
 		48282B6A20CB0078007A2102 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		48282B6B20CB0079007A2102 /* SettingsButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButtonCell.swift; sourceTree = "<group>"; };
@@ -1318,6 +1322,14 @@
 				3F569570228F052C0039B84F /* LaunchManagerTest.swift */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		3F71B71422B466D90015074A /* ActionArea */ = {
+			isa = PBXGroup;
+			children = (
+				3F71B71522B466D90015074A /* ActionAreaController.swift */,
+			);
+			path = ActionArea;
 			sourceTree = "<group>";
 		};
 		4850DC9A21C9798300A5C4A0 /* RemoteConfig */ = {
@@ -2273,6 +2285,7 @@
 			isa = PBXGroup;
 			children = (
 				5C650B0120892A5700CB4656 /* Accounts */,
+				3F71B71422B466D90015074A /* ActionArea */,
 				686E3D2C1F58880300250628 /* Analytics */,
 				68EBA6DD1E20421E0089FF7F /* AppDelegate.swift */,
 				68E3618B203F7F0900B1B979 /* AppDelegateOpen.swift */,
@@ -2724,6 +2737,7 @@
 		8BBFBC1921388809008FFBF4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3FDE85A222B3FFA600420D25 /* FeatureFlags.swift */,
 				3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */,
 				8BBFBC1A213889F9008FFBF4 /* NetworkAvailability.swift */,
 				8BBFBC1C21388A29008FFBF4 /* NetworkAvailabilityDisabled.swift */,
@@ -2857,7 +2871,7 @@
 				68EBA6D71E20421E0089FF7F /* Frameworks */,
 				68EBA6D81E20421E0089FF7F /* Resources */,
 				7E3499D6286B3586851B38AA /* [CP] Embed Pods Frameworks */,
-				D53F6F762268EF8500E1F22B /* ShellScript */,
+				D53F6F762268EF8500E1F22B /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -3213,7 +3227,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D53F6F762268EF8500E1F22B /* ShellScript */ = {
+		D53F6F762268EF8500E1F22B /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3222,6 +3236,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -3413,6 +3428,7 @@
 				680D405F1F02BB24004E5555 /* NoteMetadataDetailCell.swift in Sources */,
 				8B1F2F8F2065512C00BADCD4 /* SensorStatType.swift in Sources */,
 				5CCD4767205C02FB000D41E2 /* ZoomPresenter.swift in Sources */,
+				3F71B71622B466D90015074A /* ActionAreaController.swift in Sources */,
 				5CA3BFE720F53A9300755C7A /* ScienceJournalLogs.swift in Sources */,
 				68CD98971F3E47B500E3BF3C /* Timestamp.swift in Sources */,
 				8B5114EF20B49F5F005953BD /* ClaimExperimentsView.swift in Sources */,
@@ -3636,6 +3652,7 @@
 				5C650B0520892A5700CB4656 /* AccountsManager.swift in Sources */,
 				68E3C8D21FD783FE00255ADF /* Bundle+ScienceJournal.swift in Sources */,
 				68BD95651E8DA45100FEB0B2 /* SoundType.swift in Sources */,
+				3FDE85A322B3FFA600420D25 /* FeatureFlags.swift in Sources */,
 				8BCCAD561EDF593C00278F05 /* PopUpMenuAction.swift in Sources */,
 				687FAA0D202C1162004C1D04 /* SensorTriggerLabelValue.pbobjc.m in Sources */,
 				8BF9DA9D2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift in Sources */,

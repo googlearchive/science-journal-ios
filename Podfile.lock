@@ -187,6 +187,7 @@ PODS:
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
   - Protobuf (3.5.0)
+  - SnapKit (5.0.0)
   - SSZipArchive (2.1.1)
   - SwiftLint (0.33.0)
 
@@ -224,6 +225,7 @@ DEPENDENCIES:
   - MaterialComponents/Themes
   - MaterialComponents/Typography
   - Protobuf (~> 3.5.0)
+  - SnapKit (~> 5.0.0)
   - SSZipArchive (= 2.1.1)
   - SwiftLint
 
@@ -237,6 +239,7 @@ SPEC REPOS:
     - MotionAnimator
     - MotionInterchange
     - Protobuf
+    - SnapKit
     - SSZipArchive
     - SwiftLint
 
@@ -249,9 +252,10 @@ SPEC CHECKSUMS:
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: a0158f8eb04d25eca0b6d51c932b87adb46b2c69
+PODFILE CHECKSUM: fe6606e9036d22c2eb0c2252aebdc4e2f02a31bb
 
 COCOAPODS: 1.6.1

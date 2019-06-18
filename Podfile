@@ -49,6 +49,8 @@ target 'ScienceJournal' do
   pod 'Protobuf', '~> 3.5.0', :inhibit_warnings => true
   ## ZipArchive
   pod 'SSZipArchive', '2.1.1'
+  ## SnapKit
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'ScienceJournalTests' do
     inherit! :search_paths

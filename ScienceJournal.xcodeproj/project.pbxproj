@@ -3173,6 +3173,7 @@
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf-framework/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -3185,6 +3186,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4137,7 +4139,7 @@
 					"\"SystemConfiguration\"",
 					"-l\"iconv\"",
 				);
-				OTHER_SWIFT_FLAGS = "-DSCIENCEJOURNAL_DOGFOOD_BUILD";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DSCIENCEJOURNAL_DOGFOOD_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4383,7 +4385,7 @@
 					"\"SystemConfiguration\"",
 					"-l\"iconv\"",
 				);
-				OTHER_SWIFT_FLAGS = "-DSCIENCEJOURNAL_ENABLE_DEBUG -DSCIENCEJOURNAL_DEV_BUILD";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DSCIENCEJOURNAL_ENABLE_DEBUG -DSCIENCEJOURNAL_DEV_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.opensource.ScienceJournal;
 				PRODUCT_MODULE_NAME = third_party_sciencejournal_ios_ScienceJournalOpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";

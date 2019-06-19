@@ -57,6 +57,14 @@ class TrialCardSensorsView: UIView {
     }
   }
 
+  var displayState: ExperimentCoordinatorViewController.DisplayState = .normal {
+    didSet {
+      for sensorView in sensorViews {
+        sensorView.displayState = displayState
+      }
+    }
+  }
+
   private var sensorViews = [TrialCardSensorView]()
   private var separatorViews = [SeparatorView]()
 
@@ -64,7 +72,8 @@ class TrialCardSensorsView: UIView {
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
     let height = TrialCardSensorView.height * CGFloat(sensorViews.count) +
-        SeparatorView.Metrics.dimension * CGFloat(separatorViews.count)
+        SeparatorView.Metrics.dimension * CGFloat(separatorViews.count) +
+        displayState.chartViewHeightPadding * CGFloat(sensorViews.count)
     return CGSize(width: size.width, height: height)
   }
 
@@ -76,7 +85,8 @@ class TrialCardSensorsView: UIView {
       sensorView.frame = CGRect(x: 0,
                                 y: originY,
                                 width: bounds.width,
-                                height: TrialCardSensorView.height)
+                                height: TrialCardSensorView.height +
+                                    displayState.chartViewHeightPadding)
       originY = sensorView.frame.maxY
 
       if index < separatorViews.count {

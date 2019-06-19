@@ -294,7 +294,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                                                        snapshotNote: displaySnapshotNote,
                                                        showingHeader: showHeader)
       case .trial(let displayTrial):
-        calculatedCellHeight = TrialCardCell.height(inWidth: width, trial: displayTrial)
+        calculatedCellHeight = TrialCardCell.height(inWidth: width, trial: displayTrial) +
+            (displayState.chartViewHeightPadding * CGFloat(displayTrial.sensors.count))
       case .pictureNote(let displayPictureNote):
         let pictureStyle: PictureStyle = isRecordingTrial ? .small : .large
         calculatedCellHeight = PictureCardCell.height(inWidth: width,
@@ -362,7 +363,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
           } else {
             cell.configureCellWithTrial(trial,
                                         metadataManager: metadataManager,
-                                        showMenuButton: showMenuButton)
+                                        showMenuButton: showMenuButton,
+                                        displayState: displayState)
           }
           cell.delegate = self
         }

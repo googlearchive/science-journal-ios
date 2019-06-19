@@ -118,7 +118,8 @@ class RecordedTrialCardView: UIView {
   /// Configures the recorded view for the trial.
   ///
   /// - Parameter trial: The trial.
-  func configure(withTrial trial: DisplayTrial, showMenuButton: Bool = true) {
+  func configure(withTrial trial: DisplayTrial, showMenuButton: Bool = true,
+                 displayState: ExperimentCoordinatorViewController.DisplayState = .normal) {
     // Header view.
     experimentCardHeaderView.headerTimestampLabel.text = trial.timestamp.string
     experimentCardHeaderView.accessibilityLabel = experimentCardHeaderView.headerTimestampLabel.text
@@ -130,6 +131,7 @@ class RecordedTrialCardView: UIView {
 
     // Sensors view.
     trialCardSensorsView.sensors = trial.sensors
+    trialCardSensorsView.displayState = displayState
 
     // Trial notes.
     if trial.displayNotesCount > 0 {

@@ -52,6 +52,8 @@ class TrialCardSensorView: ExperimentCardView {
     }
   }
 
+  var displayState: ExperimentCoordinatorViewController.DisplayState = .normal
+
   private let sensorIcon = UIImageView()
   private let titleLabel = UILabel()
   private let titleWrapper = UIView()
@@ -119,7 +121,7 @@ class TrialCardSensorView: ExperimentCardView {
         CGRect(x: 0,
                y: sensorStatsView.frame.maxY + ExperimentCardView.innerVerticalPadding,
                width: bounds.width,
-               height: ChartPlacementType.previewReview.height)
+               height: displayState.trialCardSensorViewHeight)
   }
 
   // MARK: - Private

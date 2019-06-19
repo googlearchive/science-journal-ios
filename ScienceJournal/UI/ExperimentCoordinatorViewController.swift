@@ -177,6 +177,24 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
         return false
       }
     }
+
+    var chartViewHeightPadding: CGFloat {
+      switch self {
+      case .normal, .recording:
+        return 0
+      case .pdfExport:
+        return ChartPlacementType.runReview.height - ChartPlacementType.previewReview.height
+      }
+    }
+
+    var trialCardSensorViewHeight: CGFloat {
+      switch self {
+      case .normal, .recording:
+        return ChartPlacementType.previewReview.height
+      case .pdfExport:
+        return ChartPlacementType.runReview.height
+      }
+    }
   }
 
   // MARK: - Properties
@@ -235,6 +253,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   // A dictionary of chart controllers, keyed by sensor ID.
   private var chartControllers = [String: ChartController]()
+
+  // A dictionary of chart export view controllers, keyed by sensor ID.
+  private var chartExportViewControllers = [String: ChartExportViewController]()
 
   private var statusBarHeight: CGFloat {
     return UIApplication.shared.statusBarFrame.size.height
@@ -1375,17 +1396,36 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   // Returns a chart view and adds its controller to the chart controllers array.
   private func chartViewForSensor(_ sensor: DisplaySensor,
-                                  trial: DisplayTrial) -> ChartView {
-    let chartController = ChartController(placementType: .previewReview,
-                                          colorPalette: sensor.colorPalette,
-                                          trialID: trial.ID,
-                                          sensorID: sensor.ID,
-                                          sensorStats: sensor.stats,
-                                          cropRange: trial.cropRange,
-                                          notes: trial.notes,
-                                          sensorDataManager: sensorDataManager)
-    chartControllers[trial.ID + sensor.ID] = chartController
-    return chartController.chartView
+                                  trial: DisplayTrial) -> UIView {
+    let chartController: ChartController
+    let wrapperView: UIView
+    let trialSensorKey = trial.ID + sensor.ID
+
+    switch displayState {
+    case .normal, .recording:
+      chartController = ChartController(placementType: .previewReview,
+                                        colorPalette: sensor.colorPalette,
+                                        trialID: trial.ID,
+                                        sensorID: sensor.ID,
+                                        sensorStats: sensor.stats,
+                                        cropRange: trial.cropRange,
+                                        notes: trial.notes,
+                                        sensorDataManager: sensorDataManager)
+      wrapperView = chartController.chartView
+    case .pdfExport:
+      let chartExportVC = ChartExportViewController(trialID: trial.ID,
+                                                    sensorID: sensor.ID,
+                                                    sensorStats: sensor.stats,
+                                                    cropRange: trial.cropRange,
+                                                    notes: trial.notes,
+                                                    colorPalette: sensor.colorPalette,
+                                                    sensorDataManager: sensorDataManager)
+      chartController = chartExportVC.chartController
+      wrapperView = chartExportVC.view
+      chartExportViewControllers[trialSensorKey] = chartExportVC
+    }
+    chartControllers[trialSensorKey] = chartController
+    return wrapperView
   }
 
   /// Updates the title in the nav bar based on the current experiment.

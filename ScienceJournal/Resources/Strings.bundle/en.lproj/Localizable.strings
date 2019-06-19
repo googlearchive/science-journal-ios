@@ -643,6 +643,18 @@
 /* A message shown when an experiment version is too new and must be shown read only. [CHAR_LIMIT=150] */
 "experiment_version_too_new_to_edit" = "This experiment was created with a newer version of Science Journal. You will not be able to edit it on this device until you download the latest update.";
 
+/* A summary of an experiment that has only one note in it. [CHAR_LIMIT=20] */
+"experiment_one_note" = "1 note";
+
+/* A summary of an experiment that has many notes in it. [CHAR_LIMIT=20] */
+"experiment_many_notes" = "%ld notes";
+
+/* A summary of an experiment that has only one recording in it. [CHAR_LIMIT=20] */
+"experiment_one_recording" = "1 recording";
+
+/* A summary of an experiment that has many recordings in it. [CHAR_LIMIT=20] */
+"experiment_many_recordings" = "%ld recordings";
+
 /* The message for the tutorial popup suggesting a user create a new Experiment, describing what an experiment can do. [CHAR_LIMIT=120] */
 "experiments_tutorial_message" = "Organize your thoughts and observations by taking notes, recording data, or taking pictures";
 

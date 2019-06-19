@@ -239,6 +239,10 @@ extension String {
   static public var experimentRecordingTitle: String { return "experiment_recording_title".localized }
   static public var experimentTitleHint: String { return "experiment_title_hint".localized }
   static public var experimentVersionTooNewToEdit: String { return "experiment_version_too_new_to_edit".localized }
+  static public var experimentOneNote: String { return "experiment_one_note".localized }
+  static public var experimentManyNotes: String { return "experiment_many_notes".localized }
+  static public var experimentOneRecording: String { return "experiment_one_recording".localized }
+  static public var experimentManyRecordings: String { return "experiment_many_recordings".localized }
   static public var experimentsTutorialMessage: String { return "experiments_tutorial_message".localized }
   static public var experimentsTutorialTitle: String { return "experiments_tutorial_title".localized }
   static public var exploreYourWorld: String { return "explore_your_world".localized }

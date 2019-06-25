@@ -362,4 +362,19 @@ class ExperimentTest: XCTestCase {
     XCTAssertEqual("new title", experiment.title)
   }
 
+  func testNotesAndTrialsString() {
+    let experiment = Experiment(ID: "")
+    XCTAssertEqual(experiment.notesAndTrialsString, "")
+    experiment.addNote(TextNote())
+    XCTAssertEqual(experiment.notesAndTrialsString, "1 note")
+    experiment.addNote(PictureNote())
+    experiment.addNote(SnapshotNote())
+    XCTAssertEqual(experiment.notesAndTrialsString, "3 notes")
+    experiment.addNote(TextNote())
+    experiment.addTrial(Trial(), isUndo: false)
+    XCTAssertEqual(experiment.notesAndTrialsString, "4 notes, 1 recording")
+    experiment.addTrial(Trial(), isUndo: false)
+    XCTAssertEqual(experiment.notesAndTrialsString, "4 notes, 2 recordings")
+  }
+
 }

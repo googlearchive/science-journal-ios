@@ -25,6 +25,13 @@ import third_party_objective_c_material_components_ios_components_Snackbar_Snack
 import third_party_objective_c_material_components_ios_components_private_KeyboardWatcher_KeyboardWatcher
 // swiftlint:enable line_length
 
+// Specifies info for used in drawing the PDF export header
+struct PDFHeaderInfo {
+  let title: String
+  let subtitle: String
+  let image: UIImage?
+}
+
 protocol ExperimentCoordinatorViewControllerDelegate: class {
 
   /// Informs the delegate an experiment's archive state should be toggled.
@@ -147,6 +154,15 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     /// Transient state for updating views for PDF export. Should enter from (and exit to) .normal
     case pdfExport
+
+    var backgroundColor: UIColor {
+      switch self {
+      case .normal, .recording:
+        return MDCPalette.grey.tint200
+      case .pdfExport:
+        return .white
+      }
+    }
 
     var maxDisplayNotes: Int? {
       // The default max notes to show when parsing trials into display trials.
@@ -1719,7 +1735,16 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   private func showPDFExportFlow() {
     let savedState = displayState
     displayState = .pdfExport
-    experimentItemsViewController.generatePDF { pdfURL in
+
+    var thumbnail: UIImage?
+    if let image = metadataManager.imageForExperiment(experiment)?
+      .sized(to: CGSize(width: 200, height: 200)) {
+      thumbnail = pdfExportHeaderThumbnail(for: image)
+    }
+    let pdfHeaderInfo = PDFHeaderInfo(title: experiment.titleOrDefault,
+                                      subtitle: experiment.notesAndTrialsString,
+                                      image: thumbnail)
+    experimentItemsViewController.generatePDF(with: pdfHeaderInfo) { pdfURL in
       self.present(pdfURL: pdfURL)
       self.displayState = savedState
     }
@@ -1779,6 +1804,21 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     #else
     showSaveToFilesFlow()
     #endif
+  }
+
+  /// Returns copy of image stylized as needed for the experiment PDF export header
+  private func pdfExportHeaderThumbnail(for image: UIImage) -> UIImage? {
+    let rect = CGRect(origin: .zero, size: image.size)
+    UIGraphicsBeginImageContextWithOptions(image.size, false, 1)
+    defer {
+      UIGraphicsEndImageContext()
+    }
+    UIBezierPath(roundedRect: rect, cornerRadius: image.size.height / 8).addClip()
+    image.draw(in: rect)
+    if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
+      return resizedImage
+    }
+    return nil
   }
 
 }

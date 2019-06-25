@@ -59,4 +59,35 @@ extension String {
     return String(format: String.claimExperimentConfirmationMessage, email)
   }
 
+  /// Returns the number of notes in an experiment in a localized string, singular or plural,
+  /// or empty string if none.
+  /// e.g. "1 note", "42 notes", "".
+  ///
+  /// - Parameter count: The note count.
+  /// - Returns: The localized string.
+  static func notesDescription(withCount count: Int) -> String {
+    if count == 0 {
+      return ""
+    } else if count == 1 {
+      return String.experimentOneNote
+    } else {
+      return String(format: String.experimentManyNotes, count)
+    }
+  }
+
+  /// Returns the number of recordings in an experiment in a localized string, singular or plural,
+  /// or empty string if none.
+  /// e.g. "1 recording", "42 recordings", "".
+  ///
+  /// - Parameter count: The recording count.
+  /// - Returns: The localized string.
+  static func trialsDescription(withCount count: Int) -> String {
+    if count == 0 {
+      return ""
+    } else if count == 1 {
+      return String.experimentOneRecording
+    } else {
+      return String(format: String.experimentManyRecordings, count)
+    }
+  }
 }

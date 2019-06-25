@@ -48,6 +48,19 @@ extension String {
     return boundingBox.width
   }
 
+  /// Returns the size a UILabel would occupy with the given font.
+  ///
+  /// - Parameters:
+  ///   - font: UIFont to use for the label.
+  /// - Returns: Calculated size a UILabel would be.
+  func labelSize(font: UIFont) -> CGSize {
+    let boundingBox = self.boundingRect(with: .zero,
+                                        options: .usesLineFragmentOrigin,
+                                        attributes: [NSAttributedString.Key.font: font],
+                                        context: nil)
+    return boundingBox.size
+  }
+
   /// Returns the localized string matching with a key matching `self`. See ScienceJournalStrings
   /// for actual string lookup. If a string is not found in a non-English language, the English
   /// string will be returned instead.

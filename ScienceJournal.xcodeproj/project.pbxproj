@@ -60,6 +60,8 @@
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
 		58512C6C22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */; };
 		585D619422B1C38100EB2114 /* ChartExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D619322B1C38100EB2114 /* ChartExportViewController.swift */; };
+		58BC1BC322C1781000DA7EDC /* String+PluralizeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */; };
+		58BC1BC522C18FEB00DA7EDC /* UIImage+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */; };
 		5C0EDCEF1FE30F280014E825 /* CropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCEE1FE30F280014E825 /* CropValidator.swift */; };
 		5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */; };
 		5C0EDCF41FE94C270014E825 /* ExperimentItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */; };
@@ -690,6 +692,8 @@
 		551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTypeSelectionHandler.swift; sourceTree = "<group>"; };
 		585D619322B1C38100EB2114 /* ChartExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartExportViewController.swift; sourceTree = "<group>"; };
+		58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PluralizeTest.swift"; sourceTree = "<group>"; };
+		58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ScienceJournal.swift"; sourceTree = "<group>"; };
 		5C0EDCEE1FE30F280014E825 /* CropValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidator.swift; sourceTree = "<group>"; };
 		5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidatorTest.swift; sourceTree = "<group>"; };
 		5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentItemsViewController.swift; sourceTree = "<group>"; };
@@ -2460,6 +2464,7 @@
 				5C3245231EF090DD00E8664B /* UICollectionView+PerformChanges.swift */,
 				689BE6AD1EF21C6E00EE0F9E /* UIColor+ScienceJournal.swift */,
 				8BFA85C81F71B33B00297471 /* UIDevice+ScienceJournal.swift */,
+				58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */,
 				8BA5BF331F44904F00EB77E8 /* UIPanGestureRecognizer+ScienceJournal.swift */,
 				48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */,
 				8B9C59471F478A820063FFA9 /* UIScrollView+ScienceJournal.swift */,
@@ -2789,6 +2794,7 @@
 				8BCD2F891F968F0F00CCF8DB /* Sensor+TestHelpers.swift */,
 				680CDF161F88313D00BDE61E /* TimeInterval+ScienceJournalTest.swift */,
 				68B32A2D1F9A8A7F0067DAF3 /* String+ScienceJournalTest.swift */,
+				58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */,
 				8B5A66A42163B7FD0050E763 /* Date+ScienceJournalTest.swift */,
 				5C62CBA22229A81C00E63538 /* Array+ScienceJournalTest.swift */,
 			);
@@ -3285,6 +3291,7 @@
 				5C72195E1ED8D04700817F0B /* ExperimentOverview.swift in Sources */,
 				5C2E4E911EA16CE100F9AA6D /* SensorSettingsDataSource.swift in Sources */,
 				48C1DF2C222477010049629D /* AnalyticsEvent.swift in Sources */,
+				58BC1BC522C18FEB00DA7EDC /* UIImage+ScienceJournal.swift in Sources */,
 				8B4B60141E44DADA009AFB1B /* AccelerometerSensor.swift in Sources */,
 				687FAA1A202C1162004C1D04 /* SensorConfig.pbobjc.m in Sources */,
 				8B9319641EF9A11900A078F4 /* DrawerPosition.swift in Sources */,
@@ -3737,6 +3744,7 @@
 				8B9BE17D2010E69400DE999B /* UnifiedSensorTimerTest.swift in Sources */,
 				8B9F06171EF42D0F0030B011 /* SensorTriggerTest.swift in Sources */,
 				8B5114E720B49F16005953BD /* ClaimExperimentsFlowControllerTest.swift in Sources */,
+				58BC1BC322C1781000DA7EDC /* String+PluralizeTest.swift in Sources */,
 				5C804CBD1FDEFEF600F8D1C6 /* TimestampFormatterTest.swift in Sources */,
 				68B32A2E1F9A8A7F0067DAF3 /* String+ScienceJournalTest.swift in Sources */,
 				68E3C8D61FD784D200255ADF /* RatingPromptManagerTest.swift in Sources */,

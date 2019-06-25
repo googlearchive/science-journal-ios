@@ -157,6 +157,26 @@ public class Experiment {
     return title == nil && imagePath == nil && itemCount == 0
   }
 
+  /// Returns a localized string representation of the number of notes and recordings in the
+  /// experiment, or empty if none.
+  /// e.g. "1 note, 2 recordings", "1 recording", "42 notes", "".
+  public var notesAndTrialsString: String {
+    var composedString = ""
+
+    let notesString = String.notesDescription(withCount: notes.count)
+    let trialsString = String.trialsDescription(withCount: trials.count)
+
+    if notesString.isEmpty == false && trialsString.isEmpty == false {
+      composedString = "\(notesString), \(trialsString)"
+    } else if notesString.isEmpty {
+      composedString = "\(trialsString)"
+    } else {
+      composedString = "\(notesString)"
+    }
+
+    return composedString
+  }
+
   /// Designated initializer.
   ///
   /// - Parameters:

@@ -19,6 +19,7 @@
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Palettes_Palettes
+import third_party_objective_c_material_components_ios_components_Typography_Typography
 
 protocol ExperimentItemsViewControllerDelegate: class {
   func experimentItemsViewControllerDidSelectItem(_ displayItem: DisplayItem)
@@ -68,7 +69,11 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     }
   }
 
-  var displayState: ExperimentCoordinatorViewController.DisplayState = .normal
+  var displayState: ExperimentCoordinatorViewController.DisplayState = .normal {
+    didSet {
+      collectionView.backgroundColor = displayState.backgroundColor
+    }
+  }
 
   /// The scroll position to use when adding items. This is changed when adding content to a trial
   /// while recording but should be replaced by logic that can scroll to a view within a trial cell.
@@ -157,7 +162,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     collectionView.alwaysBounceVertical = true
     collectionView.dataSource = self
     collectionView.delegate = self
-    collectionView.backgroundColor = MDCPalette.grey.tint200
+    collectionView.backgroundColor = displayState.backgroundColor
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(collectionView)
     collectionView.pinToEdgesOfView(view)
@@ -576,10 +581,74 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
 
 }
 
+// MARK: - PDF Export
+
 extension ExperimentItemsViewController {
 
+  private func drawHeader(with headerInfo: PDFHeaderInfo, in rect: CGRect) {
+    let padding: CGFloat = 16
+    let rightToLeft = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
+    var xOffset = padding
+    var yOffset = padding
+
+    if rightToLeft {
+      xOffset = rect.size.width - padding
+    }
+
+    if let image = headerInfo.image {
+      let imageDimension = ceil(rect.size.height - padding * 2)
+
+      if rightToLeft {
+        xOffset -= imageDimension
+      }
+
+      let imageRect = CGRect(origin: CGPoint(x: xOffset, y: padding),
+                             size: CGSize(width: imageDimension, height: imageDimension))
+      let context = UIGraphicsGetCurrentContext()!
+      context.saveGState()
+      context.setShadow(offset: CGSize(width: 0, height: 5), blur: 10)
+      image.draw(in: imageRect)
+      context.restoreGState()
+
+      if rightToLeft {
+        xOffset -= padding
+      } else {
+        xOffset += imageDimension + padding
+      }
+    }
+
+    let titleFontSize: CGFloat = 40
+    let titleFont = UIFont.boldSystemFont(ofSize: titleFontSize)
+    let titleAttributes = [NSAttributedString.Key.font: titleFont,
+                           NSAttributedString.Key.foregroundColor: UIColor.black]
+    let titleTextSize = headerInfo.title.labelSize(font: titleFont)
+
+    let subtitleFontSize: CGFloat = 35
+    let subtitleFont = UIFont.systemFont(ofSize: subtitleFontSize)
+    let subtitleAttributes = [NSAttributedString.Key.font: subtitleFont,
+                              NSAttributedString.Key.foregroundColor: UIColor.gray]
+    let subtitleTextSize = headerInfo.subtitle.labelSize(font: subtitleFont)
+
+    yOffset = ceil(rect.size.height / 2 - (titleTextSize.height + subtitleTextSize.height) / 2)
+
+    let textXOffset = xOffset
+    if rightToLeft {
+      xOffset = textXOffset - titleTextSize.width
+    }
+
+    let titleRect = CGRect(origin: CGPoint(x: xOffset, y: yOffset), size: titleTextSize)
+    headerInfo.title.draw(at: titleRect.origin, withAttributes: titleAttributes)
+
+    yOffset += ceil(titleTextSize.height + padding / 2)
+    if rightToLeft {
+      xOffset = textXOffset - subtitleTextSize.width
+    }
+    let subtitleRect = CGRect(origin: CGPoint(x: xOffset, y: yOffset), size: subtitleTextSize)
+    headerInfo.subtitle.draw(at: subtitleRect.origin, withAttributes: subtitleAttributes)
+  }
+
   // Generates a PDF from the current experiment collectionView. Work in progress.
-  func generatePDF(completion: @escaping (URL) -> Void) {
+  func generatePDF(with headerInfo: PDFHeaderInfo, completion: @escaping (URL) -> Void) {
     let captureWidth: CGFloat = 500
     let captureScale: CGFloat = 2
 
@@ -593,11 +662,20 @@ extension ExperimentItemsViewController {
       let data = NSMutableData()
       guard snapshotCollection.snapshots.count > 0 else { return data }
 
-      let finalFrame = CGRect(origin: .zero, size: snapshotCollection.finalSize)
+      let headerHeight: CGFloat = 200
+      let headerPadding: CGFloat = 10
+      let headerSize = CGSize(width: snapshotCollection.finalSize.width, height: headerHeight)
+      let finalFrame = CGRect(origin: .zero,
+                              size: CGSize(width: snapshotCollection.finalSize.width,
+                                           height: snapshotCollection.finalSize.height +
+                                             headerPadding + headerHeight))
 
       UIGraphicsBeginPDFContextToData(data, finalFrame, nil)
       UIGraphicsBeginPDFPageWithInfo(finalFrame, nil)
-      var offsetY: CGFloat = 0
+
+      drawHeader(with: headerInfo, in: CGRect(origin: .zero, size: headerSize))
+
+      var offsetY: CGFloat = headerHeight + headerPadding
       for snapshot in snapshotCollection.snapshots {
         let rect = CGRect(x: 0,
                           y: offsetY,

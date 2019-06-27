@@ -47,6 +47,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   weak var settingsVC: SettingsViewController?
 
   private let accountsManager: AccountsManager
+  private let actAreaController = ActionAreaController()
   private let analyticsReporter: AnalyticsReporter
   private let commonUIComponents: CommonUIComponents
   private let documentManager: DocumentManager
@@ -55,7 +56,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let experimentDataDeleter: ExperimentDataDeleter
   private let feedbackReporter: FeedbackReporter
   private let metadataManager: MetadataManager
-  private let navController = UINavigationController()
+  private var navController: UINavigationController { return actAreaController.navController }
   private let networkAvailability: NetworkAvailability
   private let devicePreferenceManager: DevicePreferenceManager
   private let preferenceManager: PreferenceManager
@@ -166,8 +167,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   override open func viewDidLoad() {
     super.viewDidLoad()
 
-    addChild(navController)
-    view.addSubview(navController.view)
+    addChild(actAreaController)
+    view.addSubview(actAreaController.view)
+    actAreaController.didMove(toParent: self)
+
     navController.isNavigationBarHidden = true
     navController.delegate = self
 
@@ -261,7 +264,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         if let experimentsListVC = self.experimentsListVC {
           // Dismiss the feature highlight if necessary first.
           experimentsListVC.dismissFeatureHighlightIfNecessary()
-          self.navController.popToViewController(experimentsListVC, animated: false)
+          self.actAreaController.pop(to: experimentsListVC, animated: false)
         }
 
         guard let topViewController = self.navController.topViewController else {
@@ -482,7 +485,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   func experimentViewControllerDidRequestDeleteExperiment(_ experiment: Experiment) {
     experimentStateManager.deleteExperiment(withID: experiment.ID)
     if let experimentsListVC = experimentsListVC {
-      navController.popToViewController(experimentsListVC, animated: true)
+      actAreaController.pop(to: experimentsListVC, animated: true)
     }
   }
 
@@ -733,7 +736,17 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     openExperimentUpdateManager?.addListener(experimentCoordinatorVC)
     experimentStateManager.addListener(experimentCoordinatorVC)
 
-    navController.pushViewController(experimentCoordinatorVC, animated: true)
+    let sensorItem =
+      ActionAreaBarItem(title: "Sensor", image: UIImage(named: "ic_sensors")) {
+        let materialHeaderContainerViewController =
+          MaterialHeaderContainerViewController(
+            contentViewController: experimentCoordinatorVC.observeViewController
+          )
+
+        self.actAreaController.show(detail: materialHeaderContainerViewController, with: [])
+      }
+
+    actAreaController.push(experimentCoordinatorVC, animated: true, with: [sensorItem])
 
     if isExperimentTooNewToEdit(experiment) {
       let alertController = MDCAlertController(title: nil,
@@ -948,7 +961,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     if viewController is ExperimentsListViewController {
       // Reset open experiment update manager and observe state in the drawer when the list appears.
       openExperimentUpdateManager = nil
-      drawerVC?.observeViewController.prepareForReuse()
+      experimentCoordinatorVC?.observeViewController.prepareForReuse()
     }
   }
 
@@ -1053,7 +1066,7 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
       return
     }
     experimentCoordinatorVC?.cancelRecordingIfNeeded()
-    navController.popToViewController(experimentsListVC, animated: true)
+    actAreaController.pop(to: experimentsListVC, animated: true)
   }
 
 }

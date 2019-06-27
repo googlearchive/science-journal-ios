@@ -300,6 +300,17 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     }
   }
 
+  // This VC is currently the delegate for these controllers, so we'll create them here
+  // as needed until we remove the `DrawerViewController`.
+  private lazy var _observeViewController: ObserveViewController =
+    ObserveViewController(analyticsReporter: analyticsReporter,
+                          preferenceManager: preferenceManager,
+                          sensorController: sensorController,
+                          sensorDataManager: sensorDataManager)
+  var observeViewController: ObserveViewController {
+    return drawerVC?.observeViewController ?? _observeViewController
+  }
+
   // MARK: - Public
 
   /// Designated initializer that takes an experiment.
@@ -351,14 +362,14 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     experimentItemsViewController.scrollDelegate = self
 
     // Set delegate for all drawer items.
-    drawerVC?.observeViewController.delegate = self
+    observeViewController.delegate = self
     drawerVC?.cameraViewController.delegate = self
     drawerVC?.photoLibraryViewController.delegate = self
     drawerVC?.notesViewController.delegate = self
 
     // Configure observe.
     updateObserveWithExperimentTriggers()
-    drawerVC?.observeViewController.setSensorLayouts(experiment.sensorLayouts,
+    observeViewController.setSensorLayouts(experiment.sensorLayouts,
         andAddListeners: experimentInteractionOptions.shouldShowDrawer)
     updateObserveWithAvailableSensors()
 
@@ -385,19 +396,12 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     // Experiment items view controller. This must be configured before the drawer or empty view,
     // because both rely on the experiment items count.
-    if FeatureFlags.isActionAreaEnabled {
-      let actionAreaController = ActionAreaController(primary: experimentItemsViewController)
-      addChild(actionAreaController)
-      view.addSubview(actionAreaController.view)
-      actionAreaController.view.pinToEdgesOfView(view)
-      actionAreaController.didMove(toParent: self)
-    } else {
-      experimentItemsViewController.view.translatesAutoresizingMaskIntoConstraints = false
-      addChild(experimentItemsViewController)
-      view.addSubview(experimentItemsViewController.view)
-      experimentItemsViewController.view.pinToEdgesOfView(view)
-      experimentItemsViewController.didMove(toParent: self)
-    }
+    experimentItemsViewController.view.translatesAutoresizingMaskIntoConstraints = false
+    addChild(experimentItemsViewController)
+    view.addSubview(experimentItemsViewController.view)
+    experimentItemsViewController.view.pinToEdgesOfView(view)
+    experimentItemsViewController.didMove(toParent: self)
+
     setCollectionViewInset()
     reloadExperimentItems()
 
@@ -539,7 +543,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   /// Cancels a recording if there was one in progress.
   func cancelRecordingIfNeeded() {
     guard RecordingState.isRecording else { return }
-    drawerVC?.observeViewController.endRecording(isCancelled: true)
+    observeViewController.endRecording(isCancelled: true)
   }
 
   // MARK: - DrawerPositionListener
@@ -852,7 +856,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   func experimentUpdateTrialNoteAdded(_ note: Note, toTrial trial: Trial) {
     if let displayNote = experimentDataParser.parseNote(note) {
-      drawerVC?.observeViewController.addNoteToCharts(displayNote)
+      observeViewController.addNoteToCharts(displayNote)
     }
     updateTrial(trial)
   }
@@ -964,7 +968,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                                           overview: ExperimentOverview,
                                           undoBlock: @escaping () -> Void) {
     if metadataManager.isExperimentArchived(withID: experiment.ID) {
-      drawerVC?.observeViewController.removeAllSensorListeners()
+      observeViewController.removeAllSensorListeners()
 
       experimentInteractionOptions = .archived
       experimentItemsViewController.experimentInteractionOptions = experimentInteractionOptions
@@ -979,7 +983,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       MDCSnackbarManager.dismissAndCallCompletionBlocks(
         withCategory: self.snackbarCategoryExperimentArchivedState)
 
-      drawerVC?.observeViewController.addListenersForAllSensorCards()
+      observeViewController.addListenersForAllSensorCards()
 
       experimentInteractionOptions = .normal
       experimentItemsViewController.experimentInteractionOptions = experimentInteractionOptions
@@ -1155,9 +1159,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   // If a trial is recording, adds the note to the trial, otherwise adds it to the experiment.
   func addNoteToExperimentOrTrial(_ note: Note) {
     itemDelegate?.detailViewControllerDidAddNote(note,
-        forTrialID: drawerVC?.observeViewController.recordingTrial?.ID)
+        forTrialID: observeViewController.recordingTrial?.ID)
     var destination: String
-    if drawerVC?.observeViewController.recordingTrial != nil {
+    if observeViewController.recordingTrial != nil {
       destination = String.toRunContentDescription
     } else {
       destination = String.toExperimentContentDescription
@@ -1213,19 +1217,19 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   private func dismissViewController() {
     prepareToCloseObserve()
-    navigationController?.popViewController(animated: true)
+    actionAreaController?.pop(animated: true)
   }
 
   // Sets observe's triggers from the experiment.
   private func updateObserveWithExperimentTriggers() {
-    drawerVC?.observeViewController.sensorTriggers = experiment.sensorTriggers
+    observeViewController.sensorTriggers = experiment.sensorTriggers
   }
 
   // Sets observe's available sensors from the experiment.
   private func updateObserveWithAvailableSensors() {
     guard !experiment.availableSensors.isEmpty else {
       // Reset the available sensors to empty, since the drawer is re-used across experiments.
-      drawerVC?.observeViewController.setAvailableSensorIDs([],
+      observeViewController.setAvailableSensorIDs([],
           andAddListeners: experimentInteractionOptions.shouldShowDrawer)
       return
     }
@@ -1239,12 +1243,12 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     if supportedAvailableInternalSensorIDs.isEmpty {
       experiment.availableSensors = []
     }
-    drawerVC?.observeViewController.setAvailableSensorIDs(experiment.availableSensorIDs,
+    observeViewController.setAvailableSensorIDs(experiment.availableSensorIDs,
         andAddListeners: experimentInteractionOptions.shouldShowDrawer)
   }
 
   private func prepareToCloseObserve() {
-    drawerVC?.observeViewController.updateSensorLayouts()
+    observeViewController.updateSensorLayouts()
   }
 
   private func updateHeaderColor(animated: Bool = true) {
@@ -1373,7 +1377,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   private func reloadExperimentItems() {
-    if let recordingTrial = drawerVC?.observeViewController.recordingTrial {
+    if let recordingTrial = observeViewController.recordingTrial {
       addRecordingTrial(recordingTrial)
     }
     experimentItemsViewController.setExperimentItems(parseExperimentItems())
@@ -1389,7 +1393,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                                                           maxNotes: displayState.maxDisplayNotes)
 
     // The recording trial will be handled separately, so remove it if there is one.
-    let recordingTrial = drawerVC?.observeViewController.recordingTrial
+    let recordingTrial = observeViewController.recordingTrial
     if let recordingIndex = displayTrials.firstIndex(where: { $0.ID == recordingTrial?.ID }) {
       displayTrials.remove(at: recordingIndex)
     }
@@ -1484,7 +1488,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       experimentItemsViewController.removeTrial(withID: trial.ID)
     } else {
       // If trial is not archived, add or update it.
-      let isRecording = drawerVC?.observeViewController.recordingTrial?.ID == trial.ID
+      let isRecording = observeViewController.recordingTrial?.ID == trial.ID
       let displayTrial = self.createDisplayTrial(fromTrial: trial, isRecording: isRecording)
       if isRecording {
         experimentItemsViewController.addOrUpdateRecordingTrial(displayTrial)
@@ -1587,9 +1591,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
           icon: UIImage(named: iconName),
           accessibilityLabel: archiveAccessibilityLabel) { _ -> Void in
         if RecordingState.isRecording {
-          self.drawerVC?.observeViewController.endRecording(isCancelled: true)
+          self.observeViewController.endRecording(isCancelled: true)
         }
-        self.drawerVC?.observeViewController.removeAllSensorListeners()
+        self.observeViewController.removeAllSensorListeners()
         self.delegate?.experimentViewControllerToggleArchiveStateForExperiment(
             withID: self.experiment.ID)
       })
@@ -1625,9 +1629,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       let cancelAction = MDCAlertAction(title: String.btnDeleteObjectCancel)
       let deleteAction = MDCAlertAction(title: String.btnDeleteObjectConfirm) { (_) in
         if RecordingState.isRecording {
-          self.drawerVC?.observeViewController.endRecording()
+          self.observeViewController.endRecording()
         }
-        self.drawerVC?.observeViewController.removeAllSensorListeners()
+        self.observeViewController.removeAllSensorListeners()
         self.delegate?.experimentViewControllerDidRequestDeleteExperiment(self.experiment)
       }
       alertController.addAction(cancelAction)

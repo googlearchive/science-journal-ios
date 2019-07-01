@@ -491,7 +491,7 @@ open class SensorDataManager {
   ///   - trialID: A trial ID.
   /// - Returns: A tuple containing the first timestamp, last timestamp, and number of data points.
   func statsForRecording(withSensorID sensorID: String, trialID: String) -> StatsTuple {
-    var stats: StatsTuple
+    var stats: StatsTuple = nil
     privateContext.performAndWait {
       let fetchRequest = NSFetchRequest<NSDictionary>(entityName: SensorData.entityName)
       // Setting the result type to dictionary allows returning values like count that are not

@@ -15,13 +15,14 @@
  */
 
 import UIKit
+import WebKit
 
 class LicenseViewController: MaterialHeaderViewController {
 
   // MARK: - Properties
 
   private let license: LicenseData
-  private let webView = UIWebView()
+  private let webView = WKWebView()
 
   override var trackedScrollView: UIScrollView? { return webView.scrollView }
 

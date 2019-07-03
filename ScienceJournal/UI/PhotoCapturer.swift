@@ -203,7 +203,7 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
   /// Captures the current image as data and calls the delegate when complete.
   func captureImageData(isCropping: Bool) {
     shouldCropCapturedPhoto = isCropping
-    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecJPEG])
+    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
     photoOutput.capturePhoto(with: settings, delegate: self)
   }
 
@@ -261,10 +261,7 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
   // MARK: - AVCapturePhotoCaptureDelegate
 
   func photoOutput(_ output: AVCapturePhotoOutput,
-                   didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
-                   previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
-                   resolvedSettings: AVCaptureResolvedPhotoSettings,
-                   bracketSettings: AVCaptureBracketedStillImageSettings?,
+                   didFinishProcessingPhoto photo: AVCapturePhoto,
                    error: Error?) {
     if let error = error {
       sjlog_error("Error capturing photo: \(error.localizedDescription)", category: .general)
@@ -272,30 +269,15 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
       return
     }
 
-    guard let photoSampleBuffer = photoSampleBuffer else {
-      sjlog_error("Photo sample buffer was nil", category: .general)
-      delegate?.photoCapturerDidCapturePhotoData(nil, metadata: nil)
-      return
-    }
-
-    guard let photoData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
-        forJPEGSampleBuffer: photoSampleBuffer,
-        previewPhotoSampleBuffer: previewPhotoSampleBuffer) else {
+    guard let photoData = photo.fileDataRepresentation() else {
       sjlog_error("Could not create jpeg photo data representation", category: .general)
       delegate?.photoCapturerDidCapturePhotoData(nil, metadata: nil)
       return
     }
 
     // Metadata
-    let metadata = CMCopyDictionaryOfAttachments(
-        allocator: nil,
-        target: photoSampleBuffer,
-        attachmentMode: CMAttachmentMode(kCMAttachmentMode_ShouldPropagate)) as NSDictionary?
-    let mutableMetadata = CFDictionaryCreateMutableCopy(nil,
-                                                        0,
-                                                        metadata) as NSMutableDictionary
-    let exifData = mutableMetadata.value(forKey: kCGImagePropertyExifDictionary as String) as?
-        NSMutableDictionary
+    var mutableMetadata = photo.metadata
+    var exifData = mutableMetadata[kCGImagePropertyExifDictionary as String] as? [String: Any]
 
     guard let originalImage = UIImage(data: photoData), let cgImage = originalImage.cgImage else {
       sjlog_error("Could not create original image", category: .general)
@@ -374,22 +356,18 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
       renderedImage = cgImage.cropping(to: cropRect.applying(cropRectTransform))
 
       // Modify the metadata to change the dimensions now that they're different.
-      exifData?.setValue(NSNumber(value: Float(cropRect.size.width)),
-                         forKey: kCGImagePropertyExifPixelXDimension as String)
-      exifData?.setValue(NSNumber(value: Float(cropRect.size.height)),
-                         forKey: kCGImagePropertyExifPixelYDimension as String)
-      mutableMetadata.setValue(exifData, forKey: kCGImagePropertyExifDictionary as String)
+      exifData?[kCGImagePropertyExifPixelXDimension as String] = cropRect.size.width
+      exifData?[kCGImagePropertyExifPixelYDimension as String] = cropRect.size.height
+      mutableMetadata[kCGImagePropertyExifDictionary as String] = exifData
     } else {
       // Update dimensions based on image rotation.
-      exifData?.setValue(NSNumber(value: Float(finalMetadataSize.width)),
-                         forKey: kCGImagePropertyExifPixelXDimension as String)
-      exifData?.setValue(NSNumber(value: Float(finalMetadataSize.height)),
-                         forKey: kCGImagePropertyExifPixelYDimension as String)
+      exifData?[kCGImagePropertyExifPixelXDimension as String] = finalMetadataSize.width
+      exifData?[kCGImagePropertyExifPixelYDimension as String] = finalMetadataSize.height
     }
     // Set the final orientation into metadata.
-    mutableMetadata.setValue(metadataOrientation, forKey: kCGImagePropertyOrientation as String)
+    mutableMetadata[kCGImagePropertyOrientation as String] = metadataOrientation
     // Update the EXIF data.
-    mutableMetadata.setValue(exifData, forKey: kCGImagePropertyExifDictionary as String)
+    mutableMetadata[kCGImagePropertyExifDictionary as String] = exifData
 
     // Attempt to generate an orientation-correct image that is cropped if necessary, at the
     // correct scale.
@@ -402,7 +380,8 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
     }
 
     // Done!
-    delegate?.photoCapturerDidCapturePhotoData(finalImageData, metadata: mutableMetadata)
+    delegate?.photoCapturerDidCapturePhotoData(finalImageData,
+                                               metadata: mutableMetadata as NSDictionary)
   }
 
 }

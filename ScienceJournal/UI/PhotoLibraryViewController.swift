@@ -104,7 +104,7 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     NotificationCenter.default.addObserver(
         self,
         selector: #selector(accessibilityVoiceOverStatusChanged),
-        name: NSNotification.Name(rawValue: UIAccessibilityVoiceOverStatusChanged),
+        name: UIAccessibility.voiceOverStatusDidChangeNotification,
         object: nil)
   }
 

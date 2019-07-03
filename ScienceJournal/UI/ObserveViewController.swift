@@ -218,7 +218,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     NotificationCenter.default.addObserver(
         self,
         selector: #selector(accessibilityVoiceOverStatusChanged),
-        name: NSNotification.Name(rawValue: UIAccessibilityVoiceOverStatusChanged),
+        name: UIAccessibility.voiceOverStatusDidChangeNotification,
         object: nil)
 
     // If a user will be signed out, this notification will be fired.

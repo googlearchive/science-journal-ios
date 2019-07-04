@@ -26,13 +26,13 @@ extension UIStackView {
   ///   - leaveInSuperview: Should removed views be left in their superviews? Default is false.
   func removeAllArrangedViews(exceptViews: [UIView]? = nil, leaveInSuperview: Bool = false) {
     let arrangedViews = self.arrangedSubviews
-    for arragedView in arrangedViews {
-      if let exceptViews = exceptViews, exceptViews.contains(arragedView) {
+    for arrangedView in arrangedViews {
+      if let exceptViews = exceptViews, exceptViews.contains(arrangedView) {
         continue
       }
-      self.removeArrangedSubview(arragedView)
+      self.removeArrangedSubview(arrangedView)
       if !leaveInSuperview {
-        arragedView.removeFromSuperview()
+        arrangedView.removeFromSuperview()
       }
     }
   }

@@ -39,7 +39,30 @@ final class ActionAreaBarItem: NSObject {
 
 final class ActionAreaController: UIViewController {
 
-  let navController = UINavigationController()
+  private enum State {
+    case normal
+    case modal
+  }
+
+  private enum BarItemMode {
+    case persistent([ActionAreaBarItem])
+    case toggle(ToggleState, ToggleState)
+  }
+
+  typealias ToggleState = (ActionAreaBarItem, [ActionAreaBarItem])
+
+  let navController: UINavigationController = {
+    let nc = UINavigationController()
+    nc.isNavigationBarHidden = true
+    return nc
+  }()
+
+  private let detailNavController: UINavigationController = {
+    let nc = UINavigationController()
+    nc.isNavigationBarHidden = true
+    nc.view.isHidden = true
+    return nc
+  }()
 
   private let buttonBar: MDCButtonBar = {
     let buttonBar = MDCButtonBar()
@@ -50,12 +73,25 @@ final class ActionAreaController: UIViewController {
 
   private var buttonBarTopEqualToSuperviewBottomConstraint: Constraint?
   private var buttonBarBottomEqualToSuperviewBottomConstraint: Constraint?
-  private var detailNavController: UINavigationController?
   private let defaultAnimationDuration: TimeInterval = 0.4
-  private var viewControllerBarItems: [UIViewController: [ActionAreaBarItem]] = [:]
+  private var viewControllerBarItems: [UIViewController: BarItemMode] = [:]
+
+  private var state: State = .normal {
+    didSet {
+      guard let detailViewController = detailNavController.topViewController else {
+        fatalError("The state can only be changed when a detailViewController is shown.")
+      }
+
+      updateActionAreaBar(for: detailViewController)
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    if FeatureFlags.isActionAreaEnabled {
+      navController.delegate = self
+    }
 
     addChild(navController)
     view.addSubview(navController.view)
@@ -63,6 +99,13 @@ final class ActionAreaController: UIViewController {
       make.edges.equalToSuperview()
     }
     navController.didMove(toParent: self)
+
+    addChild(detailNavController)
+    view.addSubview(detailNavController.view)
+    detailNavController.view.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
+    }
+    detailNavController.didMove(toParent: self)
 
     view.addSubview(buttonBar)
     buttonBar.snp.makeConstraints { (make) in
@@ -91,15 +134,12 @@ final class ActionAreaController: UIViewController {
       case (false, true):
         buttonBarTopEqualToSuperviewBottomConstraint?.deactivate()
         buttonBarBottomEqualToSuperviewBottomConstraint?.activate()
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: buttonBar.bounds.height, right: 0)
-        navController.additionalSafeAreaInsets = insets
-        detailNavController?.additionalSafeAreaInsets = insets
+        updateAdditionalSafeAreaInsets(isButtonBarVisible: newValue)
         animate()
       case (true, false):
         buttonBarTopEqualToSuperviewBottomConstraint?.activate()
         buttonBarBottomEqualToSuperviewBottomConstraint?.deactivate()
-        navController.additionalSafeAreaInsets = .zero
-        detailNavController?.additionalSafeAreaInsets = .zero
+        updateAdditionalSafeAreaInsets(isButtonBarVisible: newValue)
         animate()
       default:
         break
@@ -107,64 +147,90 @@ final class ActionAreaController: UIViewController {
     }
   }
 
+  private func updateAdditionalSafeAreaInsets(isButtonBarVisible: Bool) {
+    if isButtonBarVisible {
+      let insets = UIEdgeInsets(top: 0, left: 0, bottom: buttonBar.bounds.height, right: 0)
+      navController.additionalSafeAreaInsets = insets
+      detailNavController.additionalSafeAreaInsets = insets
+    } else {
+      navController.additionalSafeAreaInsets = .zero
+      detailNavController.additionalSafeAreaInsets = .zero
+    }
+  }
+
   func push(_ vc: UIViewController, animated: Bool, with items: [ActionAreaBarItem]) {
+    guard state == .normal else {
+      fatalError("View controllers cannot be pushed during a modal detail presentation.")
+    }
+
     if FeatureFlags.isActionAreaEnabled {
-      viewControllerBarItems[vc] = items
-      updateActionAreaBar(for: vc)
+      viewControllerBarItems[vc] = .persistent(items)
     }
     navController.pushViewController(vc, animated: animated)
   }
 
   private func updateActionAreaBar(for vc: UIViewController?) {
-    guard let vc = vc else { return }
-
-    let items = viewControllerBarItems[vc, default: []].map(createBarButtonItem(from:))
+    let items: [UIBarButtonItem]
+    if let vc = vc {
+      switch viewControllerBarItems[vc] {
+      case .none:
+        items = []
+      case .some(.persistent(let itemDefinitions)):
+        items = itemDefinitions.map(createBarButtonItem(from:))
+      case .some(let .toggle(passive, active)):
+        switch state {
+        case .normal:
+          items = passive.1.map(createBarButtonItem(from:)) + [wrapBarButtonItem(from: passive.0)]
+        case .modal:
+          items = active.1.map(createBarButtonItem(from:)) + [wrapBarButtonItem(from: active.0)]
+        }
+      }
+    } else {
+      items = []
+    }
     buttonBar.items = items
     isButtonBarVisible = !items.isEmpty
   }
 
   func pop(to vc: UIViewController, animated: Bool) {
+    guard state == .normal else {
+      fatalError("View controllers cannot be popped during a modal detail presentation.")
+    }
+
     if FeatureFlags.isActionAreaEnabled {
       viewControllerBarItems.removeValue(forKey: vc)
-      updateActionAreaBar(for: vc)
     }
     navController.popToViewController(vc, animated: animated)
   }
 
   func pop(animated: Bool) {
+    guard state == .normal else {
+      fatalError("View controllers cannot be popped during a modal detail presentation.")
+    }
+
     guard let vc = navController.topViewController else { return }
 
     if FeatureFlags.isActionAreaEnabled {
       viewControllerBarItems.removeValue(forKey: vc)
-      updateActionAreaBar(for: vc)
     }
     navController.popViewController(animated: animated)
   }
 
   func show(detail detailViewController: UIViewController, with items: [ActionAreaBarItem]) {
-    assert(self.detailNavController == nil, "a detailViewController is already shown")
-
-    let detailNavController = UINavigationController(rootViewController: detailViewController)
-    detailNavController.isNavigationBarHidden = true
-    self.detailNavController = detailNavController
-
-    viewControllerBarItems[detailViewController] = items
-    // TODO: This has to be called after the detail nav is set - remove ordering dependency
-    updateActionAreaBar(for: detailViewController)
-
-    addChild(detailNavController)
-
-    view.insertSubview(detailNavController.view, belowSubview: buttonBar)
-    detailNavController.view.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
+    guard detailNavController.topViewController == nil else {
+      fatalError("A detailViewController is already being shown.")
     }
 
-    positionBelowScreen(detailViewController)
+    detailNavController.setViewControllers([detailViewController], animated: false)
 
-    UIView.animate(withDuration: defaultAnimationDuration, animations: {
-      detailViewController.view.transform = .identity
-    }) { (_) in
-      detailNavController.didMove(toParent: self)
+    viewControllerBarItems[detailViewController] = .persistent(items)
+
+    positionBelowScreen(detailNavController)
+    detailNavController.view.isHidden = false
+
+    updateActionAreaBar(for: detailViewController)
+    UIView.animate(withDuration: defaultAnimationDuration) {
+      self.detailNavController.view.transform = .identity
     }
   }
 
@@ -173,22 +239,39 @@ final class ActionAreaController: UIViewController {
     vc.view.transform = CGAffineTransform(translationX: 0, y: height)
   }
 
+  func show(detail detailViewController: UIViewController,
+            toggle passive: ToggleState,
+            and active: ToggleState) {
+    guard detailNavController.topViewController == nil else {
+      fatalError("A detailViewController is already being shown.")
+    }
+
+    detailNavController.setViewControllers([detailViewController], animated: false)
+
+    viewControllerBarItems[detailViewController] = .toggle(passive, active)
+
+    positionBelowScreen(detailNavController)
+    detailNavController.view.isHidden = false
+
+    updateActionAreaBar(for: detailViewController)
+    UIView.animate(withDuration: defaultAnimationDuration) {
+      self.detailNavController.view.transform = .identity
+    }
+  }
+
   func dismissDetail() {
-    guard
-      let detailNavController = detailNavController,
-      let detailViewController = detailNavController.topViewController else { return }
+    guard let detailViewController = detailNavController.topViewController else {
+      fatalError("A detailViewController is not currently being shown.")
+    }
 
     viewControllerBarItems.removeValue(forKey: detailViewController)
+
     updateActionAreaBar(for: navController.topViewController)
-
-    detailNavController.willMove(toParent: nil)
-
     UIView.animate(withDuration: defaultAnimationDuration, animations: {
-      self.positionBelowScreen(detailNavController)
+      self.positionBelowScreen(self.detailNavController)
     }) { (_) in
-      detailNavController.view.removeFromSuperview()
-      detailNavController.removeFromParent()
-      self.detailNavController = nil
+      self.detailNavController.setViewControllers([], animated: false)
+      self.detailNavController.view.isHidden = true
     }
   }
 
@@ -199,6 +282,35 @@ final class ActionAreaController: UIViewController {
                                         action: #selector(ActionAreaBarItem.execute))
     barButtonItem.image = item.image
     return barButtonItem
+  }
+
+  // TODO: Figure out when/where to nil this out
+  private var wrapper: ActionAreaBarItem?
+
+  private func wrapBarButtonItem(from item: ActionAreaBarItem) -> UIBarButtonItem {
+    let wrapper = ActionAreaBarItem(
+      title: item.title,
+      image: item.image
+    ) {
+      item.action()
+      self.toggleState()
+    }
+    self.wrapper = wrapper
+    return createBarButtonItem(from: wrapper)
+  }
+
+  private func toggleState() {
+    state = state == .normal ? .modal : .normal
+  }
+
+}
+
+extension ActionAreaController: UINavigationControllerDelegate {
+
+  func navigationController(_ navigationController: UINavigationController,
+                            willShow viewController: UIViewController,
+                            animated: Bool) {
+    updateActionAreaBar(for: viewController)
   }
 
 }

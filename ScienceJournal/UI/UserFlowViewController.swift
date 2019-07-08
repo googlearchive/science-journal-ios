@@ -171,8 +171,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     view.addSubview(actAreaController.view)
     actAreaController.didMove(toParent: self)
 
-    navController.isNavigationBarHidden = true
-    navController.delegate = self
+    if !FeatureFlags.isActionAreaEnabled {
+      // This is only needed for drawer behavior
+      navController.delegate = self
+    }
 
     sidebar.delegate = self
 
@@ -743,7 +745,19 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
             contentViewController: experimentCoordinatorVC.observeViewController
           )
 
-        self.actAreaController.show(detail: materialHeaderContainerViewController, with: [])
+        let addSensorItem = ActionAreaBarItem(title: "Add Sensor",
+                                              image: UIImage(named: "ic_add_circle")) {}
+        let snapshotItem = ActionAreaBarItem(title: "Snapshot",
+                                             image: UIImage(named: "ic_snapshot_action")) {}
+        let recordItem = ActionAreaBarItem(title: "Record",
+                                           image: UIImage(named: "record_button")) {}
+
+        let stopItem = ActionAreaBarItem(title: "Stop",
+                                         image: UIImage(named: "stop_button")) {}
+
+        self.actAreaController.show(detail: materialHeaderContainerViewController,
+                                    toggle: (recordItem, [addSensorItem, snapshotItem]),
+                                    and: (stopItem, [snapshotItem]))
       }
 
     actAreaController.push(experimentCoordinatorVC, animated: true, with: [sensorItem])

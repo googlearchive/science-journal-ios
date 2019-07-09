@@ -146,7 +146,8 @@ class PictureDetailViewController:
     scrollView.delegate = self
     scrollView.maximumZoomScale = 6
     scrollView.translatesAutoresizingMaskIntoConstraints = false
-    scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+    scrollView.topAnchor
+      .constraint(equalTo: appBar.headerViewController.view.bottomAnchor).isActive = true
     scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 

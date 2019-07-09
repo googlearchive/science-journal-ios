@@ -106,7 +106,8 @@ class TextNoteDetailViewController: MaterialHeaderViewController, NoteDetailCont
     textView.text = displayTextNote.text
     textView.font = MDCTypography.body1Font()
     textView.translatesAutoresizingMaskIntoConstraints = false
-    textView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+    textView.topAnchor
+      .constraint(equalTo: appBar.headerViewController.view.bottomAnchor).isActive = true
     textView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     textView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     textView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

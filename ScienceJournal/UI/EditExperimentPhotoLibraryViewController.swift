@@ -54,7 +54,8 @@ class EditExperimentPhotoLibraryViewController: MaterialHeaderViewController,
     addChild(photoLibraryViewController)
     view.addSubview(photoLibraryView)
     photoLibraryView.translatesAutoresizingMaskIntoConstraints = false
-    photoLibraryView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+    photoLibraryView.topAnchor
+      .constraint(equalTo: appBar.headerViewController.view.bottomAnchor).isActive = true
     photoLibraryView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     photoLibraryView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     photoLibraryView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

@@ -25,13 +25,6 @@ import third_party_objective_c_material_components_ios_components_Snackbar_Snack
 import third_party_objective_c_material_components_ios_components_private_KeyboardWatcher_KeyboardWatcher
 // swiftlint:enable line_length
 
-// Specifies info for used in drawing the PDF export header
-struct PDFHeaderInfo {
-  let title: String
-  let subtitle: String
-  let image: UIImage?
-}
-
 protocol ExperimentCoordinatorViewControllerDelegate: class {
 
   /// Informs the delegate an experiment's archive state should be toggled.
@@ -133,6 +126,13 @@ protocol ExperimentCoordinatorViewControllerDelegate: class {
   func experimentViewControllerDeletePictureNoteCompleted(_ pictureNote: PictureNote,
                                                           forExperiment experiment: Experiment)
 
+  /// Informs the delegate the experiment should be exported as a PDF.
+  ///
+  /// - Parameter experiment: The experiment to export.
+  func experimentViewControllerExportExperimentPDF(
+    _ experiment: Experiment,
+    completionHandler: @escaping PDFExportController.CompletionHandler)
+
 }
 
 // swiftlint:disable type_body_length
@@ -211,6 +211,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
         return ChartPlacementType.runReview.height
       }
     }
+
   }
 
   // MARK: - Properties
@@ -1737,21 +1738,19 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   private func showPDFExportFlow() {
-    let savedState = displayState
-    displayState = .pdfExport
+    let completionHandler: PDFExportController.CompletionHandler = { completionState, pdfURL, _ in
+      switch completionState {
+      case .success:
+        guard let pdfURL = pdfURL else { return }
+        self.present(pdfURL: pdfURL)
+      case .error, .cancel:
+        // TODO: Handle appropriately
+        break
+      }
+    }
 
-    var thumbnail: UIImage?
-    if let image = metadataManager.imageForExperiment(experiment)?
-      .sized(to: CGSize(width: 200, height: 200)) {
-      thumbnail = pdfExportHeaderThumbnail(for: image)
-    }
-    let pdfHeaderInfo = PDFHeaderInfo(title: experiment.titleOrDefault,
-                                      subtitle: experiment.notesAndTrialsString,
-                                      image: thumbnail)
-    experimentItemsViewController.generatePDF(with: pdfHeaderInfo) { pdfURL in
-      self.present(pdfURL: pdfURL)
-      self.displayState = savedState
-    }
+    delegate?.experimentViewControllerExportExperimentPDF(experiment,
+                                                          completionHandler: completionHandler)
   }
 
   private func present(pdfURL: URL) {
@@ -1810,19 +1809,12 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     #endif
   }
 
-  /// Returns copy of image stylized as needed for the experiment PDF export header
-  private func pdfExportHeaderThumbnail(for image: UIImage) -> UIImage? {
-    let rect = CGRect(origin: .zero, size: image.size)
-    UIGraphicsBeginImageContextWithOptions(image.size, false, 1)
-    defer {
-      UIGraphicsEndImageContext()
-    }
-    UIBezierPath(roundedRect: rect, cornerRadius: image.size.height / 8).addClip()
-    image.draw(in: rect)
-    if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
-      return resizedImage
-    }
-    return nil
+}
+
+extension ExperimentCoordinatorViewController: PDFExportable {
+
+  var scrollView: UIScrollView {
+    return experimentItemsViewController.collectionView
   }
 
 }

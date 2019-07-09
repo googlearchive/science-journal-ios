@@ -60,8 +60,10 @@
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
 		58512C6C22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */; };
 		585D619422B1C38100EB2114 /* ChartExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D619322B1C38100EB2114 /* ChartExportViewController.swift */; };
+		589AA31622D3A55A00654ADD /* PDFExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589AA31522D3A55900654ADD /* PDFExportController.swift */; };
 		58BC1BC322C1781000DA7EDC /* String+PluralizeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */; };
 		58BC1BC522C18FEB00DA7EDC /* UIImage+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */; };
+		58F6E3F522C6B56F001532A1 /* PDFExportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E3F422C6B56F001532A1 /* PDFExportOperation.swift */; };
 		5C0EDCEF1FE30F280014E825 /* CropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCEE1FE30F280014E825 /* CropValidator.swift */; };
 		5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */; };
 		5C0EDCF41FE94C270014E825 /* ExperimentItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */; };
@@ -692,8 +694,10 @@
 		551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTypeSelectionHandler.swift; sourceTree = "<group>"; };
 		585D619322B1C38100EB2114 /* ChartExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartExportViewController.swift; sourceTree = "<group>"; };
+		589AA31522D3A55900654ADD /* PDFExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFExportController.swift; sourceTree = "<group>"; };
 		58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PluralizeTest.swift"; sourceTree = "<group>"; };
 		58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ScienceJournal.swift"; sourceTree = "<group>"; };
+		58F6E3F422C6B56F001532A1 /* PDFExportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFExportOperation.swift; sourceTree = "<group>"; };
 		5C0EDCEE1FE30F280014E825 /* CropValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidator.swift; sourceTree = "<group>"; };
 		5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidatorTest.swift; sourceTree = "<group>"; };
 		5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentItemsViewController.swift; sourceTree = "<group>"; };
@@ -1785,6 +1789,7 @@
 				5C6E57512034B93100EE8457 /* ExportExperimentSensorDataOperation.swift */,
 				5C6E574F20349FB700EE8457 /* GetSensorDataAsProtoOperation.swift */,
 				5C6E574D20349CB700EE8457 /* GetTrialSensorDumpOperation.swift */,
+				58F6E3F422C6B56F001532A1 /* PDFExportOperation.swift */,
 				5CCB62BB1F8BCFDD00F9BB7D /* TrialDataWriter.swift */,
 				5CFC8E6120488A3500A674C2 /* ZipOperation.swift */,
 			);
@@ -2177,8 +2182,8 @@
 		68A854F41ED397D10010B28E /* Experiment */ = {
 			isa = PBXGroup;
 			children = (
-				585D619322B1C38100EB2114 /* ChartExportViewController.swift */,
 				8BFCF97B1FAA2B5D0030A6DC /* ArchivedFlagCell.swift */,
+				585D619322B1C38100EB2114 /* ChartExportViewController.swift */,
 				6856DF781F228F5000EDFB99 /* EditExperimentPhotoLibraryViewController.swift */,
 				68D606681F0C1D190077ABCD /* EditExperimentPhotoView.swift */,
 				68D606661F0C109E0077ABCD /* EditExperimentViewController.swift */,
@@ -2188,6 +2193,7 @@
 				5C0EDCF71FEAD59C0014E825 /* ExperimentItemsDataSource.swift */,
 				5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */,
 				5C63833D2100CA8D008281DF /* NoteDetailController.swift */,
+				589AA31522D3A55900654ADD /* PDFExportController.swift */,
 				681333501EC6435F00ED7A32 /* Picture */,
 				681333511EC6437100ED7A32 /* Snapshot */,
 				6813334F1EC6435900ED7A32 /* TextNote */,
@@ -2970,6 +2976,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				ar,
 				bg,
 				bs,
@@ -3474,6 +3481,7 @@
 				8B1B2AF71EE84DE100990FE8 /* PopUpMenuAnchor.swift in Sources */,
 				8B92B5701EB90047004C356E /* PhotoLibraryCell.swift in Sources */,
 				5C880BA22190D9E900594166 /* ButtonViewController.swift in Sources */,
+				58F6E3F522C6B56F001532A1 /* PDFExportOperation.swift in Sources */,
 				68C3C9491E42B59900F339C4 /* MaterialHeaderViewController.swift in Sources */,
 				8B3ADD73201256FB00DE9611 /* SensorTimer.swift in Sources */,
 				8B6054822049BC730036C1E4 /* SpinnerViewController.swift in Sources */,
@@ -3522,6 +3530,7 @@
 				8B9F060F1EF42CCB0030B011 /* SensorTrigger.swift in Sources */,
 				5CE521A4209D045700767C8E /* RootUserManager.swift in Sources */,
 				5CFC8E5E204757A100A674C2 /* IconPath.swift in Sources */,
+				589AA31622D3A55A00654ADD /* PDFExportController.swift in Sources */,
 				6806591C1EC2704D0090670C /* TextNoteCardView.swift in Sources */,
 				68D606691F0C1D190077ABCD /* EditExperimentPhotoView.swift in Sources */,
 				8BA722AA1F87CCD300F9FF0F /* URL+ScienceJournal.swift in Sources */,

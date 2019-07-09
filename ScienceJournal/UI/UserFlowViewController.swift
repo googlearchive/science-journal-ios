@@ -478,6 +478,12 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     }
   }
 
+  func experimentListExportExperimentPDF(_ experiment: Experiment,
+                                         completionHandler:
+    @escaping PDFExportController.CompletionHandler) {
+    presentPDFExportFlow(experiment, completionHandler: completionHandler)
+  }
+
   // MARK: - ExperimentCoordinatorViewControllerDelegate
 
   func experimentViewControllerToggleArchiveStateForExperiment(withID experimentID: String) {
@@ -604,6 +610,12 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     openExperimentUpdateManager?.recordingTrialChangedExternally(recordingTrial)
   }
 
+  func experimentViewControllerExportExperimentPDF(
+    _ experiment: Experiment,
+    completionHandler: @escaping PDFExportController.CompletionHandler) {
+    presentPDFExportFlow(experiment, completionHandler: completionHandler)
+  }
+
   // MARK: - ExperimentItemDelegate
 
   func detailViewControllerDidAddNote(_ note: Note, forTrialID trialID: String?) {
@@ -706,6 +718,39 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     self.experimentsListVC = experimentsListVC
     navController.setViewControllers([experimentsListVC], animated: animated)
+  }
+
+  /// Presents the PDF export flow.
+  ///
+  /// - Parameter experiment: An experiment.
+  func presentPDFExportFlow(_ experiment: Experiment,
+                            completionHandler: @escaping PDFExportController.CompletionHandler) {
+    let experimentCoordinatorVC = ExperimentCoordinatorViewController(
+      experiment: experiment,
+      experimentInteractionOptions: .readOnly,
+      exportType: userManager.exportType,
+      drawerViewController: nil,
+      analyticsReporter: analyticsReporter,
+      metadataManager: metadataManager,
+      preferenceManager: preferenceManager,
+      sensorController: sensorController,
+      sensorDataManager: sensorDataManager,
+      documentManager: documentManager)
+
+    experimentCoordinatorVC.displayState = .pdfExport
+    let container = PDFExportController(contentViewController: experimentCoordinatorVC)
+    container.completionHandler = completionHandler
+
+    let navController = UINavigationController(rootViewController: container)
+    present(navController, animated: true) {
+      let headerInfo = PDFExportController.HeaderInfo(
+        title: experiment.titleOrDefault,
+        subtitle: experiment.notesAndTrialsString,
+        image: self.metadataManager.imageForExperiment(experiment)
+      )
+
+      container.startPDFExport(headerInfo: headerInfo)
+    }
   }
 
   /// Shows an experiment. Exposed for testing.

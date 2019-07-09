@@ -32,14 +32,22 @@ extension UIScrollView {
   ///
   /// - Parameters:
   ///   - scale: The scale at which to render snapshots.
+  ///   - shouldCancel: A block that reports progress (0.0 - 1.0) and can be used to signal
+  ///                   snapshotting cancellation.
   ///   - completion: A block which fires upon completion and provides an optional
   ///                 ScrollViewSnapshotCollection.
   func snapshotContents(
       scale: CGFloat = UIScreen.main.scale,
+      shouldCancel: @escaping () -> Bool,
+      updateProgress: @escaping (CGFloat) -> Void,
       completion: @escaping (_ snapshotCollection: ScrollViewSnapshotCollection?) -> Void) {
     let offsets = prepareSnapshotOffsets()
     let finalSize = self.contentSize.applying(scale: scale)
-    captureSnapshots(offsets: offsets, scale: scale) { (snapshots) -> Void in
+    captureSnapshots(offsets: offsets,
+                     scale: scale,
+                     shouldCancel: shouldCancel,
+                     updateProgress: updateProgress) {
+      (snapshots) -> Void in
       guard !snapshots.isEmpty else { return completion(nil) }
       completion(ScrollViewSnapshotCollection(snapshots: snapshots, finalSize: finalSize))
     }
@@ -84,9 +92,13 @@ private extension UIScrollView {
   /// - Parameters:
   ///   - offsets: An array of offset points.
   ///   - scale: The scale at which to render.
+  ///   - shouldCancel: A block that reports progress (0.0 - 1.0) and can be used to signal
+  ///                   snapshotting cancellation.
   ///   - completion: Called after capturing all snapshots and returns an array of UIImages.
   func captureSnapshots(offsets: [CGPoint],
                         scale: CGFloat,
+                        shouldCancel: @escaping () -> Bool,
+                        updateProgress: @escaping (CGFloat) -> Void,
                         completion: @escaping (_ snapshots: [UIImage]) -> Void) {
     var page = 0
 
@@ -94,6 +106,13 @@ private extension UIScrollView {
       // Using the didSet of this array to store, loop and call completion when complete ensures
       // sequential execution of the captures.
       didSet {
+        guard offsets.count > 0, shouldCancel() == false else {
+            completion([])
+            return
+        }
+
+        updateProgress(CGFloat(page) / CGFloat(offsets.count))
+
         if page < offsets.count {
           capturePageSnapshot()
         } else {

@@ -71,10 +71,36 @@ post_install do |installer|
         puts "Setting deployment target #{deployment_target} for #{config.name} on #{target.name}..."
       end
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = deployment_target
+      upgrade_to_recommended_settings! config
     end
   end
   puts "Generating Science Journal protos..."
   system("cd Protos && ./generate.sh")
   puts "Updating version numbers and generating plist..."
   system("cd Scripts && ./update_version_numbers.sh")
+  puts "Removing unfixable warnings..."
+  remove_unfixable_warnings! installer
+end
+
+def upgrade_to_recommended_settings! config
+  if Pod::VERSION == '1.7.3'
+    # Having this set triggers Xcode's "Upgrade to recommended settings"
+    config.build_settings.delete('ARCHS')
+  end
+end
+
+def remove_unfixable_warnings! installer
+  installer.pod_targets.each do |target|
+    if target.name == 'MaterialComponents' && target.version == '85.0.0'
+      # The *ColorThemer types currently emit deprecation warnings,
+      # but the new versions aren't available yet.
+      installer.pods_project.files.map(&:path).grep(/MDC\w+ColorThemer.h/).each do |file|
+        path = "Pods/MaterialComponents/#{file}"
+        content = IO.read(path).gsub(/__deprecated_msg\([^)]*\)/, '')
+        File.chmod(0644, path)
+        IO.write(path, content)
+        File.chmod(0444, path)
+      end
+    end
+  end
 end

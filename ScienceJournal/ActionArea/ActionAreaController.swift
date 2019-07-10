@@ -77,12 +77,29 @@ final class ActionAreaController: UIViewController {
   private var viewControllerBarItems: [UIViewController: BarItemMode] = [:]
 
   private var state: State = .normal {
+    willSet {
+      guard state != newValue else {
+        fatalError("Setting the state to the existing state is not allowed.")
+      }
+    }
+
     didSet {
       guard let detailViewController = detailNavController.topViewController else {
         fatalError("The state can only be changed when a detailViewController is shown.")
       }
 
-      updateActionAreaBar(for: detailViewController)
+      switch state {
+      case .normal:
+        if detailNavController.view.isHidden {
+          viewControllerBarItems.removeValue(forKey: detailViewController)
+          detailNavController.setViewControllers([], animated: false)
+          updateActionAreaBar(for: navController.topViewController)
+        } else {
+          updateActionAreaBar(for: detailNavController.topViewController)
+        }
+      case .modal:
+        updateActionAreaBar(for: detailNavController.topViewController)
+      }
     }
   }
 
@@ -264,14 +281,42 @@ final class ActionAreaController: UIViewController {
       fatalError("A detailViewController is not currently being shown.")
     }
 
-    viewControllerBarItems.removeValue(forKey: detailViewController)
+    switch state {
+    case .normal:
+      viewControllerBarItems.removeValue(forKey: detailViewController)
 
-    updateActionAreaBar(for: navController.topViewController)
-    UIView.animate(withDuration: defaultAnimationDuration, animations: {
-      self.positionBelowScreen(self.detailNavController)
-    }) { (_) in
-      self.detailNavController.setViewControllers([], animated: false)
-      self.detailNavController.view.isHidden = true
+      updateActionAreaBar(for: navController.topViewController)
+      UIView.animate(withDuration: defaultAnimationDuration, animations: {
+        self.positionBelowScreen(self.detailNavController)
+      }) { (_) in
+        self.detailNavController.setViewControllers([], animated: false)
+        self.detailNavController.view.isHidden = true
+      }
+    case .modal:
+      UIView.animate(withDuration: defaultAnimationDuration, animations: {
+        self.positionBelowScreen(self.detailNavController)
+      }) { (_) in
+        self.detailNavController.view.isHidden = true
+      }
+    }
+  }
+
+  func reshowDetail() {
+    guard detailNavController.topViewController != nil else {
+      fatalError("A detailViewController is not currently being shown.")
+    }
+    guard detailNavController.view.isHidden else {
+      fatalError("A detailViewController is not currently hidden.")
+    }
+    guard state == .modal else {
+      fatalError("The Action Area can only reshow in the modal state.")
+    }
+
+    positionBelowScreen(detailNavController)
+    detailNavController.view.isHidden = false
+
+    UIView.animate(withDuration: defaultAnimationDuration) {
+      self.detailNavController.view.transform = .identity
     }
   }
 
@@ -329,7 +374,7 @@ extension UIViewController {
 }
 
 // TODO: Ensure this handles existing issues or use one of the other superclasses.
-class MaterialHeaderContainerViewController: UIViewController {
+final class MaterialHeaderContainerViewController: UIViewController {
 
   private let appBar = MDCAppBar()
   private let contentViewController: UICollectionViewController

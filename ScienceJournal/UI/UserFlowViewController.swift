@@ -794,11 +794,19 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                               image: UIImage(named: "ic_add_circle")) {}
         let snapshotItem = ActionAreaBarItem(title: "Snapshot",
                                              image: UIImage(named: "ic_snapshot_action")) {}
-        let recordItem = ActionAreaBarItem(title: "Record",
-                                           image: UIImage(named: "record_button")) {}
+        let recordItem = ActionAreaBarItem(
+          title: "Record",
+          image: UIImage(named: "record_button")
+        ) {
+          experimentCoordinatorVC.observeViewController.recordButtonPressed()
+        }
 
-        let stopItem = ActionAreaBarItem(title: "Stop",
-                                         image: UIImage(named: "stop_button")) {}
+        let stopItem = ActionAreaBarItem(
+          title: "Stop",
+          image: UIImage(named: "stop_button")
+        ) {
+          experimentCoordinatorVC.observeViewController.recordButtonPressed()
+        }
 
         self.actAreaController.show(detail: materialHeaderContainerViewController,
                                     toggle: (recordItem, [addSensorItem, snapshotItem]),

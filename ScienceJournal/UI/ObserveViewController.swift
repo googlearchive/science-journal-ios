@@ -291,7 +291,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
                                               action: #selector(snapshotButtonPressed),
                                               for: .touchUpInside)
     recordButtonView.recordButton.addTarget(self,
-                                            action: #selector(recordButtonPressed(sender:)),
+                                            action: #selector(recordButtonPressed),
                                             for: .touchUpInside)
     recordButtonView.translatesAutoresizingMaskIntoConstraints = false
     recordButtonViewWrapper.addSubview(recordButtonView)
@@ -443,7 +443,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     }
   }
 
-  @objc func recordButtonPressed(sender: UIButton) {
+  @objc func recordButtonPressed() {
     if !recordingManager.isRecording {
       guard recordingManager.isReady else {
         let alertController =

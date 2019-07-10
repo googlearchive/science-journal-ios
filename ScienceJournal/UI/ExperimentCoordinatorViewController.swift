@@ -571,10 +571,14 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       // drawer in landscape.
       guard let displayTrial = displayItem as? DisplayTrial,
           displayTrial.status != .final else { return }
-      drawerVC?.showContent()
-      guard drawerVC?.currentViewController is ObserveViewController else {
-        drawerVC?.selectObserve()
-        return
+      if FeatureFlags.isActionAreaEnabled {
+        actionAreaController?.reshowDetail()
+      } else {
+        drawerVC?.showContent()
+        guard drawerVC?.currentViewController is ObserveViewController else {
+          drawerVC?.selectObserve()
+          return
+        }
       }
     } else {
       // No trial recording currently, cells tapped lead to detail views.

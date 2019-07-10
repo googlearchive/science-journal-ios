@@ -32,17 +32,15 @@ final class PDFExportController: UIViewController {
   }
 
   enum CompletionState {
-    case success
-    case error
+    case success(URL)
+    case error([Error])
     case cancel
   }
 
   typealias ContentViewController = UIViewController & PDFExportable
-  typealias CompletionHandler = (CompletionState, URL?, [Error]?) -> Void
+  typealias CompletionHandler = (CompletionState) -> Void
 
-  // TODO: Rotation lock!
   // TODO: Determinate progress bar
-  // TODO: Cancel button
 
   /// The URL the PDF will be written to.
   private let pdfURL: URL = FileManager.default.temporaryDirectory
@@ -104,9 +102,9 @@ final class PDFExportController: UIViewController {
   }
 
   private func setupContentViewController() {
-    addChild(contentViewController)
+    // Intentionally omitting addChild and didMove(toParent:) calls so as to prevent the
+    // contentViewController's navigation set-up from interfering with this controller's nav items.
     view.addSubview(contentViewController.view)
-    contentViewController.didMove(toParent: self)
     contentViewController.view.translatesAutoresizingMaskIntoConstraints = true
     contentViewController.view.autoresizingMask = []
     contentViewController.view.frame = view.frame
@@ -114,6 +112,7 @@ final class PDFExportController: UIViewController {
 
   private func setupOverlayViewController() {
     let overlayViewController = UIViewController()
+    // TODO: Remove color and alpha once spinner is in place
     overlayViewController.view.backgroundColor = .red
     overlayViewController.view.alpha = 0.1
     addChild(overlayViewController)
@@ -127,25 +126,23 @@ final class PDFExportController: UIViewController {
     overlayViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
   }
 
-  private func exportCompletion(completionState: CompletionState,
-                                pdfURL: URL? = nil,
-                                errors: [Error]? = nil) {
+  private func completion(state: CompletionState) {
     self.dismiss(animated: true, completion: {
-      self.completionHandler?(completionState, pdfURL, errors)
+      self.completionHandler?(state)
     })
   }
 
   private func reportSuccess() {
-    exportCompletion(completionState: .success, pdfURL: pdfURL)
+    completion(state: .success(pdfURL))
   }
 
   private func cancelAndReport() {
     operationQueue.cancelAllOperations()
-    exportCompletion(completionState: .cancel)
+    completion(state: .cancel)
   }
 
   private func reportErrors(_ errors: [Error]) {
-    exportCompletion(completionState: .error, pdfURL: nil, errors: errors)
+    completion(state: .error(errors))
   }
 
   private func operationStartHandler(operation: GSJOperation) {

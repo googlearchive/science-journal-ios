@@ -1738,14 +1738,18 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   private func showPDFExportFlow() {
-    let completionHandler: PDFExportController.CompletionHandler = { completionState, pdfURL, _ in
-      switch completionState {
-      case .success:
-        guard let pdfURL = pdfURL else { return }
+    let completionHandler: PDFExportController.CompletionHandler = { completion in
+      switch completion {
+      case .success(let pdfURL):
         self.present(pdfURL: pdfURL)
-      case .error, .cancel:
-        // TODO: Handle appropriately
+      case .cancel:
         break
+      case .error(let errors):
+        if errors.isEmpty != false {
+          sjlog_error("Error(s) in the PDF export flow: \(errors)", category: .general)
+        } else {
+          sjlog_error("Unknown error in the PDF export flow.", category: .general)
+        }
       }
     }
 

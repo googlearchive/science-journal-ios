@@ -19,6 +19,10 @@ import UIKit
 /// An operation that exports an experiment as a PDF document.
 final class PDFExportOperation: GSJOperation {
 
+  enum Error: Swift.Error {
+    case snapshotsGeneration
+  }
+
   private enum Metrics {
     static let snapshotCaptureWidth: CGFloat = 500
     static let snapshotCaptureScale: CGFloat = 2
@@ -77,14 +81,18 @@ final class PDFExportOperation: GSJOperation {
       }
 
       let scrollView = self.contentViewController.scrollView
-      let originalFrame = scrollView.frame
-
       scrollView.snapshotContents(scale: Metrics.snapshotCaptureScale,
                                   shouldCancel: shouldCancel,
                                   updateProgress: updateProgress) {
         (snapshotCollection) -> Void in
-        guard let snapshotCollection = snapshotCollection else { return }
-        scrollView.frame = originalFrame
+        guard let snapshotCollection = snapshotCollection else {
+          if self.isCancelled {
+            self.finish()
+          } else {
+            self.finish(withErrors: [Error.snapshotsGeneration])
+          }
+          return
+        }
         self.renderPDFData(from: snapshotCollection)
         self.finish()
       }

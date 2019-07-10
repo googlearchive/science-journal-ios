@@ -42,6 +42,7 @@ extension UIScrollView {
       updateProgress: @escaping (CGFloat) -> Void,
       completion: @escaping (_ snapshotCollection: ScrollViewSnapshotCollection?) -> Void) {
     let offsets = prepareSnapshotOffsets()
+    guard !offsets.isEmpty else { return completion(nil) }
     let finalSize = self.contentSize.applying(scale: scale)
     captureSnapshots(offsets: offsets,
                      scale: scale,
@@ -61,6 +62,8 @@ private extension UIScrollView {
   ///
   /// - Returns: An array of offset CGPoints to use to capture pages of snapshots.
   func prepareSnapshotOffsets() -> [CGPoint] {
+    guard bounds.size.height > 0 else { return [] }
+
     // Initial offset.
     var currentOffset = CGPoint.zero
     // Determine any remaining height that will be left over after even increments of screen

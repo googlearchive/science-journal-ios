@@ -58,7 +58,8 @@ class MaterialFloatingSpinner: UIView {
     }
   }
 
-  private let spinner = MDCActivityIndicator()
+  let spinner = MDCActivityIndicator()
+
   private let spinnerBackground = ShadowedView()
 
   // MARK: - Public

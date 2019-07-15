@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import SnapKit
 
 protocol PDFExportable {
   var scrollView: UIScrollView { get }
@@ -40,7 +41,12 @@ final class PDFExportController: UIViewController {
   typealias ContentViewController = UIViewController & PDFExportable
   typealias CompletionHandler = (CompletionState) -> Void
 
-  // TODO: Determinate progress bar
+  var completionHandler: CompletionHandler?
+
+  private let analyticsReporter: AnalyticsReporter
+  private let overlayViewController: PDFExportOverlayViewController
+  private var progressTimer: Timer?
+  private var pdfExportOperation: PDFExportOperation?
 
   /// The URL the PDF will be written to.
   private let pdfURL: URL = FileManager.default.temporaryDirectory
@@ -48,28 +54,30 @@ final class PDFExportController: UIViewController {
   private let contentViewController: ContentViewController
   private let operationQueue = GSJOperationQueue()
 
-  var completionHandler: CompletionHandler?
-
   // MARK: - Public
 
-  init(contentViewController: ContentViewController) {
+  init(contentViewController: ContentViewController, analyticsReporter: AnalyticsReporter) {
     self.contentViewController = contentViewController
+    self.analyticsReporter = analyticsReporter
+    self.overlayViewController =
+      PDFExportOverlayViewController(analyticsReporter: analyticsReporter)
     super.init(nibName: nil, bundle: nil)
+
+    overlayViewController.delegate = self
   }
 
   required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    fatalError("init(coder:) is not supported")
   }
 
   override public func viewDidLoad() {
     super.viewDidLoad()
-
-    let closeMenuItem = MaterialCloseBarButtonItem(target: self,
-                                                   action: #selector(closeButtonPressed))
-    navigationItem.leftBarButtonItem = closeMenuItem
-
     setupContentViewController()
     setupOverlayViewController()
+  }
+
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
 
   override func viewWillTransition(to size: CGSize,
@@ -94,11 +102,8 @@ final class PDFExportController: UIViewController {
     pdfExportOperation.addObserver(BlockObserver(startHandler: operationStartHandler,
                                                  spawnHandler: nil,
                                                  finishHandler: operationFinishHandler))
+    self.pdfExportOperation = pdfExportOperation
     operationQueue.addOperation(pdfExportOperation)
-  }
-
-  @objc private func closeButtonPressed() {
-    cancelAndReport()
   }
 
   private func setupContentViewController() {
@@ -111,42 +116,58 @@ final class PDFExportController: UIViewController {
   }
 
   private func setupOverlayViewController() {
-    let overlayViewController = UIViewController()
-    // TODO: Remove color and alpha once spinner is in place
-    overlayViewController.view.backgroundColor = .red
-    overlayViewController.view.alpha = 0.1
+    overlayViewController.view.backgroundColor = .white
     addChild(overlayViewController)
     view.addSubview(overlayViewController.view)
     overlayViewController.didMove(toParent: self)
-
-    overlayViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    overlayViewController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-    overlayViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive =
-    true
-    overlayViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    overlayViewController.view.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 
   private func completion(state: CompletionState) {
-    self.dismiss(animated: true, completion: {
-      self.completionHandler?(state)
-    })
+    DispatchQueue.main.async {
+      self.progressTimer?.invalidate()
+      self.progressTimer = nil
+      self.overlayViewController.progressView.progress = 1
+    }
+
+    pdfExportOperation = nil
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      // Give the UI a moment to update progress to 100%, which _feels_ better.
+      self.dismiss(animated: true, completion: {
+        self.completionHandler?(state)
+      })
+    }
   }
 
   private func reportSuccess() {
+    analyticsReporter.track(.pdfExportCompleted)
     completion(state: .success(pdfURL))
   }
 
   private func cancelAndReport() {
+    analyticsReporter.track(.pdfExportCancelled)
     operationQueue.cancelAllOperations()
     completion(state: .cancel)
   }
 
   private func reportErrors(_ errors: [Error]) {
+    analyticsReporter.track(.pdfExportError)
     completion(state: .error(errors))
   }
 
   private func operationStartHandler(operation: GSJOperation) {
-    // TODO: Show spinner on overlay
+    DispatchQueue.main.async {
+      self.overlayViewController.progressView.indicatorMode = .determinate
+      self.progressTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
+                                                repeats: true,
+                                                block: { (_) in
+        guard let pdfExportOperation = self.pdfExportOperation else { return }
+        self.overlayViewController.progressView.progress = Float(pdfExportOperation.progress)
+      })
+    }
+    analyticsReporter.track(.pdfExportStarted)
   }
 
   private func operationFinishHandler(operation: GSJOperation, errors: [Error]) {
@@ -155,6 +176,16 @@ final class PDFExportController: UIViewController {
     } else {
       reportErrors(errors)
     }
+  }
+
+}
+
+// MARK: - PDFExportOverlayViewControllerDelegate
+
+extension PDFExportController: PDFExportOverlayViewControllerDelegate {
+
+  func pdfExportShouldCancel() {
+    cancelAndReport()
   }
 
 }

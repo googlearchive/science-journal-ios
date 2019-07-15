@@ -142,6 +142,12 @@ extension PermissionsGuideViewController {
   override open var analyticsViewName: String { return "PermissionsGuide" }
 }
 
+// MARK: PDF Export
+
+extension PDFExportOverlayViewController {
+  override public var analyticsViewName: String { return "PDFExportPreparing" }
+}
+
 // MARK: Sensors
 
 extension SensorSettingsViewController {

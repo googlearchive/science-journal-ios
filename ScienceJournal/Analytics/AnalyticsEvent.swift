@@ -84,6 +84,22 @@ public struct AnalyticsEvent {
                           value: displayNote.noteType.analyticsValue)
   }
 
+  // MARK: PDF Export
+
+  static let categoryPDFExport = "PDFExport"
+
+  static let pdfExportStarted = AnalyticsEvent(category: categoryPDFExport,
+                                               action: "Started")
+
+  static let pdfExportCompleted = AnalyticsEvent(category: categoryPDFExport,
+                                                 action: "Completed")
+
+  static let pdfExportCancelled = AnalyticsEvent(category: categoryPDFExport,
+                                                 action: "Cancelled")
+
+  static let pdfExportError = AnalyticsEvent(category: categoryPDFExport,
+                                             action: "Error")
+
   // MARK: Trial export
 
   static let categoryTrialExport = "ExportTrial"

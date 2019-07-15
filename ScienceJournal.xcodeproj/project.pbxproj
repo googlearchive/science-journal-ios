@@ -42,6 +42,7 @@
 		489182C11E4542CE00E91D73 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489182BE1E4542CE00E91D73 /* ChartController.swift */; };
 		489182C21E4542CE00E91D73 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489182BF1E4542CE00E91D73 /* ChartData.swift */; };
 		489182C31E4542CE00E91D73 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489182C01E4542CE00E91D73 /* ChartView.swift */; };
+		48AAE5DC22D7AD88009D3EFB /* PDFExportOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAE5DB22D7AD88009D3EFB /* PDFExportOverlayViewController.swift */; };
 		48BFD8CC20D065FF00FB5C1A /* gtm_session_fetcher.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BFD8C520D065FE00FB5C1A /* gtm_session_fetcher.html */; };
 		48BFD8CD20D065FF00FB5C1A /* motion_animator.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BFD8C620D065FF00FB5C1A /* motion_animator.html */; };
 		48BFD8CE20D065FF00FB5C1A /* motion_interchange.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BFD8C720D065FF00FB5C1A /* motion_interchange.html */; };
@@ -673,6 +674,7 @@
 		489182BE1E4542CE00E91D73 /* ChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
 		489182BF1E4542CE00E91D73 /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		489182C01E4542CE00E91D73 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		48AAE5DB22D7AD88009D3EFB /* PDFExportOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExportOverlayViewController.swift; sourceTree = "<group>"; };
 		48BFD8C520D065FE00FB5C1A /* gtm_session_fetcher.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gtm_session_fetcher.html; sourceTree = "<group>"; };
 		48BFD8C620D065FF00FB5C1A /* motion_animator.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = motion_animator.html; sourceTree = "<group>"; };
 		48BFD8C720D065FF00FB5C1A /* motion_interchange.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = motion_interchange.html; sourceTree = "<group>"; };
@@ -1408,6 +1410,7 @@
 			children = (
 				58C4DB1422D53B4C0029E519 /* PDFExportController.swift */,
 				58C4DB1322D53B4C0029E519 /* PDFExportOperation.swift */,
+				48AAE5DB22D7AD88009D3EFB /* PDFExportOverlayViewController.swift */,
 			);
 			path = PDFExport;
 			sourceTree = "<group>";
@@ -3717,6 +3720,7 @@
 				5CAD5EEA1E8D7E06008F50C3 /* Clock.swift in Sources */,
 				D59CA3CB219CEE690082A27B /* AudioAnalyzer.swift in Sources */,
 				6856C8991EEF0E3E00FFCED5 /* MDCAppBar+ScienceJournal.swift in Sources */,
+				48AAE5DC22D7AD88009D3EFB /* PDFExportOverlayViewController.swift in Sources */,
 				68F14AC21F21801F0054E799 /* TimeInterval+ScienceJournal.swift in Sources */,
 				5C7B87BF1FCDABC700EDEF1D /* EditTimestampView.swift in Sources */,
 				5C63842221067BD4008281DF /* ExclusivityController.swift in Sources */,

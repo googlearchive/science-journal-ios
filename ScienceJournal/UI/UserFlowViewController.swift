@@ -738,7 +738,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       documentManager: documentManager)
 
     experimentCoordinatorVC.displayState = .pdfExport
-    let container = PDFExportController(contentViewController: experimentCoordinatorVC)
+    let container = PDFExportController(contentViewController: experimentCoordinatorVC,
+                                        analyticsReporter: analyticsReporter)
     container.completionHandler = completionHandler
 
     let navController = UINavigationController(rootViewController: container)

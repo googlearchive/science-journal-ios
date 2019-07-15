@@ -142,7 +142,6 @@ class SignInViewController: OnboardingViewController {
     stackView.spacing = Metrics.buttonSpacing
     stackView.translatesAutoresizingMaskIntoConstraints = false
     stackView.pinToEdgesOfView(driveScrollView)
-    stackView.widthAnchor.constraint(equalTo: wrappingView.widthAnchor).isActive = true
 
     signInButton.setTitle(String.signIn.uppercased(), for: .normal)
     signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
@@ -173,7 +172,7 @@ class SignInViewController: OnboardingViewController {
 
     // Without this constraint the stack view is too wide. It doesn't seem like it should be
     // necessary so there is likely a bug elsewhere.
-    buttonStack.centerXAnchor.constraint(equalTo: driveScrollView.centerXAnchor).isActive = true
+    buttonStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
     // Continue button floating version.
     noSignInFloatingButton.view.translatesAutoresizingMaskIntoConstraints = false

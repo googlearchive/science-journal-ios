@@ -60,9 +60,8 @@ extension PopUpMenuAction {
                            icon: UIImage(named: "ic_save_alt"),
                            accessibilityHint: String.saveToFilesContentDescription,
                            handler: { (_) in
-      saveToFilesHandler.presentSaveToFiles(
-          forURL: URL(fileURLWithPath: filePath),
-          fromViewController: presentingViewController) { result in
+      saveToFilesHandler.presentSaveToFiles(for: URL(fileURLWithPath: filePath),
+                                            from: presentingViewController) { result in
         switch result {
         case .saved:
           showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
@@ -130,6 +129,33 @@ extension PopUpMenuAction {
         }
       })
     })
+  }
+
+  /// Returns an action that provides the export flow for SJ and PDF docs.
+  ///
+  /// - Parameters:
+  ///   - experiment: An experiment.
+  ///   - presentingViewController: A view controller to present the activity VC.
+  ///   - documentManager: The document manager.
+  ///   - sourceView: View to anchor a popover to display.
+  ///   - exportCoordinator: Export coordinator to manage presentation and flow for export types.
+  /// - Returns: A pop up menu action.
+  static func exportFlow(for experiment: Experiment,
+                         from presentingViewController: UIViewController,
+                         documentManager: DocumentManager,
+                         sourceView: UIView,
+                         exportCoordinator: ExportCoordinator) -> PopUpMenuAction {
+    let handler: PopUpMenuAction.Handler = { _ in
+      exportCoordinator.presentExportFlow(for: experiment,
+                                          from: presentingViewController,
+                                          documentManager: documentManager,
+                                          sourceView: sourceView)
+    }
+
+    return PopUpMenuAction(title: exportCoordinator.exportType.title,
+                           icon: exportCoordinator.exportType.icon,
+                           accessibilityHint: exportCoordinator.exportType.accessibilityHint,
+                           handler: handler)
   }
 
   /// Returns an action that saves an experiment to files.

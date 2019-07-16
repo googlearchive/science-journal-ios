@@ -1491,8 +1491,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
         return
       }
 
-      self.saveToFilesHandler.presentSaveToFiles(forURL: fileURL,
-                                                 fromViewController: self) { result in
+      self.saveToFilesHandler.presentSaveToFiles(for: fileURL,
+                                                 from: self) { result in
         switch result {
         case .saved:
           showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)

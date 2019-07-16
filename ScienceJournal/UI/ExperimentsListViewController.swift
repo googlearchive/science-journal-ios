@@ -77,6 +77,25 @@ protocol ExperimentsListViewControllerDelegate: class {
   func experimentsListDidSetCoverImageData(_ imageData: Data?,
                                            metadata: NSDictionary?,
                                            forExperimentID experimentID: String)
+
+  /// Informs the delegate the experiment should be exported as a PDF.
+  ///
+  /// - Parameters:
+  ///   - experiment: The experiment to export.
+  ///   - completionHandler: The completion handler to call when export is complete.
+  func experimentsListExportExperimentPDF(
+    _ experiment: Experiment,
+    completionHandler: @escaping PDFExportController.CompletionHandler)
+
+  /// Asks the delegate for a pop up menu action to initiate export flow.
+  ///
+  /// - Parameters:
+  ///   - experiment: The experiment to be exported.
+  ///   - presentingViewController: The presenting view controller.
+  ///   - sourceView: View to anchor a popover to display.
+  func experimentsListExportFlowAction(for experiment: Experiment,
+                                       from presentingViewController: UIViewController,
+                                       sourceView: UIView) -> PopUpMenuAction
 }
 
 // swiftlint:disable type_body_length
@@ -685,18 +704,10 @@ class ExperimentsListViewController: MaterialHeaderViewController, ExperimentSta
     if !RecordingState.isRecording,
         let experiment = metadataManager.experiment(withID: overview.experimentID),
         !experiment.isEmpty {
-      switch exportType {
-      case .saveToFiles:
-        popUpMenu.addAction(
-            PopUpMenuAction.saveExperimentToFiles(experiment,
-                                                  presentingViewController: self,
-                                                  documentManager: documentManager,
-                                                  saveToFilesHandler: saveToFilesHandler))
-      case .share:
-        popUpMenu.addAction(PopUpMenuAction.exportExperiment(experiment,
-                                                             presentingViewController: self,
-                                                             sourceView: attachmentButton,
-                                                             documentManager: documentManager))
+      if let action = delegate?.experimentsListExportFlowAction(for: experiment,
+                                                                from: self,
+                                                                sourceView: attachmentButton) {
+        popUpMenu.addAction(action)
       }
     }
 

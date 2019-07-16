@@ -133,6 +133,16 @@ protocol ExperimentCoordinatorViewControllerDelegate: class {
     _ experiment: Experiment,
     completionHandler: @escaping PDFExportController.CompletionHandler)
 
+  /// Asks the delegate for a pop up menu action to initiate export flow.
+  ///
+  /// - Parameters:
+  ///   - experiment: The experiment to be exported.
+  ///   - presentingViewController: The presenting view controller.
+  ///   - sourceView: View to anchor a popover to display.
+  func experimentViewControllerExportFlowAction(for experiment: Experiment,
+                                                from presentingViewController: UIViewController,
+                                                sourceView: UIView) -> PopUpMenuAction?
+
 }
 
 // swiftlint:disable type_body_length
@@ -265,7 +275,6 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   private let snackbarCategoryCouldNotUpdateSensorSettings =
       "snackbarCategoryCouldNotUpdateSensorSettings"
   private let exportType: UserExportType
-  private let fileTypeSelectionHandler = FileTypeSelectionHandler()
   private let saveToFilesHandler = SaveToFilesHandler()
 
   // A dictionary of chart controllers, keyed by sensor ID.
@@ -1610,16 +1619,11 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     // Export
     if !RecordingState.isRecording && !experiment.isEmpty {
-      switch exportType {
-      case .saveToFiles:
-        popUpMenu.addAction(PopUpMenuAction(title: String.saveToFilesTitle,
-                                            icon: UIImage(named: "ic_save_alt"),
-                                            accessibilityHint: String.saveToFilesContentDescription,
-                                            handler: saveToFilesActionHandler))
-      case .share:
-        popUpMenu.addAction(PopUpMenuAction(title: String.sendCopyAction,
-                                            icon: UIImage(named: "ic_share"),
-                                            handler: shareActionHandler))
+      if let action = delegate?.experimentViewControllerExportFlowAction(
+        for: experiment,
+        from: self,
+        sourceView: menuBarButton.button) {
+        popUpMenu.addAction(action)
       }
     }
 
@@ -1686,135 +1690,6 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       return
     }
     updateTrial(trial)
-  }
-
-  // MARK: - File Export
-
-  private func showSaveToFilesFlow() {
-    saveToFilesHandler.presentSaveToFiles(
-      forExperiment: experiment,
-      documentManager: documentManager,
-      presentingViewController: self)
-  }
-
-  private func showExportExperimentFlow() {
-    let spinnerViewController = SpinnerViewController()
-    spinnerViewController.present(fromViewController: self)
-
-    func exportExperiment() {
-      documentManager.createExportDocument(
-        forExperimentWithID: experiment.ID,
-        completion: { url in
-          spinnerViewController.dismissSpinner(completion: {
-            guard let url = url else {
-              // The export failed, show an error message.
-              showSnackbar(withMessage: String.exportError)
-              return
-            }
-
-            let activityVC = UIActivityViewController(activityItems: [url],
-                                                      applicationActivities: nil)
-            activityVC.completionWithItemsHandler = { (_, _, _, _) in
-              self.documentManager.finishedWithExportDocument(atURL: url)
-            }
-            if let presentationController = activityVC.popoverPresentationController {
-              // Configure as a popover on iPad if necessary.
-              presentationController.sourceView = self.menuBarButton.button
-              presentationController.sourceRect = self.menuBarButton.button.bounds
-            }
-            self.present(activityVC, animated: true)
-          })
-      })
-    }
-
-    documentManager.experimentIsReadyForExport(experiment) { (isReady) in
-      if isReady {
-        exportExperiment()
-      } else {
-        PopUpMenuAction.presentExperimentNotFinishedDownloadingAlert(
-          fromViewController: spinnerViewController, cancelHandler: { (_) in
-            spinnerViewController.dismissSpinner()
-        }, confirmHandler: { (_) in
-          exportExperiment()
-        })
-      }
-    }
-  }
-
-  private func showPDFExportFlow() {
-    let completionHandler: PDFExportController.CompletionHandler = { completion in
-      switch completion {
-      case .success(let pdfURL):
-        self.present(pdfURL: pdfURL)
-      case .cancel:
-        break
-      case .error(let errors):
-        if errors.isEmpty != false {
-          sjlog_error("Error(s) in the PDF export flow: \(errors)", category: .general)
-        } else {
-          sjlog_error("Unknown error in the PDF export flow.", category: .general)
-        }
-      }
-    }
-
-    delegate?.experimentViewControllerExportExperimentPDF(experiment,
-                                                          completionHandler: completionHandler)
-  }
-
-  private func present(pdfURL: URL) {
-    switch exportType {
-    case .saveToFiles:
-      saveToFilesHandler.presentSaveToFiles(forURL: pdfURL, fromViewController: self) { result in
-        switch result {
-        case .saved:
-          showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)
-        case .cancelled:
-          break
-        }
-      }
-    case .share:
-      let activityVC = UIActivityViewController(activityItems: [pdfURL],
-                                                applicationActivities: nil)
-
-      if let presentationController = activityVC.popoverPresentationController {
-        // Configure as a popover on iPad if necessary.
-        presentationController.sourceView = menuBarButton.button
-        presentationController.sourceRect = menuBarButton.button.bounds
-      }
-      present(activityVC, animated: true)
-    }
-  }
-
-  private func shareActionHandler(popUpMenuAction: PopUpMenuAction) {
-    #if FEATURE_PDF_EXPORT
-    fileTypeSelectionHandler.showFileTypeSelection(from: self,
-                                                   exportType: .share) { (fileTypeResult) in
-      switch fileTypeResult {
-      case .pdf:
-        self.showPDFExportFlow()
-      case .sj:
-        self.showExportExperimentFlow()
-      }
-    }
-    #else
-    showExportExperimentFlow()
-    #endif
-  }
-
-  private func saveToFilesActionHandler(popUpMenuAction: PopUpMenuAction) {
-    #if FEATURE_PDF_EXPORT
-    fileTypeSelectionHandler.showFileTypeSelection(from: self,
-                                                   exportType: .saveToFiles) { (fileTypeResult) in
-      switch fileTypeResult {
-      case .pdf:
-        self.showPDFExportFlow()
-      case .sj:
-        self.showSaveToFilesFlow()
-      }
-    }
-    #else
-    showSaveToFilesFlow()
-    #endif
   }
 
 }

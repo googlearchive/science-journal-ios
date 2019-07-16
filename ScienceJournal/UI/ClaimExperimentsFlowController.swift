@@ -372,10 +372,17 @@ class ClaimExperimentsFlowController: UIViewController, ClaimExperimentsViewCont
   func experimentViewControllerDeletePictureNoteCompleted(_ pictureNote: PictureNote,
                                                           forExperiment experiment: Experiment) {}
 
-  // Claim flow does not support exporting an experiment as a PDF.
+  // Claim flow does not support export flow for PDF.
   func experimentViewControllerExportExperimentPDF(
     _ experiment: Experiment,
     completionHandler: PDFExportController.CompletionHandler) {}
+
+  // Claim flow does not support export flow for PDF.
+  func experimentViewControllerExportFlowAction(for experiment: Experiment,
+                                                from presentingViewController: UIViewController,
+                                                sourceView: UIView) -> PopUpMenuAction? {
+    return nil
+  }
 
   // MARK: - TrialDetailViewControllerDelegate
 

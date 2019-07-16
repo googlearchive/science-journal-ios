@@ -59,6 +59,7 @@
 		48D81BDA2086AD0C00773294 /* DrawerConfigOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D81BD92086AD0C00773294 /* DrawerConfigOpen.swift */; };
 		48E48DC122A63CEB004301E4 /* UIScrollView+Capturing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */; };
 		48FDC26B20AB51B600C472DA /* oss_licenses_index.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */; };
+		583706E822D68D5F002B9F0F /* ExportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583706E722D68D5F002B9F0F /* ExportCoordinator.swift */; };
 		58512C6C22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */; };
 		585D619422B1C38100EB2114 /* ChartExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D619322B1C38100EB2114 /* ChartExportViewController.swift */; };
 		58BC1BC322C1781000DA7EDC /* String+PluralizeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */; };
@@ -694,6 +695,7 @@
 		48FDC26A20AB51B600C472DA /* oss_licenses_index.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = oss_licenses_index.txt; sourceTree = "<group>"; };
 		4FBA0D9917CD7B3AFD64321B /* Pods_ScienceJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScienceJournalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		583706E722D68D5F002B9F0F /* ExportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCoordinator.swift; sourceTree = "<group>"; };
 		58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTypeSelectionHandler.swift; sourceTree = "<group>"; };
 		585D619322B1C38100EB2114 /* ChartExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartExportViewController.swift; sourceTree = "<group>"; };
 		58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PluralizeTest.swift"; sourceTree = "<group>"; };
@@ -1778,8 +1780,9 @@
 		5CC9046B2244388B00F13EF0 /* SharableDocuments */ = {
 			isa = PBXGroup;
 			children = (
-				58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */,
 				5CC9046E224438B300F13EF0 /* DocumentManager.swift */,
+				583706E722D68D5F002B9F0F /* ExportCoordinator.swift */,
+				58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */,
 				8B9A8C69225E68C30082897B /* SaveToFilesHandler.swift */,
 			);
 			path = SharableDocuments;
@@ -3643,6 +3646,7 @@
 				8B1791D41F155B91008C0B31 /* TriggerEditDelegate.swift in Sources */,
 				8B1F2F912065741100BADCD4 /* TrialCardSensorsView.swift in Sources */,
 				68EACA7E1EB0234000BB5892 /* SettingsViewController.swift in Sources */,
+				583706E822D68D5F002B9F0F /* ExportCoordinator.swift in Sources */,
 				687FAA07202C1162004C1D04 /* ScalarInputConfig.pbobjc.m in Sources */,
 				687FAA18202C1162004C1D04 /* PictureLabelValue.pbobjc.m in Sources */,
 				8BDC027F201F746000BB0059 /* AudioCapture.swift in Sources */,

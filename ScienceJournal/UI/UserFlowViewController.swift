@@ -72,6 +72,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let userAssetManager: UserAssetManager
   private let operationQueue = GSJOperationQueue()
   private var shouldShowPreferenceMigrationMessage: Bool
+  private let exportCoordinator: ExportCoordinator
 
   // Whether to show the experiment list pull to refresh animation. It should show once for a fresh
   // launch per user.
@@ -148,6 +149,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     self.experimentDataDeleter = userManager.experimentDataDeleter
     sidebar = SidebarViewController(accountsManager: accountsManager,
                                     analyticsReporter: analyticsReporter)
+    exportCoordinator = ExportCoordinator(exportType: userManager.exportType)
+
     super.init(nibName: nil, bundle: nil)
 
     // Set user tracking opt-out.
@@ -158,6 +161,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     // Get updates for changes based on Drive sync.
     userManager.driveSyncManager?.delegate = self
+
+    exportCoordinator.delegate = self
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -478,10 +483,21 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     }
   }
 
-  func experimentListExportExperimentPDF(_ experiment: Experiment,
-                                         completionHandler:
-    @escaping PDFExportController.CompletionHandler) {
+  func experimentsListExportExperimentPDF(
+    _ experiment: Experiment,
+    completionHandler: @escaping PDFExportController.CompletionHandler
+  ) {
     presentPDFExportFlow(experiment, completionHandler: completionHandler)
+  }
+
+  func experimentsListExportFlowAction(for experiment: Experiment,
+                                       from presentingViewController: UIViewController,
+                                       sourceView: UIView) -> PopUpMenuAction {
+    return PopUpMenuAction.exportFlow(for: experiment,
+                                      from: self,
+                                      documentManager: documentManager,
+                                      sourceView: sourceView,
+                                      exportCoordinator: exportCoordinator)
   }
 
   // MARK: - ExperimentCoordinatorViewControllerDelegate
@@ -614,6 +630,16 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     _ experiment: Experiment,
     completionHandler: @escaping PDFExportController.CompletionHandler) {
     presentPDFExportFlow(experiment, completionHandler: completionHandler)
+  }
+
+  func experimentViewControllerExportFlowAction(for experiment: Experiment,
+                                                from presentingViewController: UIViewController,
+                                                sourceView: UIView) -> PopUpMenuAction? {
+    return PopUpMenuAction.exportFlow(for: experiment,
+                                      from: self,
+                                      documentManager: documentManager,
+                                      sourceView: sourceView,
+                                      exportCoordinator: exportCoordinator)
   }
 
   // MARK: - ExperimentItemDelegate
@@ -1171,6 +1197,15 @@ extension UserFlowViewController: ExperimentStateListener {
   func experimentStateRestored(_ experiment: Experiment, overview: ExperimentOverview) {
     userManager.driveSyncManager?.syncExperimentLibrary(andReconcile: true, userInitiated: false)
   }
+}
+
+extension UserFlowViewController: ExportCoordinatorDelegate {
+
+  func showPDFExportFlow(for experiment: Experiment,
+                         completionHandler: @escaping PDFExportController.CompletionHandler) {
+    presentPDFExportFlow(experiment, completionHandler: completionHandler)
+  }
+
 }
 
 // swiftlint:enable file_length, type_body_length

@@ -40,8 +40,8 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
   ///   - url: The url of the file to save.
   ///   - presentingViewController: A view controller to present the save to files VC.
   ///   - completion: Called when complete.
-  func presentSaveToFiles(forURL url: URL,
-                          fromViewController presentingViewController: UIViewController,
+  func presentSaveToFiles(for url: URL,
+                          from presentingViewController: UIViewController,
                           completion: @escaping SaveToFilesCompletion) {
     self.completion = completion
     let documentPicker = UIDocumentPickerViewController(url: url, in: .exportToService)
@@ -73,8 +73,8 @@ class SaveToFilesHandler: NSObject, UIDocumentPickerDelegate {
             return
           }
 
-          self.presentSaveToFiles(forURL: url,
-                                  fromViewController: presentingViewController) { result in
+          self.presentSaveToFiles(for: url,
+                                  from: presentingViewController) { result in
             switch result {
             case .saved:
               showSnackbar(withMessage: String.saveToFilesSingleSuccessMessage)

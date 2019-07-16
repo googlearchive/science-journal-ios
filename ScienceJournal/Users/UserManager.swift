@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import Foundation
+import UIKit
 
 /// The export option type to show for the user.
 enum UserExportType {
@@ -22,6 +22,33 @@ enum UserExportType {
   case saveToFiles
   /// Show the share export option.
   case share
+
+  var title: String {
+    switch self {
+    case .saveToFiles:
+      return String.saveToFilesTitle
+    case .share:
+      return String.sendCopyAction
+    }
+  }
+
+  var icon: UIImage? {
+    switch self {
+    case .saveToFiles:
+      return UIImage(named: "ic_save_alt")
+    case .share:
+      return UIImage(named: "ic_share")
+    }
+  }
+
+  var accessibilityHint: String? {
+    switch self {
+    case .saveToFiles:
+      return String.saveToFilesContentDescription
+    case .share:
+      return nil
+    }
+  }
 }
 
 /// Protocol for an object that manages a single user and their data. A user is not the same as an

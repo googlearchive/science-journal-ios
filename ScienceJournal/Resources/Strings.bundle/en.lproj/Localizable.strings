@@ -2,7 +2,7 @@
 "app_name" = "Science Journal";
 
 /* Change log for the iOS verison of Science Journal (note: this is multiline, with \n to separate lines) [CHAR_LIMIT=3000] */
-"app_store_ios_changelog" = "New features and improvements:\n• Sign in to your Google account to save and access your experiments across your devices using your Google Drive account. This feature will be available to all users in the coming weeks. Science Journal can still be used without signing in.";
+"app_store_ios_changelog" = "New features and improvements:\n• Save your experiment as a PDF file with all of your notes, photos, and recordings in one place.";
 
 /* Generic change log for iOS versions where specific changes will not be noted [CHAR_LIMIT=3000] */
 "app_store_ios_generic_changelog" = "Many performance improvements and bug fixes";

@@ -60,7 +60,8 @@ final class PDFExportOperation: GSJOperation {
 
   /// Returns an indication of the overall progress of this operation. 0.0 <= progress <= 1.0.
   var progress: CGFloat {
-    return (snapshotProgress + renderProgress) / 2
+    // Weight snapshot progress much higher than render progress as it takes much longer.
+    return snapshotProgress * 0.9 + renderProgress * 0.1
   }
 
   private func logProgress() {

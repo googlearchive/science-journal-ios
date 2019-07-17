@@ -74,13 +74,14 @@ class TrialCardNoteViewPool {
   ///
   /// - Parameter: pictureNote: The picture note.
   /// - Returns: The picture card view.
-  func pictureView(withPictureNote pictureNote: DisplayPictureNote) -> PictureCardView {
+  func pictureView(withPictureNote pictureNote: DisplayPictureNote,
+                   pictureStyle: PictureStyle) -> PictureCardView {
     if let pictureCardView = view(forClass: PictureCardView.self) as? PictureCardView {
       pictureCardView.pictureNote = pictureNote
       return pictureCardView
     } else {
       return PictureCardView(pictureNote: pictureNote,
-                             style: PictureStyle.small,
+                             style: pictureStyle,
                              showTimestamp: true)
     }
   }

@@ -56,7 +56,7 @@ class TrialCardNotesView: UIView {
   /// to the trial card notes view.
   ///
   /// - Parameter trialNote: The trial note.
-  func addTrialNote(_ trialNote: DisplayNote) {
+  func addTrialNote(_ trialNote: DisplayNote, experimentDisplay: ExperimentDisplay) {
     guard let trialCardNoteViewPool = trialCardNoteViewPool else { return }
 
     if views.count > 0 {
@@ -75,7 +75,9 @@ class TrialCardNotesView: UIView {
       }
       caption = displaySnapshotNote.caption
     case .pictureNote(let displayPictureNote):
-      let pictureView = trialCardNoteViewPool.pictureView(withPictureNote: displayPictureNote)
+      let pictureView = trialCardNoteViewPool.pictureView(
+        withPictureNote: displayPictureNote,
+        pictureStyle: experimentDisplay.trialPictureStyle)
       addView(pictureView)
       caption = displayPictureNote.caption
       pictureCardViews.append(pictureView)

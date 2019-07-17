@@ -147,13 +147,13 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
                       showHeader shouldShowHeader: Bool,
                       showInlineTimestamp shouldShowInlineTimestamp: Bool,
                       showCaptionButton shouldShowCaptionButton: Bool,
-                      showMenuButton shouldShowMenuButton: Bool = true) {
+                      experimentDisplay: ExperimentDisplay = .normal) {
     self.pictureStyle = pictureStyle
     self.pictureNote = pictureNote
     self.metadataManager = metadataManager
 
     // Update image.
-    if pictureView == nil || pictureView!.style != pictureStyle {
+    if pictureView == nil || pictureView!.style != experimentDisplay.trialPictureStyle {
       pictureView?.removeFromSuperview()
 
       let pictureCardView = PictureCardView(style: pictureStyle)
@@ -161,6 +161,7 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
       pictureCardView.clipsToBounds = true
       pictureView = pictureCardView
     }
+    pictureView?.experimentDisplay = experimentDisplay
     pictureView?.pictureNote = pictureNote
     pictureView?.showTimestamp = shouldShowInlineTimestamp
 
@@ -182,7 +183,7 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
       headerView.showCaptionButton = shouldShowCaptionButton
     }
 
-    headerView.showMenuButton = shouldShowMenuButton
+    headerView.showMenuButton = experimentDisplay.showMenuButton
 
     setNeedsLayout()
   }

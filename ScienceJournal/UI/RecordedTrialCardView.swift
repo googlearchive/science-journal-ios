@@ -101,16 +101,21 @@ class RecordedTrialCardView: UIView {
   ///   - trial: The trial.
   ///   - width: The constrained width.
   /// - Returns: The height.
-  static func heightOfTrial(_ trial: DisplayTrial, constrainedToWidth width: CGFloat) -> CGFloat {
+  static func heightOfTrial(_ trial: DisplayTrial,
+                            constrainedToWidth width: CGFloat,
+                            experimentDisplay: ExperimentDisplay = .normal) -> CGFloat {
     var height: CGFloat = 0
     height += ExperimentCardHeaderView.height
     height += TrialCardHeaderView.height
 
     // Sensors and separators for all but the last sensor.
-    height += TrialCardSensorView.height * CGFloat(trial.sensors.count)
+    height += CGFloat(trial.sensors.count) *
+      (TrialCardSensorView.height + experimentDisplay.chartViewHeightPadding)
     height += SeparatorView.Metrics.dimension * CGFloat(trial.sensors.count - 1)
 
-    height += RecordedTrialCardView.heightOfNotes(inTrial: trial, constrainedToWidth: width)
+    height += RecordedTrialCardView.heightOfNotes(inTrial: trial,
+                                                  constrainedToWidth: width,
+                                                  experimentDisplay: experimentDisplay)
 
     return height
   }
@@ -118,12 +123,11 @@ class RecordedTrialCardView: UIView {
   /// Configures the recorded view for the trial.
   ///
   /// - Parameter trial: The trial.
-  func configure(withTrial trial: DisplayTrial, showMenuButton: Bool = true,
-                 displayState: ExperimentCoordinatorViewController.DisplayState = .normal) {
+  func configure(withTrial trial: DisplayTrial, experimentDisplay: ExperimentDisplay = .normal) {
     // Header view.
     experimentCardHeaderView.headerTimestampLabel.text = trial.timestamp.string
     experimentCardHeaderView.accessibilityLabel = experimentCardHeaderView.headerTimestampLabel.text
-    experimentCardHeaderView.showMenuButton = showMenuButton
+    experimentCardHeaderView.showMenuButton = experimentDisplay.showMenuButton
 
     // Title bar.
     trialCardHeaderView.configure(with: trial)
@@ -131,13 +135,13 @@ class RecordedTrialCardView: UIView {
 
     // Sensors view.
     trialCardSensorsView.sensors = trial.sensors
-    trialCardSensorsView.displayState = displayState
+    trialCardSensorsView.experimentDisplay = experimentDisplay
 
     // Trial notes.
     if trial.displayNotesCount > 0 {
       addSubview(trialNotesSeparatorView)
       addSubview(trialCardNotesView)
-      configureTrialNotes(trial)
+      configureTrialNotes(trial, experimentDisplay: experimentDisplay)
     } else {
       trialNotesSeparatorView.removeFromSuperview()
       trialCardNotesView.removeFromSuperview()
@@ -180,7 +184,8 @@ class RecordedTrialCardView: UIView {
   ///   - width: The constrained width.
   /// - Returns: The height.
   private static func heightOfNotes(inTrial trial: DisplayTrial,
-                                    constrainedToWidth width: CGFloat) -> CGFloat {
+                                    constrainedToWidth width: CGFloat,
+                                    experimentDisplay: ExperimentDisplay = .normal) -> CGFloat {
     guard trial.notes.count > 0 else { return 0 }
 
     var height: CGFloat = 0
@@ -208,7 +213,7 @@ class RecordedTrialCardView: UIView {
           height += ExperimentCardCaptionView.heightWithCaption(caption, inWidth: width)
         }
       case .pictureNote(let displayPictureNote):
-        height += PictureStyle.small.height
+        height += experimentDisplay.trialPictureStyle.height
         if let caption = displayPictureNote.caption {
           height += ExperimentCardCaptionView.heightWithCaption(caption, inWidth: width)
         }
@@ -234,10 +239,11 @@ class RecordedTrialCardView: UIView {
   /// separators where appropriate.
   ///
   /// - Parameter: displayTrial: The trial.
-  private func configureTrialNotes(_ displayTrial: DisplayTrial) {
+  private func configureTrialNotes(_ displayTrial: DisplayTrial,
+                                   experimentDisplay: ExperimentDisplay = .normal) {
     // Only the display count of notes is shown.
     for trialNote in displayTrial.notes[0..<displayTrial.displayNotesCount] {
-      trialCardNotesView.addTrialNote(trialNote)
+      trialCardNotesView.addTrialNote(trialNote, experimentDisplay: experimentDisplay)
     }
   }
 

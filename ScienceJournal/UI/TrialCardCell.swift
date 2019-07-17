@@ -61,11 +61,15 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
   ///   - width: Maximum width for this cell, used to constrain measurements.
   ///   - trial: The trial to measure.
   /// - Returns: The total height of this view.
-  static func height(inWidth width: CGFloat, trial: DisplayTrial) -> CGFloat {
+  static func height(inWidth width: CGFloat,
+                     trial: DisplayTrial,
+                     experimentDisplay: ExperimentDisplay = .normal) -> CGFloat {
     if trial.status == .recording {
       return RecordingTrialCardView.height
     } else {
-      return RecordedTrialCardView.heightOfTrial(trial, constrainedToWidth: width)
+      return RecordedTrialCardView.heightOfTrial(trial,
+                                                 constrainedToWidth: width,
+                                                 experimentDisplay: experimentDisplay)
     }
   }
 
@@ -90,19 +94,18 @@ class TrialCardCell: AutoLayoutMaterialCardCell {
   ///   - metadataManager: The metadata manager.
   func configureCellWithTrial(
     _ trial: DisplayTrial, metadataManager: MetadataManager,
-    showMenuButton: Bool = true,
-    displayState: ExperimentCoordinatorViewController.DisplayState = .normal) {
+    experimentDisplay: ExperimentDisplay = .normal) {
     self.metadataManager = metadataManager
     recordingTrialCardView.removeFromSuperview()
     recordedTrialCardView.frame = wrapperView.bounds
     recordedTrialCardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     wrapperView.addSubview(recordedTrialCardView)
-    recordedTrialCardView.configure(withTrial: trial, showMenuButton: showMenuButton,
-                                    displayState: displayState)
+    recordedTrialCardView.configure(withTrial: trial, experimentDisplay: experimentDisplay)
     recordedTrialCardView.experimentCardHeaderView.menuButton.addTarget(
         self,
         action: #selector(menuButtonPressed(sender:)),
         for: .touchUpInside)
+    pictureCardViews.forEach { $0.experimentDisplay = experimentDisplay }
   }
 
   /// Displays the images for picture notes in a trial card cell. Called when a cell is about to be

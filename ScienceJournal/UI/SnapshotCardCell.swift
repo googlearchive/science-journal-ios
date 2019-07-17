@@ -104,7 +104,7 @@ class SnapshotCardCell: FrameLayoutMaterialCardCell {
                        showHeader shouldShowHeader: Bool,
                        showInlineTimestamp shouldShowInlineTimestamp: Bool,
                        showCaptionButton shouldShowCaptionButton: Bool,
-                       showMenuButton shouldShowMenuButton: Bool = true) {
+                       experimentDisplay: ExperimentDisplay = .normal) {
     self.snapshotNote = snapshotNote
 
     // Remove any snapshot views that are not needed.
@@ -147,7 +147,7 @@ class SnapshotCardCell: FrameLayoutMaterialCardCell {
       captionView.isHidden = true
     }
 
-    headerView.showMenuButton = shouldShowMenuButton
+    headerView.showMenuButton = experimentDisplay.showMenuButton
 
     setNeedsLayout()
   }

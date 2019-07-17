@@ -62,7 +62,7 @@ class TextNoteCardCell: AutoLayoutMaterialCardCell {
   func setTextNote(_ textNote: DisplayTextNote,
                    showHeader shouldShowHeader: Bool,
                    showInlineTimestamp shouldShowInlineTimestamp: Bool,
-                   showMenuButton shouldShowMenuButton: Bool = true) {
+                   experimentDisplay: ExperimentDisplay = .normal) {
     // Remove the previous text note view.
     let textSubviews = textNoteWrapperView.subviews
     for subview in textSubviews {
@@ -82,7 +82,7 @@ class TextNoteCardCell: AutoLayoutMaterialCardCell {
     headerView.headerTimestampLabel.text = textNote.timestamp.string
     headerView.accessibilityLabel = headerView.headerTimestampLabel.text
     headerView.isTimestampRelative = textNote.timestamp.isRelative
-    headerView.showMenuButton = shouldShowMenuButton
+    headerView.showMenuButton = experimentDisplay.showMenuButton
 
     // Set the order of elements to be the wrapping view first, then the header.
     accessibilityElements = [accessibilityWrappingView, headerView, textNoteView]

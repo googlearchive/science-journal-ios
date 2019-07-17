@@ -130,7 +130,7 @@ class TriggerCardCell: FrameLayoutMaterialCardCell {
                       showHeader shouldShowHeader: Bool,
                       showInlineTimestamp shouldShowInlineTimestamp: Bool,
                       showCaptionButton shouldShowCaptionButton: Bool,
-                      showMenuButton shouldShowMenuButton: Bool = true) {
+                      experimentDisplay: ExperimentDisplay = .normal) {
     self.triggerNote = triggerNote
 
     // Trigger view.
@@ -155,7 +155,7 @@ class TriggerCardCell: FrameLayoutMaterialCardCell {
       captionView.isHidden = true
     }
 
-    headerView.showMenuButton = shouldShowMenuButton
+    headerView.showMenuButton = experimentDisplay.showMenuButton
 
     setNeedsLayout()
   }

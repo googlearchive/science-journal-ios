@@ -54,7 +54,8 @@ class PictureCardView: ExperimentCardView {
         return
       }
 
-      imageView.contentMode = .scaleAspectFill
+      imageView.contentMode = experimentDisplay.pictureContentMode
+      imageView.backgroundColor = experimentDisplay.pictureBackgroundColor
       imageView.image = image
     }
   }
@@ -75,6 +76,8 @@ class PictureCardView: ExperimentCardView {
       updateTimestampHidden()
     }
   }
+
+  var experimentDisplay: ExperimentDisplay = .normal
 
   /// The picture style.
   let style: PictureStyle
@@ -115,7 +118,7 @@ class PictureCardView: ExperimentCardView {
   private func configureView() {
     // Image view, which fills the full width and height of this view, and clips to bounds.
     addSubview(imageView)
-    imageView.backgroundColor = UIColor(red:  0.910, green: 0.914, blue: 0.929, alpha: 1)
+    imageView.backgroundColor = experimentDisplay.pictureBackgroundColor
     imageView.clipsToBounds = true
     imageView.translatesAutoresizingMaskIntoConstraints = false
     if #available(iOS 11.0, *) {

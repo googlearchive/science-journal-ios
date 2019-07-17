@@ -67,9 +67,9 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     }
   }
 
-  var displayState: ExperimentCoordinatorViewController.DisplayState = .normal {
+  var experimentDisplay: ExperimentDisplay = .normal {
     didSet {
-      collectionView.backgroundColor = displayState.backgroundColor
+      collectionView.backgroundColor = experimentDisplay.backgroundColor
     }
   }
 
@@ -160,7 +160,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     collectionView.alwaysBounceVertical = true
     collectionView.dataSource = self
     collectionView.delegate = self
-    collectionView.backgroundColor = displayState.backgroundColor
+    collectionView.backgroundColor = experimentDisplay.backgroundColor
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(collectionView)
     collectionView.pinToEdgesOfView(view)
@@ -297,8 +297,9 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                                                        snapshotNote: displaySnapshotNote,
                                                        showingHeader: showHeader)
       case .trial(let displayTrial):
-        calculatedCellHeight = TrialCardCell.height(inWidth: width, trial: displayTrial) +
-            (displayState.chartViewHeightPadding * CGFloat(displayTrial.sensors.count))
+        calculatedCellHeight = TrialCardCell.height(inWidth: width,
+                                                    trial: displayTrial,
+                                                    experimentDisplay: experimentDisplay)
       case .pictureNote(let displayPictureNote):
         let pictureStyle: PictureStyle = isRecordingTrial ? .small : .large
         calculatedCellHeight = PictureCardCell.height(inWidth: width,
@@ -328,8 +329,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
       let showHeader = experimentDataSource.isExperimentDataSection(indexPath.section)
       let isRecordingTrial = experimentDataSource.isRecordingTrialSection(indexPath.section)
       let displayItem = experimentDataSource.item(inSection: section, atIndex: indexPath.item)
-      let showCaptionButton = displayState.showCaptionButton(for: experimentInteractionOptions)
-      let showMenuButton = displayState.showMenuButton
+      let showCaptionButton = experimentDisplay.showCaptionButton(for: experimentInteractionOptions)
 
       let cell: UICollectionViewCell
       switch displayItem?.itemType {
@@ -340,7 +340,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
           cell.setTextNote(textNote,
                            showHeader: showHeader,
                            showInlineTimestamp: isRecordingTrial,
-                           showMenuButton: showMenuButton)
+                           experimentDisplay: experimentDisplay)
           cell.delegate = self
         }
       case .snapshotNote(let snapshotNote)?:
@@ -351,7 +351,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                                showHeader: showHeader,
                                showInlineTimestamp: isRecordingTrial,
                                showCaptionButton: showCaptionButton,
-                               showMenuButton: showMenuButton)
+                               experimentDisplay: experimentDisplay)
           cell.delegate = self
         }
       case .trial(let trial)?:
@@ -366,8 +366,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
           } else {
             cell.configureCellWithTrial(trial,
                                         metadataManager: metadataManager,
-                                        showMenuButton: showMenuButton,
-                                        displayState: displayState)
+                                        experimentDisplay: experimentDisplay)
           }
           cell.delegate = self
         }
@@ -382,7 +381,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                               showHeader: showHeader,
                               showInlineTimestamp: isRecordingTrial,
                               showCaptionButton: showCaptionButton,
-                              showMenuButton: showMenuButton)
+                              experimentDisplay: experimentDisplay)
           cell.delegate = self
         }
       case .triggerNote(let displayTriggerNote)?:
@@ -393,7 +392,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                               showHeader: showHeader,
                               showInlineTimestamp: isRecordingTrial,
                               showCaptionButton: showCaptionButton,
-                              showMenuButton: showMenuButton)
+                              experimentDisplay: experimentDisplay)
           cell.delegate = self
         }
       case .none:

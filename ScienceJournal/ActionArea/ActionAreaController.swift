@@ -51,6 +51,49 @@ final class ActionAreaController: UIViewController {
 
   typealias ToggleState = (ActionAreaBarItem, [ActionAreaBarItem])
 
+  private enum Layout {
+    case portrait
+    case landscape
+  }
+
+  private struct LayoutConstraints {
+    let bar: [Constraint]
+    let hidden: Constraint
+    let visible: Constraint
+    let insets: UIEdgeInsets
+
+    func enable(showBar: Bool) {
+      bar.forEach { $0.activate() }
+      if showBar {
+        show()
+      } else {
+        hide()
+      }
+    }
+
+    func disable() {
+      bar.forEach { $0.deactivate() }
+      hidden.deactivate()
+      visible.deactivate()
+    }
+
+    func hide() {
+      hidden.activate()
+      visible.deactivate()
+    }
+
+    func show() {
+      hidden.deactivate()
+      visible.activate()
+    }
+  }
+
+  private struct Metrics {
+    static let defaultAnimationDuration: TimeInterval = 0.4
+    static let buttonBarHeight: CGFloat = 88
+    static let landscapeBarTopInset: CGFloat = ViewConstants.toolbarHeight
+  }
+
   let navController: UINavigationController = {
     let nc = UINavigationController()
     nc.isNavigationBarHidden = true
@@ -71,9 +114,6 @@ final class ActionAreaController: UIViewController {
     return buttonBar
   }()
 
-  private var buttonBarTopEqualToSuperviewBottomConstraint: Constraint?
-  private var buttonBarBottomEqualToSuperviewBottomConstraint: Constraint?
-  private let defaultAnimationDuration: TimeInterval = 0.4
   private var viewControllerBarItems: [UIViewController: BarItemMode] = [:]
 
   private var state: State = .normal {
@@ -103,6 +143,17 @@ final class ActionAreaController: UIViewController {
     }
   }
 
+  private var currentLayout: Layout = .portrait {
+    didSet {
+      layoutConstraints[oldValue]!.disable()
+      currentConstraints.enable(showBar: isButtonBarVisible)
+      updateAdditionalSafeAreaInsets(isButtonBarVisible: isButtonBarVisible)
+    }
+  }
+
+  private var layoutConstraints: [Layout: LayoutConstraints] = [:]
+  private var currentConstraints: LayoutConstraints { return layoutConstraints[currentLayout]! }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -125,37 +176,74 @@ final class ActionAreaController: UIViewController {
     detailNavController.didMove(toParent: self)
 
     view.addSubview(buttonBar)
-    buttonBar.snp.makeConstraints { (make) in
-      make.leading.trailing.equalToSuperview()
-      make.height.equalTo(88)
+    layoutConstraints[.portrait] = preparePortraitLayout(buttonBar: buttonBar, view: view)
+    layoutConstraints[.landscape] = prepareLandscapeLayout(buttonBar: buttonBar, view: view)
 
-      buttonBarTopEqualToSuperviewBottomConstraint = make.top.equalTo(view.snp.bottom).constraint
-    }
+    updateCurrentLayout(for: view.bounds.size)
+  }
 
+  private func preparePortraitLayout(buttonBar: MDCButtonBar, view: UIView) -> LayoutConstraints {
+    var layout: LayoutConstraints!
     buttonBar.snp.prepareConstraints { (make) in
-      buttonBarBottomEqualToSuperviewBottomConstraint =
-        make.bottom.equalTo(view.snp.bottom).constraint
+      var bar: [Constraint] = []
+      bar.append(make.leading.trailing.equalTo(view).constraint)
+      bar.append(make.height.equalTo(Metrics.buttonBarHeight).constraint)
+
+      let hidden = make.top.equalTo(view.snp.bottom).constraint
+      let visible = make.bottom.equalTo(view).constraint
+
+      let insets = UIEdgeInsets(top: 0, left: 0, bottom: Metrics.buttonBarHeight, right: 0)
+
+      layout = LayoutConstraints(bar: bar, hidden: hidden, visible: visible, insets: insets)
     }
+    return layout
+  }
+
+  private func prepareLandscapeLayout(buttonBar: MDCButtonBar, view: UIView) -> LayoutConstraints {
+    var layout: LayoutConstraints!
+    buttonBar.snp.prepareConstraints { (make) in
+      var bar: [Constraint] = []
+      bar.append(make.top.equalTo(view).offset(Metrics.landscapeBarTopInset).constraint)
+      bar.append(make.bottom.equalTo(view).constraint)
+      bar.append(make.width.equalTo(Metrics.buttonBarHeight).constraint)
+
+      let hidden = make.leading.equalTo(view.snp.trailing).constraint
+      let visible = make.trailing.equalTo(view).constraint
+
+      let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: Metrics.buttonBarHeight)
+
+      layout = LayoutConstraints(bar: bar, hidden: hidden, visible: visible, insets: insets)
+    }
+    return layout
+  }
+
+  private func updateCurrentLayout(for size: CGSize) {
+    currentLayout = size.isWiderThanTall ? .landscape : .portrait
+  }
+
+  override func viewWillTransition(to size: CGSize,
+                                   with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+
+    updateCurrentLayout(for: size)
   }
 
   private var isButtonBarVisible: Bool = false {
     willSet {
       // TODO: Pull this out and coordinate transition animations
       func animate() {
-        UIView.animate(withDuration: defaultAnimationDuration) {
+        UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
           self.view.layoutIfNeeded()
         }
       }
 
       switch (isButtonBarVisible, newValue) {
       case (false, true):
-        buttonBarTopEqualToSuperviewBottomConstraint?.deactivate()
-        buttonBarBottomEqualToSuperviewBottomConstraint?.activate()
+        currentConstraints.show()
         updateAdditionalSafeAreaInsets(isButtonBarVisible: newValue)
         animate()
       case (true, false):
-        buttonBarTopEqualToSuperviewBottomConstraint?.activate()
-        buttonBarBottomEqualToSuperviewBottomConstraint?.deactivate()
+        currentConstraints.hide()
         updateAdditionalSafeAreaInsets(isButtonBarVisible: newValue)
         animate()
       default:
@@ -166,9 +254,8 @@ final class ActionAreaController: UIViewController {
 
   private func updateAdditionalSafeAreaInsets(isButtonBarVisible: Bool) {
     if isButtonBarVisible {
-      let insets = UIEdgeInsets(top: 0, left: 0, bottom: buttonBar.bounds.height, right: 0)
-      navController.additionalSafeAreaInsets = insets
-      detailNavController.additionalSafeAreaInsets = insets
+      navController.additionalSafeAreaInsets = currentConstraints.insets
+      detailNavController.additionalSafeAreaInsets = currentConstraints.insets
     } else {
       navController.additionalSafeAreaInsets = .zero
       detailNavController.additionalSafeAreaInsets = .zero
@@ -246,7 +333,7 @@ final class ActionAreaController: UIViewController {
     detailNavController.view.isHidden = false
 
     updateActionAreaBar(for: detailViewController)
-    UIView.animate(withDuration: defaultAnimationDuration) {
+    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
       self.detailNavController.view.transform = .identity
     }
   }
@@ -271,7 +358,7 @@ final class ActionAreaController: UIViewController {
     detailNavController.view.isHidden = false
 
     updateActionAreaBar(for: detailViewController)
-    UIView.animate(withDuration: defaultAnimationDuration) {
+    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
       self.detailNavController.view.transform = .identity
     }
   }
@@ -286,14 +373,14 @@ final class ActionAreaController: UIViewController {
       viewControllerBarItems.removeValue(forKey: detailViewController)
 
       updateActionAreaBar(for: navController.topViewController)
-      UIView.animate(withDuration: defaultAnimationDuration, animations: {
+      UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
         self.positionBelowScreen(self.detailNavController)
       }) { (_) in
         self.detailNavController.setViewControllers([], animated: false)
         self.detailNavController.view.isHidden = true
       }
     case .modal:
-      UIView.animate(withDuration: defaultAnimationDuration, animations: {
+      UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
         self.positionBelowScreen(self.detailNavController)
       }) { (_) in
         self.detailNavController.view.isHidden = true
@@ -315,7 +402,7 @@ final class ActionAreaController: UIViewController {
     positionBelowScreen(detailNavController)
     detailNavController.view.isHidden = false
 
-    UIView.animate(withDuration: defaultAnimationDuration) {
+    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
       self.detailNavController.view.transform = .identity
     }
   }

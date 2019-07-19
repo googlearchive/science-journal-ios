@@ -24,7 +24,6 @@ final class PDFExportOperation: GSJOperation {
   }
 
   private enum Metrics {
-    static let snapshotCaptureWidth: CGFloat = 500
     static let snapshotCaptureScale: CGFloat = 2
     static let headerHeight: CGFloat = 200
     static let padding: CGFloat = 16

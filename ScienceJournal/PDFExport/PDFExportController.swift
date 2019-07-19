@@ -38,6 +38,11 @@ final class PDFExportController: UIViewController {
     case cancel
   }
 
+  private enum Metrics {
+    static let captureWidth: CGFloat = 500
+    static let progressUpdateInterval: TimeInterval = 0.1
+  }
+
   typealias ContentViewController = UIViewController & PDFExportable
   typealias CompletionHandler = (CompletionState) -> Void
 
@@ -80,20 +85,6 @@ final class PDFExportController: UIViewController {
     return .lightContent
   }
 
-  override func viewWillTransition(to size: CGSize,
-                                   with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)
-    // TODO: Update values here if needed, once overlay is in place
-    let frame = contentViewController.view.frame
-    if size.isWiderThanTall {
-      contentViewController.view.frame =
-        frame.applying(CGAffineTransform(translationX: 100, y: 0))
-    } else {
-      contentViewController.view.frame =
-        frame.applying(CGAffineTransform(translationX: -100, y: 0))
-    }
-  }
-
   /// Start the PDF export. Call after controller has been presented.
   func startPDFExport(headerInfo: HeaderInfo) {
     let pdfExportOperation = PDFExportOperation(contentViewController: contentViewController,
@@ -112,7 +103,9 @@ final class PDFExportController: UIViewController {
     view.addSubview(contentViewController.view)
     contentViewController.view.translatesAutoresizingMaskIntoConstraints = true
     contentViewController.view.autoresizingMask = []
-    contentViewController.view.frame = view.frame
+    var frameForCapturing = view.frame
+    frameForCapturing.size.width = Metrics.captureWidth
+    contentViewController.view.frame = frameForCapturing
   }
 
   private func setupOverlayViewController() {
@@ -160,7 +153,7 @@ final class PDFExportController: UIViewController {
   private func operationStartHandler(operation: GSJOperation) {
     DispatchQueue.main.async {
       self.overlayViewController.progressView.indicatorMode = .determinate
-      self.progressTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
+      self.progressTimer = Timer.scheduledTimer(withTimeInterval: Metrics.progressUpdateInterval,
                                                 repeats: true,
                                                 block: { (_) in
         guard let pdfExportOperation = self.pdfExportOperation else { return }

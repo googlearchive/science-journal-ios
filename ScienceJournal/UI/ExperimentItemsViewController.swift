@@ -79,6 +79,9 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
 
   /// Returns the insets for experiment cells.
   var cellInsets: UIEdgeInsets {
+    if experimentDisplay == .pdfExport {
+      return MaterialCardCell.cardInsets
+    }
     var insets: UIEdgeInsets {
       switch displayType {
       case .compact, .compactWide:

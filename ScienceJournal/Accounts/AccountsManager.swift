@@ -118,6 +118,9 @@ public protocol AuthAccount {
   /// The account profile image.
   var profileImage: UIImage? { get }
 
+  /// Does this account type have sharing restrictions?
+  var isShareRestricted: Bool { get set }
+
   /// The authorization for the account.
   var authorization: GTMFetcherAuthorizationProtocol? { get set }
 

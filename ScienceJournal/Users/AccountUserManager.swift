@@ -30,7 +30,8 @@ class AccountUserManager: UserManager {
   let documentManager: DocumentManager
 
   var exportType: UserExportType {
-    return .share
+    // If an account has sharing restrictions, it can only save to files. Otherwise, full share.
+    return account.isShareRestricted ? .saveToFiles : .share
   }
 
   var isDriveSyncEnabled: Bool {

@@ -69,8 +69,21 @@ class AccountUserManagerTest: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: dataManager.storeURL.path))
   }
 
-  func testExportType() {
-    XCTAssertEqual(accountUserManager.exportType, .share)
+  func testExportTypeRestricted() {
+    // By default, accounts are set to restricted.
+    XCTAssertEqual(accountUserManager.exportType, .saveToFiles)
+  }
+
+  func testExportTypeUnrestricted() {
+    let fileSystemLayout = FileSystemLayout(baseURL: createUniqueTestDirectoryURL())
+    let accountUserManagerUnRestricted =
+        AccountUserManager(fileSystemLayout: fileSystemLayout,
+                           account: MockAuthAccount(isShareRestricted: false),
+                           driveConstructor: DriveConstructorDisabled(),
+                           networkAvailability: SettableNetworkAvailability(),
+                           sensorController: MockSensorController(),
+                           analyticsReporter: AnalyticsReporterOpen())
+    XCTAssertEqual(accountUserManagerUnRestricted.exportType, .share)
   }
 
   func testIsDriveSyncEnabled() {

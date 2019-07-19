@@ -25,16 +25,19 @@ class MockAuthAccount: AuthAccount {
   var email: String
   var displayName: String
   var profileImage: UIImage?
+  var isShareRestricted: Bool = true
   var authorization: GTMFetcherAuthorizationProtocol? = MockAuthorization()
 
   init(ID: String = "MockAuthAccountID",
        email: String = "",
        displayName: String = "",
-       profileImage: UIImage? = nil) {
+       profileImage: UIImage? = nil,
+       isShareRestricted: Bool = true) {
     self.ID = ID
     self.email = email
     self.displayName = displayName
     self.profileImage = profileImage
+    self.isShareRestricted = isShareRestricted
   }
 }
 

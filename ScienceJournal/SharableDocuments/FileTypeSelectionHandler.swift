@@ -64,10 +64,12 @@ class FileTypeSelectionHandler: NSObject {
       }
     }
 
-    let pdfAction = MDCActionSheetAction(title: pdfTitle,
-                                         image: nil) { _ in completion(.pdf) }
-    let sjAction = MDCActionSheetAction(title: sjTitle,
-                                        image: nil) { _ in completion(.sj) }
+    let pdfAction =
+      MDCActionSheetAction(title: pdfTitle,
+                           image: UIImage(named: "ic_drive_pdf")) { _ in completion(.pdf) }
+    let sjAction =
+      MDCActionSheetAction(title: sjTitle,
+                           image: UIImage(named: "ic_sj_file")) { _ in completion(.sj) }
 
     let actionSheet = MDCActionSheetController()
     actionSheet.addAction(pdfAction)

@@ -169,7 +169,7 @@ final class PDFExportOperation: GSJOperation {
 
     let imageDimension = ceil(rect.size.height - Metrics.padding * 2)
     if let thumbnail = headerThumbnail(for: pdfHeaderInfo.image?
-      .sized(to: CGSize(width: imageDimension, height: imageDimension))) {
+      .sizedWithAspect(to: CGSize(width: imageDimension, height: imageDimension))) {
 
       if rightToLeft {
         xOffset -= imageDimension

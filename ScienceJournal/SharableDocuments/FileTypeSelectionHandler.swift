@@ -68,15 +68,10 @@ class FileTypeSelectionHandler: NSObject {
                                          image: nil) { _ in completion(.pdf) }
     let sjAction = MDCActionSheetAction(title: sjTitle,
                                         image: nil) { _ in completion(.sj) }
-    let cancelAction = MDCActionSheetAction(title: String.actionCancel,
-                                            image: nil) { _ in
-                                              viewController.dismiss(animated: true)
-    }
 
     let actionSheet = MDCActionSheetController()
     actionSheet.addAction(pdfAction)
     actionSheet.addAction(sjAction)
-    actionSheet.addAction(cancelAction)
     viewController.present(actionSheet, animated: true)
     #endif
   }

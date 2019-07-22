@@ -168,6 +168,19 @@ open class SensorDataManager {
                           isBlocking: Bool,
                           completion: (() -> Void)? = nil) {
     let remove = {
+      // This protects against test failures that occur when the store is removed
+      // during teardown before an operation initiated during a test has reached this
+      // point. In the real system, the store is only removed before deleting all user
+      // data, so this should never happen in real usage, and if it did, the delete
+      // here would be redundant because the store is already gone. Ideally we would
+      // wait for async operations to complete in tests themselves, but not all paths
+      // to this point start with a completion block, and several of them coordinate
+      // multiple, conditional persistence operations.
+      guard !self.persistentStoreCoordinator.persistentStores.isEmpty else {
+        completion?()
+        return
+      }
+
       let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: SensorData.entityName)
       fetchRequest.predicate = NSPredicate(format: "trialID = %@", trialID)
       let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)

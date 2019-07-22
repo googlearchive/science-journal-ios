@@ -43,7 +43,6 @@ private extension PDFExportOverlayViewController {
 
   struct Metrics {
     static let stackViewSpacing: CGFloat = 10
-    static let progressViewColor = UIColor.appBarDefaultBackgroundColor
     static let titleLabelFont = MDCTypography.titleFont()
   }
 
@@ -58,7 +57,6 @@ private extension PDFExportOverlayViewController {
     titleLabel.text = String.exportPdfModalTitle
 
     progressView.isHidden = false
-    progressView.spinner.cycleColors = [Metrics.progressViewColor]
     progressView.indicatorMode = .indeterminate
     progressView.startAnimating()
 

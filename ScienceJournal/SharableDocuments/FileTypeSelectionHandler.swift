@@ -15,13 +15,7 @@
  */
 
 import UIKit
-
-// This import and the code below are wrapped in the FEATURE_PDF_EXPORT flag as a workaround for
-// ActionSheet import being broken in MDC. These should be removed once the fix for that is
-// released and our pods updated.
-#if FEATURE_PDF_EXPORT
 import third_party_objective_c_material_components_ios_components_ActionSheet_ActionSheet
-#endif
 
 /// Handles file type selection in the process of exporting documents.
 class FileTypeSelectionHandler: NSObject {
@@ -44,8 +38,6 @@ class FileTypeSelectionHandler: NSObject {
   func showFileTypeSelection(from viewController: UIViewController,
                              exportType: UserExportType,
                              completion: @escaping FileTypeSelectionCompletion) {
-
-    #if FEATURE_PDF_EXPORT
     var pdfTitle: String {
       switch exportType {
       case .saveToFiles:
@@ -75,7 +67,6 @@ class FileTypeSelectionHandler: NSObject {
     actionSheet.addAction(pdfAction)
     actionSheet.addAction(sjAction)
     viewController.present(actionSheet, animated: true)
-    #endif
   }
 
 }

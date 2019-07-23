@@ -62,7 +62,6 @@ final class ExportCoordinator {
                                          from presentingViewController: UIViewController,
                                          documentManager: DocumentManager,
                                          sourceView: UIView) {
-    #if FEATURE_PDF_EXPORT
     fileTypeSelectionHandler.showFileTypeSelection(from: presentingViewController,
                                                    exportType: .saveToFiles) { (fileTypeResult) in
       switch fileTypeResult {
@@ -76,18 +75,12 @@ final class ExportCoordinator {
                              documentManager: documentManager)
       }
     }
-    #else
-    showSaveToFiles(for: experiment,
-                    from: presentingViewController,
-                    documentManager: documentManager)
-    #endif
   }
 
   private func presentFlowForShare(for experiment: Experiment,
                                    from presentingViewController: UIViewController,
                                    documentManager: DocumentManager,
                                    sourceView: UIView) {
-    #if FEATURE_PDF_EXPORT
     fileTypeSelectionHandler.showFileTypeSelection(from: presentingViewController,
                                                    exportType: .share) { (fileTypeResult) in
       switch fileTypeResult {
@@ -102,12 +95,6 @@ final class ExportCoordinator {
                                       sourceView: sourceView)
       }
     }
-    #else
-    showExportExperimentFlow(for: experiment,
-                             from: presentingViewController,
-                             documentManager: documentManager,
-                             sourceView: sourceView)
-    #endif
   }
 
   private func showSaveToFiles(for experiment: Experiment,

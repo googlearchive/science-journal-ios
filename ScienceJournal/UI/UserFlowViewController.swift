@@ -776,7 +776,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         image: self.metadataManager.imageForExperiment(experiment)
       )
 
-      container.startPDFExport(headerInfo: headerInfo)
+      let documentFilename = experiment.titleOrDefault.validFilename(withExtension: "pdf")
+      let pdfURL: URL = FileManager.default.temporaryDirectory
+        .appendingPathComponent(documentFilename)
+      container.exportPDF(with: headerInfo, to: pdfURL)
     }
   }
 

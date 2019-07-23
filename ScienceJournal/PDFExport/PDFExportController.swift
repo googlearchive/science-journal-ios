@@ -54,7 +54,7 @@ final class PDFExportController: UIViewController {
   private var pdfExportOperation: PDFExportOperation?
 
   /// The URL the PDF will be written to.
-  private let pdfURL: URL = FileManager.default.temporaryDirectory
+  private var pdfURL = FileManager.default.temporaryDirectory
     .appendingPathComponent("Experiment.pdf")
   private let contentViewController: ContentViewController
   private let operationQueue = GSJOperationQueue()
@@ -85,8 +85,12 @@ final class PDFExportController: UIViewController {
     return .lightContent
   }
 
-  /// Start the PDF export. Call after controller has been presented.
-  func startPDFExport(headerInfo: HeaderInfo) {
+  /// Start the PDF export. Call after controller has been presented. If no destinationURL is
+  /// provided, a suitable default will be used and returned in the completion handler.
+  func exportPDF(with headerInfo: HeaderInfo, to destinationURL: URL? = nil) {
+    if let destinationURL = destinationURL {
+      pdfURL = destinationURL
+    }
     let pdfExportOperation = PDFExportOperation(contentViewController: contentViewController,
                                                 pdfHeaderInfo: headerInfo,
                                                 destinationURL: pdfURL)

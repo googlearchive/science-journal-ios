@@ -27,14 +27,20 @@ protocol ExportCoordinatorDelegate: class {
                          completionHandler: @escaping PDFExportController.CompletionHandler)
 }
 
-// A coordinator to manage and centralize UI flows for exporting an experiment into SJ or PDF docs.
+/// A coordinator to manage and centralize UI flows for exporting an experiment into SJ or PDF docs.
 final class ExportCoordinator {
 
+  /// The export type dictates the flows managed by this coordinator.
   let exportType: UserExportType
+  /// A delegate that is responsible for initiating the PDF export if the user picks that option.
   weak var delegate: ExportCoordinatorDelegate?
+  /// Remove the PDF file after the export flow has completed. Defaults to `true`.
+  /// SJ files are currently managed by the DocumentManager, so this doesn't affect them.
+  var removePDFFileAfterExport = true
 
   private let saveToFilesHandler = SaveToFilesHandler()
   private let fileTypeSelectionHandler = FileTypeSelectionHandler()
+  private let operationQueue = GSJOperationQueue()
 
   init(exportType: UserExportType) {
     self.exportType = exportType
@@ -187,17 +193,27 @@ final class ExportCoordinator {
         case .cancelled:
           break
         }
+
+        self.removePDFFileIfRequested(url: pdfURL)
       }
     case .share:
       let activityVC = UIActivityViewController(activityItems: [pdfURL],
                                                 applicationActivities: nil)
-
+      activityVC.completionWithItemsHandler = { (_, _, _, _) in
+        self.removePDFFileIfRequested(url: pdfURL)
+      }
       if let presentationController = activityVC.popoverPresentationController {
         // Configure as a popover on iPad if necessary.
         presentationController.sourceView = sourceView
         presentationController.sourceRect = sourceView.bounds
       }
       presentingViewController.present(activityVC, animated: true)
+    }
+  }
+
+  private func removePDFFileIfRequested(url: URL) {
+    if removePDFFileAfterExport {
+      operationQueue.addOperation(RemoveFileOperation(url: url))
     }
   }
 

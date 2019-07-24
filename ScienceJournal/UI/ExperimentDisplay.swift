@@ -126,4 +126,14 @@ enum ExperimentDisplay {
     }
   }
 
+  func updateTimestamp(label: ExperimentTimestampLabel) {
+    switch self {
+    case .normal, .recording:
+      label.isShadowEnabled = true
+      label.textColor = .white
+    case .pdfExport:
+      label.isShadowEnabled = false
+      label.textColor = MDCPalette.grey.tint500
+    }
+  }
 }

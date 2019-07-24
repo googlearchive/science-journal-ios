@@ -57,6 +57,7 @@ class PictureCardView: ExperimentCardView {
       imageView.contentMode = experimentDisplay.pictureContentMode
       imageView.backgroundColor = experimentDisplay.pictureBackgroundColor
       imageView.image = image
+      experimentDisplay.updateTimestamp(label: timestampLabel)
     }
   }
 
@@ -126,9 +127,8 @@ class PictureCardView: ExperimentCardView {
     }
     imageView.pinToEdgesOfView(self)
 
-    // Timestamp label. Make it white with a shadow since it's above visual content in this case.
-    timestampLabel.textColor = .white
-    timestampLabel.isShadowEnabled = true
+    // Timestamp label. Update styling based on the current experiment display.
+    experimentDisplay.updateTimestamp(label: timestampLabel)
     addSubview(timestampLabel)
     timestampLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
     timestampLabel.topAnchor.constraint(

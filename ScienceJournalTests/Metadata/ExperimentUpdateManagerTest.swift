@@ -456,13 +456,11 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
   }
 
   func testRemovingUsedCoverImage() {
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-
     XCTAssertNil(experiment.imagePath)
     XCTAssertNil(overview.imagePath)
 
     let imagePath = "assets/note_image.jpg"
-    metadataManager.saveImage(image,
+    metadataManager.saveImage(createImage(),
                               atPicturePath: imagePath,
                               experimentID: experiment.ID)
     let pictureNote = PictureNote()
@@ -479,19 +477,14 @@ class ExperimentUpdateManagerTest: XCTestCase, ExperimentUpdateListener {
     XCTAssertEqual(imagePath, experiment.imagePath)
     XCTAssertEqual(imagePath, overview.imagePath)
 
-    let image2 = UIImage(named: "select_item_button",
-                         in: Bundle.currentBundle,
-                         compatibleWith: nil)!
-    let imageData = image2.jpegData(compressionQuality: 0.8)
-    experimentUpdateManager.setCoverImageData(imageData, metadata: nil)
+    experimentUpdateManager.setCoverImageData(createImageData(), metadata: nil)
 
     XCTAssertTrue(FileManager.default.fileExists(atPath: noteImageURL.path),
                   "Note image still exists")
   }
 
   func testRemovingUnusedCoverImage() {
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    let imageData = image.jpegData(compressionQuality: 0.8)
+    let imageData = createImageData()
 
     XCTAssertNil(experiment.imagePath)
     XCTAssertNil(overview.imagePath)

@@ -53,8 +53,7 @@ class DocumentManagerTest: XCTestCase {
                      message: "Experiment with a picture note but no asset on disk is not ready"
                                 + " for export.")
 
-    let asset = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    metadataManager.saveImage(asset,
+    metadataManager.saveImage(createImage(),
                               atPicturePath: "assets/asset.jpg",
                               experimentID: experiment.ID)
 

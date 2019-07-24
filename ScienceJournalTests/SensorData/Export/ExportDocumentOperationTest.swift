@@ -45,8 +45,7 @@ class ExportDocumentOperationTest: XCTestCase {
 
     XCTAssertEqual(1, metadataManager.experimentOverviews.count)
 
-    let coverImage = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    metadataManager.saveImage(coverImage, atPicturePath: "assets/123_cover_image.jpg",
+    metadataManager.saveImage(createImage(), atPicturePath: "assets/123_cover_image.jpg",
                               experimentID: experiment.ID)
     experiment.imagePath = "assets/123_cover_image.jpg"
 

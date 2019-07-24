@@ -74,15 +74,11 @@ class ExperimentDataDeleterTest: XCTestCase {
   }
 
   func testImageDeleteAndRestore() {
-    // Get an image.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    XCTAssertNotNil(image, "The test requires an image that exists.")
-
     // Get a path.
     let path = metadataManager.relativePicturePath(for: "ExperimentTestID")
 
     // Save the image.
-    metadataManager.saveImage(image, atPicturePath: path, experimentID: "ExperimentTestID")
+    metadataManager.saveImage(createImage(), atPicturePath: path, experimentID: "ExperimentTestID")
     XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
                     "Image at path should not be nil.")
 
@@ -99,15 +95,11 @@ class ExperimentDataDeleterTest: XCTestCase {
   }
 
   func testRemoveAllDeletedAssets() {
-    // Get an image.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    XCTAssertNotNil(image, "The test requires an image that exists.")
-
     // Get a path.
     let path = metadataManager.relativePicturePath(for: "ExperimentTestID")
 
     // Save the image.
-    metadataManager.saveImage(image, atPicturePath: path, experimentID: "ExperimentTestID")
+    metadataManager.saveImage(createImage(), atPicturePath: path, experimentID: "ExperimentTestID")
     XCTAssertNotNil(metadataManager.image(forPicturePath: path, experimentID: "ExperimentTestID"),
                     "Image at path should not be nil.")
 

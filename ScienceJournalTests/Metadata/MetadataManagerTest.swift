@@ -731,7 +731,7 @@ class MetadataManagerTest: XCTestCase {
     metadataManager.saveExperiment(experiment)
 
     // Save actual images.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+    let image = createImage()
     metadataManager.saveImage(image,
                               atPicturePath: "assets/experiment_image.jpg",
                               experimentID: overview.experimentID)
@@ -800,15 +800,12 @@ class MetadataManagerTest: XCTestCase {
   }
 
   func testSavingCoverImageData() {
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    let imageData = image.jpegData(compressionQuality: 0.8)
-
     let (experiment, overview) = metadataManager.createExperiment()
 
     XCTAssertNil(experiment.imagePath)
     XCTAssertNil(overview.imagePath)
 
-    metadataManager.saveCoverImageData(imageData, metadata: nil, forExperiment: experiment)
+    metadataManager.saveCoverImageData(createImageData(), metadata: nil, forExperiment: experiment)
 
     XCTAssertNotNil(experiment.imagePath)
     XCTAssertNotNil(overview.imagePath)
@@ -928,7 +925,7 @@ class MetadataManagerTest: XCTestCase {
                    "The images should not exist on disk.")
 
     // Save one of the experiment's and one of the trial's picture note's images to disk.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+    let image = createImage()
     metadataManager.saveImage(image,
                               atPicturePath: pictureNote1.filePath!,
                               experimentID: experiment.ID)
@@ -1098,7 +1095,7 @@ class MetadataManagerTest: XCTestCase {
                                          platform: 0)
 
     // Simulate a cover image that was copied to ExperimentCoverImage.jpg during export.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
+    let image = createImage()
     metadataManager.saveImage(image, atPicturePath: "assets/123456.jpg",
                               experimentID: experiment.ID)
     metadataManager.saveImage(image, atPicturePath: metadataManager.importExportCoverImagePath,

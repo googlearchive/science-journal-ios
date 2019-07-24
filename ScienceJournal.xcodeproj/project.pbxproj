@@ -11,6 +11,7 @@
 		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
 		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
+		3F264A8722E8B53C00BDD732 /* XCTestCase+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */; };
 		3F2A630022A15EF500A320C6 /* FileSystemLayoutMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */; };
 		3F2A630222A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */; };
 		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
@@ -643,6 +644,7 @@
 		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
+		3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UIImage.swift"; sourceTree = "<group>"; };
 		3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigration.swift; sourceTree = "<group>"; };
 		3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationTest.swift; sourceTree = "<group>"; };
 		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
@@ -1377,6 +1379,7 @@
 				4886F52E209CE13D003892D7 /* TestSensorInterface.swift */,
 				4886F530209CE13E003892D7 /* XCTestCase+MetadataManager.swift */,
 				5CE5219E209CFD1800767C8E /* XCTestCase+SensorDataManager.swift */,
+				3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */,
 				3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */,
 				3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */,
 			);
@@ -3840,6 +3843,7 @@
 				D59CA3D9219F46020082A27B /* Double+ScienceJournal.swift in Sources */,
 				5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */,
 				5CCB62B91F86903800F9BB7D /* CSVWriterTest.swift in Sources */,
+				3F264A8722E8B53C00BDD732 /* XCTestCase+UIImage.swift in Sources */,
 				5CB2CF3D223C2C3600F73F6B /* ExperimentDataDeleterTest.swift in Sources */,
 				8BF9DA9F2268BF370052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournalTest.swift in Sources */,
 				8B35F5081EA935D30032FE15 /* MetadataManagerTest.swift in Sources */,

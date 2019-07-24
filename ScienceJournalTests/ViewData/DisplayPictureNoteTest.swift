@@ -37,8 +37,7 @@ class DisplayPictureNoteTest: XCTestCase {
     XCTAssertFalse(displayPictureNote.imageFileExists, "The image file shouldn't exist.")
 
     // Now actually save an image to the path.
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
-    metadataManager.saveImage(image, atPicturePath: picturePath, experimentID: experimentID)
+    metadataManager.saveImage(createImage(), atPicturePath: picturePath, experimentID: experimentID)
     XCTAssertTrue(displayPictureNote.imageFileExists, "The image file should exist.")
   }
 

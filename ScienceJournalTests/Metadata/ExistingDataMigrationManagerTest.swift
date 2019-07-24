@@ -69,9 +69,8 @@ class ExistingDataMigrationManagerTest: XCTestCase {
     let trial1 = Trial()
     populateRootUserManagerWithSensorData(forTrialID: trial1.ID)
     experiment1.trials.append(trial1)
-    let image = UIImage(named: "record_button", in: Bundle.currentBundle, compatibleWith: nil)!
     rootUserManager.metadataManager.saveImage(
-        image,
+        createImage(),
         atPicturePath: rootUserManager.metadataManager.importExportCoverImagePath,
         experimentID: experimentID1)
     rootUserManager.metadataManager.saveExperiment(experiment1)

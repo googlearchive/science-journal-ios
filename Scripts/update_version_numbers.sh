@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_VERSION_NUMBER="3.2"
+APP_VERSION_NUMBER="3.3"
 
 BASE_PLIST="../ScienceJournal/Info.plist"
 COMBINED_PLIST="../ScienceJournal/Info-Combined.plist"

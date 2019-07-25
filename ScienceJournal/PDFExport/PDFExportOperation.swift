@@ -131,7 +131,15 @@ final class PDFExportOperation: GSJOperation {
                         y: offsetY,
                         width: snapshot.size.width,
                         height: snapshot.size.height)
-      snapshot.draw(in: rect)
+
+      if let snapshotData = snapshot.jpegData(compressionQuality: 0.75),
+         let reducedSnapshot = UIImage(data: snapshotData) {
+        reducedSnapshot.draw(in: rect)
+      } else {
+        // If we failed to reduce the file size, draw the original.
+        snapshot.draw(in: rect)
+      }
+
       offsetY += snapshot.size.height
       renderProgress = CGFloat(renderCount) / CGFloat(snapshotCollection.snapshots.count)
       logProgress()

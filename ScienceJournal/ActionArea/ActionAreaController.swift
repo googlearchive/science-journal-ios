@@ -51,11 +51,6 @@ final class ActionAreaController: UIViewController {
 
   typealias ToggleState = (ActionAreaBarItem, [ActionAreaBarItem])
 
-  private enum Layout {
-    case portrait
-    case landscape
-  }
-
   private struct LayoutConstraints {
     let bar: [Constraint]
     let hidden: Constraint
@@ -91,7 +86,6 @@ final class ActionAreaController: UIViewController {
   private struct Metrics {
     static let defaultAnimationDuration: TimeInterval = 0.4
     static let buttonBarHeight: CGFloat = 88
-    static let landscapeBarTopInset: CGFloat = ViewConstants.toolbarHeight
   }
 
   let navController: UINavigationController = {
@@ -143,16 +137,11 @@ final class ActionAreaController: UIViewController {
     }
   }
 
-  private var currentLayout: Layout = .portrait {
+  private var currentConstraints: LayoutConstraints! { // set in viewDidLoad
     didSet {
-      layoutConstraints[oldValue]!.disable()
-      currentConstraints.enable(showBar: isButtonBarVisible)
-      updateAdditionalSafeAreaInsets(isButtonBarVisible: isButtonBarVisible)
+      currentConstraints.enable(showBar: false)
     }
   }
-
-  private var layoutConstraints: [Layout: LayoutConstraints] = [:]
-  private var currentConstraints: LayoutConstraints { return layoutConstraints[currentLayout]! }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -176,10 +165,8 @@ final class ActionAreaController: UIViewController {
     detailNavController.didMove(toParent: self)
 
     view.addSubview(buttonBar)
-    layoutConstraints[.portrait] = preparePortraitLayout(buttonBar: buttonBar, view: view)
-    layoutConstraints[.landscape] = prepareLandscapeLayout(buttonBar: buttonBar, view: view)
 
-    updateCurrentLayout(for: view.bounds.size)
+    currentConstraints = preparePortraitLayout(buttonBar: buttonBar, view: view)
   }
 
   private func preparePortraitLayout(buttonBar: MDCButtonBar, view: UIView) -> LayoutConstraints {
@@ -197,35 +184,6 @@ final class ActionAreaController: UIViewController {
       layout = LayoutConstraints(bar: bar, hidden: hidden, visible: visible, insets: insets)
     }
     return layout
-  }
-
-  private func prepareLandscapeLayout(buttonBar: MDCButtonBar, view: UIView) -> LayoutConstraints {
-    var layout: LayoutConstraints!
-    buttonBar.snp.prepareConstraints { (make) in
-      var bar: [Constraint] = []
-      bar.append(make.top.equalTo(view).offset(Metrics.landscapeBarTopInset).constraint)
-      bar.append(make.bottom.equalTo(view).constraint)
-      bar.append(make.width.equalTo(Metrics.buttonBarHeight).constraint)
-
-      let hidden = make.leading.equalTo(view.snp.trailing).constraint
-      let visible = make.trailing.equalTo(view).constraint
-
-      let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: Metrics.buttonBarHeight)
-
-      layout = LayoutConstraints(bar: bar, hidden: hidden, visible: visible, insets: insets)
-    }
-    return layout
-  }
-
-  private func updateCurrentLayout(for size: CGSize) {
-    currentLayout = size.isWiderThanTall ? .landscape : .portrait
-  }
-
-  override func viewWillTransition(to size: CGSize,
-                                   with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)
-
-    updateCurrentLayout(for: size)
   }
 
   private var isButtonBarVisible: Bool = false {

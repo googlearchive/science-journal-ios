@@ -36,4 +36,34 @@ class SensorTest: XCTestCase {
     XCTAssertTrue(Sensor.LoadingState.interrupted == Sensor.LoadingState.interrupted)
   }
 
+  func testTitleForSensor() {
+    let testSensor1Name = "Test Sensor 1"
+    let testSensor1Unit = "sin"
+    let testSensor1 = MockSensor(sensorId: "1",
+                                 name: testSensor1Name,
+                                 unitDescription: testSensor1Unit)
+    XCTAssertEqual(testSensor1.title, "\(testSensor1Name) (\(testSensor1Unit))")
+
+    let testSensor2Name = "Another Sensor"
+    let testSensor2 = MockSensor(sensorId: "2", name: testSensor2Name, unitDescription: nil)
+    XCTAssertEqual(testSensor2.title, testSensor2Name)
+  }
+
+  func testTitleForNameWithUnits() {
+    let testSensor1Name = "Test Sensor 1"
+    let testSensor1Unit = "sin"
+    let testSensor1 = MockSensor(sensorId: "1",
+                                 name: testSensor1Name,
+                                 unitDescription: testSensor1Unit)
+    XCTAssertEqual(Sensor.titleForSensorName(testSensor1.name,
+                                             withUnits: testSensor1.unitDescription),
+                   "\(testSensor1Name) (\(testSensor1Unit))")
+
+    let testSensor2Name = "Another Sensor"
+    let testSensor2 = MockSensor(sensorId: "2", name: testSensor2Name, unitDescription: nil)
+    XCTAssertEqual(Sensor.titleForSensorName(testSensor2.name,
+                                             withUnits: testSensor2.unitDescription),
+                   testSensor2Name)
+  }
+
 }

@@ -49,7 +49,8 @@ class ExperimentDataParserTest: XCTestCase {
     sensor1 = Sensor.mock(sensorId: "TestSensorID1",
                           name: "TestSensorName1",
                           textDescription: "Test description 1.",
-                          iconName: "test icon 1")
+                          iconName: "test icon 1",
+                          unitDescription: "sin")
     sensor2 = Sensor.mock(sensorId: "TestSensorID2",
                           name: "TestSensorName2",
                           textDescription: "Test description 2.",
@@ -76,7 +77,7 @@ class ExperimentDataParserTest: XCTestCase {
   func testParsedTrialSensorTitles() {
     let experimentTrialData = experimentDataParser.parseTrial(trial)
     let trialSensors = experimentTrialData.sensors
-    XCTAssertEqual(trialSensors[0].title, sensor1.name,
+    XCTAssertEqual(trialSensors[0].title, "\(sensor1.name) (\(sensor1.unitDescription!))",
                    "The trial sensor title should be the sensor name.")
     XCTAssertEqual(trialSensors[1].title, sensor2.name,
                    "The trial sensor title should be the sensor name.")

@@ -77,6 +77,11 @@ class BasicSensorAppearance {
     }
   }
 
+  /// The UI-friendly name of the sensor, including units.
+  var title: String {
+    return Sensor.titleForSensorName(name, withUnits: units)
+  }
+
   /// A proto representation of the basic sensor appearance.
   var proto: GSJBasicSensorAppearance {
     backingProto.iconPath = iconPath?.proto

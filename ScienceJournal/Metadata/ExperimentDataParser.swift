@@ -93,7 +93,7 @@ class ExperimentDataParser {
                              zoomPresenterTierCount: sensorTrialStats?.zoomPresenterTierCount,
                              zoomLevelBetweenTiers: sensorTrialStats?.zoomLevelBetweenTiers)
 
-      return DisplaySensor(title: sensorAppearance.name,
+      return DisplaySensor(title: sensorAppearance.title,
                            ID: sensorID,
                            stats: stats,
                            pointsAfterDecimal: sensorAppearance.pointsAfterDecimal,

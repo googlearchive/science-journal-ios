@@ -36,6 +36,17 @@ class MockSensor: Sensor {
               sensorTimer: UnifiedSensorTimer())
   }
 
+  convenience init(sensorId: String, name: String, unitDescription: String?) {
+    self.init(sensorId: sensorId,
+              name: name,
+              textDescription: "",
+              iconName: "",
+              animatingIconView: SensorAnimationView(),
+              unitDescription: unitDescription,
+              learnMore: LearnMore(firstParagraph: "", secondParagraph: "", imageName: ""),
+              sensorTimer: UnifiedSensorTimer())
+  }
+
   override func prepareForBackground() {
     didReceivePrepareForBackgroundCall = true
   }

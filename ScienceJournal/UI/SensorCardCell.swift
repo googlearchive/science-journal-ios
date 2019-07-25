@@ -246,7 +246,7 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
                            visualTriggers: [SensorTrigger]) {
     self.sensor = sensor
     self.delegate = delegate
-    headerView.titleLabel.text = titleFromSensor(sensor)
+    headerView.titleLabel.text = sensor.title
     self.colorPalette = colorPalette
     self.chartView = chartView
     currentValueView.animatingIconView = sensor.animatingIconView
@@ -263,7 +263,7 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
   ///   - chartView: The new chart view.
   func updateSensor(_ sensor: Sensor, chartView: ChartView) {
     self.sensor = sensor
-    headerView.titleLabel.text = titleFromSensor(sensor)
+    headerView.titleLabel.text = sensor.title
     self.chartView = chartView
     currentValueView.animatingIconView = sensor.animatingIconView
     updateSensorLoadingState()
@@ -497,15 +497,6 @@ class SensorCardCell: AutoLayoutMaterialCardCell, MDCTabBarDelegate {
     sensorLoadingView.trailingAnchor.constraint(
         equalTo: cellContentView.trailingAnchor).isActive = true
     sensorLoadingView.bottomAnchor.constraint(equalTo: cellContentView.bottomAnchor).isActive = true
-  }
-
-  // Returns a title derived from the sensor name and unit description if it exists.
-  private func titleFromSensor(_ sensor: Sensor) -> String {
-    var titleText = sensor.name
-    if let unitDescription = sensor.unitDescription {
-      titleText += " (\(unitDescription))"
-    }
-    return titleText
   }
 
   // MARK: User Actions

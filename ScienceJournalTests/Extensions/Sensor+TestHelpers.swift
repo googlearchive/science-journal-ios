@@ -27,13 +27,13 @@ extension Sensor {
   ///   - name: The sensor name.
   ///   - textDescription: The text description of the sensor.
   ///   - iconName: The icon name for the sensor.
-  ///   - unitDescription: The description of the sensor measurement unit.
+  ///   - unitDescription: The description of the sensor measurement unit. Optional.
   /// - Returns: The sensor.
   class func mock(sensorId: String,
                   name: String = "",
                   textDescription: String = "",
                   iconName: String = "",
-                  unitDescription: String = "") -> Sensor {
+                  unitDescription: String? = nil) -> Sensor {
     return Sensor(sensorId: sensorId,
                   name: name,
                   textDescription: textDescription,

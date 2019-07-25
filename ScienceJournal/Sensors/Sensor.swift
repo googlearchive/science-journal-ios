@@ -53,6 +53,11 @@ class Sensor: NSObject {
     }
   }
 
+  /// The UI-friendly name of the sensor, including units.
+  var title: String {
+    return Sensor.titleForSensorName(name, withUnits: unitDescription)
+  }
+
   /// Whether or not the sensor should display a loading state. Some sensors have negligible delays
   /// between starting and receiving the first data point so displaying a loading screen is
   /// not necessary.
@@ -97,6 +102,20 @@ class Sensor: NSObject {
     self.sensorTimer = sensorTimer
 
     super.init()
+  }
+
+  /// Returns a title derived from a sensor name and unit description.
+  ///
+  /// - Parameters:
+  ///   - name: The sensor's name.
+  ///   - units: The optional sensor unit description.
+  /// - Returns: A string title suitable for describing a sensor in a UI.
+  public static func titleForSensorName(_ name: String, withUnits units: String?) -> String {
+    var titleText = name
+    if let units = units, units != "" {
+      titleText += " (\(units))"
+    }
+    return titleText
   }
 
   /// Adds a closure to be called with sensor data, for an object, or updates that object's closure.

@@ -768,8 +768,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                         analyticsReporter: analyticsReporter)
     container.completionHandler = completionHandler
 
-    let navController = UINavigationController(rootViewController: container)
-    present(navController, animated: true) {
+    let readyForPDFExport = {
       let headerInfo = PDFExportController.HeaderInfo(
         title: experiment.titleOrDefault,
         subtitle: experiment.notesAndTrialsString,
@@ -781,6 +780,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         .appendingPathComponent(documentFilename)
       container.exportPDF(with: headerInfo, to: pdfURL)
     }
+
+    experimentCoordinatorVC.readyForPDFExport = readyForPDFExport
+
+    let navController = UINavigationController(rootViewController: container)
+    present(navController, animated: true)
   }
 
   /// Shows an experiment. Exposed for testing.

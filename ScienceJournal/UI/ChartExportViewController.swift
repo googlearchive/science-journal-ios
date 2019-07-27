@@ -22,6 +22,8 @@ import third_party_objective_c_material_components_ios_components_Palettes_Palet
 /// for the purposes of rendering a chart for PDF export from view hierarchy.
 class ChartExportViewController: UIViewController, ChartControllerDelegate {
 
+  typealias ChartLoadedBlock = () -> Void
+
   // MARK: - Properties
 
   let chartController: ChartController
@@ -29,6 +31,7 @@ class ChartExportViewController: UIViewController, ChartControllerDelegate {
   private let timeAxisController: TimeAxisController
   private let trialID: String
   private let rightInset: CGFloat = -16
+  private let chartLoaded: ChartLoadedBlock
 
   let colorPalette: MDCPalette?
 
@@ -44,16 +47,19 @@ class ChartExportViewController: UIViewController, ChartControllerDelegate {
   ///   - notes: An array of notes to display on the chart.
   ///   - colorPalette: The color palette for drawing some aspects of the chart.
   ///   - sensorDataManager: The sensor data manager.
+  ///   - chartLoaded: The block to call after the chart managed by this controller is loaded.
   init(trialID: String,
        sensorID: String,
        sensorStats: DisplaySensorStats,
        cropRange: ChartAxis<Int64>? = nil,
        notes: [DisplayNote],
        colorPalette: MDCPalette?,
-       sensorDataManager: SensorDataManager) {
+       sensorDataManager: SensorDataManager,
+       chartLoaded: @escaping ChartLoadedBlock) {
     self.sensorID = sensorID
     self.trialID = trialID
     self.colorPalette = colorPalette
+    self.chartLoaded = chartLoaded
     chartController = ChartController(placementType: .runReview,
                                       colorPalette: colorPalette,
                                       trialID: trialID,
@@ -140,6 +146,7 @@ class ChartExportViewController: UIViewController, ChartControllerDelegate {
     }
     timeAxisController.dataXAxis = chartController.dataXAxis
     timeAxisController.visibleAxisChanged(chartController.visibleXAxis)
+    chartLoaded()
   }
 
   func chartController(_ chartController: ChartController, shouldPinToNow: Bool) {}

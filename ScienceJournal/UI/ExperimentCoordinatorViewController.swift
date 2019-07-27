@@ -153,6 +153,8 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     ObserveViewControllerDelegate, SensorSettingsDelegate, TriggerListDelegate,
     ExperimentItemsViewControllerDelegate, ExperimentUpdateListener, ExperimentStateListener {
 
+  typealias ReadyForPDFExportBlock = () -> Void
+
   // MARK: - Properties
 
   /// The edit bar button. Exposed for testing.
@@ -211,6 +213,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   // A dictionary of chart export view controllers, keyed by sensor ID.
   private var chartExportViewControllers = [String: ChartExportViewController]()
+  private var chartExportViewControllersLoaded = 0
 
   private var statusBarHeight: CGFloat {
     return UIApplication.shared.statusBarFrame.size.height
@@ -238,6 +241,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       }
     }
   }
+
+  /// A block that will be called when this controller's view hierarchy is ready for PDF Export.
+  var readyForPDFExport: ReadyForPDFExportBlock?
 
   // This VC is currently the delegate for these controllers, so we'll create them here
   // as needed until we remove the `DrawerViewController`.
@@ -1355,6 +1361,13 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       // Sort oldest to newest.
       return data1.timestamp.milliseconds < data2.timestamp.milliseconds
     }
+
+    // If there are no trials (and thus charts), we're ready for export, otherwise this ready block
+    // will be called when the charts load asynchronously.
+    if displayTrials.isEmpty {
+      readyForPDFExport?()
+    }
+
     return items
   }
 
@@ -1377,13 +1390,21 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                                         sensorDataManager: sensorDataManager)
       wrapperView = chartController.chartView
     case .pdfExport:
+      let chartLoaded: ChartExportViewController.ChartLoadedBlock = {
+        self.chartExportViewControllersLoaded += 1
+
+        if self.chartExportViewControllersLoaded == self.chartExportViewControllers.count {
+          self.readyForPDFExport?()
+        }
+      }
       let chartExportVC = ChartExportViewController(trialID: trial.ID,
                                                     sensorID: sensor.ID,
                                                     sensorStats: sensor.stats,
                                                     cropRange: trial.cropRange,
                                                     notes: trial.notes,
                                                     colorPalette: sensor.colorPalette,
-                                                    sensorDataManager: sensorDataManager)
+                                                    sensorDataManager: sensorDataManager,
+                                                    chartLoaded: chartLoaded)
       chartController = chartExportVC.chartController
       wrapperView = chartExportVC.view
       chartExportViewControllers[trialSensorKey] = chartExportVC

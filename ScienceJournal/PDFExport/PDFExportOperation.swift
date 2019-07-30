@@ -27,6 +27,7 @@ final class PDFExportOperation: GSJOperation {
     static let snapshotCaptureScale: CGFloat = 2
     static let headerHeight: CGFloat = 200
     static let padding: CGFloat = 16
+    static let thumbnailToTextSpacing: CGFloat = 36
     static let titleFont = UIFont.boldSystemFont(ofSize: 40)
     static let subtitleFont = UIFont.systemFont(ofSize: 35)
   }
@@ -192,9 +193,9 @@ final class PDFExportOperation: GSJOperation {
       context.restoreGState()
 
       if rightToLeft {
-        xOffset -= Metrics.padding
+        xOffset -= Metrics.thumbnailToTextSpacing
       } else {
-        xOffset += imageDimension + Metrics.padding
+        xOffset += imageDimension + Metrics.thumbnailToTextSpacing
       }
     }
 

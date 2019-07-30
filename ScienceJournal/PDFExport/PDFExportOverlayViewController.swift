@@ -35,6 +35,24 @@ final class PDFExportOverlayViewController: MaterialHeaderViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupSubviews()
+    view.accessibilityViewIsModal = true
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if UIAccessibility.isVoiceOverRunning {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        // Delay the announcement until a moment after the view appears to ensure it doesn't
+        // get interrupted by the cancel button's announcement.
+        UIAccessibility.post(notification: UIAccessibility.Notification.announcement,
+                             argument: String.exportPdfModalTitle)
+      }
+    }
+  }
+
+  override func accessibilityPerformEscape() -> Bool {
+    cancelButtonPressed()
+    return true
   }
 
 }

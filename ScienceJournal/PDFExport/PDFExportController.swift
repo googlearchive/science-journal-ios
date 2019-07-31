@@ -69,10 +69,21 @@ final class PDFExportController: UIViewController {
     super.init(nibName: nil, bundle: nil)
 
     overlayViewController.delegate = self
+
+    // If the user backgrounds the app while exporting, cancel the export since this requires
+    // crawling the UI and can be corrupted or broken by backgrounding in some cases.
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(cancelAndReport),
+                                           name: UIApplication.willResignActiveNotification,
+                                           object: nil)
   }
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) is not supported")
+  }
+
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
 
   override public func viewDidLoad() {
@@ -130,11 +141,21 @@ final class PDFExportController: UIViewController {
     }
 
     pdfExportOperation = nil
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-      // Give the UI a moment to update progress to 100%, which _feels_ better.
+
+    func dismissWithCompletion(_ state: CompletionState) {
       self.dismiss(animated: true, completion: {
         self.completionHandler?(state)
       })
+    }
+
+    switch state {
+    case .success:
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        // Give the UI a moment to update progress to 100%, which _feels_ better.
+        dismissWithCompletion(state)
+      }
+    case .cancel, .error:
+      dismissWithCompletion(state)
     }
   }
 
@@ -143,7 +164,7 @@ final class PDFExportController: UIViewController {
     completion(state: .success(pdfURL))
   }
 
-  private func cancelAndReport() {
+  @objc private func cancelAndReport() {
     analyticsReporter.track(.pdfExportCancelled)
     operationQueue.cancelAllOperations()
     completion(state: .cancel)

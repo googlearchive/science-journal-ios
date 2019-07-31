@@ -1166,7 +1166,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   private func dismissViewController() {
     prepareToCloseObserve()
-    actionAreaController?.pop(animated: true)
+    navigationController?.popViewController(animated: true)
   }
 
   // Sets observe's triggers from the experiment.

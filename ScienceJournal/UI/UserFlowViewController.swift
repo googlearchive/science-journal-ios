@@ -47,7 +47,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   weak var settingsVC: SettingsViewController?
 
   private let accountsManager: AccountsManager
-  private let actAreaController = ActionAreaController()
+  private lazy var actAreaController = ActionAreaController()
   private let analyticsReporter: AnalyticsReporter
   private let commonUIComponents: CommonUIComponents
   private let documentManager: DocumentManager
@@ -56,7 +56,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let experimentDataDeleter: ExperimentDataDeleter
   private let feedbackReporter: FeedbackReporter
   private let metadataManager: MetadataManager
-  private var navController: UINavigationController { return actAreaController.navController }
+  private let navController = UINavigationController()
   private let networkAvailability: NetworkAvailability
   private let devicePreferenceManager: DevicePreferenceManager
   private let preferenceManager: PreferenceManager
@@ -172,12 +172,14 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   override open func viewDidLoad() {
     super.viewDidLoad()
 
-    addChild(actAreaController)
-    view.addSubview(actAreaController.view)
-    actAreaController.didMove(toParent: self)
-
-    if !FeatureFlags.isActionAreaEnabled {
-      // This is only needed for drawer behavior
+    if FeatureFlags.isActionAreaEnabled {
+      addChild(actAreaController)
+      view.addSubview(actAreaController.view)
+      actAreaController.didMove(toParent: self)
+    } else {
+      addChild(navController)
+      view.addSubview(navController.view)
+      navController.didMove(toParent: self)
       navController.delegate = self
     }
 
@@ -189,7 +191,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                          analyticsReporter: analyticsReporter,
                                          devicePreferenceManager: devicePreferenceManager,
                                          showWelcomeView: !accountsManager.supportsAccounts)
-      navController.setViewControllers([permissionsVC], animated: false)
+      if FeatureFlags.isActionAreaEnabled {
+        actAreaController.navController.setViewControllers([permissionsVC], animated: false)
+      } else {
+        navController.setViewControllers([permissionsVC], animated: false)
+      }
     } else {
       // Don't need the permissions guide, just show the experiments list.
       showExperimentsList(animated: false)
@@ -271,7 +277,12 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         if let experimentsListVC = self.experimentsListVC {
           // Dismiss the feature highlight if necessary first.
           experimentsListVC.dismissFeatureHighlightIfNecessary()
-          self.actAreaController.pop(to: experimentsListVC, animated: false)
+
+          if FeatureFlags.isActionAreaEnabled {
+            self.actAreaController.pop(to: experimentsListVC, animated: false)
+          } else {
+            self.navController.popToViewController(experimentsListVC, animated: false)
+          }
         }
 
         guard let topViewController = self.navController.topViewController else {
@@ -509,7 +520,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   func experimentViewControllerDidRequestDeleteExperiment(_ experiment: Experiment) {
     experimentStateManager.deleteExperiment(withID: experiment.ID)
     if let experimentsListVC = experimentsListVC {
-      actAreaController.pop(to: experimentsListVC, animated: true)
+      if FeatureFlags.isActionAreaEnabled {
+        actAreaController.pop(to: experimentsListVC, animated: true)
+      } else {
+        navController.popToViewController(experimentsListVC, animated: true)
+      }
     }
   }
 
@@ -817,37 +832,41 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     openExperimentUpdateManager?.addListener(experimentCoordinatorVC)
     experimentStateManager.addListener(experimentCoordinatorVC)
 
-    let sensorItem =
-      ActionAreaBarItem(title: "Sensor", image: UIImage(named: "ic_sensors")) {
-        let materialHeaderContainerViewController =
-          MaterialHeaderContainerViewController(
-            contentViewController: experimentCoordinatorVC.observeViewController
+    if FeatureFlags.isActionAreaEnabled {
+      let sensorItem =
+        ActionAreaBarItem(title: "Sensor", image: UIImage(named: "ic_sensors")) {
+          let materialHeaderContainerViewController =
+            MaterialHeaderContainerViewController(
+              contentViewController: experimentCoordinatorVC.observeViewController
           )
 
-        let addSensorItem = ActionAreaBarItem(title: "Add Sensor",
-                                              image: UIImage(named: "ic_add_circle")) {}
-        let snapshotItem = ActionAreaBarItem(title: "Snapshot",
-                                             image: UIImage(named: "ic_snapshot_action")) {}
-        let recordItem = ActionAreaBarItem(
-          title: "Record",
-          image: UIImage(named: "record_button")
-        ) {
-          experimentCoordinatorVC.observeViewController.recordButtonPressed()
-        }
+          let addSensorItem = ActionAreaBarItem(title: "Add Sensor",
+                                                image: UIImage(named: "ic_add_circle")) {}
+          let snapshotItem = ActionAreaBarItem(title: "Snapshot",
+                                               image: UIImage(named: "ic_snapshot_action")) {}
+          let recordItem = ActionAreaBarItem(
+            title: "Record",
+            image: UIImage(named: "record_button")
+          ) {
+            experimentCoordinatorVC.observeViewController.recordButtonPressed()
+          }
 
-        let stopItem = ActionAreaBarItem(
-          title: "Stop",
-          image: UIImage(named: "stop_button")
-        ) {
-          experimentCoordinatorVC.observeViewController.recordButtonPressed()
-        }
+          let stopItem = ActionAreaBarItem(
+            title: "Stop",
+            image: UIImage(named: "stop_button")
+          ) {
+            experimentCoordinatorVC.observeViewController.recordButtonPressed()
+          }
 
-        self.actAreaController.show(detail: materialHeaderContainerViewController,
-                                    toggle: (recordItem, [addSensorItem, snapshotItem]),
-                                    and: (stopItem, [snapshotItem]))
+          self.actAreaController.show(detail: materialHeaderContainerViewController,
+                                      toggle: (recordItem, [addSensorItem, snapshotItem]),
+                                      and: (stopItem, [snapshotItem]))
       }
 
-    actAreaController.push(experimentCoordinatorVC, animated: true, with: [sensorItem])
+      actAreaController.push(experimentCoordinatorVC, animated: true, with: [sensorItem])
+    } else {
+      navController.pushViewController(experimentCoordinatorVC, animated: true)
+    }
 
     if isExperimentTooNewToEdit(experiment) {
       let alertController = MDCAlertController(title: nil,
@@ -1167,7 +1186,12 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
       return
     }
     experimentCoordinatorVC?.cancelRecordingIfNeeded()
-    actAreaController.pop(to: experimentsListVC, animated: true)
+
+    if FeatureFlags.isActionAreaEnabled {
+      actAreaController.pop(to: experimentsListVC, animated: true)
+    } else {
+      navController.popToViewController(experimentsListVC, animated: true)
+    }
   }
 
 }

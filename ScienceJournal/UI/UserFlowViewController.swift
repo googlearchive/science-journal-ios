@@ -180,6 +180,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       addChild(navController)
       view.addSubview(navController.view)
       navController.didMove(toParent: self)
+      navController.isNavigationBarHidden = true
       navController.delegate = self
     }
 

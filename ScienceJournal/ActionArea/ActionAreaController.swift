@@ -18,7 +18,6 @@ import SnapKit
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_AppBar_AppBar
-import third_party_objective_c_material_components_ios_components_ButtonBar_ButtonBar
 
 final class ActionAreaBarItem: NSObject {
   private(set) var title: String
@@ -39,6 +38,10 @@ final class ActionAreaBarItem: NSObject {
 
 final class ActionAreaController: UIViewController {
 
+  private struct Metrics {
+    static let defaultAnimationDuration: TimeInterval = 0.4
+  }
+
   private enum State {
     case normal
     case modal
@@ -51,43 +54,6 @@ final class ActionAreaController: UIViewController {
 
   typealias ToggleState = (ActionAreaBarItem, [ActionAreaBarItem])
 
-  private struct LayoutConstraints {
-    let bar: [Constraint]
-    let hidden: Constraint
-    let visible: Constraint
-    let insets: UIEdgeInsets
-
-    func enable(showBar: Bool) {
-      bar.forEach { $0.activate() }
-      if showBar {
-        show()
-      } else {
-        hide()
-      }
-    }
-
-    func disable() {
-      bar.forEach { $0.deactivate() }
-      hidden.deactivate()
-      visible.deactivate()
-    }
-
-    func hide() {
-      hidden.activate()
-      visible.deactivate()
-    }
-
-    func show() {
-      hidden.deactivate()
-      visible.activate()
-    }
-  }
-
-  private struct Metrics {
-    static let defaultAnimationDuration: TimeInterval = 0.4
-    static let buttonBarHeight: CGFloat = 88
-  }
-
   let navController: UINavigationController = {
     let nc = UINavigationController()
     nc.isNavigationBarHidden = true
@@ -97,16 +63,12 @@ final class ActionAreaController: UIViewController {
   private let detailNavController: UINavigationController = {
     let nc = UINavigationController()
     nc.isNavigationBarHidden = true
-    nc.view.isHidden = true
     return nc
   }()
 
-  private let buttonBar: MDCButtonBar = {
-    let buttonBar = MDCButtonBar()
-    buttonBar.backgroundColor = .white
-    buttonBar.setButtonsTitleColor(.gray, for: .normal)
-    return buttonBar
-  }()
+  // TODO: Make these non-optional
+  private var buttonBarViewController: ActionAreaButtonBarViewController?
+  private var svController: UISplitViewController?
 
   private var viewControllerBarItems: [UIViewController: BarItemMode] = [:]
 
@@ -124,22 +86,18 @@ final class ActionAreaController: UIViewController {
 
       switch state {
       case .normal:
-        if detailNavController.view.isHidden {
+        if detailNavController.parent == nil {
+          // If there's no `parent`, the detail was dismissed, so we need to clean up.
           viewControllerBarItems.removeValue(forKey: detailViewController)
           detailNavController.setViewControllers([], animated: false)
           updateActionAreaBar(for: navController.topViewController)
         } else {
-          updateActionAreaBar(for: detailNavController.topViewController)
+          // Otherwise just update the actions
+          updateActionAreaBar(for: detailViewController)
         }
       case .modal:
-        updateActionAreaBar(for: detailNavController.topViewController)
+        updateActionAreaBar(for: detailViewController)
       }
-    }
-  }
-
-  private var currentConstraints: LayoutConstraints! { // set in viewDidLoad
-    didSet {
-      currentConstraints.enable(showBar: false)
     }
   }
 
@@ -148,75 +106,29 @@ final class ActionAreaController: UIViewController {
 
     if FeatureFlags.isActionAreaEnabled {
       navController.delegate = self
-    }
 
-    addChild(navController)
-    view.addSubview(navController.view)
-    navController.view.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
-    }
-    navController.didMove(toParent: self)
+      let svController = UISplitViewController()
+      svController.presentsWithGesture = false
+      svController.viewControllers = [navController, detailNavController]
+      svController.delegate = self
+      self.svController = svController
 
-    addChild(detailNavController)
-    view.addSubview(detailNavController.view)
-    detailNavController.view.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
-    }
-    detailNavController.didMove(toParent: self)
-
-    view.addSubview(buttonBar)
-
-    currentConstraints = preparePortraitLayout(buttonBar: buttonBar, view: view)
-  }
-
-  private func preparePortraitLayout(buttonBar: MDCButtonBar, view: UIView) -> LayoutConstraints {
-    var layout: LayoutConstraints!
-    buttonBar.snp.prepareConstraints { (make) in
-      var bar: [Constraint] = []
-      bar.append(make.leading.trailing.equalTo(view).constraint)
-      bar.append(make.height.equalTo(Metrics.buttonBarHeight).constraint)
-
-      let hidden = make.top.equalTo(view.snp.bottom).constraint
-      let visible = make.bottom.equalTo(view).constraint
-
-      let insets = UIEdgeInsets(top: 0, left: 0, bottom: Metrics.buttonBarHeight, right: 0)
-
-      layout = LayoutConstraints(bar: bar, hidden: hidden, visible: visible, insets: insets)
-    }
-    return layout
-  }
-
-  private var isButtonBarVisible: Bool = false {
-    willSet {
-      // TODO: Pull this out and coordinate transition animations
-      func animate() {
-        UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-          self.view.layoutIfNeeded()
-        }
+      let buttonBarViewController =
+        ActionAreaButtonBarViewController(contentViewController: svController)
+      addChild(buttonBarViewController)
+      view.addSubview(buttonBarViewController.view)
+      buttonBarViewController.view.snp.makeConstraints { (make) in
+        make.edges.equalToSuperview()
       }
-
-      switch (isButtonBarVisible, newValue) {
-      case (false, true):
-        currentConstraints.show()
-        updateAdditionalSafeAreaInsets(isButtonBarVisible: newValue)
-        animate()
-      case (true, false):
-        currentConstraints.hide()
-        updateAdditionalSafeAreaInsets(isButtonBarVisible: newValue)
-        animate()
-      default:
-        break
-      }
-    }
-  }
-
-  private func updateAdditionalSafeAreaInsets(isButtonBarVisible: Bool) {
-    if isButtonBarVisible {
-      navController.additionalSafeAreaInsets = currentConstraints.insets
-      detailNavController.additionalSafeAreaInsets = currentConstraints.insets
+      buttonBarViewController.didMove(toParent: self)
+      self.buttonBarViewController = buttonBarViewController
     } else {
-      navController.additionalSafeAreaInsets = .zero
-      detailNavController.additionalSafeAreaInsets = .zero
+      addChild(navController)
+      view.addSubview(navController.view)
+      navController.view.snp.makeConstraints { (make) in
+        make.edges.equalToSuperview()
+      }
+      navController.didMove(toParent: self)
     }
   }
 
@@ -232,13 +144,25 @@ final class ActionAreaController: UIViewController {
   }
 
   private func updateActionAreaBar(for vc: UIViewController?) {
+    guard vc != detailNavController else {
+      // If the `UISplitViewController` is collapsed, we may get the `detailNavController`
+      // being presented within the `navController`. In this case we've already updated
+      // the actions, so there's nothing more to do.
+      return
+    }
+
     let items: [UIBarButtonItem]
     if let vc = vc {
       switch viewControllerBarItems[vc] {
       case .none:
         items = []
       case .some(.persistent(let itemDefinitions)):
-        items = itemDefinitions.map(createBarButtonItem(from:))
+        switch state {
+        case .normal:
+          items = itemDefinitions.map(createBarButtonItem(from:))
+        case .modal:
+          return
+        }
       case .some(let .toggle(passive, active)):
         switch state {
         case .normal:
@@ -250,8 +174,8 @@ final class ActionAreaController: UIViewController {
     } else {
       items = []
     }
-    buttonBar.items = items
-    isButtonBarVisible = !items.isEmpty
+
+    buttonBarViewController?.items = items
   }
 
   func pop(to vc: UIViewController, animated: Bool) {
@@ -284,21 +208,10 @@ final class ActionAreaController: UIViewController {
     }
 
     detailNavController.setViewControllers([detailViewController], animated: false)
+    svController?.showDetailViewController(detailNavController, sender: self)
 
     viewControllerBarItems[detailViewController] = .persistent(items)
-
-    positionBelowScreen(detailNavController)
-    detailNavController.view.isHidden = false
-
     updateActionAreaBar(for: detailViewController)
-    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-      self.detailNavController.view.transform = .identity
-    }
-  }
-
-  private func positionBelowScreen(_ vc: UIViewController) {
-    let height = vc.view.bounds.height
-    vc.view.transform = CGAffineTransform(translationX: 0, y: height)
   }
 
   func show(detail detailViewController: UIViewController,
@@ -309,16 +222,10 @@ final class ActionAreaController: UIViewController {
     }
 
     detailNavController.setViewControllers([detailViewController], animated: false)
+    svController?.showDetailViewController(detailNavController, sender: self)
 
     viewControllerBarItems[detailViewController] = .toggle(passive, active)
-
-    positionBelowScreen(detailNavController)
-    detailNavController.view.isHidden = false
-
     updateActionAreaBar(for: detailViewController)
-    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-      self.detailNavController.view.transform = .identity
-    }
   }
 
   func dismissDetail() {
@@ -331,18 +238,11 @@ final class ActionAreaController: UIViewController {
       viewControllerBarItems.removeValue(forKey: detailViewController)
 
       updateActionAreaBar(for: navController.topViewController)
-      UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
-        self.positionBelowScreen(self.detailNavController)
-      }) { (_) in
-        self.detailNavController.setViewControllers([], animated: false)
-        self.detailNavController.view.isHidden = true
-      }
+
+      navController.popViewController(animated: true)
+      detailNavController.setViewControllers([], animated: false)
     case .modal:
-      UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
-        self.positionBelowScreen(self.detailNavController)
-      }) { (_) in
-        self.detailNavController.view.isHidden = true
-      }
+      navController.popViewController(animated: true)
     }
   }
 
@@ -350,19 +250,11 @@ final class ActionAreaController: UIViewController {
     guard detailNavController.topViewController != nil else {
       fatalError("A detailViewController is not currently being shown.")
     }
-    guard detailNavController.view.isHidden else {
-      fatalError("A detailViewController is not currently hidden.")
-    }
     guard state == .modal else {
       fatalError("The Action Area can only reshow in the modal state.")
     }
 
-    positionBelowScreen(detailNavController)
-    detailNavController.view.isHidden = false
-
-    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-      self.detailNavController.view.transform = .identity
-    }
+    svController?.showDetailViewController(detailNavController, sender: self)
   }
 
   private func createBarButtonItem(from item: ActionAreaBarItem) -> UIBarButtonItem {
@@ -395,6 +287,49 @@ final class ActionAreaController: UIViewController {
 
 }
 
+// TODO: Remove print statements after implementing the tablet, landscape layout.
+extension ActionAreaController: UISplitViewControllerDelegate {
+  func primaryViewController(
+    forCollapsing splitViewController: UISplitViewController
+  ) -> UIViewController? {
+    print("\(type(of: self)) \(#function) - vcs: \(splitViewController.viewControllers)")
+    return nil // nil for default behavior
+  }
+
+  func splitViewController(_ splitViewController: UISplitViewController,
+                           collapseSecondary secondaryViewController: UIViewController,
+                           onto primaryViewController: UIViewController) -> Bool {
+    print("\(type(of: self)) \(#function) - vcs: \(splitViewController.viewControllers)")
+    return false // false for default behavior
+  }
+
+  func primaryViewController(
+    forExpanding splitViewController: UISplitViewController
+  ) -> UIViewController? {
+    print("\(type(of: self)) \(#function) - vcs: \(splitViewController.viewControllers)")
+    return nil // nil for default behavior
+  }
+
+  func splitViewController(_ splitViewController: UISplitViewController,
+                           separateSecondaryFrom primaryViewController: UIViewController
+  ) -> UIViewController? {
+    print("\(type(of: self)) \(#function) - vcs: \(splitViewController.viewControllers)")
+    return nil // nil for default behavior
+  }
+
+  func splitViewController(_ splitViewController: UISplitViewController,
+                           show vc: UIViewController, sender: Any?) -> Bool {
+    print("\(type(of: self)) \(#function) - vcs: \(splitViewController.viewControllers)")
+    return false // false for default behavior
+  }
+
+  func splitViewController(_ splitViewController: UISplitViewController,
+                           showDetail vc: UIViewController, sender: Any?) -> Bool {
+    print("\(type(of: self)) \(#function) - vcs: \(splitViewController.viewControllers)")
+    return false // false for default behavior
+  }
+}
+
 extension ActionAreaController: UINavigationControllerDelegate {
 
   func navigationController(_ navigationController: UINavigationController,
@@ -419,6 +354,8 @@ extension UIViewController {
 }
 
 // TODO: Ensure this handles existing issues or use one of the other superclasses.
+// TODO: Consider making this private and wrapping content VCs that are not subclasses
+//       of the other material header types.
 final class MaterialHeaderContainerViewController: UIViewController {
 
   private let appBar = MDCAppBar()

@@ -56,7 +56,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let experimentDataDeleter: ExperimentDataDeleter
   private let feedbackReporter: FeedbackReporter
   private let metadataManager: MetadataManager
-  private let navController = UINavigationController()
+  private lazy var _navController = UINavigationController()
+  private var navController: UINavigationController {
+    return FeatureFlags.isActionAreaEnabled ? actAreaController.navController : _navController
+  }
   private let networkAvailability: NetworkAvailability
   private let devicePreferenceManager: DevicePreferenceManager
   private let preferenceManager: PreferenceManager
@@ -192,11 +195,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                          analyticsReporter: analyticsReporter,
                                          devicePreferenceManager: devicePreferenceManager,
                                          showWelcomeView: !accountsManager.supportsAccounts)
-      if FeatureFlags.isActionAreaEnabled {
-        actAreaController.navController.setViewControllers([permissionsVC], animated: false)
-      } else {
-        navController.setViewControllers([permissionsVC], animated: false)
-      }
+      navController.setViewControllers([permissionsVC], animated: false)
     } else {
       // Don't need the permissions guide, just show the experiments list.
       showExperimentsList(animated: false)
@@ -279,11 +278,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
           // Dismiss the feature highlight if necessary first.
           experimentsListVC.dismissFeatureHighlightIfNecessary()
 
-          if FeatureFlags.isActionAreaEnabled {
-            self.actAreaController.pop(to: experimentsListVC, animated: false)
-          } else {
-            self.navController.popToViewController(experimentsListVC, animated: false)
-          }
+          self.navController.popToViewController(experimentsListVC, animated: false)
         }
 
         guard let topViewController = self.navController.topViewController else {
@@ -521,11 +516,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   func experimentViewControllerDidRequestDeleteExperiment(_ experiment: Experiment) {
     experimentStateManager.deleteExperiment(withID: experiment.ID)
     if let experimentsListVC = experimentsListVC {
-      if FeatureFlags.isActionAreaEnabled {
-        actAreaController.pop(to: experimentsListVC, animated: true)
-      } else {
-        navController.popToViewController(experimentsListVC, animated: true)
-      }
+      navController.popToViewController(experimentsListVC, animated: true)
     }
   }
 
@@ -864,7 +855,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                       and: (stopItem, [snapshotItem]))
       }
 
-      actAreaController.push(experimentCoordinatorVC, animated: true, with: [sensorItem])
+      actAreaController.show(experimentCoordinatorVC, with: [sensorItem])
     } else {
       navController.pushViewController(experimentCoordinatorVC, animated: true)
     }
@@ -1188,11 +1179,7 @@ extension UserFlowViewController: DriveSyncManagerDelegate {
     }
     experimentCoordinatorVC?.cancelRecordingIfNeeded()
 
-    if FeatureFlags.isActionAreaEnabled {
-      actAreaController.pop(to: experimentsListVC, animated: true)
-    } else {
-      navController.popToViewController(experimentsListVC, animated: true)
-    }
+    navController.popToViewController(experimentsListVC, animated: true)
   }
 
 }

@@ -101,46 +101,45 @@ final class ActionAreaController: UIViewController {
     }
   }
 
+  init() {
+    precondition(FeatureFlags.isActionAreaEnabled,
+                 "This class can only be used when Action Area is enabled.")
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    if FeatureFlags.isActionAreaEnabled {
-      navController.delegate = self
+    navController.delegate = self
 
-      let svController = UISplitViewController()
-      svController.presentsWithGesture = false
-      svController.viewControllers = [navController, detailNavController]
-      svController.delegate = self
-      self.svController = svController
+    let svController = UISplitViewController()
+    svController.presentsWithGesture = false
+    svController.viewControllers = [navController, detailNavController]
+    svController.delegate = self
+    self.svController = svController
 
-      let buttonBarViewController =
-        ActionAreaButtonBarViewController(contentViewController: svController)
-      addChild(buttonBarViewController)
-      view.addSubview(buttonBarViewController.view)
-      buttonBarViewController.view.snp.makeConstraints { (make) in
-        make.edges.equalToSuperview()
-      }
-      buttonBarViewController.didMove(toParent: self)
-      self.buttonBarViewController = buttonBarViewController
-    } else {
-      addChild(navController)
-      view.addSubview(navController.view)
-      navController.view.snp.makeConstraints { (make) in
-        make.edges.equalToSuperview()
-      }
-      navController.didMove(toParent: self)
+    let buttonBarViewController =
+      ActionAreaButtonBarViewController(contentViewController: svController)
+    addChild(buttonBarViewController)
+    view.addSubview(buttonBarViewController.view)
+    buttonBarViewController.view.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
     }
+    buttonBarViewController.didMove(toParent: self)
+    self.buttonBarViewController = buttonBarViewController
   }
 
-  func push(_ vc: UIViewController, animated: Bool, with items: [ActionAreaBarItem]) {
+  func show(_ vc: UIViewController, with items: [ActionAreaBarItem]) {
     guard state == .normal else {
       fatalError("View controllers cannot be pushed during a modal detail presentation.")
     }
 
-    if FeatureFlags.isActionAreaEnabled {
-      viewControllerBarItems[vc] = .persistent(items)
-    }
-    navController.pushViewController(vc, animated: animated)
+    viewControllerBarItems[vc] = .persistent(items)
+    navController.pushViewController(vc, animated: true)
   }
 
   private func updateActionAreaBar(for vc: UIViewController?) {
@@ -178,28 +177,11 @@ final class ActionAreaController: UIViewController {
     buttonBarViewController?.items = items
   }
 
-  func pop(to vc: UIViewController, animated: Bool) {
-    guard state == .normal else {
-      fatalError("View controllers cannot be popped during a modal detail presentation.")
+  private func removeUnusedBarItems() {
+    viewControllerBarItems = viewControllerBarItems.filter { (key, _) -> Bool in
+      return navController.viewControllers.contains(key) ||
+        detailNavController.viewControllers.contains(key)
     }
-
-    if FeatureFlags.isActionAreaEnabled {
-      viewControllerBarItems.removeValue(forKey: vc)
-    }
-    navController.popToViewController(vc, animated: animated)
-  }
-
-  func pop(animated: Bool) {
-    guard state == .normal else {
-      fatalError("View controllers cannot be popped during a modal detail presentation.")
-    }
-
-    guard let vc = navController.topViewController else { return }
-
-    if FeatureFlags.isActionAreaEnabled {
-      viewControllerBarItems.removeValue(forKey: vc)
-    }
-    navController.popViewController(animated: animated)
   }
 
   func show(detail detailViewController: UIViewController, with items: [ActionAreaBarItem]) {
@@ -336,6 +318,11 @@ extension ActionAreaController: UINavigationControllerDelegate {
                             willShow viewController: UIViewController,
                             animated: Bool) {
     updateActionAreaBar(for: viewController)
+  }
+
+  func navigationController(_ navigationController: UINavigationController,
+                            didShow viewController: UIViewController, animated: Bool) {
+    removeUnusedBarItems()
   }
 
 }

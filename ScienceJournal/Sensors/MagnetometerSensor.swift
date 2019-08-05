@@ -20,7 +20,6 @@ import Foundation
 /// A sensor that measures magnetic strength.
 class MagnetometerSensor: MotionSensor {
 
-  private let magneticFieldReferenceFrame = CMAttitudeReferenceFrame.xMagneticNorthZVertical
   private let whiteDwarfMagneticFieldStrength = 100_000_000.0
 
   /// Designated initializer.
@@ -39,9 +38,8 @@ class MagnetometerSensor: MotionSensor {
                unitDescription: String.magneticStrengthUnits,
                learnMore: learnMore,
                sensorTimer: sensorTimer)
-    MagnetometerSensor.motionManager.deviceMotionUpdateInterval = updateInterval
-    isSupported = MagnetometerSensor.motionManager.isDeviceMotionAvailable &&
-        CMMotionManager.availableAttitudeReferenceFrames().contains(magneticFieldReferenceFrame)
+    MagnetometerSensor.motionManager.magnetometerUpdateInterval = updateInterval
+    isSupported = MagnetometerSensor.motionManager.isMagnetometerAvailable
     pointsAfterDecimal = 0
   }
 
@@ -50,35 +48,37 @@ class MagnetometerSensor: MotionSensor {
       return
     }
 
-    MagnetometerSensor.motionManager.startDeviceMotionUpdates(using: magneticFieldReferenceFrame)
+    MagnetometerSensor.motionManager.startMagnetometerUpdates()
     state = .ready
   }
 
   override func pause() {
     guard state != .paused else { return }
 
-    MagnetometerSensor.motionManager.stopDeviceMotionUpdates()
+    MagnetometerSensor.motionManager.stopMagnetometerUpdates()
     state = .paused
   }
 
   override func callListenerBlocksWithData(atMilliseconds milliseconds: Int64) {
-    guard let magneticField = MagnetometerSensor.motionManager.deviceMotion?.magneticField.field,
-        magneticField.isValid
-    else { return }
+    guard let magnetometerData = MagnetometerSensor.motionManager.magnetometerData else {
+      return
+    }
+
+    let magneticField = magnetometerData.magneticField
 
     // The magnetic strength is the square root of the sum of the squares of the values in X, Y
     // and Z.
-    var magneticStrength =
+    var magnetometerDataMagneticStrength =
         sqrt(pow(magneticField.x, 2) + pow(magneticField.y, 2) + pow(magneticField.z, 2))
 
     // Typical white dwarf stars have a magnetic field of around 100 Tesla (100,000,000 µT), so
     // let's cap our values there.
     // Note: Not a good idea to get close enough to measure a white dwarf star.
-    if magneticStrength > whiteDwarfMagneticFieldStrength {
-      magneticStrength = whiteDwarfMagneticFieldStrength
+    if magnetometerDataMagneticStrength > whiteDwarfMagneticFieldStrength {
+      magnetometerDataMagneticStrength = whiteDwarfMagneticFieldStrength
     }
 
-    let dataPoint = DataPoint(x: milliseconds, y: magneticStrength)
+    let dataPoint = DataPoint(x: milliseconds, y: magnetometerDataMagneticStrength)
     callListenerBlocksWithDataPoint(dataPoint)
   }
 

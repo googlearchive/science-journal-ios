@@ -588,7 +588,6 @@
 		924D434B56557C3367183755 /* Pods_ScienceJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D48D49D8CBE15C94637009 /* Pods_ScienceJournalTests.framework */; };
 		D54E27EF21A3423A0055743E /* AudioAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E27EE21A3423A0055743E /* AudioAnalyzerTest.swift */; };
 		D54E27F121A346980055743E /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = D54E27F021A346980055743E /* TestResources */; };
-		D573D00C22661BC300A2E1DB /* CMMagneticField+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D573D00B22661BC300A2E1DB /* CMMagneticField+ScienceJournal.swift */; };
 		D5929B1486B341B6A50367D9 /* libPods-ScienceJournalUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551CFA53B9638874BCF64A15 /* libPods-ScienceJournalUITests.a */; };
 		D59CA3C2219CEE690082A27B /* FFTAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */; };
 		D59CA3C3219CEE690082A27B /* FFTAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */; };
@@ -1263,7 +1262,6 @@
 		CD482804BCE6CEED23042379 /* Pods-ScienceJournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D54E27EE21A3423A0055743E /* AudioAnalyzerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalyzerTest.swift; sourceTree = "<group>"; };
 		D54E27F021A346980055743E /* TestResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestResources; sourceTree = "<group>"; };
-		D573D00B22661BC300A2E1DB /* CMMagneticField+ScienceJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMMagneticField+ScienceJournal.swift"; sourceTree = "<group>"; };
 		D59CA3BB219CEE680082A27B /* FFTAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTAnalyzer.swift; sourceTree = "<group>"; };
 		D59CA3BC219CEE680082A27B /* GoertzelAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoertzelAnalyzer.swift; sourceTree = "<group>"; };
 		D59CA3BD219CEE680082A27B /* SoundUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundUtils.swift; sourceTree = "<group>"; };
@@ -2470,7 +2468,6 @@
 				5CF32A3F1FA7AFA60035A236 /* CALayer+ScienceJournal.swift */,
 				8BC4D5BB1EBBD4CE0086906D /* CGSize+ScienceJournal.swift */,
 				8B10E9541F87EFCE0060A0AD /* ClosedRange+ScienceJournal.swift */,
-				D573D00B22661BC300A2E1DB /* CMMagneticField+ScienceJournal.swift */,
 				8B111F6A1E412287000400F1 /* Date+ScienceJournal.swift */,
 				68587BA61F871646003266BA /* DateComponentsFormatter+ScienceJournal.swift */,
 				D59CA3D7219F46020082A27B /* Double+ScienceJournal.swift */,
@@ -3660,7 +3657,6 @@
 				6836532D1F5F9F4300132922 /* EmptyView.swift in Sources */,
 				8B1791931F06B1F4008C0B31 /* TriggerListDataSource.swift in Sources */,
 				5C50F58D1F61F22F00711D28 /* FileVersion.swift in Sources */,
-				D573D00C22661BC300A2E1DB /* CMMagneticField+ScienceJournal.swift in Sources */,
 				5C7219601ED8D04700817F0B /* SensorLayout.swift in Sources */,
 				5C7BC35220C9ADC800CACFAB /* DriveConstructorDisabled.swift in Sources */,
 				68E36193203F7F1500B1B979 /* AnalyticsReporter.swift in Sources */,

@@ -17,9 +17,14 @@
 		3F56956C228F04130039B84F /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56956B228F04130039B84F /* LaunchManager.swift */; };
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
-		3F65A95922E9F030005AD75A /* ActionAreaButtonBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65A95822E9F030005AD75A /* ActionAreaButtonBarViewController.swift */; };
 		3F71B71622B466D90015074A /* ActionAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71B71522B466D90015074A /* ActionAreaController.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
+		3FA7052022F8DD2600753842 /* ActionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7051F22F8DD2600753842 /* ActionArea.swift */; };
+		3FA7052222F8DD7400753842 /* ActionAreaBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052122F8DD7400753842 /* ActionAreaBar.swift */; };
+		3FA7052422F8DD8E00753842 /* ActionAreaBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */; };
+		3FA7052622F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */; };
+		3FA7052822F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */; };
+		3FA7052A22F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */; };
 		3FCABBAE22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */; };
 		3FCABBB022AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */; };
 		3FCABBB222AEF1FD00118021 /* LaunchFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */; };
@@ -650,9 +655,14 @@
 		3F56956B228F04130039B84F /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
-		3F65A95822E9F030005AD75A /* ActionAreaButtonBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaButtonBarViewController.swift; sourceTree = "<group>"; };
 		3F71B71522B466D90015074A /* ActionAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaController.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
+		3FA7051F22F8DD2600753842 /* ActionArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionArea.swift; sourceTree = "<group>"; };
+		3FA7052122F8DD7400753842 /* ActionAreaBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaBar.swift; sourceTree = "<group>"; };
+		3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaBarButtonItem.swift; sourceTree = "<group>"; };
+		3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaMasterContentContainerViewController.swift; sourceTree = "<group>"; };
+		3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaDetailContentContainerViewController.swift; sourceTree = "<group>"; };
+		3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentDetailEmptyStateViewController.swift; sourceTree = "<group>"; };
 		3FCABBAD22AEE82200118021 /* FileSystemLayoutMigrationOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationOperation.swift; sourceTree = "<group>"; };
 		3FCABBAF22AEEA3900118021 /* FileSystemLayoutMigrationOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationOperationTest.swift; sourceTree = "<group>"; };
 		3FCABBB122AEF1FD00118021 /* LaunchFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFailureViewController.swift; sourceTree = "<group>"; };
@@ -1345,8 +1355,13 @@
 		3F71B71422B466D90015074A /* ActionArea */ = {
 			isa = PBXGroup;
 			children = (
-				3F65A95822E9F030005AD75A /* ActionAreaButtonBarViewController.swift */,
+				3FA7051F22F8DD2600753842 /* ActionArea.swift */,
+				3FA7052122F8DD7400753842 /* ActionAreaBar.swift */,
+				3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */,
 				3F71B71522B466D90015074A /* ActionAreaController.swift */,
+				3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */,
+				3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */,
+				3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */,
 			);
 			path = ActionArea;
 			sourceTree = "<group>";
@@ -3290,6 +3305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA7052222F8DD7400753842 /* ActionAreaBar.swift in Sources */,
 				5C3245291EF1D4F100E8664B /* DisplayItem.swift in Sources */,
 				5C95134C20CAD7110033D9FA /* AccountDeleter.swift in Sources */,
 				8BB23E761FFD85B400850148 /* KeyboardObserver.swift in Sources */,
@@ -3352,6 +3368,7 @@
 				8BA65D70206160A90071C148 /* RecordedTrialCardView.swift in Sources */,
 				6813334E1EC6423200ED7A32 /* SensorPickerView.swift in Sources */,
 				687FAA19202C1162004C1D04 /* SensorSpec.pbobjc.m in Sources */,
+				3FA7052A22F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift in Sources */,
 				8B031EEE2098C39C008F6F28 /* ExistingDataOptionsCell.swift in Sources */,
 				8B6054842049C4840036C1E4 /* AlphaFadeTransitionController.swift in Sources */,
 				8BA5BF341F44904F00EB77E8 /* UIPanGestureRecognizer+ScienceJournal.swift in Sources */,
@@ -3436,6 +3453,7 @@
 				8BA5BF391F44DE7700EB77E8 /* CaptureSessionInterruptionObserver.swift in Sources */,
 				48C767B520F92BA800A67C4A /* SignInViewController.swift in Sources */,
 				8BCCDF5F1EB9265800E85517 /* CameraActionBar.swift in Sources */,
+				3FA7052622F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift in Sources */,
 				68CD50D81E57DD51005E928F /* SensorCardCell.swift in Sources */,
 				68BD95621E8DA45100FEB0B2 /* NotesSoundType.swift in Sources */,
 				68BD95611E8DA45100FEB0B2 /* DefaultSoundType.swift in Sources */,
@@ -3502,6 +3520,7 @@
 				8B1B2AF71EE84DE100990FE8 /* PopUpMenuAnchor.swift in Sources */,
 				8B92B5701EB90047004C356E /* PhotoLibraryCell.swift in Sources */,
 				5C880BA22190D9E900594166 /* ButtonViewController.swift in Sources */,
+				3FA7052822F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift in Sources */,
 				68C3C9491E42B59900F339C4 /* MaterialHeaderViewController.swift in Sources */,
 				8B3ADD73201256FB00DE9611 /* SensorTimer.swift in Sources */,
 				8B6054822049BC730036C1E4 /* SpinnerViewController.swift in Sources */,
@@ -3542,6 +3561,7 @@
 				68E3C8CE1FD72A7400255ADF /* RatingsPromptManager.swift in Sources */,
 				683171581F0DE09100E641B4 /* PictureInfoViewController.swift in Sources */,
 				68BD95661E8DA45100FEB0B2 /* SoundTypeManager.swift in Sources */,
+				3FA7052422F8DD8E00753842 /* ActionAreaBarButtonItem.swift in Sources */,
 				687FAA0B202C1162004C1D04 /* SensorLayout.pbobjc.m in Sources */,
 				5CC813CF20D16C8700CC05E9 /* ExperimentLibraryMerger.swift in Sources */,
 				68FB61111F3A70DA008281DB /* MaterialFloatingSpinner.swift in Sources */,
@@ -3596,6 +3616,7 @@
 				680D40651F02C25B004E5555 /* SnapshotDetailCell.swift in Sources */,
 				8B5114E920B49F31005953BD /* ClaimExperimentsFlowController.swift in Sources */,
 				8B9BEC33213485AD00225EF5 /* CommonUIComponents.swift in Sources */,
+				3FA7052022F8DD2600753842 /* ActionArea.swift in Sources */,
 				5C7BC2DE20C9A07900CACFAB /* DriveSyncManager.swift in Sources */,
 				68BD95631E8DA45100FEB0B2 /* PitchedSoundType.swift in Sources */,
 				8BCCAD541EDF367C00278F05 /* PopUpMenuViewController.swift in Sources */,
@@ -3698,7 +3719,6 @@
 				3FDE85A322B3FFA600420D25 /* FeatureFlags.swift in Sources */,
 				8BCCAD561EDF593C00278F05 /* PopUpMenuAction.swift in Sources */,
 				687FAA0D202C1162004C1D04 /* SensorTriggerLabelValue.pbobjc.m in Sources */,
-				3F65A95922E9F030005AD75A /* ActionAreaButtonBarViewController.swift in Sources */,
 				8BF9DA9D2268BED80052C285 /* ExistingDataMigrationManagerErrorArray+ScienceJournal.swift in Sources */,
 				8B0682D220A33E39003DA2A3 /* ExperimentInteractionOptions.swift in Sources */,
 				8B5114EB20B49F53005953BD /* ClaimExperimentListCell.swift in Sources */,

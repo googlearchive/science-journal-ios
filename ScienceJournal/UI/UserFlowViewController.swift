@@ -47,7 +47,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   weak var settingsVC: SettingsViewController?
 
   private let accountsManager: AccountsManager
-  private lazy var actAreaController = ActionAreaController()
+  private lazy var actAreaController = ActionArea.Controller()
   private let analyticsReporter: AnalyticsReporter
   private let commonUIComponents: CommonUIComponents
   private let documentManager: DocumentManager
@@ -825,37 +825,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     experimentStateManager.addListener(experimentCoordinatorVC)
 
     if FeatureFlags.isActionAreaEnabled {
-      let sensorItem =
-        ActionAreaBarItem(title: "Sensor", image: UIImage(named: "ic_sensors")) {
-          let materialHeaderContainerViewController =
-            MaterialHeaderContainerViewController(
-              contentViewController: experimentCoordinatorVC.observeViewController
-          )
-
-          let addSensorItem = ActionAreaBarItem(title: "Add Sensor",
-                                                image: UIImage(named: "ic_add_circle")) {}
-          let snapshotItem = ActionAreaBarItem(title: "Snapshot",
-                                               image: UIImage(named: "ic_snapshot_action")) {}
-          let recordItem = ActionAreaBarItem(
-            title: "Record",
-            image: UIImage(named: "record_button")
-          ) {
-            experimentCoordinatorVC.observeViewController.recordButtonPressed()
-          }
-
-          let stopItem = ActionAreaBarItem(
-            title: "Stop",
-            image: UIImage(named: "stop_button")
-          ) {
-            experimentCoordinatorVC.observeViewController.recordButtonPressed()
-          }
-
-          self.actAreaController.show(detail: materialHeaderContainerViewController,
-                                      toggle: (recordItem, [addSensorItem, snapshotItem]),
-                                      and: (stopItem, [snapshotItem]))
-      }
-
-      actAreaController.show(experimentCoordinatorVC, with: [sensorItem])
+      let content = configure(experimentCoordinator: experimentCoordinatorVC)
+      actAreaController.show(content, sender: self)
     } else {
       navController.pushViewController(experimentCoordinatorVC, animated: true)
     }
@@ -876,6 +847,59 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     // This is a good time to generate any missing recording protos.
     userAssetManager.writeMissingSensorDataProtos(forExperiment: experiment)
+  }
+
+  private func configure(
+    experimentCoordinator: ExperimentCoordinatorViewController
+  ) -> ActionArea.MasterContent {
+    let header =
+      MaterialHeaderContainerViewController(
+        contentViewController: experimentCoordinator.observeViewController
+    )
+
+    let detail = ActionArea.DetailContentContainerViewController(content: header) {
+      let addSensorItem = ActionArea.BarButtonItem(title: "Add Sensor",
+                                                   image: UIImage(named: "ic_add_circle")) {}
+      let snapshotItem = ActionArea.BarButtonItem(title: "Snapshot",
+                                                  image: UIImage(named: "ic_snapshot_action")) {}
+      let recordItem = ActionArea.BarButtonItem(
+        title: "Record",
+        image: UIImage(named: "record_button")
+      ) {
+        experimentCoordinator.observeViewController.recordButtonPressed()
+      }
+
+      let stopItem = ActionArea.BarButtonItem(
+        title: "Stop",
+        image: UIImage(named: "stop_button")
+      ) {
+        experimentCoordinator.observeViewController.recordButtonPressed()
+      }
+
+      return .stateful(
+        nonModal: (primary: recordItem, items: [addSensorItem, snapshotItem]),
+        modal: (primary: stopItem, items: [snapshotItem])
+      )
+    }
+
+    let sensorsItem = ActionArea.BarButtonItem(
+      title: "Sensor",
+      image: UIImage(named: "ic_sensors")
+    ) {
+      self.actAreaController.showDetailViewController(detail, sender: self)
+    }
+
+    let emptyState = ExperimentDetailEmptyStateViewController()
+    let detailHeader = MaterialHeaderContainerViewController(contentViewController: emptyState)
+    detailHeader.showCloseButton = false
+
+    let content = ActionArea.MasterContentContainerViewController(
+      content: experimentCoordinator,
+      emptyState: detailHeader,
+      mode: .stateless(items: [sensorsItem])
+    )
+
+    return content
   }
 
   /// Shows a note.

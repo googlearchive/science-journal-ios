@@ -35,7 +35,19 @@ final class PDFExportController: UIViewController {
   enum CompletionState {
     case success(URL)
     case error([Error])
-    case cancel
+    case cancel(CancellationSource)
+  }
+
+  enum CancellationSource {
+    case user
+    case backgrounded
+
+    var analyticsLabel: String {
+      switch self {
+      case .user: return "User cancelled"
+      case .backgrounded: return "Backgrounded app"
+      }
+    }
   }
 
   private enum Metrics {
@@ -73,7 +85,7 @@ final class PDFExportController: UIViewController {
     // If the user backgrounds the app while exporting, cancel the export since this requires
     // crawling the UI and can be corrupted or broken by backgrounding in some cases.
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(cancelAndReport),
+                                           selector: #selector(cancelBeforeBackgrounding),
                                            name: UIApplication.willResignActiveNotification,
                                            object: nil)
   }
@@ -88,6 +100,7 @@ final class PDFExportController: UIViewController {
 
   override public func viewDidLoad() {
     super.viewDidLoad()
+    analyticsReporter.track(.pdfExportStarted)
     setupContentViewController()
     setupOverlayViewController()
   }
@@ -150,28 +163,35 @@ final class PDFExportController: UIViewController {
 
     switch state {
     case .success:
+      analyticsReporter.track(.pdfExportCompleted)
       DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
         // Give the UI a moment to update progress to 100%, which _feels_ better.
         dismissWithCompletion(state)
       }
-    case .cancel, .error:
+    case .cancel(let cancellationSource):
+      analyticsReporter.track(.pdfExportCancelled(reason: cancellationSource.analyticsLabel))
+      dismissWithCompletion(state)
+    case .error:
+      analyticsReporter.track(.pdfExportError)
       dismissWithCompletion(state)
     }
   }
 
   private func reportSuccess() {
-    analyticsReporter.track(.pdfExportCompleted)
     completion(state: .success(pdfURL))
   }
 
-  @objc private func cancelAndReport() {
-    analyticsReporter.track(.pdfExportCancelled)
+  @objc private func cancelBeforeBackgrounding() {
     operationQueue.cancelAllOperations()
-    completion(state: .cancel)
+    completion(state: .cancel(.backgrounded))
+  }
+
+  private func cancelAndReport() {
+    operationQueue.cancelAllOperations()
+    completion(state: .cancel(.user))
   }
 
   private func reportErrors(_ errors: [Error]) {
-    analyticsReporter.track(.pdfExportError)
     completion(state: .error(errors))
   }
 
@@ -185,7 +205,6 @@ final class PDFExportController: UIViewController {
         self.overlayViewController.progressView.progress = Float(pdfExportOperation.progress)
       })
     }
-    analyticsReporter.track(.pdfExportStarted)
   }
 
   private func operationFinishHandler(operation: GSJOperation, errors: [Error]) {

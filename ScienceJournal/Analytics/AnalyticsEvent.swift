@@ -94,8 +94,9 @@ public struct AnalyticsEvent {
   static let pdfExportCompleted = AnalyticsEvent(category: categoryPDFExport,
                                                  action: "Completed")
 
-  static let pdfExportCancelled = AnalyticsEvent(category: categoryPDFExport,
-                                                 action: "Cancelled")
+  static func pdfExportCancelled(reason: String) -> AnalyticsEvent {
+    return AnalyticsEvent(category: categoryPDFExport, action: "Cancelled", label: reason)
+  }
 
   static let pdfExportError = AnalyticsEvent(category: categoryPDFExport,
                                              action: "Error")

@@ -228,7 +228,7 @@ class SensorSettingsViewController: MaterialHeaderCollectionViewController,
 
   func sensorSettingsDataSourceNeedsRefresh(_ dataSource: SensorSettingsDataSource) {
     if !dataSource.serviceScanner.isBluetoothAvailable {
-        showSnackbar(withMessage: String.bluetoothNotOnBody)
+      showSnackbar(withMessage: String.bluetoothNotOnBody)
     }
     collectionView?.reloadData()
   }

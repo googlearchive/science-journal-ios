@@ -444,7 +444,7 @@ class SensorSettingsDataSource: BLEServiceScannerDelegate {
   }
 
   func serviceScannerBluetoothAvailabilityChanged(_ serviceScanner: BLEServiceScanner) {
-     delegate?.sensorSettingsDataSourceNeedsRefresh(self)
+    delegate?.sensorSettingsDataSourceNeedsRefresh(self)
   }
 
 }

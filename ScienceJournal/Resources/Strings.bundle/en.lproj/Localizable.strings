@@ -1195,6 +1195,9 @@
 /* Long description of an unknown bluetooth sensor displayed below a representative image on the Learn More page [CHAR_LIMIT=NONE] */
 "sensor_desc_second_paragraph_unknown_bluetooth" = "Bluetooth is a wireless technology standard using radio waves to exchange data over short distances from fixed and mobile devices.";
 
+/* Message to display to the user when bluetooth is not on but a bluetooth sensor is in the experiment on Observe [CHAR_LIMIT=200] */
+"bluetooth_not_on_body" = "Cannot connect to external sensor: Bluetooth is disabled. Turn on Bluetooth to connect to your external sensor.";
+
 /* One-sentence description of the accelerometer X sensor [CHAR_LIMIT=100] */
 "sensor_desc_short_acc_x" = "The acceleration of the phone to the left and right, in m/s²";
 
@@ -1554,3 +1557,5 @@
 
 /* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
 "voltage_units" = "V";
+
+"radibarq" = "hello world";

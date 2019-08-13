@@ -423,6 +423,7 @@ extension String {
   static public var sensorDescSecondParagraphRotation: String { return "sensor_desc_second_paragraph_rotation".localized }
   static public var sensorDescFirstParagraphUnknownBluetooth: String { return "sensor_desc_first_paragraph_unknown_bluetooth".localized }
   static public var sensorDescSecondParagraphUnknownBluetooth: String { return "sensor_desc_second_paragraph_unknown_bluetooth".localized }
+  static public var bluetoothNotOnBody: String { return "bluetooth_not_on_body".localized }
   static public var sensorDescShortAccX: String { return "sensor_desc_short_acc_x".localized }
   static public var sensorDescShortAccY: String { return "sensor_desc_short_acc_y".localized }
   static public var sensorDescShortAccZ: String { return "sensor_desc_short_acc_z".localized }
@@ -543,6 +544,7 @@ extension String {
   static public var userFeedbackEmailInfoSendButton: String { return "user_feedback_email_info_send_button".localized }
   static public var videoStream: String { return "video_stream".localized }
   static public var voltageUnits: String { return "voltage_units".localized }
+  static public var radibarq: String { return "radibarq".localized }
 
 }
 

@@ -544,7 +544,6 @@ extension String {
   static public var userFeedbackEmailInfoSendButton: String { return "user_feedback_email_info_send_button".localized }
   static public var videoStream: String { return "video_stream".localized }
   static public var voltageUnits: String { return "voltage_units".localized }
-  static public var radibarq: String { return "radibarq".localized }
 
 }
 

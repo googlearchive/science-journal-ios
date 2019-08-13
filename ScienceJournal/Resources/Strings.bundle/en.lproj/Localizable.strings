@@ -1557,5 +1557,3 @@
 
 /* Displayed units for a Voltage sensor [CHAR_LIMIT=10] */
 "voltage_units" = "V";
-
-"radibarq" = "hello world";

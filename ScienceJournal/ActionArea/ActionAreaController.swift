@@ -292,6 +292,7 @@ extension ActionArea {
     ///   - sender: The object calling this method.
     override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
       svController.showDetailViewController(vc, sender: sender)
+      updateActionAreaBar(for: vc)
     }
 
     /// Present content in a detail context.
@@ -477,10 +478,9 @@ final class MaterialHeaderContainerViewController: UIViewController {
 
     addChild(contentViewController)
     view.addSubview(contentViewController.view)
-    contentViewController.view.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
-    }
     contentViewController.didMove(toParent: self)
+
+    title = contentViewController.title
 
     if showCloseButton {
       navigationItem.leftBarButtonItem =
@@ -494,6 +494,11 @@ final class MaterialHeaderContainerViewController: UIViewController {
       appBar.configure(attachTo: self, scrollView: collectionViewController.collectionView)
     } else {
       appBar.configure(attachTo: self)
+    }
+
+    contentViewController.view.snp.makeConstraints { (make) in
+      make.top.equalTo(appBar.navigationBar.snp.bottom)
+      make.leading.bottom.trailing.equalToSuperview()
     }
   }
 

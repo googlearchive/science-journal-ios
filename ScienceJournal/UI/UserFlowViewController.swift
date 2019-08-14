@@ -857,6 +857,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         contentViewController: experimentCoordinator.observeViewController
     )
 
+    // TODO: Localize all the title strings below.
     let detail = ActionArea.DetailContentContainerViewController(content: header) {
       let addSensorItem = ActionArea.BarButtonItem(title: "Add Sensor",
                                                    image: UIImage(named: "ic_add_circle")) {}
@@ -889,6 +890,18 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       self.actAreaController.showDetailViewController(detail, sender: self)
     }
 
+    let notesItem = actionAreaBarButtonItem(for: experimentCoordinator.notesViewController,
+                                            title: "Text",
+                                            imageName: "ic_comment")
+
+    let cameraItem = actionAreaBarButtonItem(for: experimentCoordinator.cameraViewController,
+                                             title: "Camera",
+                                             imageName: "ic_camera_alt")
+
+    let galleryItem = actionAreaBarButtonItem(for: experimentCoordinator.photoLibraryViewController,
+                                              title: "Gallery",
+                                              imageName: "ic_image")
+
     let emptyState = ExperimentDetailEmptyStateViewController()
     let detailHeader = MaterialHeaderContainerViewController(contentViewController: emptyState)
     detailHeader.showCloseButton = false
@@ -896,10 +909,23 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let content = ActionArea.MasterContentContainerViewController(
       content: experimentCoordinator,
       emptyState: detailHeader,
-      mode: .stateless(items: [sensorsItem])
+      mode: .stateless(items: [notesItem, sensorsItem, cameraItem, galleryItem])
     )
 
     return content
+  }
+
+  private func actionAreaBarButtonItem(for viewController: UIViewController,
+                                       title: String,
+                                       imageName: String) -> ActionArea.BarButtonItem {
+    return ActionArea.BarButtonItem(
+      title: title,
+      image: UIImage(named: imageName)
+    ) {
+      let headerVC = MaterialHeaderContainerViewController(contentViewController: viewController)
+      headerVC.showCloseButton = false
+      self.actAreaController.showDetailViewController(headerVC, sender: self)
+    }
   }
 
   /// Shows a note.

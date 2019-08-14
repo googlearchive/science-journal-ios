@@ -256,6 +256,25 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     return drawerVC?.observeViewController ?? _observeViewController
   }
 
+  private lazy var _notesViewController: NotesViewController =
+    NotesViewController(analyticsReporter: analyticsReporter)
+  var notesViewController: NotesViewController {
+    return drawerVC?.notesViewController ?? _notesViewController
+  }
+
+  private lazy var _cameraViewController: CameraViewController =
+    CameraViewController(analyticsReporter: analyticsReporter)
+  var cameraViewController: CameraViewController {
+    return drawerVC?.cameraViewController ?? _cameraViewController
+  }
+
+  private lazy var _photoLibraryViewController = PhotoLibraryViewController(
+    actionBarButtonType: .send,
+    analyticsReporter: analyticsReporter)
+  var photoLibraryViewController: PhotoLibraryViewController {
+    return drawerVC?.photoLibraryViewController ?? _photoLibraryViewController
+  }
+
   // MARK: - Public
 
   /// Designated initializer that takes an experiment.
@@ -308,9 +327,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     // Set delegate for all drawer items.
     observeViewController.delegate = self
-    drawerVC?.cameraViewController.delegate = self
-    drawerVC?.photoLibraryViewController.delegate = self
-    drawerVC?.notesViewController.delegate = self
+    cameraViewController.delegate = self
+    photoLibraryViewController.delegate = self
+    notesViewController.delegate = self
 
     // Configure observe.
     updateObserveWithExperimentTriggers()

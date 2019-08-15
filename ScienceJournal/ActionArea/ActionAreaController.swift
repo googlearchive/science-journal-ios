@@ -68,19 +68,11 @@ extension ActionArea {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
-        switch state {
-        case .normal:
-          if presentedDetailViewController.parent == nil {
-            // If there's no `parent`, the detail was already dismissed, so we need to clean up.
-            updateActionAreaBar(for: navController.topViewController)
-            self.presentedDetailViewController = nil
-          } else {
-            // Otherwise just update the actions
-            updateActionAreaBar(for: presentedDetailViewController)
-          }
-        case .modal:
-          updateActionAreaBar(for: presentedDetailViewController)
+        if state == .normal, presentedDetailViewController.parent == nil {
+          // If there's no `parent`, the detail was already dismissed, so we need to clean up.
+          self.presentedDetailViewController = nil
         }
+        updateActionAreaBar()
       }
     }
 
@@ -102,6 +94,7 @@ extension ActionArea {
       super.viewDidLoad()
 
       navController.delegate = self
+      detailNavController.delegate = self
 
       // Set `viewControllers` first to avoid warnings.
       svController.viewControllers = [navController, detailNavController]
@@ -119,14 +112,14 @@ extension ActionArea {
       let buttonBarViewController = Bar(contentViewController: svController)
       addChild(buttonBarViewController)
       view.addSubview(buttonBarViewController.view)
-      buttonBarViewController.view.snp.makeConstraints { (make) in
+      buttonBarViewController.view.snp.makeConstraints { make in
         make.edges.equalToSuperview()
       }
       buttonBarViewController.didMove(toParent: self)
       self.buttonBarViewController = buttonBarViewController
 
       updateSplitViewTraits(for: view.bounds.size)
-      updateSplitViewDetailVisibility(for: nil, animated: false)
+      updateSplitViewDetailVisibility()
     }
 
     override func viewWillTransition(to size: CGSize,
@@ -155,9 +148,8 @@ extension ActionArea {
       }
     }
 
-    private func updateSplitViewDetailVisibility(for vc: UIViewController?, animated: Bool) {
-      let duration = animated ? Metrics.defaultAnimationDuration : 0
-      let shouldShowDetail = vc.map { $0 is Content } ?? false
+    private func updateSplitViewDetailVisibility() {
+      let shouldShowDetail = navController.topViewController is MasterContent
       let preferredPrimaryColumnWidthFraction: CGFloat
       if shouldShowDetail {
         preferredPrimaryColumnWidthFraction = Metrics.preferredPrimaryColumnWidthFraction
@@ -165,63 +157,66 @@ extension ActionArea {
         preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFractionWhenDetailIsHidden
       }
 
-      // If we're going to hide the detail, we must first pop any presented VCs to avoid reducing
-      // their width. Failing to do so can result in autolayout warnings or crashes with some
-      // MDC collection view layouts.
-      if !shouldShowDetail && presentedDetailViewController != nil {
-        detailNavController.popViewController(animated: false)
-        presentedDetailViewController = nil
-      }
-
-      UIView.animate(withDuration: duration) {
-        self.svController.preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFraction
-      }
+      svController.preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFraction
     }
 
-    private func removeUnusedDetailEmptyStates(animated: Bool) {
-      if !svController.isCollapsed {
-        var foundMasterContent = false
+    private func removeUnusedDetailEmptyStates() {
+      if svController.isExpanded {
+        var topMasterContent: MasterContent?
         for vc in navController.viewControllers.reversed() {
           if let master = vc as? ActionArea.MasterContent {
-            foundMasterContent = true
-            detailNavController.popToViewController(master.emptyState, animated: animated)
+            topMasterContent = master
             break
           }
         }
-        if !foundMasterContent {
-          detailNavController.setViewControllers([], animated: animated)
+        if let topMasterContent = topMasterContent {
+          detailNavController.popToViewController(topMasterContent.emptyState, animated: true)
+        } else {
+          detailNavController.setViewControllers([], animated: false)
         }
       }
     }
 
-    private func updateActionAreaBar(for vc: UIViewController?) {
-      guard vc != detailNavController else {
-        // If the `UISplitViewController` is collapsed, we may get the `detailNavController`
-        // being presented within the `navController`. In this case we've already updated
-        // the actions, so there's nothing more to do.
-        return
-      }
-
-      let newItems: [UIBarButtonItem]
-      if let vc = vc as? Content {
-        switch vc.mode {
-        case .stateless(let items):
+    private func removeDismissedDetailViewController() {
+      if let presentedDetailViewController = presentedDetailViewController {
+        let viewControllers = navController.viewControllers + detailNavController.viewControllers
+        if !viewControllers.contains(presentedDetailViewController) {
           switch state {
           case .normal:
-            newItems = items.map(createBarButtonItem(from:))
+            self.presentedDetailViewController = nil
           case .modal:
-            return
+            if svController.isExpanded {
+              fatalError("The detailViewController cannot be dismissed in the modal state.")
+            }
           }
+        }
+      }
+    }
+
+    private func updateActionAreaBar() {
+      func items(for content: Content) -> [UIBarButtonItem] {
+        switch content.mode {
+        case let .stateless(items):
+          return items.map(createBarButtonItem(from:))
         case let .stateful(nonModal, modal):
           switch state {
           case .normal:
-            newItems = nonModal.items
+            return nonModal.items
               .map(createBarButtonItem(from:)) + [wrapBarButtonItem(from: nonModal.primary)]
           case .modal:
-            newItems = modal.items
+            return modal.items
               .map(createBarButtonItem(from:)) + [wrapBarButtonItem(from: modal.primary)]
           }
         }
+      }
+
+      let newItems: [UIBarButtonItem]
+      if let detail = presentedDetailViewController as? DetailContent {
+        newItems = items(for: detail)
+      } else if presentedDetailViewController != nil {
+        newItems = []
+      } else if let master = navController.topViewController as? MasterContent {
+        newItems = items(for: master)
       } else {
         newItems = []
       }
@@ -265,6 +260,10 @@ extension ActionArea {
     ///   - vc: The view controller to show.
     ///   - sender: The object calling this method.
     override func show(_ vc: UIViewController, sender: Any?) {
+      guard state == .normal else {
+        fatalError("View controllers cannot be pushed during a modal detail presentation.")
+      }
+
       svController.show(vc, sender: sender)
     }
 
@@ -278,11 +277,7 @@ extension ActionArea {
         fatalError("View controllers cannot be pushed during a modal detail presentation.")
       }
 
-      if !svController.isCollapsed {
-        let animated = !detailNavController.viewControllers.isEmpty
-        detailNavController.pushViewController(vc.emptyState, animated: animated)
-      }
-      navController.pushViewController(vc, animated: true)
+      svController.show(vc, sender: sender)
     }
 
     /// Present content in a detail context.
@@ -291,8 +286,11 @@ extension ActionArea {
     ///   - vc: The view controller to show.
     ///   - sender: The object calling this method.
     override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
+      guard presentedDetailViewController == nil else {
+        fatalError("A detailViewController is already being shown.")
+      }
+
       svController.showDetailViewController(vc, sender: sender)
-      updateActionAreaBar(for: vc)
     }
 
     /// Present content in a detail context.
@@ -305,35 +303,7 @@ extension ActionArea {
         fatalError("A detailViewController is already being shown.")
       }
 
-      svController.showDetailViewController(vc, sender: self)
-      updateActionAreaBar(for: vc)
-    }
-
-    /// Dismiss the content currently presented in a detail context.
-    ///
-    /// Calling this method when no detail content is presented is an error.
-    func dismissDetail() {
-      guard presentedDetailViewController != nil else {
-        fatalError("A detailViewController is not currently being shown.")
-      }
-
-      switch state {
-      case .normal:
-        if svController.isCollapsed {
-          navController.popViewController(animated: true)
-        } else {
-          detailNavController.popViewController(animated: true)
-        }
-
-        updateActionAreaBar(for: navController.topViewController)
-        self.presentedDetailViewController = nil
-      case .modal:
-        if svController.isCollapsed {
-          navController.popViewController(animated: true)
-        } else {
-          fatalError("The detailViewController cannot be dismissed in the modal state.")
-        }
-      }
+      svController.showDetailViewController(vc, sender: sender)
     }
 
     /// Re-present detail content that was dismissed in the `modal` state.
@@ -371,16 +341,11 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
   func splitViewController(_ splitViewController: UISplitViewController,
                            collapseSecondary secondaryViewController: UIViewController,
                            onto primaryViewController: UIViewController) -> Bool {
-    if presentedDetailViewController != nil {
-      // Return `false` to delegate to the primary navigation controller, which will push the
-      // `navDetailController` onto its navigation stack.
-      return false
-    } else {
-      // Otherwise the empty state of the detail view would cover the primary content, so return
-      // `true` to do nothing.
-      return true
+    if let presentedDetailViewController = presentedDetailViewController {
+      detailNavController.setViewControllers([], animated: false)
+      navController.pushViewController(presentedDetailViewController, animated: true)
     }
-    // false for default behavior
+    return true // false for default behavior
   }
 
   func primaryViewController(
@@ -389,23 +354,37 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
     return nil // nil for default behavior
   }
 
-  func splitViewController(_ splitViewController: UISplitViewController,
-                           separateSecondaryFrom primaryViewController: UIViewController
+  func splitViewController(
+    _ splitViewController: UISplitViewController,
+    separateSecondaryFrom primaryViewController: UIViewController
   ) -> UIViewController? {
-    if presentedDetailViewController != nil {
-      // Return `nil` to delegate to the primary navigation controller, which will pop the
-      // `navDetailController` and return it to be installed as the secondary view controller.
-      return nil
-    } else {
-      // Otherwise return the `detailNavController` directly.
-      return detailNavController
+    let emptyStates: [UIViewController] =
+      navController.viewControllers.reduce(into: []) { emptyStates, vc in
+        if let master = vc as? ActionArea.MasterContent {
+          emptyStates.append(master.emptyState)
+        }
+      }
+    detailNavController.setViewControllers(emptyStates, animated: false)
+    if let presentedDetailViewController = presentedDetailViewController {
+      navController.popViewController(animated: true)
+      detailNavController.pushViewController(presentedDetailViewController, animated: true)
     }
-    // nil for default behavior
+    return detailNavController // nil for default behavior
   }
 
   func splitViewController(_ splitViewController: UISplitViewController,
                            show vc: UIViewController, sender: Any?) -> Bool {
-    return false // false for default behavior
+    if let vc = vc as? ActionArea.MasterContent {
+      if svController.isExpanded {
+        if detailNavController.viewControllers.isEmpty {
+          detailNavController.pushViewController(vc.emptyState, animated: false)
+        } else {
+          detailNavController.pushViewController(vc.emptyState, animated: true)
+        }
+      }
+    }
+    navController.pushViewController(vc, animated: true)
+    return true // false for default behavior
   }
 
   func splitViewController(_ splitViewController: UISplitViewController,
@@ -428,10 +407,29 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
   func navigationController(_ navigationController: UINavigationController,
                             willShow viewController: UIViewController,
                             animated: Bool) {
-    updateSplitViewDetailVisibility(for: viewController, animated: animated)
-    updateActionAreaBar(for: viewController)
-    removeUnusedDetailEmptyStates(animated: animated)
+    if navigationController == navController {
+      removeDismissedDetailViewController()
+
+      UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
+        self.updateActionAreaBar()
+        self.updateSplitViewDetailVisibility()
+        self.removeUnusedDetailEmptyStates()
+      }
+    }
+
+    if navigationController == detailNavController {
+      removeDismissedDetailViewController()
+      updateActionAreaBar()
+    }
   }
+
+}
+
+// MARK: - UISplitViewController Extensions
+
+private extension UISplitViewController {
+
+  var isExpanded: Bool { return !isCollapsed }
 
 }
 
@@ -459,13 +457,15 @@ extension UIViewController {
 //       of the other material header types.
 final class MaterialHeaderContainerViewController: UIViewController {
 
-  var showCloseButton = true
+  override var navigationItem: UINavigationItem {
+    return content.navigationItem
+  }
 
   private let appBar = MDCAppBar()
-  private let contentViewController: UIViewController
+  private let content: UIViewController
 
-  init(contentViewController: UIViewController) {
-    self.contentViewController = contentViewController
+  init(content: UIViewController) {
+    self.content = content
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -476,39 +476,24 @@ final class MaterialHeaderContainerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    addChild(contentViewController)
-    view.addSubview(contentViewController.view)
-    contentViewController.didMove(toParent: self)
+    addChild(content)
+    view.addSubview(content.view)
+    content.didMove(toParent: self)
 
-    title = contentViewController.title
-
-    if showCloseButton {
-      navigationItem.leftBarButtonItem =
-        UIBarButtonItem(title: "Close",
-                        style: .plain,
-                        target: self,
-                        action: #selector(close))
-    }
-
-    if let collectionViewController = contentViewController as? UICollectionViewController {
+    if let collectionViewController = content as? UICollectionViewController {
       appBar.configure(attachTo: self, scrollView: collectionViewController.collectionView)
     } else {
       appBar.configure(attachTo: self)
     }
 
-    contentViewController.view.snp.makeConstraints { (make) in
+    content.view.snp.makeConstraints { make in
       make.top.equalTo(appBar.navigationBar.snp.bottom)
       make.leading.bottom.trailing.equalToSuperview()
     }
   }
 
-  @objc
-  private func close() {
-    actionAreaController?.dismissDetail()
-  }
-
   override var description: String {
-    return "\(type(of: self))(content: \(String(describing: contentViewController)))"
+    return "\(type(of: self))(content: \(String(describing: content)))"
   }
 
 }

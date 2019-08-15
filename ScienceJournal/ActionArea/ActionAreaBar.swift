@@ -87,17 +87,17 @@ extension ActionArea {
 
       addChild(contentViewController)
       view.addSubview(contentViewController.view)
-      contentViewController.view.snp.makeConstraints { (make) in
+      contentViewController.view.snp.makeConstraints { make in
         make.edges.equalToSuperview()
       }
       contentViewController.didMove(toParent: self)
 
       view.addSubview(buttonBar)
-      buttonBar.snp.makeConstraints { (make) in
+      buttonBar.snp.makeConstraints { make in
         make.leadingMargin.trailingMargin.equalToSuperview()
         make.height.equalTo(Metrics.buttonBarHeight)
       }
-      buttonBar.snp.prepareConstraints { (make) in
+      buttonBar.snp.prepareConstraints { make in
         let hidden = make.top.equalTo(view.snp.bottom).constraint
         let visible = make.bottomMargin.equalToSuperview().constraint
         self.visibilityConstraints = VisibilityConstraints(hidden: hidden, visible: visible)
@@ -110,23 +110,14 @@ extension ActionArea {
 
     private var isButtonBarVisible: Bool = false {
       willSet {
-        // TODO: Pull this out and coordinate transition animations
-        func animate() {
-          UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-            self.view.layoutIfNeeded()
-          }
-        }
-
         switch (isButtonBarVisible, newValue) {
         case (false, true):
           visibilityConstraints.show()
           additionalSafeAreaInsets =
             UIEdgeInsets(top: 0, left: 0, bottom: Metrics.buttonBarHeight, right: 0)
-          animate()
         case (true, false):
           visibilityConstraints.hide()
           additionalSafeAreaInsets = .zero
-          animate()
         default:
           break
         }

@@ -25,6 +25,7 @@ extension ActionArea {
     var mode: ContentMode
 
     private let content: UIViewController
+    private var shouldAddCloseButton = false
 
     // MARK: - Initializers
 
@@ -52,6 +53,13 @@ extension ActionArea {
       self.init(content: content, mode: mode())
     }
 
+    // MARK: - API
+
+    // TODO: Replace this with an API for content VCs to specify their close button.
+    func addCloseButton() {
+      shouldAddCloseButton = true
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -60,14 +68,34 @@ extension ActionArea {
       addChild(content)
       view.addSubview(content.view)
       content.didMove(toParent: self)
-      content.view.snp.makeConstraints { (make) in
+      content.view.snp.makeConstraints { make in
         make.edges.equalToSuperview()
       }
+
+      if shouldAddCloseButton {
+        content.navigationItem.leftBarButtonItem =
+          // TODO: Use correct assets if we don't remove this.
+          UIBarButtonItem(title: "X",
+                          style: .plain,
+                          target: self,
+                          action: #selector(close))
+      }
     }
+
+    // MARK: - Implementation
 
     override var description: String {
       return "\(type(of: self))(content: \(String(describing: content)))"
     }
 
+    @objc private func close() {
+      if let navigationController = navigationController {
+        navigationController.popViewController(animated: true)
+      } else {
+        dismiss(animated: true, completion: nil)
+      }
+    }
+
   }
+
 }

@@ -853,9 +853,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     experimentCoordinator: ExperimentCoordinatorViewController
   ) -> ActionArea.MasterContent {
     let header =
-      MaterialHeaderContainerViewController(
-        contentViewController: experimentCoordinator.observeViewController
-    )
+      MaterialHeaderContainerViewController(content: experimentCoordinator.observeViewController)
 
     // TODO: Localize all the title strings below.
     let detail = ActionArea.DetailContentContainerViewController(content: header) {
@@ -882,6 +880,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         modal: (primary: stopItem, items: [snapshotItem])
       )
     }
+    detail.addCloseButton()
 
     let sensorsItem = ActionArea.BarButtonItem(
       title: "Sensor",
@@ -903,8 +902,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                               imageName: "ic_image")
 
     let emptyState = ExperimentDetailEmptyStateViewController()
-    let detailHeader = MaterialHeaderContainerViewController(contentViewController: emptyState)
-    detailHeader.showCloseButton = false
+    let detailHeader = MaterialHeaderContainerViewController(content: emptyState)
 
     let content = ActionArea.MasterContentContainerViewController(
       content: experimentCoordinator,
@@ -922,8 +920,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       title: title,
       image: UIImage(named: imageName)
     ) {
-      let headerVC = MaterialHeaderContainerViewController(contentViewController: viewController)
-      headerVC.showCloseButton = false
+      let headerVC = MaterialHeaderContainerViewController(content: viewController)
       self.actAreaController.showDetailViewController(headerVC, sender: self)
     }
   }

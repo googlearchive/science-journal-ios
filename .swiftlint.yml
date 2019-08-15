@@ -6,7 +6,7 @@ line_length:
   warning: 100
 
 file_length:
-  warning: 600 # We have some longer file length we should reduce.
+  warning: 1000 # We have some longer file length we should reduce.
 
 function_body_length:
   warning: 110 # We have some longer function bodies we should reduce.

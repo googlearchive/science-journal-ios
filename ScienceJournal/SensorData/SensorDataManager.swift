@@ -24,7 +24,7 @@ enum SensorDataManagerError: Error {
   case addingSensorDataFailed
 }
 
-// swiftlint:disable type_body_length file_length
+// swiftlint:disable type_body_length
 /// The data manager for Core Data.
 open class SensorDataManager {
 
@@ -676,4 +676,4 @@ open class SensorDataManager {
   }
 
 }
-// swiftlint:enable type_body_length file_length
+// swiftlint:enable type_body_length

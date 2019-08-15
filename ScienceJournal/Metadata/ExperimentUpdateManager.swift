@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 
-// swiftlint:disable file_length
-
 import Foundation
 
 /// The experiment update manager delegate is designed to observe events specific to the operation
@@ -607,5 +605,3 @@ class ExperimentUpdateManager {
   }
 
 }
-
-// swiftlint:enable file_length

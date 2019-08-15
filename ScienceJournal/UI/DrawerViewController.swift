@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 
-// swiftlint:disable file_length
-
 import AVFoundation
 import UIKit
 
@@ -607,5 +605,3 @@ open class DrawerViewController: UIViewController, DrawerViewDelegate {
   }
 
 }
-
-// swiftlint:enable type_length

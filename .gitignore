@@ -33,3 +33,6 @@ ScienceJournal.xcworkspace
 
 ## Generated Plist
 Info-Combined.plist
+
+## Local option overrides for SwiftLint
+.swiftlint.options.local

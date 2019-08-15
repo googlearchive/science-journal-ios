@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 
-// swiftlint:disable file_length
-
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
@@ -723,5 +721,3 @@ open class DrawerView: UIView, MDCTabBarDelegate {
   }
 
 }
-
-// swiftlint:enable type_body_length file_length

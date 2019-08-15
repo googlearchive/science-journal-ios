@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 
-// swiftlint:disable file_length
-
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_Buttons_Buttons
@@ -785,5 +783,3 @@ extension ExperimentsListViewController: EmptyViewDelegate {
   }
 
 }
-
-// swiftlint:enable file_length

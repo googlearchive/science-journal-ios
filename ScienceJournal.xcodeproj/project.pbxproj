@@ -11,6 +11,7 @@
 		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
 		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
+		3F22062423046E9D00FB19D0 /* ActionAreaBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */; };
 		3F264A8722E8B53C00BDD732 /* XCTestCase+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */; };
 		3F2A630022A15EF500A320C6 /* FileSystemLayoutMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */; };
 		3F2A630222A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */; };
@@ -20,7 +21,6 @@
 		3F71B71622B466D90015074A /* ActionAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71B71522B466D90015074A /* ActionAreaController.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		3FA7052022F8DD2600753842 /* ActionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7051F22F8DD2600753842 /* ActionArea.swift */; };
-		3FA7052222F8DD7400753842 /* ActionAreaBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052122F8DD7400753842 /* ActionAreaBar.swift */; };
 		3FA7052422F8DD8E00753842 /* ActionAreaBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */; };
 		3FA7052622F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */; };
 		3FA7052822F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */; };
@@ -649,6 +649,7 @@
 		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
+		3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaBarViewController.swift; sourceTree = "<group>"; };
 		3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UIImage.swift"; sourceTree = "<group>"; };
 		3F2A62FF22A15EF500A320C6 /* FileSystemLayoutMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigration.swift; sourceTree = "<group>"; };
 		3F2A630122A15F2E00A320C6 /* FileSystemLayoutMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutMigrationTest.swift; sourceTree = "<group>"; };
@@ -658,7 +659,6 @@
 		3F71B71522B466D90015074A /* ActionAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaController.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		3FA7051F22F8DD2600753842 /* ActionArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionArea.swift; sourceTree = "<group>"; };
-		3FA7052122F8DD7400753842 /* ActionAreaBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaBar.swift; sourceTree = "<group>"; };
 		3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaBarButtonItem.swift; sourceTree = "<group>"; };
 		3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaMasterContentContainerViewController.swift; sourceTree = "<group>"; };
 		3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaDetailContentContainerViewController.swift; sourceTree = "<group>"; };
@@ -1356,8 +1356,8 @@
 			isa = PBXGroup;
 			children = (
 				3FA7051F22F8DD2600753842 /* ActionArea.swift */,
-				3FA7052122F8DD7400753842 /* ActionAreaBar.swift */,
 				3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */,
+				3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */,
 				3F71B71522B466D90015074A /* ActionAreaController.swift */,
 				3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */,
 				3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */,
@@ -3305,7 +3305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA7052222F8DD7400753842 /* ActionAreaBar.swift in Sources */,
 				5C3245291EF1D4F100E8664B /* DisplayItem.swift in Sources */,
 				5C95134C20CAD7110033D9FA /* AccountDeleter.swift in Sources */,
 				8BB23E761FFD85B400850148 /* KeyboardObserver.swift in Sources */,
@@ -3569,6 +3568,7 @@
 				5C2C2A33203780ED007F2FA5 /* ImportExperimentOperation.swift in Sources */,
 				8B9F060F1EF42CCB0030B011 /* SensorTrigger.swift in Sources */,
 				5CE521A4209D045700767C8E /* RootUserManager.swift in Sources */,
+				3F22062423046E9D00FB19D0 /* ActionAreaBarViewController.swift in Sources */,
 				5CFC8E5E204757A100A674C2 /* IconPath.swift in Sources */,
 				58C4DB1622D53B4C0029E519 /* PDFExportController.swift in Sources */,
 				6806591C1EC2704D0090670C /* TextNoteCardView.swift in Sources */,

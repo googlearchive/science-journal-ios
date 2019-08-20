@@ -50,7 +50,7 @@ target 'ScienceJournal' do
   ## ZipArchive
   pod 'SSZipArchive', '2.1.1'
   ## SnapKit
-  pod 'SnapKit', '~> 5.0.0'
+  pod 'SnapKit', '5.0.0'
 
   target 'ScienceJournalTests' do
     inherit! :search_paths

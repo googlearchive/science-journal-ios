@@ -70,13 +70,13 @@ extension ActionArea {
       addChild(content)
       view.addSubview(content.view)
       content.didMove(toParent: self)
-      content.view.snp.makeConstraints { (make) in
+      content.view.snp.makeConstraints { make in
         make.edges.equalToSuperview()
       }
     }
 
     override var description: String {
-      return "\(type(of: self))(content: \(String(describing: content)))"
+      return "ActionArea.MasterContentContainerViewController(content: \(content))"
     }
 
   }

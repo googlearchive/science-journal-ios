@@ -227,7 +227,7 @@ DEPENDENCIES:
   - MaterialComponents/Themes
   - MaterialComponents/Typography
   - Protobuf (~> 3.5.0)
-  - SnapKit (~> 5.0.0)
+  - SnapKit (= 5.0.0)
   - SSZipArchive (= 2.1.1)
   - SwiftLint
 
@@ -258,6 +258,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: 238fd23c7c22f078ddf778e9192be02aa3f23286
+PODFILE CHECKSUM: 1135092c3895a8898909fcbcf300944510f0db47
 
 COCOAPODS: 1.7.3

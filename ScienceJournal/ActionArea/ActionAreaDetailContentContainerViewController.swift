@@ -85,7 +85,7 @@ extension ActionArea {
     // MARK: - Implementation
 
     override var description: String {
-      return "\(type(of: self))(content: \(String(describing: content)))"
+      return "ActionArea.DetailContentContainerViewController(content: \(content))"
     }
 
     @objc private func close() {

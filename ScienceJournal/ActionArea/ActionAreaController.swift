@@ -50,8 +50,8 @@ extension ActionArea {
       return nc
     }()
 
-    // TODO: Make this non-optional
-    private var buttonBarViewController: Bar?
+    private let masterBarViewController: BarViewController
+    private let detailBarViewController: BarViewController
     private let svController = UISplitViewController()
     private var presentedDetailViewController: UIViewController?
     private let preferredPrimaryColumnWidthFractionWhenDetailIsHidden: CGFloat = 1.0
@@ -81,6 +81,8 @@ extension ActionArea {
     init() {
       precondition(FeatureFlags.isActionAreaEnabled,
                    "This class can only be used when Action Area is enabled.")
+      self.masterBarViewController = BarViewController(content: navController)
+      self.detailBarViewController = BarViewController(content: detailNavController)
       super.init(nibName: nil, bundle: nil)
     }
 
@@ -97,7 +99,7 @@ extension ActionArea {
       detailNavController.delegate = self
 
       // Set `viewControllers` first to avoid warnings.
-      svController.viewControllers = [navController, detailNavController]
+      svController.viewControllers = [masterBarViewController, detailBarViewController]
       svController.presentsWithGesture = false
       // When set to `automatic`, iPad uses `primaryOverlay` in portrait orientations, which
       // can result in `viewDidAppear` not being called on detail view controllers.
@@ -109,16 +111,14 @@ extension ActionArea {
         floor(longestDimension * Metrics.preferredPrimaryColumnWidthFraction)
       svController.maximumPrimaryColumnWidth = longestDimension
 
-      let buttonBarViewController = Bar(contentViewController: svController)
-      addChild(buttonBarViewController)
-      view.addSubview(buttonBarViewController.view)
-      buttonBarViewController.view.snp.makeConstraints { make in
+      addChild(svController)
+      view.addSubview(svController.view)
+      svController.didMove(toParent: self)
+      svController.view.snp.makeConstraints { make in
         make.edges.equalToSuperview()
       }
-      buttonBarViewController.didMove(toParent: self)
-      self.buttonBarViewController = buttonBarViewController
 
-      updateSplitViewTraits(for: view.bounds.size)
+      updateSplitViewTraits(for: UIScreen.main.bounds.size)
       updateSplitViewDetailVisibility()
     }
 
@@ -130,26 +130,25 @@ extension ActionArea {
     }
 
     private func updateSplitViewTraits(for size: CGSize) {
-      guard let buttonBarViewController = buttonBarViewController else { return }
-
       func overrideHorizontalSizeClassToCompact(_ vc: UIViewController) {
         let horizontallyCompact = UITraitCollection(horizontalSizeClass: .compact)
         setOverrideTraitCollection(horizontallyCompact, forChild: vc)
       }
 
       if UIDevice.current.userInterfaceIdiom == .pad {
-        if size.isWiderThanTall {
-          setOverrideTraitCollection(nil, forChild: buttonBarViewController)
+        if size.isWiderThanTall, shouldShowDetail {
+          setOverrideTraitCollection(nil, forChild: svController)
         } else {
-          overrideHorizontalSizeClassToCompact(buttonBarViewController)
+          overrideHorizontalSizeClassToCompact(svController)
         }
       } else {
-        overrideHorizontalSizeClassToCompact(buttonBarViewController)
+        overrideHorizontalSizeClassToCompact(svController)
       }
     }
 
+    private var shouldShowDetail: Bool { return navController.topViewController is MasterContent }
+
     private func updateSplitViewDetailVisibility() {
-      let shouldShowDetail = navController.topViewController is MasterContent
       let preferredPrimaryColumnWidthFraction: CGFloat
       if shouldShowDetail {
         preferredPrimaryColumnWidthFraction = Metrics.preferredPrimaryColumnWidthFraction
@@ -158,23 +157,6 @@ extension ActionArea {
       }
 
       svController.preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFraction
-    }
-
-    private func removeUnusedDetailEmptyStates() {
-      if svController.isExpanded {
-        var topMasterContent: MasterContent?
-        for vc in navController.viewControllers.reversed() {
-          if let master = vc as? ActionArea.MasterContent {
-            topMasterContent = master
-            break
-          }
-        }
-        if let topMasterContent = topMasterContent {
-          detailNavController.popToViewController(topMasterContent.emptyState, animated: true)
-        } else {
-          detailNavController.setViewControllers([], animated: false)
-        }
-      }
     }
 
     private func removeDismissedDetailViewController() {
@@ -221,7 +203,13 @@ extension ActionArea {
         newItems = []
       }
 
-      buttonBarViewController?.items = newItems
+      if svController.isCollapsed {
+        masterBarViewController.items = newItems
+        detailBarViewController.items = []
+      } else {
+        masterBarViewController.items = []
+        detailBarViewController.items = newItems
+      }
     }
 
     private func createBarButtonItem(from item: BarButtonItem) -> UIBarButtonItem {
@@ -342,9 +330,9 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
                            collapseSecondary secondaryViewController: UIViewController,
                            onto primaryViewController: UIViewController) -> Bool {
     if let presentedDetailViewController = presentedDetailViewController {
-      detailNavController.setViewControllers([], animated: false)
-      navController.pushViewController(presentedDetailViewController, animated: true)
+      navController.pushViewController(presentedDetailViewController, animated: false)
     }
+    detailNavController.setViewControllers([], animated: false)
     return true // false for default behavior
   }
 
@@ -366,23 +354,14 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
       }
     detailNavController.setViewControllers(emptyStates, animated: false)
     if let presentedDetailViewController = presentedDetailViewController {
-      navController.popViewController(animated: true)
-      detailNavController.pushViewController(presentedDetailViewController, animated: true)
+      navController.popViewController(animated: false)
+      detailNavController.pushViewController(presentedDetailViewController, animated: false)
     }
-    return detailNavController // nil for default behavior
+    return detailBarViewController // nil for default behavior
   }
 
   func splitViewController(_ splitViewController: UISplitViewController,
                            show vc: UIViewController, sender: Any?) -> Bool {
-    if let vc = vc as? ActionArea.MasterContent {
-      if svController.isExpanded {
-        if detailNavController.viewControllers.isEmpty {
-          detailNavController.pushViewController(vc.emptyState, animated: false)
-        } else {
-          detailNavController.pushViewController(vc.emptyState, animated: true)
-        }
-      }
-    }
     navController.pushViewController(vc, animated: true)
     return true // false for default behavior
   }
@@ -407,19 +386,107 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
   func navigationController(_ navigationController: UINavigationController,
                             willShow viewController: UIViewController,
                             animated: Bool) {
-    if navigationController == navController {
-      removeDismissedDetailViewController()
+    removeDismissedDetailViewController()
 
-      UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-        self.updateActionAreaBar()
-        self.updateSplitViewDetailVisibility()
-        self.removeUnusedDetailEmptyStates()
-      }
+    if navigationController == navController {
+      navigationController.transitionCoordinator?.animateAlongsideTransition(
+        in: masterBarViewController.view,
+        animation: { _ in
+          self.updateActionAreaBar()
+        }, completion: { _ in
+          self.updateSplitViewTraits(for: self.view.bounds.size)
+          self.updateSplitViewDetailVisibility()
+        }
+      )
     }
 
     if navigationController == detailNavController {
-      removeDismissedDetailViewController()
       updateActionAreaBar()
+    }
+  }
+
+  func navigationController(
+    _ navigationController: UINavigationController,
+    animationControllerFor operation: UINavigationController.Operation,
+    from fromVC: UIViewController,
+    to toVC: UIViewController
+  ) -> UIViewControllerAnimatedTransitioning? {
+    if fromVC is ActionArea.DetailContent || toVC is ActionArea.DetailContent {
+      return FauxdalTransitionAnimation(operation: operation)
+    } else {
+      return nil
+    }
+  }
+
+  // A custom transition for `UINavigationController` that looks like a `coverVertical` modal
+  // transition. It may be possible to use a `UIPresentationController` instead of this, which
+  // would ensure the animation would be exactly the same, but custom presentations seem to ignore
+  // the `definesPresentationContext` property and present in full screen from the root VC, which
+  // covers the AA bar. Using this custom animation also has the advantage of only needing one
+  // code path to handle post-dismissal cleanup and animation coordination.
+  private final class FauxdalTransitionAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+
+    private let operation: UINavigationController.Operation
+
+    init(operation: UINavigationController.Operation) {
+      self.operation = operation
+    }
+
+    func transitionDuration(
+      using transitionContext: UIViewControllerContextTransitioning?
+    ) -> TimeInterval {
+      return Metrics.defaultAnimationDuration
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+      switch operation {
+      case .none:
+        // TODO: When does this happen?
+        transitionContext.completeTransition(true)
+      case .push:
+        animatePush(using: transitionContext)
+      case .pop:
+        animatePop(using: transitionContext)
+      }
+    }
+
+    func animatePush(using transitionContext: UIViewControllerContextTransitioning) {
+      guard let toView = transitionContext.view(forKey: .to) else {
+        transitionContext.completeTransition(false)
+        return
+      }
+
+      let duration = transitionDuration(using: transitionContext)
+      let toViewHeight = toView.bounds.height
+
+      transitionContext.containerView.addSubview(toView)
+
+      toView.transform = CGAffineTransform(translationX: 0, y: toViewHeight)
+      UIView.animate(withDuration: duration, animations: {
+        toView.transform = .identity
+      }) { completed in
+        transitionContext.completeTransition(completed)
+      }
+    }
+
+    func animatePop(using transitionContext: UIViewControllerContextTransitioning) {
+      guard let fromView = transitionContext.view(forKey: .from),
+        let toView = transitionContext.view(forKey: .to) else {
+        transitionContext.completeTransition(false)
+        return
+      }
+
+      let duration = transitionDuration(using: transitionContext)
+      let fromViewHeight = fromView.bounds.height
+
+      transitionContext.containerView.insertSubview(toView, belowSubview: fromView)
+
+      UIView.animate(withDuration: duration, animations: {
+        fromView.transform = CGAffineTransform(translationX: 0, y: fromViewHeight)
+      }) { completed in
+        fromView.transform = .identity
+        transitionContext.completeTransition(completed)
+      }
     }
   }
 
@@ -500,6 +567,7 @@ final class MaterialHeaderContainerViewController: UIViewController {
 
 // MARK: - Debugging
 
+#if DEBUG
 extension ActionArea.Controller {
 
   private func log(debuggingInfoFor svc: UISplitViewController?,
@@ -524,7 +592,7 @@ extension ActionArea.Controller {
       return "detailNavController"
     } else {
       let d = String(describing: vc)
-      if d.starts(with: "<third_party_sciencejournal") {
+      if d.contains("third_party_sciencejournal") {
         return d.split(separator: ":").first?
           .split(separator: ".").last
           .map(String.init) ?? d
@@ -559,3 +627,19 @@ extension UISplitViewController.DisplayMode: CustomStringConvertible {
   }
 
 }
+
+extension UINavigationController.Operation: CustomStringConvertible {
+
+  public var description: String {
+    switch self {
+    case .none:
+      return "none"
+    case .push:
+      return "push"
+    case .pop:
+      return "pop"
+    }
+  }
+
+}
+#endif

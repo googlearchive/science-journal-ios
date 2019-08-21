@@ -59,6 +59,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
                                  UICollectionViewDelegate,
                                  UICollectionViewDelegateFlowLayout {
 
+  typealias TimestampUpdate = (String) -> Void
+
   enum State {
     case playback
     case timeSelect
@@ -119,6 +121,9 @@ class TrialDetailViewController: MaterialHeaderViewController,
     return TrialDetailSensorsView.height
   }()
 
+  private(set) lazy var notesViewController: NotesViewController =
+    NotesViewController(analyticsReporter: analyticsReporter)
+
   private var editBarButton = MaterialBarButtonItem()
   private var cancelBarButton: MaterialCloseBarButtonItem?
   private var menuBarButton = MaterialMenuBarButtonItem()
@@ -139,6 +144,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   private let sensorDataManager: SensorDataManager
   private let exportType: UserExportType
   private let saveToFilesHandler = SaveToFilesHandler()
+  private var timestampSubscribers: [TimestampUpdate] = []
 
   private var cellHorizontalInset: CGFloat {
     var inset: CGFloat {
@@ -385,6 +391,10 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     addChild(cropRangeController)
 
+    if FeatureFlags.isActionAreaEnabled {
+      notesViewController.delegate = self
+    }
+
     updateForState()
   }
 
@@ -464,6 +474,18 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     // Reload collection view items.
     collectionView.reloadData()
+  }
+
+  func prepareToAddNote() {
+    guard let sensor = sensorsView?.currentSensor,
+      let playbackController = playbackViewControllers[sensor.ID] else { return }
+    let timestampString = timeFormat.string(
+      fromTimestamp: playbackController.playheadRelativeTimestamp)
+    notesViewController.title = "Add note to " + timestampString
+  }
+
+  func subscribeToTimestampUpdate(with updateBlock: @escaping TimestampUpdate) {
+    timestampSubscribers.append(updateBlock)
   }
 
   // MARK: - Notifications
@@ -941,13 +963,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   // MARK: - TrialDetailAddNoteCellDelegate
 
   func trialDetailAddNoteCellButtonPressed() {
-    guard let sensor = sensorsView?.currentSensor,
-        let playbackController = playbackViewControllers[sensor.ID] else { return }
-    pendingNote = PendingNote(text: nil,
-                              imageData: nil,
-                              imageMetaData: nil,
-                              timestamp: playbackController.playheadTimestamp,
-                              relativeTimestamp: playbackController.playheadRelativeTimestamp)
+    createPendingNote()
     view.endEditing(true)
     showAddNoteDialog()
   }
@@ -956,8 +972,10 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   func playbackViewControllerDidChangePlayheadTimestamp(forSensorID sensorID: String) {
     guard let playbackController = playbackViewControllers[sensorID] else { return }
-    timeSelectionView.timestampLabel.text =
-        timeFormat.string(fromTimestamp: playbackController.playheadRelativeTimestamp)
+    let timestampString = timeFormat.string(
+      fromTimestamp: playbackController.playheadRelativeTimestamp)
+    timeSelectionView.timestampLabel.text = timestampString
+    timestampSubscribers.forEach { $0(timestampString) }
   }
 
   // MARK: - ImageSelectorDelegate
@@ -1368,6 +1386,80 @@ class TrialDetailViewController: MaterialHeaderViewController,
     }
   }
 
+  private func createPendingNote() {
+    guard let sensor = sensorsView?.currentSensor,
+      let playbackController = playbackViewControllers[sensor.ID] else { return }
+    pendingNote = PendingNote(text: nil,
+                              imageData: nil,
+                              imageMetaData: nil,
+                              timestamp: playbackController.playheadTimestamp,
+                              relativeTimestamp: playbackController.playheadRelativeTimestamp)
+  }
+
+  private func processPendingNote(noteText: String?) {
+    guard let pendingNote = pendingNote else { return }
+
+    var newNote: Note
+    if let imageData = pendingNote.imageData, let metadata = pendingNote.imageMetaData {
+      // Save image
+      let pictureNote = PictureNote()
+      let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
+      var savingError = false
+      var errorMessage: String?
+      do {
+        try metadataManager.saveImageData(imageData,
+                                          atPicturePath: pictureFilePath,
+                                          experimentID: experiment.ID,
+                                          withMetadata: metadata)
+      } catch MetadataManagerError.photoDiskSpaceError {
+        errorMessage = String.photoDiskSpaceErrorMessage
+        savingError = true
+      } catch {
+        sjlog_error("Unknown error saving picture note image: \(error)", category: .general)
+        savingError = true
+      }
+
+      if savingError {
+        finishAddingNote(errorMessage: errorMessage)
+        return
+      }
+
+      pictureNote.filePath = pictureFilePath
+      if let noteText = noteText {
+        pictureNote.caption = Caption(text: noteText)
+      }
+      newNote = pictureNote
+    } else if let noteText = noteText {
+      newNote = TextNote(text: noteText)
+    } else {
+      // Notes need either text or an image.
+      return
+    }
+
+    newNote.timestamp = {
+      if let pendingNoteTimestamp = pendingNote.timestamp {
+        return pendingNoteTimestamp
+      } else {
+        // If the pending note timestamp is nil, default to the recording start.
+        return trialDetailDataSource.trial.recordingRange.min
+      }
+    }()
+
+    itemDelegate?.detailViewControllerDidAddNote(newNote,
+                                                 forTrialID: trialDetailDataSource.trial.ID)
+
+    // Accessibility announcement string.
+    var announcement: String
+    switch newNote {
+    case is TextNote: announcement = String.textNoteAddedContentDescription
+    case is PictureNote: announcement = String.pictureNoteAddedContentDescription
+    default: announcement = String.noteAddedContentDescription
+    }
+    announcement += " \(String.toRunContentDescription)"
+
+    finishAddingNote(announcement: announcement)
+  }
+
   // MARK: - Add Note
 
   private func showAddNoteDialog() {
@@ -1544,69 +1636,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
   }
 
   @objc private func addNoteSaveButtonPressed() {
-    guard let pendingNote = pendingNote, let addNoteDialog = addNoteDialog else { return }
-
-    let noteText = addNoteDialog.textField.text?.trimmedOrNil
-
-    var newNote: Note
-    if let imageData = pendingNote.imageData, let metadata = pendingNote.imageMetaData {
-      // Save image
-      let pictureNote = PictureNote()
-      let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
-      var savingError = false
-      var errorMessage: String?
-      do {
-        try metadataManager.saveImageData(imageData,
-                                          atPicturePath: pictureFilePath,
-                                          experimentID: experiment.ID,
-                                          withMetadata: metadata)
-      } catch MetadataManagerError.photoDiskSpaceError {
-        errorMessage = String.photoDiskSpaceErrorMessage
-        savingError = true
-      } catch {
-        sjlog_error("Unknown error saving picture note image: \(error)", category: .general)
-        savingError = true
-      }
-
-      if savingError {
-        finishAddingNote(errorMessage: errorMessage)
-        return
-      }
-
-      pictureNote.filePath = pictureFilePath
-      if let noteText = noteText {
-        pictureNote.caption = Caption(text: noteText)
-      }
-      newNote = pictureNote
-    } else if let noteText = noteText {
-      newNote = TextNote(text: noteText)
-    } else {
-      // Notes need either text or an image.
-      return
-    }
-
-    newNote.timestamp = {
-      if let pendingNoteTimestamp = pendingNote.timestamp {
-        return pendingNoteTimestamp
-      } else {
-        // If the pending note timestamp is nil, default to the recording start.
-        return trialDetailDataSource.trial.recordingRange.min
-      }
-    }()
-
-    itemDelegate?.detailViewControllerDidAddNote(newNote,
-                                                 forTrialID: trialDetailDataSource.trial.ID)
-
-    // Accessibility announcement string.
-    var announcement: String
-    switch newNote {
-    case is TextNote: announcement = String.textNoteAddedContentDescription
-    case is PictureNote: announcement = String.pictureNoteAddedContentDescription
-    default: announcement = String.noteAddedContentDescription
-    }
-    announcement += " \(String.toRunContentDescription)"
-
-    finishAddingNote(announcement: announcement)
+    guard let addNoteDialog = addNoteDialog else { return }
+    processPendingNote(noteText: addNoteDialog.textField.text?.trimmedOrNil)
   }
 
   @objc private func addNoteTimestampButtonPressed() {
@@ -1676,6 +1707,17 @@ class TrialDetailViewController: MaterialHeaderViewController,
     addNoteDialog?.saveButton.isEnabled = pendingNoteDataIsValid()
   }
 
+}
+
+// MARK: - NotesViewControllerDelegate
+
+extension TrialDetailViewController: NotesViewControllerDelegate {
+
+  func notesViewController(_ notesViewController: NotesViewController,
+                           didCreateTextForNote text: String) {
+    createPendingNote()
+    processPendingNote(noteText: text)
+  }
 }
 
 // swiftlint:enable file_length type_body_length

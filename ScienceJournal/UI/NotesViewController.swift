@@ -71,7 +71,7 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
     super.viewDidLoad()
 
     // TODO: Localize this string
-    title = "Add new text note"
+    title = title ?? "Add new text note"
 
     // Don't allow the custom position until editing begins.
     drawerViewController?.drawerView.canOpenToCustomPosition = false

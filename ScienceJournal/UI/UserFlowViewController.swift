@@ -552,7 +552,18 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                   sensorDataManager: sensorDataManager)
     self.trialDetailVC = trialDetailVC
     openExperimentUpdateManager?.addListener(trialDetailVC)
-    navController.pushViewController(trialDetailVC, animated: true)
+
+    if FeatureFlags.isActionAreaEnabled {
+      if let experimentCoordinator = experimentCoordinatorVC {
+        let content = configure(trialDetailViewController: trialDetailVC,
+                                experimentCoordinator: experimentCoordinator)
+        actAreaController.show(content, sender: self)
+      } else {
+        fatalError("Experiment coordinator not available.")
+      }
+    } else {
+      navController.pushViewController(trialDetailVC, animated: true)
+    }
   }
 
   func experimentViewControllerShowNote(_ displayNote: DisplayNote, jumpToCaption: Bool) {
@@ -847,6 +858,46 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     // This is a good time to generate any missing recording protos.
     userAssetManager.writeMissingSensorDataProtos(forExperiment: experiment)
+  }
+
+  private func configure(trialDetailViewController: TrialDetailViewController,
+                         experimentCoordinator: ExperimentCoordinatorViewController) ->
+    ActionArea.MasterContent {
+    let recordingDetailEmptyState = RecordingDetailEmptyStateViewController()
+    trialDetailViewController.subscribeToTimestampUpdate { (timestamp) in
+      recordingDetailEmptyState.timestampString = timestamp
+    }
+    let detailHeader = MaterialHeaderContainerViewController(content: recordingDetailEmptyState)
+
+    let notesItem = ActionArea.BarButtonItem(
+      title: "Text",
+      image: UIImage(named: "ic_comment")
+    ) {
+      let notesVC = trialDetailViewController.notesViewController
+      let headerVC = MaterialHeaderContainerViewController(content: notesVC)
+      trialDetailViewController.prepareToAddNote()
+      self.actAreaController.showDetailViewController(headerVC, sender: self)
+    }
+
+      // TODO: Replace with new instances of these view controllers and set as delegate.
+    let cameraItem = actionAreaBarButtonItem(for: experimentCoordinator.cameraViewController,
+                                             title: "Camera",
+                                             imageName: "ic_camera_alt")
+
+    let galleryItem = actionAreaBarButtonItem(for: experimentCoordinator.photoLibraryViewController,
+                                              title: "Gallery",
+                                              imageName: "ic_image")
+
+    let snapshotItem = ActionArea.BarButtonItem(title: "Snapshot",
+                                                image: UIImage(named: "ic_snapshot_action")) {}
+
+    let content = ActionArea.MasterContentContainerViewController(
+      content: trialDetailViewController,
+      emptyState: detailHeader,
+      mode: .stateless(items: [notesItem, snapshotItem, cameraItem, galleryItem])
+    )
+
+    return content
   }
 
   private func configure(

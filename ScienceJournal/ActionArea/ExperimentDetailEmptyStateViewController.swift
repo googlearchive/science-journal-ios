@@ -16,9 +16,7 @@
 
 import UIKit
 
-// TODO: This VC still needs an image and final copy. We're also going to need an empty state
-//       VC for recording details, which will need to update its label in response to user input.
-//       We'll want to either enhance this one to support that or create a separate VC.
+// TODO: This VC still needs an image and final copy.
 final class ExperimentDetailEmptyStateViewController: UIViewController {
 
   override func viewDidLoad() {

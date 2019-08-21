@@ -35,6 +35,38 @@ extension String {
   static public var accX: String { return "acc_x".localized }
   static public var accY: String { return "acc_y".localized }
   static public var accZ: String { return "acc_z".localized }
+  static public var actionAreaAddMoreNotes: String { return "action_area_add_more_notes".localized }
+  static public var actionAreaButtonAddSensor: String { return "action_area_button_add_sensor".localized }
+  static public var actionAreaButtonAddSensorContentDescription: String { return "action_area_button_add_sensor_content_description".localized }
+  static public var actionAreaButtonCamera: String { return "action_area_button_camera".localized }
+  static public var actionAreaButtonCameraContentDescription: String { return "action_area_button_camera_content_description".localized }
+  static public var actionAreaButtonGallery: String { return "action_area_button_gallery".localized }
+  static public var actionAreaButtonGalleryContentDescription: String { return "action_area_button_gallery_content_description".localized }
+  static public var actionAreaButtonSensors: String { return "action_area_button_sensors".localized }
+  static public var actionAreaButtonSensorsContentDescription: String { return "action_area_button_sensors_content_description".localized }
+  static public var actionAreaButtonSnapshot: String { return "action_area_button_snapshot".localized }
+  static public var actionAreaButtonSnapshotContentDescription: String { return "action_area_button_snapshot_content_description".localized }
+  static public var actionAreaButtonText: String { return "action_area_button_text".localized }
+  static public var actionAreaButtonTextContentDescription: String { return "action_area_button_text_content_description".localized }
+  static public var actionAreaCancelAddNoteContentDescription: String { return "action_area_cancel_add_note_content_description".localized }
+  static public var actionAreaFabGallerySingleContentDescription: String { return "action_area_fab_gallery_single_content_description".localized }
+  static public var actionAreaFabGalleryMultipleContentDescription: String { return "action_area_fab_gallery_multiple_content_description".localized }
+  static public var actionAreaFabRecord: String { return "action_area_fab_record".localized }
+  static public var actionAreaFabRecordContentDescription: String { return "action_area_fab_record_content_description".localized }
+  static public var actionAreaFabStop: String { return "action_area_fab_stop".localized }
+  static public var actionAreaFabStopContentDescription: String { return "action_area_fab_stop_content_description".localized }
+  static public var actionAreaFabTextContentDescription: String { return "action_area_fab_text_content_description".localized }
+  static public var actionAreaGalleryMultiplePhotosSelected: String { return "action_area_gallery_multiple_photos_selected".localized }
+  static public var actionAreaGalleryPhotosSelected: String { return "action_area_gallery_photos_selected".localized }
+  static public var actionAreaRecordingAddNoteToTimeline: String { return "action_area_recording_add_note_to_timeline".localized }
+  static public var actionAreaRecordingTitleAddTextNote: String { return "action_area_recording_title_add_text_note".localized }
+  static public var actionAreaRecordingNoteSavedMessage: String { return "action_area_recording_note_saved_message".localized }
+  static public var actionAreaRecordingNoteSavedViewButton: String { return "action_area_recording_note_saved_view_button".localized }
+  static public var actionAreaRecordingNoteSavedViewButtonContentDescription: String { return "action_area_recording_note_saved_view_button_content_description".localized }
+  static public var actionAreaTitleAddSensorNote: String { return "action_area_title_add_sensor_note".localized }
+  static public var actionAreaTitleAddTextNote: String { return "action_area_title_add_text_note".localized }
+  static public var actionAreaTitleAddTextNoteToTimeline: String { return "action_area_title_add_text_note_to_timeline".localized }
+  static public var actionAreaTitleRecording: String { return "action_area_title_recording".localized }
   static public var actionAbout: String { return "action_about".localized }
   static public var actionAddCaption: String { return "action_add_caption".localized }
   static public var actionArchive: String { return "action_archive".localized }

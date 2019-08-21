@@ -25,7 +25,7 @@ extension ActionArea {
     let emptyState: UIViewController
 
     /// The mode for this content.
-    var mode: ContentMode
+    let mode: ContentMode
 
     private let content: UIViewController
 

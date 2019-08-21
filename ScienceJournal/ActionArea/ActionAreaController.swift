@@ -24,17 +24,20 @@ extension ActionArea {
   /// Manages presentation and adaptivity for the Action Area.
   final class Controller: UIViewController {
 
-    private struct Metrics {
+    private enum Metrics {
       static let defaultAnimationDuration: TimeInterval = 0.4
 
       // The fractional width of the master content area.
       static let preferredPrimaryColumnWidthFraction: CGFloat = 0.6
     }
 
-    private enum State {
+    enum State {
       case normal
       case modal
     }
+
+    /// If the Action Area is using the expanded layout.
+    var isExpanded: Bool { return !svController.isCollapsed }
 
     /// The navigation controller that displays content in a master context.
     /// This is currently here for backwards compatibility. Consider using `show` if appropriate.
@@ -56,7 +59,7 @@ extension ActionArea {
     private var presentedDetailViewController: UIViewController?
     private let preferredPrimaryColumnWidthFractionWhenDetailIsHidden: CGFloat = 1.0
 
-    private var state: State = .normal {
+    private(set) var state: State = .normal {
       willSet {
         guard state != newValue else {
           fatalError("Setting the state to the existing state is not allowed.")
@@ -68,10 +71,18 @@ extension ActionArea {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
-        if state == .normal, presentedDetailViewController.parent == nil {
-          // If there's no `parent`, the detail was already dismissed, so we need to clean up.
-          self.presentedDetailViewController = nil
+        let detail = presentedDetailViewController as? DetailContent
+
+        switch state {
+        case .normal:
+          if presentedDetailViewController.parent == nil {
+            // If there's no `parent`, the detail was already dismissed, so we need to clean up.
+            self.presentedDetailViewController = nil
+          }
+        case .modal:
+          break
         }
+        detail?.actionAreaStateDidChange(self)
         updateActionAreaBar()
       }
     }
@@ -278,7 +289,10 @@ extension ActionArea {
         fatalError("A detailViewController is already being shown.")
       }
 
-      svController.showDetailViewController(vc, sender: sender)
+      let vcToPresent =
+        DetailContentContainerViewController(content: vc, mode: .stateless(items: []))
+
+      svController.showDetailViewController(vcToPresent, sender: sender)
     }
 
     /// Present content in a detail context.
@@ -523,10 +537,6 @@ extension UIViewController {
 // TODO: Consider making this private and wrapping content VCs that are not subclasses
 //       of the other material header types.
 final class MaterialHeaderContainerViewController: UIViewController {
-
-  override var navigationItem: UINavigationItem {
-    return content.navigationItem
-  }
 
   private let appBar = MDCAppBar()
   private let content: UIViewController

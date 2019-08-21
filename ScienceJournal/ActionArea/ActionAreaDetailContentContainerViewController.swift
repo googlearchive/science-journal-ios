@@ -22,10 +22,12 @@ extension ActionArea {
   final class DetailContentContainerViewController: UIViewController, DetailContent {
 
     /// The mode for this content.
-    var mode: ContentMode
+    let mode: ContentMode
+
+    /// The close button item, if the content view controller has one.
+    let closeButtonItem: UIBarButtonItem?
 
     private let content: UIViewController
-    private var shouldAddCloseButton = false
 
     // MARK: - Initializers
 
@@ -33,9 +35,11 @@ extension ActionArea {
     ///
     /// - Parameters:
     ///   - content: The content view controller.
+    ///   - closeButtonItem: The content view controller's close button item.
     ///   - mode: The mode for this content.
-    init(content: UIViewController, mode: ContentMode) {
+    init(content: UIViewController, closeButtonItem: UIBarButtonItem? = nil, mode: ContentMode) {
       self.content = content
+      self.closeButtonItem = closeButtonItem
       self.mode = mode
       super.init(nibName: nil, bundle: nil)
     }
@@ -48,16 +52,12 @@ extension ActionArea {
     ///
     /// - Parameters:
     ///   - content: The content view controller.
+    ///   - closeButtonItem: The content view controller's close button item.
     ///   - mode: A block that returns the mode for this content.
-    convenience init(content: UIViewController, mode: () -> ContentMode) {
-      self.init(content: content, mode: mode())
-    }
-
-    // MARK: - API
-
-    // TODO: Replace this with an API for content VCs to specify their close button.
-    func addCloseButton() {
-      shouldAddCloseButton = true
+    convenience init(
+      content: UIViewController, closeButtonItem: UIBarButtonItem? = nil, mode: () -> ContentMode
+    ) {
+      self.init(content: content, closeButtonItem: closeButtonItem, mode: mode())
     }
 
     // MARK: - Lifecycle
@@ -72,13 +72,16 @@ extension ActionArea {
         make.edges.equalToSuperview()
       }
 
-      if shouldAddCloseButton {
-        content.navigationItem.leftBarButtonItem =
-          // TODO: Use correct assets if we don't remove this.
-          UIBarButtonItem(title: "X",
-                          style: .plain,
-                          target: self,
-                          action: #selector(close))
+      // The AA detail should never show a back button.
+      content.navigationItem.hidesBackButton = true
+
+      if closeButtonItem == nil {
+        assert(
+          content.navigationItem.leftBarButtonItem == nil,
+          "Found existing leftBarButtonItem. " +
+            "Specify the content's close button via `DetailContent.closeButtonItem`."
+        )
+        content.navigationItem.leftBarButtonItem = defaultCloseButtonItem
       }
     }
 
@@ -87,6 +90,33 @@ extension ActionArea {
     override var description: String {
       return "ActionArea.DetailContentContainerViewController(content: \(content))"
     }
+
+    func actionAreaStateDidChange(_ actionAreaController: ActionArea.Controller) {
+      let item: UIBarButtonItem?
+      switch actionAreaController.state {
+      case .normal:
+        item = closeButtonItem ?? defaultCloseButtonItem
+      case .modal:
+        item = actionAreaController.isExpanded ? nil : hideButtonItem
+      }
+      content.navigationItem.leftBarButtonItem = item
+    }
+
+    private lazy var defaultCloseButtonItem: UIBarButtonItem = {
+      // TODO: Use correct assets if we don't remove this.
+      UIBarButtonItem(title: "X",
+                      style: .plain,
+                      target: self,
+                      action: #selector(close))
+    }()
+
+    private lazy var hideButtonItem: UIBarButtonItem = {
+      // TODO: Use correct assets if we don't remove this.
+      UIBarButtonItem(title: "V",
+                      style: .plain,
+                      target: self,
+                      action: #selector(close))
+    }()
 
     @objc private func close() {
       if let navigationController = navigationController {

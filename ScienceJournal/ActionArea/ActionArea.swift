@@ -80,4 +80,19 @@ protocol _ActionAreaMasterContent: ActionArea.Content {
 }
 
 protocol _ActionAreaDetailContent: ActionArea.Content {
+
+  /// The content's close button, if it has one.
+  ///
+  /// When using `ActionArea.DetailContentContainerViewController` to present detail content, the
+  /// Action Area will automatically hide or change this button when it enters the `modal`
+  /// state. By default the `leftBarButtonItem` is used as the close button. Presenting detail
+  /// content that has a `leftBarButtonItem` without specifying the close button here is an error.
+  var closeButtonItem: UIBarButtonItem? { get }
+
+  /// A notificaton that the state of the Action Area has changed.
+  ///
+  /// Detail content not being presented in an `ActionArea.DetailContentContainerViewController`
+  /// can use this notification to know when to show or hide its close button.
+  func actionAreaStateDidChange(_ actionAreaController: ActionArea.Controller)
+
 }

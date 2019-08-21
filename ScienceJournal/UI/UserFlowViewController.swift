@@ -931,7 +931,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         modal: (primary: stopItem, items: [snapshotItem])
       )
     }
-    detail.addCloseButton()
 
     let sensorsItem = ActionArea.BarButtonItem(
       title: "Sensor",

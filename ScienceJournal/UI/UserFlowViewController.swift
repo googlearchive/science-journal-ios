@@ -879,14 +879,19 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       self.actAreaController.showDetailViewController(headerVC, sender: self)
     }
 
+    let galleryItem = ActionArea.BarButtonItem(
+      title: "Gallery",
+      image: UIImage(named: "ic_image")
+    ) {
+      let photoLibraryVC = trialDetailViewController.photoLibraryViewController
+      let headerVC = MaterialHeaderContainerViewController(content: photoLibraryVC)
+      self.actAreaController.showDetailViewController(headerVC, sender: self)
+    }
+
       // TODO: Replace with new instances of these view controllers and set as delegate.
     let cameraItem = actionAreaBarButtonItem(for: experimentCoordinator.cameraViewController,
                                              title: "Camera",
                                              imageName: "ic_camera_alt")
-
-    let galleryItem = actionAreaBarButtonItem(for: experimentCoordinator.photoLibraryViewController,
-                                              title: "Gallery",
-                                              imageName: "ic_image")
 
     let snapshotItem = ActionArea.BarButtonItem(title: "Snapshot",
                                                 image: UIImage(named: "ic_snapshot_action")) {}

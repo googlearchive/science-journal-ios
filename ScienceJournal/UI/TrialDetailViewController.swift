@@ -121,8 +121,18 @@ class TrialDetailViewController: MaterialHeaderViewController,
     return TrialDetailSensorsView.height
   }()
 
+  var timestampString: String = "" {
+    didSet {
+      timeSelectionView.timestampLabel.text = timestampString
+      timestampSubscribers.forEach { $0(timestampString) }
+    }
+  }
+
   private(set) lazy var notesViewController: NotesViewController =
     NotesViewController(analyticsReporter: analyticsReporter)
+
+  private(set) lazy var photoLibraryViewController: PhotoLibraryViewController =
+    PhotoLibraryViewController(analyticsReporter: analyticsReporter)
 
   private var editBarButton = MaterialBarButtonItem()
   private var cancelBarButton: MaterialCloseBarButtonItem?
@@ -393,6 +403,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     if FeatureFlags.isActionAreaEnabled {
       notesViewController.delegate = self
+      photoLibraryViewController.delegate = self
     }
 
     updateForState()
@@ -479,8 +490,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
   func prepareToAddNote() {
     guard let sensor = sensorsView?.currentSensor,
       let playbackController = playbackViewControllers[sensor.ID] else { return }
-    let timestampString = timeFormat.string(
-      fromTimestamp: playbackController.playheadRelativeTimestamp)
     notesViewController.title = "Add note to " + timestampString
   }
 
@@ -972,25 +981,33 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   func playbackViewControllerDidChangePlayheadTimestamp(forSensorID sensorID: String) {
     guard let playbackController = playbackViewControllers[sensorID] else { return }
-    let timestampString = timeFormat.string(
+    timestampString = timeFormat.string(
       fromTimestamp: playbackController.playheadRelativeTimestamp)
-    timeSelectionView.timestampLabel.text = timestampString
-    timestampSubscribers.forEach { $0(timestampString) }
   }
 
   // MARK: - ImageSelectorDelegate
 
   func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
-    pendingNote?.imageData = imageData
-    pendingNote?.imageMetaData = metadata
-    dismiss(animated: true) {
-      self.showAddNoteDialog()
+    if FeatureFlags.isActionAreaEnabled {
+      createPendingNote(imageData: imageData, imageMetaData: metadata)
+      processPendingNote()
+    } else {
+      pendingNote?.imageData = imageData
+      pendingNote?.imageMetaData = metadata
+
+      dismiss(animated: true) {
+        self.showAddNoteDialog()
+      }
     }
   }
 
   func imageSelectorDidCancel() {
-    dismiss(animated: true) {
-      self.showAddNoteDialog()
+    if FeatureFlags.isActionAreaEnabled {
+      // TODO: Do we need to do anything? Seems like action area will take care of it.
+    } else {
+      dismiss(animated: true) {
+        self.showAddNoteDialog()
+      }
     }
   }
 
@@ -1386,21 +1403,24 @@ class TrialDetailViewController: MaterialHeaderViewController,
     }
   }
 
-  private func createPendingNote() {
+  private func createPendingNote(text: String? = nil,
+                                 imageData: Data? = nil,
+                                 imageMetaData: NSDictionary? = nil) {
     guard let sensor = sensorsView?.currentSensor,
       let playbackController = playbackViewControllers[sensor.ID] else { return }
-    pendingNote = PendingNote(text: nil,
-                              imageData: nil,
-                              imageMetaData: nil,
+    pendingNote = PendingNote(text: text,
+                              imageData: imageData,
+                              imageMetaData: imageMetaData,
                               timestamp: playbackController.playheadTimestamp,
                               relativeTimestamp: playbackController.playheadRelativeTimestamp)
   }
 
-  private func processPendingNote(noteText: String?) {
+  /// The passed in `noteText` will override any text that was previously set on the `pendingNote`.
+  private func processPendingNote(noteText: String? = nil) {
     guard let pendingNote = pendingNote else { return }
 
     var newNote: Note
-    if let imageData = pendingNote.imageData, let metadata = pendingNote.imageMetaData {
+    if let imageData = pendingNote.imageData {
       // Save image
       let pictureNote = PictureNote()
       let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
@@ -1410,7 +1430,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
         try metadataManager.saveImageData(imageData,
                                           atPicturePath: pictureFilePath,
                                           experimentID: experiment.ID,
-                                          withMetadata: metadata)
+                                          withMetadata: pendingNote.imageMetaData)
       } catch MetadataManagerError.photoDiskSpaceError {
         errorMessage = String.photoDiskSpaceErrorMessage
         savingError = true
@@ -1718,6 +1738,7 @@ extension TrialDetailViewController: NotesViewControllerDelegate {
     createPendingNote()
     processPendingNote(noteText: text)
   }
+
 }
 
 // swiftlint:enable file_length type_body_length

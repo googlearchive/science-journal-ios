@@ -134,12 +134,14 @@ class TrialDetailViewController: MaterialHeaderViewController,
   private(set) lazy var photoLibraryViewController: PhotoLibraryViewController =
     PhotoLibraryViewController(analyticsReporter: analyticsReporter)
 
+  private(set) lazy var cameraViewController: StandaloneCameraViewController =
+    StandaloneCameraViewController(analyticsReporter: analyticsReporter)
+
   private var editBarButton = MaterialBarButtonItem()
   private var cancelBarButton: MaterialCloseBarButtonItem?
   private var menuBarButton = MaterialMenuBarButtonItem()
   private var saveBarButton = MaterialBarButtonItem()
   private var dialogTransitionController: MDCDialogTransitionController?
-  private var cameraViewController: StandaloneCameraViewController?
   private var renameDialog: RenameTrialViewController?
   private var addNoteDialog: AddTrialNoteViewController?
   private let timeFormat = ElapsedTimeFormatter()
@@ -404,6 +406,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     if FeatureFlags.isActionAreaEnabled {
       notesViewController.delegate = self
       photoLibraryViewController.delegate = self
+      cameraViewController.delegate = self
     }
 
     updateForState()

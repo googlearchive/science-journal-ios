@@ -116,7 +116,7 @@ class TrialDetailDataSource {
     case .header: return 1
     case .chartAndNotes:
       // The notes, plus one for the add note to timeline button, if additions are allowed.
-      return displayTrial.notes.count + (shouldAllowNoteAdditions ? 1 : 0)
+      return displayTrial.notes.count + (shouldShowAddNoteCell ? 1 : 0)
     }
   }
 
@@ -160,7 +160,7 @@ class TrialDetailDataSource {
   /// - Parameter indexPath: An index path.
   /// - Returns: True if the index path is add note, otherwise false.
   func isAddNoteIndexPath(_ indexPath: IndexPath) -> Bool {
-    return shouldAllowNoteAdditions &&
+    return shouldShowAddNoteCell &&
       indexPath.section == Section.chartAndNotes.rawValue &&
       indexPath.item == 0
   }
@@ -178,7 +178,7 @@ class TrialDetailDataSource {
   /// - Parameter indexPath: An index path.
   /// - Returns: True if the index path is a trial note in a valid range, otherwise false.
   func isTrialNoteIndexPath(_ indexPath: IndexPath) -> Bool {
-    if shouldAllowNoteAdditions {
+    if shouldShowAddNoteCell {
       return indexPath.section == Section.chartAndNotes.rawValue && indexPath.item > 0 &&
           indexPath.item <= displayTrial.notes.count
     } else {
@@ -287,7 +287,7 @@ class TrialDetailDataSource {
   /// - Returns: The index path for the note.
   private func indexPathForNote(atIndex index: Int) -> IndexPath {
     var itemIndex = index
-    if shouldAllowNoteAdditions {
+    if shouldShowAddNoteCell {
       itemIndex += 1
     }
     return IndexPath(item: itemIndex, section: Section.chartAndNotes.rawValue)
@@ -300,14 +300,18 @@ class TrialDetailDataSource {
   /// - Returns: The index of the note in the notes array.
   private func indexOfNote(forIndexPath indexPath: IndexPath) -> Int {
     var index = indexPath.item
-    if shouldAllowNoteAdditions {
+    if shouldShowAddNoteCell {
       index -= 1
     }
     return index
   }
 
   /// Returns true if notes are allowed to be added to this trial
-  private var shouldAllowNoteAdditions: Bool {
-    return experimentAllowsAdditions && !trial.isArchived
+  private var shouldShowAddNoteCell: Bool {
+    if FeatureFlags.isActionAreaEnabled {
+      return false
+    } else {
+      return experimentAllowsAdditions && !trial.isArchived
+    }
   }
 }

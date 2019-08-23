@@ -919,7 +919,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     // TODO: Localize all the title strings below.
     let detail = ActionArea.DetailContentContainerViewController(content: header) {
       let addSensorItem = ActionArea.BarButtonItem(title: "Add Sensor",
-                                                   image: UIImage(named: "ic_add_circle")) {}
+                                                   image: UIImage(named: "ic_add_circle")
+      ) {
+        experimentCoordinator.observeViewController.observeFooterAddButtonPressed()
+      }
+
       let snapshotItem = ActionArea.BarButtonItem(title: "Snapshot",
                                                   image: UIImage(named: "ic_snapshot_action")) {}
       let recordItem = ActionArea.BarButtonItem(

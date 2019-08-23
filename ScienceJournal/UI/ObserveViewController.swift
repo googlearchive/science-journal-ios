@@ -311,6 +311,9 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     recordButtonViewWrapperHeightConstraint =
         recordButtonViewWrapper.heightAnchor.constraint(equalTo: recordButtonView.heightAnchor)
     recordButtonViewWrapperHeightConstraint?.isActive = true
+    // TODO: Just hiding this so it will still work w/o the AA flag, but should probably be removed
+    // at the time of The Big Delete of the old UI.
+    recordButtonViewWrapper.isHidden = FeatureFlags.isActionAreaEnabled
 
     // Time axis view.
     addChild(timeAxisController)
@@ -320,7 +323,11 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     view.addSubview(axisView)
     axisView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     axisView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    axisView.bottomAnchor.constraint(equalTo: recordButtonViewWrapper.topAnchor).isActive = true
+    if FeatureFlags.isActionAreaEnabled {
+      axisView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    } else {
+      axisView.bottomAnchor.constraint(equalTo: recordButtonViewWrapper.topAnchor).isActive = true
+    }
 
     // Jump to now button
     jumpToNowButton.translatesAutoresizingMaskIntoConstraints = false
@@ -757,8 +764,12 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
       if previousFooterPath == nil {
         if let newFooterPath = self.observeDataSource.footerIndexPath {
-          // Footer was not visible before but is now, insert it.
-          self.collectionView?.insertSections(IndexSet(integer: newFooterPath.section))
+          if FeatureFlags.isActionAreaEnabled {
+            // TODO: Show/Enable the "Add Sensor" button
+          } else {
+            // Footer was not visible before but is now, insert it.
+            self.collectionView?.insertSections(IndexSet(integer: newFooterPath.section))
+          }
         }
       }
     }, completion: { (_) in
@@ -788,7 +799,11 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       // If the footer should no longer show, remove it.
       if self.observeDataSource.footerIndexPath == nil,
           let previousFooterIndexPath = previousFooterIndexPath {
-        self.collectionView?.deleteSections(IndexSet(integer: previousFooterIndexPath.section))
+        if FeatureFlags.isActionAreaEnabled {
+          // TODO: Hide/Disable the "Add Sensor" button.
+        } else {
+          self.collectionView?.deleteSections(IndexSet(integer: previousFooterIndexPath.section))
+        }
       }
     })
     collectionView?.scrollToItem(at: IndexPath(item: newItemIndexPath.item, section: 0),
@@ -858,14 +873,22 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
   // Adjust collection view insets for the record button view and time axis view.
   func adjustContentInsets() {
-    var bottomInset =
+    if FeatureFlags.isActionAreaEnabled {
+      let topInset = timeAxisController.timeAxisView.alpha > 0 ?
+        timeAxisController.timeAxisView.systemLayoutSizeFitting(
+          UIView.layoutFittingCompressedSize).height : 0
+      collectionView?.contentInset.top = topInset
+      collectionView?.scrollIndicatorInsets.top = topInset
+    } else {
+      var bottomInset =
         recordButtonViewWrapper.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-    if timeAxisController.timeAxisView.alpha > 0 {
-      bottomInset += timeAxisController.timeAxisView.systemLayoutSizeFitting(
+      if timeAxisController.timeAxisView.alpha > 0 {
+        bottomInset += timeAxisController.timeAxisView.systemLayoutSizeFitting(
           UIView.layoutFittingCompressedSize).height
+      }
+      collectionView?.contentInset.bottom = bottomInset
+      collectionView?.scrollIndicatorInsets.bottom = bottomInset
     }
-    collectionView?.contentInset.bottom = bottomInset
-    collectionView?.scrollIndicatorInsets.bottom = bottomInset
   }
 
   // Animates the display of the time axis view.

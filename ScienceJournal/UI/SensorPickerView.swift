@@ -82,14 +82,16 @@ class SensorPickerView: UIView {
     // bug is fixed. https://github.com/material-components/material-components-ios/issues/2727
     tabBar.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
 
-    // Settings button.
-    settingsButton.accessibilityLabel = String.titleActivitySensorSettings
-    settingsButton.setImage(UIImage(named: "ic_settings"), for: .normal)
-    settingsButton.tintColor = .white
-    settingsButton.translatesAutoresizingMaskIntoConstraints = false
-    settingsButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-    settingsButton.setContentHuggingPriority(.defaultHigh, for: .vertical)
-    stackView.addArrangedSubview(settingsButton)
+    if FeatureFlags.isActionAreaEnabled == false {
+      // Settings button.
+      settingsButton.accessibilityLabel = String.titleActivitySensorSettings
+      settingsButton.setImage(UIImage(named: "ic_settings"), for: .normal)
+      settingsButton.tintColor = .white
+      settingsButton.translatesAutoresizingMaskIntoConstraints = false
+      settingsButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+      settingsButton.setContentHuggingPriority(.defaultHigh, for: .vertical)
+      stackView.addArrangedSubview(settingsButton)
+    }
   }
 
 }

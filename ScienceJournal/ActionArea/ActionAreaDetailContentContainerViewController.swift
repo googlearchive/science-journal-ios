@@ -77,15 +77,19 @@ extension ActionArea {
 
       if closeButtonItem == nil {
         assert(
-          content.navigationItem.leftBarButtonItem == nil,
+          navigationItem.leftBarButtonItem == nil,
           "Found existing leftBarButtonItem. " +
             "Specify the content's close button via `DetailContent.closeButtonItem`."
         )
-        content.navigationItem.leftBarButtonItem = defaultCloseButtonItem
+        navigationItem.leftBarButtonItem = defaultCloseButtonItem
       }
     }
 
     // MARK: - Implementation
+
+    override var navigationItem: UINavigationItem {
+      return content.navigationItem
+    }
 
     override var description: String {
       return "ActionArea.DetailContentContainerViewController(content: \(content))"
@@ -99,7 +103,7 @@ extension ActionArea {
       case .modal:
         item = actionAreaController.isExpanded ? nil : hideButtonItem
       }
-      content.navigationItem.leftBarButtonItem = item
+      navigationItem.leftBarButtonItem = item
     }
 
     private lazy var defaultCloseButtonItem: UIBarButtonItem = {

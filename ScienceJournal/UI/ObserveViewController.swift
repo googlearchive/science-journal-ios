@@ -341,6 +341,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
                                             constant: -14).isActive = true
     jumpToNowButton.addTarget(self, action: #selector(jumpToNowButtonPressed), for: .touchUpInside)
 
+    updateNavigationItems()
+
     // Adjust the content insets of the view based on action bar and time axis.
     adjustContentInsets()
   }
@@ -1132,6 +1134,26 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
                                                  duration: jumpToNowAnimationDuration)
   }
 
+  private func updateNavigationItems() {
+    guard FeatureFlags.isActionAreaEnabled else { return }
+
+    if isRecording {
+      // TODO: Show timer capsule view
+    } else {
+      // Settings button.
+      let settingsButton = UIBarButtonItem(image: UIImage(named: "ic_settings"),
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(settingsButtonPressed))
+      settingsButton.accessibilityLabel = String.titleActivitySensorSettings
+      navigationItem.rightBarButtonItem = settingsButton
+    }
+  }
+
+  @objc private func settingsButtonPressed() {
+    delegate?.observeViewControllerDidPressSensorSettings(self)
+  }
+
   // MARK: - Sensor layouts
 
   private func addSensorLayoutForSensorCard(_ sensorCard: SensorCard) {
@@ -1470,7 +1492,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
   func sensorCardCellSensorSettingsButtonPressed(_ cell: SensorCardCell) {
-    delegate?.observeViewControllerDidPressSensorSettings(self)
+    settingsButtonPressed()
   }
 
   func sensorCardCellDidTapStats(_ sensorCardCell: SensorCardCell) {

@@ -573,6 +573,10 @@ final class MaterialHeaderContainerViewController: UIViewController {
     return "\(type(of: self))(content: \(String(describing: content)))"
   }
 
+  override var navigationItem: UINavigationItem {
+    return content.navigationItem
+  }
+
 }
 
 // MARK: - Debugging

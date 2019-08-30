@@ -34,37 +34,37 @@
 /* A call to action in the sidebar on tablet nudging a user to create notes using the action area. [CHAR_LIMIT=NONE] */
 "action_area_add_more_notes" = "Add more observation notes";
 
-/* Button to add a sensor to the observation view using the action area. [CHAR_LIMIT=15] */
+/* Button to add a sensor to the observation view using the action area. [CHAR_LIMIT=20] */
 "action_area_button_add_sensor" = "Add sensor";
 
 /* Accessibility hint for adding a sensor to the observation view using the action area. [CHAR_LIMIT=NONE] */
 "action_area_button_add_sensor_content_description" = "Add a sensor for observation";
 
-/* Button to open the camera and create a photo note using the action area. [CHAR_LIMIT=10] */
+/* Button to open the camera and create a photo note using the action area. [CHAR_LIMIT=20] */
 "action_area_button_camera" = "Camera";
 
 /* Accessbility hint for creating a photo note from the camera using the action area. [CHAR_LIMIT=NONE] */
 "action_area_button_camera_content_description" = "Create a photo note using the camera";
 
-/* Button to create a photo not by importing a photo from the system photo library using the action area. [CHAR_LIMIT=10] */
+/* Button to create a photo not by importing a photo from the system photo library using the action area. [CHAR_LIMIT=20] */
 "action_area_button_gallery" = "Gallery";
 
 /* Accessibility hint for creating a photo note from the photo library using the action area. [CHAR_LIMIT=NONE] */
 "action_area_button_gallery_content_description" = "Create a photo note from an existing photo";
 
-/* Button to create a sensor note using the action area. [CHAR_LIMIT=10] */
+/* Button to create a sensor note using the action area. [CHAR_LIMIT=20] */
 "action_area_button_sensors" = "Sensors";
 
 /* Accessibility hint for creating a sensor note using the action area. [CHAR_LIMIT=NONE] */
 "action_area_button_sensors_content_description" = "Create a sensor note";
 
-/* Button for creating a snapshot note using the action area. [CHAR_LIMIT=14] */
+/* Button for creating a snapshot note using the action area. [CHAR_LIMIT=20] */
 "action_area_button_snapshot" = "Snapshot";
 
 /* Accessibility hint for creating a snapshot note using the action area. [CHAR_LIMIT=NONE] */
 "action_area_button_snapshot_content_description" = "Create a snapshot note from the current value of all visible sensors";
 
-/* Button to create a text note using the action area. [CHAR_LIMIT=10] */
+/* Button to create a text note using the action area. [CHAR_LIMIT=20] */
 "action_area_button_text" = "Text";
 
 /* Accessibility hint for creating a text note using the action area. [CHAR_LIMIT=NONE] */
@@ -79,13 +79,13 @@
 /* Accessibility hint of the FAB button allowing a user to add multiple photos to an experiment or recording. [CHAR_LIMIT=NONE] */
 "action_area_fab_gallery_multiple_content_description" = "Add selected photos";
 
-/* Button that starts a recording. [CHAR_LIMIT=10] */
+/* Button that starts a recording. [CHAR_LIMIT=20] */
 "action_area_fab_record" = "Record";
 
 /* Accessibility hint of the FAB button that starts a recording. [CHAR_LIMIT=NONE] */
 "action_area_fab_record_content_description" = "Start recording data from the visible sensors";
 
-/* Button that stops recording. [CHAR_LIMIT=10] */
+/* Button that stops recording. [CHAR_LIMIT=20] */
 "action_area_fab_stop" = "Stop";
 
 /* Accessibility hint of the FAB button that stops and saves a recording. [CHAR_LIMIT=NONE] */
@@ -100,16 +100,16 @@
 /* Title of the view allowing a user to add photos to an experiment or recording, before photos are selected. [CHAR_LIMIT=25] */
 "action_area_gallery_photos_selected" = "Select photos";
 
-/* A call to action in the sidebar on tablet informing a user the note will be added to a specific timestamp in a recording. The placeholder will be filled with the timestamp. [CHAR_LIMIT=25] */
+/* A call to action in the sidebar on tablet informing a user the note will be added to a specific timestamp in a recording. The placeholder will be filled with the timestamp. [CHAR_LIMIT=35] */
 "action_area_recording_add_note_to_timeline" = "Add note to %@";
 
-/* The title of the modal view where can add a text note to an ongoing recording. [CHAR_LIMIT=30] */
+/* The title of the modal view where can add a text note to an ongoing recording. [CHAR_LIMIT=45] */
 "action_area_recording_title_add_text_note" = "Add text note to recording";
 
 /* Snackbar message informing a user their note has been saved successfully. [CHAR_LIMIT=30] */
 "action_area_recording_note_saved_message" = "Your note has been saved";
 
-/* Button which takes a user to their created note. [CHAR_LIMIT=8] */
+/* Button which takes a user to their created note. [CHAR_LIMIT=10] */
 "action_area_recording_note_saved_view_button" = "View";
 
 /* Accessibility hint for the button in a snackbar that takes a user to their successfully created note. [CHAR_LIMIT=NONE] */

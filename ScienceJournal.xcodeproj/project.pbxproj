@@ -75,6 +75,7 @@
 		58BC1BC522C18FEB00DA7EDC /* UIImage+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */; };
 		58C4DB1522D53B4C0029E519 /* PDFExportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C4DB1322D53B4C0029E519 /* PDFExportOperation.swift */; };
 		58C4DB1622D53B4C0029E519 /* PDFExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C4DB1422D53B4C0029E519 /* PDFExportController.swift */; };
+		58F1C0DB2315B38900DDDE5F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1C0DA2315B38900DDDE5F /* TimerView.swift */; };
 		5C0EDCEF1FE30F280014E825 /* CropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCEE1FE30F280014E825 /* CropValidator.swift */; };
 		5C0EDCF21FE336D00014E825 /* CropValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */; };
 		5C0EDCF41FE94C270014E825 /* ExperimentItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */; };
@@ -719,6 +720,7 @@
 		58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ScienceJournal.swift"; sourceTree = "<group>"; };
 		58C4DB1322D53B4C0029E519 /* PDFExportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFExportOperation.swift; sourceTree = "<group>"; };
 		58C4DB1422D53B4C0029E519 /* PDFExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFExportController.swift; sourceTree = "<group>"; };
+		58F1C0DA2315B38900DDDE5F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5C0EDCEE1FE30F280014E825 /* CropValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidator.swift; sourceTree = "<group>"; };
 		5C0EDCF11FE336D00014E825 /* CropValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropValidatorTest.swift; sourceTree = "<group>"; };
 		5C0EDCF31FE94C270014E825 /* ExperimentItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentItemsViewController.swift; sourceTree = "<group>"; };
@@ -2169,6 +2171,7 @@
 				68EB69FA1E5E3BC10040C06A /* ObserveFooterCell.swift */,
 				680E3D711E5516B9009D4A73 /* ObserveViewController.swift */,
 				8BC4D5B91EBB7B160086906D /* RecordButtonView.swift */,
+				58F1C0DA2315B38900DDDE5F /* TimerView.swift */,
 				68E59D481EE9D858009241BC /* Sensors */,
 			);
 			name = Observe;
@@ -3644,6 +3647,7 @@
 				8B29D3A91F9E48A700D1DDA9 /* AVAudioSessionRouteChangeReason+ScienceJournal.swift in Sources */,
 				5CC81C1C1F292EBE00AC9E9E /* TimeSelectionView.swift in Sources */,
 				6856DF791F228F5000EDFB99 /* EditExperimentPhotoLibraryViewController.swift in Sources */,
+				58F1C0DB2315B38900DDDE5F /* TimerView.swift in Sources */,
 				687FAA06202C1162004C1D04 /* Version.pbobjc.m in Sources */,
 				5C7D8AA01F0FF2B9005CD61C /* ChartStatsOverlayView.swift in Sources */,
 				D59CA3C2219CEE690082A27B /* FFTAnalyzer.swift in Sources */,

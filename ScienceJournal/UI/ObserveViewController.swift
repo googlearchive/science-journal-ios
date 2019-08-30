@@ -100,6 +100,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
   /// Record button view.
   let recordButtonView = RecordButtonView(frame: .zero)
+  let recordingTimerView = TimerView()
 
   // MARK: - Properties
 
@@ -559,6 +560,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     recordButtonView.recordButton.isSelected = true
 
     updateCellsToRecord(true)
+    updateNavigationItems()
   }
 
   /// Ends a recording, which will stop writing data to the database and create a completed trial
@@ -614,6 +616,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     timeAxisController.removeAllNoteDots()
     recordButtonView.recordButton.isSelected = false
     recordButtonView.timerLabel.text = nil
+
+    updateNavigationItems()
 
     endBackgroundRecordingTask()
   }
@@ -1134,7 +1138,9 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     guard FeatureFlags.isActionAreaEnabled else { return }
 
     if isRecording {
-      // TODO: Show timer capsule view
+      // Reset to 0 since we reuse the view and otherwise previous value lingers in UI momentarily.
+      recordingTimerView.updateTimerLabel(with: 0)
+      navigationItem.rightBarButtonItem = UIBarButtonItem(customView: recordingTimerView)
     } else {
       // Settings button.
       let settingsButton = UIBarButtonItem(image: UIImage(named: "ic_settings"),
@@ -1147,6 +1153,18 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
   @objc private func settingsButtonPressed() {
+    showSettings()
+  }
+
+  private func updateTimerLabel(with duration: Int64) {
+    if FeatureFlags.isActionAreaEnabled {
+      recordingTimerView.updateTimerLabel(with: duration)
+    } else {
+      recordButtonView.updateTimerLabel(with: duration)
+    }
+  }
+
+  private func showSettings() {
     delegate?.observeViewControllerDidPressSensorSettings(self)
   }
 
@@ -1488,7 +1506,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
   func sensorCardCellSensorSettingsButtonPressed(_ cell: SensorCardCell) {
-    settingsButtonPressed()
+    showSettings()
   }
 
   func sensorCardCellDidTapStats(_ sensorCardCell: SensorCardCell) {
@@ -1596,8 +1614,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
   func recordingManager(_ recordingManager: RecordingManager,
                         hasRecordedForDuration duration: Int64) {
-    // TODO: Only update when the labels is visible.
-    recordButtonView.updateTimerLabel(with: duration)
+    updateTimerLabel(with: duration)
   }
 
   func recordingManager(_ recordingManager: RecordingManager,

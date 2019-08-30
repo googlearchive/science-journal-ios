@@ -22,8 +22,9 @@ import Foundation
 /// 9:00:45  - 9 hours, fourty-five seconds
 /// -15:25   - negative fifteen minutes, twenty-five seconds
 ///
-/// Only displays hours if the time is greater than or equal to one hour.
-/// Toggle isToTenths to display tenths of a second.
+/// Defaults to only displays hours if the time is greater than or equal to one hour.
+/// Toggle alwaysDisplayHours to always display hours.
+/// Toggle shouldDisplayTenths to display tenths of a second.
 class ElapsedTimeFormatter: Formatter {
 
   let millisInSecond: Int64 = 1000
@@ -33,6 +34,9 @@ class ElapsedTimeFormatter: Formatter {
 
   /// If true displays tenths of a second.
   var shouldDisplayTenths = false
+
+  /// If true displays the string with hours
+  var alwaysDisplayHours = false
 
   override func string(for obj: Any?) -> String? {
     guard let timestamp = obj as? Int64 else {
@@ -67,7 +71,7 @@ class ElapsedTimeFormatter: Formatter {
     }
 
     var formatted: String
-    if hours > 0 {
+    if alwaysDisplayHours || hours > 0 {
       var minutesFormatted = String(minutes)
       if minutes < 10 {
         minutesFormatted = "0" + minutesFormatted

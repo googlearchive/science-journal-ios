@@ -191,6 +191,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     self.sensorController = sensorController
     self.recordingManager = RecordingManager(sensorDataManager: sensorDataManager)
     observeDataSource = ObserveDataSource(sensorController: sensorController)
+    observeDataSource.shouldShowFooterAddButton = FeatureFlags.isActionAreaEnabled == false
 
     let flowLayout = MDCCollectionViewFlowLayout()
     flowLayout.minimumLineSpacing = SensorCardCell.cardInsets.bottom
@@ -590,7 +591,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
     // Show the add sensor card button if it should be (if all sensors have cards, it shouldn't be
     // shown).
-    observeDataSource.shouldShowFooterAddButton = true
+    observeDataSource.shouldShowFooterAddButton = FeatureFlags.isActionAreaEnabled == false
     if let footerIndexPath = observeDataSource.footerIndexPath {
       collectionView?.insertSections(IndexSet(integer: footerIndexPath.section))
     }
@@ -766,16 +767,13 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
       if previousFooterPath == nil {
         if let newFooterPath = self.observeDataSource.footerIndexPath {
-          if FeatureFlags.isActionAreaEnabled {
-            // TODO: Show/Enable the "Add Sensor" button
-          } else {
-            // Footer was not visible before but is now, insert it.
-            self.collectionView?.insertSections(IndexSet(integer: newFooterPath.section))
-          }
+          // Footer was not visible before but is now, insert it.
+          self.collectionView?.insertSections(IndexSet(integer: newFooterPath.section))
         }
       }
     }, completion: { (_) in
       self.updateSensorPickersIfNeeded()
+      // TODO: Show/Enable the "Add Sensor" button if needed
     })
   }
 
@@ -801,12 +799,10 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       // If the footer should no longer show, remove it.
       if self.observeDataSource.footerIndexPath == nil,
           let previousFooterIndexPath = previousFooterIndexPath {
-        if FeatureFlags.isActionAreaEnabled {
-          // TODO: Hide/Disable the "Add Sensor" button.
-        } else {
-          self.collectionView?.deleteSections(IndexSet(integer: previousFooterIndexPath.section))
-        }
+        self.collectionView?.deleteSections(IndexSet(integer: previousFooterIndexPath.section))
       }
+    }, completion: { (_) in
+      // TODO: Hide/Disable the "Add Sensor" button.
     })
     collectionView?.scrollToItem(at: IndexPath(item: newItemIndexPath.item, section: 0),
                                  at: .top,

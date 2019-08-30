@@ -75,6 +75,12 @@ extension ActionArea {
       }
     }
 
+    // MARK: - Implementation
+
+    override var navigationItem: UINavigationItem {
+      return content.navigationItem
+    }
+
     override var description: String {
       return "ActionArea.MasterContentContainerViewController(content: \(content))"
     }

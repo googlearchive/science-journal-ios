@@ -33,21 +33,38 @@ extension ActionArea {
       static let barDefaultMargins = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
     }
 
-    private let buttonBar: MDCButtonBar = {
-      let buttonBar = MDCButtonBar()
-      buttonBar.backgroundColor = Metrics.barBackgroundColor
-      buttonBar.setButtonsTitleColor(Metrics.barButtonTitleColor, for: .normal)
-      buttonBar.layer.cornerRadius = Metrics.barCornerRadius
-      buttonBar.layer.masksToBounds = true
-      return buttonBar
-    }()
-
     /// The items to display in the Action Area bar.
     var items: [UIBarButtonItem] = [] {
       didSet {
         buttonBar.items = items
-        isBarVisible = !items.isEmpty
       }
+    }
+
+    /// Lower the bar.
+    func lower() {
+      position = .lowered
+    }
+
+    /// Raise the bar.
+    func raise() {
+      position = .raised
+    }
+
+    /// Hide the bar.
+    func hide() {
+      barWrapper.alpha = 0
+      updateAdditionalSafeAreaInsets()
+    }
+
+    /// Show the bar.
+    func show() {
+      barWrapper.alpha = 1
+      updateAdditionalSafeAreaInsets()
+    }
+
+    private enum Position {
+      case raised
+      case lowered
     }
 
     // This view is configured so that its margins will be the smaller of its explicitly configured
@@ -88,11 +105,13 @@ extension ActionArea {
 
         layoutMargins = .zero
 
+        wrapper.snp.setLabel("wrapper")
         addSubview(wrapper)
         wrapper.snp.makeConstraints { make in
           make.edges.equalToSuperview()
         }
 
+        contentView.snp.setLabel("contentView")
         wrapper.addSubview(contentView)
         contentView.snp.makeConstraints { make in
           make.edges.equalTo(wrapper.snp.margins)
@@ -101,8 +120,23 @@ extension ActionArea {
 
     }
 
+    private let buttonBar: MDCButtonBar = {
+      let buttonBar = MDCButtonBar()
+      buttonBar.backgroundColor = Metrics.barBackgroundColor
+      buttonBar.setButtonsTitleColor(Metrics.barButtonTitleColor, for: .normal)
+      buttonBar.layer.cornerRadius = Metrics.barCornerRadius
+      buttonBar.layer.masksToBounds = true
+      return buttonBar
+    }()
+
     private let content: UIViewController
     private let barWrapper = SafeMarginWrapperView()
+
+    private var position: Position = .lowered {
+      didSet {
+        updatePosition()
+      }
+    }
 
     /// Designated initializer.
     ///
@@ -122,6 +156,9 @@ extension ActionArea {
     override func viewDidLoad() {
       super.viewDidLoad()
 
+      view.snp.setLabel("bar")
+
+      content.view.snp.setLabel("content")
       addChild(content)
       view.addSubview(content.view)
       content.didMove(toParent: self)
@@ -129,11 +166,14 @@ extension ActionArea {
         make.edges.equalToSuperview()
       }
 
+      barWrapper.snp.setLabel("barWrapper")
       view.addSubview(barWrapper)
       barWrapper.snp.makeConstraints { make in
-        make.leading.bottom.trailing.equalToSuperview()
+        make.leading.bottom.equalToSuperview()
+        make.trailing.greaterThanOrEqualToSuperview()
       }
 
+      buttonBar.snp.setLabel("buttonBar")
       barWrapper.contentView.addSubview(buttonBar)
       buttonBar.snp.makeConstraints { make in
         make.edges.equalToSuperview()
@@ -148,35 +188,30 @@ extension ActionArea {
     override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
 
-      if !isBarVisible {
-        hide()
-      }
+      // Lowering and raising the bar uses a `transform` based on a subview height, so we need to
+      // update the transform after layout changes because the height may have changed.
+      updatePosition()
     }
 
     // MARK: - Implementation
 
-    private var isBarVisible: Bool = false {
-      willSet {
-        switch (isBarVisible, newValue) {
-        case (false, true):
-          show()
-        case (true, false):
-          hide()
-        default:
-          break
-        }
+    private func updatePosition() {
+      switch position {
+      case .lowered:
+        barWrapper.transform = CGAffineTransform(translationX: 0, y: barWrapper.bounds.height)
+      case .raised:
+        barWrapper.transform = .identity
       }
+      updateAdditionalSafeAreaInsets()
     }
 
-    private func hide() {
-      barWrapper.transform = CGAffineTransform(translationX: 0, y: barWrapper.bounds.height)
-      content.additionalSafeAreaInsets = .zero
-    }
-
-    private func show() {
-      barWrapper.transform = .identity
-      content.additionalSafeAreaInsets =
-        UIEdgeInsets(top: 0, left: 0, bottom: barWrapper.bounds.height, right: 0)
+    private func updateAdditionalSafeAreaInsets() {
+      if position == .raised, barWrapper.alpha > 0 {
+        content.additionalSafeAreaInsets =
+          UIEdgeInsets(top: 0, left: 0, bottom: barWrapper.bounds.height, right: 0)
+      } else {
+        content.additionalSafeAreaInsets = .zero
+      }
     }
 
     override var description: String {

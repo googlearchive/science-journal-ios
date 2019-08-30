@@ -31,9 +31,16 @@ extension ActionArea {
       static let preferredPrimaryColumnWidthFraction: CGFloat = 0.6
     }
 
+    /// The state of the Action Area.
     enum State {
+
+      /// In the `normal` state, content can be shown and dismissed without restriction.
       case normal
+
+      /// In the `modal` state, the primary content cannot be changed, and detail content is
+      /// hidden and re-shown instead of being dismissed.
       case modal
+
     }
 
     /// If the Action Area is using the expanded layout.
@@ -56,8 +63,12 @@ extension ActionArea {
     private let masterBarViewController: BarViewController
     private let detailBarViewController: BarViewController
     private let svController = UISplitViewController()
-    private var presentedDetailViewController: UIViewController?
+    private var presentedDetailViewController: DetailContent?
     private let preferredPrimaryColumnWidthFractionWhenDetailIsHidden: CGFloat = 1.0
+    private var isDetailVisible: Bool = false
+    private typealias TargetAction = (target: AnyObject?, action: Selector)
+    private var masterTargetsAndActions: [TargetAction] = []
+    private var transitionType: MasterTransitionType = .external
 
     private(set) var state: State = .normal {
       willSet {
@@ -71,8 +82,6 @@ extension ActionArea {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
-        let detail = presentedDetailViewController as? DetailContent
-
         switch state {
         case .normal:
           if presentedDetailViewController.parent == nil {
@@ -82,8 +91,16 @@ extension ActionArea {
         case .modal:
           break
         }
-        detail?.actionAreaStateDidChange(self)
-        updateActionAreaBar()
+        presentedDetailViewController.actionAreaStateDidChange(self)
+        updateBarButtonItems()
+      }
+    }
+
+    private var emptyStates: [UIViewController] {
+      return navController.viewControllers.reduce(into: []) { emptyStates, vc in
+        if let master = vc as? ActionArea.MasterContent {
+          emptyStates.append(master.emptyState)
+        }
       }
     }
 
@@ -129,39 +146,44 @@ extension ActionArea {
         make.edges.equalToSuperview()
       }
 
-      updateSplitViewTraits(for: UIScreen.main.bounds.size)
+      updateSplitViewTraits()
       updateSplitViewDetailVisibility()
     }
 
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
       // Update traits *before* calling `super`, which will delegate this call to children.
-      updateSplitViewTraits(for: size)
+      updateSplitViewTraits()
       super.viewWillTransition(to: size, with: coordinator)
     }
 
-    private func updateSplitViewTraits(for size: CGSize) {
-      func overrideHorizontalSizeClassToCompact(_ vc: UIViewController) {
-        let horizontallyCompact = UITraitCollection(horizontalSizeClass: .compact)
-        setOverrideTraitCollection(horizontallyCompact, forChild: vc)
-      }
+    private func updateSplitViewTraits() {
+      let horizontallyCompact = UITraitCollection(horizontalSizeClass: .compact)
+      let horizontallyRegular = UITraitCollection(horizontalSizeClass: .regular)
 
-      if UIDevice.current.userInterfaceIdiom == .pad {
-        if size.isWiderThanTall, shouldShowDetail {
+      // On iPad, we use a horizontally compact layout to keep the split view collapsed until we
+      // have detail content to show.
+      if traitCollection.userInterfaceIdiom == .pad {
+        if UIScreen.main.bounds.size.isWiderThanTall, isDetailVisible {
           setOverrideTraitCollection(nil, forChild: svController)
+          svController.setOverrideTraitCollection(nil, forChild: masterBarViewController)
         } else {
-          overrideHorizontalSizeClassToCompact(svController)
+          setOverrideTraitCollection(horizontallyCompact, forChild: svController)
+          // Overriding the master content ensures it can still use an appropriate layout.
+          svController.setOverrideTraitCollection(
+            horizontallyRegular, forChild: masterBarViewController
+          )
         }
       } else {
-        overrideHorizontalSizeClassToCompact(svController)
+        // On iPhone, we use a horizontally compact layout to prevent expansion on plus/max devices.
+        setOverrideTraitCollection(horizontallyCompact, forChild: svController)
       }
     }
 
-    private var shouldShowDetail: Bool { return navController.topViewController is MasterContent }
-
+    // Expand or contract the primary content area. This should usually be animated.
     private func updateSplitViewDetailVisibility() {
       let preferredPrimaryColumnWidthFraction: CGFloat
-      if shouldShowDetail {
+      if isDetailVisible {
         preferredPrimaryColumnWidthFraction = Metrics.preferredPrimaryColumnWidthFraction
       } else {
         preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFractionWhenDetailIsHidden
@@ -170,23 +192,41 @@ extension ActionArea {
       svController.preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFraction
     }
 
+    // We don't have a way to detect a detail dismissal when it happens, so we clear our local
+    // reference to `presentedDetailViewController` when it's no longer in either of the navigation
+    // controllers.
     private func removeDismissedDetailViewController() {
-      if let presentedDetailViewController = presentedDetailViewController {
-        let viewControllers = navController.viewControllers + detailNavController.viewControllers
-        if !viewControllers.contains(presentedDetailViewController) {
-          switch state {
-          case .normal:
-            self.presentedDetailViewController = nil
-          case .modal:
-            if svController.isExpanded {
-              fatalError("The detailViewController cannot be dismissed in the modal state.")
-            }
+      guard let presentedDetailViewController = presentedDetailViewController else { return }
+
+      let viewControllers = navController.viewControllers + detailNavController.viewControllers
+      if !viewControllers.contains(presentedDetailViewController) {
+        switch state {
+        case .normal:
+          self.presentedDetailViewController = nil
+        case .modal:
+          if isExpanded {
+            fatalError("The detailViewController cannot be dismissed in the modal state.")
           }
         }
       }
     }
 
-    private func updateActionAreaBar() {
+    // Update the bar button items outside of a view controller transition.
+    // This is needed for the `normal` <-> `modal` state transition.
+    func updateBarButtonItems() {
+      let newBarButtonItems = createBarButtonItems()
+
+      UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
+        if self.svController.isCollapsed {
+          self.masterBarViewController.items = newBarButtonItems
+        } else {
+          self.detailBarViewController.items = newBarButtonItems
+        }
+      }
+    }
+
+    // Create bar button items for the appropriate content.
+    func createBarButtonItems() -> [UIBarButtonItem] {
       func items(for content: Content) -> [UIBarButtonItem] {
         switch content.mode {
         case let .stateless(items):
@@ -203,23 +243,14 @@ extension ActionArea {
         }
       }
 
-      let newItems: [UIBarButtonItem]
-      if let detail = presentedDetailViewController as? DetailContent {
-        newItems = items(for: detail)
-      } else if presentedDetailViewController != nil {
-        newItems = []
+      if let detail = presentedDetailViewController {
+        // Use the presented detail content if it exists.
+        return items(for: detail)
       } else if let master = navController.topViewController as? MasterContent {
-        newItems = items(for: master)
+        // Otherwise the top-most master content.
+        return items(for: master)
       } else {
-        newItems = []
-      }
-
-      if svController.isCollapsed {
-        masterBarViewController.items = newItems
-        detailBarViewController.items = []
-      } else {
-        masterBarViewController.items = []
-        detailBarViewController.items = newItems
+        return []
       }
     }
 
@@ -289,22 +320,6 @@ extension ActionArea {
         fatalError("A detailViewController is already being shown.")
       }
 
-      let vcToPresent =
-        DetailContentContainerViewController(content: vc, mode: .stateless(items: []))
-
-      svController.showDetailViewController(vcToPresent, sender: sender)
-    }
-
-    /// Present content in a detail context.
-    ///
-    /// - Parameters:
-    ///   - vc: The view controller to show.
-    ///   - sender: The object calling this method.
-    func showDetailViewController(_ vc: DetailContent, sender: Any?) {
-      guard presentedDetailViewController == nil else {
-        fatalError("A detailViewController is already being shown.")
-      }
-
       svController.showDetailViewController(vc, sender: sender)
     }
 
@@ -340,13 +355,15 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
     return nil // nil for default behavior
   }
 
-  func splitViewController(_ splitViewController: UISplitViewController,
-                           collapseSecondary secondaryViewController: UIViewController,
-                           onto primaryViewController: UIViewController) -> Bool {
+  func splitViewController(
+    _ splitViewController: UISplitViewController,
+    collapseSecondary secondaryViewController: UIViewController,
+    onto primaryViewController: UIViewController
+  ) -> Bool {
+    detailNavController.setViewControllers([], animated: false)
     if let presentedDetailViewController = presentedDetailViewController {
       navController.pushViewController(presentedDetailViewController, animated: false)
     }
-    detailNavController.setViewControllers([], animated: false)
     return true // false for default behavior
   }
 
@@ -360,12 +377,6 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
     _ splitViewController: UISplitViewController,
     separateSecondaryFrom primaryViewController: UIViewController
   ) -> UIViewController? {
-    let emptyStates: [UIViewController] =
-      navController.viewControllers.reduce(into: []) { emptyStates, vc in
-        if let master = vc as? ActionArea.MasterContent {
-          emptyStates.append(master.emptyState)
-        }
-      }
     detailNavController.setViewControllers(emptyStates, animated: false)
     if let presentedDetailViewController = presentedDetailViewController {
       navController.popViewController(animated: false)
@@ -374,21 +385,278 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
     return detailBarViewController // nil for default behavior
   }
 
-  func splitViewController(_ splitViewController: UISplitViewController,
-                           show vc: UIViewController, sender: Any?) -> Bool {
+  func splitViewController(
+    _ splitViewController: UISplitViewController,
+    show vc: UIViewController, sender: Any?
+  ) -> Bool {
     navController.pushViewController(vc, animated: true)
+
+    if isExpanded, let master = vc as? ActionArea.MasterContent {
+      detailNavController.pushViewController(master.emptyState, animated: true)
+    }
     return true // false for default behavior
   }
 
-  func splitViewController(_ splitViewController: UISplitViewController,
-                           showDetail vc: UIViewController, sender: Any?) -> Bool {
-    presentedDetailViewController = vc
-    if splitViewController.isCollapsed {
-      navController.pushViewController(vc, animated: true)
+  func splitViewController(
+    _ splitViewController: UISplitViewController,
+    showDetail vc: UIViewController, sender: Any?
+  ) -> Bool {
+    // Wrap the detail content in the default container if it isn't already. This ensures we can
+    // enforce behaviors like swapping the close button with a hide button in the `modal` state.
+    // It also lets us make `presentedDetailViewController` be `DetailContent`, which avoids
+    // casting later.
+    let detail: ActionArea.DetailContent
+    if let vc = vc as? ActionArea.DetailContent {
+      detail = vc
     } else {
-      detailNavController.pushViewController(vc, animated: true)
+      detail = ActionArea.DetailContentContainerViewController(
+        content: vc,
+        mode: .stateless(items: [])
+      )
+    }
+
+    // Retain a reference to the detail content, so we can re-show it if needed when in the `modal`
+    // state.
+    presentedDetailViewController = detail
+    if splitViewController.isCollapsed {
+      navController.pushViewController(detail, animated: true)
+    } else {
+      detailNavController.pushViewController(detail, animated: true)
     }
     return true // false for default behavior
+  }
+
+}
+
+// MARK: - Transitions
+
+private extension ActionArea.Controller {
+
+  enum Layout {
+    case portrait
+    case landscape
+  }
+
+  // The layout of the Action Area, regardless of what it currently looks like.
+  var layout: Layout {
+    if traitCollection.userInterfaceIdiom == .pad {
+      if UIScreen.main.bounds.size.isWiderThanTall {
+        return .landscape
+      }
+    }
+    return .portrait
+  }
+
+  /// The master transition type.
+  enum MasterTransitionType {
+    /// Entering the Action Area from external content.
+    case enter
+    /// Transitioning between master content within the Action Area.
+    case `internal`
+    /// Leaving the Action Area to external content.
+    case leave
+    /// Transitions outside of the Action Area that are using its master navigation controller.
+    case external
+
+    /// The next transition type.
+    ///
+    /// This method is called during the various transition phases to determine the next transition
+    /// type. The transition type will not always change.
+    ///
+    /// - Parameters:
+    ///   - phase: The current transition phase.
+    ///   - contentCount: The number of master content view controllers.
+    func next(
+      for phase: MasterTransitionPhase,
+      and contentCount: Int
+    ) -> MasterTransitionType {
+      switch (self, phase) {
+      case (.external, .willShow) where contentCount > 0:
+        return .enter
+      case (.external, .willShow) where contentCount == 0:
+        return .external
+      case (.enter, .didShow):
+        return .internal
+      case (.internal, .willShow) where contentCount > 0:
+        return .internal
+      case (.internal, .back) where contentCount == 1:
+        return .leave
+      case (.leave, .didShow):
+        return .external
+      default:
+        return self
+      }
+    }
+  }
+
+  /// The master transition phase.
+  ///
+  /// These values represent where transition-related operations take place, and they are used
+  /// as part of the input to determine when to change the `MasterTransitionType`.
+  enum MasterTransitionPhase {
+    case willShow
+    case back
+    case didShow
+  }
+
+  /// The detail transition type, which specifies how the bar animates.
+  enum DetailTransitionType {
+    case none
+    case hide
+    case show
+    case update
+
+    init(before: [UIBarButtonItem], after: [UIBarButtonItem]) {
+      switch (before.isEmpty, after.isEmpty) {
+      case (true, true):
+        self = .none
+      case (false, true):
+        self = .hide
+      case (true, false):
+        self = .show
+      case (false, false):
+        self = .update
+      }
+    }
+  }
+
+  /// The master transition source.
+  ///
+  /// Transitions can be initiated from either a user action or a navgiation controller transition.
+  enum TransitionSource {
+    /// Either a back-button tap or swipe gesture.
+    case backAction
+    /// A `UINavigationControllerDelegate` call.
+    case delegate
+  }
+
+  /// Coordinate a master content transition.
+  ///
+  /// - Parameters:
+  ///   - layout: The layout for this transition.
+  ///   - type: The type of this transition.
+  ///   - source: The source of the current phase of the transition.
+  func transition(layout: Layout, type: MasterTransitionType, source: TransitionSource) {
+    switch (layout, type, source) {
+    case (.portrait, .enter, .backAction):
+      preconditionFailure("The Action Area cannot be entered through a back action.")
+    case (.portrait, .enter, .delegate):
+      masterBarViewController.items = createBarButtonItems()
+
+      navController.transitionCoordinator?.animate(alongsideTransition: { _ in
+        self.masterBarViewController.raise()
+      })
+    case (.portrait, .internal, .backAction):
+      sendOverriddenMasterBackButtonAction()
+    case (.portrait, .internal, .delegate):
+      let oldItems = masterBarViewController.items
+      let newItems = createBarButtonItems()
+      let type = DetailTransitionType(before: oldItems, after: newItems)
+      transition(
+        masterBarViewController,
+        to: newItems,
+        type: type,
+        with: navController.transitionCoordinator
+      )
+    case (.portrait, .leave, .backAction):
+      sendOverriddenMasterBackButtonAction()
+    case (.portrait, .leave, .delegate):
+      navController.transitionCoordinator?.animate(alongsideTransition: { _ in
+        self.masterBarViewController.lower()
+      }, completion: { _ in
+        self.masterBarViewController.items = []
+      })
+    case (.landscape, .enter, .backAction):
+      preconditionFailure("The Action Area cannot be entered through a back action.")
+    case (.landscape, .enter, .delegate):
+      isDetailVisible = true
+      updateSplitViewTraits()
+      detailBarViewController.items = createBarButtonItems()
+      detailBarViewController.raise()
+
+      navController.transitionCoordinator?.animate(alongsideTransition: nil) { context in
+        UIView.animate(withDuration: context.transitionDuration) {
+          self.updateSplitViewDetailVisibility()
+        }
+      }
+    case (.landscape, .internal, .backAction):
+      sendOverriddenMasterBackButtonAction()
+      detailNavController.popViewController(animated: true)
+    case (.landscape, .internal, .delegate):
+      // There is currently nothing to do here, but we may refactor pushing detail empty state
+      // or animating the detail bar change here in the future.
+      break
+    case (.landscape, .leave, .backAction):
+      isDetailVisible = false
+
+      UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
+        self.updateSplitViewDetailVisibility()
+      }, completion: { _ in
+        self.updateSplitViewTraits()
+        self.detailBarViewController.lower()
+        self.detailBarViewController.items = []
+
+        self.sendOverriddenMasterBackButtonAction()
+      })
+    case (.landscape, .leave, .delegate):
+      // The back action portion of this transition above currently handles everything that is
+      // needed.
+      break
+    case (_, .external, _):
+      // There is nothing to do here for external transitions.
+      break
+    }
+  }
+
+  /// Transition the content of the Action Area Bar during a detail content presentation.
+  func transition(
+    _ bar: ActionArea.BarViewController,
+    to newItems: [UIBarButtonItem],
+    type: DetailTransitionType,
+    with transitionCoordinator: UIViewControllerTransitionCoordinator?
+  ) {
+    if type == .show {
+      bar.items = newItems
+    }
+    transitionCoordinator?.animate(alongsideTransition: { _ in
+      switch type {
+      case .none:
+        break
+      case .hide:
+        bar.hide()
+      case .show:
+        bar.show()
+      case .update:
+        bar.items = newItems
+      }
+    }, completion: { _ in
+      if type == .hide {
+        bar.items = newItems
+      }
+    })
+  }
+
+  func overrideMasterBackBarButtonItem(of vc: UIViewController) {
+    if let item = vc.navigationItem.leftBarButtonItem {
+      guard let action = item.action else { preconditionFailure("Expected an action selector.") }
+
+      masterTargetsAndActions.append((item.target, action))
+      item.target = self
+      item.action = #selector(didTapMasterBack)
+    }
+  }
+
+  func sendOverriddenMasterBackButtonAction() {
+    guard let ta = masterTargetsAndActions.popLast() else {
+      preconditionFailure("Expected a valid target and action pair.")
+    }
+
+    UIApplication.shared.sendAction(ta.action, to: ta.target, from: nil, for: nil)
+  }
+
+  @objc func didTapMasterBack() {
+    transitionType = transitionType.next(for: .back, and: emptyStates.count)
+    transition(layout: layout, type: transitionType, source: .backAction)
   }
 
 }
@@ -397,25 +665,46 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
 
 extension ActionArea.Controller: UINavigationControllerDelegate {
 
-  func navigationController(_ navigationController: UINavigationController,
-                            willShow viewController: UIViewController,
-                            animated: Bool) {
+  func navigationController(
+    _ navigationController: UINavigationController,
+    willShow viewController: UIViewController,
+    animated: Bool
+  ) {
     removeDismissedDetailViewController()
 
     if navigationController == navController {
-      navigationController.transitionCoordinator?.animateAlongsideTransition(
-        in: masterBarViewController.view,
-        animation: { _ in
-          self.updateActionAreaBar()
-        }, completion: { _ in
-          self.updateSplitViewTraits(for: self.view.bounds.size)
-          self.updateSplitViewDetailVisibility()
-        }
-      )
+      transitionType = transitionType.next(for: .willShow, and: emptyStates.count)
+      transition(layout: layout, type: transitionType, source: .delegate)
     }
 
     if navigationController == detailNavController {
-      updateActionAreaBar()
+      // Detail content in the Action Area should never have a back button.
+      if emptyStates.contains(viewController) {
+        viewController.navigationItem.hidesBackButton = true
+      }
+
+      let oldItems = detailBarViewController.items
+      let newItems = createBarButtonItems()
+      let type = DetailTransitionType(before: oldItems, after: newItems)
+      transition(
+        detailBarViewController,
+        to: newItems,
+        type: type,
+        with: navigationController.transitionCoordinator
+      )
+    }
+  }
+
+  func navigationController(
+    _ navigationController: UINavigationController,
+    didShow viewController: UIViewController,
+    animated: Bool
+  ) {
+    if navigationController == navController {
+      transitionType = transitionType.next(for: .didShow, and: emptyStates.count)
+      if viewController is ActionArea.MasterContent {
+        overrideMasterBackBarButtonItem(of: viewController)
+      }
     }
   }
 
@@ -506,14 +795,6 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
 
 }
 
-// MARK: - UISplitViewController Extensions
-
-private extension UISplitViewController {
-
-  var isExpanded: Bool { return !isCollapsed }
-
-}
-
 // MARK: - UIViewController Extensions
 
 extension UIViewController {
@@ -591,7 +872,6 @@ extension ActionArea.Controller {
     var message = "ActionArea.\(type(of: self)).\(function)"
     message += " - vcs: \(svc.viewControllers.map(vcName(_:)))"
     message += ", isCollapsed: \(svc.isCollapsed)"
-    message += ", displayMode: \(svc.displayMode)"
     if verbose {
       message += ", navController.vcs: \(navController.viewControllers.map(vcName(_:)))"
       message += ", detailNavController.vcs: \(detailNavController.viewControllers.map(vcName(_:)))"

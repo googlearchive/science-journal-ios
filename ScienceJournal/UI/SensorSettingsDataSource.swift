@@ -444,7 +444,9 @@ class SensorSettingsDataSource: BLEServiceScannerDelegate {
   }
 
   func serviceScannerBluetoothAvailabilityChanged(_ serviceScanner: BLEServiceScanner) {
-    // TODO: Display message if Bluetooth is unavailable.
+    if !serviceScanner.isBluetoothAvailable {
+      showSnackbar(withMessage: String.bluetoothHardwareDisabledMessage)
+    }
   }
 
 }

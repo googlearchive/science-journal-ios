@@ -29,6 +29,10 @@ extension ActionArea {
 
     private let content: UIViewController
 
+    // MARK: - MaterialHeader
+
+    override var hasMaterialHeader: Bool { return true }
+
     // MARK: - Initializers
 
     /// Designated initializer.
@@ -65,12 +69,7 @@ extension ActionArea {
     override func viewDidLoad() {
       super.viewDidLoad()
 
-      addChild(content)
-      view.addSubview(content.view)
-      content.didMove(toParent: self)
-      content.view.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
-      }
+      addContent()
 
       // The AA detail should never show a back button.
       content.navigationItem.hidesBackButton = true
@@ -82,6 +81,23 @@ extension ActionArea {
             "Specify the content's close button via `DetailContent.closeButtonItem`."
         )
         navigationItem.leftBarButtonItem = defaultCloseButtonItem
+      }
+    }
+
+    private func addContent() {
+      let vc: UIViewController
+      if content.hasMaterialHeader {
+        vc = content
+      } else {
+        let header = MaterialHeaderContainerViewController(content: content)
+        vc = header
+      }
+
+      addChild(vc)
+      view.addSubview(vc.view)
+      vc.didMove(toParent: self)
+      vc.view.snp.makeConstraints { make in
+        make.edges.equalToSuperview()
       }
     }
 

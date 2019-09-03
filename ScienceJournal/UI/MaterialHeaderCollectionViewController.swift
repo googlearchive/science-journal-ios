@@ -31,6 +31,10 @@ class MaterialHeaderCollectionViewController: VisibilityTrackingCollectionViewCo
   let analyticsReporter: AnalyticsReporter
   private weak var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
 
+  // MARK: - MaterialHeader
+
+  override var hasMaterialHeader: Bool { return true }
+
   // MARK: - Public
 
   init(analyticsReporter: AnalyticsReporter) {

@@ -867,16 +867,14 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     trialDetailViewController.subscribeToTimestampUpdate { (timestamp) in
       recordingDetailEmptyState.timestampString = timestamp
     }
-    let detailHeader = MaterialHeaderContainerViewController(content: recordingDetailEmptyState)
 
     let notesItem = ActionArea.BarButtonItem(
       title: "Text",
       image: UIImage(named: "ic_comment")
     ) {
       let notesVC = trialDetailViewController.notesViewController
-      let headerVC = MaterialHeaderContainerViewController(content: notesVC)
       trialDetailViewController.prepareToAddNote()
-      self.actAreaController.showDetailViewController(headerVC, sender: self)
+      self.actAreaController.showDetailViewController(notesVC, sender: self)
     }
 
     let galleryItem = ActionArea.BarButtonItem(
@@ -884,8 +882,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       image: UIImage(named: "ic_image")
     ) {
       let photoLibraryVC = trialDetailViewController.photoLibraryViewController
-      let headerVC = MaterialHeaderContainerViewController(content: photoLibraryVC)
-      self.actAreaController.showDetailViewController(headerVC, sender: self)
+      self.actAreaController.showDetailViewController(photoLibraryVC, sender: self)
     }
 
     let cameraItem = ActionArea.BarButtonItem(
@@ -893,8 +890,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       image: UIImage(named: "ic_camera_alt")
     ) {
       let cameraVC = trialDetailViewController.cameraViewController
-      let headerVC = MaterialHeaderContainerViewController(content: cameraVC)
-      self.actAreaController.showDetailViewController(headerVC, sender: self)
+      self.actAreaController.showDetailViewController(cameraVC, sender: self)
     }
 
     // TODO: Hook up snapshot action.
@@ -903,7 +899,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     let content = ActionArea.MasterContentContainerViewController(
       content: trialDetailViewController,
-      emptyState: detailHeader,
+      emptyState: recordingDetailEmptyState,
       mode: .stateless(items: [notesItem, snapshotItem, cameraItem, galleryItem])
     )
 
@@ -913,11 +909,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private func configure(
     experimentCoordinator: ExperimentCoordinatorViewController
   ) -> ActionArea.MasterContent {
-    let header =
-      MaterialHeaderContainerViewController(content: experimentCoordinator.observeViewController)
-
     // TODO: Localize all the title strings below.
-    let detail = ActionArea.DetailContentContainerViewController(content: header) {
+    let detail = ActionArea.DetailContentContainerViewController(
+      content: experimentCoordinator.observeViewController
+    ) {
       let addSensorItem = ActionArea.BarButtonItem(title: "Add Sensor",
                                                    image: UIImage(named: "ic_add_circle")
       ) {
@@ -966,11 +961,10 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
                                               imageName: "ic_image")
 
     let emptyState = ExperimentDetailEmptyStateViewController()
-    let detailHeader = MaterialHeaderContainerViewController(content: emptyState)
 
     let content = ActionArea.MasterContentContainerViewController(
       content: experimentCoordinator,
-      emptyState: detailHeader,
+      emptyState: emptyState,
       mode: .stateless(items: [notesItem, sensorsItem, cameraItem, galleryItem])
     )
 
@@ -984,8 +978,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       title: title,
       image: UIImage(named: imageName)
     ) {
-      let headerVC = MaterialHeaderContainerViewController(content: viewController)
-      self.actAreaController.showDetailViewController(headerVC, sender: self)
+      self.actAreaController.showDetailViewController(viewController, sender: self)
     }
   }
 

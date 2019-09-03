@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
+		3F158A0B231AD72C005E319E /* UIViewController+MaterialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */; };
 		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
 		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
@@ -648,6 +649,7 @@
 		28F6EF667B4DC4678F276A93 /* Pods-ScienceJournalTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
+		3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MaterialHeader.swift"; sourceTree = "<group>"; };
 		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
@@ -1672,6 +1674,7 @@
 				8BB99E6D206BF0B8001A1A58 /* SeparatorView.swift */,
 				8BCCAD5D1EE5EDB500278F05 /* ShadowedView.swift */,
 				5C7DE8C21EC117750015F407 /* ShapeView.swift */,
+				3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */,
 				8B257E5C1ED475780065E7D4 /* ViewConstants.swift */,
 				8B3FA2B521513F5E002241DC /* VisibilityTrackingViewControllers.swift */,
 			);
@@ -3450,6 +3453,7 @@
 				8B49DCA41EB1223D000A622E /* NotesView.swift in Sources */,
 				5CC279EF1E43D6EB005EE8DB /* SineWaveSensor.swift in Sources */,
 				8B384D821E54FDC600A70951 /* CurrentValueView.swift in Sources */,
+				3F158A0B231AD72C005E319E /* UIViewController+MaterialHeader.swift in Sources */,
 				5C6E57522034B93100EE8457 /* ExportExperimentSensorDataOperation.swift in Sources */,
 				8B1791911F06AAC1008C0B31 /* TriggerListViewController.swift in Sources */,
 				D59CA3C8219CEE690082A27B /* SoundUtils.swift in Sources */,

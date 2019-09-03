@@ -30,6 +30,10 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
   var trackedScrollView: UIScrollView? { return nil }
   private weak var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
 
+  // MARK: - MaterialHeader
+
+  override var hasMaterialHeader: Bool { return true }
+
   // MARK: - Public
 
   override func viewDidLoad() {

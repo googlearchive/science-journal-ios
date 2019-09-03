@@ -41,7 +41,11 @@ extension ActionArea {
          emptyState: UIViewController,
          mode: ContentMode) {
       self.content = content
-      self.emptyState = emptyState
+      if emptyState.hasMaterialHeader {
+        self.emptyState = emptyState
+      } else {
+        self.emptyState = MaterialHeaderContainerViewController(content: emptyState)
+      }
       self.mode = mode
       super.init(nibName: nil, bundle: nil)
     }

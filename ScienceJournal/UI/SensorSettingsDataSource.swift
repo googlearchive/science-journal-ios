@@ -448,5 +448,5 @@ class SensorSettingsDataSource: BLEServiceScannerDelegate {
       showSnackbar(withMessage: String.bluetoothHardwareDisabledMessage)
     }
   }
-    
+
 }

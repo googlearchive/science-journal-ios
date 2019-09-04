@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
 		3F158A0B231AD72C005E319E /* UIViewController+MaterialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */; };
+		3F158A0D231AFDAD005E319E /* EmptyStateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0C231AFDAD005E319E /* EmptyStateContainerViewController.swift */; };
+		3F158A0F231DF370005E319E /* ActionEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0E231DF370005E319E /* ActionEnabler.swift */; };
+		3F158A11231DF5C3005E319E /* FauxdalTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */; };
+		3F158A13231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A12231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift */; };
+		3F158A16231E0362005E319E /* ActionEnablerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A15231E0362005E319E /* ActionEnablerTest.swift */; };
+		3F158A18231E0AF9005E319E /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A17231E0AF9005E319E /* ContentContainerViewController.swift */; };
 		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
 		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
@@ -650,6 +656,12 @@
 		395FE5311B831F9DE3197572 /* Pods-ScienceJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalTests/Pods-ScienceJournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
 		3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MaterialHeader.swift"; sourceTree = "<group>"; };
+		3F158A0C231AFDAD005E319E /* EmptyStateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContainerViewController.swift; sourceTree = "<group>"; };
+		3F158A0E231DF370005E319E /* ActionEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEnabler.swift; sourceTree = "<group>"; };
+		3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FauxdalTransitionAnimation.swift; sourceTree = "<group>"; };
+		3F158A12231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTransitionAnimation.swift; sourceTree = "<group>"; };
+		3F158A15231E0362005E319E /* ActionEnablerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEnablerTest.swift; sourceTree = "<group>"; };
+		3F158A17231E0AF9005E319E /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
@@ -1328,6 +1340,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F158A14231E0341005E319E /* ActionArea */ = {
+			isa = PBXGroup;
+			children = (
+				3F158A15231E0362005E319E /* ActionEnablerTest.swift */,
+			);
+			path = ActionArea;
+			sourceTree = "<group>";
+		};
 		3F173E1D22AAC94800E9D249 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -1367,7 +1387,12 @@
 				3F71B71522B466D90015074A /* ActionAreaController.swift */,
 				3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */,
 				3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */,
+				3F158A0E231DF370005E319E /* ActionEnabler.swift */,
+				3F158A17231E0AF9005E319E /* ContentContainerViewController.swift */,
+				3F158A12231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift */,
+				3F158A0C231AFDAD005E319E /* EmptyStateContainerViewController.swift */,
 				3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */,
+				3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */,
 				58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */,
 			);
 			path = ActionArea;
@@ -2390,6 +2415,7 @@
 		68EBA6F11E20421E0089FF7F /* ScienceJournalTests */ = {
 			isa = PBXGroup;
 			children = (
+				3F158A14231E0341005E319E /* ActionArea */,
 				5CAD5EE21E8B0157008F50C3 /* BLE */,
 				5C7DE8C71EC24F450015F407 /* Chart */,
 				5C61A2BE20C6CDCF007E7F3D /* Drive */,
@@ -3360,6 +3386,7 @@
 				5C8784A521679E040046786D /* UITextView+ScienceJournal.swift in Sources */,
 				5C7DE8C31EC117750015F407 /* ShapeView.swift in Sources */,
 				8BDC0281201FA7DA00BB0059 /* PitchSensor.swift in Sources */,
+				3F158A13231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift in Sources */,
 				8B9F06131EF42CE10030B011 /* TriggerNote.swift in Sources */,
 				68C45E7A1EEF51510046E430 /* TrialDetailViewController.swift in Sources */,
 				687FAA0E202C1162004C1D04 /* SnapshotLabelValue.pbobjc.m in Sources */,
@@ -3401,6 +3428,7 @@
 				5C95135120CED4ED0033D9FA /* ExperimentMerger.swift in Sources */,
 				5C14432A1E9BE2CB00C6684C /* BLEServiceScanner.swift in Sources */,
 				8B1791CF1F140F22008C0B31 /* TriggerOptionSwitchView.swift in Sources */,
+				3F158A18231E0AF9005E319E /* ContentContainerViewController.swift in Sources */,
 				5C684EF420A4CC50008414C0 /* AppFlowViewController.swift in Sources */,
 				680D406F1F030882004E5555 /* NoteDetailEditCaptionCell.swift in Sources */,
 				5CBD9ABE1F7427E500D22D21 /* ScaleFilter.swift in Sources */,
@@ -3538,6 +3566,7 @@
 				687FAA16202C1162004C1D04 /* GadgetInfo.pbobjc.m in Sources */,
 				5CBD9ABC1F7425A700D22D21 /* ComposeFilter.swift in Sources */,
 				48E48DC122A63CEB004301E4 /* UIScrollView+Capturing.swift in Sources */,
+				3F158A11231DF5C3005E319E /* FauxdalTransitionAnimation.swift in Sources */,
 				489182C11E4542CE00E91D73 /* ChartController.swift in Sources */,
 				688509571F0712AD00D3A1A3 /* TextNoteDetailViewController.swift in Sources */,
 				68CA86371EC4F06900E13AE0 /* TextNoteCardCell.swift in Sources */,
@@ -3568,6 +3597,7 @@
 				5CB340441F9945F700370734 /* SensorLoadingView.swift in Sources */,
 				8B4B601A1E44FC37009AFB1B /* CompassSensor.swift in Sources */,
 				68E3C8CE1FD72A7400255ADF /* RatingsPromptManager.swift in Sources */,
+				3F158A0D231AFDAD005E319E /* EmptyStateContainerViewController.swift in Sources */,
 				683171581F0DE09100E641B4 /* PictureInfoViewController.swift in Sources */,
 				68BD95661E8DA45100FEB0B2 /* SoundTypeManager.swift in Sources */,
 				3FA7052422F8DD8E00753842 /* ActionAreaBarButtonItem.swift in Sources */,
@@ -3636,6 +3666,7 @@
 				8B9C59481F478A820063FFA9 /* UIScrollView+ScienceJournal.swift in Sources */,
 				680659261EC39AFE0090670C /* TrialCardSensorView.swift in Sources */,
 				5CA0532D1F2BD60300FEE465 /* BrightnessSensor.swift in Sources */,
+				3F158A0F231DF370005E319E /* ActionEnabler.swift in Sources */,
 				3F56956C228F04130039B84F /* LaunchManager.swift in Sources */,
 				8B2838FB1F8C14A8005CCB01 /* VisualTriggerView.swift in Sources */,
 				8B4B601C1E4522E6009AFB1B /* AltimeterSensor.swift in Sources */,
@@ -3825,6 +3856,7 @@
 				5CBD9AC31F74376000D22D21 /* FrequencyBufferTest.swift in Sources */,
 				8B7049312139B24200763630 /* SettableNetworkAvailability.swift in Sources */,
 				8B1791D71F180D8A008C0B31 /* ExperimentCoordinatorViewControllerTest.swift in Sources */,
+				3F158A16231E0362005E319E /* ActionEnablerTest.swift in Sources */,
 				5CCB62BE1F8D429400F9BB7D /* TrialDataWriterTest.swift in Sources */,
 				8BC53EA51F7A9BE6004417F8 /* SensorTriggerFrequencyObserverTest.swift in Sources */,
 				8B10E9571F87F08B0060A0AD /* ClosedRange+ScienceJournalTest.swift in Sources */,

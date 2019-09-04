@@ -900,6 +900,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let content = ActionArea.MasterContentContainerViewController(
       content: trialDetailViewController,
       emptyState: recordingDetailEmptyState,
+      keyPath: \.isEditable,
       mode: .stateless(items: [notesItem, snapshotItem, cameraItem, galleryItem])
     )
 
@@ -965,6 +966,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let content = ActionArea.MasterContentContainerViewController(
       content: experimentCoordinator,
       emptyState: emptyState,
+      keyPath: \.shouldAllowAdditions,
       mode: .stateless(items: [notesItem, sensorsItem, cameraItem, galleryItem])
     )
 

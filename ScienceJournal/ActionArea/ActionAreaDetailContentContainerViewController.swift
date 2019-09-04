@@ -28,6 +28,7 @@ extension ActionArea {
     let closeButtonItem: UIBarButtonItem?
 
     private let content: UIViewController
+    private var originalContentHidesBackButton: Bool = false
 
     // MARK: - MaterialHeader
 
@@ -70,9 +71,10 @@ extension ActionArea {
       super.viewDidLoad()
 
       addContent()
+    }
 
-      // The AA detail should never show a back button.
-      content.navigationItem.hidesBackButton = true
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
 
       if closeButtonItem == nil {
         assert(
@@ -82,6 +84,17 @@ extension ActionArea {
         )
         navigationItem.leftBarButtonItem = defaultCloseButtonItem
       }
+
+      // The AA detail should never show a back button.
+      originalContentHidesBackButton = content.navigationItem.hidesBackButton
+      content.navigationItem.hidesBackButton = true
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+      super.viewDidDisappear(animated)
+
+      navigationItem.leftBarButtonItem = closeButtonItem
+      content.navigationItem.hidesBackButton = originalContentHidesBackButton
     }
 
     private func addContent() {

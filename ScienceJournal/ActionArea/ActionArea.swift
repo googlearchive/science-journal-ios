@@ -52,7 +52,10 @@ enum ActionArea {
   }
 
   /// The requirements for all Action Area content.
-  typealias Content = UIViewController & _ActionAreaContent
+  typealias Content = _ActionAreaContent
+
+  /// The requirements for empty state content displayed in the Action Area.
+  typealias EmptyState = _ActionAreaEmptyState
 
   /// The requirements for master content displayed displayed in the Action Area.
   typealias MasterContent = _ActionAreaMasterContent
@@ -65,17 +68,29 @@ enum ActionArea {
 // Swift does not support nested protocol defintions. Defining our protocols here and creating
 // typealiases under the top-level namespace allows us to have consistent type names.
 
-protocol _ActionAreaContent {
+protocol _ActionAreaContent: UIViewController {
 
   /// The `mode` for this content.
   var mode: ActionArea.ContentMode { get }
 
 }
 
+protocol _ActionAreaEmptyState: UIViewController {
+
+  /// Enable or disable the empty state content.
+  var isEnabled: Bool { get set }
+
+}
+
 protocol _ActionAreaMasterContent: ActionArea.Content {
 
   /// The `emptyState` to display in the detail area when this master content is displayed.
-  var emptyState: UIViewController { get }
+  var emptyState: ActionArea.EmptyState { get }
+
+  /// The 'actionEnabler` used to determine if all actions should be enabled.
+  ///
+  /// All actions are enabled when this property is `nil`.
+  var actionEnabler: ActionEnabler? { get }
 
 }
 

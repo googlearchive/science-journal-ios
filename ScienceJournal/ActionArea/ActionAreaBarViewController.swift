@@ -31,6 +31,7 @@ extension ActionArea {
       static let barButtonTitleColor: UIColor = .gray
       static let barCornerRadius: CGFloat = 15
       static let barDefaultMargins = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
+      static let disabledAlpha: CGFloat = 0.2
     }
 
     /// The items to display in the Action Area bar.
@@ -60,6 +61,18 @@ extension ActionArea {
     func show() {
       barWrapper.alpha = 1
       updateAdditionalSafeAreaInsets()
+    }
+
+    /// Enable or disable the bar.
+    var isEnabled: Bool = true {
+      didSet {
+        if isEnabled {
+          buttonBar.alpha = 1
+        } else {
+          buttonBar.alpha = Metrics.disabledAlpha
+        }
+        buttonBar.isUserInteractionEnabled = isEnabled
+      }
     }
 
     private enum Position {

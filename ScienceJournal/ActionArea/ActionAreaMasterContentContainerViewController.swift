@@ -22,10 +22,12 @@ extension ActionArea {
   final class MasterContentContainerViewController: UIViewController, MasterContent {
 
     /// The empty state to display in the detail area for this content.
-    let emptyState: UIViewController
+    let emptyState: EmptyState
 
     /// The mode for this content.
     let mode: ContentMode
+
+    var actionEnabler: ActionEnabler?
 
     private let content: UIViewController
 
@@ -36,16 +38,17 @@ extension ActionArea {
     /// - Parameters:
     ///   - content: The content view controller.
     ///   - emptyState: The empty state to display in the detail area for this content.
+    ///   - keyPath: The `KeyPath` of the property to use to disable actions.
     ///   - mode: The mode for this content.
-    init(content: UIViewController,
-         emptyState: UIViewController,
-         mode: ContentMode) {
+    init<T: UIViewController>(
+      content: T,
+      emptyState: UIViewController,
+      keyPath: KeyPath<T, Bool>? = nil,
+      mode: ContentMode
+    ) {
       self.content = content
-      if emptyState.hasMaterialHeader {
-        self.emptyState = emptyState
-      } else {
-        self.emptyState = MaterialHeaderContainerViewController(content: emptyState)
-      }
+      self.emptyState = EmptyStateContainerViewController(emptyState: emptyState)
+      self.actionEnabler = keyPath.map { ActionEnabler(target: content, keyPath: $0) }
       self.mode = mode
       super.init(nibName: nil, bundle: nil)
     }
@@ -55,11 +58,15 @@ extension ActionArea {
     /// - Parameters:
     ///   - content: The content view controller.
     ///   - emptyState: The empty state to display in the detail area for this content.
+    ///   - keyPath: The `KeyPath` of the property to use to disable actions.
     ///   - mode: A block that returns the mode for this content.
-    convenience init(content: UIViewController,
-                     emptyState: UIViewController,
-                     mode: () -> ContentMode) {
-      self.init(content: content, emptyState: emptyState, mode: mode())
+    convenience init<T: UIViewController>(
+      content: T,
+      emptyState: UIViewController,
+      keyPath: KeyPath<T, Bool>? = nil,
+      mode: () -> ContentMode
+    ) {
+      self.init(content: content, emptyState: emptyState, keyPath: keyPath, mode: mode())
     }
 
     required init?(coder aDecoder: NSCoder) {

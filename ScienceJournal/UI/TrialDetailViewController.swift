@@ -105,6 +105,9 @@ class TrialDetailViewController: MaterialHeaderViewController,
   // The trial detail data source. Exposed for testing.
   let trialDetailDataSource: TrialDetailDataSource
 
+  // The editable status of this trial. Observable.
+  @objc dynamic var isEditable: Bool
+
   // The experiment interaction options. Exposed for testing.
   let experimentInteractionOptions: ExperimentInteractionOptions
 
@@ -269,6 +272,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
         TrialDetailDataSource(trial: trial,
                               experimentDataParser: experimentDataParser,
                               experimentInteractionOptions: experimentInteractionOptions)
+    self.isEditable = !trialDetailDataSource.displayTrial.isArchived
     self.experiment = experiment
     self.experimentInteractionOptions = experimentInteractionOptions
     self.exportType = exportType
@@ -492,7 +496,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   func prepareToAddNote() {
     guard let sensor = sensorsView?.currentSensor,
-      let playbackController = playbackViewControllers[sensor.ID] else { return }
+      playbackViewControllers[sensor.ID] != nil else { return }
     notesViewController.title = "Add note to " + timestampString
   }
 
@@ -913,6 +917,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     collectionView.performBatchUpdates({
       let isDisplayTrialArchived = trialDetailDataSource.displayTrial.isArchived
+      isEditable = !isDisplayTrialArchived
       // If the containing experiment allows additions, only then do we need to insert/delete the
       // "Add Notes" cell. This check is needed because it is possible to enter an archived
       // experiment with an archived trial, that could potentialy be unarchived. Or vice versa.

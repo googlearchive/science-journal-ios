@@ -63,6 +63,10 @@ extension ActionArea {
     private let masterBarViewController: BarViewController
     private let detailBarViewController: BarViewController
     private let svController = UISplitViewController()
+    private var presentedMasterViewController: MasterContent? {
+      return navController.topViewController as? MasterContent
+    }
+
     private var presentedDetailViewController: DetailContent?
     private let preferredPrimaryColumnWidthFractionWhenDetailIsHidden: CGFloat = 1.0
     private var isDetailVisible: Bool = false
@@ -96,7 +100,15 @@ extension ActionArea {
       }
     }
 
-    private var emptyStates: [UIViewController] {
+    private weak var actionEnabler: ActionEnabler? {
+      didSet {
+        oldValue?.unobserve()
+
+        actionEnabler?.observe(animateActionEnablement(actionsAreEnabled:))
+      }
+    }
+
+    private var emptyStates: [EmptyState] {
       return navController.viewControllers.reduce(into: []) { emptyStates, vc in
         if let master = vc as? ActionArea.MasterContent {
           emptyStates.append(master.emptyState)
@@ -246,7 +258,7 @@ extension ActionArea {
       if let detail = presentedDetailViewController {
         // Use the presented detail content if it exists.
         return items(for: detail)
-      } else if let master = navController.topViewController as? MasterContent {
+      } else if let master = presentedMasterViewController {
         // Otherwise the top-most master content.
         return items(for: master)
       } else {
@@ -391,8 +403,11 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
   ) -> Bool {
     navController.pushViewController(vc, animated: true)
 
-    if isExpanded, let master = vc as? ActionArea.MasterContent {
-      detailNavController.pushViewController(master.emptyState, animated: true)
+    if let master = vc as? ActionArea.MasterContent {
+      actionEnabler = master.actionEnabler
+      if isExpanded {
+        detailNavController.pushViewController(master.emptyState, animated: true)
+      }
     }
     return true // false for default behavior
   }
@@ -542,7 +557,7 @@ private extension ActionArea.Controller {
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.portrait, .enter, .delegate):
       masterBarViewController.items = createBarButtonItems()
-
+      masterBarViewController.isEnabled = actionsAreEnabled
       navController.transitionCoordinator?.animate(alongsideTransition: { _ in
         self.masterBarViewController.raise()
       })
@@ -573,6 +588,7 @@ private extension ActionArea.Controller {
       updateSplitViewTraits()
       detailBarViewController.items = createBarButtonItems()
       detailBarViewController.raise()
+      detailBarViewController.isEnabled = actionsAreEnabled
 
       navController.transitionCoordinator?.animate(alongsideTransition: nil) { context in
         UIView.animate(withDuration: context.transitionDuration) {
@@ -629,11 +645,34 @@ private extension ActionArea.Controller {
       case .update:
         bar.items = newItems
       }
+
+      bar.isEnabled = self.actionsAreEnabled
     }, completion: { _ in
       if type == .hide {
         bar.items = newItems
       }
     })
+  }
+
+  var actionsAreEnabled: Bool {
+    return presentedMasterViewController?.actionEnabler?.isEnabled ?? true
+  }
+
+  func animateActionEnablement(actionsAreEnabled: Bool) {
+    guard let master = presentedMasterViewController else { return }
+
+    func animate() {
+      if isExpanded {
+        detailBarViewController.isEnabled = actionsAreEnabled
+        master.emptyState.isEnabled = actionsAreEnabled
+      } else {
+        masterBarViewController.isEnabled = actionsAreEnabled
+      }
+    }
+
+    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
+      animate()
+    }
   }
 
   func overrideMasterBackBarButtonItem(of vc: UIViewController) {
@@ -678,10 +717,7 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     }
 
     if navigationController == detailNavController {
-      // Detail content in the Action Area should never have a back button.
-      if emptyStates.contains(viewController) {
-        viewController.navigationItem.hidesBackButton = true
-      }
+      presentedMasterViewController?.emptyState.isEnabled = actionsAreEnabled
 
       let oldItems = detailBarViewController.items
       let newItems = createBarButtonItems()
@@ -714,82 +750,19 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     from fromVC: UIViewController,
     to toVC: UIViewController
   ) -> UIViewControllerAnimatedTransitioning? {
-    if fromVC is ActionArea.DetailContent || toVC is ActionArea.DetailContent {
-      return FauxdalTransitionAnimation(operation: operation)
+    let viewControllers = [fromVC, toVC]
+    if viewControllers.contains(where: { $0 is ActionArea.DetailContent }) {
+      return FauxdalTransitionAnimation(
+        operation: operation,
+        transitionDuration: Metrics.defaultAnimationDuration
+      )
+    } else if viewControllers.contains(where: { $0 is ActionArea.EmptyState }) {
+      return CrossDissolveTransitionAnimation(
+        operation: operation,
+        transitionDuration: Metrics.defaultAnimationDuration
+      )
     } else {
       return nil
-    }
-  }
-
-  // A custom transition for `UINavigationController` that looks like a `coverVertical` modal
-  // transition. It may be possible to use a `UIPresentationController` instead of this, which
-  // would ensure the animation would be exactly the same, but custom presentations seem to ignore
-  // the `definesPresentationContext` property and present in full screen from the root VC, which
-  // covers the AA bar. Using this custom animation also has the advantage of only needing one
-  // code path to handle post-dismissal cleanup and animation coordination.
-  private final class FauxdalTransitionAnimation: NSObject, UIViewControllerAnimatedTransitioning {
-
-    private let operation: UINavigationController.Operation
-
-    init(operation: UINavigationController.Operation) {
-      self.operation = operation
-    }
-
-    func transitionDuration(
-      using transitionContext: UIViewControllerContextTransitioning?
-    ) -> TimeInterval {
-      return Metrics.defaultAnimationDuration
-    }
-
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-      switch operation {
-      case .none:
-        // TODO: When does this happen?
-        transitionContext.completeTransition(true)
-      case .push:
-        animatePush(using: transitionContext)
-      case .pop:
-        animatePop(using: transitionContext)
-      }
-    }
-
-    func animatePush(using transitionContext: UIViewControllerContextTransitioning) {
-      guard let toView = transitionContext.view(forKey: .to) else {
-        transitionContext.completeTransition(false)
-        return
-      }
-
-      let duration = transitionDuration(using: transitionContext)
-      let toViewHeight = toView.bounds.height
-
-      transitionContext.containerView.addSubview(toView)
-
-      toView.transform = CGAffineTransform(translationX: 0, y: toViewHeight)
-      UIView.animate(withDuration: duration, animations: {
-        toView.transform = .identity
-      }) { completed in
-        transitionContext.completeTransition(completed)
-      }
-    }
-
-    func animatePop(using transitionContext: UIViewControllerContextTransitioning) {
-      guard let fromView = transitionContext.view(forKey: .from),
-        let toView = transitionContext.view(forKey: .to) else {
-        transitionContext.completeTransition(false)
-        return
-      }
-
-      let duration = transitionDuration(using: transitionContext)
-      let fromViewHeight = fromView.bounds.height
-
-      transitionContext.containerView.insertSubview(toView, belowSubview: fromView)
-
-      UIView.animate(withDuration: duration, animations: {
-        fromView.transform = CGAffineTransform(translationX: 0, y: fromViewHeight)
-      }) { completed in
-        fromView.transform = .identity
-        transitionContext.completeTransition(completed)
-      }
     }
   }
 

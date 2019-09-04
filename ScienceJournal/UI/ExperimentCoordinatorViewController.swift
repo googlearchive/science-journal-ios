@@ -172,7 +172,15 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }()
 
   /// Interaction options for this experiment.
-  var experimentInteractionOptions: ExperimentInteractionOptions
+  var experimentInteractionOptions: ExperimentInteractionOptions {
+    didSet {
+      shouldAllowAdditions = experimentInteractionOptions.shouldAllowAdditions
+    }
+  }
+
+  /// Whether this experiment allows additions.
+  // Depends on experimentInteractionOptions and needs to be updated when it changes.
+  @objc dynamic var shouldAllowAdditions: Bool
 
   /// The experiment. Exposed for testing.
   var experiment: Experiment
@@ -302,6 +310,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
        documentManager: DocumentManager) {
     self.experiment = experiment
     self.experimentInteractionOptions = experimentInteractionOptions
+    self.shouldAllowAdditions = experimentInteractionOptions.shouldAllowAdditions
     self.exportType = exportType
     self.drawerVC = drawerViewController
     self.metadataManager = metadataManager

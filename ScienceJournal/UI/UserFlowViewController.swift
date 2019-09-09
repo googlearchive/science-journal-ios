@@ -910,6 +910,18 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private func configure(
     experimentCoordinator: ExperimentCoordinatorViewController
   ) -> ActionArea.MasterContent {
+    let textItem = actionAreaBarButtonItem(for: experimentCoordinator.notesViewController,
+                                            title: "Text",
+                                            imageName: "ic_comment")
+
+    let cameraItem = actionAreaBarButtonItem(for: experimentCoordinator.cameraViewController,
+                                             title: "Camera",
+                                             imageName: "ic_camera_alt")
+
+    let galleryItem = actionAreaBarButtonItem(for: experimentCoordinator.photoLibraryViewController,
+                                              title: "Gallery",
+                                              imageName: "ic_image")
+
     // TODO: Localize all the title strings below.
     let detail = ActionArea.DetailContentContainerViewController(
       content: experimentCoordinator.observeViewController
@@ -920,8 +932,13 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
         experimentCoordinator.observeViewController.observeFooterAddButtonPressed()
       }
 
-      let snapshotItem = ActionArea.BarButtonItem(title: "Snapshot",
-                                                  image: UIImage(named: "ic_snapshot_action")) {}
+      let snapshotItem = ActionArea.BarButtonItem(
+        title: "Snapshot",
+        image: UIImage(named: "ic_snapshot_action")
+      ) {
+        experimentCoordinator.observeViewController.snapshotButtonPressed()
+      }
+
       let recordItem = ActionArea.BarButtonItem(
         title: "Record",
         image: UIImage(named: "record_button")
@@ -938,7 +955,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
       return .stateful(
         nonModal: (primary: recordItem, items: [addSensorItem, snapshotItem]),
-        modal: (primary: stopItem, items: [snapshotItem])
+        modal: (primary: stopItem, items: [textItem, snapshotItem, cameraItem, galleryItem])
       )
     }
 
@@ -949,25 +966,13 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       self.actAreaController.showDetailViewController(detail, sender: self)
     }
 
-    let notesItem = actionAreaBarButtonItem(for: experimentCoordinator.notesViewController,
-                                            title: "Text",
-                                            imageName: "ic_comment")
-
-    let cameraItem = actionAreaBarButtonItem(for: experimentCoordinator.cameraViewController,
-                                             title: "Camera",
-                                             imageName: "ic_camera_alt")
-
-    let galleryItem = actionAreaBarButtonItem(for: experimentCoordinator.photoLibraryViewController,
-                                              title: "Gallery",
-                                              imageName: "ic_image")
-
     let emptyState = ExperimentDetailEmptyStateViewController()
 
     let content = ActionArea.MasterContentContainerViewController(
       content: experimentCoordinator,
       emptyState: emptyState,
       keyPath: \.shouldAllowAdditions,
-      mode: .stateless(items: [notesItem, sensorsItem, cameraItem, galleryItem])
+      mode: .stateless(items: [textItem, sensorsItem, cameraItem, galleryItem])
     )
 
     return content

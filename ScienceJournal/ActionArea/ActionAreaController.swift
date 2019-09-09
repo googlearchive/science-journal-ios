@@ -208,17 +208,26 @@ extension ActionArea {
     // reference to `presentedDetailViewController` when it's no longer in either of the navigation
     // controllers.
     private func removeDismissedDetailViewController() {
-      guard let presentedDetailViewController = presentedDetailViewController else { return }
+      let detailContent: [DetailContent] =
+        (navController.viewControllers + detailNavController.viewControllers)
+          .reduce(into: []) { (detailContent, aVC) in
+            if let detail = aVC as? DetailContent {
+              detailContent.append(detail)
+            }
+      }
 
-      let viewControllers = navController.viewControllers + detailNavController.viewControllers
-      if !viewControllers.contains(presentedDetailViewController) {
-        switch state {
-        case .normal:
-          self.presentedDetailViewController = nil
-        case .modal:
-          if isExpanded {
+      switch state {
+      case .normal:
+        self.presentedDetailViewController = detailContent.last
+      case .modal:
+        if isExpanded {
+          if detailContent.isEmpty {
             fatalError("The detailViewController cannot be dismissed in the modal state.")
           }
+        }
+
+        if let lastDetail = detailContent.last {
+          self.presentedDetailViewController = lastDetail
         }
       }
     }
@@ -328,10 +337,6 @@ extension ActionArea {
     ///   - vc: The view controller to show.
     ///   - sender: The object calling this method.
     override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
-      guard presentedDetailViewController == nil else {
-        fatalError("A detailViewController is already being shown.")
-      }
-
       svController.showDetailViewController(vc, sender: sender)
     }
 

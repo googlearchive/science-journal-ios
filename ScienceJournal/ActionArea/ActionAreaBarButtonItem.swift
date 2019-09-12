@@ -29,12 +29,15 @@ extension ActionArea {
     ///
     /// - Parameters:
     ///   - title: The title for the item.
+    ///   - accessibilityHint: The accessibility hint for the item.
     ///   - image: The image for the item.
     ///   - action: A block to execute when the item is tapped.
-    init(title: String, image: UIImage?, action: @escaping () -> Void) {
+    init(title: String, accessibilityHint: String?, image: UIImage?, action: @escaping () -> Void) {
       self.title = title
       self.image = image
       self.action = action
+      super.init()
+      self.accessibilityHint = accessibilityHint
     }
 
     @objc func execute() {

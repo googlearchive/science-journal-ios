@@ -868,8 +868,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       recordingDetailEmptyState.timestampString = timestamp
     }
 
-    let notesItem = ActionArea.BarButtonItem(
-      title: "Text",
+    let textItem = ActionArea.BarButtonItem(
+      title: String.actionAreaButtonText,
+      accessibilityHint: String.actionAreaButtonTextContentDescription,
       image: UIImage(named: "ic_comment")
     ) {
       let notesVC = trialDetailViewController.notesViewController
@@ -878,7 +879,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     }
 
     let galleryItem = ActionArea.BarButtonItem(
-      title: "Gallery",
+      title: String.actionAreaButtonGallery,
+      accessibilityHint: String.actionAreaButtonGalleryContentDescription,
       image: UIImage(named: "ic_image")
     ) {
       let photoLibraryVC = trialDetailViewController.photoLibraryViewController
@@ -886,7 +888,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     }
 
     let cameraItem = ActionArea.BarButtonItem(
-      title: "Camera",
+      title: String.actionAreaButtonCamera,
+      accessibilityHint: String.actionAreaButtonCameraContentDescription,
       image: UIImage(named: "ic_camera_alt")
     ) {
       let cameraVC = trialDetailViewController.cameraViewController
@@ -897,7 +900,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       content: trialDetailViewController,
       emptyState: recordingDetailEmptyState,
       keyPath: \.isEditable,
-      mode: .stateless(items: [notesItem, cameraItem, galleryItem])
+      mode: .stateless(items: [textItem, cameraItem, galleryItem])
     )
 
     return content
@@ -906,44 +909,66 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private func configure(
     experimentCoordinator: ExperimentCoordinatorViewController
   ) -> ActionArea.MasterContent {
-    let textItem = actionAreaBarButtonItem(for: experimentCoordinator.notesViewController,
-                                            title: "Text",
-                                            imageName: "ic_comment")
+    let textItem = ActionArea.BarButtonItem(
+      title: String.actionAreaButtonText,
+      accessibilityHint: String.actionAreaButtonTextContentDescription,
+      image: UIImage(named: "ic_comment")
+    ) {
+      self.actAreaController.showDetailViewController(
+        experimentCoordinator.notesViewController,
+        sender: self)
+    }
 
-    let cameraItem = actionAreaBarButtonItem(for: experimentCoordinator.cameraViewController,
-                                             title: "Camera",
-                                             imageName: "ic_camera_alt")
+    let cameraItem = ActionArea.BarButtonItem(
+      title: String.actionAreaButtonCamera,
+      accessibilityHint: String.actionAreaButtonCameraContentDescription,
+      image: UIImage(named: "ic_camera_alt")
+    ) {
+      self.actAreaController.showDetailViewController(
+        experimentCoordinator.cameraViewController,
+        sender: self)
+    }
 
-    let galleryItem = actionAreaBarButtonItem(for: experimentCoordinator.photoLibraryViewController,
-                                              title: "Gallery",
-                                              imageName: "ic_image")
+    let galleryItem = ActionArea.BarButtonItem(
+      title: String.actionAreaButtonGallery,
+      accessibilityHint: String.actionAreaButtonGalleryContentDescription,
+      image: UIImage(named: "ic_image")
+    ) {
+      self.actAreaController.showDetailViewController(
+        experimentCoordinator.photoLibraryViewController,
+        sender: self)
+    }
 
-    // TODO: Localize all the title strings below.
     let detail = ActionArea.DetailContentContainerViewController(
       content: experimentCoordinator.observeViewController
     ) {
-      let addSensorItem = ActionArea.BarButtonItem(title: "Add Sensor",
-                                                   image: UIImage(named: "ic_add_circle")
+      let addSensorItem = ActionArea.BarButtonItem(
+        title: String.actionAreaButtonAddSensor,
+        accessibilityHint: String.actionAreaButtonAddSensorContentDescription,
+        image: UIImage(named: "ic_add_circle")
       ) {
         experimentCoordinator.observeViewController.observeFooterAddButtonPressed()
       }
 
       let snapshotItem = ActionArea.BarButtonItem(
-        title: "Snapshot",
+        title: String.actionAreaButtonSnapshot,
+        accessibilityHint: String.actionAreaButtonSnapshotContentDescription,
         image: UIImage(named: "ic_snapshot_action")
       ) {
         experimentCoordinator.observeViewController.snapshotButtonPressed()
       }
 
       let recordItem = ActionArea.BarButtonItem(
-        title: "Record",
+        title: String.actionAreaFabRecord,
+        accessibilityHint: String.actionAreaFabRecordContentDescription,
         image: UIImage(named: "record_button")
       ) {
         experimentCoordinator.observeViewController.recordButtonPressed()
       }
 
       let stopItem = ActionArea.BarButtonItem(
-        title: "Stop",
+        title: String.actionAreaFabStop,
+        accessibilityHint: String.actionAreaFabStopContentDescription,
         image: UIImage(named: "stop_button")
       ) {
         experimentCoordinator.observeViewController.recordButtonPressed()
@@ -956,7 +981,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     }
 
     let sensorsItem = ActionArea.BarButtonItem(
-      title: "Sensor",
+      title: String.actionAreaButtonSensors,
+      accessibilityHint: String.actionAreaButtonSensorsContentDescription,
       image: UIImage(named: "ic_sensors")
     ) {
       self.actAreaController.showDetailViewController(detail, sender: self)
@@ -972,17 +998,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     )
 
     return content
-  }
-
-  private func actionAreaBarButtonItem(for viewController: UIViewController,
-                                       title: String,
-                                       imageName: String) -> ActionArea.BarButtonItem {
-    return ActionArea.BarButtonItem(
-      title: title,
-      image: UIImage(named: imageName)
-    ) {
-      self.actAreaController.showDetailViewController(viewController, sender: self)
-    }
   }
 
   /// Shows a note.

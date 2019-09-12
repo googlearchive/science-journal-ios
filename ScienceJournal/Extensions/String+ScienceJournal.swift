@@ -105,6 +105,22 @@ extension String {
     return "\(String.runDefaultTitle) \(index)"
   }
 
+  /// A localized string to add note to a specified timestamp.
+  ///
+  /// - Parameter timestamp: The timestamp.
+  /// - Returns: The resulting string.
+  static func localizedAddNoteTo(with timestamp: String) -> String {
+    return String(format: String.actionAreaRecordingAddNoteToTimeline, timestamp)
+  }
+
+  /// A localized string for adding a text note to a specified timestamp.
+  ///
+  /// - Parameter timestamp: The timestamp.
+  /// - Returns: The resulting string.
+  static func localizedAddTextNoteTo(with timestamp: String) -> String {
+    return String(format: String.actionAreaTitleAddTextNoteToTimeline, timestamp)
+  }
+
   /// Returns a whitespace-trimmed version of the string, or nil if the trimmed string is empty.
   ///
   /// - Returns: A trimmed version or nil if empty.

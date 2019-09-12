@@ -25,8 +25,7 @@ final class ExperimentDetailEmptyStateViewController: UIViewController {
     view.backgroundColor = .white
 
     let label = UILabel()
-    // TODO: Verify this string and localize the final version.
-    label.text = "Add more observation notes"
+    label.text = String.actionAreaAddMoreNotes
     label.textColor = .lightGray
     view.addSubview(label)
     label.snp.makeConstraints { (make) in

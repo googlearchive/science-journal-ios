@@ -497,7 +497,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
   func prepareToAddNote() {
     guard let sensor = sensorsView?.currentSensor,
       playbackViewControllers[sensor.ID] != nil else { return }
-    notesViewController.title = "Add note to " + timestampString
+    notesViewController.title = String.localizedAddTextNoteTo(with: timestampString)
   }
 
   func subscribeToTimestampUpdate(with updateBlock: @escaping TimestampUpdate) {

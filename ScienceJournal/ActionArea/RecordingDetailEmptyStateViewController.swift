@@ -59,8 +59,7 @@ final class RecordingDetailEmptyStateViewController: UIViewController {
   }
 
   private func updateLabel() {
-    // TODO: Verify this string and localize the final version.
-    label.text = "Add note to " + (timestampString ?? "0:00")
+    label.text = String.localizedAddNoteTo(with: timestampString ?? "0:00")
   }
 
 }

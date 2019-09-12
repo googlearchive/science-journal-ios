@@ -280,6 +280,7 @@ extension ActionArea {
                                           style: .plain,
                                           target: item,
                                           action: #selector(BarButtonItem.execute))
+      barButtonItem.accessibilityHint = item.accessibilityHint
       barButtonItem.image = item.image
       return barButtonItem
     }
@@ -290,6 +291,7 @@ extension ActionArea {
     private func wrapBarButtonItem(from item: BarButtonItem) -> UIBarButtonItem {
       let wrapper = BarButtonItem(
         title: item.title,
+        accessibilityHint: item.accessibilityHint,
         image: item.image
       ) {
         item.action()

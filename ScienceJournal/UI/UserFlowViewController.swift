@@ -893,15 +893,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       self.actAreaController.showDetailViewController(cameraVC, sender: self)
     }
 
-    // TODO: Hook up snapshot action.
-    let snapshotItem = ActionArea.BarButtonItem(title: "Snapshot",
-                                                image: UIImage(named: "ic_snapshot_action")) {}
-
     let content = ActionArea.MasterContentContainerViewController(
       content: trialDetailViewController,
       emptyState: recordingDetailEmptyState,
       keyPath: \.isEditable,
-      mode: .stateless(items: [notesItem, snapshotItem, cameraItem, galleryItem])
+      mode: .stateless(items: [notesItem, cameraItem, galleryItem])
     )
 
     return content

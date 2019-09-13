@@ -125,6 +125,9 @@ extension ActionArea {
     }
 
     func actionAreaStateDidChange(_ actionAreaController: ActionArea.Controller) {
+      // Do not modify the `navigationItem` unless we're currently being shown.
+      guard parent != nil else { return }
+
       let item: UIBarButtonItem?
       switch actionAreaController.state {
       case .normal:

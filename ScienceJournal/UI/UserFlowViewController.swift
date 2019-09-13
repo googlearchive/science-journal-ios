@@ -47,7 +47,8 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   weak var settingsVC: SettingsViewController?
 
   private let accountsManager: AccountsManager
-  private lazy var actAreaController = ActionArea.Controller()
+  private lazy var _actionAreaController = ActionArea.Controller()
+  override var actionAreaController: ActionArea.Controller? { return _actionAreaController }
   private let analyticsReporter: AnalyticsReporter
   private let commonUIComponents: CommonUIComponents
   private let documentManager: DocumentManager
@@ -58,7 +59,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
   private let metadataManager: MetadataManager
   private lazy var _navController = UINavigationController()
   private var navController: UINavigationController {
-    return FeatureFlags.isActionAreaEnabled ? actAreaController.navController : _navController
+    return FeatureFlags.isActionAreaEnabled ? _actionAreaController.navController : _navController
   }
   private let networkAvailability: NetworkAvailability
   private let devicePreferenceManager: DevicePreferenceManager
@@ -176,9 +177,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     super.viewDidLoad()
 
     if FeatureFlags.isActionAreaEnabled {
-      addChild(actAreaController)
-      view.addSubview(actAreaController.view)
-      actAreaController.didMove(toParent: self)
+      addChild(_actionAreaController)
+      view.addSubview(_actionAreaController.view)
+      _actionAreaController.didMove(toParent: self)
     } else {
       addChild(navController)
       view.addSubview(navController.view)
@@ -557,7 +558,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       if let experimentCoordinator = experimentCoordinatorVC {
         let content = configure(trialDetailViewController: trialDetailVC,
                                 experimentCoordinator: experimentCoordinator)
-        actAreaController.show(content, sender: self)
+        actionAreaController?.show(content, sender: self)
       } else {
         fatalError("Experiment coordinator not available.")
       }
@@ -668,6 +669,16 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     } else {
       openExperimentUpdateManager?.addExperimentNote(note)
     }
+
+    guard actionAreaController?.isMasterVisible == false else { return }
+
+    showSnackbar(
+      withMessage: String.actionAreaRecordingNoteSavedMessage,
+      category: nil,
+      actionTitle: String.actionAreaRecordingNoteSavedViewButton,
+      actionHandler: {
+        self.actionAreaController?.revealMaster()
+    })
   }
 
   func detailViewControllerDidDeleteNote(_ deletedDisplayNote: DisplayNote) {
@@ -837,7 +848,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     if FeatureFlags.isActionAreaEnabled {
       let content = configure(experimentCoordinator: experimentCoordinatorVC)
-      actAreaController.show(content, sender: self)
+      actionAreaController?.show(content, sender: self)
     } else {
       navController.pushViewController(experimentCoordinatorVC, animated: true)
     }
@@ -875,7 +886,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     ) {
       let notesVC = trialDetailViewController.notesViewController
       trialDetailViewController.prepareToAddNote()
-      self.actAreaController.showDetailViewController(notesVC, sender: self)
+      self.actionAreaController?.showDetailViewController(notesVC, sender: self)
     }
 
     let galleryItem = ActionArea.BarButtonItem(
@@ -884,7 +895,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       image: UIImage(named: "ic_image")
     ) {
       let photoLibraryVC = trialDetailViewController.photoLibraryViewController
-      self.actAreaController.showDetailViewController(photoLibraryVC, sender: self)
+      self.actionAreaController?.showDetailViewController(photoLibraryVC, sender: self)
     }
 
     let cameraItem = ActionArea.BarButtonItem(
@@ -893,7 +904,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       image: UIImage(named: "ic_camera_alt")
     ) {
       let cameraVC = trialDetailViewController.cameraViewController
-      self.actAreaController.showDetailViewController(cameraVC, sender: self)
+      self.actionAreaController?.showDetailViewController(cameraVC, sender: self)
     }
 
     let content = ActionArea.MasterContentContainerViewController(
@@ -914,7 +925,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonTextContentDescription,
       image: UIImage(named: "ic_comment")
     ) {
-      self.actAreaController.showDetailViewController(
+      self.actionAreaController?.showDetailViewController(
         experimentCoordinator.notesViewController,
         sender: self)
     }
@@ -924,7 +935,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonCameraContentDescription,
       image: UIImage(named: "ic_camera_alt")
     ) {
-      self.actAreaController.showDetailViewController(
+      self.actionAreaController?.showDetailViewController(
         experimentCoordinator.cameraViewController,
         sender: self)
     }
@@ -934,7 +945,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonGalleryContentDescription,
       image: UIImage(named: "ic_image")
     ) {
-      self.actAreaController.showDetailViewController(
+      self.actionAreaController?.showDetailViewController(
         experimentCoordinator.photoLibraryViewController,
         sender: self)
     }
@@ -985,7 +996,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonSensorsContentDescription,
       image: UIImage(named: "ic_sensors")
     ) {
-      self.actAreaController.showDetailViewController(detail, sender: self)
+      self.actionAreaController?.showDetailViewController(detail, sender: self)
     }
 
     let emptyState = ExperimentDetailEmptyStateViewController()

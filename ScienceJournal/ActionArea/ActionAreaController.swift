@@ -47,6 +47,12 @@ extension ActionArea {
     /// If the Action Area is using the expanded layout.
     var isExpanded: Bool { return !svController.isCollapsed }
 
+    /// If the master content is currently visible.
+    var isMasterVisible: Bool {
+      if isExpanded { return true }
+      return presentedDetailViewController == nil
+    }
+
     /// The navigation controller that displays content in a master context.
     /// This is currently here for backwards compatibility. Consider using `show` if appropriate.
     let navController: UINavigationController = {
@@ -64,11 +70,16 @@ extension ActionArea {
     private let masterBarViewController: BarViewController
     private let detailBarViewController: BarViewController
     private let svController = UISplitViewController()
+
     private var presentedMasterViewController: MasterContent? {
       return navController.topViewController as? MasterContent
     }
 
-    private var presentedDetailViewController: DetailContent?
+    private var presentedDetailViewController: DetailContent? {
+      return detailContent.last
+    }
+
+    private var modalDetailViewController: DetailContent?
     private let preferredPrimaryColumnWidthFractionWhenDetailIsHidden: CGFloat = 1.0
     private var isDetailVisible: Bool = false
     private typealias TargetAction = (target: AnyObject?, action: Selector)
@@ -83,21 +94,18 @@ extension ActionArea {
       }
 
       didSet {
-        guard let presentedDetailViewController = presentedDetailViewController else {
+        guard presentedDetailViewController != nil || modalDetailViewController != nil else {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
-        initiateLocalTransition()
         switch state {
         case .normal:
-          if presentedDetailViewController.parent == nil {
-            // If there's no `parent`, the detail was already dismissed, so we need to clean up.
-            self.presentedDetailViewController = nil
-          }
+          modalDetailViewController = nil
         case .modal:
-          break
+          modalDetailViewController = presentedDetailViewController
         }
-        presentedDetailViewController.actionAreaStateDidChange(self)
+        initiateLocalTransition()
+        presentedDetailViewController?.actionAreaStateDidChange(self)
         updateBarButtonItems()
       }
     }
@@ -131,6 +139,15 @@ extension ActionArea {
           emptyStates.append(master.emptyState)
         }
       }
+    }
+
+    private var detailContent: [DetailContent] {
+      return (navController.viewControllers + detailNavController.viewControllers)
+        .reduce(into: []) { detailContent, aVC in
+          if let detail = aVC as? DetailContent {
+            detailContent.append(detail)
+          }
+        }
     }
 
     // MARK: - Initializers
@@ -226,34 +243,6 @@ extension ActionArea {
       svController.preferredPrimaryColumnWidthFraction = preferredPrimaryColumnWidthFraction
     }
 
-    // We don't have a way to detect a detail dismissal when it happens, so we clear our local
-    // reference to `presentedDetailViewController` when it's no longer in either of the navigation
-    // controllers.
-    private func removeDismissedDetailViewController() {
-      let detailContent: [DetailContent] =
-        (navController.viewControllers + detailNavController.viewControllers)
-        .reduce(into: []) { detailContent, aVC in
-          if let detail = aVC as? DetailContent {
-            detailContent.append(detail)
-          }
-        }
-
-      switch state {
-      case .normal:
-        presentedDetailViewController = detailContent.last
-      case .modal:
-        if isExpanded {
-          if detailContent.isEmpty {
-            fatalError("The detailViewController cannot be dismissed in the modal state.")
-          }
-        }
-
-        if let lastDetail = detailContent.last {
-          presentedDetailViewController = lastDetail
-        }
-      }
-    }
-
     private func updateBarButtonItems() {
       let newActionItem = createActionItem()
 
@@ -267,20 +256,17 @@ extension ActionArea {
     // Create `ActionItem` for the appropriate content.
     private func createActionItem() -> ActionItem {
       func items(for content: Content) -> ActionItem {
-        switch content.mode {
-        case let .stateless(items):
+        switch (state, content.mode) {
+        case let (.normal, .stateless(items)), let (.modal, .stateless(items)):
           return ActionItem(items: items)
-        case let .stateful(nonModal, modal):
-          switch state {
-          case .normal:
-            return ActionItem(primary: wrap(primary: nonModal.primary), items: nonModal.items)
-          case .modal:
-            return ActionItem(primary: wrap(primary: modal.primary), items: modal.items)
-          }
+        case let (.normal, .stateful(nonModal, _)):
+          return ActionItem(primary: wrap(primary: nonModal.primary), items: nonModal.items)
+        case let (.modal, .stateful(_, modal)):
+          return ActionItem(primary: wrap(primary: modal.primary), items: modal.items)
         }
       }
 
-      if let detail = presentedDetailViewController {
+      if let detail = presentedDetailViewController ?? modalDetailViewController {
         // Use the presented detail content if it exists.
         return items(for: detail)
       } else if let master = presentedMasterViewController {
@@ -348,7 +334,7 @@ extension ActionArea {
     /// Calling this method when no detail content was presented or the Action Area is not in the
     /// `modal` state is an error.
     func reshowDetail() {
-      guard let presentedDetailViewController = presentedDetailViewController else {
+      guard let modalDetailViewController = modalDetailViewController else {
         fatalError("A detailViewController is not currently being shown.")
       }
       guard state == .modal else {
@@ -356,9 +342,27 @@ extension ActionArea {
       }
 
       if svController.isCollapsed {
-        svController.showDetailViewController(presentedDetailViewController, sender: self)
+        svController.showDetailViewController(modalDetailViewController, sender: self)
       }
       // Otherwise the detailViewController is already on screen.
+    }
+
+    func revealMaster() {
+      guard let firstDetail = detailContent.first else {
+        preconditionFailure("A detailViewController is not currently being shown.")
+      }
+      guard svController.isCollapsed else { return }
+
+      guard let index = navController.viewControllers.index(of: firstDetail) else {
+        preconditionFailure("Expected detail content in navController.")
+      }
+      precondition(index > navController.viewControllers.startIndex,
+                   "Expected master content under detail content.")
+      let before = navController.viewControllers.index(before: index)
+      guard let newTop = navController.viewControllers[before] as? MasterContent else {
+        preconditionFailure("Expected new top view controller to be master content.")
+      }
+      navController.popToViewController(newTop, animated: true)
     }
 
   }
@@ -438,9 +442,6 @@ extension ActionArea.Controller: UISplitViewControllerDelegate {
       )
     }
 
-    // Retain a reference to the detail content, so we can re-show it if needed when in the `modal`
-    // state.
-    presentedDetailViewController = detail
     if splitViewController.isCollapsed {
       navController.pushViewController(detail, animated: true)
     } else {
@@ -717,8 +718,6 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     willShow viewController: UIViewController,
     animated: Bool
   ) {
-    removeDismissedDetailViewController()
-
     if navigationController == navController {
       transitionType = transitionType.next(for: .willShow, and: emptyStates.count)
       transition(layout: layout, type: transitionType, source: .delegate)
@@ -767,23 +766,6 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     } else {
       return nil
     }
-  }
-
-}
-
-// MARK: - UIViewController Extensions
-
-extension UIViewController {
-
-  var actionAreaController: ActionArea.Controller? {
-    var candidate: UIViewController? = parent
-    while candidate != nil {
-      if let aac = candidate as? ActionArea.Controller {
-        return aac
-      }
-      candidate = candidate?.parent
-    }
-    return nil
   }
 
 }

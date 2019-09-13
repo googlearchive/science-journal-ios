@@ -18,6 +18,7 @@ import SnapKit
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_AppBar_AppBar
+import third_party_objective_c_material_components_ios_components_Buttons_Buttons
 
 extension ActionArea {
 
@@ -86,6 +87,7 @@ extension ActionArea {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
+        initiateLocalTransition()
         switch state {
         case .normal:
           if presentedDetailViewController.parent == nil {
@@ -97,6 +99,21 @@ extension ActionArea {
         }
         presentedDetailViewController.actionAreaStateDidChange(self)
         updateBarButtonItems()
+      }
+    }
+
+    // Initiate a transition by presenting a hidden view controller. This ensures we use the
+    // same duration and easing curves, and it simplifies animation code because it doesn't have
+    // to handle animating without a `transitionCoordinator`.
+    private func initiateLocalTransition() {
+      let hidden = UIViewController()
+      // Hide the view, so the currently visible content won't be affected.
+      hidden.view.isHidden = true
+      // Use an `over` presentation style, so the presenting view won't be removed.
+      hidden.modalPresentationStyle = .overFullScreen
+      svController.present(hidden, animated: true) {
+        // Dismiss the view controller to return things to the previous state.
+        hidden.dismiss(animated: false)
       }
     }
 
@@ -174,8 +191,9 @@ extension ActionArea {
       let horizontallyRegular = UITraitCollection(horizontalSizeClass: .regular)
 
       // On iPad, we use a horizontally compact layout to keep the split view collapsed until we
-      // have detail content to show.
-      if traitCollection.userInterfaceIdiom == .pad {
+      // have detail content to show. Do *not* use `traitCollection.userInterfaceIdom` here
+      // because it is not always set.
+      if UIDevice.current.userInterfaceIdiom == .pad {
         if UIScreen.main.bounds.size.isWiderThanTall, isDetailVisible {
           setOverrideTraitCollection(nil, forChild: svController)
           svController.setOverrideTraitCollection(nil, forChild: masterBarViewController)
@@ -186,6 +204,10 @@ extension ActionArea {
             horizontallyRegular, forChild: masterBarViewController
           )
         }
+        // Detail content in the expanded layout should always be horizontally compact.
+        svController.setOverrideTraitCollection(
+          horizontallyCompact, forChild: detailBarViewController
+        )
       } else {
         // On iPhone, we use a horizontally compact layout to prevent expansion on plus/max devices.
         setOverrideTraitCollection(horizontallyCompact, forChild: svController)
@@ -210,15 +232,15 @@ extension ActionArea {
     private func removeDismissedDetailViewController() {
       let detailContent: [DetailContent] =
         (navController.viewControllers + detailNavController.viewControllers)
-          .reduce(into: []) { (detailContent, aVC) in
-            if let detail = aVC as? DetailContent {
-              detailContent.append(detail)
-            }
-      }
+        .reduce(into: []) { detailContent, aVC in
+          if let detail = aVC as? DetailContent {
+            detailContent.append(detail)
+          }
+        }
 
       switch state {
       case .normal:
-        self.presentedDetailViewController = detailContent.last
+        presentedDetailViewController = detailContent.last
       case .modal:
         if isExpanded {
           if detailContent.isEmpty {
@@ -227,39 +249,33 @@ extension ActionArea {
         }
 
         if let lastDetail = detailContent.last {
-          self.presentedDetailViewController = lastDetail
+          presentedDetailViewController = lastDetail
         }
       }
     }
 
-    // Update the bar button items outside of a view controller transition.
-    // This is needed for the `normal` <-> `modal` state transition.
-    func updateBarButtonItems() {
-      let newBarButtonItems = createBarButtonItems()
+    private func updateBarButtonItems() {
+      let newActionItem = createActionItem()
 
-      UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-        if self.svController.isCollapsed {
-          self.masterBarViewController.items = newBarButtonItems
-        } else {
-          self.detailBarViewController.items = newBarButtonItems
-        }
+      if svController.isCollapsed {
+        masterBarViewController.actionItem = newActionItem
+      } else {
+        detailBarViewController.actionItem = newActionItem
       }
     }
 
-    // Create bar button items for the appropriate content.
-    func createBarButtonItems() -> [UIBarButtonItem] {
-      func items(for content: Content) -> [UIBarButtonItem] {
+    // Create `ActionItem` for the appropriate content.
+    private func createActionItem() -> ActionItem {
+      func items(for content: Content) -> ActionItem {
         switch content.mode {
         case let .stateless(items):
-          return items.map(createBarButtonItem(from:))
+          return ActionItem(items: items)
         case let .stateful(nonModal, modal):
           switch state {
           case .normal:
-            return nonModal.items
-              .map(createBarButtonItem(from:)) + [wrapBarButtonItem(from: nonModal.primary)]
+            return ActionItem(primary: wrap(primary: nonModal.primary), items: nonModal.items)
           case .modal:
-            return modal.items
-              .map(createBarButtonItem(from:)) + [wrapBarButtonItem(from: modal.primary)]
+            return ActionItem(primary: wrap(primary: modal.primary), items: modal.items)
           }
         }
       }
@@ -271,37 +287,22 @@ extension ActionArea {
         // Otherwise the top-most master content.
         return items(for: master)
       } else {
-        return []
+        return .empty
       }
     }
 
-    private func createBarButtonItem(from item: BarButtonItem) -> UIBarButtonItem {
-      let barButtonItem = UIBarButtonItem(title: item.title,
-                                          style: .plain,
-                                          target: item,
-                                          action: #selector(BarButtonItem.execute))
-      barButtonItem.accessibilityHint = item.accessibilityHint
-      barButtonItem.image = item.image
-      return barButtonItem
-    }
-
-    // TODO: Figure out when/where to nil this out
-    private var wrapper: BarButtonItem?
-
-    private func wrapBarButtonItem(from item: BarButtonItem) -> UIBarButtonItem {
-      let wrapper = BarButtonItem(
-        title: item.title,
-        accessibilityHint: item.accessibilityHint,
-        image: item.image
+    private func wrap(primary: BarButtonItem) -> BarButtonItem {
+      return BarButtonItem(
+        title: primary.title,
+        accessibilityHint: primary.accessibilityHint,
+        image: primary.image
       ) {
-        item.action()
+        primary.action()
         self.toggleState()
       }
-      self.wrapper = wrapper
-      return createBarButtonItem(from: wrapper)
     }
 
-    private func toggleState() {
+    @objc private func toggleState() {
       state = state == .normal ? .modal : .normal
     }
 
@@ -528,7 +529,10 @@ private extension ActionArea.Controller {
     case show
     case update
 
-    init(before: [UIBarButtonItem], after: [UIBarButtonItem]) {
+    init(
+      before: ActionArea.ActionItem,
+      after: ActionArea.ActionItem
+    ) {
       switch (before.isEmpty, after.isEmpty) {
       case (true, true):
         self = .none
@@ -563,7 +567,7 @@ private extension ActionArea.Controller {
     case (.portrait, .enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.portrait, .enter, .delegate):
-      masterBarViewController.items = createBarButtonItems()
+      masterBarViewController.actionItem = createActionItem()
       masterBarViewController.isEnabled = actionsAreEnabled
       navController.transitionCoordinator?.animate(alongsideTransition: { _ in
         self.masterBarViewController.raise()
@@ -571,13 +575,8 @@ private extension ActionArea.Controller {
     case (.portrait, .internal, .backAction):
       sendOverriddenMasterBackButtonAction()
     case (.portrait, .internal, .delegate):
-      let oldItems = masterBarViewController.items
-      let newItems = createBarButtonItems()
-      let type = DetailTransitionType(before: oldItems, after: newItems)
       transition(
-        masterBarViewController,
-        to: newItems,
-        type: type,
+        bar: masterBarViewController,
         with: navController.transitionCoordinator
       )
     case (.portrait, .leave, .backAction):
@@ -586,14 +585,14 @@ private extension ActionArea.Controller {
       navController.transitionCoordinator?.animate(alongsideTransition: { _ in
         self.masterBarViewController.lower()
       }, completion: { _ in
-        self.masterBarViewController.items = []
+        self.masterBarViewController.actionItem = .empty
       })
     case (.landscape, .enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.landscape, .enter, .delegate):
       isDetailVisible = true
       updateSplitViewTraits()
-      detailBarViewController.items = createBarButtonItems()
+      detailBarViewController.actionItem = createActionItem()
       detailBarViewController.raise()
       detailBarViewController.isEnabled = actionsAreEnabled
 
@@ -617,7 +616,7 @@ private extension ActionArea.Controller {
       }, completion: { _ in
         self.updateSplitViewTraits()
         self.detailBarViewController.lower()
-        self.detailBarViewController.items = []
+        self.detailBarViewController.actionItem = .empty
 
         self.sendOverriddenMasterBackButtonAction()
       })
@@ -633,13 +632,15 @@ private extension ActionArea.Controller {
 
   /// Transition the content of the Action Area Bar during a detail content presentation.
   func transition(
-    _ bar: ActionArea.BarViewController,
-    to newItems: [UIBarButtonItem],
-    type: DetailTransitionType,
+    bar: ActionArea.BarViewController,
     with transitionCoordinator: UIViewControllerTransitionCoordinator?
   ) {
-    if type == .show {
-      bar.items = newItems
+    let oldActionItem = bar.actionItem
+    let newActionItem = createActionItem()
+    let type = DetailTransitionType(before: oldActionItem, after: newActionItem)
+
+    if [.show, .update].contains(type) {
+      bar.actionItem = newActionItem
     }
     transitionCoordinator?.animate(alongsideTransition: { _ in
       switch type {
@@ -650,13 +651,13 @@ private extension ActionArea.Controller {
       case .show:
         bar.show()
       case .update:
-        bar.items = newItems
+        break
       }
 
       bar.isEnabled = self.actionsAreEnabled
     }, completion: { _ in
       if type == .hide {
-        bar.items = newItems
+        bar.actionItem = newActionItem
       }
     })
   }
@@ -726,13 +727,8 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     if navigationController == detailNavController {
       presentedMasterViewController?.emptyState.isEnabled = actionsAreEnabled
 
-      let oldItems = detailBarViewController.items
-      let newItems = createBarButtonItems()
-      let type = DetailTransitionType(before: oldItems, after: newItems)
       transition(
-        detailBarViewController,
-        to: newItems,
-        type: type,
+        bar: detailBarViewController,
         with: navigationController.transitionCoordinator
       )
     }

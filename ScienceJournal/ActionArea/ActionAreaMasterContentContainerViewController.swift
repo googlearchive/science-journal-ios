@@ -29,6 +29,9 @@ extension ActionArea {
 
     var actionEnabler: ActionEnabler?
 
+    // TODO: Remove when `childForStatusBarStyle` works.
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+
     private let content: UIViewController
 
     // MARK: - Initializers

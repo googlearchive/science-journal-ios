@@ -16,20 +16,37 @@
 
 import UIKit
 
-// TODO: This VC still needs an image and final copy.
+import third_party_objective_c_material_components_ios_components_Typography_Typography
+
+// TODO: This VC still needs a final image.
 final class ExperimentDetailEmptyStateViewController: UIViewController {
+
+  private enum Metrics {
+    static let labelTextColor: UIColor = .lightGray
+    static let labelFont = MDCTypography.fontLoader().boldFont?(ofSize: 16)
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     view.backgroundColor = .white
 
+    let backgroundImageView =
+      UIImageView(image: UIImage(named: "action_area_add_notes"))
+    view.addSubview(backgroundImageView)
+    backgroundImageView.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(-40)
+    }
+
     let label = UILabel()
+    label.font = Metrics.labelFont
     label.text = String.actionAreaAddMoreNotes
-    label.textColor = .lightGray
+    label.textColor = Metrics.labelTextColor
     view.addSubview(label)
     label.snp.makeConstraints { (make) in
-      make.center.equalToSuperview()
+      make.centerX.equalToSuperview()
+      make.top.equalTo(backgroundImageView.snp.bottom)
     }
   }
 

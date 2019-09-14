@@ -16,19 +16,22 @@
 
 import UIKit
 
-// TODO: This VC still needs an image and final copy.
+import third_party_objective_c_material_components_ios_components_Typography_Typography
+
+// TODO: This VC still needs a final image.
 // This VC represents the empty state detail view controller when the user is viewing the trial
 // detail view controller in landscape orientation.
 final class RecordingDetailEmptyStateViewController: UIViewController {
 
   private enum Metrics {
     static let stackSpacing: CGFloat = 10
-    static let labelTextColor: UIColor = .lightGray
+    static let labelTextColor: UIColor = .trialHeaderDefaultBackgroundColor
+    static let labelFont = MDCTypography.fontLoader().boldFont?(ofSize: 16)
   }
 
   let label: UILabel = {
     let label = UILabel()
-    // TODO: Update to color in comps
+    label.font = Metrics.labelFont
     label.textColor = Metrics.labelTextColor
     return label
   }()
@@ -44,13 +47,22 @@ final class RecordingDetailEmptyStateViewController: UIViewController {
 
     view.backgroundColor = .white
 
+    let backgroundImageView =
+      UIImageView(image: UIImage(named: "action_area_add_note_placeholder"))
+    view.addSubview(backgroundImageView)
+    backgroundImageView.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(-40)
+    }
+
     let imageView = UIImageView(image: UIImage(named: "ic_access_time"))
     updateLabel()
     let stackView = UIStackView(arrangedSubviews: [imageView, label])
     stackView.spacing = Metrics.stackSpacing
     view.addSubview(stackView)
     stackView.snp.makeConstraints { (make) in
-      make.center.equalToSuperview()
+      make.centerX.equalToSuperview()
+      make.top.equalTo(backgroundImageView.snp.bottom)
     }
   }
 

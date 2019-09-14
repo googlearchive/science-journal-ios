@@ -39,14 +39,16 @@ extension MDCAppBar {
     attachTo.addChild(headerViewController)
     headerViewController.headerView.backgroundColor = .appBarDefaultBackgroundColor
 
-    if UIDevice.current.userInterfaceIdiom == .pad {
-      // Add a darkening view to the status bar area on iPad.
-      let statusBarBackgroundView = UIView()
-      statusBarBackgroundView.tag = statusBarBackgroundViewTag
-      statusBarBackgroundView.backgroundColor = .black
-      statusBarBackgroundView.frame = UIApplication.shared.statusBarFrame
-      statusBarBackgroundView.autoresizingMask = .flexibleWidth
-      headerViewController.headerView.addSubview(statusBarBackgroundView)
+    if FeatureFlags.isActionAreaEnabled == false {
+      if UIDevice.current.userInterfaceIdiom == .pad {
+        // Add a darkening view to the status bar area on iPad.
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.tag = statusBarBackgroundViewTag
+        statusBarBackgroundView.backgroundColor = .black
+        statusBarBackgroundView.frame = UIApplication.shared.statusBarFrame
+        statusBarBackgroundView.autoresizingMask = .flexibleWidth
+        headerViewController.headerView.addSubview(statusBarBackgroundView)
+      }
     }
 
     headerViewController.headerView.trackingScrollView = scrollView

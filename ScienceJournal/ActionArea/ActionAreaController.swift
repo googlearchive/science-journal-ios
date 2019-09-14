@@ -591,16 +591,39 @@ private extension ActionArea.Controller {
     case (.landscape, .enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.landscape, .enter, .delegate):
+      guard let presentedMasterViewController = presentedMasterViewController else {
+        preconditionFailure("Expected a presentedMasterViewController.")
+      }
+
       isDetailVisible = true
       updateSplitViewTraits()
       detailBarViewController.actionItem = createActionItem()
       detailBarViewController.raise()
       detailBarViewController.isEnabled = actionsAreEnabled
 
-      navController.transitionCoordinator?.animate(alongsideTransition: nil) { context in
-        UIView.animate(withDuration: context.transitionDuration) {
+      // TODO: This is temporary for upcoming usability testing. Clean this up and figure out
+      // the animation judder that currently happens.
+      let oldMargins = presentedMasterViewController.view.layoutMargins
+      var newMargins: UIEdgeInsets {
+        let totalWidth = view.bounds.width
+        let masterWidth = totalWidth * Metrics.preferredPrimaryColumnWidthFraction
+        let detailWidth = totalWidth - masterWidth
+        let inset = ceil(detailWidth / 2)
+        return UIEdgeInsets(
+          top: oldMargins.top,
+          left: oldMargins.left + inset,
+          bottom: oldMargins.bottom,
+          right: oldMargins.right + inset
+        )
+      }
+
+      presentedMasterViewController.view.layoutMargins = newMargins
+      navController.transitionCoordinator?.animate(alongsideTransition: nil) { _ in
+        self.initiateLocalTransition()
+        self.navController.transitionCoordinator?.animate(alongsideTransition: { _ in
+          self.presentedMasterViewController?.view.layoutMargins = oldMargins
           self.updateSplitViewDetailVisibility()
-        }
+        })
       }
     case (.landscape, .internal, .backAction):
       sendOverriddenMasterBackButtonAction()

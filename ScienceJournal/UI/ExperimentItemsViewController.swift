@@ -79,6 +79,7 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
 
   /// Returns the insets for experiment cells.
   var cellInsets: UIEdgeInsets {
+    if FeatureFlags.isActionAreaEnabled { return MaterialCardCell.cardInsets }
     if experimentDisplay == .pdfExport {
       return MaterialCardCell.cardInsets
     }
@@ -144,6 +145,8 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    view.preservesSuperviewLayoutMargins = true
+
     // Always register collection view cells early to avoid a reload occurring first.
     collectionView.register(ArchivedFlagCell.self,
                             forCellWithReuseIdentifier: archivedFlagCellIdentifier)
@@ -166,7 +169,11 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     collectionView.backgroundColor = experimentDisplay.backgroundColor
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(collectionView)
-    collectionView.pinToEdgesOfView(view)
+    collectionView.snp.makeConstraints { (make) in
+      make.top.bottom.equalToSuperview()
+      make.leading.equalTo(view.snp.leadingMargin)
+      make.trailing.equalTo(view.snp.trailingMargin)
+    }
   }
 
   /// Replaces the experiment items with new items.
@@ -274,8 +281,15 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let width = collectionView.bounds.size.width - collectionView.contentInset.right -
-      cellInsets.left - cellInsets.right
+    let width: CGFloat
+    if FeatureFlags.isActionAreaEnabled {
+      // TODO: Figure out where the 40 is coming from.
+      width = collectionView.bounds.width - cellInsets.left - cellInsets.right - 40
+    } else {
+      width = collectionView.bounds.size.width - collectionView.contentInset.right -
+        cellInsets.left - cellInsets.right
+    }
+
     var calculatedCellHeight: CGFloat
 
     let section = experimentDataSource.section(atIndex: indexPath.section)

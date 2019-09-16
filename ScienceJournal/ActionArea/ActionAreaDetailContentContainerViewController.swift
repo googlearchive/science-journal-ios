@@ -139,16 +139,14 @@ extension ActionArea {
     }
 
     private lazy var defaultCloseButtonItem: UIBarButtonItem = {
-      // TODO: Use correct assets if we don't remove this.
-      UIBarButtonItem(title: "X",
+      UIBarButtonItem(image: UIImage(named: "ic_close"),
                       style: .plain,
                       target: self,
                       action: #selector(close))
     }()
 
     private lazy var hideButtonItem: UIBarButtonItem = {
-      // TODO: Use correct assets if we don't remove this.
-      UIBarButtonItem(title: "V",
+      UIBarButtonItem(image: UIImage(named: "ic_expand_more"),
                       style: .plain,
                       target: self,
                       action: #selector(close))

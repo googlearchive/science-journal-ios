@@ -76,6 +76,9 @@ extension ActionArea {
     }
 
     private var presentedDetailViewController: DetailContent? {
+      if isExpanded, detailNavController.topViewController is ActionArea.EmptyState {
+        return nil
+      }
       return detailContent.last
     }
 
@@ -633,6 +636,15 @@ private extension ActionArea.Controller {
       // or animating the detail bar change here in the future.
       break
     case (.landscape, .leave, .backAction):
+      // TODO: Fix this properly. Currently collapsing the AA reduces the size of the detail content
+      // area, which can create constraint conflicts and/or invalid collection view layouts.
+      if let presentedDetailViewController = presentedDetailViewController {
+        let snapshot = presentedDetailViewController.view.snapshotView(afterScreenUpdates: false)
+        let cover = UIViewController()
+        cover.view = snapshot
+        detailNavController.setViewControllers([cover], animated: false)
+      }
+
       isDetailVisible = false
 
       UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
@@ -641,6 +653,7 @@ private extension ActionArea.Controller {
         self.updateSplitViewTraits()
         self.detailBarViewController.lower()
         self.detailBarViewController.actionItem = .empty
+        self.detailBarViewController.show()
 
         self.sendOverriddenMasterBackButtonAction()
       })
@@ -775,18 +788,20 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     from fromVC: UIViewController,
     to toVC: UIViewController
   ) -> UIViewControllerAnimatedTransitioning? {
-    let viewControllers = [fromVC, toVC]
-    if viewControllers.contains(where: { $0 is ActionArea.DetailContent }) {
-      return FauxdalTransitionAnimation(
-        operation: operation,
-        transitionDuration: Metrics.defaultAnimationDuration
-      )
-    } else if viewControllers.contains(where: { $0 is ActionArea.EmptyState }) {
+    switch operation {
+    case .push where toVC is ActionArea.EmptyState,
+         .pop where fromVC is ActionArea.EmptyState:
       return CrossDissolveTransitionAnimation(
         operation: operation,
         transitionDuration: Metrics.defaultAnimationDuration
       )
-    } else {
+    case .push where toVC is ActionArea.DetailContent,
+         .pop where fromVC is ActionArea.DetailContent:
+      return FauxdalTransitionAnimation(
+        operation: operation,
+        transitionDuration: Metrics.defaultAnimationDuration
+      )
+    case .push, .pop, .none:
       return nil
     }
   }

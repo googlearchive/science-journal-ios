@@ -40,9 +40,9 @@ class MaterialBackBarButtonItem: MaterialLeftBarButtonItem {
   override init(target: Any, action: Selector) {
     super.init(target: target, action: action)
     if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
-      image = UIImage(named: "ic_arrow_forward")
+      image = UIImage(named: "ic_arrow_forward", in: Bundle.currentBundle, compatibleWith: nil)
     } else {
-      image = UIImage(named: "ic_arrow_back")
+      image = UIImage(named: "ic_arrow_back", in: Bundle.currentBundle, compatibleWith: nil)
     }
     accessibilityLabel = String.backBtnContentDescription
     accessibilityHint = String.backBtnContentDetails

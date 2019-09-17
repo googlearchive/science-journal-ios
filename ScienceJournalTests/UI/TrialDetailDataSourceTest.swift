@@ -57,15 +57,24 @@ class TrialDetailDataSourceTest: XCTestCase {
   }
 
   func testNoteForIndexPath() {
-    var note = trialDetailDataSource.noteForIndexPath(IndexPath(item: 1, section: 1))
-    XCTAssertEqual("TextNoteID", note.ID, "ID should match the expected note.")
+    if FeatureFlags.isActionAreaEnabled {
+      let note = trialDetailDataSource.noteForIndexPath(IndexPath(item: 1, section: 1))
+      XCTAssertEqual("PictureNoteID", note.ID, "ID should match the expected note.")
+    } else {
+      var note = trialDetailDataSource.noteForIndexPath(IndexPath(item: 1, section: 1))
+      XCTAssertEqual("TextNoteID", note.ID, "ID should match the expected note.")
 
-    note = trialDetailDataSource.noteForIndexPath(IndexPath(item: 2, section: 1))
-    XCTAssertEqual("PictureNoteID", note.ID, "ID should match the expected note.")
+      note = trialDetailDataSource.noteForIndexPath(IndexPath(item: 2, section: 1))
+      XCTAssertEqual("PictureNoteID", note.ID, "ID should match the expected note.")
+    }
   }
 
   func testIsAddNoteIndexPath() {
-    XCTAssertTrue(trialDetailDataSource.isAddNoteIndexPath(IndexPath(item: 0, section: 2)))
+    if FeatureFlags.isActionAreaEnabled {
+      XCTAssertFalse(trialDetailDataSource.isAddNoteIndexPath(IndexPath(item: 0, section: 2)))
+    } else {
+      XCTAssertTrue(trialDetailDataSource.isAddNoteIndexPath(IndexPath(item: 0, section: 2)))
+    }
   }
 
   func testIsTrialHeaderIndexPath(_ indexPath: IndexPath) {

@@ -231,12 +231,14 @@ extension ActionArea {
 
     /// Hide the bar.
     func hide() {
+      primary?.alpha = 0
       barWrapper.alpha = 0
       updateAdditionalSafeAreaInsets()
     }
 
     /// Show the bar.
     func show() {
+      primary?.alpha = 1
       barWrapper.alpha = 1
       updateAdditionalSafeAreaInsets()
     }

@@ -882,7 +882,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let textItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonText,
       accessibilityHint: String.actionAreaButtonTextContentDescription,
-      image: UIImage(named: "ic_comment")
+      image: UIImage(named: "ic_action_area_text")
     ) {
       let notesVC = trialDetailViewController.notesViewController
       trialDetailViewController.prepareToAddNote()
@@ -892,7 +892,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let galleryItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonGallery,
       accessibilityHint: String.actionAreaButtonGalleryContentDescription,
-      image: UIImage(named: "ic_image")
+      image: UIImage(named: "ic_action_area_gallery")
     ) {
       let photoLibraryVC = trialDetailViewController.photoLibraryViewController
       self.actionAreaController?.showDetailViewController(photoLibraryVC, sender: self)
@@ -901,7 +901,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let cameraItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonCamera,
       accessibilityHint: String.actionAreaButtonCameraContentDescription,
-      image: UIImage(named: "ic_camera_alt")
+      image: UIImage(named: "ic_action_area_camera")
     ) {
       let cameraVC = trialDetailViewController.cameraViewController
       self.actionAreaController?.showDetailViewController(cameraVC, sender: self)
@@ -923,7 +923,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let textItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonText,
       accessibilityHint: String.actionAreaButtonTextContentDescription,
-      image: UIImage(named: "ic_comment")
+      image: UIImage(named: "ic_action_area_text")
     ) {
       self.actionAreaController?.showDetailViewController(
         experimentCoordinator.notesViewController,
@@ -933,7 +933,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let cameraItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonCamera,
       accessibilityHint: String.actionAreaButtonCameraContentDescription,
-      image: UIImage(named: "ic_camera_alt")
+      image: UIImage(named: "ic_action_area_camera")
     ) {
       self.actionAreaController?.showDetailViewController(
         experimentCoordinator.cameraViewController,
@@ -943,7 +943,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let galleryItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonGallery,
       accessibilityHint: String.actionAreaButtonGalleryContentDescription,
-      image: UIImage(named: "ic_image")
+      image: UIImage(named: "ic_action_area_gallery")
     ) {
       self.actionAreaController?.showDetailViewController(
         experimentCoordinator.photoLibraryViewController,
@@ -956,7 +956,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       let addSensorItem = ActionArea.BarButtonItem(
         title: String.actionAreaButtonAddSensor,
         accessibilityHint: String.actionAreaButtonAddSensorContentDescription,
-        image: UIImage(named: "ic_add_circle")
+        image: UIImage(named: "ic_action_area_add_sensor")
       ) {
         experimentCoordinator.observeViewController.observeFooterAddButtonPressed()
       }
@@ -964,7 +964,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       let snapshotItem = ActionArea.BarButtonItem(
         title: String.actionAreaButtonSnapshot,
         accessibilityHint: String.actionAreaButtonSnapshotContentDescription,
-        image: UIImage(named: "ic_snapshot_action")
+        image: UIImage(named: "ic_action_area_snapshot")
       ) {
         experimentCoordinator.observeViewController.snapshotButtonPressed()
       }
@@ -994,7 +994,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
     let sensorsItem = ActionArea.BarButtonItem(
       title: String.actionAreaButtonSensors,
       accessibilityHint: String.actionAreaButtonSensorsContentDescription,
-      image: UIImage(named: "ic_sensors")
+      image: UIImage(named: "ic_action_area_sensors")
     ) {
       self.actionAreaController?.showDetailViewController(detail, sender: self)
     }

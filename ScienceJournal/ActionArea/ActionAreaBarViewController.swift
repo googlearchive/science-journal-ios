@@ -28,7 +28,7 @@ extension ActionArea {
     var isEmpty: Bool { return primary == nil && items.isEmpty }
 
     let primary: UIButton?
-    let items: [UIBarButtonItem]
+    let items: [BarButtonItem]
 
     // We need to retain this item, so it won't get deallocated.
     private let _primary: BarButtonItem?
@@ -37,13 +37,10 @@ extension ActionArea {
       self._primary = primary
 
       func create(primary: BarButtonItem) -> UIButton {
-        // TODO: Remove when we have real assets.
-        let resizedImage = primary.image?.sizedWithAspect(to: CGSize(width: 44, height: 44))
-
         let button = MDCFloatingButton()
         button.mode = .expanded
         button.setTitle(primary.title, for: .normal)
-        button.setImage(resizedImage, for: .normal)
+        button.setImage(primary.image, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.setBackgroundColor(.white, for: .normal)
         let insets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
@@ -52,21 +49,8 @@ extension ActionArea {
         return button
       }
 
-      func create(items: [BarButtonItem]) -> [UIBarButtonItem] {
-        return items.map(createBarButtonItem(from:))
-      }
-
-      func createBarButtonItem(from item: BarButtonItem) -> UIBarButtonItem {
-        let barButtonItem = UIBarButtonItem(title: item.title,
-                                            style: .plain,
-                                            target: item,
-                                            action: #selector(BarButtonItem.execute))
-        barButtonItem.image = item.image
-        return barButtonItem
-      }
-
       self.primary = primary.map(create(primary:))
-      self.items = create(items: items)
+      self.items = items
     }
   }
 
@@ -75,7 +59,9 @@ extension ActionArea {
 
     private enum Metrics {
       static let defaultAnimationDuration: TimeInterval = 0.4
-      static let barHeight: CGFloat = 88
+      static let actionButtonSize: CGFloat = 48
+      static let actionButtonToLabelSpacing: CGFloat = 4
+      static let barPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
       static let barBackgroundColor = UIColor(white: 0.98, alpha: 1.0)
       static let barButtonTitleColor: UIColor = .gray
       static let barCornerRadius: CGFloat = 15
@@ -136,8 +122,20 @@ extension ActionArea {
         }
       }
 
-      convenience init(from: MDCButtonBar, to: [UIBarButtonItem]) {
-        self.init(during: { from.items = to })
+      convenience init(from: Bar, to: Bar) {
+        self.init(
+          before: {
+            to.layoutIfNeeded()
+            to.alpha = 0
+          },
+          during: {
+            from.alpha = 0
+            to.alpha = 1
+          },
+          after: {
+            from.removeFromSuperview()
+          }
+        )
       }
 
       func perform(
@@ -194,7 +192,10 @@ extension ActionArea {
       didSet {
         primary = actionItem.primary
 
-        let transition = Transition(from: buttonBar, to: actionItem.items)
+        let newBar = Bar()
+        newBar.items = actionItem.items
+        configure(bar: newBar)
+        let transition = Transition(from: bar, to: newBar)
         transition.perform(in: view, with: transitionCoordinator)
       }
     }
@@ -213,7 +214,7 @@ extension ActionArea {
           primaryConstraints = nil
         }
 
-        let transition =  Transition(from: oldValue, to: primary)
+        let transition = Transition(from: oldValue, to: primary)
         transition.perform(in: view, with: transitionCoordinator)
       }
     }
@@ -244,11 +245,11 @@ extension ActionArea {
     var isEnabled: Bool = true {
       didSet {
         if isEnabled {
-          buttonBar.alpha = 1
+          bar.alpha = 1
         } else {
-          buttonBar.alpha = Metrics.disabledAlpha
+          bar.alpha = Metrics.disabledAlpha
         }
-        buttonBar.isUserInteractionEnabled = isEnabled
+        bar.isUserInteractionEnabled = isEnabled
       }
     }
 
@@ -310,15 +311,117 @@ extension ActionArea {
 
     }
 
-    private let buttonBar: MDCButtonBar = {
-      let buttonBar = MDCButtonBar()
-      buttonBar.backgroundColor = Metrics.barBackgroundColor
-      buttonBar.setButtonsTitleColor(Metrics.barButtonTitleColor, for: .normal)
-      buttonBar.layer.cornerRadius = Metrics.barCornerRadius
-      buttonBar.layer.masksToBounds = true
-      return buttonBar
-    }()
+    private final class Bar: UIView {
 
+      private final class Button: UIView {
+
+        override class var requiresConstraintBasedLayout: Bool {
+          return true
+        }
+
+        private let button: UIButton = {
+          let view = UIButton(type: .custom)
+          view.imageView?.tintColor = .appBarDefaultBackgroundColor
+          view.backgroundColor = UIColor(red: 0.961, green: 0.906, blue: 1.000, alpha: 1.000)
+          view.layer.cornerRadius = Metrics.actionButtonSize / 2
+          view.clipsToBounds = true
+          return view
+        }()
+
+        private let label: UILabel = {
+          let view = UILabel()
+          view.numberOfLines = 2
+          view.textColor = Metrics.barButtonTitleColor
+          return view
+        }()
+
+        private let item: BarButtonItem
+        private var _intrinsicContentSize: CGSize = .zero
+
+        init(frame: CGRect, item: BarButtonItem) {
+          self.item = item
+          super.init(frame: frame)
+
+          accessibilityHint = item.accessibilityHint
+
+          button.setImage(item.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+          button.addTarget(item, action: #selector(BarButtonItem.execute), for: .touchUpInside)
+          addSubview(button)
+          button.snp.makeConstraints { make in
+            make.size.equalTo(Metrics.actionButtonSize)
+            make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.leading.greaterThanOrEqualToSuperview()
+            make.trailing.lessThanOrEqualToSuperview()
+          }
+
+          label.text = item.title
+          label.layoutIfNeeded()
+          addSubview(label)
+          label.snp.makeConstraints { make in
+            make.top.equalTo(button.snp.bottom).offset(Metrics.actionButtonToLabelSpacing)
+            make.centerX.equalTo(button)
+            make.leading.greaterThanOrEqualToSuperview()
+            make.trailing.lessThanOrEqualToSuperview()
+            make.bottom.equalToSuperview()
+          }
+
+          self._intrinsicContentSize = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+          fatalError("init(coder:) has not been implemented")
+        }
+
+        override var intrinsicContentSize: CGSize {
+          return _intrinsicContentSize
+        }
+
+      }
+
+      override class var requiresConstraintBasedLayout: Bool {
+        return true
+      }
+
+      private let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.alignment = .center
+        view.distribution = .fillEqually
+        return view
+      }()
+
+      var items: [BarButtonItem] = [] {
+        didSet {
+          stackView.removeAllArrangedViews()
+          items.map { Button(frame: frame, item: $0) }.forEach { button in
+            stackView.addArrangedSubview(button)
+          }
+          (stackView.arrangedSubviews.count ..< 4).forEach { _ in
+            stackView.addArrangedSubview(UIView())
+          }
+        }
+      }
+
+      override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(stackView)
+        backgroundColor = Metrics.barBackgroundColor
+        layer.cornerRadius = Metrics.barCornerRadius
+        layer.masksToBounds = true
+        layoutMargins = Metrics.barPadding
+        stackView.snp.makeConstraints { make in
+          make.edges.equalTo(snp.margins)
+        }
+      }
+
+      required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
+
+    }
+
+    private let bar = Bar()
     private let content: UIViewController
     private let barWrapper = SafeMarginWrapperView()
 
@@ -363,16 +466,19 @@ extension ActionArea {
         make.trailing.greaterThanOrEqualToSuperview()
       }
 
-      buttonBar.snp.setLabel("buttonBar")
-      barWrapper.contentView.addSubview(buttonBar)
-      buttonBar.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
-        make.height.equalTo(Metrics.barHeight)
-      }
+      configure(bar: bar)
 
       // TODO: Figure out how to do this dynamically. Ideally we would get these from the margins
       // of the content view controller, but they're not what we want.
       barWrapper.safeMargins = Metrics.barDefaultMargins
+    }
+
+    private func configure(bar: Bar) {
+      bar.snp.setLabel("bar")
+      barWrapper.contentView.addSubview(bar)
+      bar.snp.makeConstraints { make in
+        make.edges.equalToSuperview()
+      }
     }
 
     override func viewDidLayoutSubviews() {
@@ -448,7 +554,7 @@ extension ActionArea.BarViewController {
     }
     vc("barViewController", self, &message)
     v("barViewController.barWrapper", barWrapper, &message)
-    v("barViewController.buttonBar", buttonBar, &message)
+    v("barViewController.buttonBar", bar, &message)
     vc("barViewController.content", content, &message)
 
     return message

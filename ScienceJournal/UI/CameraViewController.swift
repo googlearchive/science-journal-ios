@@ -376,6 +376,9 @@ open class CameraViewController: ScienceJournalViewController, DrawerItemViewCon
   private func handleImageDataSelected(_ imageData: Data, metadata: NSDictionary?) {
     delegate?.imageSelectorDidCreateImageData(imageData, metadata: metadata)
     drawerViewController?.minimizeFromFull()
+
+    // TODO: Consider AA-specific API.
+    navigationController?.popViewController(animated: true)
   }
 
   @objc private func enableUserInteraction() {

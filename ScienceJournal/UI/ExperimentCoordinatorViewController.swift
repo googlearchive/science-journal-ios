@@ -821,6 +821,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                                         withMetadata: metadata)
       pictureNote.filePath = pictureFilePath
       addNoteToExperimentOrTrial(pictureNote)
+
+      // TODO: Consider AA-specific API.
+      photoLibraryViewController.navigationController?.popViewController(animated: true)
     } catch MetadataManagerError.photoDiskSpaceError {
       showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
     } catch {
@@ -981,6 +984,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
                            didCreateTextForNote text: String) {
     let textNote = TextNote(text: text)
     addNoteToExperimentOrTrial(textNote)
+
+    // TODO: Consider AA-specific API.
+    notesViewController.navigationController?.popViewController(animated: true)
   }
 
   // MARK: - TriggerListDelegate

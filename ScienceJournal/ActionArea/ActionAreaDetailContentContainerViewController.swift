@@ -27,7 +27,11 @@ extension ActionArea {
     /// The close button item, if the content view controller has one.
     let closeButtonItem: UIBarButtonItem?
 
+    // TODO: Remove when `childForStatusBarStyle` works.
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+
     private let content: UIViewController
+    private var currentLeftBarButtonItem: UIBarButtonItem?
     private var originalContentHidesBackButton: Bool = false
 
     // MARK: - MaterialHeader
@@ -71,10 +75,6 @@ extension ActionArea {
       super.viewDidLoad()
 
       addContent()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
 
       if closeButtonItem == nil {
         assert(
@@ -82,19 +82,20 @@ extension ActionArea {
           "Found existing leftBarButtonItem. " +
             "Specify the content's close button via `DetailContent.closeButtonItem`."
         )
-        navigationItem.leftBarButtonItem = defaultCloseButtonItem
+        currentLeftBarButtonItem = defaultCloseButtonItem
+      } else {
+        currentLeftBarButtonItem = closeButtonItem
       }
+    }
 
-      // The AA detail should never show a back button.
-      originalContentHidesBackButton = content.navigationItem.hidesBackButton
-      content.navigationItem.hidesBackButton = true
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      overrideNavigationItem()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
       super.viewDidDisappear(animated)
-
-      navigationItem.leftBarButtonItem = closeButtonItem
-      content.navigationItem.hidesBackButton = originalContentHidesBackButton
+      restoreNavigationItem()
     }
 
     private func addContent() {
@@ -125,17 +126,46 @@ extension ActionArea {
     }
 
     func actionAreaStateDidChange(_ actionAreaController: ActionArea.Controller) {
-      // Do not modify the `navigationItem` unless we're currently being shown.
-      guard parent != nil else { return }
+      assertIsSafeToOverrideLeftBarButtonItem()
 
-      let item: UIBarButtonItem?
       switch actionAreaController.state {
       case .normal:
-        item = closeButtonItem ?? defaultCloseButtonItem
+        currentLeftBarButtonItem = closeButtonItem ?? defaultCloseButtonItem
       case .modal:
-        item = actionAreaController.isExpanded ? nil : hideButtonItem
+        currentLeftBarButtonItem = actionAreaController.isExpanded ? nil : hideButtonItem
       }
-      navigationItem.leftBarButtonItem = item
+      navigationItem.leftBarButtonItem = currentLeftBarButtonItem
+    }
+
+    private func overrideNavigationItem() {
+      assertIsSafeToOverrideLeftBarButtonItem()
+
+      navigationItem.leftBarButtonItem = currentLeftBarButtonItem
+
+      // The AA detail should never show a back button.
+      originalContentHidesBackButton = navigationItem.hidesBackButton
+      navigationItem.hidesBackButton = true
+    }
+
+    private func assertIsSafeToOverrideLeftBarButtonItem() {
+      var isSafeToOverrideLeftBarButtonItem: Bool {
+        if navigationItem.leftBarButtonItem == nil { return true }
+        if [closeButtonItem, defaultCloseButtonItem, hideButtonItem]
+          .contains(navigationItem.leftBarButtonItem) {
+          return true
+        }
+        return false
+      }
+
+      assert(
+        isSafeToOverrideLeftBarButtonItem,
+        "Found unknown leftBarButtonItem: \(String(describing: navigationItem.leftBarButtonItem))"
+      )
+    }
+
+    private func restoreNavigationItem() {
+      navigationItem.leftBarButtonItem = closeButtonItem
+      navigationItem.hidesBackButton = originalContentHidesBackButton
     }
 
     private lazy var defaultCloseButtonItem: UIBarButtonItem = {

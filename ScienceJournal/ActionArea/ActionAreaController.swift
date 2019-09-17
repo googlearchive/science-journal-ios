@@ -101,14 +101,15 @@ extension ActionArea {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
+        initiateLocalTransition()
         switch state {
         case .normal:
+          modalDetailViewController?.actionAreaStateDidChange(self)
           modalDetailViewController = nil
         case .modal:
           modalDetailViewController = presentedDetailViewController
+          modalDetailViewController?.actionAreaStateDidChange(self)
         }
-        initiateLocalTransition()
-        presentedDetailViewController?.actionAreaStateDidChange(self)
         updateBarButtonItems()
       }
     }

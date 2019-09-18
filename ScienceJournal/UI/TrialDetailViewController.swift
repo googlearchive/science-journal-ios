@@ -999,6 +999,9 @@ class TrialDetailViewController: MaterialHeaderViewController,
     if FeatureFlags.isActionAreaEnabled {
       createPendingNote(imageData: imageData, imageMetaData: metadata)
       processPendingNote()
+
+      // TODO: Consider AA-specific API.
+      photoLibraryViewController.navigationController?.popViewController(animated: true)
     } else {
       pendingNote?.imageData = imageData
       pendingNote?.imageMetaData = metadata
@@ -1745,6 +1748,9 @@ extension TrialDetailViewController: NotesViewControllerDelegate {
                            didCreateTextForNote text: String) {
     createPendingNote()
     processPendingNote(noteText: text)
+
+    // TODO: Consider AA-specific API.
+    notesViewController.navigationController?.popViewController(animated: true)
   }
 
 }

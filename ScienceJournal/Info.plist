@@ -45,6 +45,8 @@
 	<true/>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Science Journal uses Bluetooth to connect to external sensors and capture their data in experiments.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Science Journal uses Bluetooth to connect to external sensors and capture their data in experiments.</string>
 	<key>NSCameraUsageDescription</key>

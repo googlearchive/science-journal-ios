@@ -100,7 +100,6 @@ extension ActionArea {
         case let (.some(from), .some(to)):
           self.init(before: {
             to.alpha = 0
-            to.layoutIfNeeded()
           }, during: {
             UIView.animateKeyframes(withDuration: 0, delay: 0, options: [], animations: {
               UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3) {
@@ -122,18 +121,23 @@ extension ActionArea {
         }
       }
 
-      convenience init(from: Bar, to: Bar) {
+      convenience init(bar: Bar, to newItems: [BarButtonItem]) {
+        let snapshot = bar.snapshotView(afterScreenUpdates: false)
         self.init(
           before: {
-            to.layoutIfNeeded()
-            to.alpha = 0
+            if let snapshot = snapshot {
+              bar.superview?.addSubview(snapshot)
+              snapshot.frame = bar.frame
+            }
+            bar.alpha = 0
+            bar.items = newItems
           },
           during: {
-            from.alpha = 0
-            to.alpha = 1
+            snapshot?.alpha = 0
+            bar.alpha = 1
           },
           after: {
-            from.removeFromSuperview()
+            snapshot?.removeFromSuperview()
           }
         )
       }
@@ -192,10 +196,11 @@ extension ActionArea {
       didSet {
         primary = actionItem.primary
 
-        let newBar = Bar()
-        newBar.items = actionItem.items
-        configure(bar: newBar)
-        let transition = Transition(from: bar, to: newBar)
+        // TODO:
+        //   Revisit this animation. The current approach performs much better than replacing the
+        //   bar, but it won't handle transitions where the action descriptions have different
+        //   numbers of lines.
+        let transition = Transition(bar: bar, to: actionItem.items)
         transition.perform(in: view, with: transitionCoordinator)
       }
     }
@@ -203,6 +208,7 @@ extension ActionArea {
     private var primary: UIButton? {
       didSet {
         if let primary = primary {
+          primary.layoutIfNeeded()
           view.addSubview(primary)
           primaryConstraints = PrimaryConstraints(
             barWrapper: barWrapper,

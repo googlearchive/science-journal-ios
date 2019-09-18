@@ -651,10 +651,10 @@ private extension ActionArea.Controller {
       UIView.animate(withDuration: Metrics.defaultAnimationDuration, animations: {
         self.updateSplitViewDetailVisibility()
       }, completion: { _ in
-        self.updateSplitViewTraits()
         self.detailBarViewController.lower()
         self.detailBarViewController.actionItem = .empty
         self.detailBarViewController.show()
+        self.updateSplitViewTraits()
 
         self.sendOverriddenMasterBackButtonAction()
       })
@@ -762,6 +762,9 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
 
     if navigationController == detailNavController {
       presentedMasterViewController?.emptyState.isEnabled = actionsAreEnabled
+
+      // Non-animated detail transitions are handled by the main transition method.
+      guard animated else { return }
 
       transition(
         bar: detailBarViewController,

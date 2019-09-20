@@ -321,6 +321,7 @@ extension ActionArea {
 
     private final class Bar: UIView {
 
+      // swiftlint:disable:next nesting
       private final class Button: UIView {
 
         override class var requiresConstraintBasedLayout: Bool {

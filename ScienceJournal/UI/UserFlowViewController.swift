@@ -925,6 +925,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonTextContentDescription,
       image: UIImage(named: "ic_action_area_text")
     ) {
+      let textTitle = experimentCoordinator.observeViewController.isRecording ?
+        String.actionAreaRecordingTitleAddTextNote : String.actionAreaTitleAddTextNote
+      experimentCoordinator.notesViewController.title = textTitle
       self.actionAreaController?.showDetailViewController(
         experimentCoordinator.notesViewController,
         sender: self)

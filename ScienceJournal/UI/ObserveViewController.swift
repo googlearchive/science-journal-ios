@@ -1141,6 +1141,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       // Reset to 0 since we reuse the view and otherwise previous value lingers in UI momentarily.
       recordingTimerView.updateTimerLabel(with: 0)
       navigationItem.rightBarButtonItem = UIBarButtonItem(customView: recordingTimerView)
+      title = String.actionAreaTitleRecording
     } else {
       // Settings button.
       let settingsButton = UIBarButtonItem(image: UIImage(named: "ic_settings"),
@@ -1149,6 +1150,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
                                            action: #selector(settingsButtonPressed))
       settingsButton.accessibilityLabel = String.titleActivitySensorSettings
       navigationItem.rightBarButtonItem = settingsButton
+      title = String.actionAreaTitleAddSensorNote
     }
   }
 

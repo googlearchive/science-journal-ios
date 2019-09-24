@@ -115,6 +115,8 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   override open func viewDidLoad() {
     super.viewDidLoad()
 
+    updateTitle()
+
     // Collection view.
     // Always register collection view cells early to avoid a reload occurring first.
     collectionView.register(PhotoLibraryCell.self,
@@ -358,23 +360,26 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     let isPhotoAssetDeselected = isMostRecentlySelectedPhotoAsset(at: indexPath)
 
     deselectSelectedPhotoAsset()
-    if !isPhotoAssetDeselected {
+    if isPhotoAssetDeselected {
+      updateTitle()
+    } else {
       mostRecentlySelectedPhotoAsset = photoLibraryDataSource.imageForPhotoAsset(
-          at: indexPath,
-          downloadDidBegin: {
-            photoLibraryCell.startSpinner()
-          },
-          completion: { (image, metadata, photoAsset) in
-            // If this download was not for the most recenetly selected photo asset, the user
-            // selected a different photo asset.
-            if let mostRecentlySelectedPhotoAsset = self.mostRecentlySelectedPhotoAsset,
-                let photoAsset = photoAsset,
-                photoAsset == mostRecentlySelectedPhotoAsset,
-                let image = image,
-                let indexPath = self.photoLibraryDataSource.indexPathOfPhotoAsset(photoAsset) {
-              self.selectedImage = (image, metadata)
-              self.collectionView.cellForItem(at: indexPath)?.isSelected = true
-            }
+        at: indexPath,
+        downloadDidBegin: {
+          photoLibraryCell.startSpinner()
+      },
+        completion: { (image, metadata, photoAsset) in
+          // If this download was not for the most recenetly selected photo asset, the user
+          // selected a different photo asset.
+          if let mostRecentlySelectedPhotoAsset = self.mostRecentlySelectedPhotoAsset,
+            let photoAsset = photoAsset,
+            photoAsset == mostRecentlySelectedPhotoAsset,
+            let image = image,
+            let indexPath = self.photoLibraryDataSource.indexPathOfPhotoAsset(photoAsset) {
+            self.selectedImage = (image, metadata)
+            self.collectionView.cellForItem(at: indexPath)?.isSelected = true
+            self.updateTitle()
+          }
       })
     }
   }
@@ -452,6 +457,15 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   private func isMostRecentlySelectedPhotoAsset(at indexPath: IndexPath) -> Bool {
     guard let photoAsset = photoLibraryDataSource.photoAsset(for: indexPath) else { return false }
     return photoAsset == mostRecentlySelectedPhotoAsset
+  }
+
+  private func updateTitle() {
+    guard mostRecentlySelectedPhotoAsset != nil else {
+      title = String.actionAreaGalleryPhotosSelected
+      return
+    }
+
+    title = String(format: String.actionAreaGalleryMultiplePhotosSelected, String(1))
   }
 
   // MARK: - User actions

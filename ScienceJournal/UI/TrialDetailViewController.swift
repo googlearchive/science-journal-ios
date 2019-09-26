@@ -57,7 +57,8 @@ class TrialDetailViewController: MaterialHeaderViewController,
                                  TrialDetailSensorsViewDelegate,
                                  UICollectionViewDataSource,
                                  UICollectionViewDelegate,
-                                 UICollectionViewDelegateFlowLayout {
+                                 UICollectionViewDelegateFlowLayout,
+                                 CameraImageProviderDelegate {
 
   typealias TimestampUpdate = (String) -> Void
 
@@ -139,6 +140,12 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   private(set) lazy var cameraViewController: StandaloneCameraViewController =
     StandaloneCameraViewController(analyticsReporter: analyticsReporter)
+
+  private lazy var cameraImageProvider: CameraImageProvider = {
+    let cameraImageProvider = CameraImageProvider()
+    cameraImageProvider.delegate = self
+    return cameraImageProvider
+  }()
 
   private var editBarButton = MaterialBarButtonItem()
   private var cancelBarButton: MaterialCloseBarButtonItem?
@@ -1046,6 +1053,18 @@ class TrialDetailViewController: MaterialHeaderViewController,
     toggleStats(forSensorID: sensor.ID)
   }
 
+  // MARK: - CameraImageProviderDelegate
+
+  func cameraImageProviderDidComplete() {
+    dismiss(animated: true, completion: nil)
+  }
+
+  func cameraImageProviderDidPick(imageData: Data, metadata: NSDictionary?) {
+    createPendingNote(imageData: imageData, imageMetaData: metadata)
+    processPendingNote()
+    dismiss(animated: true, completion: nil)
+  }
+
   // MARK: - Private
 
   /// Stops playback on all charts.
@@ -1736,6 +1755,10 @@ class TrialDetailViewController: MaterialHeaderViewController,
   @objc private func addNoteTextFieldDidChange() {
     pendingNote?.text = addNoteDialog?.textField.text?.trimmedOrNil
     addNoteDialog?.saveButton.isEnabled = pendingNoteDataIsValid()
+  }
+
+  func cameraButtonPressed() {
+    present(cameraImageProvider.cameraViewController, animated: true, completion: nil)
   }
 
 }

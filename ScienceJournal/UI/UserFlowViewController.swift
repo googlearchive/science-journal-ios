@@ -903,8 +903,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonCameraContentDescription,
       image: UIImage(named: "ic_action_area_camera")
     ) {
-      let cameraVC = trialDetailViewController.cameraViewController
-      self.actionAreaController?.showDetailViewController(cameraVC, sender: self)
+      trialDetailViewController.cameraButtonPressed()
     }
 
     let content = ActionArea.MasterContentContainerViewController(
@@ -938,9 +937,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       accessibilityHint: String.actionAreaButtonCameraContentDescription,
       image: UIImage(named: "ic_action_area_camera")
     ) {
-      self.actionAreaController?.showDetailViewController(
-        experimentCoordinator.cameraViewController,
-        sender: self)
+      experimentCoordinator.cameraButtonPressed()
     }
 
     let galleryItem = ActionArea.BarButtonItem(

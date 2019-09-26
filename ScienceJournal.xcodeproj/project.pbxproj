@@ -78,6 +78,7 @@
 		583706E822D68D5F002B9F0F /* ExportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583706E722D68D5F002B9F0F /* ExportCoordinator.swift */; };
 		58512C6C22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */; };
 		585D619422B1C38100EB2114 /* ChartExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D619322B1C38100EB2114 /* ChartExportViewController.swift */; };
+		587BB206233AD9DD00340068 /* CameraImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BB205233AD9DD00340068 /* CameraImageProvider.swift */; };
 		58AB86B62305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */; };
 		58BC1BC322C1781000DA7EDC /* String+PluralizeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */; };
 		58BC1BC522C18FEB00DA7EDC /* UIImage+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */; };
@@ -731,6 +732,7 @@
 		583706E722D68D5F002B9F0F /* ExportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCoordinator.swift; sourceTree = "<group>"; };
 		58512C6B22AB2FD9001E5CA2 /* FileTypeSelectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTypeSelectionHandler.swift; sourceTree = "<group>"; };
 		585D619322B1C38100EB2114 /* ChartExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartExportViewController.swift; sourceTree = "<group>"; };
+		587BB205233AD9DD00340068 /* CameraImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraImageProvider.swift; sourceTree = "<group>"; };
 		58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDetailEmptyStateViewController.swift; sourceTree = "<group>"; };
 		58BC1BC222C1781000DA7EDC /* String+PluralizeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PluralizeTest.swift"; sourceTree = "<group>"; };
 		58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ScienceJournal.swift"; sourceTree = "<group>"; };
@@ -2234,6 +2236,7 @@
 				8BCCDF5E1EB9265800E85517 /* CameraActionBar.swift */,
 				8BE81BE81EB76B6D00EEC3BB /* CameraViewController.swift */,
 				8BE81BEB1EB7A7D300EEC3BB /* PhotoCapturer.swift */,
+				587BB205233AD9DD00340068 /* CameraImageProvider.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -3520,6 +3523,7 @@
 				8BFA85C91F71B33B00297471 /* UIDevice+ScienceJournal.swift in Sources */,
 				680865761EAEB905005F54E1 /* AboutViewController.swift in Sources */,
 				5C0EDCF81FEAD59C0014E825 /* ExperimentItemsDataSource.swift in Sources */,
+				587BB206233AD9DD00340068 /* CameraImageProvider.swift in Sources */,
 				8BDD4C2A1EA6661B00FCCA30 /* TriggerAlertHelper.swift in Sources */,
 				8B244F4D1E6714D400FC03B5 /* NSManagedObjectContext+ScienceJournal.swift in Sources */,
 				5CC088B81EBA20CD00B5E387 /* DataPointFlagView.swift in Sources */,

@@ -151,7 +151,8 @@ protocol ExperimentCoordinatorViewControllerDelegate: class {
 class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerPositionListener,
     EditExperimentViewControllerDelegate, ImageSelectorDelegate, NotesViewControllerDelegate,
     ObserveViewControllerDelegate, SensorSettingsDelegate, TriggerListDelegate,
-    ExperimentItemsViewControllerDelegate, ExperimentUpdateListener, ExperimentStateListener {
+    ExperimentItemsViewControllerDelegate, ExperimentUpdateListener, ExperimentStateListener,
+    CameraImageProviderDelegate {
 
   typealias ReadyForPDFExportBlock = () -> Void
 
@@ -269,6 +270,12 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   var notesViewController: NotesViewController {
     return drawerVC?.notesViewController ?? _notesViewController
   }
+
+  private lazy var cameraImageProvider: CameraImageProvider = {
+    let cameraImageProvider = CameraImageProvider()
+    cameraImageProvider.delegate = self
+    return cameraImageProvider
+  }()
 
   private lazy var _cameraViewController: CameraViewController =
     CameraViewController(analyticsReporter: analyticsReporter)
@@ -812,23 +819,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   // MARK: - ImageSelectorDelegate
 
   func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
-    let pictureNote = PictureNote()
-    let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
-    do {
-      try metadataManager.saveImageData(imageData,
-                                        atPicturePath: pictureFilePath,
-                                        experimentID: experiment.ID,
-                                        withMetadata: metadata)
-      pictureNote.filePath = pictureFilePath
-      addNoteToExperimentOrTrial(pictureNote)
-
-      // TODO: Consider AA-specific API.
-      photoLibraryViewController.navigationController?.popViewController(animated: true)
-    } catch MetadataManagerError.photoDiskSpaceError {
-      showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
-    } catch {
-      sjlog_error("Unknown error saving picture note image: \(error)", category: .general)
-    }
+    createPictureNote(imageData, metadata: metadata)
   }
 
   func imageSelectorDidCancel() {}
@@ -1071,6 +1062,17 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
     promptForTitleIfNecessary()
     return false
+  }
+
+  // MARK: - CameraImageProviderDelegate
+
+  func cameraImageProviderDidComplete() {
+    dismiss(animated: true, completion: nil)
+  }
+
+  func cameraImageProviderDidPick(imageData: Data, metadata: NSDictionary?) {
+    createPictureNote(imageData, metadata: metadata)
+    dismiss(animated: true, completion: nil)
   }
 
   // MARK: - Private
@@ -1453,6 +1455,26 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     title = experiment.title ?? String.localizedUntitledExperiment
   }
 
+  private func createPictureNote(_ imageData: Data, metadata: NSDictionary?) {
+    let pictureNote = PictureNote()
+    let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
+    do {
+      try metadataManager.saveImageData(imageData,
+                                        atPicturePath: pictureFilePath,
+                                        experimentID: experiment.ID,
+                                        withMetadata: metadata)
+      pictureNote.filePath = pictureFilePath
+      addNoteToExperimentOrTrial(pictureNote)
+
+      // TODO: Consider AA-specific API.
+      photoLibraryViewController.navigationController?.popViewController(animated: true)
+    } catch MetadataManagerError.photoDiskSpaceError {
+      showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
+    } catch {
+      sjlog_error("Unknown error saving picture note image: \(error)", category: .general)
+    }
+  }
+
   // MARK: - Experiment Updates
 
   private func createDisplayTrial(fromTrial trial: Trial, isRecording: Bool) -> DisplayTrial {
@@ -1661,6 +1683,10 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     }
     renameDialog = nil
     dialogTransitionController = nil
+  }
+
+  func cameraButtonPressed() {
+    present(cameraImageProvider.cameraViewController, animated: true, completion: nil)
   }
 
   // MARK: - Notifications

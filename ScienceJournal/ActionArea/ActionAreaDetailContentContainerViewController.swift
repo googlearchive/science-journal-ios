@@ -27,6 +27,8 @@ extension ActionArea {
     /// The close button item, if the content view controller has one.
     let closeButtonItem: UIBarButtonItem?
 
+    let barElevator: FeatureEnabler?
+
     // TODO: Remove when `childForStatusBarStyle` works.
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 
@@ -44,9 +46,18 @@ extension ActionArea {
     /// - Parameters:
     ///   - content: The content view controller.
     ///   - closeButtonItem: The content view controller's close button item.
+    ///   - outsideOfSafeAreaKeyPath: The `KeyPath` of the property that indicates if the content is
+    ///     outside of the safe area.
     ///   - mode: The mode for this content.
-    init(content: UIViewController, closeButtonItem: UIBarButtonItem? = nil, mode: ContentMode) {
+    init<T: UIViewController>(
+      content: T,
+      closeButtonItem: UIBarButtonItem? = nil,
+      outsideOfSafeAreaKeyPath: KeyPath<T, Bool>? = nil,
+      mode: ContentMode
+    ) {
       self.closeButtonItem = closeButtonItem
+      self.barElevator =
+        outsideOfSafeAreaKeyPath.map { FeatureEnabler(target: content, keyPath: $0) }
       self.mode = mode
 
       let vc: UIViewController
@@ -69,11 +80,21 @@ extension ActionArea {
     /// - Parameters:
     ///   - content: The content view controller.
     ///   - closeButtonItem: The content view controller's close button item.
+    ///   - outsideOfSafeAreaKeyPath: The `KeyPath` of the property that indicates if the content is
+    ///     outside of the safe area.
     ///   - mode: A block that returns the mode for this content.
-    convenience init(
-      content: UIViewController, closeButtonItem: UIBarButtonItem? = nil, mode: () -> ContentMode
+    convenience init<T: UIViewController>(
+      content: T,
+      closeButtonItem: UIBarButtonItem? = nil,
+      outsideOfSafeAreaKeyPath: KeyPath<T, Bool>? = nil,
+      mode: () -> ContentMode
     ) {
-      self.init(content: content, closeButtonItem: closeButtonItem, mode: mode())
+      self.init(
+        content: content,
+        closeButtonItem: closeButtonItem,
+        outsideOfSafeAreaKeyPath:outsideOfSafeAreaKeyPath,
+        mode: mode()
+      )
     }
 
     // MARK: - Lifecycle

@@ -10,7 +10,7 @@
 		3F044C61228A07F900B6D551 /* TestDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F044C60228A07F900B6D551 /* TestDirectories.swift */; };
 		3F158A0B231AD72C005E319E /* UIViewController+MaterialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */; };
 		3F158A0D231AFDAD005E319E /* EmptyStateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0C231AFDAD005E319E /* EmptyStateContainerViewController.swift */; };
-		3F158A0F231DF370005E319E /* ActionEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0E231DF370005E319E /* ActionEnabler.swift */; };
+		3F158A0F231DF370005E319E /* FeatureEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A0E231DF370005E319E /* FeatureEnabler.swift */; };
 		3F158A11231DF5C3005E319E /* FauxdalTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */; };
 		3F158A13231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A12231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift */; };
 		3F158A16231E0362005E319E /* ActionEnablerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A15231E0362005E319E /* ActionEnablerTest.swift */; };
@@ -660,7 +660,7 @@
 		3F044C60228A07F900B6D551 /* TestDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDirectories.swift; sourceTree = "<group>"; };
 		3F158A0A231AD72C005E319E /* UIViewController+MaterialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MaterialHeader.swift"; sourceTree = "<group>"; };
 		3F158A0C231AFDAD005E319E /* EmptyStateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContainerViewController.swift; sourceTree = "<group>"; };
-		3F158A0E231DF370005E319E /* ActionEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEnabler.swift; sourceTree = "<group>"; };
+		3F158A0E231DF370005E319E /* FeatureEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureEnabler.swift; sourceTree = "<group>"; };
 		3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FauxdalTransitionAnimation.swift; sourceTree = "<group>"; };
 		3F158A12231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTransitionAnimation.swift; sourceTree = "<group>"; };
 		3F158A15231E0362005E319E /* ActionEnablerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEnablerTest.swift; sourceTree = "<group>"; };
@@ -1393,12 +1393,12 @@
 				3F71B71522B466D90015074A /* ActionAreaController.swift */,
 				3FA7052722F8DF6B00753842 /* ActionAreaDetailContentContainerViewController.swift */,
 				3FA7052522F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift */,
-				3F158A0E231DF370005E319E /* ActionEnabler.swift */,
 				3F158A17231E0AF9005E319E /* ContentContainerViewController.swift */,
 				3F158A12231DF7F5005E319E /* CrossDissolveTransitionAnimation.swift */,
 				3F158A0C231AFDAD005E319E /* EmptyStateContainerViewController.swift */,
 				3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */,
 				3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */,
+				3F158A0E231DF370005E319E /* FeatureEnabler.swift */,
 				58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */,
 				3F6D29F1233C14FB004D9318 /* Tinting.swift */,
 				3F591E25232888BE00491D65 /* UIKit+ActionArea.swift */,
@@ -3677,7 +3677,7 @@
 				8B9C59481F478A820063FFA9 /* UIScrollView+ScienceJournal.swift in Sources */,
 				680659261EC39AFE0090670C /* TrialCardSensorView.swift in Sources */,
 				5CA0532D1F2BD60300FEE465 /* BrightnessSensor.swift in Sources */,
-				3F158A0F231DF370005E319E /* ActionEnabler.swift in Sources */,
+				3F158A0F231DF370005E319E /* FeatureEnabler.swift in Sources */,
 				3F56956C228F04130039B84F /* LaunchManager.swift in Sources */,
 				8B2838FB1F8C14A8005CCB01 /* VisualTriggerView.swift in Sources */,
 				3F591E26232888BE00491D65 /* UIKit+ActionArea.swift in Sources */,

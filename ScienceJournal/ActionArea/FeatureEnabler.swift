@@ -18,7 +18,7 @@ import Foundation
 
 /// A type-erased wrapper for reading from and observing a `Bool` property of an arbitrary
 /// `NSObject` subclass, specified by its `KeyPath`.
-final class ActionEnabler {
+final class FeatureEnabler {
 
   /// The signature of the block to be called when the value of the enabling property changes.
   typealias ChangeHandler = (_ isEnabled: Bool) -> Void

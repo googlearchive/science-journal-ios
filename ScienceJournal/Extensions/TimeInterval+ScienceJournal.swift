@@ -28,6 +28,9 @@ extension TimeInterval {
     return DateComponentsFormatter.intervalFormatter(withUnitsStyle: .spellOut)
   }()
 
+  /// A duration value to use in animations that inherit their duration.
+  static let inherited: TimeInterval = 0
+
   /// Returns the time interval as a string in component format with hours, minutes and seconds.
   /// Example: "1h 46m 11s"
   var durationString: String {

@@ -18,6 +18,7 @@ import SnapKit
 import UIKit
 
 import third_party_objective_c_material_components_ios_components_ButtonBar_ButtonBar
+import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
 
 extension ActionArea {
 
@@ -68,6 +69,7 @@ extension ActionArea {
       static let barDefaultMargins = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
       static let barToFABSpacing: CGFloat = 8
       static let disabledAlpha: CGFloat = 0.2
+      static let barShadow = MDCShadowMetrics(elevation: ShadowElevation.fabResting.rawValue)
     }
 
     private final class Transition {
@@ -261,6 +263,25 @@ extension ActionArea {
       }
     }
 
+    /// Elevate or flatten the bar.
+    var barIsElevated: Bool = true {
+      didSet {
+        guard oldValue != barIsElevated else { return }
+
+        let barAnimation = CABasicAnimation(keyPath: "shadowOpacity")
+        let toValue: Float
+        if barIsElevated {
+          toValue = Metrics.barShadow.bottomShadowOpacity
+        } else {
+          toValue = 0
+        }
+        barAnimation.fromValue = bar.layer.shadowOpacity
+        barAnimation.toValue = toValue
+        bar.layer.shadowOpacity = toValue
+        bar.layer.add(barAnimation, forKey: "barAnimation")
+      }
+    }
+
     private enum Position {
       case raised
       case lowered
@@ -447,7 +468,13 @@ extension ActionArea {
 
     }
 
-    private let bar = Bar()
+    private var bar: Bar = {
+      let view = Bar()
+      view.clipsToBounds = false
+      view.layer.shadowRadius = Metrics.barShadow.bottomShadowRadius
+      view.layer.shadowOffset = Metrics.barShadow.bottomShadowOffset
+      return view
+    }()
     private let content: UIViewController
     private let barWrapper = SafeMarginWrapperView()
 

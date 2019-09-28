@@ -73,6 +73,9 @@ protocol _ActionAreaContent: UIViewController {
   /// The `mode` for this content.
   var mode: ActionArea.ContentMode { get }
 
+  /// The `barElevator` for this content.
+  var barElevator: FeatureEnabler? { get }
+
 }
 
 protocol _ActionAreaEmptyState: UIViewController {
@@ -90,7 +93,7 @@ protocol _ActionAreaMasterContent: ActionArea.Content {
   /// The 'actionEnabler` used to determine if all actions should be enabled.
   ///
   /// All actions are enabled when this property is `nil`.
-  var actionEnabler: ActionEnabler? { get }
+  var actionEnabler: FeatureEnabler? { get }
 
 }
 

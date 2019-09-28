@@ -27,19 +27,19 @@ class ActionEnablerTest: XCTestCase {
 
   func testIsEnabledWhenTrue() {
     let observable = Observable(isEnabled: true)
-    let enabler = ActionEnabler(target: observable, keyPath: \.isEnabled)
+    let enabler = FeatureEnabler(target: observable, keyPath: \.isEnabled)
     XCTAssert(enabler.isEnabled, "Expected isEnabled to be true.")
   }
 
   func testIsEnabledWhenFalse() {
     let observable = Observable(isEnabled: false)
-    let enabler = ActionEnabler(target: observable, keyPath: \.isEnabled)
+    let enabler = FeatureEnabler(target: observable, keyPath: \.isEnabled)
     XCTAssertFalse(enabler.isEnabled, "Expected isEnabled to be false.")
   }
 
   func testObservation() {
     let observable = Observable(isEnabled: true)
-    let enabler = ActionEnabler(target: observable, keyPath: \.isEnabled)
+    let enabler = FeatureEnabler(target: observable, keyPath: \.isEnabled)
     var observedValue: Bool = true
     enabler.observe { isEnabled in
       observedValue = isEnabled
@@ -52,7 +52,7 @@ class ActionEnablerTest: XCTestCase {
 
   func testUnobservation() {
     let observable = Observable(isEnabled: true)
-    let enabler = ActionEnabler(target: observable, keyPath: \.isEnabled)
+    let enabler = FeatureEnabler(target: observable, keyPath: \.isEnabled)
     var observedValue: Bool = true
     enabler.observe { isEnabled in
       observedValue = isEnabled
@@ -66,7 +66,7 @@ class ActionEnablerTest: XCTestCase {
 
   func testNoInitialValueWhenObserving() {
     let observable = Observable(isEnabled: true)
-    let enabler = ActionEnabler(target: observable, keyPath: \.isEnabled)
+    let enabler = FeatureEnabler(target: observable, keyPath: \.isEnabled)
     var observedValue: Bool = false
 
     enabler.observe { isEnabled in

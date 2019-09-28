@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import SnapKit
 import UIKit
 
@@ -251,11 +253,19 @@ extension ActionArea {
       return transitionCoordinator
     }
 
-    private weak var actionEnabler: ActionEnabler? {
+    private weak var actionEnabler: FeatureEnabler? {
       didSet {
         oldValue?.unobserve()
 
         actionEnabler?.observe(animateActionEnablement(actionsAreEnabled:))
+      }
+    }
+
+    private weak var barElevator: FeatureEnabler? {
+      didSet {
+        oldValue?.unobserve()
+
+        barElevator?.observe(animateBarElevation(barIsElevated:))
       }
     }
 
@@ -773,6 +783,39 @@ private extension ActionArea.Controller {
     }
   }
 
+  var barIsElevated: Bool {
+    let defaultBarIsElevated = false
+    if isExpanded {
+      return presentedDetailViewController?.barElevator?.isEnabled ?? defaultBarIsElevated
+    } else {
+      return presentedMasterViewController?.barElevator?.isEnabled ?? defaultBarIsElevated
+    }
+  }
+
+  func animateBarElevation(barIsElevated: Bool) {
+    guard let master = presentedMasterViewController else { return }
+
+    func animate() {
+      if isExpanded {
+        detailBarViewController.barIsElevated = barIsElevated
+      } else {
+        masterBarViewController.barIsElevated = barIsElevated
+      }
+    }
+
+    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
+      animate()
+    }
+  }
+
+  private func updateBarElevator() {
+    if isExpanded {
+      barElevator = presentedDetailViewController?.barElevator
+    } else {
+      barElevator = presentedMasterViewController?.barElevator
+    }
+  }
+
   func overrideMasterBackBarButtonItem(of vc: UIViewController) {
     if let item = vc.navigationItem.leftBarButtonItem {
       guard let action = item.action else { preconditionFailure("Expected an action selector.") }
@@ -813,6 +856,8 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     willShow viewController: UIViewController,
     animated: Bool
   ) {
+    updateBarElevator()
+
     if navigationController == navController {
       keyTint.updateAndApply()
 
@@ -990,3 +1035,5 @@ extension UINavigationController.Operation: CustomStringConvertible {
 
 }
 #endif
+
+// swiftlint:enable file_length

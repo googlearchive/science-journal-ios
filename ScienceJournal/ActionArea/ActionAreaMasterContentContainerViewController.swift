@@ -27,7 +27,8 @@ extension ActionArea {
     /// The mode for this content.
     let mode: ContentMode
 
-    var actionEnabler: ActionEnabler?
+    let actionEnabler: FeatureEnabler?
+    let barElevator: FeatureEnabler?
 
     // TODO: Remove when `childForStatusBarStyle` works.
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -39,16 +40,22 @@ extension ActionArea {
     /// - Parameters:
     ///   - content: The content view controller.
     ///   - emptyState: The empty state to display in the detail area for this content.
-    ///   - keyPath: The `KeyPath` of the property to use to disable actions.
+    ///   - actionEnablingKeyPath: The `KeyPath` of the property to use to disable actions.
+    ///   - outsideOfSafeAreaKeyPath: The `KeyPath` of the property that indicates if the content is
+    ///     outside of the safe area.
     ///   - mode: The mode for this content.
     init<T: UIViewController>(
       content: T,
       emptyState: UIViewController,
-      keyPath: KeyPath<T, Bool>? = nil,
+      actionEnablingKeyPath: KeyPath<T, Bool>? = nil,
+      outsideOfSafeAreaKeyPath: KeyPath<T, Bool>? = nil,
       mode: ContentMode
     ) {
       self.emptyState = EmptyStateContainerViewController(emptyState: emptyState)
-      self.actionEnabler = keyPath.map { ActionEnabler(target: content, keyPath: $0) }
+      self.actionEnabler =
+        actionEnablingKeyPath.map { FeatureEnabler(target: content, keyPath: $0) }
+      self.barElevator =
+        outsideOfSafeAreaKeyPath.map { FeatureEnabler(target: content, keyPath: $0) }
       self.mode = mode
       super.init(content: content)
     }
@@ -58,15 +65,24 @@ extension ActionArea {
     /// - Parameters:
     ///   - content: The content view controller.
     ///   - emptyState: The empty state to display in the detail area for this content.
-    ///   - keyPath: The `KeyPath` of the property to use to disable actions.
+    ///   - actionEnablingKeyPath: The `KeyPath` of the property to use to disable actions.
+    ///   - outsideOfSafeAreaKeyPath: The `KeyPath` of the property that indicates if the content is
+    ///     outside of the safe area.
     ///   - mode: A block that returns the mode for this content.
     convenience init<T: UIViewController>(
       content: T,
       emptyState: UIViewController,
-      keyPath: KeyPath<T, Bool>? = nil,
+      actionEnablingKeyPath: KeyPath<T, Bool>? = nil,
+      outsideOfSafeAreaKeyPath: KeyPath<T, Bool>? = nil,
       mode: () -> ContentMode
     ) {
-      self.init(content: content, emptyState: emptyState, keyPath: keyPath, mode: mode())
+      self.init(
+        content: content,
+        emptyState: emptyState,
+        actionEnablingKeyPath: actionEnablingKeyPath,
+        outsideOfSafeAreaKeyPath: outsideOfSafeAreaKeyPath,
+        mode: mode()
+      )
     }
 
     required init?(coder aDecoder: NSCoder) {

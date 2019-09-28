@@ -23,4 +23,14 @@ extension UIScrollView {
     contentOffset = .zero
   }
 
+  /// If the content of the scroll view is outside of or intersecting with the safe area.
+  var isContentOutsideOfSafeArea: Bool {
+    let contentOnscreenHeight = contentSize.height - contentOffset.y
+    let contentOffscreenHeight = contentOnscreenHeight - bounds.height
+    let safeAreaHeight = adjustedContentInset.bottom - contentInset.bottom
+    let distanceAboveSafeArea = (contentOffscreenHeight + safeAreaHeight) * -1
+    let isItSafe = distanceAboveSafeArea <= -1
+    return isItSafe
+  }
+
 }

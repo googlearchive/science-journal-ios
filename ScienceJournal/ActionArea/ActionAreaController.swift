@@ -195,6 +195,10 @@ extension ActionArea {
     private typealias TargetAction = (target: AnyObject?, action: Selector)
     private var masterTargetsAndActions: [TargetAction] = []
     private var transitionType: MasterTransitionType = .external
+    private lazy var keyTint = KeyTint(
+      provider: { self.masterContent.last?.customTint },
+      tintables: [masterBarViewController, detailBarViewController]
+    )
 
     private(set) var state: State = .normal {
       willSet {
@@ -208,7 +212,6 @@ extension ActionArea {
           fatalError("The state can only be changed when a detailViewController is shown.")
         }
 
-        initiateLocalTransition()
         switch state {
         case .normal:
           modalDetailViewController?.actionAreaStateDidChange(self)
@@ -218,6 +221,9 @@ extension ActionArea {
           modalDetailViewController?.actionAreaStateDidChange(self)
         }
         updateBarButtonItems()
+        transitionCoordinator?.animate(alongsideTransition: { _ in
+          self.keyTint.updateAndApply()
+        })
       }
     }
 
@@ -426,12 +432,13 @@ extension ActionArea {
         accessibilityHint: primary.accessibilityHint,
         image: primary.image
       ) {
-        primary.action()
-        self.toggleState()
+        self.toggleState { primary.action() }
       }
     }
 
-    @objc private func toggleState() {
+    @objc private func toggleState(action: () -> Void) {
+      initiateLocalTransition()
+      action()
       state = state == .normal ? .modal : .normal
     }
 
@@ -807,11 +814,15 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     animated: Bool
   ) {
     if navigationController == navController {
+      keyTint.updateAndApply()
+
       transitionType.update(for: .willShow, and: masterContent.count)
       transition(layout: layout, type: transitionType, source: .delegate)
     }
 
     if navigationController == detailNavController {
+      keyTint.apply()
+
       presentedMasterViewController?.emptyState.isEnabled = actionsAreEnabled
 
       // Non-animated detail transitions are handled by the main transition method.
@@ -870,26 +881,12 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
 // TODO: Ensure this handles existing issues or use one of the other superclasses.
 // TODO: Consider making this private and wrapping content VCs that are not subclasses
 //       of the other material header types.
-final class MaterialHeaderContainerViewController: UIViewController {
+final class MaterialHeaderContainerViewController: ContentContainerViewController {
 
   private let appBar = MDCAppBar()
-  private let content: UIViewController
-
-  init(content: UIViewController) {
-    self.content = content
-    super.init(nibName: nil, bundle: nil)
-  }
-
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    addChild(content)
-    view.addSubview(content.view)
-    content.didMove(toParent: self)
 
     if let collectionViewController = content as? UICollectionViewController {
       appBar.configure(attachTo: self, scrollView: collectionViewController.collectionView)
@@ -907,10 +904,13 @@ final class MaterialHeaderContainerViewController: UIViewController {
     return "\(type(of: self))(content: \(String(describing: content)))"
   }
 
-  override var navigationItem: UINavigationItem {
-    return content.navigationItem
-  }
+}
 
+extension MaterialHeaderContainerViewController {
+  override func setCustomTint(_ customTint: CustomTint) {
+    appBar.headerViewController.headerView.backgroundColor = customTint.primary
+    super.setCustomTint(customTint)
+  }
 }
 
 // MARK: - Debugging

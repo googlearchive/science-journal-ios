@@ -19,7 +19,7 @@ import UIKit
 extension ActionArea {
 
   /// A container for master content view controllers in the Action Area.
-  final class MasterContentContainerViewController: UIViewController, MasterContent {
+  final class MasterContentContainerViewController: ContentContainerViewController, MasterContent {
 
     /// The empty state to display in the detail area for this content.
     let emptyState: EmptyState
@@ -31,8 +31,6 @@ extension ActionArea {
 
     // TODO: Remove when `childForStatusBarStyle` works.
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-
-    private let content: UIViewController
 
     // MARK: - Initializers
 
@@ -49,11 +47,10 @@ extension ActionArea {
       keyPath: KeyPath<T, Bool>? = nil,
       mode: ContentMode
     ) {
-      self.content = content
       self.emptyState = EmptyStateContainerViewController(emptyState: emptyState)
       self.actionEnabler = keyPath.map { ActionEnabler(target: content, keyPath: $0) }
       self.mode = mode
-      super.init(nibName: nil, bundle: nil)
+      super.init(content: content)
     }
 
     /// Convenience initializer.
@@ -78,22 +75,7 @@ extension ActionArea {
 
     // MARK: - Lifecycle
 
-    override func viewDidLoad() {
-      super.viewDidLoad()
-
-      addChild(content)
-      view.addSubview(content.view)
-      content.didMove(toParent: self)
-      content.view.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
-      }
-    }
-
     // MARK: - Implementation
-
-    override var navigationItem: UINavigationItem {
-      return content.navigationItem
-    }
 
     override var description: String {
       return "ActionArea.MasterContentContainerViewController(content: \(content))"

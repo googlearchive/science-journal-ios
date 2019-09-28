@@ -26,6 +26,7 @@
 		3F569571228F052C0039B84F /* LaunchManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F569570228F052C0039B84F /* LaunchManagerTest.swift */; };
 		3F591E26232888BE00491D65 /* UIKit+ActionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F591E25232888BE00491D65 /* UIKit+ActionArea.swift */; };
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
+		3F6D29F2233C14FB004D9318 /* Tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D29F1233C14FB004D9318 /* Tinting.swift */; };
 		3F71B71622B466D90015074A /* ActionAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71B71522B466D90015074A /* ActionAreaController.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		3FA7052022F8DD2600753842 /* ActionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7051F22F8DD2600753842 /* ActionArea.swift */; };
@@ -675,6 +676,7 @@
 		3F569570228F052C0039B84F /* LaunchManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManagerTest.swift; sourceTree = "<group>"; };
 		3F591E25232888BE00491D65 /* UIKit+ActionArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+ActionArea.swift"; sourceTree = "<group>"; };
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
+		3F6D29F1233C14FB004D9318 /* Tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinting.swift; sourceTree = "<group>"; };
 		3F71B71522B466D90015074A /* ActionAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaController.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		3FA7051F22F8DD2600753842 /* ActionArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionArea.swift; sourceTree = "<group>"; };
@@ -1398,6 +1400,7 @@
 				3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */,
 				3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */,
 				58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */,
+				3F6D29F1233C14FB004D9318 /* Tinting.swift */,
 				3F591E25232888BE00491D65 /* UIKit+ActionArea.swift */,
 			);
 			path = ActionArea;
@@ -3499,6 +3502,7 @@
 				3FA7052622F8DF5100753842 /* ActionAreaMasterContentContainerViewController.swift in Sources */,
 				68CD50D81E57DD51005E928F /* SensorCardCell.swift in Sources */,
 				68BD95621E8DA45100FEB0B2 /* NotesSoundType.swift in Sources */,
+				3F6D29F2233C14FB004D9318 /* Tinting.swift in Sources */,
 				68BD95611E8DA45100FEB0B2 /* DefaultSoundType.swift in Sources */,
 				687FAA11202C1162004C1D04 /* Trial.pbobjc.m in Sources */,
 				5C804CBA1FDEF02B00F8D1C6 /* TimestampFormatter.swift in Sources */,

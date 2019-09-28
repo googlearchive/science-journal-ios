@@ -19,7 +19,7 @@ import UIKit
 /// A base class for content containers with a single child.
 class ContentContainerViewController: UIViewController {
 
-  private let content: UIViewController
+  let content: UIViewController
 
   // MARK: - Initializers
 
@@ -42,10 +42,9 @@ class ContentContainerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    content.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     view.addSubview(content.view)
     content.didMove(toParent: self)
-    content.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    content.view.frame = view.bounds
   }
 
   // MARK: - Implementation

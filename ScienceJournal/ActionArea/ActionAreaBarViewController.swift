@@ -319,10 +319,10 @@ extension ActionArea {
 
     }
 
-    private final class Bar: UIView {
+    private final class Bar: UIView, CustomTintable {
 
       // swiftlint:disable:next nesting
-      private final class Button: UIView {
+      private final class Button: UIView, CustomTintable {
 
         override class var requiresConstraintBasedLayout: Bool {
           return true
@@ -330,8 +330,6 @@ extension ActionArea {
 
         private let button: UIButton = {
           let view = UIButton(type: .custom)
-          view.imageView?.tintColor = .appBarDefaultBackgroundColor
-          view.backgroundColor = UIColor(red: 0.961, green: 0.906, blue: 1.000, alpha: 1.000)
           view.layer.cornerRadius = Metrics.actionButtonSize / 2
           view.clipsToBounds = true
           return view
@@ -386,10 +384,22 @@ extension ActionArea {
           return _intrinsicContentSize
         }
 
+        func setCustomTint(_ customTint: CustomTint) {
+          button.imageView?.tintColor = customTint.primary
+          button.backgroundColor = customTint.secondary
+        }
+
       }
 
       override class var requiresConstraintBasedLayout: Bool {
         return true
+      }
+
+      private let keyTint = KeyTint()
+
+      func setCustomTint(_ customTint: CustomTint) {
+        keyTint.customTint = customTint
+        keyTint.apply(to: buttons)
       }
 
       private let stackView: UIStackView = {
@@ -400,10 +410,17 @@ extension ActionArea {
         return view
       }()
 
+      private var buttons: [Button] = [] {
+        didSet {
+          keyTint.apply(to: buttons)
+        }
+      }
+
       var items: [BarButtonItem] = [] {
         didSet {
           stackView.removeAllArrangedViews()
-          items.map { Button(frame: frame, item: $0) }.forEach { button in
+          buttons = items.map { Button(frame: frame, item: $0) }
+          buttons.forEach { button in
             stackView.addArrangedSubview(button)
           }
           (stackView.arrangedSubviews.count ..< 4).forEach { _ in
@@ -533,6 +550,13 @@ extension ActionArea {
 
   }
 
+}
+
+extension ActionArea.BarViewController {
+  override func setCustomTint(_ customTint: CustomTint) {
+    super.setCustomTint(customTint)
+    bar.setCustomTint(customTint)
+  }
 }
 
 // MARK: - Debugging

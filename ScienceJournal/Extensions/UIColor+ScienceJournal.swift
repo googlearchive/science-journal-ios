@@ -74,3 +74,121 @@ extension UIColor {
                                                           alpha: 0.3)
 
 }
+
+extension UIColor.HSBA {
+
+  /// The standard adjustment to use to create the secondary tint color that is derived from
+  /// app bar background colors.
+  static let standardAdjustment = UIColor.HSBA(hue: 0.038, saturation: -0.590, brightness: 0.283)
+
+}
+
+extension UIColor {
+
+  // MARK: - Tinting
+
+  /// HSBA represents hue, saturation, brightness and alpha values.
+  ///
+  /// Valid values are between 0 and 1.
+  struct HSBA: CustomStringConvertible, CustomDebugStringConvertible {
+    let hue: CGFloat
+    let saturation: CGFloat
+    let brightness: CGFloat
+    let alpha: CGFloat
+
+    /// Create an HSBA.
+    ///
+    /// Any values not provided will default to 0.
+    ///
+    /// - Parameters:
+    ///   - hue: The hue.
+    ///   - saturation: The saturation.
+    ///   - brightness: The brightness.
+    ///   - alpha: The alpha.
+    init(
+      hue: CGFloat? = nil,
+      saturation: CGFloat? = nil,
+      brightness: CGFloat? = nil,
+      alpha: CGFloat? = nil
+    ) {
+      self.hue = hue ?? 0
+      self.saturation = saturation ?? 0
+      self.brightness = brightness ?? 0
+      self.alpha = alpha ?? 0
+    }
+
+    var description: String {
+      func f(_ n: CGFloat) -> Substring { return String(describing: n).prefix(5) }
+      return "\(type(of: self))(hue: \(f(hue)), " +
+        "saturation: \(f(saturation)), brightness: \(f(brightness)), alpha: \(f(alpha)))"
+    }
+
+    var debugDescription: String {
+      return description
+    }
+  }
+
+  /// The `HSBA` values for this color, or `nil` if they could not be obtained.
+  var hsba: HSBA? {
+    var hue: CGFloat = 0
+    var saturation: CGFloat = 0
+    var brightness: CGFloat = 0
+    var alpha: CGFloat = 0
+
+    if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+      return HSBA(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+    }
+    return nil
+  }
+
+  /// Create a new color by *adding* the specified HSBA values.
+  ///
+  /// Values are truncated to stay between 0 and 1.
+  ///
+  /// - Parameters:
+  ///   - hue: The hue.
+  ///   - saturation: The saturation.
+  ///   - brightness: The brightness.
+  ///   - alpha: The alpha.
+  /// - Returns:
+  ///     The new color with the specified adjustments, or the original color if the original
+  ///     HSBA values could not be obtained.
+  func adjusted(
+    hue: CGFloat? = nil,
+    saturation: CGFloat? = nil,
+    brightness: CGFloat? = nil,
+    alpha: CGFloat? = nil
+  ) -> UIColor {
+    let values = HSBA(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+    return adjusted(by: values)
+  }
+
+  /// Create a new color by *adding* the specified HSBA values.
+  ///
+  /// Values are truncated to stay between 0 and 1.
+  ///
+  /// - Parameters:
+  ///   - values: The HSBA values to use for the adjustment.
+  /// - Returns:
+  ///     The new color with the specified adjustments, or the original color if the original
+  ///     HSBA values could not be obtained.
+  func adjusted(by values: HSBA) -> UIColor {
+    guard let hsba = hsba else { return self }
+
+    // Ensure values are between 0 and 1.
+    func limit(_ value: CGFloat) -> CGFloat { return max(0, min(value, 1)) }
+
+    let newHue = limit(hsba.hue + values.hue)
+    let newSaturation = limit(hsba.saturation + values.saturation)
+    let newBrightness = limit(hsba.brightness + values.brightness)
+    let newAlpha = limit(hsba.alpha + values.alpha)
+
+    return UIColor(
+      hue: newHue,
+      saturation: newSaturation,
+      brightness: newBrightness,
+      alpha: newAlpha
+    )
+  }
+
+}

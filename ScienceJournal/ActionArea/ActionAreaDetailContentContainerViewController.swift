@@ -19,7 +19,7 @@ import UIKit
 extension ActionArea {
 
   /// A container for detail content view controllers in the Action Area.
-  final class DetailContentContainerViewController: UIViewController, DetailContent {
+  final class DetailContentContainerViewController: ContentContainerViewController, DetailContent {
 
     /// The mode for this content.
     let mode: ContentMode
@@ -30,7 +30,6 @@ extension ActionArea {
     // TODO: Remove when `childForStatusBarStyle` works.
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 
-    private let content: UIViewController
     private var currentLeftBarButtonItem: UIBarButtonItem?
     private var originalContentHidesBackButton: Bool = false
 
@@ -47,10 +46,18 @@ extension ActionArea {
     ///   - closeButtonItem: The content view controller's close button item.
     ///   - mode: The mode for this content.
     init(content: UIViewController, closeButtonItem: UIBarButtonItem? = nil, mode: ContentMode) {
-      self.content = content
       self.closeButtonItem = closeButtonItem
       self.mode = mode
-      super.init(nibName: nil, bundle: nil)
+
+      let vc: UIViewController
+      if content.hasMaterialHeader {
+        vc = content
+      } else {
+        let header = MaterialHeaderContainerViewController(content: content)
+        vc = header
+      }
+
+      super.init(content: vc)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -74,8 +81,6 @@ extension ActionArea {
     override func viewDidLoad() {
       super.viewDidLoad()
 
-      addContent()
-
       if closeButtonItem == nil {
         assert(
           navigationItem.leftBarButtonItem == nil,
@@ -98,28 +103,7 @@ extension ActionArea {
       restoreNavigationItem()
     }
 
-    private func addContent() {
-      let vc: UIViewController
-      if content.hasMaterialHeader {
-        vc = content
-      } else {
-        let header = MaterialHeaderContainerViewController(content: content)
-        vc = header
-      }
-
-      addChild(vc)
-      view.addSubview(vc.view)
-      vc.didMove(toParent: self)
-      vc.view.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
-      }
-    }
-
     // MARK: - Implementation
-
-    override var navigationItem: UINavigationItem {
-      return content.navigationItem
-    }
 
     override var description: String {
       return "ActionArea.DetailContentContainerViewController(content: \(content))"

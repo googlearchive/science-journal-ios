@@ -1100,6 +1100,23 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
     editBarButton.isEnabled = !isRecording
     menuBarButton.isEnabled = !isRecording
 
+    func updateAppBarBackgroundColor() {
+      if isRecording {
+        appBar.headerViewController.headerView.backgroundColor =
+          .trialHeaderRecordingBackgroundColor
+      } else {
+        appBar.headerViewController.headerView.backgroundColor = .appBarDefaultBackgroundColor
+      }
+    }
+
+    if let transitionCoordinator = transitionCoordinator {
+      transitionCoordinator.animateAlongsideTransition(in: view, animation: { _ in
+        updateAppBarBackgroundColor()
+      })
+    } else {
+      updateAppBarBackgroundColor()
+    }
+
     let isCameraAllowed = CaptureSessionInterruptionObserver.shared.isCameraUseAllowed
     // Update the camera tab icon.
     drawerVC?.isCameraItemEnabled = isCameraAllowed

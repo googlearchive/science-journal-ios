@@ -20,12 +20,14 @@ import UIKit
 import third_party_objective_c_material_components_ios_components_ButtonBar_ButtonBar
 import third_party_objective_c_material_components_ios_components_ShadowLayer_ShadowLayer
 
+// MARK: - ActionArea.BarViewController
+
 extension ActionArea {
 
   /// The bar where items are displayed.
   final class BarViewController: UIViewController {
 
-    private enum Metrics {
+    enum Metrics {
       enum ActionButton {
         static let size: CGFloat = 48
         static let toLabelSpacing: CGFloat = 4
@@ -224,136 +226,6 @@ extension ActionArea {
       case lowered
     }
 
-    private final class Bar: UIView, CustomTintable {
-
-      private final class Button: UIView, CustomTintable {
-
-        override class var requiresConstraintBasedLayout: Bool {
-          return true
-        }
-
-        private let button: UIButton = {
-          let view = UIButton(type: .custom)
-          view.layer.cornerRadius = Metrics.ActionButton.size / 2
-          view.clipsToBounds = true
-          return view
-        }()
-
-        private let label: UILabel = {
-          let view = UILabel()
-          view.numberOfLines = 2
-          view.textColor = Metrics.Bar.buttonTitleColor
-          return view
-        }()
-
-        private let item: BarButtonItem
-        private var _intrinsicContentSize: CGSize = .zero
-
-        init(item: BarButtonItem) {
-          self.item = item
-          super.init(frame: .zero)
-
-          translatesAutoresizingMaskIntoConstraints = false
-          snp.setLabel("action")
-          accessibilityHint = item.accessibilityHint
-
-          button.setImage(item.image?.withRenderingMode(.alwaysTemplate), for: .normal)
-          button.addTarget(item, action: #selector(BarButtonItem.execute), for: .touchUpInside)
-          addSubview(button)
-          button.snp.setLabel("action.button")
-          button.snp.makeConstraints { make in
-            make.size.equalTo(Metrics.ActionButton.size)
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.leading.greaterThanOrEqualToSuperview()
-            make.trailing.lessThanOrEqualToSuperview()
-          }
-
-          label.text = item.title
-          addSubview(label)
-          label.snp.setLabel("action.label")
-          label.snp.makeConstraints { make in
-            make.top.equalTo(button.snp.bottom).offset(Metrics.ActionButton.toLabelSpacing)
-            make.centerX.equalTo(button)
-            make.leading.greaterThanOrEqualToSuperview()
-            make.trailing.lessThanOrEqualToSuperview()
-            make.bottom.equalToSuperview()
-          }
-
-          self._intrinsicContentSize = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        }
-
-        required init?(coder aDecoder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-        }
-
-        override var intrinsicContentSize: CGSize {
-          return _intrinsicContentSize
-        }
-
-        func setCustomTint(_ customTint: CustomTint) {
-          button.imageView?.tintColor = customTint.primary
-          button.backgroundColor = customTint.secondary
-        }
-
-      }
-
-      override class var requiresConstraintBasedLayout: Bool {
-        return true
-      }
-
-      private let keyTint = KeyTint()
-
-      func setCustomTint(_ customTint: CustomTint) {
-        keyTint.customTint = customTint
-        keyTint.apply(to: buttons)
-      }
-
-      private let stackView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .horizontal
-        view.alignment = .center
-        view.distribution = .fillEqually
-        return view
-      }()
-
-      private var buttons: [Button] = [] {
-        didSet {
-          keyTint.apply(to: buttons)
-        }
-      }
-
-      var items: [BarButtonItem] = [] {
-        didSet {
-          stackView.removeAllArrangedViews()
-          buttons = items.map { Button(item: $0) }
-          buttons.forEach { button in
-            stackView.addArrangedSubview(button)
-          }
-          (stackView.arrangedSubviews.count ..< 4).forEach { _ in
-            stackView.addArrangedSubview(UIView())
-          }
-        }
-      }
-
-      override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(stackView)
-        backgroundColor = Metrics.Bar.backgroundColor
-        layer.cornerRadius = Metrics.Bar.cornerRadius
-        layer.masksToBounds = true
-        layoutMargins = Metrics.Bar.padding
-        stackView.snp.makeConstraints { make in
-          make.edges.equalTo(snp.margins)
-        }
-      }
-
-      required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-      }
-
-    }
-
     private var bar: Bar = {
       let view = Bar()
       view.clipsToBounds = false
@@ -463,11 +335,156 @@ extension ActionArea {
 
 }
 
+// MARK: - ActionArea.BarViewController+CustomTintable
+
 extension ActionArea.BarViewController {
   override func setCustomTint(_ customTint: CustomTint) {
     super.setCustomTint(customTint)
     bar.setCustomTint(customTint)
   }
+}
+
+// MARK: - ActionArea.Bar
+
+extension ActionArea {
+
+  private final class Bar: UIView, CustomTintable {
+
+    override class var requiresConstraintBasedLayout: Bool {
+      return true
+    }
+
+    private let keyTint = KeyTint()
+
+    func setCustomTint(_ customTint: CustomTint) {
+      keyTint.customTint = customTint
+      keyTint.apply(to: buttons)
+    }
+
+    private let stackView: UIStackView = {
+      let view = UIStackView()
+      view.axis = .horizontal
+      view.alignment = .center
+      view.distribution = .fillEqually
+      return view
+    }()
+
+    private var buttons: [BarButton] = [] {
+      didSet {
+        keyTint.apply(to: buttons)
+      }
+    }
+
+    var items: [BarButtonItem] = [] {
+      didSet {
+        stackView.removeAllArrangedViews()
+        buttons = items.map { BarButton(item: $0) }
+        buttons.forEach { button in
+          stackView.addArrangedSubview(button)
+        }
+        (stackView.arrangedSubviews.count ..< 4).forEach { _ in
+          stackView.addArrangedSubview(UIView())
+        }
+      }
+    }
+
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+      addSubview(stackView)
+      backgroundColor = BarViewController.Metrics.Bar.backgroundColor
+      layer.cornerRadius = BarViewController.Metrics.Bar.cornerRadius
+      layer.masksToBounds = true
+      layoutMargins = BarViewController.Metrics.Bar.padding
+      stackView.snp.makeConstraints { make in
+        make.edges.equalTo(snp.margins)
+      }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
+  }
+
+}
+
+// MARK: - ActionArea.BarButton
+
+extension ActionArea {
+
+  private final class BarButton: UIView, CustomTintable {
+
+    override class var requiresConstraintBasedLayout: Bool {
+      return true
+    }
+
+    private let button: UIButton = {
+      let view = UIButton(type: .custom)
+      view.layer.cornerRadius = BarViewController.Metrics.ActionButton.size / 2
+      view.clipsToBounds = true
+      return view
+    }()
+
+    private let label: UILabel = {
+      let view = UILabel()
+      view.numberOfLines = 2
+      view.textColor = BarViewController.Metrics.Bar.buttonTitleColor
+      return view
+    }()
+
+    private let item: BarButtonItem
+    private var _intrinsicContentSize: CGSize = .zero
+
+    init(item: BarButtonItem) {
+      self.item = item
+      super.init(frame: .zero)
+
+      translatesAutoresizingMaskIntoConstraints = false
+      snp.setLabel("action")
+      accessibilityHint = item.accessibilityHint
+
+      button.setImage(item.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+      button.addTarget(item, action: #selector(BarButtonItem.execute), for: .touchUpInside)
+      addSubview(button)
+      button.snp.setLabel("action.button")
+      button.snp.makeConstraints { make in
+        make.size.equalTo(BarViewController.Metrics.ActionButton.size)
+        make.top.equalToSuperview()
+        make.centerX.equalToSuperview()
+        make.leading.greaterThanOrEqualToSuperview()
+        make.trailing.lessThanOrEqualToSuperview()
+      }
+
+      label.text = item.title
+      addSubview(label)
+      label.snp.setLabel("action.label")
+      label.snp.makeConstraints { make in
+        make.top.equalTo(button.snp.bottom)
+          .offset(BarViewController.Metrics.ActionButton.toLabelSpacing)
+        make.centerX.equalTo(button)
+        make.leading.greaterThanOrEqualToSuperview()
+        make.trailing.lessThanOrEqualToSuperview()
+        make.bottom.equalToSuperview()
+      }
+
+      self._intrinsicContentSize = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
+    override var intrinsicContentSize: CGSize {
+      return _intrinsicContentSize
+    }
+
+    func setCustomTint(_ customTint: CustomTint) {
+      button.imageView?.tintColor = customTint.primary
+      button.backgroundColor = customTint.secondary
+    }
+
+  }
+
 }
 
 // MARK: - Debugging

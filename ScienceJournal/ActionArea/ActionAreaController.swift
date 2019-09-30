@@ -48,7 +48,6 @@ extension ActionArea {
 
     private enum Layout: Equatable, CustomDebugStringConvertible {
 
-      // swiftlint:disable:next nesting
       struct Sizes {
         let size: CGSize
 
@@ -65,7 +64,6 @@ extension ActionArea {
         var detailOffset: CGFloat { return detailWidth + divider }
       }
 
-      // swiftlint:disable:next nesting
       enum Mode: CustomDebugStringConvertible {
         case collapsed
         case expanded

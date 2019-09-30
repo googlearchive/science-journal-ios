@@ -59,17 +59,21 @@ extension ActionArea {
   final class BarViewController: UIViewController {
 
     private enum Metrics {
-      static let defaultAnimationDuration: TimeInterval = 0.4
-      static let actionButtonSize: CGFloat = 48
-      static let actionButtonToLabelSpacing: CGFloat = 4
-      static let barPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-      static let barBackgroundColor = UIColor(white: 0.98, alpha: 1.0)
-      static let barButtonTitleColor: UIColor = .gray
-      static let barCornerRadius: CGFloat = 15
-      static let barDefaultMargins = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
-      static let barToFABSpacing: CGFloat = 8
-      static let disabledAlpha: CGFloat = 0.2
-      static let barShadow = MDCShadowMetrics(elevation: ShadowElevation.fabResting.rawValue)
+      enum ActionButton {
+        static let size: CGFloat = 48
+        static let toLabelSpacing: CGFloat = 4
+      }
+
+      enum Bar {
+        static let backgroundColor = UIColor(white: 0.98, alpha: 1.0)
+        static let buttonTitleColor: UIColor = .gray
+        static let cornerRadius: CGFloat = 15
+        static let defaultMargins = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
+        static let disabledAlpha: CGFloat = 0.2
+        static let padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        static let shadow = MDCShadowMetrics(elevation: ShadowElevation.fabResting.rawValue)
+        static let toFABSpacing: CGFloat = 8
+      }
     }
 
     private func transition(
@@ -126,7 +130,7 @@ extension ActionArea {
           view.addSubview(primary)
           primaryConstraints = MutuallyExclusiveConstraints { constraints in
             primary.snp.makeConstraints { make in
-              make.bottom.equalTo(bar.snp.top).offset(-1 * Metrics.barToFABSpacing)
+              make.bottom.equalTo(bar.snp.top).offset(-1 * Metrics.Bar.toFABSpacing)
             }
             constraints[.compact] = primary.snp.prepareConstraints { $0.centerX.equalToSuperview() }
             constraints[.regular] = primary.snp.prepareConstraints { $0.right.equalTo(bar) }
@@ -206,7 +210,7 @@ extension ActionArea {
         if isEnabled {
           bar.alpha = 1
         } else {
-          bar.alpha = Metrics.disabledAlpha
+          bar.alpha = Metrics.Bar.disabledAlpha
         }
         bar.isUserInteractionEnabled = isEnabled
       }
@@ -220,7 +224,7 @@ extension ActionArea {
         let barAnimation = CABasicAnimation(keyPath: "shadowOpacity")
         let toValue: Float
         if barIsElevated {
-          toValue = Metrics.barShadow.bottomShadowOpacity
+          toValue = Metrics.Bar.shadow.bottomShadowOpacity
         } else {
           toValue = 0
         }
@@ -291,7 +295,6 @@ extension ActionArea {
 
     private final class Bar: UIView, CustomTintable {
 
-      // swiftlint:disable:next nesting
       private final class Button: UIView, CustomTintable {
 
         override class var requiresConstraintBasedLayout: Bool {
@@ -300,7 +303,7 @@ extension ActionArea {
 
         private let button: UIButton = {
           let view = UIButton(type: .custom)
-          view.layer.cornerRadius = Metrics.actionButtonSize / 2
+          view.layer.cornerRadius = Metrics.ActionButton.size / 2
           view.clipsToBounds = true
           return view
         }()
@@ -308,7 +311,7 @@ extension ActionArea {
         private let label: UILabel = {
           let view = UILabel()
           view.numberOfLines = 2
-          view.textColor = Metrics.barButtonTitleColor
+          view.textColor = Metrics.Bar.buttonTitleColor
           return view
         }()
 
@@ -325,7 +328,7 @@ extension ActionArea {
           button.addTarget(item, action: #selector(BarButtonItem.execute), for: .touchUpInside)
           addSubview(button)
           button.snp.makeConstraints { make in
-            make.size.equalTo(Metrics.actionButtonSize)
+            make.size.equalTo(Metrics.ActionButton.size)
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview()
@@ -336,7 +339,7 @@ extension ActionArea {
           label.layoutIfNeeded()
           addSubview(label)
           label.snp.makeConstraints { make in
-            make.top.equalTo(button.snp.bottom).offset(Metrics.actionButtonToLabelSpacing)
+            make.top.equalTo(button.snp.bottom).offset(Metrics.ActionButton.toLabelSpacing)
             make.centerX.equalTo(button)
             make.leading.greaterThanOrEqualToSuperview()
             make.trailing.lessThanOrEqualToSuperview()
@@ -402,10 +405,10 @@ extension ActionArea {
       override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(stackView)
-        backgroundColor = Metrics.barBackgroundColor
-        layer.cornerRadius = Metrics.barCornerRadius
+        backgroundColor = Metrics.Bar.backgroundColor
+        layer.cornerRadius = Metrics.Bar.cornerRadius
         layer.masksToBounds = true
-        layoutMargins = Metrics.barPadding
+        layoutMargins = Metrics.Bar.padding
         stackView.snp.makeConstraints { make in
           make.edges.equalTo(snp.margins)
         }
@@ -420,8 +423,8 @@ extension ActionArea {
     private var bar: Bar = {
       let view = Bar()
       view.clipsToBounds = false
-      view.layer.shadowRadius = Metrics.barShadow.bottomShadowRadius
-      view.layer.shadowOffset = Metrics.barShadow.bottomShadowOffset
+      view.layer.shadowRadius = Metrics.Bar.shadow.bottomShadowRadius
+      view.layer.shadowOffset = Metrics.Bar.shadow.bottomShadowOffset
       return view
     }()
 
@@ -473,7 +476,7 @@ extension ActionArea {
 
       // TODO: Figure out how to do this dynamically. Ideally we would get these from the margins
       // of the content view controller, but they're not what we want.
-      barWrapper.safeMargins = Metrics.barDefaultMargins
+      barWrapper.safeMargins = Metrics.Bar.defaultMargins
     }
 
     private func configure(bar: Bar) {

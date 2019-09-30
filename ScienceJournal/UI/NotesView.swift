@@ -63,6 +63,13 @@ class NotesView: UIView {
     case button
   }
 
+  enum Metrics {
+    static let sendFABPadding: CGFloat = 32.0
+    static let sendFABDisabledAlpha: CGFloat = 0.4
+    static let sendFABImage = UIImage(named: "ic_send")?.imageFlippedForRightToLeftLayoutDirection()
+    static let sendFABContentInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+  }
+
   // MARK: - Properties
 
   /// The text view.
@@ -73,6 +80,9 @@ class NotesView: UIView {
 
   /// The send button view.
   let sendButtonView = SendButtonView()
+
+  /// Button for action area design
+  let sendFAB = MDCFloatingButton()
 
   /// The text view's placeholder label.
   let placeholderLabel = UILabel()
@@ -107,6 +117,7 @@ class NotesView: UIView {
   private var sendButtonStyle = SendButtonStyle.button
   private let sendButtonActionBarWrapper = UIView()
   private var sendButtonViewTrailingConstraint: NSLayoutConstraint?
+  private var sendFABBottomConstraint: NSLayoutConstraint?
 
   private var textViewTextContainerInset: UIEdgeInsets {
     return UIEdgeInsets(top: 18,
@@ -223,6 +234,25 @@ class NotesView: UIView {
         equalTo: trailingAnchor, constant: -sendButtonViewHorizontalInset)
     sendButtonViewTrailingConstraint?.isActive = true
 
+    if FeatureFlags.isActionAreaEnabled {
+      // We don't use the action bar but it has dependencies elsewhere in the code and we still
+      // need to support that until cleanup, so just hide it for now.
+      sendButtonActionBarWrapper.isHidden = true
+      sendButtonView.isHidden = true
+
+      addSubview(sendFAB)
+      sendFAB.accessibilityLabel = String.addPictureNoteContentDescription
+      sendFAB.setImage(Metrics.sendFABImage, for: .normal)
+      sendFAB.contentEdgeInsets = Metrics.sendFABContentInsets
+      sendFAB.disabledAlpha = Metrics.sendFABDisabledAlpha
+      sendFAB.translatesAutoresizingMaskIntoConstraints = false
+      sendFAB.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+      sendFABBottomConstraint = sendFAB.bottomAnchor.constraint(
+        equalTo: bottomAnchor,
+        constant: -1 * Metrics.sendFABPadding)
+      sendFABBottomConstraint?.isActive = true
+    }
+
     // Placeholder label.
     placeholderLabel.font = textView.font
     placeholderLabel.numberOfLines = 0
@@ -283,6 +313,8 @@ class NotesView: UIView {
     UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
       self.sendButtonActionBarWrapperBottomConstraint?.constant =
           sendButtonActionBarBottomConstraintConstant
+      self.sendFABBottomConstraint?.constant = sendButtonActionBarBottomConstraintConstant -
+        Metrics.sendFABPadding
       self.layoutIfNeeded()
     }) { (_) in
       if self.sendButtonStyle == .button {

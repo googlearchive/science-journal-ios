@@ -17,6 +17,8 @@
 import Photos
 import UIKit
 
+import third_party_objective_c_material_components_ios_components_Buttons_Buttons
+
 /// Subclass of the photo library view controller for analytics purposes and uses a check mark
 /// action bar button instead of a send icon.
 open class StandalonePhotoLibraryViewController: PhotoLibraryViewController {
@@ -36,6 +38,13 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
                                        UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,
                                        PhotoLibraryDataSourceDelegate, DrawerItemViewController,
                                        DrawerPositionListener, PhotoLibraryCellDelegate {
+
+  enum Metrics {
+    static let sendFABPadding: CGFloat = 32.0
+    static let sendFABDisabledAlpha: CGFloat = 0.6
+    static let sendFABImage = UIImage(named: "ic_send")?.imageFlippedForRightToLeftLayoutDirection()
+    static let sendFABContentInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+  }
 
   // MARK: - Properties
 
@@ -73,9 +82,13 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   private var drawerPanner: DrawerPanner?
   private var mostRecentlySelectedPhotoAsset: PHAsset?
 
+  /// Button for action area design
+  private let sendFAB = MDCFloatingButton()
+
   private var selectedImage: (image: UIImage, metadata: NSDictionary?)? {
     didSet {
       actionBar.button.isEnabled = selectedImage != nil
+      sendFAB.isEnabled = selectedImage != nil
     }
   }
 
@@ -153,6 +166,24 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
         actionBarWrapper.heightAnchor.constraint(equalTo: actionBar.heightAnchor)
     actionBarWrapperHeightConstraint?.isActive = true
 
+    if FeatureFlags.isActionAreaEnabled {
+      // We don't use the action bar but it has dependencies elsewhere in the code and we still
+      // need to support that until cleanup, so just hide it for now.
+      actionBarWrapper.isHidden = true
+
+      view.addSubview(sendFAB)
+      sendFAB.accessibilityLabel = String.addPictureNoteContentDescription
+      sendFAB.setImage(Metrics.sendFABImage, for: .normal)
+      sendFAB.contentEdgeInsets = Metrics.sendFABContentInsets
+      sendFAB.disabledAlpha = Metrics.sendFABDisabledAlpha
+      sendFAB.addTarget(self, action: #selector(actionBarButtonPressed), for: .touchUpInside)
+      sendFAB.translatesAutoresizingMaskIntoConstraints = false
+      sendFAB.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+                                      constant: -1 * Metrics.sendFABPadding).isActive = true
+      sendFAB.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                        constant: -1 * Metrics.sendFABPadding).isActive = true
+    }
+
     // Disabled view.
     view.addSubview(disabledView)
     disabledView.translatesAutoresizingMaskIntoConstraints = false
@@ -201,6 +232,12 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
 
   override open func viewSafeAreaInsetsDidChange() {
     actionBarWrapperHeightConstraint?.constant = view.safeAreaInsetsOrZero.bottom
+  }
+
+  override func setCustomTint(_ customTint: CustomTint) {
+    super.setCustomTint(customTint)
+    sendFAB.imageView?.tintColor = customTint.primary
+    sendFAB.backgroundColor = customTint.secondary
   }
 
   // MARK: - PhotoLibraryDataSourceDelegate

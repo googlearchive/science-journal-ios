@@ -65,6 +65,10 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
                                                   action: #selector(sendButtonPressed),
                                                   for: .touchUpInside)
     notesView.sendButtonView.sendButton.isEnabled = false
+    notesView.sendFAB.addTarget(self,
+                                action: #selector(sendButtonPressed),
+                                for: .touchUpInside)
+    notesView.sendFAB.isEnabled = false
   }
 
   override open func viewDidLoad() {
@@ -143,6 +147,12 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
     view.endEditing(true)
   }
 
+  override func setCustomTint(_ customTint: CustomTint) {
+    super.setCustomTint(customTint)
+    notesView.sendFAB.imageView?.tintColor = customTint.primary
+    notesView.sendFAB.backgroundColor = customTint.secondary
+  }
+
   // MARK: - Private
 
   // Whether or not there is text not including whitespace and newlines.
@@ -172,6 +182,7 @@ open class NotesViewController: ScienceJournalViewController, DrawerItemViewCont
     // If the text view has text, enable the send buttons, otherwise disable them.
     notesView.sendButtonActionBar.button.isEnabled = textViewHasTextToSave
     notesView.sendButtonView.sendButton.isEnabled = textViewHasTextToSave
+    notesView.sendFAB.isEnabled = textViewHasTextToSave
   }
 
   private func updateSendButtonStyle(forDrawerPosition drawerPosition: DrawerPosition) {

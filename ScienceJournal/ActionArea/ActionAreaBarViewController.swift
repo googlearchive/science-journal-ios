@@ -72,94 +72,22 @@ extension ActionArea {
       static let barShadow = MDCShadowMetrics(elevation: ShadowElevation.fabResting.rawValue)
     }
 
-    private final class Transition {
-      private let before: () -> Void
-      private let during: () -> Void
-      private let after: () -> Void
-
-      init(before: (() -> Void)? = nil, during: (() -> Void)? = nil, after: (() -> Void)? = nil) {
-        self.before = before ?? {}
-        self.during = during ?? {}
-        self.after = after ?? {}
-      }
-
-      convenience init(from: UIButton?, to: UIButton?) {
-        switch (from, to) {
-        case (.none, .none):
-          self.init()
-        case let (.some(from), .none):
-          self.init(during: {
-            from.alpha = 0
-          }, after: {
-            from.removeFromSuperview()
-          })
-        case let (.none, .some(to)):
-          self.init(before: {
-            to.alpha = 0
-          }, during: {
-            to.alpha = 1
-          }, after: nil)
-        case let (.some(from), .some(to)):
-          self.init(before: {
-            to.alpha = 0
-          }, during: {
-            UIView.animateKeyframes(withDuration: 0, delay: 0, options: [], animations: {
-              UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3) {
-                from.titleLabel?.alpha = 0
-                from.imageView?.alpha = 0
-              }
-              UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.4) {
-                let x = to.bounds.width / from.bounds.width
-                from.transform = CGAffineTransform(scaleX: x, y: 1)
-              }
-              UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.3) {
-                from.alpha = 0
-                to.alpha = 1
-              }
-            })
-          }, after: {
-            from.removeFromSuperview()
-          })
-        }
-      }
-
-      convenience init(bar: Bar, to newItems: [BarButtonItem]) {
-        let snapshot = bar.snapshotView(afterScreenUpdates: false)
-        self.init(
-          before: {
-            if let snapshot = snapshot {
-              bar.superview?.addSubview(snapshot)
-              snapshot.frame = bar.frame
-            }
-            bar.alpha = 0
-            bar.items = newItems
-          },
-          during: {
-            snapshot?.alpha = 0
-            bar.alpha = 1
-          },
-          after: {
-            snapshot?.removeFromSuperview()
-          }
-        )
-      }
-
-      func perform(
-        in view: UIView,
-        with transitionCoordinator: UIViewControllerTransitionCoordinator?
-      ) {
-        if let transitionCoordinator = transitionCoordinator, transitionCoordinator.isAnimated {
-          before()
-          transitionCoordinator.animateAlongsideTransition(in: view, animation: { _ in
-            self.during()
-          }) { _ in
-            self.after()
-          }
-        } else {
-          before()
+    private func transition(
+      before: () -> Void = {},
+      during: @escaping () -> Void = {},
+      after: @escaping () -> Void = {}
+    ) {
+      if let transitionCoordinator = transitionCoordinator, transitionCoordinator.isAnimated {
+        before()
+        transitionCoordinator.animateAlongsideTransition(in: view, animation: { _ in
           during()
+        }) { _ in
           after()
         }
+      } else {
+        before()
+        during()
+        after()
       }
     }
 
@@ -174,8 +102,20 @@ extension ActionArea {
         //   Revisit this animation. The current approach performs much better than replacing the
         //   bar, but it won't handle transitions where the action descriptions have different
         //   numbers of lines.
-        let transition = Transition(bar: bar, to: actionItem.items)
-        transition.perform(in: view, with: transitionCoordinator)
+        let snapshot = bar.snapshotView(afterScreenUpdates: false)
+        transition(before: {
+          if let snapshot = snapshot {
+            bar.superview?.addSubview(snapshot)
+            snapshot.frame = bar.frame
+          }
+          bar.alpha = 0
+          bar.items = actionItem.items
+        }, during: {
+          snapshot?.alpha = 0
+          self.bar.alpha = 1
+        }, after: {
+          snapshot?.removeFromSuperview()
+        })
       }
     }
 
@@ -196,8 +136,43 @@ extension ActionArea {
           primaryConstraints = nil
         }
 
-        let transition = Transition(from: oldValue, to: primary)
-        transition.perform(in: view, with: transitionCoordinator)
+        switch (oldValue, primary) {
+        case (.none, .none):
+          break
+        case let (.some(from), .none):
+          transition(during: {
+            from.alpha = 0
+          }, after: {
+            from.removeFromSuperview()
+          })
+        case let (.none, .some(to)):
+          transition(before: {
+            to.alpha = 0
+          }, during: {
+            to.alpha = 1
+          })
+        case let (.some(from), .some(to)):
+          transition(before: {
+            to.alpha = 0
+          }, during: {
+            UIView.animateKeyframes(withDuration: 0, delay: 0, options: [], animations: {
+              UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3) {
+                from.titleLabel?.alpha = 0
+                from.imageView?.alpha = 0
+              }
+              UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.4) {
+                let x = to.bounds.width / from.bounds.width
+                from.transform = CGAffineTransform(scaleX: x, y: 1)
+              }
+              UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.3) {
+                from.alpha = 0
+                to.alpha = 1
+              }
+            })
+          }, after: {
+            from.removeFromSuperview()
+          })
+        }
       }
     }
 

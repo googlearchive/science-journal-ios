@@ -16,10 +16,29 @@
 
 import UIKit
 
+/// The delegate protocol for `ActionArea.BarButtonItem`s.
+protocol ActionAreaBarButtonItemDelegate: class {
+
+  /// The action is about to be executed.
+  ///
+  /// - Parameters:
+  ///   - item: The item that owns the action about to be executed.
+  func barButtonItemWillExecuteAction(_ item: ActionArea.BarButtonItem)
+
+  /// The action was executed.
+  ///
+  /// - Parameters:
+  ///   - item: The item that owns the action that was executed.
+  func barButtonItemDidExecuteAction(_ item: ActionArea.BarButtonItem)
+
+}
+
 extension ActionArea {
 
   /// An item to be displayed in the Action Area.
   final class BarButtonItem: NSObject {
+
+    weak var delegate: ActionAreaBarButtonItemDelegate?
 
     private(set) var title: String
     private(set) var image: UIImage?
@@ -41,7 +60,9 @@ extension ActionArea {
     }
 
     @objc func execute() {
+      delegate?.barButtonItemWillExecuteAction(self)
       action()
+      delegate?.barButtonItemDidExecuteAction(self)
     }
 
   }

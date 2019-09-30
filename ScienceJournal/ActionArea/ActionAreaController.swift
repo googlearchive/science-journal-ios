@@ -25,7 +25,7 @@ import third_party_objective_c_material_components_ios_components_Buttons_Button
 extension ActionArea {
 
   /// Manages presentation and adaptivity for the Action Area.
-  final class Controller: UIViewController {
+  final class Controller: UIViewController, ActionAreaBarButtonItemDelegate {
 
     private enum Metrics {
       static let defaultAnimationDuration: TimeInterval = 0.4
@@ -417,9 +417,11 @@ extension ActionArea {
         case let (.normal, .stateless(items)), let (.modal, .stateless(items)):
           return ActionItem(items: items)
         case let (.normal, .stateful(nonModal, _)):
-          return ActionItem(primary: wrap(primary: nonModal.primary), items: nonModal.items)
+          nonModal.primary.delegate = self
+          return ActionItem(primary: nonModal.primary, items: nonModal.items)
         case let (.modal, .stateful(_, modal)):
-          return ActionItem(primary: wrap(primary: modal.primary), items: modal.items)
+          modal.primary.delegate = self
+          return ActionItem(primary: modal.primary, items: modal.items)
         }
       }
 
@@ -434,19 +436,15 @@ extension ActionArea {
       }
     }
 
-    private func wrap(primary: BarButtonItem) -> BarButtonItem {
-      return BarButtonItem(
-        title: primary.title,
-        accessibilityHint: primary.accessibilityHint,
-        image: primary.image
-      ) {
-        self.toggleState { primary.action() }
-      }
+    func barButtonItemWillExecuteAction(_ item: ActionArea.BarButtonItem) {
+      initiateLocalTransition()
     }
 
-    @objc private func toggleState(action: () -> Void) {
-      initiateLocalTransition()
-      action()
+    func barButtonItemDidExecuteAction(_ item: ActionArea.BarButtonItem) {
+      toggleState()
+    }
+
+    private func toggleState() {
       state = state == .normal ? .modal : .normal
     }
 

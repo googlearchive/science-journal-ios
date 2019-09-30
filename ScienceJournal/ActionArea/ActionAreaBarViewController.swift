@@ -31,12 +31,7 @@ extension ActionArea {
     let primary: UIButton?
     let items: [BarButtonItem]
 
-    // We need to retain this item, so it won't get deallocated.
-    private let _primary: BarButtonItem?
-
     init(primary: BarButtonItem? = nil, items: [BarButtonItem]) {
-      self._primary = primary
-
       func create(primary: BarButtonItem) -> UIButton {
         let button = MDCFloatingButton()
         button.mode = .expanded

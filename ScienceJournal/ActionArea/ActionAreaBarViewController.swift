@@ -177,14 +177,14 @@ extension ActionArea {
     /// Hide the bar.
     func hide() {
       primary?.alpha = 0
-      barWrapper.alpha = 0
+      bar.alpha = 0
       updateAdditionalSafeAreaInsets()
     }
 
     /// Show the bar.
     func show() {
       primary?.alpha = 1
-      barWrapper.alpha = 1
+      bar.alpha = 1
       updateAdditionalSafeAreaInsets()
     }
 
@@ -224,59 +224,6 @@ extension ActionArea {
       case lowered
     }
 
-    // This view is configured so that its margins will be the smaller of its explicitly configured
-    // margins or the margins enforced by the safe area.
-    private final class SafeMarginWrapperView: UIView {
-
-      override class var requiresConstraintBasedLayout: Bool {
-        return true
-      }
-
-      let contentView = UIView()
-
-      // Without a wrapper, we'd have to set `viewRespectsSystemMinimumLayoutMargins` to `false`
-      // and reduce the margins of the root view of whatever view controller this view is used in.
-      private let wrapper: UIView = {
-        let view = UIView()
-        // Set `preservesSuperviewLayoutMargins` to `true`, so that this view's margins will be
-        // increased if the superview's margins are increased to accomodate the safe area.
-        view.preservesSuperviewLayoutMargins = true
-
-        // Set `insetsLayoutMarginsFromSafeArea` to `false`, so this view's local margins will be
-        // relative to the edge the frame, as opposed to the safe area.
-        view.insetsLayoutMarginsFromSafeArea = false
-        return view
-      }()
-
-      // The desired margins, which will be increased to at most the safe area margins.
-      var safeMargins: UIEdgeInsets = .zero {
-        didSet {
-          wrapper.layoutMargins = safeMargins
-        }
-      }
-
-      // MARK: - Lifecycle
-
-      override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-
-        layoutMargins = .zero
-
-        wrapper.snp.setLabel("wrapper")
-        addSubview(wrapper)
-        wrapper.snp.makeConstraints { make in
-          make.edges.equalToSuperview()
-        }
-
-        contentView.snp.setLabel("contentView")
-        wrapper.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-          make.edges.equalTo(wrapper.snp.margins)
-        }
-      }
-
-    }
-
     private final class Bar: UIView, CustomTintable {
 
       private final class Button: UIView, CustomTintable {
@@ -302,15 +249,18 @@ extension ActionArea {
         private let item: BarButtonItem
         private var _intrinsicContentSize: CGSize = .zero
 
-        init(frame: CGRect, item: BarButtonItem) {
+        init(item: BarButtonItem) {
           self.item = item
-          super.init(frame: frame)
+          super.init(frame: .zero)
 
+          translatesAutoresizingMaskIntoConstraints = false
+          snp.setLabel("action")
           accessibilityHint = item.accessibilityHint
 
           button.setImage(item.image?.withRenderingMode(.alwaysTemplate), for: .normal)
           button.addTarget(item, action: #selector(BarButtonItem.execute), for: .touchUpInside)
           addSubview(button)
+          button.snp.setLabel("action.button")
           button.snp.makeConstraints { make in
             make.size.equalTo(Metrics.ActionButton.size)
             make.top.equalToSuperview()
@@ -320,8 +270,8 @@ extension ActionArea {
           }
 
           label.text = item.title
-          label.layoutIfNeeded()
           addSubview(label)
+          label.snp.setLabel("action.label")
           label.snp.makeConstraints { make in
             make.top.equalTo(button.snp.bottom).offset(Metrics.ActionButton.toLabelSpacing)
             make.centerX.equalTo(button)
@@ -376,7 +326,7 @@ extension ActionArea {
       var items: [BarButtonItem] = [] {
         didSet {
           stackView.removeAllArrangedViews()
-          buttons = items.map { Button(frame: frame, item: $0) }
+          buttons = items.map { Button(item: $0) }
           buttons.forEach { button in
             stackView.addArrangedSubview(button)
           }
@@ -413,7 +363,6 @@ extension ActionArea {
     }()
 
     private let content: UIViewController
-    private let barWrapper = SafeMarginWrapperView()
 
     private var position: Position = .lowered {
       didSet {
@@ -439,7 +388,15 @@ extension ActionArea {
     override func viewDidLoad() {
       super.viewDidLoad()
 
-      view.snp.setLabel("bar")
+      // TODO: Figure out how to do this dynamically. Ideally we would get these from the margins
+      // of the content view controller, but they're not what we want.
+      view.layoutMargins = Metrics.Bar.defaultMargins
+      // Ignore system mimimums because we want to use our custom margins.
+      viewRespectsSystemMinimumLayoutMargins = false
+      // Inset the layout margins from the edge, so we can keep the bar as close to the edge as
+      // possible.
+      view.insetsLayoutMarginsFromSafeArea = false
+      view.snp.setLabel("root")
 
       content.view.snp.setLabel("content")
       addChild(content)
@@ -449,33 +406,23 @@ extension ActionArea {
         make.edges.equalToSuperview()
       }
 
-      barWrapper.snp.setLabel("barWrapper")
-      view.addSubview(barWrapper)
-      barWrapper.snp.makeConstraints { make in
-        make.leading.bottom.equalToSuperview()
-        make.trailing.greaterThanOrEqualToSuperview()
-      }
-
-      configure(bar: bar)
-
-      // TODO: Figure out how to do this dynamically. Ideally we would get these from the margins
-      // of the content view controller, but they're not what we want.
-      barWrapper.safeMargins = Metrics.Bar.defaultMargins
-    }
-
-    private func configure(bar: Bar) {
       bar.snp.setLabel("bar")
-      barWrapper.contentView.addSubview(bar)
+      view.addSubview(bar)
       bar.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
+        make.leading.greaterThanOrEqualTo(view.snp.leadingMargin)
+        make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).priority(.high)
+        make.trailing.lessThanOrEqualTo(view.snp.trailingMargin)
+        make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).priority(.high)
+        make.bottom.lessThanOrEqualTo(view.snp.bottomMargin)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).priority(.high)
       }
     }
 
     override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
-
       // Lowering and raising the bar uses a `transform` based on a subview height, so we need to
       // update the transform after layout changes because the height may have changed.
+
       updatePosition()
     }
 
@@ -488,17 +435,17 @@ extension ActionArea {
     private func updatePosition() {
       switch position {
       case .lowered:
-        barWrapper.transform = CGAffineTransform(translationX: 0, y: barWrapper.bounds.height)
+        bar.transform = CGAffineTransform(translationX: 0, y: bar.bounds.height)
       case .raised:
-        barWrapper.transform = .identity
+        bar.transform = .identity
       }
       updateAdditionalSafeAreaInsets()
     }
 
     private func updateAdditionalSafeAreaInsets() {
-      if position == .raised, barWrapper.alpha > 0 {
+      if position == .raised, bar.alpha > 0 {
         content.additionalSafeAreaInsets =
-          UIEdgeInsets(top: 0, left: 0, bottom: barWrapper.bounds.height, right: 0)
+          UIEdgeInsets(top: 0, left: 0, bottom: bar.bounds.height, right: 0)
       } else {
         content.additionalSafeAreaInsets = .zero
       }
@@ -550,8 +497,7 @@ extension ActionArea.BarViewController {
       message += "  window.safeAreaInsets: \(window.safeAreaInsets)\n"
     }
     vc("barViewController", self, &message)
-    v("barViewController.barWrapper", barWrapper, &message)
-    v("barViewController.buttonBar", bar, &message)
+    v("barViewController.bar", bar, &message)
     vc("barViewController.content", content, &message)
 
     return message

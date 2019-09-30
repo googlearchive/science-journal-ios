@@ -17,6 +17,7 @@
 		3F158A18231E0AF9005E319E /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F158A17231E0AF9005E319E /* ContentContainerViewController.swift */; };
 		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
 		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
+		3F18EBDB233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18EBDA233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
 		3F22062423046E9D00FB19D0 /* ActionAreaBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */; };
 		3F264A8722E8B53C00BDD732 /* XCTestCase+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */; };
@@ -667,6 +668,7 @@
 		3F158A17231E0AF9005E319E /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
+		3F18EBDA233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutuallyExclusiveConstraints.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
 		3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaBarViewController.swift; sourceTree = "<group>"; };
 		3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UIImage.swift"; sourceTree = "<group>"; };
@@ -1399,6 +1401,7 @@
 				3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */,
 				3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */,
 				3F158A0E231DF370005E319E /* FeatureEnabler.swift */,
+				3F18EBDA233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift */,
 				58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */,
 				3F6D29F1233C14FB004D9318 /* Tinting.swift */,
 				3F591E25232888BE00491D65 /* UIKit+ActionArea.swift */,
@@ -3783,6 +3786,7 @@
 				489182C21E4542CE00E91D73 /* ChartData.swift in Sources */,
 				8B94040B209A0F470058AD65 /* ExperimentsListCellBase.swift in Sources */,
 				3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */,
+				3F18EBDB233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift in Sources */,
 				687232231F703F8E0080E57F /* MaterialLeftBarButtonItems.swift in Sources */,
 				4850DC9921C9797C00A5C4A0 /* RemoteConfigManager.swift in Sources */,
 				8B9BEC352134863B00225EF5 /* CommonUIComponentsOpen.swift in Sources */,

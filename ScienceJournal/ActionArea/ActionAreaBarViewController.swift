@@ -163,35 +163,7 @@ extension ActionArea {
       }
     }
 
-    private final class PrimaryConstraints {
-      private let compact: Constraint
-      private let regular: Constraint
-
-      init(barWrapper: SafeMarginWrapperView, primary: UIView, spacing: CGFloat) {
-        primary.snp.makeConstraints { make in
-          make.bottom.equalTo(barWrapper.snp.top).offset(-1 * spacing)
-        }
-        let constraints = primary.snp.prepareConstraints { prepare in
-          prepare.centerX.equalToSuperview()
-          prepare.right.equalTo(barWrapper.contentView)
-        }
-        precondition(constraints.count == 2, "Failed to prepare constraints.")
-        compact = constraints[0]
-        regular = constraints[1]
-      }
-
-      func activate(for traitCollection: UITraitCollection) {
-        if traitCollection.horizontalSizeClass == .compact {
-          regular.deactivate()
-          compact.activate()
-        } else {
-          regular.deactivate()
-          compact.activate()
-        }
-      }
-    }
-
-    private var primaryConstraints: PrimaryConstraints?
+    private var primaryConstraints: MutuallyExclusiveConstraints<UIUserInterfaceSizeClass>?
 
     /// The `ActionItem` to display in the Action Area Bar.
     var actionItem: ActionItem = .empty {
@@ -212,12 +184,14 @@ extension ActionArea {
         if let primary = primary {
           primary.layoutIfNeeded()
           view.addSubview(primary)
-          primaryConstraints = PrimaryConstraints(
-            barWrapper: barWrapper,
-            primary: primary,
-            spacing: Metrics.barToFABSpacing
-          )
-          primaryConstraints?.activate(for: traitCollection)
+          primaryConstraints = MutuallyExclusiveConstraints { constraints in
+            primary.snp.makeConstraints { make in
+              make.bottom.equalTo(bar.snp.top).offset(-1 * Metrics.barToFABSpacing)
+            }
+            constraints[.compact] = primary.snp.prepareConstraints { $0.centerX.equalToSuperview() }
+            constraints[.regular] = primary.snp.prepareConstraints { $0.right.equalTo(bar) }
+          }
+          primaryConstraints?.activate(traitCollection.horizontalSizeClass)
         } else {
           primaryConstraints = nil
         }
@@ -475,6 +449,7 @@ extension ActionArea {
       view.layer.shadowOffset = Metrics.barShadow.bottomShadowOffset
       return view
     }()
+
     private let content: UIViewController
     private let barWrapper = SafeMarginWrapperView()
 

@@ -23,29 +23,16 @@ import third_party_objective_c_material_components_ios_components_ShadowLayer_Sh
 extension ActionArea {
 
   // TODO: Extract to separate file after implementing custom bar items.
-  struct ActionItem {
+  struct ActionItem: Equatable {
     static let empty: ActionItem = ActionItem(primary: nil, items: [])
 
-    var isEmpty: Bool { return primary == nil && items.isEmpty }
+    var isEmpty: Bool { return self == .empty }
 
-    let primary: UIButton?
+    let primary: BarButtonItem?
     let items: [BarButtonItem]
 
     init(primary: BarButtonItem? = nil, items: [BarButtonItem]) {
-      func create(primary: BarButtonItem) -> UIButton {
-        let button = MDCFloatingButton()
-        button.mode = .expanded
-        button.setTitle(primary.title, for: .normal)
-        button.setImage(primary.image, for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.setBackgroundColor(.white, for: .normal)
-        let insets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
-        button.setContentEdgeInsets(insets, for: .default, in: .expanded)
-        button.addTarget(primary, action: #selector(BarButtonItem.execute), for: .touchUpInside)
-        return button
-      }
-
-      self.primary = primary.map(create(primary:))
+      self.primary = primary
       self.items = items
     }
   }
@@ -95,7 +82,11 @@ extension ActionArea {
     /// The `ActionItem` to display in the Action Area Bar.
     var actionItem: ActionItem = .empty {
       didSet {
-        primary = actionItem.primary
+        // We can get an equivalent item when the AA is in the `modal` state in portrait orientation
+        // and the modal content VC is hidden or re-shown, which will result in undesired animation.
+        guard oldValue != actionItem else { return }
+
+        primary = actionItem.primary.map(create(primary:))
 
         // TODO:
         //   Revisit this animation. The current approach performs much better than replacing the
@@ -173,6 +164,19 @@ extension ActionArea {
           })
         }
       }
+    }
+
+    private func create(primary: BarButtonItem) -> UIButton {
+      let button = MDCFloatingButton()
+      button.mode = .expanded
+      button.setTitle(primary.title, for: .normal)
+      button.setImage(primary.image, for: .normal)
+      button.setTitleColor(.black, for: .normal)
+      button.setBackgroundColor(.white, for: .normal)
+      let insets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+      button.setContentEdgeInsets(insets, for: .default, in: .expanded)
+      button.addTarget(primary, action: #selector(BarButtonItem.execute), for: .touchUpInside)
+      return button
     }
 
     /// Lower the bar.

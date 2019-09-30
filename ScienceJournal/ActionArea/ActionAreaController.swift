@@ -401,7 +401,7 @@ extension ActionArea {
     }
 
     private func updateBarButtonItems() {
-      let newActionItem = createActionItem()
+      let newActionItem = currentActionItem()
 
       if isExpanded == false {
         masterBarViewController.actionItem = newActionItem
@@ -410,27 +410,14 @@ extension ActionArea {
       }
     }
 
-    // Create `ActionItem` for the appropriate content.
-    private func createActionItem() -> ActionItem {
-      func items(for content: Content) -> ActionItem {
-        switch (state, content.mode) {
-        case let (.normal, .stateless(items)), let (.modal, .stateless(items)):
-          return ActionItem(items: items)
-        case let (.normal, .stateful(nonModal, _)):
-          nonModal.primary.delegate = self
-          return ActionItem(primary: nonModal.primary, items: nonModal.items)
-        case let (.modal, .stateful(_, modal)):
-          modal.primary.delegate = self
-          return ActionItem(primary: modal.primary, items: modal.items)
-        }
-      }
-
+    // The current `ActionItem` for the appropriate content.
+    private func currentActionItem() -> ActionItem {
       if let detail = presentedDetailViewController ?? modalDetailViewController {
         // Use the presented detail content if it exists.
-        return items(for: detail)
+        return detail.currentActionItem(for: state, delegatingTo: self)
       } else if let master = presentedMasterViewController {
         // Otherwise the top-most master content.
-        return items(for: master)
+        return master.currentActionItem(for: state, delegatingTo: self)
       } else {
         return .empty
       }
@@ -486,7 +473,7 @@ extension ActionArea {
       } else {
         detail = ActionArea.DetailContentContainerViewController(
           content: vc,
-          mode: .stateless(items: [])
+          mode: .stateless(actionItem: .empty)
         )
       }
 
@@ -533,6 +520,25 @@ extension ActionArea {
       navController.popToViewController(newTop, animated: true)
     }
 
+  }
+
+}
+
+// MARK: - ActionItem
+
+private extension ActionArea.Content {
+
+  func currentActionItem(
+    for state: ActionArea.Controller.State,
+    delegatingTo delegate: ActionAreaBarButtonItemDelegate
+  ) -> ActionArea.ActionItem {
+    switch (state, mode) {
+    case let (_, .stateless(actionItem)),
+         let (.normal, .stateful(actionItem, _)),
+         let (.modal, .stateful(_, actionItem)):
+      actionItem.primary?.delegate = delegate
+      return actionItem
+    }
   }
 
 }
@@ -638,7 +644,7 @@ private extension ActionArea.Controller {
     case (.portrait, .enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.portrait, .enter, .delegate):
-      masterBarViewController.actionItem = createActionItem()
+      masterBarViewController.actionItem = currentActionItem()
       masterBarViewController.isEnabled = actionsAreEnabled
       navController.transitionCoordinator?.animate(alongsideTransition: { _ in
         self.masterBarViewController.raise()
@@ -670,7 +676,7 @@ private extension ActionArea.Controller {
       // expansion
       detailNavController.setViewControllers(emptyStates, animated: false)
 
-      detailBarViewController.actionItem = createActionItem()
+      detailBarViewController.actionItem = currentActionItem()
       detailBarViewController.raise()
       detailBarViewController.isEnabled = actionsAreEnabled
 
@@ -732,7 +738,7 @@ private extension ActionArea.Controller {
     with transitionCoordinator: UIViewControllerTransitionCoordinator?
   ) {
     let oldActionItem = bar.actionItem
-    let newActionItem = createActionItem()
+    let newActionItem = currentActionItem()
     let type = DetailTransitionType(before: oldActionItem, after: newActionItem)
 
     if [.show, .update].contains(type) {

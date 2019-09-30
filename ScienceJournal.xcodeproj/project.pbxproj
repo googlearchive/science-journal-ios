@@ -18,6 +18,7 @@
 		3F173D9A22A9C18B00E9D249 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */; };
 		3F173E1F22AAC94800E9D249 /* FileSystemLayoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */; };
 		3F18EBDB233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18EBDA233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift */; };
+		3F18EBDD234007B700A8E52E /* ActionAreaActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18EBDC234007B700A8E52E /* ActionAreaActionItem.swift */; };
 		3F1FF115229F04EA000D9136 /* LaunchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */; };
 		3F22062423046E9D00FB19D0 /* ActionAreaBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */; };
 		3F264A8722E8B53C00BDD732 /* XCTestCase+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */; };
@@ -669,6 +670,7 @@
 		3F173D9922A9C18B00E9D249 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		3F173E1E22AAC94800E9D249 /* FileSystemLayoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLayoutTest.swift; sourceTree = "<group>"; };
 		3F18EBDA233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutuallyExclusiveConstraints.swift; sourceTree = "<group>"; };
+		3F18EBDC234007B700A8E52E /* ActionAreaActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaActionItem.swift; sourceTree = "<group>"; };
 		3F1FF114229F04EA000D9136 /* LaunchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContainerViewController.swift; sourceTree = "<group>"; };
 		3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaBarViewController.swift; sourceTree = "<group>"; };
 		3F264A8622E8B53C00BDD732 /* XCTestCase+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UIImage.swift"; sourceTree = "<group>"; };
@@ -1390,6 +1392,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA7051F22F8DD2600753842 /* ActionArea.swift */,
+				3F18EBDC234007B700A8E52E /* ActionAreaActionItem.swift */,
 				3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */,
 				3F22062323046E9D00FB19D0 /* ActionAreaBarViewController.swift */,
 				3F71B71522B466D90015074A /* ActionAreaController.swift */,
@@ -3818,6 +3821,7 @@
 				5CBD9AA91F6C1B8100D22D21 /* PinType.swift in Sources */,
 				5C2C2A372037922E007F2FA5 /* CopyFileOperation.swift in Sources */,
 				8BA975A520FE5B8700A0306E /* UserAssetManager.swift in Sources */,
+				3F18EBDD234007B700A8E52E /* ActionAreaActionItem.swift in Sources */,
 				8B2A67621EB8FB89004D92BC /* PhotoLibraryDataSource.swift in Sources */,
 				8B8207E5207518D50090C5E9 /* UsageTracker.swift in Sources */,
 				5C7219621ED8D04700817F0B /* UserMetadata.swift in Sources */,

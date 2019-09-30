@@ -911,7 +911,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       emptyState: recordingDetailEmptyState,
       actionEnablingKeyPath: \.isEditable,
       outsideOfSafeAreaKeyPath: \.isContentOutsideOfSafeArea,
-      mode: .stateless(items: [textItem, cameraItem, galleryItem])
+      mode: .stateless(actionItem: ActionArea.ActionItem(
+        items: [textItem, cameraItem, galleryItem]
+      ))
     )
 
     return content
@@ -988,8 +990,11 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       }
 
       return .stateful(
-        nonModal: (primary: recordItem, items: [addSensorItem, snapshotItem]),
-        modal: (primary: stopItem, items: [textItem, snapshotItem, cameraItem, galleryItem])
+        nonModal: ActionArea.ActionItem(primary: recordItem, items: [addSensorItem, snapshotItem]),
+        modal: ActionArea.ActionItem(
+          primary: stopItem,
+          items: [textItem, snapshotItem, cameraItem, galleryItem]
+        )
       )
     }
 
@@ -1008,7 +1013,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       emptyState: emptyState,
       actionEnablingKeyPath: \.shouldAllowAdditions,
       outsideOfSafeAreaKeyPath: \.isContentOutsideOfSafeArea,
-      mode: .stateless(items: [textItem, sensorsItem, cameraItem, galleryItem])
+      mode: .stateless(actionItem: ActionArea.ActionItem(
+        items: [textItem, sensorsItem, cameraItem, galleryItem]
+      ))
     )
 
     return content

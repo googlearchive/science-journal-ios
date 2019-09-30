@@ -22,22 +22,11 @@ enum ActionArea {
   /// The mode for content view controllers displayed in the Action Area.
   enum ContentMode {
 
-    /// The states used in the `stateful` mode.
-    typealias State = (
-
-      /// The primary action that toggles to the other state.
-      primary: BarButtonItem,
-
-      /// The items to display in this state.
-      items: [BarButtonItem]
-
-    )
-
     /// The `stateless` mode displays the same actions at all times.
     ///
     /// - Parameters:
-    ///   - items: The items to display in the `ActionArea.Bar`.
-    case stateless(items: [BarButtonItem])
+    ///   - actionItem: The `ActionItem` to display in the `ActionArea.Bar`.
+    case stateless(actionItem: ActionItem)
 
     /// The `stateful` mode toggles between two sets of actions when the primary action is taken.
     /// In the `nonModal` state, the Action Area behaves the same as when in the `stateless` mode.
@@ -47,7 +36,7 @@ enum ActionArea {
     /// - Parameters:
     ///   - nonModal: The primary action and action items for the `nonModal` state.
     ///   - modal: The primary action and action items for the `modal` state.
-    case stateful(nonModal: State, modal: State)
+    case stateful(nonModal: ActionItem, modal: ActionItem)
 
   }
 

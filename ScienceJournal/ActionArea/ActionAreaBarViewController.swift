@@ -22,21 +22,6 @@ import third_party_objective_c_material_components_ios_components_ShadowLayer_Sh
 
 extension ActionArea {
 
-  // TODO: Extract to separate file after implementing custom bar items.
-  struct ActionItem: Equatable {
-    static let empty: ActionItem = ActionItem(primary: nil, items: [])
-
-    var isEmpty: Bool { return self == .empty }
-
-    let primary: BarButtonItem?
-    let items: [BarButtonItem]
-
-    init(primary: BarButtonItem? = nil, items: [BarButtonItem]) {
-      self.primary = primary
-      self.items = items
-    }
-  }
-
   /// The bar where items are displayed.
   final class BarViewController: UIViewController {
 

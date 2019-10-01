@@ -16,6 +16,6 @@
 
 struct FeatureFlags {
 
-  static var isActionAreaEnabled: Bool = true
+  static var isActionAreaEnabled: Bool = false
 
 }

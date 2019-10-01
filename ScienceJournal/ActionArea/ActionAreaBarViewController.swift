@@ -45,56 +45,46 @@ extension ActionArea {
       }
     }
 
-    private func transition(
-      before: () -> Void = {},
-      during: @escaping () -> Void = {},
-      after: @escaping () -> Void = {}
-    ) {
-      if let transitionCoordinator = transitionCoordinator, transitionCoordinator.isAnimated {
-        before()
-        transitionCoordinator.animateAlongsideTransition(in: view, animation: { _ in
-          during()
-        }) { _ in
-          after()
-        }
-      } else {
-        before()
-        during()
-        after()
-      }
+    /// Transitions related to the bar and actions.
+    enum TransitionType {
+
+      /// Raise the bar with the specified actions.
+      case raise(with: ActionItem, isEnabled: Bool)
+
+      /// Update the bar with the specified actions.
+      case update(with: ActionItem, isEnabled: Bool)
+
+      /// Enable or disable the bar.
+      case enable(Bool)
+
+      /// Lower the bar and clear the actions.
+      case lower
+
     }
+
+    private let content: UIViewController
+
+    // MARK: - Initializers
+
+    /// Designated initializer.
+    ///
+    /// - Parameters:
+    ///   - content: The content view controller on which to overlay the bar.
+    init(content: UIViewController) {
+      self.content = content
+      super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Implementation
 
     private var primaryConstraints: MutuallyExclusiveConstraints<UIUserInterfaceSizeClass>?
 
     /// The `ActionItem` to display in the Action Area Bar.
-    var actionItem: ActionItem = .empty {
-      didSet {
-        // We can get an equivalent item when the AA is in the `modal` state in portrait orientation
-        // and the modal content VC is hidden or re-shown, which will result in undesired animation.
-        guard oldValue != actionItem else { return }
-
-        primary = actionItem.primary.map(create(primary:))
-
-        // TODO:
-        //   Revisit this animation. The current approach performs much better than replacing the
-        //   bar, but it won't handle transitions where the action descriptions have different
-        //   numbers of lines.
-        let snapshot = bar.snapshotView(afterScreenUpdates: false)
-        transition(before: {
-          if let snapshot = snapshot {
-            bar.superview?.addSubview(snapshot)
-            snapshot.frame = bar.frame
-          }
-          bar.alpha = 0
-          bar.items = actionItem.items
-        }, during: {
-          snapshot?.alpha = 0
-          self.bar.alpha = 1
-        }, after: {
-          snapshot?.removeFromSuperview()
-        })
-      }
-    }
+    private var actionItem: ActionItem = .empty
 
     private var primary: UIButton? {
       didSet {
@@ -112,46 +102,38 @@ extension ActionArea {
         } else {
           primaryConstraints = nil
         }
-
-        switch (oldValue, primary) {
-        case (.none, .none):
-          break
-        case let (.some(from), .none):
-          transition(during: {
-            from.alpha = 0
-          }, after: {
-            from.removeFromSuperview()
-          })
-        case let (.none, .some(to)):
-          transition(before: {
-            to.alpha = 0
-          }, during: {
-            to.alpha = 1
-          })
-        case let (.some(from), .some(to)):
-          transition(before: {
-            to.alpha = 0
-          }, during: {
-            UIView.animateKeyframes(withDuration: 0, delay: 0, options: [], animations: {
-              UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3) {
-                from.titleLabel?.alpha = 0
-                from.imageView?.alpha = 0
-              }
-              UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.4) {
-                let x = to.bounds.width / from.bounds.width
-                from.transform = CGAffineTransform(scaleX: x, y: 1)
-              }
-              UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.3) {
-                from.alpha = 0
-                to.alpha = 1
-              }
-            })
-          }, after: {
-            from.removeFromSuperview()
-          })
-        }
       }
     }
+
+    private var barHeightFromBottomEdge: CGFloat { return view.bounds.height - bar.frame.minY }
+
+    private var currentAlpha: CGFloat {
+      switch (actionItem.isEmpty, isEnabled) {
+      case (true, false), (true, true):
+        return 0
+      case (false, true):
+        return 1
+      case (false, false):
+        return Metrics.Bar.disabledAlpha
+      }
+    }
+
+    /// Enable or disable the bar.
+    private var isEnabled: Bool = true {
+      didSet {
+        primary?.isUserInteractionEnabled = isEnabled
+        bar.isUserInteractionEnabled = isEnabled
+      }
+    }
+
+    private var bar: Bar = {
+      let view = Bar()
+      view.clipsToBounds = false
+      view.layer.shadowRadius = Metrics.Bar.shadow.bottomShadowRadius
+      view.layer.shadowOffset = Metrics.Bar.shadow.bottomShadowOffset
+      view.alpha = 0
+      return view
+    }()
 
     private func create(primary: BarButtonItem) -> UIButton {
       let button = MDCFloatingButton()
@@ -166,93 +148,13 @@ extension ActionArea {
       return button
     }
 
-    /// Lower the bar.
-    func lower() {
-      position = .lowered
-    }
-
-    /// Raise the bar.
-    func raise() {
-      position = .raised
-    }
-
-    /// Hide the bar.
-    func hide() {
-      primary?.alpha = 0
-      bar.alpha = 0
-      updateAdditionalSafeAreaInsets()
-    }
-
-    /// Show the bar.
-    func show() {
-      primary?.alpha = 1
-      bar.alpha = 1
-      updateAdditionalSafeAreaInsets()
-    }
-
-    /// Enable or disable the bar.
-    var isEnabled: Bool = true {
-      didSet {
-        if isEnabled {
-          bar.alpha = 1
-        } else {
-          bar.alpha = Metrics.Bar.disabledAlpha
-        }
-        bar.isUserInteractionEnabled = isEnabled
+    private func updateAdditionalSafeAreaInsets() {
+      if bar.alpha > 0 {
+        content.additionalSafeAreaInsets =
+          UIEdgeInsets(top: 0, left: 0, bottom: barHeightFromBottomEdge, right: 0)
+      } else {
+        content.additionalSafeAreaInsets = .zero
       }
-    }
-
-    /// Elevate or flatten the bar.
-    var barIsElevated: Bool = true {
-      didSet {
-        guard oldValue != barIsElevated else { return }
-
-        let barAnimation = CABasicAnimation(keyPath: "shadowOpacity")
-        let toValue: Float
-        if barIsElevated {
-          toValue = Metrics.Bar.shadow.bottomShadowOpacity
-        } else {
-          toValue = 0
-        }
-        barAnimation.fromValue = bar.layer.shadowOpacity
-        barAnimation.toValue = toValue
-        bar.layer.shadowOpacity = toValue
-        bar.layer.add(barAnimation, forKey: "barAnimation")
-      }
-    }
-
-    private enum Position {
-      case raised
-      case lowered
-    }
-
-    private var bar: Bar = {
-      let view = Bar()
-      view.clipsToBounds = false
-      view.layer.shadowRadius = Metrics.Bar.shadow.bottomShadowRadius
-      view.layer.shadowOffset = Metrics.Bar.shadow.bottomShadowOffset
-      return view
-    }()
-
-    private let content: UIViewController
-
-    private var position: Position = .lowered {
-      didSet {
-        updatePosition()
-      }
-    }
-
-    /// Designated initializer.
-    ///
-    /// - Parameters:
-    ///   - content: The content view controller on which to overlay the bar.
-    init(content: UIViewController) {
-      self.content = content
-      super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Lifecycle
@@ -290,38 +192,176 @@ extension ActionArea {
       }
     }
 
-    override func viewDidLayoutSubviews() {
-      super.viewDidLayoutSubviews()
-      // Lowering and raising the bar uses a `transform` based on a subview height, so we need to
-      // update the transform after layout changes because the height may have changed.
-
-      updatePosition()
-    }
-
     override var transitionCoordinator: UIViewControllerTransitionCoordinator? {
       return super.transitionCoordinator ?? content.transitionCoordinator
     }
 
-    // MARK: - Implementation
+    // MARK: - Transitions
 
-    private func updatePosition() {
-      switch position {
-      case .lowered:
-        bar.transform = CGAffineTransform(translationX: 0, y: bar.bounds.height)
-      case .raised:
-        bar.transform = .identity
+    /// Elevate or flatten the bar.
+    var barIsElevated: Bool = true {
+      didSet {
+        guard oldValue != barIsElevated else { return }
+
+        let barAnimation = CABasicAnimation(keyPath: "shadowOpacity")
+        let toValue: Float
+        if barIsElevated {
+          toValue = Metrics.Bar.shadow.bottomShadowOpacity
+        } else {
+          toValue = 0
+        }
+        barAnimation.fromValue = bar.layer.shadowOpacity
+        barAnimation.toValue = toValue
+        bar.layer.shadowOpacity = toValue
+        bar.layer.add(barAnimation, forKey: "barAnimation")
       }
-      updateAdditionalSafeAreaInsets()
     }
 
-    private func updateAdditionalSafeAreaInsets() {
-      if position == .raised, bar.alpha > 0 {
-        content.additionalSafeAreaInsets =
-          UIEdgeInsets(top: 0, left: 0, bottom: bar.bounds.height, right: 0)
+    func transition(_ type: TransitionType, animated: Bool = true) {
+      switch type {
+      case let .raise(with: newActionItem, isEnabled: isEnabled):
+        actionItem = newActionItem
+        bar.items = newActionItem.items
+        primary = newActionItem.primary.map(create(primary:))
+        view.layoutIfNeeded()
+        self.isEnabled = isEnabled
+
+        transition(before: {
+          self.bar.transform = CGAffineTransform(translationX: 0, y: self.barHeightFromBottomEdge)
+        }, during: {
+          self.bar.transform = .identity
+          self.primary?.alpha = self.currentAlpha
+          self.bar.alpha = self.currentAlpha
+          self.updateAdditionalSafeAreaInsets()
+        }, after: {}, animated: animated)
+      case let .update(with: newActionItem, isEnabled: isEnabled):
+        // We can get an equivalent item when the AA is in the `modal` state in portrait orientation
+        // and the modal content VC is hidden or re-shown, which will result in undesired animation.
+        guard actionItem != newActionItem else { return }
+
+        actionItem = newActionItem
+        self.isEnabled = isEnabled
+
+        let oldPrimary = primary
+        let newPrimary = newActionItem.primary.map(create(primary:))
+        transition(from: oldPrimary, to: newPrimary)
+
+        transition(to: newActionItem.items, animated: animated)
+      case let .enable(isEnabled):
+        transition(before: {
+          self.isEnabled = isEnabled
+        }, during: {
+          self.primary?.alpha = self.currentAlpha
+          self.bar.alpha = self.currentAlpha
+          self.updateAdditionalSafeAreaInsets()
+        }, after: {}, animated: animated)
+      case .lower:
+        transition(before: {}, during: {
+          self.bar.transform = CGAffineTransform(translationX: 0, y: self.barHeightFromBottomEdge)
+        }, after: {
+          self.bar.transform = .identity
+          self.actionItem = .empty
+          self.bar.items = []
+          self.bar.alpha = self.currentAlpha
+          self.primary = nil
+          self.updateAdditionalSafeAreaInsets()
+        }, animated: animated)
+      }
+    }
+
+    private func transition(to items: [BarButtonItem], animated: Bool) {
+      guard !items.isEmpty else {
+        transition(during: {
+          self.bar.alpha = self.currentAlpha
+          self.updateAdditionalSafeAreaInsets()
+        }, animated: animated)
+        return
+      }
+
+      // TODO:
+      //   Revisit this animation. The current approach performs much better than replacing the
+      //   bar, but it won't handle transitions where the action descriptions have different
+      //   numbers of lines.
+      let snapshot = bar.snapshotView(afterScreenUpdates: false)
+      transition(before: {
+        if let snapshot = snapshot {
+          bar.superview?.addSubview(snapshot)
+          snapshot.frame = bar.frame
+        }
+        bar.alpha = 0
+        bar.items = items
+      }, during: {
+        snapshot?.alpha = 0
+        self.bar.alpha = self.currentAlpha
+        self.updateAdditionalSafeAreaInsets()
+      }, after: {
+        snapshot?.removeFromSuperview()
+      }, animated: animated)
+    }
+
+    private func transition(from: UIButton?, to: UIButton?) {
+      switch (from, to) {
+      case (.none, .none):
+        break
+      case let (.some(from), .none):
+        transition(during: {
+          from.alpha = 0
+        }, after: {
+          from.removeFromSuperview()
+        }, animated: true)
+      case let (.none, .some(to)):
+        transition(before: {
+          self.primary = to
+          to.alpha = 0
+        }, during: {
+          to.alpha = 1
+        }, animated: true)
+      case let (.some(from), .some(to)):
+        transition(before: {
+          self.primary = to
+          to.alpha = 0
+        }, during: {
+          UIView.animateKeyframes(withDuration: 0, delay: 0, options: [], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3) {
+              from.titleLabel?.alpha = 0
+              from.imageView?.alpha = 0
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.4) {
+              let x = to.bounds.width / from.bounds.width
+              from.transform = CGAffineTransform(scaleX: x, y: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.3) {
+              from.alpha = 0
+              to.alpha = 1
+            }
+          })
+        }, after: {
+          from.removeFromSuperview()
+        }, animated: true)
+      }
+    }
+
+    private func transition(
+      before: () -> Void = {},
+      during: @escaping () -> Void = {},
+      after: @escaping () -> Void = {},
+      animated: Bool
+    ) {
+      if let coordinator = transitionCoordinator, coordinator.isAnimated, animated {
+        before()
+        coordinator.animateAlongsideTransition(in: view, animation: { _ in
+          during()
+        }) { _ in
+          after()
+        }
       } else {
-        content.additionalSafeAreaInsets = .zero
+        before()
+        during()
+        after()
       }
     }
+
+    // MARK: - Descriptions
 
     override var description: String {
       return "ActionArea.\(type(of: self))"
@@ -366,6 +406,8 @@ extension ActionArea {
       view.axis = .horizontal
       view.alignment = .center
       view.distribution = .fillEqually
+      // The stack view needs at least one view to calculate its intrinsic content size.
+      view.addArrangedSubview(UIView())
       return view
     }()
 

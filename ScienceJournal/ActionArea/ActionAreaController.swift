@@ -404,9 +404,11 @@ extension ActionArea {
       let newActionItem = currentActionItem()
 
       if isExpanded == false {
-        masterBarViewController.actionItem = newActionItem
+        masterBarViewController
+          .transition(.update(with: newActionItem, isEnabled: actionsAreEnabled))
       } else {
-        detailBarViewController.actionItem = newActionItem
+        detailBarViewController
+          .transition(.update(with: newActionItem, isEnabled: actionsAreEnabled))
       }
     }
 
@@ -599,30 +601,6 @@ private extension ActionArea.Controller {
     case didShow
   }
 
-  /// The detail transition type, which specifies how the bar animates.
-  enum DetailTransitionType {
-    case none
-    case hide
-    case show
-    case update
-
-    init(
-      before: ActionArea.ActionItem,
-      after: ActionArea.ActionItem
-    ) {
-      switch (before.isEmpty, after.isEmpty) {
-      case (true, true):
-        self = .none
-      case (false, true):
-        self = .hide
-      case (true, false):
-        self = .show
-      case (false, false):
-        self = .update
-      }
-    }
-  }
-
   /// The master transition source.
   ///
   /// Transitions can be initiated from either a user action or a navgiation controller transition.
@@ -644,26 +622,17 @@ private extension ActionArea.Controller {
     case (.portrait, .enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.portrait, .enter, .delegate):
-      masterBarViewController.actionItem = currentActionItem()
-      masterBarViewController.isEnabled = actionsAreEnabled
-      navController.transitionCoordinator?.animate(alongsideTransition: { _ in
-        self.masterBarViewController.raise()
-      })
+      masterBarViewController
+        .transition(.raise(with: currentActionItem(), isEnabled: actionsAreEnabled))
     case (.portrait, .internal, .backAction):
       sendOverriddenMasterBackButtonAction()
     case (.portrait, .internal, .delegate):
-      transition(
-        bar: masterBarViewController,
-        with: navController.transitionCoordinator
-      )
+      masterBarViewController
+        .transition(.update(with: currentActionItem(), isEnabled: actionsAreEnabled))
     case (.portrait, .leave, .backAction):
       sendOverriddenMasterBackButtonAction()
     case (.portrait, .leave, .delegate):
-      navController.transitionCoordinator?.animate(alongsideTransition: { _ in
-        self.masterBarViewController.lower()
-      }, completion: { _ in
-        self.masterBarViewController.actionItem = .empty
-      })
+      masterBarViewController.transition(.lower)
     case (.landscape, .enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.landscape, .enter, .delegate):
@@ -676,9 +645,10 @@ private extension ActionArea.Controller {
       // expansion
       detailNavController.setViewControllers(emptyStates, animated: false)
 
-      detailBarViewController.actionItem = currentActionItem()
-      detailBarViewController.raise()
-      detailBarViewController.isEnabled = actionsAreEnabled
+      detailBarViewController.transition(
+        .raise(with: currentActionItem(), isEnabled: actionsAreEnabled),
+        animated: false
+      )
 
       presentedMasterViewController.view.layoutMargins = layout.sizes.masterLayoutMargins
       navController.transitionCoordinator?.animate(alongsideTransition: nil) { _ in
@@ -715,9 +685,7 @@ private extension ActionArea.Controller {
             self.view.layoutIfNeeded()
           }
         }, completion: { _ in
-          self.detailBarViewController.lower()
-          self.detailBarViewController.actionItem = .empty
-          self.detailBarViewController.show()
+          self.detailBarViewController.transition(.lower, animated: false)
 
           // collapse
           self.detailNavController.setViewControllers([], animated: false)
@@ -732,38 +700,6 @@ private extension ActionArea.Controller {
     }
   }
 
-  /// Transition the content of the Action Area Bar during a detail content presentation.
-  func transition(
-    bar: ActionArea.BarViewController,
-    with transitionCoordinator: UIViewControllerTransitionCoordinator?
-  ) {
-    let oldActionItem = bar.actionItem
-    let newActionItem = currentActionItem()
-    let type = DetailTransitionType(before: oldActionItem, after: newActionItem)
-
-    if [.show, .update].contains(type) {
-      bar.actionItem = newActionItem
-    }
-    transitionCoordinator?.animate(alongsideTransition: { _ in
-      switch type {
-      case .none:
-        break
-      case .hide:
-        bar.hide()
-      case .show:
-        bar.show()
-      case .update:
-        break
-      }
-
-      bar.isEnabled = self.actionsAreEnabled
-    }, completion: { _ in
-      if type == .hide {
-        bar.actionItem = newActionItem
-      }
-    })
-  }
-
   var actionsAreEnabled: Bool {
     return presentedMasterViewController?.actionEnabler?.isEnabled ?? true
   }
@@ -773,10 +709,10 @@ private extension ActionArea.Controller {
 
     func animate() {
       if isExpanded {
-        detailBarViewController.isEnabled = actionsAreEnabled
+        detailBarViewController.transition(.enable(actionsAreEnabled))
         master.emptyState.isEnabled = actionsAreEnabled
       } else {
-        masterBarViewController.isEnabled = actionsAreEnabled
+        masterBarViewController.transition(.enable(actionsAreEnabled))
       }
     }
 
@@ -875,10 +811,8 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
       // Non-animated detail transitions are handled by the main transition method.
       guard animated else { return }
 
-      transition(
-        bar: detailBarViewController,
-        with: navigationController.transitionCoordinator
-      )
+      detailBarViewController
+        .transition(.update(with: currentActionItem(), isEnabled: actionsAreEnabled))
     }
   }
 

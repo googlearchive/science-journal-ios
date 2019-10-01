@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 
-// swiftlint:disable file_length
-
 import SnapKit
 import UIKit
 
@@ -971,5 +969,3 @@ extension UINavigationController.Operation: CustomStringConvertible {
 
 }
 #endif
-
-// swiftlint:enable file_length

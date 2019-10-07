@@ -378,7 +378,9 @@ open class CameraViewController: ScienceJournalViewController, DrawerItemViewCon
     drawerViewController?.minimizeFromFull()
 
     // TODO: Consider AA-specific API.
-    navigationController?.popViewController(animated: true)
+    if FeatureFlags.isActionAreaEnabled {
+      navigationController?.popViewController(animated: true)
+    }
   }
 
   @objc private func enableUserInteraction() {

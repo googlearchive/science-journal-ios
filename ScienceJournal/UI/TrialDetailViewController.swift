@@ -1773,7 +1773,9 @@ extension TrialDetailViewController: NotesViewControllerDelegate {
     processPendingNote(noteText: text)
 
     // TODO: Consider AA-specific API.
-    notesViewController.navigationController?.popViewController(animated: true)
+    if FeatureFlags.isActionAreaEnabled {
+      notesViewController.navigationController?.popViewController(animated: true)
+    }
   }
 
 }

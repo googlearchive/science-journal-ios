@@ -670,7 +670,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       openExperimentUpdateManager?.addExperimentNote(note)
     }
 
-    guard actionAreaController?.isMasterVisible == false else { return }
+    guard FeatureFlags.isActionAreaEnabled, actionAreaController?.isMasterVisible == false else {
+      return
+    }
 
     showSnackbar(
       withMessage: String.actionAreaRecordingNoteSavedMessage,

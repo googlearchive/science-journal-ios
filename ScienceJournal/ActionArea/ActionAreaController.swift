@@ -14,11 +14,10 @@
  *  limitations under the License.
  */
 
+// swiftlint:disable file_length
+
 import SnapKit
 import UIKit
-
-import third_party_objective_c_material_components_ios_components_AppBar_AppBar
-import third_party_objective_c_material_components_ios_components_Buttons_Buttons
 
 extension ActionArea {
 
@@ -46,23 +45,7 @@ extension ActionArea {
 
     private enum Layout: Equatable, CustomDebugStringConvertible {
 
-      struct Sizes {
-        let size: CGSize
-
-        let divider: CGFloat = 0.5
-        private var maxMasterWidth: CGFloat { return size.width }
-        private var minMasterWidth: CGFloat { return maxMasterWidth - detailWidth - divider }
-        private var maxMasterWidthInset: CGFloat { return maxMasterWidth - minMasterWidth }
-        private var masterWidthInset: CGFloat { return (maxMasterWidth - minMasterWidth) / 2 }
-        var masterLayoutMargins: UIEdgeInsets {
-          return UIEdgeInsets(top: 0, left: masterWidthInset, bottom: 0, right: masterWidthInset)
-        }
-
-        var detailWidth: CGFloat { return 476 }
-        var detailOffset: CGFloat { return detailWidth + divider }
-      }
-
-      enum Mode: CustomDebugStringConvertible {
+      enum Mode: Equatable, CustomDebugStringConvertible {
         case collapsed
         case expanded
 
@@ -76,8 +59,24 @@ extension ActionArea {
         }
       }
 
-      case portrait(CGSize)
+      case portrait(CGSize, Mode)
       case landscape(CGSize, Mode)
+
+      init(_ size: CGSize, and masterContentCount: Int = 0) {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+          if size.isWiderThanTall {
+            if masterContentCount > 0 {
+              self = .landscape(size, .expanded)
+            } else {
+              self = .landscape(size, .collapsed)
+            }
+          } else {
+            self = .portrait(size, .collapsed)
+          }
+        } else {
+          self = .portrait(size, .collapsed)
+        }
+      }
 
       var isExpanded: Bool {
         switch self {
@@ -88,69 +87,80 @@ extension ActionArea {
         }
       }
 
-      var sizes: Sizes {
+      var isCollapsed: Bool {
+        return isExpanded == false
+      }
+
+      var mode: Mode {
         switch self {
-        case let .portrait(size), let .landscape(size, _):
-          return Sizes(size: size)
+        case let .portrait(_, mode), let .landscape(_, mode):
+          return mode
         }
       }
 
-      mutating func expand() {
+      var divider: CGFloat { return 0.5 }
+      var detailWidth: CGFloat { return 476 }
+      var detailOffset: CGFloat { return detailWidth + divider }
+      private var minMasterWidth: CGFloat { return maxMasterWidth - detailWidth - divider }
+      private var maxMasterWidthInset: CGFloat { return maxMasterWidth - minMasterWidth }
+      private var masterWidthInset: CGFloat { return (maxMasterWidth - minMasterWidth) / 2 }
+
+      private var maxMasterWidth: CGFloat {
+        switch self {
+        case let .portrait(size, _), let .landscape(size, _):
+          return size.width
+        }
+      }
+
+      func masterLayoutMargins(
+        including systemMinimumLayoutMargins: NSDirectionalEdgeInsets
+      ) -> UIEdgeInsets {
+        return UIEdgeInsets(
+          top: 0,
+          left: masterWidthInset,
+          bottom: 0,
+          right: masterWidthInset + systemMinimumLayoutMargins.leading
+        )
+      }
+
+      func expand() -> Layout {
         switch self {
         case .portrait:
           preconditionFailure("Expansion is not supported in portrait.")
         case .landscape(_, .expanded):
           preconditionFailure("The layout is already expanded.")
         case let .landscape(size, .collapsed):
-          self = .landscape(size, .expanded)
+          return .landscape(size, .expanded)
         }
       }
 
-      mutating func collapse() {
+      func collapse() -> Layout {
         switch self {
         case .portrait:
           preconditionFailure("Expansion is not supported in portrait.")
         case .landscape(_, .collapsed):
           preconditionFailure("The layout is already collapsed.")
         case let .landscape(size, .expanded):
-          self = .landscape(size, .collapsed)
+          return .landscape(size, .collapsed)
         }
-      }
-
-      @discardableResult
-      mutating func update(
-        for size: CGSize = UIScreen.main.bounds.size,
-        with masterContentCount: Int = 0
-      ) -> Layout? {
-        let previousLayout = self
-        if UIDevice.current.userInterfaceIdiom == .pad {
-          if size.isWiderThanTall {
-            if masterContentCount > 0 {
-              self = .landscape(size, .expanded)
-            } else {
-              self = .landscape(size, .collapsed)
-            }
-          } else {
-            self = .portrait(size)
-          }
-        } else {
-          self = .portrait(size)
-        }
-        // Return the previous layout, if it changed.
-        return previousLayout != self ? previousLayout : nil
       }
 
       var debugDescription: String {
         switch self {
         case .portrait:
-          return "portrait"
+          return "portrait(\(mode))"
         case let .landscape(mode):
           return "landscape(\(mode))"
         }
       }
     }
 
-    private var layout: Layout = .portrait(UIScreen.main.bounds.size)
+    private var layout: Layout = Layout(UIScreen.main.bounds.size) {
+      didSet {
+        // The modal VC may need to update its bar button items when the layout changes.
+        modalDetailViewController?.actionAreaStateDidChange(self)
+      }
+    }
 
     /// If the Action Area is using the expanded layout.
     var isExpanded: Bool { return layout.isExpanded }
@@ -302,7 +312,14 @@ extension ActionArea {
 
     // MARK: - Lifecycle
 
-    private var detailTrailingEdgeConstraint: Constraint! // set in viewDidLoad
+    private lazy var layoutConstraints = MutuallyExclusiveConstraints<Layout.Mode> { constraints in
+      constraints[.collapsed] = masterBarViewController.view.snp.prepareConstraints { prepare in
+        prepare.bottom.trailing.equalToSuperview()
+      }
+      constraints[.expanded] = detailBarViewController.view.snp.prepareConstraints { prepare in
+        prepare.bottom.trailing.equalToSuperview()
+      }
+    }
 
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -314,59 +331,33 @@ extension ActionArea {
       view.addSubview(masterBarViewController.view)
       masterBarViewController.didMove(toParent: self)
       masterBarViewController.view.snp.makeConstraints { make in
-        make.top.leading.bottom.equalToSuperview()
+        make.top.leading.equalToSuperview()
       }
 
       addChild(detailBarViewController)
       view.addSubview(detailBarViewController.view)
       detailBarViewController.didMove(toParent: self)
       detailBarViewController.view.snp.makeConstraints { make in
-        make.top.bottom.equalToSuperview()
-        make.width.equalTo(layout.sizes.detailWidth)
-        make.leading.equalTo(masterBarViewController.view.snp.trailing).offset(layout.sizes.divider)
-        detailTrailingEdgeConstraint = make.trailing.equalToSuperview().constraint
+        make.width.equalTo(layout.detailWidth)
+        make.top.bottom.equalTo(masterBarViewController.view)
+        make.leading.equalTo(masterBarViewController.view.snp.trailing).offset(layout.divider)
       }
 
-      layout.update()
       updateTraitCollectionOverrides()
-      updateLayoutConstraints()
+      layoutConstraints.activate(layout.mode)
     }
 
     override func viewWillTransition(
       to size: CGSize,
       with coordinator: UIViewControllerTransitionCoordinator
     ) {
-      super.viewWillTransition(to: size, with: coordinator)
-      if let oldLayout = layout.update(for: size, with: masterContent.count) {
-        transition(from: oldLayout, to: layout, with: coordinator)
-      }
-    }
+      transitionType.update(
+        for: .willTransition(to: size, with: coordinator),
+        and: masterContent.count
+      )
+      transition(layout: layout, type: transitionType, source: .viewWillTransition)
 
-    private func transition(
-      from oldLayout: Layout,
-      to newLayout: Layout,
-      with coordinator: UIViewControllerTransitionCoordinator
-    ) {
-      // TODO: Handle all cases and improve animations.
-      switch (oldLayout.isExpanded, newLayout.isExpanded) {
-      case (false, true):
-        detailNavController.setViewControllers(emptyStates, animated: false)
-        if let presentedDetailViewController = presentedDetailViewController {
-          navController.popViewController(animated: false)
-          detailNavController.pushViewController(presentedDetailViewController, animated: false)
-        }
-      case (true, false):
-        detailNavController.setViewControllers([], animated: false)
-        if let presentedDetailViewController = presentedDetailViewController {
-          navController.pushViewController(presentedDetailViewController, animated: false)
-        }
-      default:
-        break
-      }
-      coordinator.animate(alongsideTransition: { _ in
-        self.updateLayoutConstraints()
-        self.view.layoutIfNeeded()
-      })
+      super.viewWillTransition(to: size, with: coordinator)
     }
 
     private func updateTraitCollectionOverrides() {
@@ -386,15 +377,6 @@ extension ActionArea {
       } else {
         // On iPhone, we use a horizontally compact layout to prevent expansion on plus/max devices.
         setOverrideTraitCollection(horizontallyCompact, forChild: masterBarViewController)
-      }
-    }
-
-    // Expand or contract the primary content area. This should usually be animated.
-    private func updateLayoutConstraints() {
-      if layout.isExpanded {
-        detailTrailingEdgeConstraint.update(offset: 0)
-      } else {
-        detailTrailingEdgeConstraint.update(offset: layout.sizes.detailOffset)
       }
     }
 
@@ -548,7 +530,7 @@ private extension ActionArea.Content {
 private extension ActionArea.Controller {
 
   /// The master transition type.
-  enum MasterTransitionType {
+  private enum MasterTransitionType {
     /// Entering the Action Area from external content.
     case enter
     /// Transitioning between master content within the Action Area.
@@ -557,6 +539,8 @@ private extension ActionArea.Controller {
     case leave
     /// Transitions outside of the Action Area that are using its master navigation controller.
     case external
+    /// Layout transitions related to size changes or rotation.
+    case size(Layout, UIViewControllerTransitionCoordinator)
 
     /// The next transition type.
     ///
@@ -583,6 +567,10 @@ private extension ActionArea.Controller {
         self = .leave
       case (.leave, .didShow):
         self = .external
+      case let (_, .willTransition(to: newSize, with: coordinator)):
+        self = .size(Layout(newSize, and: contentCount), coordinator)
+      case (.size, .didTransition):
+        self = contentCount > 0 ? .internal : .external
       default:
         break
       }
@@ -593,20 +581,24 @@ private extension ActionArea.Controller {
   ///
   /// These values represent where transition-related operations take place, and they are used
   /// as part of the input to determine when to change the `MasterTransitionType`.
-  enum MasterTransitionPhase {
+  private enum MasterTransitionPhase {
     case back
     case willShow
     case didShow
+    case willTransition(to: CGSize, with: UIViewControllerTransitionCoordinator)
+    case didTransition
   }
 
   /// The master transition source.
   ///
   /// Transitions can be initiated from either a user action or a navgiation controller transition.
-  enum TransitionSource {
+  private enum TransitionSource {
     /// Either a back-button tap or swipe gesture.
     case backAction
     /// A `UINavigationControllerDelegate` call.
     case delegate
+    /// A `viewWillTransition(to:with:)` call.
+    case viewWillTransition
   }
 
   /// Coordinate a master content transition.
@@ -617,69 +609,99 @@ private extension ActionArea.Controller {
   ///   - source: The source of the current phase of the transition.
   private func transition(layout: Layout, type: MasterTransitionType, source: TransitionSource) {
     switch (layout, type, source) {
-    case (.portrait, .enter, .backAction):
+    case (_, .external, _):
+      // There is nothing to do here for external transitions.
+      break
+    case let (_, .size(newLayout, coordinator), _):
+      transition(from: layout, to: newLayout, source: source, with: coordinator)
+    case (.portrait, _, _):
+      transition(portrait: layout, type: type, source: source)
+    case (.landscape, _, _):
+      transition(landscape: layout, type: type, source: source)
+
+    }
+  }
+
+  private func transition(portrait: Layout, type: MasterTransitionType, source: TransitionSource) {
+    guard case .portrait = portrait else {
+      preconditionFailure("This method only handle portrait transitions.")
+    }
+
+    switch (type, source) {
+    case (.enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
-    case (.portrait, .enter, .delegate):
+    case (.enter, .delegate):
       masterBarViewController
         .transition(.raise(with: currentActionItem(), isEnabled: actionsAreEnabled))
-    case (.portrait, .internal, .backAction):
+    case (.internal, .backAction):
       sendOverriddenMasterBackButtonAction()
-    case (.portrait, .internal, .delegate):
+    case (.internal, .delegate):
       masterBarViewController
         .transition(.update(with: currentActionItem(), isEnabled: actionsAreEnabled))
-    case (.portrait, .leave, .backAction):
+    case (.leave, .backAction):
       sendOverriddenMasterBackButtonAction()
-    case (.portrait, .leave, .delegate):
+    case (.leave, .delegate):
       masterBarViewController.transition(.lower)
-    case (.landscape, .enter, .backAction):
+    case (.external, _), (.size, _), (_, .viewWillTransition):
+      preconditionFailure("This method only handle portrait transitions.")
+    }
+  }
+
+  private func transition(landscape: Layout, type: MasterTransitionType, source: TransitionSource) {
+    guard case .landscape = landscape else {
+      preconditionFailure("This method only handle landscape transitions.")
+    }
+
+    switch (type, source) {
+    case (.enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
-    case (.landscape, .enter, .delegate):
+    case (.enter, .delegate):
       guard let presentedMasterViewController = presentedMasterViewController else {
         preconditionFailure("Expected a presentedMasterViewController.")
       }
 
-      self.layout.expand()
-
-      // expansion
+      let newLayout = layout.expand()
       detailNavController.setViewControllers(emptyStates, animated: false)
-
       detailBarViewController.transition(
         .raise(with: currentActionItem(), isEnabled: actionsAreEnabled),
         animated: false
       )
 
-      presentedMasterViewController.view.layoutMargins = layout.sizes.masterLayoutMargins
+      presentedMasterViewController.view.layoutMargins =
+        newLayout.masterLayoutMargins(including: systemMinimumLayoutMargins)
       navController.transitionCoordinator?.animate(alongsideTransition: nil) { _ in
         self.initiateLocalTransition().animateAlongsideTransition(in: self.view, animation: { _ in
-          self.updateLayoutConstraints()
+          self.layoutConstraints.activate(newLayout.mode)
           // Using a nested animation block ensures that the frame change of the master content
           // area animates smoothly. The duration value is inherited and thus ignored.
           UIView.animate(withDuration: 0) {
             presentedMasterViewController.view.layoutMargins = .zero
             self.view.layoutIfNeeded()
           }
+        }, completion: { _ in
+          self.layout = newLayout
         })
       }
-    case (.landscape, .internal, .backAction):
+    case (.internal, .backAction):
       sendOverriddenMasterBackButtonAction()
       if let master = masterContent.last {
         detailNavController.popToViewController(master.emptyState, animated: true)
       }
-    case (.landscape, .internal, .delegate):
+    case (.internal, .delegate):
       // There is currently nothing to do here, but we may refactor pushing detail empty state
       // or animating the detail bar change here in the future.
       break
-    case (.landscape, .leave, .backAction):
-      self.layout.collapse()
+    case (.leave, .backAction):
+      let newLayout = layout.collapse()
 
       initiateLocalTransition(completion: sendOverriddenMasterBackButtonAction)
         .animateAlongsideTransition(in: view, animation: { _ in
-          self.updateLayoutConstraints()
+          self.layoutConstraints.activate(newLayout.mode)
           // Using a nested animation block ensures that the frame change of the master content
           // area animates smoothly. The duration value is inherited and thus ignored.
           UIView.animate(withDuration: 0) {
             self.presentedMasterViewController?.view.layoutMargins =
-              self.layout.sizes.masterLayoutMargins
+              self.layout.masterLayoutMargins(including: self.systemMinimumLayoutMargins)
             self.view.layoutIfNeeded()
           }
         }, completion: { _ in
@@ -687,13 +709,168 @@ private extension ActionArea.Controller {
 
           // collapse
           self.detailNavController.setViewControllers([], animated: false)
+
+          self.layout = newLayout
         })
-    case (.landscape, .leave, .delegate):
+    case (.leave, .delegate):
       transitionCoordinator?.animate(alongsideTransition: nil, completion: { _ in
         self.presentedMasterViewController?.view.layoutMargins = .zero
       })
-    case (_, .external, _):
-      // There is nothing to do here for external transitions.
+    case (.external, _), (.size, _), (_, .viewWillTransition):
+      preconditionFailure("This method only handle landscape transitions.")
+    }
+  }
+
+  private func transition(
+    from oldLayout: Layout,
+    to newLayout: Layout,
+    source: TransitionSource,
+    with coordinator: UIViewControllerTransitionCoordinator
+  ) {
+    func createCurrentSizeConstraint() -> Constraint? {
+      var sizeConstraint: Constraint?
+      masterBarViewController.view.snp.makeConstraints { make in
+        sizeConstraint = make.size.equalTo(masterBarViewController.view.bounds.size).constraint
+      }
+      return sizeConstraint
+    }
+
+    switch (oldLayout, newLayout, source) {
+    case let (oldLayout, newLayout, .viewWillTransition)
+      where oldLayout.isCollapsed && newLayout.isExpanded: // Expand.
+      guard let topMasterContent = masterContent.last else {
+        preconditionFailure("The layout cannot be expanded without any master content.")
+      }
+
+      // Prepare new content.
+      var detailNavViewControllers: [UIViewController] = emptyStates
+      switch state {
+      case .normal:
+        // normal state:
+        //   - [master]
+        //   - [master, detail]
+        detailNavViewControllers.append(contentsOf: detailContent)
+      case .modal:
+        // TODO: Consider storing the `modalDetailViewController` in the state itself.
+        guard let modalDetailViewController = modalDetailViewController else {
+          preconditionFailure("A modalDetailViewController must be set in the modal state.")
+        }
+        // TODO: Handle the case where the modal detail is interleaved within the detail content.
+        //       Currently detail content that can enter the modal state is only shown directly
+        //       between master and other detail content, but nothing prevents that possibility.
+        //
+        // modal state:
+        //   - [master]
+        //   - [master, modal]
+        //   - [master, detail] (modal was hidden)
+        //   - [master, modal, detail]
+        if detailContent.contains(where: { $0 === modalDetailViewController }) == false {
+          detailNavViewControllers.append(modalDetailViewController)
+        }
+        detailNavViewControllers.append(contentsOf: detailContent)
+      }
+
+      // Update layout.
+      self.layout = newLayout
+      layoutConstraints.deactivateAll()
+      let sizeConstraint = createCurrentSizeConstraint()
+      view.layoutIfNeeded()
+
+      // Snapshot existing content.
+      var navControllerSnapshot: UIView?
+      if navController.topViewController != topMasterContent {
+        navControllerSnapshot =
+          navController.topViewController?.view.snapshotView(afterScreenUpdates: false)
+        navControllerSnapshot.map { navController.view.addSubview($0) }
+      }
+
+      detailNavController.setViewControllers(emptyStates, animated: false)
+      var detailNavControllerSnapshot: UIView?
+      if detailNavController.topViewController != detailNavViewControllers.last {
+        detailNavControllerSnapshot =
+          detailNavController.topViewController?.view.snapshotView(afterScreenUpdates: false)
+        detailNavControllerSnapshot.map { detailNavController.view.addSubview($0) }
+      }
+
+      // Replace content.
+      navController.popToViewController(topMasterContent, animated: false)
+      detailNavController.setViewControllers(detailNavViewControllers, animated: false)
+
+      coordinator.animate(alongsideTransition: { _ in
+        sizeConstraint?.deactivate()
+        self.layoutConstraints.activate(newLayout.mode)
+        self.view.layoutIfNeeded()
+
+        self.masterBarViewController
+          .transition(.update(with: .empty, isEnabled: self.actionsAreEnabled))
+        self.detailBarViewController
+          .transition(.update(with: self.currentActionItem(), isEnabled: self.actionsAreEnabled))
+        navControllerSnapshot?.alpha = 0
+        detailNavControllerSnapshot?.alpha = 0
+      }) { _ in
+        navControllerSnapshot?.removeFromSuperview()
+        detailNavControllerSnapshot?.removeFromSuperview()
+        self.transitionType.update(for: .didTransition, and: self.masterContent.count)
+      }
+    case let (oldLayout, newLayout, .viewWillTransition)
+      where oldLayout.isExpanded && newLayout.isCollapsed: // Collapse.
+      guard let topEmptyState = emptyStates.last else {
+        preconditionFailure("The layout cannot be collapsed without any empty states.")
+      }
+
+      // Prepare new content.
+      var navViewControllers = navController.viewControllers
+      navViewControllers.append(contentsOf: detailContent)
+
+      // Update layout.
+      self.layout = newLayout
+      layoutConstraints.deactivateAll()
+      let sizeConstraint = createCurrentSizeConstraint()
+      view.layoutIfNeeded()
+
+      // Snapshot existing content.
+      var navControllerSnapshot: UIView?
+      if navController.topViewController != navViewControllers.last {
+        navControllerSnapshot =
+          navController.topViewController?.view.snapshotView(afterScreenUpdates: false)
+        navControllerSnapshot.map { navController.view.addSubview($0) }
+      }
+
+      var detailNavControllerSnapshot: UIView?
+      if detailNavController.topViewController != topEmptyState {
+        detailNavControllerSnapshot =
+          detailNavController.topViewController?.view.snapshotView(afterScreenUpdates: false)
+        detailNavControllerSnapshot.map { detailNavController.view.addSubview($0) }
+      }
+
+      // Replace content.
+      detailNavController.popToViewController(topEmptyState, animated: false)
+      navController.setViewControllers(navViewControllers, animated: false)
+
+      coordinator.animate(alongsideTransition: { _ in
+        sizeConstraint?.deactivate()
+        self.layoutConstraints.activate(newLayout.mode)
+        self.view.layoutIfNeeded()
+
+        self.masterBarViewController
+          .transition(.update(with: self.currentActionItem(), isEnabled: self.actionsAreEnabled))
+        self.detailBarViewController
+          .transition(.update(with: .empty, isEnabled: self.actionsAreEnabled))
+        navControllerSnapshot?.alpha = 0
+        detailNavControllerSnapshot?.alpha = 0
+      }) { _ in
+        self.detailNavController.setViewControllers([], animated: false)
+        navControllerSnapshot?.removeFromSuperview()
+        detailNavControllerSnapshot?.removeFromSuperview()
+        self.transitionType.update(for: .didTransition, and: self.masterContent.count)
+      }
+    case let (_, newLayout, .viewWillTransition):
+      self.layout = newLayout
+      self.transitionType.update(for: .didTransition, and: self.masterContent.count)
+    case (_, _, .backAction):
+      preconditionFailure("Back actions should never initiate a layout transition.")
+    case (_, _, .delegate):
+      // There is nothing to do here for delegate calls during a transitions.
       break
     }
   }
@@ -855,117 +1032,4 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
 
 }
 
-// MARK: - Speculative Types
-
-// TODO: Ensure this handles existing issues or use one of the other superclasses.
-// TODO: Consider making this private and wrapping content VCs that are not subclasses
-//       of the other material header types.
-final class MaterialHeaderContainerViewController: ContentContainerViewController {
-
-  private let appBar = MDCAppBar()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    if let collectionViewController = content as? UICollectionViewController {
-      appBar.configure(attachTo: self, scrollView: collectionViewController.collectionView)
-    } else {
-      appBar.configure(attachTo: self)
-    }
-
-    content.view.snp.makeConstraints { make in
-      make.top.equalTo(appBar.navigationBar.snp.bottom)
-      make.leading.bottom.trailing.equalToSuperview()
-    }
-  }
-
-  override var description: String {
-    return "\(type(of: self))(content: \(String(describing: content)))"
-  }
-
-}
-
-extension MaterialHeaderContainerViewController {
-  override func setCustomTint(_ customTint: CustomTint) {
-    appBar.headerViewController.headerView.backgroundColor = customTint.primary
-    super.setCustomTint(customTint)
-  }
-}
-
-// MARK: - Debugging
-
-#if DEBUG
-extension ActionArea.Controller {
-
-  private func log(debuggingInfoFor svc: UISplitViewController?,
-                   verbose: Bool = false,
-                   function: String = #function) {
-    guard let svc = svc else { return }
-    var message = "ActionArea.\(type(of: self)).\(function)"
-    message += " - vcs: \(svc.viewControllers.map(vcName(_:)))"
-    message += ", isCollapsed: \(svc.isCollapsed)"
-    if verbose {
-      message += ", navController.vcs: \(navController.viewControllers.map(vcName(_:)))"
-      message += ", detailNavController.vcs: \(detailNavController.viewControllers.map(vcName(_:)))"
-    }
-    print(message)
-  }
-
-  private func vcName(_ vc: UIViewController) -> String {
-    if vc === navController {
-      return "navController"
-    } else if vc === detailNavController {
-      return "detailNavController"
-    } else {
-      let d = String(describing: vc)
-      if d.contains("third_party_sciencejournal") {
-        return d.split(separator: ":").first?
-          .split(separator: ".").last
-          .map(String.init) ?? d
-      } else {
-        return d
-      }
-    }
-  }
-
-  private func logAsync(debuggingInfoFor svc: UISplitViewController?,
-                        function: String = #function) {
-    DispatchQueue.main.async {
-      self.log(debuggingInfoFor: svc, verbose: true, function: function)
-    }
-  }
-
-}
-
-extension UISplitViewController.DisplayMode: CustomStringConvertible {
-
-  public var description: String {
-    switch self {
-    case .automatic:
-      return "automatic"
-    case .primaryHidden:
-      return "primaryHidden"
-    case .allVisible:
-      return "allVisible"
-    case .primaryOverlay:
-      return "primaryOverlay"
-    }
-  }
-
-}
-
-extension UINavigationController.Operation: CustomStringConvertible {
-
-  public var description: String {
-    switch self {
-    case .none:
-      return "none"
-    case .push:
-      return "push"
-    case .pop:
-      return "pop"
-    }
-  }
-
-}
-#endif
+// swiftlint:enable file_length

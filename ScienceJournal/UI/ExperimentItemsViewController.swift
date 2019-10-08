@@ -176,6 +176,15 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     }
   }
 
+  override func viewWillTransition(to size: CGSize,
+                                   with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+
+    coordinator.animate(alongsideTransition: { _ in
+      self.collectionView.collectionViewLayout.invalidateLayout()
+    })
+  }
+
   /// Replaces the experiment items with new items.
   ///
   /// - Parameter items: An array of display items.
@@ -283,8 +292,10 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width: CGFloat
     if FeatureFlags.isActionAreaEnabled {
-      // TODO: Figure out where the 40 is coming from.
-      width = collectionView.bounds.width - cellInsets.left - cellInsets.right - 40
+      let collectionViewWidth = collectionView.bounds.width
+      let insets = [collectionView.adjustedContentInset, cellInsets]
+        .reduce(0) { return $0 + $1.left + $1.right }
+      width = collectionViewWidth - insets
     } else {
       width = collectionView.bounds.size.width - collectionView.contentInset.right -
         cellInsets.left - cellInsets.right

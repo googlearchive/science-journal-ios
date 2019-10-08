@@ -39,8 +39,13 @@ struct MutuallyExclusiveConstraints<Key: Hashable> {
       preconditionFailure("No constraints for key: \(key)")
     }
 
-    constraints.values.forEach(NSLayoutConstraint.deactivate)
+    deactivateAll()
     NSLayoutConstraint.activate(toActivate)
+  }
+
+  /// Deactivate all constraints.
+  func deactivateAll() {
+    constraints.values.forEach(NSLayoutConstraint.deactivate)
   }
 
 }

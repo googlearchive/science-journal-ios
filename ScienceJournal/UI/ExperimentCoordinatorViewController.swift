@@ -492,7 +492,10 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
       self.updateConstraints(forDisplayType: displayType, withSize: size)
       self.updateRightBarButtonItems(for: displayType)
       self.updateDrawerPosition(for: displayType, size: size)
-      self.updateHeaderColor()
+      if FeatureFlags.isActionAreaEnabled == false {
+        // This would set the header to the wrong color while recording.
+        self.updateHeaderColor()
+      }
       self.updateEmptyViewArchivedFlagInsets()
     })
   }

@@ -88,18 +88,9 @@ extension ActionArea {
 
     private var primary: UIButton? {
       didSet {
-        if let primary = primary {
-          primary.layoutIfNeeded()
-          view.addSubview(primary)
-          primaryConstraints = MutuallyExclusiveConstraints { constraints in
-            primary.snp.makeConstraints { make in
-              make.bottom.equalTo(bar.snp.top).offset(-1 * Metrics.Bar.toFABSpacing)
-            }
-            constraints[.compact] = primary.snp.prepareConstraints { $0.centerX.equalToSuperview() }
-            constraints[.regular] = primary.snp.prepareConstraints { $0.right.equalTo(bar) }
-          }
-          primaryConstraints?.activate(traitCollection.horizontalSizeClass)
-        } else {
+        oldValue?.removeFromSuperview()
+
+        if primary == nil {
           primaryConstraints = nil
         }
       }
@@ -145,6 +136,18 @@ extension ActionArea {
       let insets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
       button.setContentEdgeInsets(insets, for: .default, in: .expanded)
       button.addTarget(primary, action: #selector(BarButtonItem.execute), for: .touchUpInside)
+
+      button.layoutIfNeeded()
+      view.addSubview(button)
+      primaryConstraints = MutuallyExclusiveConstraints { constraints in
+        button.snp.makeConstraints { make in
+          make.bottom.equalTo(bar.snp.top).offset(-1 * Metrics.Bar.toFABSpacing)
+        }
+        constraints[.compact] = button.snp.prepareConstraints { $0.centerX.equalToSuperview() }
+        constraints[.regular] = button.snp.prepareConstraints { $0.right.equalTo(bar) }
+      }
+      primaryConstraints?.activate(traitCollection.horizontalSizeClass)
+
       return button
     }
 
@@ -242,9 +245,8 @@ extension ActionArea {
         actionItem = newActionItem
         self.isEnabled = isEnabled
 
-        let oldPrimary = primary
         let newPrimary = newActionItem.primary.map(create(primary:))
-        transition(from: oldPrimary, to: newPrimary)
+        transition(from: primary, to: newPrimary)
 
         transition(to: newActionItem.items, animated: animated)
       case let .enable(isEnabled):
@@ -307,18 +309,18 @@ extension ActionArea {
         transition(during: {
           from.alpha = 0
         }, after: {
-          from.removeFromSuperview()
+          self.primary = nil
         }, animated: true)
       case let (.none, .some(to)):
         transition(before: {
-          self.primary = to
           to.alpha = 0
         }, during: {
           to.alpha = 1
+        }, after: {
+          self.primary = to
         }, animated: true)
       case let (.some(from), .some(to)):
         transition(before: {
-          self.primary = to
           to.alpha = 0
         }, during: {
           UIView.animateKeyframes(withDuration: 0, delay: 0, options: [], animations: {
@@ -336,7 +338,7 @@ extension ActionArea {
             }
           })
         }, after: {
-          from.removeFromSuperview()
+          self.primary = to
         }, animated: true)
       }
     }

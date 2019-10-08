@@ -30,6 +30,7 @@
 		3F5F35F62296E7F7003C33F9 /* FileSystemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */; };
 		3F6D29F2233C14FB004D9318 /* Tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D29F1233C14FB004D9318 /* Tinting.swift */; };
 		3F71B71622B466D90015074A /* ActionAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71B71522B466D90015074A /* ActionAreaController.swift */; };
+		3F8F55E9234578C600CC6319 /* MaterialHeaderContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F55E8234578C600CC6319 /* MaterialHeaderContainerViewController.swift */; };
 		3FA3BD1E228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */; };
 		3FA7052022F8DD2600753842 /* ActionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7051F22F8DD2600753842 /* ActionArea.swift */; };
 		3FA7052422F8DD8E00753842 /* ActionAreaBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */; };
@@ -682,6 +683,7 @@
 		3F5F35F52296E7F7003C33F9 /* FileSystemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemLayout.swift; sourceTree = "<group>"; };
 		3F6D29F1233C14FB004D9318 /* Tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinting.swift; sourceTree = "<group>"; };
 		3F71B71522B466D90015074A /* ActionAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionAreaController.swift; sourceTree = "<group>"; };
+		3F8F55E8234578C600CC6319 /* MaterialHeaderContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialHeaderContainerViewController.swift; sourceTree = "<group>"; };
 		3FA3BD1D228DAD5500F1C672 /* XCTestCase+UserAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserAssetManager.swift"; sourceTree = "<group>"; };
 		3FA7051F22F8DD2600753842 /* ActionArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionArea.swift; sourceTree = "<group>"; };
 		3FA7052322F8DD8E00753842 /* ActionAreaBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaBarButtonItem.swift; sourceTree = "<group>"; };
@@ -1404,6 +1406,7 @@
 				3FA7052922F8E3BF00753842 /* ExperimentDetailEmptyStateViewController.swift */,
 				3F158A10231DF5C3005E319E /* FauxdalTransitionAnimation.swift */,
 				3F158A0E231DF370005E319E /* FeatureEnabler.swift */,
+				3F8F55E8234578C600CC6319 /* MaterialHeaderContainerViewController.swift */,
 				3F18EBDA233EEE8200A8E52E /* MutuallyExclusiveConstraints.swift */,
 				58AB86B52305FEAD00DB5367 /* RecordingDetailEmptyStateViewController.swift */,
 				3F6D29F1233C14FB004D9318 /* Tinting.swift */,
@@ -3773,6 +3776,7 @@
 				68EBA6C41F0428E400B24AA8 /* TriggerDetailCell.swift in Sources */,
 				687FAA09202C1162004C1D04 /* TextLabelValue.pbobjc.m in Sources */,
 				8B79EAD321235BB6000D1E21 /* DriveSyncUserInfoConstants.swift in Sources */,
+				3F8F55E9234578C600CC6319 /* MaterialHeaderContainerViewController.swift in Sources */,
 				5C52C0AC1FB10072007B4150 /* CropOverlayView.swift in Sources */,
 				5C650B0520892A5700CB4656 /* AccountsManager.swift in Sources */,
 				68E3C8D21FD783FE00255ADF /* Bundle+ScienceJournal.swift in Sources */,

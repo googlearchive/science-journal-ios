@@ -42,3 +42,44 @@ extension UIViewController: _ActionAreaUIKitExtensions {
   }
 
 }
+
+// MARK: - Debugging
+
+#if DEBUG
+
+extension UINavigationController.Operation: CustomStringConvertible {
+
+  public var description: String {
+    switch self {
+    case .none:
+      return "none"
+    case .push:
+      return "push"
+    case .pop:
+      return "pop"
+    }
+  }
+
+}
+
+extension UIViewController {
+  var viewControllerDepth: Int {
+    var depth = 0
+    var optionalParent = parent
+    while let parent = optionalParent {
+      depth += 1
+      optionalParent = parent.parent
+    }
+    return depth
+  }
+
+  var depthWithinActionArea: Int {
+    guard let actionAreaController = actionAreaController else { return 0 }
+    return viewControllerDepth - actionAreaController.viewControllerDepth
+  }
+
+  var aaPrefix: String {
+    return (0 ..< depthWithinActionArea).reduce(into: "|") { s, _ in s.write("-") }
+  }
+}
+#endif

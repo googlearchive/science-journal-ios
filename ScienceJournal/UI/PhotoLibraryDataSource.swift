@@ -16,6 +16,7 @@
 
 import Foundation
 import Photos
+import UIKit
 
 protocol PhotoLibraryDataSourceDelegate: class {
 

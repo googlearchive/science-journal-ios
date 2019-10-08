@@ -406,7 +406,7 @@ extension ActionArea {
     private let stackView: UIStackView = {
       let view = UIStackView()
       view.axis = .horizontal
-      view.alignment = .center
+      view.alignment = .firstBaseline
       view.distribution = .fillEqually
       // The stack view needs at least one view to calculate its intrinsic content size.
       view.addArrangedSubview(UIView())
@@ -472,6 +472,7 @@ extension ActionArea {
     private let label: UILabel = {
       let view = UILabel()
       view.numberOfLines = 2
+      view.textAlignment = .center
       view.textColor = BarViewController.Metrics.Bar.buttonTitleColor
       return view
     }()

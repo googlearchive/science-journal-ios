@@ -173,20 +173,22 @@ extension ActionArea {
 
     /// The navigation controller that displays content in a master context.
     /// This is currently here for backwards compatibility. Consider using `show` if appropriate.
-    let navController: UINavigationController = {
+    private(set) lazy var navController: UINavigationController = {
       let nc = UINavigationController()
       nc.isNavigationBarHidden = true
+      nc.delegate = self
       return nc
     }()
 
-    private let detailNavController: UINavigationController = {
+    private lazy var detailNavController: UINavigationController = {
       let nc = UINavigationController()
       nc.isNavigationBarHidden = true
+      nc.delegate = self
       return nc
     }()
 
-    private let masterBarViewController: BarViewController
-    private let detailBarViewController: BarViewController
+    private lazy var masterBarViewController = BarViewController(content: navController)
+    private lazy var detailBarViewController = BarViewController(content: detailNavController)
 
     private var presentedMasterViewController: MasterContent? {
       return navController.topViewController as? MasterContent
@@ -301,8 +303,6 @@ extension ActionArea {
     init() {
       precondition(FeatureFlags.isActionAreaEnabled,
                    "This class can only be used when Action Area is enabled.")
-      self.masterBarViewController = BarViewController(content: navController)
-      self.detailBarViewController = BarViewController(content: detailNavController)
       super.init(nibName: nil, bundle: nil)
     }
 
@@ -323,9 +323,6 @@ extension ActionArea {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-
-      navController.delegate = self
-      detailNavController.delegate = self
 
       addChild(masterBarViewController)
       view.addSubview(masterBarViewController.view)
@@ -929,6 +926,12 @@ private extension ActionArea.Controller {
     }
   }
 
+}
+
+// MARK: - Back Action Handling
+
+extension ActionArea.Controller: UIGestureRecognizerDelegate {
+
   func overrideMasterBackBarButtonItem(of vc: UIViewController) {
     if let item = vc.navigationItem.leftBarButtonItem {
       guard let action = item.action else { preconditionFailure("Expected an action selector.") }
@@ -954,8 +957,21 @@ private extension ActionArea.Controller {
   }
 
   @objc func didTapMasterBack() {
+    handleBackAction()
+  }
+
+  private func handleBackAction() {
     transitionType.update(for: .back, and: masterContent.count)
     transition(layout: layout, type: transitionType, source: .backAction)
+  }
+
+  func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    if masterTargetsAndActions.isEmpty {
+      return true
+    } else {
+      handleBackAction()
+      return false
+    }
   }
 
 }
@@ -999,6 +1015,7 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
     if navigationController == navController {
       if viewController is ActionArea.MasterContent {
         overrideMasterBackBarButtonItem(of: viewController)
+        navController.interactivePopGestureRecognizer?.delegate = self
       }
 
       // The `transitionType` must be updated last.

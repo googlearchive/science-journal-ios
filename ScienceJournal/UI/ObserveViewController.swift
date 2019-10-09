@@ -109,7 +109,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   let recordingManager: RecordingManager
   var recordingTrial: Trial?
   let sensorController: SensorController
-  @objc dynamic private(set) var isContentOutsideOfSafeArea: Bool = false
+  @objc private(set) lazy var scrollViewContentObserver
+    = ScrollViewContentObserver(scrollView: collectionView)
 
   // TODO: Refactor this out by more logically enabling/disabling the brightness listener.
   // http://b/64401602
@@ -1653,12 +1654,6 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   }
 
   // MARK: - UIScrollViewDelegate
-
-  open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    if isContentOutsideOfSafeArea != scrollView.isContentOutsideOfSafeArea {
-      isContentOutsideOfSafeArea = scrollView.isContentOutsideOfSafeArea
-    }
-  }
 
   override open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     drawerPanner?.scrollViewWillBeginDragging(scrollView)

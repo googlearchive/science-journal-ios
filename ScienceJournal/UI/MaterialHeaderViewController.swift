@@ -28,7 +28,8 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
 
   let appBar = MDCAppBar()
   var trackedScrollView: UIScrollView? { return nil }
-  @objc dynamic private(set) var isContentOutsideOfSafeArea: Bool = false
+  @objc private(set) lazy var scrollViewContentObserver
+    = ScrollViewContentObserver(scrollView: trackedScrollView)
   private weak var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
 
   // MARK: - MaterialHeader
@@ -120,10 +121,6 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
   // MARK: - UIScrollViewDelegate
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    if isContentOutsideOfSafeArea != scrollView.isContentOutsideOfSafeArea {
-      isContentOutsideOfSafeArea = scrollView.isContentOutsideOfSafeArea
-    }
-
     if scrollView == appBar.headerViewController.headerView.trackingScrollView {
       appBar.headerViewController.headerView.trackingScrollDidScroll()
     }

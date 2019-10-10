@@ -850,6 +850,12 @@
 /* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
 "input_camera_permission_denied" = "The camera cannot be used because Science Journal does not have permission to access it.";
 
+/* Title of alert informing a user they cannot use the camera because they denied Science Journal access to it in iOS. [CHAR_LIMIT=40] */
+"input_camera_permission_denied_title" = "Camera Not Available";
+
+/* Message informing a user they cannot use the camera because they denied Science Journal access to it in iOS, with Settings button to change access. [CHAR_LIMIT=200] */
+"input_camera_permission_denied_settings" = "The camera cannot be used because Science Journal does not have permission to access it. You may change this in Settings.";
+
 /* Message informing a user they cannot view their photo library because they denied Science Journal access to it in iOS. [CHAR_LIMIT=200] */
 "input_photo_library_permission_denied" = "Your photo library cannot be used because Science Journal does not have permission to access it.";
 

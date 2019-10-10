@@ -28,8 +28,8 @@ class MaterialHeaderViewController: ScienceJournalViewController, UIScrollViewDe
 
   let appBar = MDCAppBar()
   var trackedScrollView: UIScrollView? { return nil }
-  @objc private(set) lazy var scrollViewContentObserver
-    = ScrollViewContentObserver(scrollView: trackedScrollView)
+  @objc private(set) lazy var scrollViewContentObserver =
+    ScrollViewContentObserver(scrollView: trackedScrollView)
   private weak var existingInteractivePopGestureRecognizerDelegate : UIGestureRecognizerDelegate?
 
   // MARK: - MaterialHeader

@@ -109,8 +109,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
   let recordingManager: RecordingManager
   var recordingTrial: Trial?
   let sensorController: SensorController
-  @objc private(set) lazy var scrollViewContentObserver
-    = ScrollViewContentObserver(scrollView: collectionView)
+  @objc private(set) lazy var scrollViewContentObserver =
+    ScrollViewContentObserver(scrollView: collectionView)
 
   // TODO: Refactor this out by more logically enabling/disabling the brightness listener.
   // http://b/64401602

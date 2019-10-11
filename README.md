@@ -31,18 +31,19 @@ First, you'll need a Mac. We don't support building the iOS app on anything else
 
 Second, you'll need the latest version of [Xcode](https://developer.apple.com/xcode/) installed.
 
-Third, we use a few open source frameworks to build this app, so you'll need to install CocoaPods as your package manager in order to get what you need to build.
+Third, we use a few open source frameworks to build this app, so you'll need to install [CocoaPods](https://cocoapods.org/) as your package manager in order to get what you need to build.
 
-Fourth, we use [protobuf](https://developers.google.com/protocol-buffers/). You'll need to install that too. We use [Homebrew](https://brew.sh/) to install it:
-`brew install protobuf@3.1; brew link protobuf@3.1 -f`.
+Fourth, we use [protobuf](https://developers.google.com/protocol-buffers/). You'll need to install that too. We use [Homebrew](https://brew.sh/) to install it.
 
-We recommend installing [CocoaPods](https://cocoapods.org/) by running:
-`sudo gem install cocoapods` from your terminal.
+Here are the steps to set up your environment:
+
+1. Install Xcode.
+2. Install CocoaPods by running `sudo gem install cocoapods` from your terminal.
+3. Install Homebrew by following the instructions on the [Homebrew website](https://brew.sh/).
+4. Install protobuf by running `brew install protobuf@3.1; brew link protobuf@3.1 -f` from your terminal.
 
 ## Building and running
-Before you jump into coding, you'll need to run
-
-`pod install` from the root of this project (the folder that contains has the `Podfile` file)
+Before you jump into coding, you'll need to run `pod install` from the root of this project (the folder that contains has the `Podfile` file)
 
 Then you can open `ScienceJournal.xcworkspace`
 

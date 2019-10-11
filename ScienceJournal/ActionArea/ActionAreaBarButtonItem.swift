@@ -43,6 +43,7 @@ extension ActionArea {
     private(set) var title: String
     private(set) var image: UIImage?
     private(set) var action: () -> Void // TODO: Consider passing the AA controller here.
+    private(set) var enabler: FeatureEnabler?
 
     /// Designated initializer.
     ///
@@ -50,10 +51,16 @@ extension ActionArea {
     ///   - title: The title for the item.
     ///   - accessibilityHint: The accessibility hint for the item.
     ///   - image: The image for the item.
+    ///   - enabler: A feature enabler to handle changes in an observed Bool value.
     ///   - action: A block to execute when the item is tapped.
-    init(title: String, accessibilityHint: String?, image: UIImage?, action: @escaping () -> Void) {
+    init(title: String,
+         accessibilityHint: String?,
+         image: UIImage?,
+         enabler: FeatureEnabler? = nil,
+         action: @escaping () -> Void) {
       self.title = title
       self.image = image
+      self.enabler = enabler
       self.action = action
       super.init()
       self.accessibilityHint = accessibilityHint

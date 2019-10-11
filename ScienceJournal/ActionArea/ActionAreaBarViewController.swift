@@ -429,6 +429,12 @@ extension ActionArea {
         (stackView.arrangedSubviews.count ..< 4).forEach { _ in
           stackView.addArrangedSubview(UIView())
         }
+
+        items.forEach { (item) in
+          item.enabler?.observe({ (enabled) in
+            self.setButtonFor(item: item, enabled: enabled)
+          })
+        }
       }
     }
 
@@ -448,8 +454,12 @@ extension ActionArea {
       fatalError("init(coder:) has not been implemented")
     }
 
+    func setButtonFor(item: BarButtonItem, enabled: Bool, animated: Bool = true) {
+      if let index = items.index(of: item) {
+        buttons[index].setEnabled(enabled, animated: animated)
+      }
+    }
   }
-
 }
 
 // MARK: - ActionArea.BarButton
@@ -527,8 +537,20 @@ extension ActionArea {
       button.backgroundColor = customTint.secondary
     }
 
+    func setEnabled(_ enabled: Bool, animated: Bool = true) {
+      button.isEnabled = enabled
+      let updatedAlpha: CGFloat = enabled ? 1.0 : BarViewController.Metrics.Bar.disabledAlpha
+      if animated {
+        UIView.animate(withDuration: 0.5) {
+          self.button.alpha = updatedAlpha
+          self.label.alpha = updatedAlpha
+        }
+      } else {
+        self.button.alpha = updatedAlpha
+        self.label.alpha = updatedAlpha
+      }
+    }
   }
-
 }
 
 // MARK: - Debugging

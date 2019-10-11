@@ -176,6 +176,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     return self.observeDataSource.availableSensorIDs
   }
 
+  @objc dynamic private(set) var unusedSensors: Bool = false
+
   // MARK: - Public
 
   /// Designated initializer.
@@ -197,6 +199,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
     let flowLayout = MDCCollectionViewFlowLayout()
     flowLayout.minimumLineSpacing = SensorCardCell.cardInsets.bottom
+
     super.init(collectionViewLayout: flowLayout, analyticsReporter: analyticsReporter)
 
     observeDataSource.delegate = self
@@ -757,6 +760,10 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     sensorCard.toneGenerator.stop()
   }
 
+  private func updateUnusedSensors() {
+    unusedSensors = observeDataSource.items.count < sensorController.availableSensors.count
+  }
+
   private func removeSensorCardCell(_ cell: SensorCardCell) {
     guard let indexPath = collectionView?.indexPath(for: cell) else {
       return
@@ -780,7 +787,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       }
     }, completion: { (_) in
       self.updateSensorPickersIfNeeded()
-      // TODO: Show/Enable the "Add Sensor" button if needed
+      self.updateUnusedSensors()
     })
   }
 
@@ -809,7 +816,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
         self.collectionView?.deleteSections(IndexSet(integer: previousFooterIndexPath.section))
       }
     }, completion: { (_) in
-      // TODO: Hide/Disable the "Add Sensor" button.
+      self.updateUnusedSensors()
     })
     collectionView?.scrollToItem(at: IndexPath(item: newItemIndexPath.item, section: 0),
                                  at: .top,
@@ -1028,6 +1035,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
     addInitialSensorCardIfNeeded(andAddListener: andAddListeners)
 
     collectionView?.reloadData()
+    updateUnusedSensors()
   }
 
   /// Sets the available sensors for the current experiment.

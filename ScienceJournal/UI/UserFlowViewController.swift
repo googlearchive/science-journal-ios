@@ -962,7 +962,9 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       let addSensorItem = ActionArea.BarButtonItem(
         title: String.actionAreaButtonAddSensor,
         accessibilityHint: String.actionAreaButtonAddSensorContentDescription,
-        image: UIImage(named: "ic_action_area_add_sensor")
+        image: UIImage(named: "ic_action_area_add_sensor"),
+        enabler: FeatureEnabler(target: experimentCoordinator.observeViewController,
+                                keyPath: \.unusedSensors)
       ) {
         experimentCoordinator.observeViewController.observeFooterAddButtonPressed()
       }

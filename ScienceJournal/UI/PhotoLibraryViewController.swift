@@ -24,7 +24,9 @@ import third_party_objective_c_material_components_ios_components_Buttons_Button
 open class StandalonePhotoLibraryViewController: PhotoLibraryViewController {
 
   public init(analyticsReporter: AnalyticsReporter) {
-    super.init(actionBarButtonType: .check, analyticsReporter: analyticsReporter)
+    super.init(actionBarButtonType: .check,
+               selectionMode: .single,
+               analyticsReporter: analyticsReporter)
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -32,6 +34,8 @@ open class StandalonePhotoLibraryViewController: PhotoLibraryViewController {
   }
 
 }
+
+// swiftlint:disable type_body_length
 
 /// View controller for selecting photos from the library.
 open class PhotoLibraryViewController: ScienceJournalViewController, UICollectionViewDataSource,
@@ -44,6 +48,20 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     static let sendFABDisabledAlpha: CGFloat = 0.6
     static let sendFABImage = UIImage(named: "ic_send")?.imageFlippedForRightToLeftLayoutDirection()
     static let sendFABContentInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+  }
+
+  /// Determines whether a user can select a single or multiple images.
+  enum SelectionMode {
+    case single
+    case multiple
+  }
+
+  /// Represents an image that a user has selected.
+  /// It allows comparison via the `asset` property.
+  private struct SelectedImage {
+    let asset: PHAsset
+    let image: UIImage
+    let metadata: NSDictionary?
   }
 
   // MARK: - Properties
@@ -80,15 +98,17 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   private let actionBarWrapper = UIView()
   private var actionBarWrapperHeightConstraint: NSLayoutConstraint?
   private var drawerPanner: DrawerPanner?
-  private var mostRecentlySelectedPhotoAsset: PHAsset?
+  private let selectionMode: SelectionMode
 
   /// Button for action area design
   private let sendFAB = MDCFloatingButton()
 
-  private var selectedImage: (image: UIImage, metadata: NSDictionary?)? {
+  /// The currently selected images.
+  /// When `selectionMode` is `.single`, only one image can be selected at a time.
+  private var selectedImages: [SelectedImage] = [] {
     didSet {
-      actionBar.button.isEnabled = selectedImage != nil
-      sendFAB.isEnabled = selectedImage != nil
+      actionBar.button.isEnabled = !selectedImages.isEmpty
+      sendFAB.isEnabled = !selectedImages.isEmpty
     }
   }
 
@@ -99,8 +119,9 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   /// - Parameters:
   ///   - actionBarButtonType: The button type for the action bar. Default is a send button.
   ///   - analyticsReporter: An AnalyticsReporter.
-  public init(actionBarButtonType: ActionBar.ButtonType = .send,
-              analyticsReporter: AnalyticsReporter) {
+  init(actionBarButtonType: ActionBar.ButtonType = .send,
+       selectionMode: SelectionMode,
+       analyticsReporter: AnalyticsReporter) {
     // TODO: Confirm layout is correct in landscape.
     let collectionViewLayout = UICollectionViewFlowLayout()
     collectionViewLayout.minimumLineSpacing = 1
@@ -110,6 +131,8 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     collectionView.shouldGroupAccessibilityChildren = true
 
     actionBar = ActionBar(buttonType: actionBarButtonType)
+
+    self.selectionMode = selectionMode
 
     super.init(analyticsReporter: analyticsReporter)
     photoLibraryDataSource.delegate = self
@@ -200,7 +223,7 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     super.viewWillAppear(animated)
     updateDisabledView()
     updateCollectionViewScrollEnabled()
-    deselectSelectedPhotoAsset()
+    deselectAllPhotoAssets()
   }
 
   override open func viewDidAppear(_ animated: Bool) {
@@ -243,8 +266,8 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   // MARK: - PhotoLibraryDataSourceDelegate
 
   func photoLibraryDataSourceLibraryDidChange(changes: PHFetchResultChangeDetails<PHAsset>?) {
-    // Deselect the current photo.
-    deselectSelectedPhotoAsset()
+    // Deselect all selected photos.
+    deselectAllPhotoAssets()
 
     guard let changes = changes else { collectionView.reloadData(); return }
     // If there are incremental diffs, animate them in the collection view.
@@ -297,7 +320,7 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
       }
 
       // If this cell is for the photo asset that is selected, show the highlight.
-      if isMostRecentlySelectedPhotoAsset(at: indexPath) {
+      if isPhotoAssetSelected(at: indexPath) {
         photoLibraryCell.isSelected = true
       }
 
@@ -394,31 +417,66 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     guard let indexPath = collectionView.indexPath(for: photoLibraryCell) else { return }
 
     // A photo asset is deselected when it was selected and is tapped again.
-    let isPhotoAssetDeselected = isMostRecentlySelectedPhotoAsset(at: indexPath)
+    let isPhotoAssetAlreadySelected = isPhotoAssetSelected(at: indexPath)
 
-    deselectSelectedPhotoAsset()
-    if isPhotoAssetDeselected {
-      updateTitle()
-    } else {
-      mostRecentlySelectedPhotoAsset = photoLibraryDataSource.imageForPhotoAsset(
-        at: indexPath,
-        downloadDidBegin: {
-          photoLibraryCell.startSpinner()
-      },
-        completion: { (image, metadata, photoAsset) in
-          // If this download was not for the most recenetly selected photo asset, the user
-          // selected a different photo asset.
-          if let mostRecentlySelectedPhotoAsset = self.mostRecentlySelectedPhotoAsset,
-            let photoAsset = photoAsset,
-            photoAsset == mostRecentlySelectedPhotoAsset,
-            let image = image,
-            let indexPath = self.photoLibraryDataSource.indexPathOfPhotoAsset(photoAsset) {
-            self.selectedImage = (image, metadata)
-            self.collectionView.cellForItem(at: indexPath)?.isSelected = true
-            self.updateTitle()
+    switch selectionMode {
+    case .single:
+      // When in single selection mode, selecting an image
+      // should deselect the previously selected one, if any.
+      if isPhotoAssetAlreadySelected,
+        let selectedImage = selectedImages.first {
+        // If the photo is already selected, just deselect it.
+        deselectPhotoAsset(selectedImage.asset)
+        updateTitle()
+      } else {
+        // Otherwise, select a the new cell, and deselect the old one, if any.
+        let previouslySelectedImage = self.selectedImages.first
+        selectCell(photoLibraryCell, at: indexPath) {
+          if let previouslySelectedImage = previouslySelectedImage {
+            self.deselectPhotoAsset(previouslySelectedImage.asset)
           }
-      })
+          self.updateTitle()
+        }
+      }
+    case .multiple:
+      // When in multiple selection mode, selecting an image
+      // does not deselect any other selected ones.
+      if isPhotoAssetAlreadySelected {
+        if let photoAsset = photoLibraryDataSource.photoAsset(for: indexPath) {
+          // If the photo is already selected, deselect it.
+          deselectPhotoAsset(photoAsset)
+          updateTitle()
+        }
+      } else {
+        // If the photo is not already selected, select it.
+        selectCell(photoLibraryCell, at: indexPath) {
+          self.updateTitle()
+        }
+      }
     }
+  }
+
+  /// Sets a `PhotoLibraryCell`'s selected state to true.
+  func selectCell(
+    _ photoCell: PhotoLibraryCell,
+    at indexPath: IndexPath,
+    completion: @escaping (() -> Void)) {
+
+    _ = photoLibraryDataSource.imageForPhotoAsset(
+      at: indexPath,
+      downloadDidBegin: {
+        photoCell.startSpinner()
+    },
+      completion: { (image, metadata, photoAsset) in
+        if let photoAsset = photoAsset,
+          let image = image,
+          let indexPath = self.photoLibraryDataSource.indexPathOfPhotoAsset(photoAsset) {
+          let selectedImage = SelectedImage(asset: photoAsset, image: image, metadata: metadata)
+          self.selectedImages.append(selectedImage)
+          self.collectionView.cellForItem(at: indexPath)?.isSelected = true
+          completion()
+        }
+    })
   }
 
   // MARK: - Gesture recognizer
@@ -464,14 +522,21 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     collectionView.isScrollEnabled = shouldEnableScroll
   }
 
-  private func deselectSelectedPhotoAsset() {
-    if let mostRecentlySelectedPhotoAsset = mostRecentlySelectedPhotoAsset,
-        let indexPath =
-            photoLibraryDataSource.indexPathOfPhotoAsset(mostRecentlySelectedPhotoAsset) {
+  private func deselectAllPhotoAssets() {
+    selectedImages = []
+    updateTitle()
+    collectionView.reloadData()
+  }
+
+  private func deselectPhotoAsset(_ photoAsset: PHAsset) {
+    // Get an array of just the selected assets, so we can compare against the newly selected asset.
+    let selectedPhotoAssets = selectedImages.map { $0.asset }
+    if selectedPhotoAssets.contains(photoAsset),
+      let indexPath =
+      photoLibraryDataSource.indexPathOfPhotoAsset(photoAsset) {
       collectionView.cellForItem(at: indexPath)?.isSelected = false
-      self.mostRecentlySelectedPhotoAsset = nil
+      selectedImages.removeAll(where: { $0.asset == photoAsset })
     }
-    selectedImage = nil
   }
 
   private func addDownloadProgressListener(for photoLibraryCell: PhotoLibraryCell,
@@ -489,35 +554,44 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     }
   }
 
-  // Whether or not the photo asset displayed at an index path is the most recently selected photo
-  // asset.
-  private func isMostRecentlySelectedPhotoAsset(at indexPath: IndexPath) -> Bool {
+  // Whether or not the photo asset displayed at an index path is a selected photo asset.
+  private func isPhotoAssetSelected(at indexPath: IndexPath) -> Bool {
     guard let photoAsset = photoLibraryDataSource.photoAsset(for: indexPath) else { return false }
-    return photoAsset == mostRecentlySelectedPhotoAsset
+    // Get an array of just the selected assets, so we can compare against the newly selected asset.
+    let selectedPhotoAssets = selectedImages.map { $0.asset }
+    return selectedPhotoAssets.contains(photoAsset)
   }
 
   private func updateTitle() {
-    guard mostRecentlySelectedPhotoAsset != nil else {
+    guard !selectedImages.isEmpty else {
       title = String.actionAreaGalleryPhotosSelected
       return
     }
-
-    title = String(format: String.actionAreaGalleryMultiplePhotosSelected, String(1))
+    let count = String(selectedImages.count)
+    title = String(format: String.actionAreaGalleryMultiplePhotosSelected, count)
   }
 
   // MARK: - User actions
 
   @objc private func actionBarButtonPressed() {
-    guard let selectedImage = selectedImage else { return }
+    guard !selectedImages.isEmpty else { return }
 
     func createPhotoNote() {
-      guard let imageData = selectedImage.image.jpegData(compressionQuality: 0.8) else {
+      // Get data for all selected images which successfully compress.
+      let imageDatas: [(imageData: Data, metadata: NSDictionary?)] =
+        selectedImages.compactMap { selectedImage in
+          guard let jpegData = selectedImage.image.jpegData(compressionQuality: 0.8) else {
+            return nil
+          }
+          return (jpegData, selectedImage.metadata)
+      }
+      // If we're missing an imageData, it's because jpg compression failed.
+      guard imageDatas.count == selectedImages.count else {
         print("[PhotoLibraryViewController] Error creating image data.")
         return
       }
-
-      self.delegate?.imageSelectorDidCreateImageData(imageData, metadata: selectedImage.metadata)
-      self.deselectSelectedPhotoAsset()
+      self.delegate?.imageSelectorDidCreateMultipleImageDatas(imageDatas)
+      self.deselectAllPhotoAssets()
     }
 
     // If the drawer will be animating, create the photo note after the animation completes.
@@ -537,3 +611,5 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
   }
 
 }
+
+// swiftlint:enable type_body_length

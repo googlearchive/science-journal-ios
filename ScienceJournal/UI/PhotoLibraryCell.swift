@@ -26,17 +26,23 @@ protocol PhotoLibraryCellDelegate: class {
 /// A cell containing a thumbnail for an image in a photo picker.
 class PhotoLibraryCell: UICollectionViewCell {
 
+  private enum Metrics {
+    static let selectionSize = CGSize(width: 28, height: 28)
+    static let selectionInsetX: CGFloat = 8
+    static let selectionInsetY: CGFloat = 4
+    /// Adjustment neccesary to handle the slightly inset selection image.
+    static let nonselectionAdjustmentInset: CGFloat = 2
+    static let selectionCenter = CGPoint(x: selectionSize.width/2 + selectionInsetX,
+                                         y: selectionSize.height/2 + selectionInsetY)
+  }
+
   // MARK: - Properties
 
   override var isSelected: Bool {
     didSet {
       guard oldValue != isSelected else { return }
-      // Show or hide the selection border highlight.
-      if self.isSelected {
-        self.layer.borderWidth = 4
-      } else {
-        self.layer.borderWidth = 0
-      }
+      multipleSelectionIndicator.isHidden = !isSelected
+      multipleSelectionBorder.isHidden = !isSelected
     }
   }
 
@@ -57,6 +63,11 @@ class PhotoLibraryCell: UICollectionViewCell {
   private var imageButtonWidthConstraint: NSLayoutConstraint?
   private var imageButtonHeightConstraint: NSLayoutConstraint?
   private let spinner = MaterialFloatingSpinner()
+  /// The image view for a selected state.
+  private let multipleSelectionIndicator =
+    UIImageView(image: UIImage(named: "ic_check_circle_purple")!)
+  /// The `multipleSelectionIndicator`'s border.
+  private let multipleSelectionBorder = CAShapeLayer()
 
   // MARK: - Public
 
@@ -74,6 +85,11 @@ class PhotoLibraryCell: UICollectionViewCell {
     super.prepareForReuse()
     image = nil
     stopSpinner()
+  }
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    multipleSelectionBorder.frame = multipleSelectionIndicator.frame
   }
 
   /// Sets the height and width of the image to a size.
@@ -136,6 +152,37 @@ class PhotoLibraryCell: UICollectionViewCell {
     if #available(iOS 11.0, *) {
       imageButton.accessibilityIgnoresInvertColors = true
     }
+
+    // Selection
+    multipleSelectionIndicator.contentMode = .scaleAspectFit
+    addSubview(multipleSelectionIndicator)
+    multipleSelectionIndicator.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      multipleSelectionIndicator.leadingAnchor
+        .constraint(equalTo: leadingAnchor, constant: Metrics.selectionInsetX),
+      multipleSelectionIndicator.topAnchor
+        .constraint(equalTo: topAnchor, constant: Metrics.selectionInsetY),
+      multipleSelectionIndicator.widthAnchor
+        .constraint(equalToConstant: Metrics.selectionSize.width),
+      multipleSelectionIndicator.heightAnchor
+        .constraint(equalToConstant: Metrics.selectionSize.height),
+    ])
+
+    // The selection image has some extra insets,
+    // so the non-selection layer should be slightly smaller to match
+    let selectionRect = CGRect(origin: .zero, size: Metrics.selectionSize)
+      .insetBy(dx: Metrics.nonselectionAdjustmentInset,
+               dy: Metrics.nonselectionAdjustmentInset)
+    let circlePath = UIBezierPath(ovalIn: selectionRect).cgPath
+    multipleSelectionBorder.path = circlePath
+    multipleSelectionBorder.fillColor = UIColor.clear.cgColor
+    multipleSelectionBorder.strokeColor = UIColor.white.cgColor
+    multipleSelectionBorder.lineWidth = 2
+    layer.addSublayer(multipleSelectionBorder)
+
+    // Cells are non-selected by default
+    multipleSelectionIndicator.isHidden = true
+    multipleSelectionBorder.isHidden = true
 
     // Spinner
     spinner.isHidden = true

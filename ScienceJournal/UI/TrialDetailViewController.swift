@@ -136,7 +136,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
     NotesViewController(analyticsReporter: analyticsReporter)
 
   private(set) lazy var photoLibraryViewController: PhotoLibraryViewController =
-    PhotoLibraryViewController(analyticsReporter: analyticsReporter)
+    PhotoLibraryViewController(selectionMode: .single, analyticsReporter: analyticsReporter)
 
   private(set) lazy var cameraViewController: StandaloneCameraViewController =
     StandaloneCameraViewController(analyticsReporter: analyticsReporter)
@@ -1017,6 +1017,11 @@ class TrialDetailViewController: MaterialHeaderViewController,
         self.showAddNoteDialog()
       }
     }
+  }
+
+  func imageSelectorDidCreateMultipleImageDatas(
+    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+    // This view controller does not allow selecting multiple images.
   }
 
   func imageSelectorDidCancel() {

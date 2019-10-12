@@ -285,6 +285,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   private lazy var _photoLibraryViewController = PhotoLibraryViewController(
     actionBarButtonType: .send,
+    selectionMode: .multiple,
     analyticsReporter: analyticsReporter)
   var photoLibraryViewController: PhotoLibraryViewController {
     return drawerVC?.photoLibraryViewController ?? _photoLibraryViewController
@@ -823,6 +824,11 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
     createPictureNote(imageData, metadata: metadata)
+  }
+
+  func imageSelectorDidCreateMultipleImageDatas(
+    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+    createPictureNotes(from: imageDatas)
   }
 
   func imageSelectorDidCancel() {}
@@ -1478,15 +1484,24 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   private func createPictureNote(_ imageData: Data, metadata: NSDictionary?) {
-    let pictureNote = PictureNote()
-    let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
+    createPictureNotes(from: [(imageData, metadata)])
+  }
+
+  private func createPictureNotes(from imageSet: [(imageData: Data, metadata: NSDictionary?)]) {
     do {
-      try metadataManager.saveImageData(imageData,
-                                        atPicturePath: pictureFilePath,
-                                        experimentID: experiment.ID,
-                                        withMetadata: metadata)
-      pictureNote.filePath = pictureFilePath
-      addNoteToExperimentOrTrial(pictureNote)
+      // If any of the images fail to save, we'll throw an error
+      // instead of adding the note to the experiment or trial.
+      let pictureNotes: [PictureNote] = try imageSet.map { imageData, metadata in
+        let pictureNote = PictureNote()
+        let pictureFilePath = metadataManager.relativePicturePath(for: pictureNote.ID)
+        try metadataManager.saveImageData(imageData,
+                                          atPicturePath: pictureFilePath,
+                                          experimentID: experiment.ID,
+                                          withMetadata: metadata)
+        pictureNote.filePath = pictureFilePath
+        return pictureNote
+      }
+      pictureNotes.forEach { addNoteToExperimentOrTrial($0) }
 
       // TODO: Consider AA-specific API.
       if FeatureFlags.isActionAreaEnabled {

@@ -34,6 +34,7 @@ class DrawerConfigOpen: DrawerConfig {
     let cameraViewController = CameraViewController(analyticsReporter: analyticsReporter)
     let photoLibraryViewController = PhotoLibraryViewController(
         actionBarButtonType: .send,
+        selectionMode: .single,
         analyticsReporter: analyticsReporter)
 
     let notesItem = DrawerItem(tabBarImage: UIImage(named: "ic_comment"),

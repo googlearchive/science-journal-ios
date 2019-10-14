@@ -1758,9 +1758,40 @@ class TrialDetailViewController: MaterialHeaderViewController,
   }
 
   func cameraButtonPressed() {
-    present(cameraImageProvider.cameraViewController, animated: true, completion: nil)
+    switch CaptureSessionInterruptionObserver.shared.cameraAvailability {
+    case .permissionsDenied:
+      showCameraPermissionsDeniedAlert()
+    case .blockedByBrightnessSensor:
+      showSnackbar(withMessage: String.inputCameraBlockedByBrightnessSensor,
+                   category: nil,
+                   actionTitle: String.actionOk,
+                   actionHandler: nil
+      )
+    default: // Handles .available and .captureInterrupted
+      present(cameraImageProvider.cameraViewController, animated: true)
+    }
   }
 
+  func showCameraPermissionsDeniedAlert() {
+    let ac = UIAlertController(title: String.inputCameraPermissionDeniedTitle,
+                               message: String.inputCameraPermissionDeniedSettings,
+                               preferredStyle: .alert)
+
+    let settingsAction = UIAlertAction(title: String.actionSettings,
+                                       style: .default) { _ in
+      if let settingsURL = URL(string: "App-prefs:root=Privacy&path=CAMERA") {
+        UIApplication.shared.open(settingsURL)
+      }
+    }
+    ac.addAction(settingsAction)
+
+    let cancelAction = UIAlertAction(title: String.actionCancel,
+                                     style: .cancel,
+                                     handler: nil)
+    ac.addAction(cancelAction)
+
+    present(ac, animated: true)
+  }
 }
 
 // MARK: - NotesViewControllerDelegate

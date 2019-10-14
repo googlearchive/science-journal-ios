@@ -18,12 +18,24 @@ import AVFoundation
 
 class CaptureSessionInterruptionObserver {
 
+  enum CameraAvailability {
+    case available
+    case blockedByBrightnessSensor
+    case permissionsDenied
+    case captureInterrupted
+  }
+
   // MARK: - Properties
 
   static let shared = CaptureSessionInterruptionObserver()
 
   /// Should be set to true when a capture session interruption notification is received, so that
   /// camera use will not be allowed.
+  ///
+  /// - Note: Because this value depends on receiving AVCaptureSessionWasInterrupted and
+  /// AVCaptureSessionInterruptionEnded notifications to update current state, it may not be a
+  /// reliable indicator of multitasking if there is no active AVCaptureSession running when
+  /// multitasking begins or ends. Further testing is recommended.
   var isCaptureSessionInterrupted = false
 
   /// Should be set to true when the brightness sensor is being used, so that camera use will not
@@ -35,6 +47,25 @@ class CaptureSessionInterruptionObserver {
   var isCameraUseAllowed: Bool {
     return !isCaptureSessionInterrupted && !isBrightnessSensorInUse &&
         CameraAccessHandler.checkForPermission()
+  }
+
+  var cameraAvailability: CameraAvailability {
+
+    if isBrightnessSensorInUse {
+      return .blockedByBrightnessSensor
+    }
+
+    if isCaptureSessionInterrupted {
+      return .captureInterrupted
+    }
+
+    // Note: this check will request perms if they are not determined,
+    // so it's not a 1:1 match with permissions denied
+    if CameraAccessHandler.checkForPermission() {
+      return .available
+    } else {
+      return .permissionsDenied
+    }
   }
 
   // MARK: - Public

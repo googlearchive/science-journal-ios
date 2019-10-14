@@ -154,6 +154,9 @@ class AudioCapture: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
                      from connection: AVCaptureConnection) {
     var blockBuffer: CMBlockBuffer?
     let audioBufferList = AudioBufferList.allocate(maximumBuffers: 1)
+    defer {
+      free(audioBufferList.unsafeMutablePointer)
+    }
     CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(
       sampleBuffer,
       bufferListSizeNeededOut: nil,

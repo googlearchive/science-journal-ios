@@ -912,7 +912,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       content: trialDetailViewController,
       emptyState: recordingDetailEmptyState,
       actionEnablingKeyPath: \.isEditable,
-      outsideOfSafeAreaKeyPath: \.isContentOutsideOfSafeArea,
+      outsideOfSafeAreaKeyPath: \.scrollViewContentObserver.isContentOutsideOfSafeArea,
       mode: .stateless(actionItem: ActionArea.ActionItem(
         items: [textItem, cameraItem, galleryItem]
       ))
@@ -957,7 +957,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
 
     let detail = ActionArea.DetailContentContainerViewController(
       content: experimentCoordinator.observeViewController,
-      outsideOfSafeAreaKeyPath: \.isContentOutsideOfSafeArea
+      outsideOfSafeAreaKeyPath: \.scrollViewContentObserver.isContentOutsideOfSafeArea
     ) {
       let addSensorItem = ActionArea.BarButtonItem(
         title: String.actionAreaButtonAddSensor,
@@ -1014,7 +1014,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       content: experimentCoordinator,
       emptyState: emptyState,
       actionEnablingKeyPath: \.shouldAllowAdditions,
-      outsideOfSafeAreaKeyPath: \.isContentOutsideOfSafeArea,
+      outsideOfSafeAreaKeyPath: \.scrollViewContentObserver.isContentOutsideOfSafeArea,
       mode: .stateless(actionItem: ActionArea.ActionItem(
         items: [textItem, sensorsItem, cameraItem, galleryItem]
       ))

@@ -416,6 +416,7 @@
 		68EBA6E51E20421E0089FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EBA6E41E20421E0089FF7F /* Assets.xcassets */; };
 		68F14AC21F21801F0054E799 /* TimeInterval+ScienceJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F14AC11F21801F0054E799 /* TimeInterval+ScienceJournal.swift */; };
 		68FB61111F3A70DA008281DB /* MaterialFloatingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB61101F3A70DA008281DB /* MaterialFloatingSpinner.swift */; };
+		86EBD8E3234E81B1004DFCB9 /* ScrollViewContentObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8692DC31234E544800052CE3 /* ScrollViewContentObserver.swift */; };
 		8B00318021346C1500B9BBFB /* PullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00317E21346C1500B9BBFB /* PullToRefreshController.swift */; };
 		8B031EEC2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B031EEB2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift */; };
 		8B031EEE2098C39C008F6F28 /* ExistingDataOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B031EED2098C39C008F6F28 /* ExistingDataOptionsCell.swift */; };
@@ -1108,6 +1109,7 @@
 		68FB61101F3A70DA008281DB /* MaterialFloatingSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialFloatingSpinner.swift; sourceTree = "<group>"; };
 		716FC707D21F24E45C613BEC /* Pods-ScienceJournalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournalUITests/Pods-ScienceJournalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		81B6ADB3C8B55839B4C266D2 /* Pods-ScienceJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceJournal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScienceJournal/Pods-ScienceJournal.debug.xcconfig"; sourceTree = "<group>"; };
+		8692DC31234E544800052CE3 /* ScrollViewContentObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollViewContentObserver.swift; path = ../UI/ScrollViewContentObserver.swift; sourceTree = "<group>"; };
 		8B00317E21346C1500B9BBFB /* PullToRefreshController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshController.swift; sourceTree = "<group>"; };
 		8B031EEB2098BA6D008F6F28 /* ExistingDataOptionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingDataOptionsHeaderView.swift; sourceTree = "<group>"; };
 		8B031EED2098C39C008F6F28 /* ExistingDataOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingDataOptionsCell.swift; sourceTree = "<group>"; };
@@ -2561,6 +2563,7 @@
 				58BC1BC422C18FEB00DA7EDC /* UIImage+ScienceJournal.swift */,
 				8BA5BF331F44904F00EB77E8 /* UIPanGestureRecognizer+ScienceJournal.swift */,
 				48E48DC022A63CEB004301E4 /* UIScrollView+Capturing.swift */,
+				8692DC31234E544800052CE3 /* ScrollViewContentObserver.swift */,
 				8B9C59471F478A820063FFA9 /* UIScrollView+ScienceJournal.swift */,
 				684896E81F0207CD00DF1EE2 /* UIStackView+ScienceJournal.swift */,
 				5C8784A421679E040046786D /* UITextView+ScienceJournal.swift */,
@@ -3730,6 +3733,7 @@
 				8B882A5320ADDEA000E93179 /* AddExperimentsToDriveView.swift in Sources */,
 				68BD95671E8DA45100FEB0B2 /* ToneGenerator.swift in Sources */,
 				680D406E1F03083C004E5555 /* SnapshotDetailViewController.swift in Sources */,
+				86EBD8E3234E81B1004DFCB9 /* ScrollViewContentObserver.swift in Sources */,
 				5C878523216E602C0046786D /* GradientView.swift in Sources */,
 				5C6C62651EE0819A00798989 /* SnapshotNote.swift in Sources */,
 				5C72196F1EDFA2E900817F0B /* PictureNote.swift in Sources */,

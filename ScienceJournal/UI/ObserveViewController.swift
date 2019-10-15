@@ -884,7 +884,8 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
           UIView.layoutFittingCompressedSize).height : 0
       collectionView?.contentInset.top = topInset
       collectionView?.scrollIndicatorInsets.top = topInset
-      if collectionView?.contentOffset.y == 0 {
+      if FeatureFlags.isActionAreaEnabled,
+        collectionView?.contentOffset.y == 0 {
         // Adjusts the offset so the timeAxisView doesn't obscure the top-most card
         collectionView?.contentOffset.y = -topInset
       }
@@ -906,7 +907,7 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
       self.transitionCoordinator?.animate(alongsideTransition: { _ in
         self.timeAxisController.timeAxisView.alpha = isVisible ? 1 : 0
         self.adjustContentInsets()
-      }, completion: nil)
+      })
     } else {
       UIView.animate(withDuration: 0.4) {
         self.timeAxisController.timeAxisView.alpha = isVisible ? 1 : 0

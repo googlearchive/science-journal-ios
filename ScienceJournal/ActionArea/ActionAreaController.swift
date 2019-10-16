@@ -230,7 +230,7 @@ extension ActionArea {
           modalDetailViewController = presentedDetailViewController
           modalDetailViewController?.actionAreaStateDidChange(self)
         }
-        updateBarButtonItems()
+        updateBarButtonItems(with: transitionCoordinator)
         transitionCoordinator?.animate(alongsideTransition: { _ in
           self.keyTint.updateAndApply()
         })
@@ -321,24 +321,45 @@ extension ActionArea {
       }
     }
 
+    private lazy var transitioningNavigationController: UINavigationController = {
+      let vc = UINavigationController()
+      vc.isNavigationBarHidden = true
+      vc.view.isHidden = true
+      return vc
+    }()
+
+    private lazy var actionAreaContent: UIViewController = {
+      let vc = UIViewController()
+      vc.view.backgroundColor = .black
+      return vc
+    }()
+
     override func viewDidLoad() {
       super.viewDidLoad()
 
-      addChild(masterBarViewController)
-      view.addSubview(masterBarViewController.view)
-      masterBarViewController.didMove(toParent: self)
+      addChild(actionAreaContent)
+      view.addSubview(actionAreaContent.view)
+      actionAreaContent.didMove(toParent: self)
+
+      actionAreaContent.addChild(masterBarViewController)
+      actionAreaContent.view.addSubview(masterBarViewController.view)
+      masterBarViewController.didMove(toParent: actionAreaContent)
       masterBarViewController.view.snp.makeConstraints { make in
         make.top.leading.equalToSuperview()
       }
 
-      addChild(detailBarViewController)
-      view.addSubview(detailBarViewController.view)
-      detailBarViewController.didMove(toParent: self)
+      actionAreaContent.addChild(detailBarViewController)
+      actionAreaContent.view.addSubview(detailBarViewController.view)
+      detailBarViewController.didMove(toParent: actionAreaContent)
       detailBarViewController.view.snp.makeConstraints { make in
         make.width.equalTo(layout.detailWidth)
         make.top.bottom.equalTo(masterBarViewController.view)
         make.leading.equalTo(masterBarViewController.view.snp.trailing).offset(layout.divider)
       }
+
+      addChild(transitioningNavigationController)
+      view.addSubview(transitioningNavigationController.view)
+      transitioningNavigationController.didMove(toParent: self)
 
       updateTraitCollectionOverrides()
       layoutConstraints.activate(layout.mode)
@@ -349,10 +370,15 @@ extension ActionArea {
       with coordinator: UIViewControllerTransitionCoordinator
     ) {
       transitionType.update(
-        for: .willTransition(to: size, with: coordinator),
+        for: .willTransition(to: size),
         and: masterContent.count
       )
-      transition(layout: layout, type: transitionType, source: .viewWillTransition)
+      transition(
+        layout: layout,
+        type: transitionType,
+        source: .viewWillTransition,
+        with: coordinator
+      )
 
       super.viewWillTransition(to: size, with: coordinator)
     }
@@ -363,29 +389,30 @@ extension ActionArea {
 
       if UIDevice.current.userInterfaceIdiom == .pad {
         // Overriding the master content ensures it can still use an appropriate layout.
-        setOverrideTraitCollection(
+        actionAreaContent.setOverrideTraitCollection(
           horizontallyRegular, forChild: masterBarViewController
         )
 
         // Detail content in the expanded layout should always be horizontally compact.
-        setOverrideTraitCollection(
+        actionAreaContent.setOverrideTraitCollection(
           horizontallyCompact, forChild: detailBarViewController
         )
       } else {
         // On iPhone, we use a horizontally compact layout to prevent expansion on plus/max devices.
-        setOverrideTraitCollection(horizontallyCompact, forChild: masterBarViewController)
+        actionAreaContent
+          .setOverrideTraitCollection(horizontallyCompact, forChild: masterBarViewController)
       }
     }
 
-    private func updateBarButtonItems() {
+    private func updateBarButtonItems(with coordinator: UIViewControllerTransitionCoordinator?) {
       let newActionItem = currentActionItem()
 
       if isExpanded == false {
         masterBarViewController
-          .transition(.update(with: newActionItem, isEnabled: actionsAreEnabled))
+          .transition(.update(with: newActionItem, isEnabled: actionsAreEnabled), with: coordinator)
       } else {
         detailBarViewController
-          .transition(.update(with: newActionItem, isEnabled: actionsAreEnabled))
+          .transition(.update(with: newActionItem, isEnabled: actionsAreEnabled), with: coordinator)
       }
     }
 
@@ -425,15 +452,13 @@ extension ActionArea {
       guard state == .normal else {
         fatalError("View controllers cannot be pushed during a modal detail presentation.")
       }
-
-      navController.pushViewController(vc, animated: true)
-
-      if let master = vc as? ActionArea.MasterContent {
-        actionEnabler = master.actionEnabler
-        if isExpanded {
-          detailNavController.pushViewController(master.emptyState, animated: true)
-        }
+      // TODO: Consider integrating this validation logic into the transition types.
+      guard vc is ActionArea.MasterContent, masterContent.isEmpty, case .landscape = layout else {
+        navController.pushViewController(vc, animated: true)
+        return
       }
+
+      navController.pushViewController(vc, animated: false)
     }
 
     /// Present content in a detail context.
@@ -537,7 +562,7 @@ private extension ActionArea.Controller {
     /// Transitions outside of the Action Area that are using its master navigation controller.
     case external
     /// Layout transitions related to size changes or rotation.
-    case size(Layout, UIViewControllerTransitionCoordinator)
+    case size(Layout)
 
     /// The next transition type.
     ///
@@ -564,8 +589,8 @@ private extension ActionArea.Controller {
         self = .leave
       case (.leave, .didShow):
         self = .external
-      case let (_, .willTransition(to: newSize, with: coordinator)):
-        self = .size(Layout(newSize, and: contentCount), coordinator)
+      case let (_, .willTransition(to: newSize)):
+        self = .size(Layout(newSize, and: contentCount))
       case (.size, .didTransition):
         self = contentCount > 0 ? .internal : .external
       default:
@@ -582,7 +607,7 @@ private extension ActionArea.Controller {
     case back
     case willShow
     case didShow
-    case willTransition(to: CGSize, with: UIViewControllerTransitionCoordinator)
+    case willTransition(to: CGSize)
     case didTransition
   }
 
@@ -604,22 +629,33 @@ private extension ActionArea.Controller {
   ///   - layout: The layout for this transition.
   ///   - type: The type of this transition.
   ///   - source: The source of the current phase of the transition.
-  private func transition(layout: Layout, type: MasterTransitionType, source: TransitionSource) {
+  ///   - coordinator: The coordinator of the transition.
+  private func transition(
+    layout: Layout,
+    type: MasterTransitionType,
+    source: TransitionSource,
+    with coordinator: UIViewControllerTransitionCoordinator?
+  ) {
     switch (layout, type, source) {
     case (_, .external, _):
       // There is nothing to do here for external transitions.
       break
-    case let (_, .size(newLayout, coordinator), _):
+    case let (_, .size(newLayout), _):
       transition(from: layout, to: newLayout, source: source, with: coordinator)
     case (.portrait, _, _):
-      transition(portrait: layout, type: type, source: source)
+      transition(portrait: layout, type: type, source: source, with: coordinator)
     case (.landscape, _, _):
-      transition(landscape: layout, type: type, source: source)
+      transition(landscape: layout, type: type, source: source, with: coordinator)
 
     }
   }
 
-  private func transition(portrait: Layout, type: MasterTransitionType, source: TransitionSource) {
+  private func transition(
+    portrait: Layout,
+    type: MasterTransitionType,
+    source: TransitionSource,
+    with coordinator: UIViewControllerTransitionCoordinator?
+  ) {
     guard case .portrait = portrait else {
       preconditionFailure("This method only handle portrait transitions.")
     }
@@ -628,23 +664,32 @@ private extension ActionArea.Controller {
     case (.enter, .backAction):
       preconditionFailure("The Action Area cannot be entered through a back action.")
     case (.enter, .delegate):
-      masterBarViewController
-        .transition(.raise(with: currentActionItem(), isEnabled: actionsAreEnabled))
+      masterBarViewController.transition(
+        .raise(with: currentActionItem(), isEnabled: actionsAreEnabled),
+        with: coordinator
+      )
     case (.internal, .backAction):
       sendOverriddenMasterBackButtonAction()
     case (.internal, .delegate):
-      masterBarViewController
-        .transition(.update(with: currentActionItem(), isEnabled: actionsAreEnabled))
+      masterBarViewController.transition(
+        .update(with: currentActionItem(), isEnabled: actionsAreEnabled),
+        with: coordinator
+      )
     case (.leave, .backAction):
       sendOverriddenMasterBackButtonAction()
     case (.leave, .delegate):
-      masterBarViewController.transition(.lower)
+      masterBarViewController.transition(.lower, with: coordinator)
     case (.external, _), (.size, _), (_, .viewWillTransition):
       preconditionFailure("This method only handle portrait transitions.")
     }
   }
 
-  private func transition(landscape: Layout, type: MasterTransitionType, source: TransitionSource) {
+  private func transition(
+    landscape: Layout,
+    type: MasterTransitionType,
+    source: TransitionSource,
+    with coordinator: UIViewControllerTransitionCoordinator?
+  ) {
     guard case .landscape = landscape else {
       preconditionFailure("This method only handle landscape transitions.")
     }
@@ -657,60 +702,90 @@ private extension ActionArea.Controller {
         preconditionFailure("Expected a presentedMasterViewController.")
       }
 
+      // Snapshot current content.
+      let fromSnapshot = UIViewController()
+      fromSnapshot.view = actionAreaContent.view.snapshotView(afterScreenUpdates: false)!
+
+      // Cover current content.
+      transitioningNavigationController.setViewControllers([fromSnapshot], animated: false)
+      transitioningNavigationController.view.isHidden = false
+
+      // Update layout.
       let newLayout = layout.expand()
-      detailNavController.setViewControllers(emptyStates, animated: false)
+      layoutConstraints.activate(newLayout.mode)
+      layout = newLayout
+
+      // Prepare new content under snapshot.
+      actionEnabler = presentedMasterViewController.actionEnabler
+      detailNavController
+        .pushViewController(presentedMasterViewController.emptyState, animated: false)
       detailBarViewController.transition(
         .raise(with: currentActionItem(), isEnabled: actionsAreEnabled),
-        animated: false
+        with: coordinator
       )
+      view.layoutIfNeeded()
 
-      presentedMasterViewController.view.layoutMargins =
-        newLayout.masterLayoutMargins(including: systemMinimumLayoutMargins)
-      navController.transitionCoordinator?.animate(alongsideTransition: nil) { _ in
-        self.initiateLocalTransition().animateAlongsideTransition(in: self.view, animation: { _ in
-          self.layoutConstraints.activate(newLayout.mode)
-          // Using a nested animation block ensures that the frame change of the master content
-          // area animates smoothly. The duration value is inherited and thus ignored.
-          UIView.animate(withDuration: 0) {
-            presentedMasterViewController.view.layoutMargins = .zero
-            self.view.layoutIfNeeded()
-          }
-        }, completion: { _ in
-          self.layout = newLayout
-        })
-      }
+      // Snapshot new content.
+      let toSnapshot = UIViewController()
+      toSnapshot.view = actionAreaContent.view.snapshotView(afterScreenUpdates: true)!
+
+      // Transition content snapshots.
+      transitioningNavigationController.pushViewController(toSnapshot, animated: true)
+      transitioningNavigationController.transitionCoordinator?.animate(
+        alongsideTransition: nil,
+        completion: { _ in
+          // Clean up snapshots.
+          self.transitioningNavigationController.view.isHidden = true
+          self.transitioningNavigationController.setViewControllers([], animated: false)
+        }
+      )
     case (.internal, .backAction):
       sendOverriddenMasterBackButtonAction()
       if let master = masterContent.last {
         detailNavController.popToViewController(master.emptyState, animated: true)
       }
     case (.internal, .delegate):
-      // There is currently nothing to do here, but we may refactor pushing detail empty state
-      // or animating the detail bar change here in the future.
-      break
+      actionEnabler = presentedMasterViewController?.actionEnabler
+      detailNavController.setViewControllers(emptyStates, animated: true)
     case (.leave, .backAction):
+      // Snapshot current content.
+      let fromSnapshot = UIViewController()
+      fromSnapshot.view = actionAreaContent.view.snapshotView(afterScreenUpdates: false)!
+
+      // Cover current content.
+      transitioningNavigationController.setViewControllers([fromSnapshot], animated: false)
+      transitioningNavigationController.view.isHidden = false
+
+      // Update layout.
       let newLayout = layout.collapse()
+      layoutConstraints.activate(newLayout.mode)
+      layout = newLayout
 
-      initiateLocalTransition(completion: sendOverriddenMasterBackButtonAction)
-        .animateAlongsideTransition(in: view, animation: { _ in
-          self.layoutConstraints.activate(newLayout.mode)
-          // Using a nested animation block ensures that the frame change of the master content
-          // area animates smoothly. The duration value is inherited and thus ignored.
-          UIView.animate(withDuration: 0) {
-            self.presentedMasterViewController?.view.layoutMargins =
-              self.layout.masterLayoutMargins(including: self.systemMinimumLayoutMargins)
-            self.view.layoutIfNeeded()
-          }
-        }, completion: { _ in
-          self.detailBarViewController.transition(.lower, animated: false)
+      // Prepare new content under snapshot.
+      navController.popViewController(animated: false)
+      view.layoutIfNeeded()
 
-          // collapse
+      // Snapshot new content.
+      let toSnapshot = UIViewController()
+      toSnapshot.view = actionAreaContent.view.snapshotView(afterScreenUpdates: true)!
+
+      // Prepare transition controller.
+      transitioningNavigationController
+        .setViewControllers([toSnapshot, fromSnapshot], animated: false)
+
+      // Transition content snapshots.
+      transitioningNavigationController.popViewController(animated: true)
+      transitioningNavigationController.transitionCoordinator?.animate(
+        alongsideTransition: nil,
+        completion: { _ in
+          // Clean up snapshots and detail content.
+          self.transitioningNavigationController.view.isHidden = true
+          self.transitioningNavigationController.setViewControllers([], animated: false)
           self.detailNavController.setViewControllers([], animated: false)
-
-          self.layout = newLayout
-        })
+        }
+      )
     case (.leave, .delegate):
-      transitionCoordinator?.animate(alongsideTransition: nil, completion: { _ in
+      coordinator?.animate(alongsideTransition: nil, completion: { _ in
         self.presentedMasterViewController?.view.layoutMargins = .zero
       })
     case (.external, _), (.size, _), (_, .viewWillTransition):
@@ -722,7 +797,7 @@ private extension ActionArea.Controller {
     from oldLayout: Layout,
     to newLayout: Layout,
     source: TransitionSource,
-    with coordinator: UIViewControllerTransitionCoordinator
+    with coordinator: UIViewControllerTransitionCoordinator?
   ) {
     func createCurrentSizeConstraint() -> Constraint? {
       var sizeConstraint: Constraint?
@@ -793,18 +868,26 @@ private extension ActionArea.Controller {
       navController.popToViewController(topMasterContent, animated: false)
       detailNavController.setViewControllers(detailNavViewControllers, animated: false)
 
-      coordinator.animate(alongsideTransition: { _ in
+      coordinator?.animate(alongsideTransition: { _ in
         sizeConstraint?.deactivate()
         self.layoutConstraints.activate(newLayout.mode)
         self.view.layoutIfNeeded()
 
         self.masterBarViewController
-          .transition(.update(with: .empty, isEnabled: self.actionsAreEnabled))
-        self.detailBarViewController
-          .transition(.update(with: self.currentActionItem(), isEnabled: self.actionsAreEnabled))
+          .transition(.update(with: .empty, isEnabled: self.actionsAreEnabled), with: coordinator)
+        self.detailBarViewController.transition(
+          .update(with: self.currentActionItem(), isEnabled: self.actionsAreEnabled),
+          with: coordinator
+        )
         navControllerSnapshot?.alpha = 0
         detailNavControllerSnapshot?.alpha = 0
       }) { _ in
+        // TODO: Rotating in the middle of a transition results in the final frame value from the
+        // transition being set after the rotation animations complete, which leaves the frame with
+        // the wrong size. This fixes the problem, but it seems like there should be some way to
+        // serialize the animations or handle this more gracefully.
+        self.navController.topViewController?.view.frame = self.navController.view.frame
+
         navControllerSnapshot?.removeFromSuperview()
         detailNavControllerSnapshot?.removeFromSuperview()
         self.transitionType.update(for: .didTransition, and: self.masterContent.count)
@@ -844,15 +927,17 @@ private extension ActionArea.Controller {
       detailNavController.popToViewController(topEmptyState, animated: false)
       navController.setViewControllers(navViewControllers, animated: false)
 
-      coordinator.animate(alongsideTransition: { _ in
+      coordinator?.animate(alongsideTransition: { _ in
         sizeConstraint?.deactivate()
         self.layoutConstraints.activate(newLayout.mode)
         self.view.layoutIfNeeded()
 
-        self.masterBarViewController
-          .transition(.update(with: self.currentActionItem(), isEnabled: self.actionsAreEnabled))
+        self.masterBarViewController.transition(
+          .update(with: self.currentActionItem(), isEnabled: self.actionsAreEnabled),
+          with: coordinator
+        )
         self.detailBarViewController
-          .transition(.update(with: .empty, isEnabled: self.actionsAreEnabled))
+          .transition(.update(with: .empty, isEnabled: self.actionsAreEnabled), with: coordinator)
         navControllerSnapshot?.alpha = 0
         detailNavControllerSnapshot?.alpha = 0
       }) { _ in
@@ -879,17 +964,12 @@ private extension ActionArea.Controller {
   func animateActionEnablement(actionsAreEnabled: Bool) {
     guard let master = presentedMasterViewController else { return }
 
-    func animate() {
-      if isExpanded {
-        detailBarViewController.transition(.enable(actionsAreEnabled))
-        master.emptyState.isEnabled = actionsAreEnabled
-      } else {
-        masterBarViewController.transition(.enable(actionsAreEnabled))
-      }
-    }
-
-    UIView.animate(withDuration: Metrics.defaultAnimationDuration) {
-      animate()
+    let coordinator = initiateLocalTransition()
+    if isExpanded {
+      detailBarViewController.transition(.enable(actionsAreEnabled), with: coordinator)
+      master.emptyState.isEnabled = actionsAreEnabled
+    } else {
+      masterBarViewController.transition(.enable(actionsAreEnabled), with: coordinator)
     }
   }
 
@@ -962,7 +1042,7 @@ extension ActionArea.Controller: UIGestureRecognizerDelegate {
 
   private func handleBackAction() {
     transitionType.update(for: .back, and: masterContent.count)
-    transition(layout: layout, type: transitionType, source: .backAction)
+    transition(layout: layout, type: transitionType, source: .backAction, with: nil)
   }
 
   func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -991,7 +1071,12 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
       keyTint.updateAndApply()
 
       transitionType.update(for: .willShow, and: masterContent.count)
-      transition(layout: layout, type: transitionType, source: .delegate)
+      transition(
+        layout: layout,
+        type: transitionType,
+        source: .delegate,
+        with: navigationController.transitionCoordinator
+      )
     }
 
     if navigationController == detailNavController {
@@ -1002,8 +1087,10 @@ extension ActionArea.Controller: UINavigationControllerDelegate {
       // Non-animated detail transitions are handled by the main transition method.
       guard animated else { return }
 
-      detailBarViewController
-        .transition(.update(with: currentActionItem(), isEnabled: actionsAreEnabled))
+      detailBarViewController.transition(
+        .update(with: currentActionItem(), isEnabled: actionsAreEnabled),
+        with: navigationController.transitionCoordinator
+      )
     }
   }
 

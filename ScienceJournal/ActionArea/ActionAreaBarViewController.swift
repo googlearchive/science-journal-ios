@@ -25,7 +25,7 @@ import third_party_objective_c_material_components_ios_components_ShadowLayer_Sh
 extension ActionArea {
 
   /// The bar where items are displayed.
-  final class BarViewController: UIViewController {
+  final class BarViewController: ContentContainerViewController {
 
     enum Metrics {
       enum ActionButton {
@@ -62,22 +62,7 @@ extension ActionArea {
 
     }
 
-    private let content: UIViewController
-
     // MARK: - Initializers
-
-    /// Designated initializer.
-    ///
-    /// - Parameters:
-    ///   - content: The content view controller on which to overlay the bar.
-    init(content: UIViewController) {
-      self.content = content
-      super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-    }
 
     // MARK: - Implementation
 
@@ -176,12 +161,6 @@ extension ActionArea {
       view.snp.setLabel("root")
 
       content.view.snp.setLabel("content")
-      addChild(content)
-      view.addSubview(content.view)
-      content.didMove(toParent: self)
-      content.view.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
-      }
 
       bar.snp.setLabel("bar")
       view.addSubview(bar)
@@ -193,10 +172,6 @@ extension ActionArea {
         make.bottom.lessThanOrEqualTo(view.snp.bottomMargin)
         make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).priority(.high)
       }
-    }
-
-    override var transitionCoordinator: UIViewControllerTransitionCoordinator? {
-      return super.transitionCoordinator ?? content.transitionCoordinator
     }
 
     // MARK: - Transitions
@@ -220,7 +195,10 @@ extension ActionArea {
       }
     }
 
-    func transition(_ type: TransitionType, animated: Bool = true) {
+    func transition(
+      _ type: TransitionType,
+      with coordinator: UIViewControllerTransitionCoordinator?
+    ) {
       switch type {
       case let .raise(with: newActionItem, isEnabled: isEnabled):
         actionItem = newActionItem
@@ -236,7 +214,7 @@ extension ActionArea {
           self.primary?.alpha = self.currentAlpha
           self.bar.alpha = self.currentAlpha
           self.updateAdditionalSafeAreaInsets()
-        }, after: {}, animated: animated)
+        }, after: {}, with: coordinator)
       case let .update(with: newActionItem, isEnabled: isEnabled):
         // We can get an equivalent item when the AA is in the `modal` state in portrait orientation
         // and the modal content VC is hidden or re-shown, which will result in undesired animation.
@@ -246,9 +224,8 @@ extension ActionArea {
         self.isEnabled = isEnabled
 
         let newPrimary = newActionItem.primary.map(create(primary:))
-        transition(from: primary, to: newPrimary)
-
-        transition(to: newActionItem.items, animated: animated)
+        transition(from: primary, to: newPrimary, with: coordinator)
+        transition(to: newActionItem.items, with: coordinator)
       case let .enable(isEnabled):
         transition(before: {
           self.isEnabled = isEnabled
@@ -256,7 +233,7 @@ extension ActionArea {
           self.primary?.alpha = self.currentAlpha
           self.bar.alpha = self.currentAlpha
           self.updateAdditionalSafeAreaInsets()
-        }, after: {}, animated: animated)
+        }, after: {}, with: coordinator)
       case .lower:
         transition(before: {}, during: {
           self.bar.transform = CGAffineTransform(translationX: 0, y: self.barHeightFromBottomEdge)
@@ -267,16 +244,19 @@ extension ActionArea {
           self.bar.alpha = self.currentAlpha
           self.primary = nil
           self.updateAdditionalSafeAreaInsets()
-        }, animated: animated)
+        }, with: coordinator)
       }
     }
 
-    private func transition(to items: [BarButtonItem], animated: Bool) {
+    private func transition(
+      to items: [BarButtonItem],
+      with coordinator: UIViewControllerTransitionCoordinator?
+    ) {
       guard !items.isEmpty else {
         transition(during: {
           self.bar.alpha = self.currentAlpha
           self.updateAdditionalSafeAreaInsets()
-        }, animated: animated)
+        }, with: coordinator)
         return
       }
 
@@ -298,10 +278,14 @@ extension ActionArea {
         self.updateAdditionalSafeAreaInsets()
       }, after: {
         snapshot?.removeFromSuperview()
-      }, animated: animated)
+      }, with: coordinator)
     }
 
-    private func transition(from: UIButton?, to: UIButton?) {
+    private func transition(
+      from: UIButton?,
+      to: UIButton?,
+      with coordinator: UIViewControllerTransitionCoordinator?
+    ) {
       switch (from, to) {
       case (.none, .none):
         break
@@ -310,7 +294,7 @@ extension ActionArea {
           from.alpha = 0
         }, after: {
           self.primary = nil
-        }, animated: true)
+        }, with: coordinator)
       case let (.none, .some(to)):
         transition(before: {
           to.alpha = 0
@@ -318,7 +302,7 @@ extension ActionArea {
           to.alpha = 1
         }, after: {
           self.primary = to
-        }, animated: true)
+        }, with: coordinator)
       case let (.some(from), .some(to)):
         transition(before: {
           to.alpha = 0
@@ -339,7 +323,7 @@ extension ActionArea {
           })
         }, after: {
           self.primary = to
-        }, animated: true)
+        }, with: coordinator)
       }
     }
 
@@ -347,9 +331,9 @@ extension ActionArea {
       before: () -> Void = {},
       during: @escaping () -> Void = {},
       after: @escaping () -> Void = {},
-      animated: Bool
+      with coordinator: UIViewControllerTransitionCoordinator?
     ) {
-      if let coordinator = transitionCoordinator, coordinator.isAnimated, animated {
+      if let coordinator = coordinator, coordinator.isAnimated {
         before()
         coordinator.animateAlongsideTransition(in: view, animation: { _ in
           during()

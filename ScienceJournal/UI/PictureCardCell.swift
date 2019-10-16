@@ -121,8 +121,12 @@ class PictureCardCell: FrameLayoutMaterialCardCell {
       return
     }
 
-    DispatchQueue.main.async {
+    if FeatureFlags.isActionAreaEnabled {
       self.pictureView?.image = self.metadataManager?.image(forFullImagePath: imagePath)
+    } else {
+      DispatchQueue.main.async {
+        self.pictureView?.image = self.metadataManager?.image(forFullImagePath: imagePath)
+      }
     }
   }
 

@@ -40,7 +40,7 @@ Here are the steps to set up your environment:
 1. Install Xcode.
 2. Install CocoaPods by running `sudo gem install cocoapods` from your terminal.
 3. Install Homebrew by following the instructions on the [Homebrew website](https://brew.sh/).
-4. Install protobuf by running `brew install protobuf@3.1; brew link protobuf@3.1 -f` from your terminal.
+4. Install protobuf by running `brew install protobuf@3.6; brew link protobuf@3.6 -f` from your terminal.
 
 ## Building and running
 Before you jump into coding, you'll need to run `pod install` from the root of this project (the folder that contains has the `Podfile` file)

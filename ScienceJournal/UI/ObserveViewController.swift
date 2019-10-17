@@ -885,6 +885,11 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
           UIView.layoutFittingCompressedSize).height : 0
       collectionView?.contentInset.top = topInset
       collectionView?.scrollIndicatorInsets.top = topInset
+      if FeatureFlags.isActionAreaEnabled,
+        collectionView?.contentOffset.y == 0 {
+        // Adjusts the offset so the timeAxisView doesn't obscure the top-most card
+        collectionView?.contentOffset.y = -topInset
+      }
     } else {
       var bottomInset =
         recordButtonViewWrapper.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
@@ -899,10 +904,16 @@ open class ObserveViewController: ScienceJournalCollectionViewController, ChartC
 
   // Animates the display of the time axis view.
   func showTimeAxisView(_ isVisible: Bool) {
-    UIView.animate(withDuration: 0.5, animations: {
-      self.timeAxisController.timeAxisView.alpha = isVisible ? 1 : 0
-    }) { (_) in
-      self.adjustContentInsets()
+    if FeatureFlags.isActionAreaEnabled {
+      self.transitionCoordinator?.animate(alongsideTransition: { _ in
+        self.timeAxisController.timeAxisView.alpha = isVisible ? 1 : 0
+        self.adjustContentInsets()
+      })
+    } else {
+      UIView.animate(withDuration: 0.4) {
+        self.timeAxisController.timeAxisView.alpha = isVisible ? 1 : 0
+        self.adjustContentInsets()
+      }
     }
   }
 

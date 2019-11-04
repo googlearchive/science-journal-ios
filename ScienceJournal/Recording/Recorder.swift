@@ -198,7 +198,7 @@ class Recorder: Equatable, SensorTriggerFrequencyObserverDelegate {
   ///
   /// - Parameter trigger: The trigger to remove.
   func remove(trigger: SensorTrigger) {
-    if let index = sensorTriggerEvaluators.index(where: { $0.sensorTrigger === trigger }) {
+    if let index = sensorTriggerEvaluators.firstIndex(where: { $0.sensorTrigger === trigger }) {
       sensorTriggerEvaluators.remove(at: index)
     }
   }

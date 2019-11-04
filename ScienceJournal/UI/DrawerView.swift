@@ -574,7 +574,7 @@ open class DrawerView: UIView, MDCTabBarDelegate {
     var nextPositionIndex: Int {
       // Current position index.
       guard let indexOfCurrentPosition =
-          orderedPositions.index(where: { $0 == currentPosition }) else { return 0 }
+          orderedPositions.firstIndex(where: { $0 == currentPosition }) else { return 0 }
 
       // Next position index is +1 from the current index.
       let nextPositionIndex = indexOfCurrentPosition + 1

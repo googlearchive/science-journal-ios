@@ -142,8 +142,7 @@ class TrialDetailDataSource {
   /// - Parameter noteID: A note ID.
   /// - Returns: A note.
   func noteWithID(_ noteID: String) -> Note? {
-    guard let index = trial.notes.index(where: { $0.ID == noteID }) else { return nil }
-    return trial.notes[index]
+    return trial.notes.first(where: { $0.ID == noteID })
   }
 
   /// Returns a display note for an index path.
@@ -237,7 +236,7 @@ class TrialDetailDataSource {
   /// - Parameter noteID: A note ID.
   /// - Returns: A tuple with the deleted note and the index of the deleted note.
   func removeNote(withID noteID: String) {
-    guard let index = displayTrial.notes.index(where: { $0.ID == noteID }) else {
+    guard let index = displayTrial.notes.firstIndex(where: { $0.ID == noteID }) else {
       return
     }
     displayTrial.notes.remove(at: index)
@@ -249,7 +248,7 @@ class TrialDetailDataSource {
   ///
   /// - Parameter note: A note.
   func updateNote(_ note: Note) {
-    guard let index = displayTrial.notes.index(where: { $0.ID == note.ID }),
+    guard let index = displayTrial.notes.firstIndex(where: { $0.ID == note.ID }),
         let displayNote = experimentDataParser.parseNote(note, forTrial: trial) else {
       return
     }
@@ -267,7 +266,7 @@ class TrialDetailDataSource {
   ///   - view: The chart presentation view.
   ///   - sensorID: A sensor ID.
   func setChartPresentationView(_ view: UIView, forSensorID sensorID: String) {
-    guard let index = displayTrial.sensors.index(where: { $0.ID == sensorID }) else { return }
+    guard let index = displayTrial.sensors.firstIndex(where: { $0.ID == sensorID }) else { return }
     var displaySensor = displayTrial.sensors.remove(at: index)
     displaySensor.chartPresentationView = view
     displayTrial.sensors.insert(displaySensor, at: index)

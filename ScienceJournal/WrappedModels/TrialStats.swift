@@ -173,7 +173,7 @@ class TrialStats {
 
   private func index(for type: GSJSensorStat_StatType) -> Int? {
     let stats = proto.sensorStatsArray.compactMap { $0 as? GSJSensorStat }
-    return stats.index(where: { $0.statType == type })
+    return stats.firstIndex(where: { $0.statType == type })
   }
 
   /// Sets a stat value for a given type.

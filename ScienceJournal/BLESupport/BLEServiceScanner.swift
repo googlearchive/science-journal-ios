@@ -189,7 +189,7 @@ class BLEServiceScanner: NSObject, CBCentralManagerDelegate {
     let discovered =
         DiscoveredPeripheral(peripheral: peripheral,
                              serviceIds: serviceIds)
-    if discoveredPeripherals.index(of: discovered) == nil {
+    if discoveredPeripherals.firstIndex(of: discovered) == nil {
       discoveredPeripherals.append(discovered)
     }
     delegate?.serviceScannerDiscoveredNewPeripherals(self)

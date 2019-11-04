@@ -38,7 +38,7 @@ class UsageTracker {
   /// - Returns: True if usage just went from 1 to 0.
   func removeUser(_ user: AnyObject) -> Bool {
     let userID = ObjectIdentifier(user)
-    guard let index = userObjectIDs.index(where: { $0 == userID }) else { return false }
+    guard let index = userObjectIDs.firstIndex(where: { $0 == userID }) else { return false }
     userObjectIDs.remove(at: index)
     return userObjectIDs.count == 0
   }

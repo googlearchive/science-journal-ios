@@ -106,7 +106,7 @@ class ExperimentsListDataSource {
   @discardableResult func insertOverview(_ overview: ExperimentOverview,
                                          atBeginning: Bool = false) -> [CollectionViewChange] {
     let key = sectionKeyFromDate(overview.lastUsedDate)
-    if let sectionIndex = overviewSections.index(where: { $0.key == key }) {
+    if let sectionIndex = overviewSections.firstIndex(where: { $0.key == key }) {
       // If this section exists, insert the experiment in the section to preserve descending sort
       // order (newest at top).
       var itemInsertIndex = 0
@@ -262,10 +262,7 @@ class ExperimentsListDataSource {
     let overviews = overviewSections.reduce([]) { (result, section) -> [ExperimentOverview] in
       return result + section.experimentOverviews
     }
-    guard let index = overviews.index(where: { $0.experimentID == experimentID }) else {
-      return nil
-    }
-    return overviews[index]
+    return overviews.first(where: { $0.experimentID == experimentID })
   }
 
   /// Returns the indexPath for a given overview, if found.
@@ -274,8 +271,8 @@ class ExperimentsListDataSource {
   /// - Returns: The index path of the overview, if found.
   private func indexPath(of experimentOverview: ExperimentOverview) -> IndexPath? {
     let key = sectionKeyFromDate(experimentOverview.lastUsedDate)
-    guard let sectionIndex = overviewSections.index(where: { $0.key == key }),
-      let overviewIndex = overviewSections[sectionIndex].experimentOverviews.index(
+    guard let sectionIndex = overviewSections.firstIndex(where: { $0.key == key }),
+      let overviewIndex = overviewSections[sectionIndex].experimentOverviews.firstIndex(
           where: { $0.experimentID == experimentOverview.experimentID }) else { return nil }
 
     // Section plus one, to account for the collection view header section.

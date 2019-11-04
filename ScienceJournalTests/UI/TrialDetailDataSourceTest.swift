@@ -105,7 +105,7 @@ class TrialDetailDataSourceTest: XCTestCase {
 
     trialDetailDataSource.removeNote(withID: "TextNoteID")
     XCTAssertEqual(1, trialDetailDataSource.displayTrial.notes.count)
-    XCTAssertNil(trialDetailDataSource.displayTrial.notes.index(where: { $0.ID == "TextNoteID" }))
+    XCTAssertNil(trialDetailDataSource.displayTrial.notes.first(where: { $0.ID == "TextNoteID" }))
   }
 
 }

@@ -278,7 +278,8 @@ class TriggerListViewController: MaterialHeaderCollectionViewController, Trigger
     if triggerListCell.aSwitch.isOn {
       activeTriggerIDs.append(trigger.triggerID)
     } else {
-      guard let index = activeTriggerIDs.index(where: { $0 == trigger.triggerID }) else { return }
+      guard let index =
+          activeTriggerIDs.firstIndex(where: { $0 == trigger.triggerID }) else { return }
       activeTriggerIDs.remove(at: index)
     }
     callDelegateWithUpdatedTriggers()

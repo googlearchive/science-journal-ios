@@ -87,11 +87,7 @@ class UserMetadata {
   func experimentOverview(with experimentID: String) -> ExperimentOverview? {
     var experimentOverview: ExperimentOverview?
     overviewQueue.sync {
-      guard let index =
-          _experimentOverviews.index(where: { $0.experimentID == experimentID }) else {
-        return
-      }
-      experimentOverview = _experimentOverviews[index]
+      experimentOverview = _experimentOverviews.first(where: { $0.experimentID == experimentID })
     }
     return experimentOverview
   }
@@ -119,7 +115,7 @@ class UserMetadata {
     var experimentOverview: ExperimentOverview?
     overviewQueue.sync {
       guard let index =
-          _experimentOverviews.index(where: { $0.experimentID == experimentID }) else {
+          _experimentOverviews.firstIndex(where: { $0.experimentID == experimentID }) else {
         return
       }
       experimentOverview = _experimentOverviews.remove(at: index)

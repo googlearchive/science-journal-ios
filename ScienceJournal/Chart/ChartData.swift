@@ -162,14 +162,14 @@ class ChartData {
   func removeNote(withID noteID: String, atTimestamp timestamp: Int64) {
     // Remove from added note data points. There may be more than one note for a single timestamp
     // but this is OK because it doesn't matter which specific data point is removed.
-    let noteIndex = noteDataPoints.index(where: { timestamp == $0.x })
+    let noteIndex = noteDataPoints.firstIndex(where: { timestamp == $0.x })
     if let index = noteIndex {
       noteDataPoints.remove(at: index)
       return
     }
 
     // Try removing from not-yet-added notes if removing from added notes wasn't successful.
-    let unaddedIndex = unaddedNotes.index(where: { noteID == $0.ID })
+    let unaddedIndex = unaddedNotes.firstIndex(where: { noteID == $0.ID })
     if let unaddedIndex = unaddedIndex {
       unaddedNotes.remove(at: unaddedIndex)
     }

@@ -71,14 +71,14 @@ class TrialStatsAdjusterTest: XCTestCase {
 
       XCTAssertEqual(2, trialStats.count)
 
-      let stats2Index = trialStats.index(where: { $0.sensorID == "TEST_ID_2" })
+      let stats2Index = trialStats.firstIndex(where: { $0.sensorID == "TEST_ID_2" })
       XCTAssertNotNil(stats2Index)
       if let index = stats2Index {
         XCTAssertEqual(0, trialStats[index].minimumValue!)
         XCTAssertEqual(90, trialStats[index].maximumValue!)
       }
 
-      let stats3Index = trialStats.index(where: { $0.sensorID == "TEST_ID_3" })
+      let stats3Index = trialStats.firstIndex(where: { $0.sensorID == "TEST_ID_3" })
       XCTAssertNotNil(stats3Index)
       if let index = stats3Index {
         XCTAssertEqual(0, trialStats[index].minimumValue!)

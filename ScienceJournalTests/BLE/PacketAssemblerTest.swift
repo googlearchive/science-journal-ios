@@ -285,7 +285,7 @@ class PacketAssemblerTest: XCTestCase {
         outputBytes.append(nextBit)
         start += 1
       }
-      let data = Data(bytes: outputBytes)
+      let data = Data(outputBytes)
       if let dataPoint = packetAssembler.append(data) {
         self.dataPoints.append(dataPoint)
       }

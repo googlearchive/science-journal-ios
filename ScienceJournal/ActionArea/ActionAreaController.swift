@@ -512,7 +512,7 @@ extension ActionArea {
       }
       guard isExpanded == false else { return }
 
-      guard let index = navController.viewControllers.index(of: firstDetail) else {
+      guard let index = navController.viewControllers.firstIndex(of: firstDetail) else {
         preconditionFailure("Expected detail content in navController.")
       }
       precondition(index > navController.viewControllers.startIndex,

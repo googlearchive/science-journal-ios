@@ -113,7 +113,7 @@ class PhotoLibraryDataSource: NSObject, PHPhotoLibraryChangeObserver {
   private var requestOptions: PHImageRequestOptions {
     let requestOptions = PHImageRequestOptions()
     requestOptions.version = .current
-    requestOptions.deliveryMode = .fastFormat
+    requestOptions.deliveryMode = .highQualityFormat
     requestOptions.resizeMode = .fast
     requestOptions.isSynchronous = true
     requestOptions.isNetworkAccessAllowed = true

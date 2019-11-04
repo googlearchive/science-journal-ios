@@ -243,6 +243,11 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
     }
   }
 
+  func imageSelectorDidCreateMultipleImageDatas(
+    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+    // This view controller does not allow selecting multiple images.
+  }
+
   func imageSelectorDidCancel() {}
 
   // MARK: - Notifications

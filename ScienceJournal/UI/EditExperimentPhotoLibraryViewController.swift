@@ -78,6 +78,11 @@ class EditExperimentPhotoLibraryViewController: MaterialHeaderViewController,
     dismiss(animated: true)
   }
 
+  func imageSelectorDidCreateMultipleImageDatas(
+    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+    // This view controller does not allow selecting multiple images.
+  }
+
   func imageSelectorDidCancel() {}
 
   // MARK: - Private

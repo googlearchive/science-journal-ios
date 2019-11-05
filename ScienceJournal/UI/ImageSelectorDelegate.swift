@@ -16,11 +16,11 @@
 
 import UIKit
 
+typealias ImageData = (imageData: Data, metadata: NSDictionary?)
+
 /// Delegate protocol for the camera and photo library to communicate when an image has been created
 /// or picked for a note.
 protocol ImageSelectorDelegate: class {
-
-  typealias ImageData = (imageData: Data, metadata: NSDictionary?)
 
   /// Tells the delegate that one or more image datas have been created, each with an optional
   /// metadata.

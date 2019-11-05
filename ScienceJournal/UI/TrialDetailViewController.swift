@@ -1011,18 +1011,15 @@ class TrialDetailViewController: MaterialHeaderViewController,
       sjlog_info("[TrialDetailViewController] More than 1 ImageData.", category: .general)
     }
 
-    let imageData = imageDataTuple.imageData
-    let metadata = imageDataTuple.metadata
-
     if FeatureFlags.isActionAreaEnabled {
-      createPendingNote(imageData: imageData, imageMetaData: metadata)
+      createPendingNote(imageData: imageDataTuple.imageData, imageMetaData: imageDataTuple.metadata)
       processPendingNote()
 
       // TODO: Consider AA-specific API.
       photoLibraryViewController.navigationController?.popViewController(animated: true)
     } else {
-      pendingNote?.imageData = imageData
-      pendingNote?.imageMetaData = metadata
+      pendingNote?.imageData = imageDataTuple.imageData
+      pendingNote?.imageMetaData = imageDataTuple.metadata
 
       dismiss(animated: true) {
         self.showAddNoteDialog()

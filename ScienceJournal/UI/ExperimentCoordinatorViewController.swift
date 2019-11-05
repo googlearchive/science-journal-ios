@@ -1077,7 +1077,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   func cameraImageProviderDidPick(imageData: Data, metadata: NSDictionary?) {
-    createPictureNotes(from: [(imageData, metadata)])
+    createPictureNotes(from: [ImageData(imageData: imageData, metadata: metadata)])
     dismiss(animated: true, completion: nil)
   }
 

@@ -232,8 +232,14 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
   func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
     // Check if the photo can be saved before proceeding. Normally this happens lower in the stack
     // but we do it here because it is currently not possible to pass the error up the UI to here.
-    guard imageDatas.count == 1, let imageDataTuple = imageDatas.first else {
-      fatalError("Only one image can be selected for the edit experiment vc.")
+    guard let imageDataTuple = imageDatas.first else {
+      sjlog_info("[EditExperimentViewController] No imageData in imageSelectorDidCreateImageData.",
+                 category: .general)
+      return
+    }
+
+    if imageDatas.count > 1 {
+      sjlog_info("[EditExperimentViewController] More than 1 ImageData.", category: .general)
     }
 
     if metadataManager.canSave(imageDataTuple.imageData) {

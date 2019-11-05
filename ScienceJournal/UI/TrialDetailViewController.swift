@@ -1003,8 +1003,12 @@ class TrialDetailViewController: MaterialHeaderViewController,
   // MARK: - ImageSelectorDelegate
 
   func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
-    guard imageDatas.count == 1, let imageDataTuple = imageDatas.first else {
-        fatalError("Only one image can be selected for the trial detail vc.")
+    guard let imageDataTuple = imageDatas.first else {
+      fatalError("Must have at least one image for [TrialDetailViewController].")
+    }
+
+    if imageDatas.count > 1 {
+      sjlog_info("[TrialDetailViewController] More than 1 ImageData.", category: .general)
     }
 
     let imageData = imageDataTuple.imageData

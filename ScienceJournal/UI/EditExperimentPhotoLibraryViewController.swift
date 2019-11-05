@@ -73,8 +73,9 @@ class EditExperimentPhotoLibraryViewController: MaterialHeaderViewController,
 
   // MARK: - ImageSelectorDelegate
   func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
-    guard imageDatas.count == 1 else {
-      fatalError("Only one image can be selected for the experiment cover.")
+    if imageDatas.count > 1 {
+      sjlog_info("[EditExperimentPhotoLibraryViewController] More than 1 ImageData.",
+                 category: .general)
     }
 
     delegate?.imageSelectorDidCreateImageData(imageDatas)

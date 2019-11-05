@@ -1004,7 +1004,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
     guard let imageDataTuple = imageDatas.first else {
-      fatalError("Must have at least one image for [TrialDetailViewController].")
+      fatalError("Must have at least 1 image for [TrialDetailViewController].")
     }
 
     if imageDatas.count > 1 {

@@ -822,7 +822,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
     createPictureNotes(from: imageDatas)
   }
 

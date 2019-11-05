@@ -20,9 +20,11 @@ import UIKit
 /// or picked for a note.
 protocol ImageSelectorDelegate: class {
 
+  typealias ImageData = (imageData: Data, metadata: NSDictionary?)
+
   /// Tells the delegate that one or more image datas have been created, each with an optional
   /// metadata.
-  func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)])
+  func imageSelectorDidCreateImageData(_ imageDatas: [ImageData])
 
   /// Tells the delegate image selection was cancelled.
   func imageSelectorDidCancel()

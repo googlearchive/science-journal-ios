@@ -1003,11 +1003,12 @@ class TrialDetailViewController: MaterialHeaderViewController,
   // MARK: - ImageSelectorDelegate
 
   func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    guard imageDatas.count == 1,
-      let imageData = imageDatas.first?.imageData,
-      let metadata = imageDatas.first?.metadata else {
+    guard imageDatas.count == 1, let imageDataTuple = imageDatas.first else {
         fatalError("Only one image can be selected for the trial detail vc.")
     }
+
+    let imageData = imageDataTuple.imageData
+    let metadata = imageDataTuple.metadata
 
     if FeatureFlags.isActionAreaEnabled {
       createPendingNote(imageData: imageData, imageMetaData: metadata)

@@ -232,16 +232,14 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
   func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
     // Check if the photo can be saved before proceeding. Normally this happens lower in the stack
     // but we do it here because it is currently not possible to pass the error up the UI to here.
-    guard imageDatas.count == 1,
-        let imageData = imageDatas.first?.imageData,
-        let metadata = imageDatas.first?.metadata else {
+    guard imageDatas.count == 1, let imageDataTuple = imageDatas.first else {
       fatalError("Only one image can be selected for the edit experiment vc.")
     }
 
-    if metadataManager.canSave(imageData) {
-      guard let image = UIImage(data: imageData) else { return }
+    if metadataManager.canSave(imageDataTuple.imageData) {
+      guard let image = UIImage(data: imageDataTuple.imageData) else { return }
       photoPicker.photo = image
-      selectedImageInfo = (imageData, metadata)
+      selectedImageInfo = imageDataTuple
     } else {
       dismiss(animated: true) {
         showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)

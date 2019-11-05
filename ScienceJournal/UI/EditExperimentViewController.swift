@@ -229,8 +229,7 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
     // Check if the photo can be saved before proceeding. Normally this happens lower in the stack
     // but we do it here because it is currently not possible to pass the error up the UI to here.
     guard imageDatas.count == 1,

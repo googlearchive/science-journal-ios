@@ -72,8 +72,7 @@ class EditExperimentPhotoLibraryViewController: MaterialHeaderViewController,
   }
 
   // MARK: - ImageSelectorDelegate
-  func imageSelectorDidCreateImageData(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
     guard imageDatas.count == 1 else {
       fatalError("Only one image can be selected for the experiment cover.")
     }

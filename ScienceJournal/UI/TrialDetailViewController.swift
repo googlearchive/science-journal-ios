@@ -1002,8 +1002,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
     guard imageDatas.count == 1,
       let imageData = imageDatas.first?.imageData,
       let metadata = imageDatas.first?.metadata else {

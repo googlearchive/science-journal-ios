@@ -72,15 +72,14 @@ class EditExperimentPhotoLibraryViewController: MaterialHeaderViewController,
   }
 
   // MARK: - ImageSelectorDelegate
-
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
-    delegate?.imageSelectorDidCreateImageData(imageData, metadata: metadata)
-    dismiss(animated: true)
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
+  func imageSelectorDidCreateImageData(
     _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    // This view controller does not allow selecting multiple images.
+    guard imageDatas.count == 1 else {
+      fatalError("Only one image can be selected for the experiment cover.")
+    }
+
+    delegate?.imageSelectorDidCreateImageData(imageDatas)
+    dismiss(animated: true)
   }
 
   func imageSelectorDidCancel() {}

@@ -229,9 +229,16 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
+  func imageSelectorDidCreateImageData(
+    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
     // Check if the photo can be saved before proceeding. Normally this happens lower in the stack
     // but we do it here because it is currently not possible to pass the error up the UI to here.
+    guard imageDatas.count == 1,
+        let imageData = imageDatas.first?.imageData,
+        let metadata = imageDatas.first?.metadata else {
+      fatalError("Only one image can be selected for the edit experiment vc.")
+    }
+
     if metadataManager.canSave(imageData) {
       guard let image = UIImage(data: imageData) else { return }
       photoPicker.photo = image
@@ -241,11 +248,6 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
         showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
       }
     }
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    // This view controller does not allow selecting multiple images.
   }
 
   func imageSelectorDidCancel() {}

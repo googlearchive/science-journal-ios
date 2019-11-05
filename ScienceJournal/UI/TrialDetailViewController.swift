@@ -1002,7 +1002,14 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
+  func imageSelectorDidCreateImageData(
+    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+    guard imageDatas.count == 1,
+      let imageData = imageDatas.first?.imageData,
+      let metadata = imageDatas.first?.metadata else {
+        fatalError("Only one image can be selected for the trial detail vc.")
+    }
+
     if FeatureFlags.isActionAreaEnabled {
       createPendingNote(imageData: imageData, imageMetaData: metadata)
       processPendingNote()
@@ -1017,11 +1024,6 @@ class TrialDetailViewController: MaterialHeaderViewController,
         self.showAddNoteDialog()
       }
     }
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    // This view controller does not allow selecting multiple images.
   }
 
   func imageSelectorDidCancel() {

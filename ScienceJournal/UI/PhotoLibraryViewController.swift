@@ -590,7 +590,7 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
         print("[PhotoLibraryViewController] Error creating image data.")
         return
       }
-      self.delegate?.imageSelectorDidCreateMultipleImageDatas(imageDatas)
+      self.delegate?.imageSelectorDidCreateImageData(imageDatas)
       self.deselectAllPhotoAssets()
     }
 

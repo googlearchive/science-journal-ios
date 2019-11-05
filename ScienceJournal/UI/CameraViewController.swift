@@ -374,7 +374,7 @@ open class CameraViewController: ScienceJournalViewController, DrawerItemViewCon
   // MARK: - Private
 
   private func handleImageDataSelected(_ imageData: Data, metadata: NSDictionary?) {
-    delegate?.imageSelectorDidCreateImageData(imageData, metadata: metadata)
+    delegate?.imageSelectorDidCreateImageData([(imageData, metadata)])
     drawerViewController?.minimizeFromFull()
 
     // TODO: Consider AA-specific API.

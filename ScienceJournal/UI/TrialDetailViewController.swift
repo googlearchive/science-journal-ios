@@ -1002,26 +1002,29 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
+    guard let imageDataTuple = imageDatas.first else {
+      fatalError("Must have at least 1 image for [TrialDetailViewController].")
+    }
+
+    if imageDatas.count > 1 {
+      sjlog_info("[TrialDetailViewController] More than 1 ImageData.", category: .general)
+    }
+
     if FeatureFlags.isActionAreaEnabled {
-      createPendingNote(imageData: imageData, imageMetaData: metadata)
+      createPendingNote(imageData: imageDataTuple.imageData, imageMetaData: imageDataTuple.metadata)
       processPendingNote()
 
       // TODO: Consider AA-specific API.
       photoLibraryViewController.navigationController?.popViewController(animated: true)
     } else {
-      pendingNote?.imageData = imageData
-      pendingNote?.imageMetaData = metadata
+      pendingNote?.imageData = imageDataTuple.imageData
+      pendingNote?.imageMetaData = imageDataTuple.metadata
 
       dismiss(animated: true) {
         self.showAddNoteDialog()
       }
     }
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    // This view controller does not allow selecting multiple images.
   }
 
   func imageSelectorDidCancel() {

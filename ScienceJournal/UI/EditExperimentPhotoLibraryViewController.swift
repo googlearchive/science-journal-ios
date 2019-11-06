@@ -72,15 +72,14 @@ class EditExperimentPhotoLibraryViewController: MaterialHeaderViewController,
   }
 
   // MARK: - ImageSelectorDelegate
+  func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
+    if imageDatas.count > 1 {
+      sjlog_info("[EditExperimentPhotoLibraryViewController] More than 1 ImageData.",
+                 category: .general)
+    }
 
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
-    delegate?.imageSelectorDidCreateImageData(imageData, metadata: metadata)
+    delegate?.imageSelectorDidCreateImageData(imageDatas)
     dismiss(animated: true)
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    // This view controller does not allow selecting multiple images.
   }
 
   func imageSelectorDidCancel() {}

@@ -229,23 +229,28 @@ class EditExperimentViewController: MaterialHeaderViewController, EditExperiment
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
     // Check if the photo can be saved before proceeding. Normally this happens lower in the stack
     // but we do it here because it is currently not possible to pass the error up the UI to here.
-    if metadataManager.canSave(imageData) {
-      guard let image = UIImage(data: imageData) else { return }
+    guard let imageDataTuple = imageDatas.first else {
+      sjlog_info("[EditExperimentViewController] No imageData in imageSelectorDidCreateImageData.",
+                 category: .general)
+      return
+    }
+
+    if imageDatas.count > 1 {
+      sjlog_info("[EditExperimentViewController] More than 1 ImageData.", category: .general)
+    }
+
+    if metadataManager.canSave(imageDataTuple.imageData) {
+      guard let image = UIImage(data: imageDataTuple.imageData) else { return }
       photoPicker.photo = image
-      selectedImageInfo = (imageData, metadata)
+      selectedImageInfo = imageDataTuple
     } else {
       dismiss(animated: true) {
         showSnackbar(withMessage: String.photoDiskSpaceErrorMessage)
       }
     }
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
-    // This view controller does not allow selecting multiple images.
   }
 
   func imageSelectorDidCancel() {}

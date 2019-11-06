@@ -822,12 +822,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   // MARK: - ImageSelectorDelegate
 
-  func imageSelectorDidCreateImageData(_ imageData: Data, metadata: NSDictionary?) {
-    createPictureNote(imageData, metadata: metadata)
-  }
-
-  func imageSelectorDidCreateMultipleImageDatas(
-    _ imageDatas: [(imageData: Data, metadata: NSDictionary?)]) {
+  func imageSelectorDidCreateImageData(_ imageDatas: [ImageData]) {
     createPictureNotes(from: imageDatas)
   }
 
@@ -1082,7 +1077,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   }
 
   func cameraImageProviderDidPick(imageData: Data, metadata: NSDictionary?) {
-    createPictureNote(imageData, metadata: metadata)
+    createPictureNotes(from: [ImageData(imageData: imageData, metadata: metadata)])
     dismiss(animated: true, completion: nil)
   }
 
@@ -1481,10 +1476,6 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   /// Updates the title in the nav bar based on the current experiment.
   private func updateExperimentTitle() {
     title = experiment.title ?? String.localizedUntitledExperiment
-  }
-
-  private func createPictureNote(_ imageData: Data, metadata: NSDictionary?) {
-    createPictureNotes(from: [(imageData, metadata)])
   }
 
   private func createPictureNotes(from imageSet: [(imageData: Data, metadata: NSDictionary?)]) {

@@ -145,7 +145,9 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.preservesSuperviewLayoutMargins = true
+    if FeatureFlags.isActionAreaEnabled == true {
+      view.preservesSuperviewLayoutMargins = true
+    }
 
     // Always register collection view cells early to avoid a reload occurring first.
     collectionView.register(ArchivedFlagCell.self,
@@ -169,10 +171,15 @@ class ExperimentItemsViewController: VisibilityTrackingViewController,
     collectionView.backgroundColor = experimentDisplay.backgroundColor
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(collectionView)
-    collectionView.snp.makeConstraints { (make) in
-      make.top.bottom.equalToSuperview()
-      make.leading.equalTo(view.snp.leadingMargin)
-      make.trailing.equalTo(view.snp.trailingMargin)
+
+    if FeatureFlags.isActionAreaEnabled == true {
+      collectionView.snp.makeConstraints { (make) in
+        make.top.bottom.equalToSuperview()
+        make.leading.equalTo(view.snp.leadingMargin)
+        make.trailing.equalTo(view.snp.trailingMargin)
+      }
+    } else {
+      collectionView.pinToEdgesOfView(view)
     }
   }
 

@@ -372,7 +372,9 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.preservesSuperviewLayoutMargins = true
+    if FeatureFlags.isActionAreaEnabled == true {
+      view.preservesSuperviewLayoutMargins = true
+    }
     view.backgroundColor = MDCPalette.grey.tint200
     updateExperimentTitle()
 

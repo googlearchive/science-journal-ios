@@ -237,6 +237,7 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
     super.viewDidDisappear(animated)
     updateDisabledView()
     photoLibraryDataSource.stopObserving()
+    isSingleSelectionInProgress = false
   }
 
   override open func viewWillTransition(to size: CGSize,
@@ -413,7 +414,19 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
 
   // MARK: - PhotoLibraryCellDelegate
 
+  // Photo selection is async, we enforce single selection by setting an in-progress
+  // state that only gets unset after the async method completes.
+  private var isSingleSelectionInProgress = false
+
   func photoLibraryCellDidSelectImage(_ photoLibraryCell: PhotoLibraryCell) {
+    if selectionMode == .single {
+      if isSingleSelectionInProgress {
+        return
+      } else {
+        isSingleSelectionInProgress = true
+      }
+    }
+
     guard let indexPath = collectionView.indexPath(for: photoLibraryCell) else { return }
 
     // A photo asset is deselected when it was selected and is tapped again.
@@ -428,14 +441,17 @@ open class PhotoLibraryViewController: ScienceJournalViewController, UICollectio
         // If the photo is already selected, just deselect it.
         deselectPhotoAsset(selectedImage.asset)
         updateTitle()
+        isSingleSelectionInProgress = false
       } else {
         // Otherwise, select a the new cell, and deselect the old one, if any.
         let previouslySelectedImage = self.selectedImages.first
+
         selectCell(photoLibraryCell, at: indexPath) {
           if let previouslySelectedImage = previouslySelectedImage {
             self.deselectPhotoAsset(previouslySelectedImage.asset)
           }
           self.updateTitle()
+          self.isSingleSelectionInProgress = false
         }
       }
     case .multiple:

@@ -285,7 +285,7 @@ class ExperimentCoordinatorViewController: MaterialHeaderViewController, DrawerP
 
   private lazy var _photoLibraryViewController = PhotoLibraryViewController(
     actionBarButtonType: .send,
-    selectionMode: .multiple,
+    selectionMode: .single,
     analyticsReporter: analyticsReporter)
   var photoLibraryViewController: PhotoLibraryViewController {
     return drawerVC?.photoLibraryViewController ?? _photoLibraryViewController

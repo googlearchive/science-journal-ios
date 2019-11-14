@@ -1787,7 +1787,7 @@ class TrialDetailViewController: MaterialHeaderViewController,
 
     let settingsAction = UIAlertAction(title: String.actionSettings,
                                        style: .default) { _ in
-      if let settingsURL = URL(string: "App-prefs:root=Privacy&path=CAMERA") {
+      if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
         UIApplication.shared.open(settingsURL)
       }
     }

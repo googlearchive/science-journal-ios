@@ -11,7 +11,7 @@ and organize your questions and ideas. It's the lab notebook you always have wit
 
 <img src="GitHubAssets/image1.png?raw=true" alt="iOS screenshot showing experiments list." width="175"><img src="GitHubAssets/image2.png?raw=true" alt="iOS screenshot showing `Iodine Clock` experiment." width="175"><img src="GitHubAssets/image3.png?raw=true" alt="iOS screenshot showing `Iodine Clock` recording showing brightness sensor with various values." width="175"><img src="GitHubAssets/image4.png?raw=true" alt="iOS screenshot showing `Iodine Clock` recording with notes alongside brightness sensor with various values." width="175">
 
-## Features <DO NOT APPROVE OR MERGE>
+## Features <DO NOT APPROVE OR MERGE, SRSLY>
 
 * Visualize and graph data from a variety of sources including your device's  built-in sensor 📱
 * Connect to external sensors over BLE ↭🔌

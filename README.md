@@ -1,4 +1,5 @@
 <h3 align="center">
+  OH HAI
   <img src="GitHubAssets/sj_lockup.png?raw=true" alt="Science Journal Logo" width="700">
 </h3>
 

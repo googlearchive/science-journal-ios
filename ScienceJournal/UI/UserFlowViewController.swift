@@ -386,11 +386,6 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       aboutNavController.isNavigationBarHidden = true
       aboutNavController.modalPresentationStyle = .formSheet
       present(aboutNavController, animated: true)
-    case .website:
-      let websiteURL =
-          "https://makingscience.withgoogle.com/science-journal/activities?utm_source=app"
-      guard let url = URL(string: websiteURL) else { return }
-      UIApplication.shared.open(url)
     case .settings:
       let settingsVC = SettingsViewController(analyticsReporter: analyticsReporter,
                                               driveSyncManager: userManager.driveSyncManager,

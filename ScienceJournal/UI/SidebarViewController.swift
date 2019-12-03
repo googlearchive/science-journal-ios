@@ -96,7 +96,8 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
 
   let menuStructure: [SidebarRow] = [
     .experiments,
-    .website,
+    // Website is changing, so hide this option for now.
+    // .website,
     .settings,
     .feedback,
     .about

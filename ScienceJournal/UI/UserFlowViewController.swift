@@ -387,8 +387,7 @@ class UserFlowViewController: UIViewController, ExperimentsListViewControllerDel
       aboutNavController.modalPresentationStyle = .formSheet
       present(aboutNavController, animated: true)
     case .website:
-      let websiteURL =
-          "https://makingscience.withgoogle.com/science-journal/activities?utm_source=app"
+      let websiteURL = "new url here"
       guard let url = URL(string: websiteURL) else { return }
       UIApplication.shared.open(url)
     case .settings:

@@ -24,7 +24,8 @@ class AboutViewController: MaterialHeaderCollectionViewController {
   // MARK: - Data model
 
   enum AboutRow {
-    case website
+    // Website is changing, so hide this option for now.
+    // case website
     case licenses
     case version
     case privacy
@@ -32,7 +33,8 @@ class AboutViewController: MaterialHeaderCollectionViewController {
 
     var title: String {
       switch self {
-      case .website: return String.settingsWebsiteTitle
+      // Website is changing, so hide this option for now.
+      // case .website: return String.settingsWebsiteTitle
       case .licenses: return String.settingsOpenSourceTitle
       case .version: return String.settingsVersionTitle
       case .privacy: return String.settingsPrivacyPolicyTitle
@@ -42,7 +44,8 @@ class AboutViewController: MaterialHeaderCollectionViewController {
 
     var description: String? {
       switch self {
-      case .website: return "https://g.co/sciencejournal"
+      // Website is changing, so hide this option for now.
+      // case .website: return ""
       case .licenses: return nil
       case .version: return Bundle.appVersionString
       case .privacy: return "https://www.google.com/policies/privacy/"
@@ -52,7 +55,8 @@ class AboutViewController: MaterialHeaderCollectionViewController {
 
     var accessibilityLabel: String {
       switch self {
-      case .website: return String.settingsWebsiteTitle
+      // Website is changing, so hide this option for now.
+      // case .website: return String.settingsWebsiteTitle
       case .licenses: return String.settingsOpenSourceTitle
       case .version: return "\(String.settingsVersionTitle) \(self.description ?? "")"
       case .privacy: return String.settingsPrivacyPolicyTitle
@@ -82,7 +86,8 @@ class AboutViewController: MaterialHeaderCollectionViewController {
   // MARK: - Datasource
 
   let rows: [AboutRow] = [
-    .website,
+    // Disable website for now, since location is likely changing.
+    // .website,
     .licenses,
     .version,
     .privacy,
@@ -166,7 +171,9 @@ class AboutViewController: MaterialHeaderCollectionViewController {
                                didSelectItemAt indexPath: IndexPath) {
     let rowData = rows[indexPath.row]
     switch rowData {
-    case .website, .privacy, .terms:
+      // Website is changing, so hide this option for now.
+      // case .website, .privacy, .terms:
+    case .privacy, .terms:
       if let stringURL = rowData.description, let url = URL(string: stringURL) {
         UIApplication.shared.open(url)
       }

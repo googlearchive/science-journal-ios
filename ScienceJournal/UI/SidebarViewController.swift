@@ -26,7 +26,6 @@ protocol SidebarDelegate: class {
 /// Represents rows in the sidebar that provides titles and icons for each item.
 enum SidebarRow {
   case experiments
-  case website
   case settings
   case feedback
   case about
@@ -34,7 +33,6 @@ enum SidebarRow {
   var title: String {
     switch self {
     case .experiments: return String.navigationItemExperiments
-    case .website: return String.navigationItemActivities
     case .settings: return String.navigationItemSettings
     case .feedback: return String.actionFeedback
     case .about: return String.actionAbout
@@ -44,17 +42,9 @@ enum SidebarRow {
   var icon: String {
     switch self {
     case .experiments: return "ic_book_36pt"
-    case .website: return "ic_web_asset_36pt"
     case .settings: return "ic_settings_36pt"
     case .feedback: return "ic_feedback_36pt"
     case .about: return "ic_info_36pt"
-    }
-  }
-
-  var accessoryIcon: String? {
-    switch self {
-    case .website: return "ic_open_in_browser"
-    default: return nil
     }
   }
 }
@@ -96,8 +86,6 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
 
   let menuStructure: [SidebarRow] = [
     .experiments,
-    // Website is changing, so hide this option for now.
-    // .website,
     .settings,
     .feedback,
     .about
@@ -411,11 +399,6 @@ class SidebarViewController: UIViewController, UICollectionViewDelegate, UIColle
       cell.titleLabel.text = cellData.title
       cell.accessibilityLabel = cell.titleLabel.text
       cell.iconView.image = UIImage(named: cellData.icon)
-      var accessoryImage: UIImage?
-      if let accessoryIcon = cellData.accessoryIcon {
-        accessoryImage = UIImage(named: accessoryIcon)
-      }
-      cell.accessoryIconView.image = accessoryImage
     }
     return cell
   }

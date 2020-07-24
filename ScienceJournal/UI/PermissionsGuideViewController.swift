@@ -185,7 +185,7 @@ class PermissionsGuideViewController: OnboardingViewController {
           $0.leadingAnchor.constraint(equalTo: wrappingView.leadingAnchor))
       labelTrailingConstraints.append(
           $0.trailingAnchor.constraint(equalTo: wrappingView.trailingAnchor))
-      $0.font = Metrics.bodyFont
+      $0.font = OnboardingViewController.Metrics.bodyFont
       $0.textColor = UIColor(red: 0.816, green: 0.714, blue: 0.980, alpha: 1.0)
       $0.textAlignment = .center
       $0.alpha = 0
@@ -197,8 +197,9 @@ class PermissionsGuideViewController: OnboardingViewController {
     // Initial into message and final message.
     initialMessage.alpha = 1
     initialMessage.text = String.permissionsGuideMessageIntro
-    initialMessage.topAnchor.constraint(equalTo: headerTitle.bottomAnchor,
-                                        constant: Metrics.innerSpacing).isActive = true
+    initialMessage.topAnchor.constraint(
+      equalTo: headerTitle.bottomAnchor,
+      constant: OnboardingViewController.Metrics.innerSpacing).isActive = true
 
     finalMessage.text = String.permissionsGuideAllDoneMessage
     finalMessage.topAnchor.constraint(equalTo: initialMessage.topAnchor).isActive = true
@@ -231,14 +232,16 @@ class PermissionsGuideViewController: OnboardingViewController {
     // Start button.
     startButton.isEnabled = true
     startButton.setTitle(String.permissionsGuideStartButtonTitle.uppercased(), for: .normal)
-    startButton.topAnchor.constraint(equalTo: initialMessage.bottomAnchor,
-                                     constant: Metrics.buttonSpacing).isActive = true
+    startButton.topAnchor.constraint(
+      equalTo: initialMessage.bottomAnchor,
+      constant: OnboardingViewController.Metrics.buttonSpacing).isActive = true
     startButton.addTarget(self, action: #selector(startGuideButtonPressed), for: .touchUpInside)
 
     // Complete button.
     completeButton.setTitle(String.permissionsGuideFinishButtonTitle.uppercased(), for: .normal)
-    completeButton.topAnchor.constraint(equalTo: finalMessage.bottomAnchor,
-                                        constant: Metrics.buttonSpacing).isActive = true
+    completeButton.topAnchor.constraint(
+      equalTo: finalMessage.bottomAnchor,
+      constant: OnboardingViewController.Metrics.buttonSpacing).isActive = true
     completeButton.addTarget(self,
                              action: #selector(completeGuideButtonPressed),
                              for: .touchUpInside)
@@ -247,8 +250,9 @@ class PermissionsGuideViewController: OnboardingViewController {
     continueButton.setTitle(String.permissionsGuideContinueButtonTitle.uppercased(), for: .normal)
     continueButton.centerXAnchor.constraint(equalTo: wrappingView.centerXAnchor).isActive = true
     continueTopConstraint =
-        continueButton.topAnchor.constraint(equalTo: notificationsMessage.bottomAnchor,
-                                            constant: Metrics.buttonSpacing)
+        continueButton.topAnchor.constraint(
+          equalTo: notificationsMessage.bottomAnchor,
+          constant: OnboardingViewController.Metrics.buttonSpacing)
     continueTopConstraint?.isActive = true
 
     // Done message with check, used after each step completes.
@@ -256,7 +260,7 @@ class PermissionsGuideViewController: OnboardingViewController {
     let doneCheck = UIImageView(image: UIImage(named: "ic_check"))
     doneCheck.tintColor = MDCPalette.green.accent200
     let doneLabel = UILabel()
-    doneLabel.font = Metrics.bodyFont
+    doneLabel.font = OnboardingViewController.Metrics.bodyFont
     doneLabel.text = String.permissionsGuideCheckComplete
     doneLabel.textColor = .white
 
@@ -267,7 +271,7 @@ class PermissionsGuideViewController: OnboardingViewController {
     doneView.centerXAnchor.constraint(equalTo: wrappingView.centerXAnchor).isActive = true
     doneViewTopConstraint =
         doneView.topAnchor.constraint(equalTo: notificationsMessage.bottomAnchor,
-                                      constant: Metrics.buttonSpacing)
+                                      constant: OnboardingViewController.Metrics.buttonSpacing)
     doneViewTopConstraint?.isActive = true
 
     doneCheck.translatesAutoresizingMaskIntoConstraints = false
@@ -309,10 +313,14 @@ class PermissionsGuideViewController: OnboardingViewController {
     headerTopConstraint?.constant = headerTopPadding
     labelTopConstraints.forEach { $0.constant = labelTopPadding }
     labelLeadingConstraints.forEach {
-      $0.constant = size.isWiderThanTall ? Metrics.outerPaddingWide : Metrics.outerPaddingNarrow
+      $0.constant = size.isWiderThanTall ?
+        OnboardingViewController.Metrics.outerPaddingWide :
+        OnboardingViewController.Metrics.outerPaddingNarrow
     }
     labelTrailingConstraints.forEach {
-      $0.constant = size.isWiderThanTall ? -Metrics.outerPaddingWide : -Metrics.outerPaddingNarrow
+      $0.constant = size.isWiderThanTall ?
+        -OnboardingViewController.Metrics.outerPaddingWide :
+        -OnboardingViewController.Metrics.outerPaddingNarrow
     }
   }
 
@@ -555,16 +563,18 @@ class PermissionsGuideViewController: OnboardingViewController {
 
   private func updateContinueButtonConstraint(forLabel label: UILabel) {
     continueTopConstraint?.isActive = false
-    continueTopConstraint = continueButton.topAnchor.constraint(equalTo: label.bottomAnchor,
-                                                                constant: Metrics.buttonSpacing)
+    continueTopConstraint = continueButton.topAnchor.constraint(
+      equalTo: label.bottomAnchor,
+      constant: OnboardingViewController.Metrics.buttonSpacing)
     continueTopConstraint?.isActive = true
     continueButton.layoutIfNeeded()
   }
 
   private func updateDoneViewConstraint(forLabel label: UILabel) {
     doneViewTopConstraint?.isActive = false
-    doneViewTopConstraint = doneView.topAnchor.constraint(equalTo: label.bottomAnchor,
-                                                          constant: Metrics.buttonSpacing)
+    doneViewTopConstraint = doneView.topAnchor.constraint(
+      equalTo: label.bottomAnchor,
+      constant: OnboardingViewController.Metrics.buttonSpacing)
     doneViewTopConstraint?.isActive = true
     doneView.layoutIfNeeded()
   }

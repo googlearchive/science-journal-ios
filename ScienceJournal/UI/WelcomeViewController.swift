@@ -95,7 +95,7 @@ class WelcomeViewController: OnboardingViewController {
 
     // Primary message label.
     primaryMessage.translatesAutoresizingMaskIntoConstraints = false
-    primaryMessage.font = Metrics.bodyFont
+    primaryMessage.font = OnboardingViewController.Metrics.bodyFont
     primaryMessage.textColor = UIColor(red: 0.816, green: 0.714, blue: 0.980, alpha: 1.0)
     primaryMessage.alpha = 1
     primaryMessage.numberOfLines = 0
@@ -109,8 +109,9 @@ class WelcomeViewController: OnboardingViewController {
     primaryMessageTrailingConstraint =
         primaryMessage.trailingAnchor.constraint(equalTo: wrappingView.trailingAnchor)
     primaryMessageTrailingConstraint?.isActive = true
-    primaryMessage.topAnchor.constraint(equalTo: headerTitle.bottomAnchor,
-                                        constant: Metrics.innerSpacing).isActive = true
+    primaryMessage.topAnchor.constraint(
+      equalTo: headerTitle.bottomAnchor,
+      constant: OnboardingViewController.Metrics.innerSpacing).isActive = true
 
     // Button config.
     let startButton = MDCFlatButton()
@@ -122,8 +123,9 @@ class WelcomeViewController: OnboardingViewController {
     startButton.setElevation(ShadowElevation.raisedButtonPressed, for: [.selected, .highlighted])
     startButton.setTitle(String.getStarted.uppercased(), for: .normal)
     startButton.centerXAnchor.constraint(equalTo: wrappingView.centerXAnchor).isActive = true
-    startButton.topAnchor.constraint(equalTo: primaryMessage.bottomAnchor,
-                                     constant: Metrics.buttonSpacing).isActive = true
+    startButton.topAnchor.constraint(
+      equalTo: primaryMessage.bottomAnchor,
+      constant: OnboardingViewController.Metrics.buttonSpacing).isActive = true
     startButton.addTarget(self, action: #selector(getStartedButtonPressed), for: .touchUpInside)
 
     NSLayoutConstraint.activate([
@@ -160,10 +162,12 @@ class WelcomeViewController: OnboardingViewController {
 
     setCenterWrappingViewVertically(!size.isWiderThanTall)
 
-    let outerLeadingPadding =
-        size.isWiderThanTall ? Metrics.outerPaddingWide : Metrics.outerPaddingNarrow
-    let outerTrailingPadding =
-        size.isWiderThanTall ? -Metrics.outerPaddingWide : -Metrics.outerPaddingNarrow
+    let outerLeadingPadding = size.isWiderThanTall ?
+      OnboardingViewController.Metrics.outerPaddingWide :
+      OnboardingViewController.Metrics.outerPaddingNarrow
+    let outerTrailingPadding = size.isWiderThanTall ?
+      -OnboardingViewController.Metrics.outerPaddingWide :
+      -OnboardingViewController.Metrics.outerPaddingNarrow
 
     primaryMessageLeadingConstraint?.constant = outerLeadingPadding
     primaryMessageTrailingConstraint?.constant = outerTrailingPadding

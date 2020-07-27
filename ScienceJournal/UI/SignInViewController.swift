@@ -105,7 +105,7 @@ class SignInViewController: OnboardingViewController {
 
     driveMessage.text = String.driveSyncInformation
     driveMessage.translatesAutoresizingMaskIntoConstraints = false
-    driveMessage.font = Metrics.bodyFont
+    driveMessage.font = OnboardingViewController.Metrics.bodyFont
     driveMessage.textColor = Metrics.textColor
     driveMessage.alpha = 1
     driveMessage.numberOfLines = 0
@@ -135,11 +135,13 @@ class SignInViewController: OnboardingViewController {
     stackView.alignment = .center
     stackView.distribution = .fill
     stackView.isLayoutMarginsRelativeArrangement = true
-    stackView.layoutMargins = UIEdgeInsets(top: Metrics.driveMessageTopPaddingNarrow,
-                                           left: Metrics.outerPaddingNarrow,
-                                           bottom: Metrics.outerPaddingNarrow,
-                                           right: Metrics.outerPaddingNarrow)
-    stackView.spacing = Metrics.buttonSpacing
+    stackView.layoutMargins = UIEdgeInsets(
+      top: Metrics.driveMessageTopPaddingNarrow,
+      left: OnboardingViewController.Metrics.outerPaddingNarrow,
+      bottom: OnboardingViewController.Metrics.outerPaddingNarrow,
+      right: OnboardingViewController.Metrics.outerPaddingNarrow
+    )
+    stackView.spacing = OnboardingViewController.Metrics.buttonSpacing
     stackView.translatesAutoresizingMaskIntoConstraints = false
     stackView.pinToEdgesOfView(driveScrollView)
 
@@ -158,7 +160,7 @@ class SignInViewController: OnboardingViewController {
     buttonStack.translatesAutoresizingMaskIntoConstraints = false
     buttonStack.axis = .vertical
     buttonStack.alignment = .center
-    buttonStack.spacing = Metrics.buttonSpacingInner
+    buttonStack.spacing = OnboardingViewController.Metrics.buttonSpacingInner
     stackView.addArrangedSubview(buttonStack)
 
     stackView.addArrangedSubview(logoImage)
@@ -180,7 +182,7 @@ class SignInViewController: OnboardingViewController {
     noSignInFloatingButton.button.setTitle(String.continueWithoutSignin.uppercased(), for: .normal)
     noSignInFloatingButton.button.setTitleColor(Metrics.textColor, for: .normal)
     noSignInFloatingButton.topSeparatorView.backgroundColor = Metrics.separatorViewColor
-    noSignInFloatingButton.view.backgroundColor = Metrics.backgroundColor
+    noSignInFloatingButton.view.backgroundColor = OnboardingViewController.Metrics.backgroundColor
     noSignInFloatingButton.view.alpha = 0
     NSLayoutConstraint.activate([
       noSignInFloatingButton.view.leadingAnchor.constraint(equalTo: wrappingView.leadingAnchor),
@@ -216,9 +218,9 @@ class SignInViewController: OnboardingViewController {
     if traitCollection.horizontalSizeClass == .regular &&
         traitCollection.verticalSizeClass == .regular {
       stackViewTopPadding = 0
-      buttonSpacing = Metrics.buttonSpacing
-      outerLeadingPadding = Metrics.outerPaddingNarrow
-      outerTrailingPadding = -Metrics.outerPaddingNarrow
+      buttonSpacing = OnboardingViewController.Metrics.buttonSpacing
+      outerLeadingPadding = OnboardingViewController.Metrics.outerPaddingNarrow
+      outerTrailingPadding = -OnboardingViewController.Metrics.outerPaddingNarrow
     } else {
       if size.isWiderThanTall {
         if size.width <= 568 {
@@ -226,26 +228,30 @@ class SignInViewController: OnboardingViewController {
         } else {
           stackViewTopPadding = Metrics.driveMessageTopPaddingWide
         }
-        buttonSpacing = Metrics.buttonSpacingWide
+        buttonSpacing = OnboardingViewController.Metrics.buttonSpacingWide
       } else {
         if size.width <= 320 {
           stackViewTopPadding = Metrics.driveMessageTopPaddingNarrowSmallScreen
         } else {
           stackViewTopPadding = Metrics.driveMessageTopPaddingNarrow
         }
-        buttonSpacing = Metrics.buttonSpacing
+        buttonSpacing = OnboardingViewController.Metrics.buttonSpacing
       }
 
-      outerLeadingPadding =
-          size.isWiderThanTall ? Metrics.outerPaddingWide : Metrics.outerPaddingNarrow
-      outerTrailingPadding =
-          size.isWiderThanTall ? -Metrics.outerPaddingWide : -Metrics.outerPaddingNarrow
+      outerLeadingPadding = size.isWiderThanTall ?
+        OnboardingViewController.Metrics.outerPaddingWide :
+        OnboardingViewController.Metrics.outerPaddingNarrow
+      outerTrailingPadding = size.isWiderThanTall ?
+        -OnboardingViewController.Metrics.outerPaddingWide :
+        -OnboardingViewController.Metrics.outerPaddingNarrow
     }
 
-    stackView.layoutMargins = UIEdgeInsets(top: stackViewTopPadding,
-                                           left: outerLeadingPadding,
-                                           bottom: Metrics.outerPaddingNarrow,
-                                           right: outerTrailingPadding)
+    stackView.layoutMargins = UIEdgeInsets(
+      top: stackViewTopPadding,
+      left: outerLeadingPadding,
+      bottom: OnboardingViewController.Metrics.outerPaddingNarrow,
+      right: outerTrailingPadding
+    )
     stackView.spacing = buttonSpacing
   }
 

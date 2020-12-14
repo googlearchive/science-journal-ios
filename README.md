@@ -1,3 +1,5 @@
+# Project deprecated, please see [Arduino Science Journal](https://github.com/arduino/Arduino-Science-Journal-iOS) for the most recent version 🔬🧪
+
 <h3 align="center">
   <img src="GitHubAssets/sj_lockup.png?raw=true" alt="Science Journal Logo" width="700">
 </h3>

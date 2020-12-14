@@ -1,4 +1,4 @@
-# Project deprecated, please see [Arduino Science Journal](https://github.com/arduino/Arduino-Science-Journal-iOS) for the most recent version 🔬🧪
+# Repo deprecated, please see [Arduino Science Journal](https://github.com/arduino/Arduino-Science-Journal-iOS) for the most recent version 🔬🧪 as well as the [official blog post](https://blog.arduino.cc/2020/08/05/the-science-journal-is-graduating-from-google-coming-to-arduino-this-fall/) about the graduation of the project.
 
 <h3 align="center">
   <img src="GitHubAssets/sj_lockup.png?raw=true" alt="Science Journal Logo" width="700">

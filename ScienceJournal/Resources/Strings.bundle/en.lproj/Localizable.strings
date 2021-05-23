@@ -1513,6 +1513,9 @@
 /* Accessibility hint for a graphic representing an in-progress recording, telling a user that interacting with it will show the observe tab [CHAR_LIMIT=NONE] */
 "throbber_content_details" = "Double tap to switch to the observe tab in the tool drawer";
 
+/* Name for milliseconds in a TimeInterval object */
+"time_interval_milliseconds" = "milliseconds";
+
 /* Title for activity that handles sensor settings [CHAR_LIMIT=40] */
 "title_activity_sensor_settings" = "Sensor settings";
 

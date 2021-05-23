@@ -27,4 +27,23 @@ extension DateComponentsFormatter {
     return formatter
   }
 
+  /// Returns an accessible string based on the given time interval, appending any available
+  /// fractional seconds as milliseconds using a NSCalendar.Unit.spellOut unitsStyle.
+  ///
+  /// - Parameters:
+  ///   - ti: The time interval, measured in seconds. The value must be a finite number.
+  ///     Negative numbers are treated as positive numbers when creating the string.
+  ///   - fractional: The fractional seconds available on the time interval.
+  ///     If this equals 0, milliseconds will not be appended to the string.
+  /// - Returns: A formatted string representing the specified time interval.
+  func string(from ti: TimeInterval, appending fractional: Int64) -> String {
+    guard let duration = TimeInterval.accessibleIntervalFormatter.string(from: ti) else {
+        return ""
+    }
+    if fractional > 0 {
+        return duration + " \(fractional) " + String.timeIntervalMilliseconds
+    }
+    return duration
+  }
+
 }
